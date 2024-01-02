@@ -3,7 +3,13 @@ extends CanvasLayer
 signal finished
 @export_file("*.tscn") var main_menu_scene = ""
 
-func trigger(player_data: PlayerData):
+
+func _ready():
+	GlobalLog.set_context(GlobalLog.Context.MENU)
+	GlobalLog.add_entry(name + " loaded.")
+
+
+func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	pass
 
 

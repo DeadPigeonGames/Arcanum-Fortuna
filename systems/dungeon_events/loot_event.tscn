@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="2_kt70e"]
 [ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="3_6il76"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="4_anhfr"]
-[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/audio/card_hover.ogg" id="5_dpvki"]
+[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="5_dpvki"]
 [ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="5_g314m"]
 [ext_resource type="Resource" uid="uid://buthwniwc7tav" path="res://data/cards/temperance.tres" id="6_k0i6c"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="7_3menk"]
@@ -87,6 +87,44 @@ label_settings = SubResource("LabelSettings_wl2yu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ConfirmButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -137.0
+offset_right = 91.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
+text = "confirm"
+
+[node name="SkipButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 164.0
+offset_top = -137.0
+offset_right = 346.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
+text = "Skip"
+
 [node name="Button" type="Button" parent="CanvasLayer/Control"]
 visible = false
 layout_mode = 1
@@ -109,3 +147,6 @@ text = "continue"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_dpvki")
+
+[connection signal="pressed" from="CanvasLayer/Control/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SkipButton" to="." method="_on_skip_button_pressed"]

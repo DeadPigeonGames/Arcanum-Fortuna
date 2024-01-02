@@ -9,11 +9,11 @@ size = Vector2(200, 100)
 
 [node name="Card" type="Control"]
 z_index = 2
-custom_minimum_size = Vector2(210, 330)
+custom_minimum_size = Vector2(164, 257)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 200.001
-offset_bottom = 300.0
+offset_right = 164.0
+offset_bottom = 257.0
 script = ExtResource("1_04ic4")
 
 [node name="Artwork" type="TextureRect" parent="."]
@@ -79,7 +79,7 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 19.0
 offset_bottom = 19.0
-color = Color(0.254902, 0.521569, 0.796078, 1)
+color = Color(0.47451, 0.207843, 0.592157, 1)
 
 [node name="KarmaCost" type="Label" parent="Cost"]
 unique_name_in_owner = true
@@ -99,10 +99,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -56.0
-offset_right = 64.0
+offset_top = -45.0
+offset_right = 45.0
 grow_vertical = 0
-color = Color(0.937255, 0, 0.309804, 0.705882)
+color = Color(0.909804, 0.541176, 0.0745098, 0.941176)
 
 [node name="AttackCost" type="Label" parent="Attack"]
 unique_name_in_owner = true
@@ -112,8 +112,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 36
-text = "100"
+theme_override_font_sizes/font_size = 22
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -124,11 +124,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -56.0
+offset_left = -45.0
+offset_top = -45.0
 grow_horizontal = 0
 grow_vertical = 0
-color = Color(0.321569, 0.588235, 0.0941176, 0.705882)
+color = Color(0.607843, 0.172549, 0.203922, 0.941176)
 
 [node name="HealthCost" type="Label" parent="Health"]
 unique_name_in_owner = true
@@ -138,7 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 21
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -202,3 +202,9 @@ grow_horizontal = 0
 [node name="ShowCardTooltip" parent="." instance=ExtResource("3_cofgw")]
 unique_name_in_owner = true
 layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Voices"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
