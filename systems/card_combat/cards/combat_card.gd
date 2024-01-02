@@ -113,14 +113,7 @@ func animate_attack(target, tile_idx) -> bool:
 
 
 func animate_karma(target):
-	$Cost.modulate = active_color
-	modulate = highlight_color
-	var overflow = target.modify_karma(cost)
-	await get_tree().create_timer(karma_delay).timeout
 	GlobalLog.add_entry("'%s' at position %d-%d added %d karma." % \
-	[card_data.name, tile_coordinate.x, tile_coordinate.y, cost])
-	target.restore_default_color()
-	restore_default_color()
 
 
 func animate_move(target_pos):
