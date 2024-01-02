@@ -43,8 +43,6 @@ func get_required_color(node: EventNode):
 
 
 func _process(delta):
-	
-	hovering = Rect2(Vector2(), $background.get_rect().size).has_point($background.get_local_mouse_position())
 	if selectable or Engine.is_editor_hint() or true:
 		$background/icon.visible = true
 	
@@ -108,3 +106,19 @@ func _draw():
 
 func _generated(node_index: int, level: int, _rng: RandomNumberGenerator):
 	seed = _rng.randi()
+
+
+func _on_mouse_entered():
+	hovering = true
+
+
+func _on_mouse_exited():
+	hovering = false
+
+
+func _on_background_mouse_entered():
+	hovering = true
+
+
+func _on_background_mouse_exited():
+	hovering = false

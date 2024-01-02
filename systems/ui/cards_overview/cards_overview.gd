@@ -60,3 +60,8 @@ func show_cards(cards: Array[CardData]):
 func _on_confirm_filter_pressed():
 	var options = %FilterOptions.get_filter_options()
 	show_cards(filter_cards(player_data.cardStack, options))
+
+
+func refresh():
+	var options = %FilterOptions.get_filter_options()
+	show_cards(filter_cards(player_data.cardStack, options))
