@@ -50,6 +50,7 @@ func process_effect() -> ExitState:
 			blob.update_number(card.cost)
 			small_pearl.emitting = false
 			small_pearl.queue_free()
+			blob.global_position += card.global_position.direction_to(blob.global_position) * 20
 		)
 		
 		tween.play()

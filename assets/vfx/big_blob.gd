@@ -16,10 +16,15 @@ func _ready():
 func _process(delta):
 	self_modulate = self_modulate.lerp(target, 0.1)
 	$trail.self_modulate = self_modulate
+	
+	global_position = global_position.lerp(Vector2(1920 / 2, 1080 / 2), 0.1)
 
 
 func update_number(mod_number: int):
 	count += mod_number
 	%Count.text = str(count)
 	
-	target = bad_modulate.lerp(good_modulate, float(clamp(count, worse_digit, best_digit) + 10) / 20)
+	target = bad_modulate.lerp(
+		good_modulate,
+		float(clamp(count, worse_digit, best_digit) + abs(worse_digit))
+		/ (abs(worse_digit) + best_digit))

@@ -61,8 +61,9 @@ process_material = SubResource("ParticleProcessMaterial_q7cwc")
 texture = ExtResource("1_ppskj")
 local_coords = true
 script = ExtResource("2_tkwfq")
-good_modulate = Color(0.682353, 0.282353, 0.776471, 1)
-bad_modulate = Color(0.368627, 0, 0.196078, 1)
+best_digit = 5
+good_modulate = Color(0.47451, 0.207843, 0.592157, 1)
+bad_modulate = Color(0.376471, 0.105882, 0.152941, 1)
 
 [node name="Count" type="Label" parent="."]
 unique_name_in_owner = true

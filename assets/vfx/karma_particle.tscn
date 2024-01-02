@@ -50,6 +50,7 @@ scale_curve = SubResource("CurveTexture_uv18a")
 turbulence_enabled = true
 
 [node name="KarmaParticle" type="GPUParticles2D"]
+modulate = Color(0.47451, 0.207843, 0.592157, 1)
 z_index = 1
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_07o5n")
