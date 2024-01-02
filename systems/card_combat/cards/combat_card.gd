@@ -113,7 +113,8 @@ func animate_attack(target, tile_idx) -> bool:
 
 
 func animate_karma(target):
-	GlobalLog.add_entry("'%s' at position %d-%d added %d karma." % \
+	GlobalLog.add_entry("'%s' at position %d-%d added %d karma."\
+			% [card_data.name, tile_coordinate.x, tile_coordinate.y, cost])
 	return %KarmaCost
 
 
