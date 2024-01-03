@@ -7,6 +7,8 @@ var connectedFrom: Array[EventNode] = []
 @export_range(0, 10) var lookahead := 2
 var currentLookahead = 0
 
+@export var no_card_overview := false
+
 @export var event: PackedScene
 
 @export_category("Display Options")
@@ -27,6 +29,7 @@ var passed = false
 var seed = 0
 
 signal on_stepped_on
+
 
 func _ready():
 	$background/icon.visible = false
@@ -60,6 +63,7 @@ func _process(delta):
 	
 	if passed:
 		passed = false
+	
 	queue_redraw()
 
 
@@ -84,12 +88,16 @@ func click():
 
 func _trigger_event():
 	if event:
+		if no_card_overview:
+			CardsOverlay.toggle(false)
 		var instance = event.instantiate()
 		if "seed" in instance:
 			instance.seed = seed
 		add_child(instance)
 		instance.trigger(player.data, null)
 		await instance.finished
+		if no_card_overview:
+			CardsOverlay.toggle(true)
 
 
 func _draw():

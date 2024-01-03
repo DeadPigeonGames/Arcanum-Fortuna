@@ -1,3 +1,4 @@
+class_name CardsOverview
 extends Control
 
 @export var card_template: PackedScene
@@ -7,9 +8,15 @@ extends Control
 var descending = true
 var last_sort: Array[CardData]
 
+static var instance
+
 func _ready():
+	instance = self
 	_on_btn_karma_pressed()
 
+static func toggle(visible: bool):
+	if instance:
+		instance.visible = visible
 
 func filter_cards(cards: Array[CardData], filter_opts: FilterOptions) -> Array[CardData]:
 	var result = cards.filter(func(card: CardData):
