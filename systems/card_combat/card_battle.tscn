@@ -32,7 +32,7 @@ script = ExtResource("4_qhqtv")
 script = ExtResource("5_0huhq")
 karma_blob = ExtResource("5_11qft")
 small_blob = ExtResource("7_vptnu")
-karma_duration = 2.1
+karma_duration = 2.3
 karma_delay = 0.6
 
 [sub_resource type="Resource" id="Resource_d62ed"]

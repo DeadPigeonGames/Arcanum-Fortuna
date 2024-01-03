@@ -3,7 +3,7 @@ extends CombatPhase
 
 @export var karma_blob = preload("res://assets/vfx/big_blob.tscn")
 @export var small_blob = preload("res://assets/vfx/karma_particle.tscn")
-@export var karma_duration := 2.1
+@export var karma_duration := 2.3
 @export var karma_delay := 0.6
 
 

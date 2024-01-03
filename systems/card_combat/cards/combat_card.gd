@@ -59,6 +59,12 @@ func take_damage(amount : int):
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
 	health -= amount
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "rotation", rotation + deg_to_rad(-5), 0.2)
+	tween.tween_property(self, "rotation", rotation, 0.1)
+	tween.play()
 	%HealthCost.text = str(health)
 	$Health.modulate = attacked_color
 
@@ -84,20 +90,39 @@ func proccess_death() -> bool:
 
 
 func animate_attack(target, tile_idx) -> bool:
+	var target_position
+	var half_card = get_rect().size.x / 2
+	if target is CardPlayer:
+		target_position = Vector2(1920 / 2 - half_card, 1080 - 100)
+	elif target is EnemyPlayer:
+		target_position = Vector2(1920 / 2 - half_card, 100)
 	if target is CombatCard:
 		GlobalLog.add_entry("'%s' at position %d-%d attacked '%s' at position %d-%d." % \
-		 [card_data.name, tile_coordinate.x, tile_coordinate.y, \
-		 target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
+			[card_data.name, tile_coordinate.x, tile_coordinate.y, \
+			target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
+		target_position = target.global_position
 	else:
 		GlobalLog.add_entry("'%s' at position %d-%d attacked empty tile at position %d-%d." %\
-		 [card_data.name, tile_coordinate.x, tile_coordinate.y,  tile_idx, 0 if is_enemy else 1])
+			[card_data.name, tile_coordinate.x, tile_coordinate.y,  tile_idx, 0 if is_enemy else 1])
 	
+	var attack_tween = create_tween()
+	z_index += 1
+	attack_tween.set_trans(Tween.TRANS_SINE)
+	attack_tween.set_ease(Tween.EASE_IN)
+	attack_tween.tween_property(self, "global_position", target_position, 0.2)
+	attack_tween.set_ease(Tween.EASE_OUT)
+	attack_tween.tween_property(self, "global_position", global_position, 0.4)
+	attack_tween.play()
+	await get_tree().create_timer(0.2).timeout
+	
+	target.take_damage(attack)
 	$Attack.modulate = active_color
 	modulate = highlight_color
-	target.take_damage(attack)
-	await get_tree().create_timer(attack_delay).timeout
-	target.restore_default_color()
-	restore_default_color()
+	get_tree().create_timer(0.5).timeout.connect(func():
+		target.restore_default_color()
+		restore_default_color()
+		z_index -= 1
+	)
 	var was_lethal = await target.proccess_death()
 	var is_battle_over = false
 	if was_lethal and (target is EnemyPlayer or target is CardPlayer):
@@ -120,7 +145,9 @@ func animate_karma(target):
 
 func animate_move(target_pos):
 	modulate = active_color
-	global_position = target_pos
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", target_pos, move_speed)
+	tween.play()
 	await get_tree().create_timer(move_speed).timeout # todo interpolate move 
 	GlobalLog.add_entry("'%s' at position %d-%d moved to positon %d-%d." % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, tile_coordinate.x, tile_coordinate.y - 1])
