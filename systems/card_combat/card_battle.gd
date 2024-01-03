@@ -107,7 +107,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	if target == null:
 		return false
 	gameBoard.highlight_tile(column_idx, friendly)
-	if await attacker.animate_attack(target, column_idx):
+	if await attacker.animate_attack(target, column_idx, gameBoard.get_tile(column_idx, friendly)):
 		finished.emit(player.health)
 		is_battle_over = true
 	gameBoard.end_tile_highlight(column_idx, friendly)

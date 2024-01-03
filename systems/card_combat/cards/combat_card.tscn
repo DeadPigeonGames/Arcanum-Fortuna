@@ -6,6 +6,8 @@
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
 script = ExtResource("1_3lxv2")
+attack_speed = 0.2
+attack_rewind = 0.3
 attack_delay = 0.5
 death_delay = 0.5
 karma_delay = 0.3
