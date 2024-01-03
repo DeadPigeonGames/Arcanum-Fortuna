@@ -14,6 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 164.0
 offset_bottom = 257.0
+pivot_offset = Vector2(82, 128)
 script = ExtResource("1_04ic4")
 
 [node name="Artwork" type="TextureRect" parent="."]
@@ -75,10 +76,8 @@ vertical_alignment = 1
 
 [node name="Cost" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 19.0
-offset_bottom = 19.0
+offset_right = 35.0
+offset_bottom = 35.0
 color = Color(0.47451, 0.207843, 0.592157, 1)
 
 [node name="KarmaCost" type="Label" parent="Cost"]

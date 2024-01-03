@@ -78,6 +78,8 @@ func lock_friendly_cards():
 		GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 		[new_combat_card.card_data.name, i, 0])
 		card.queue_free()
+		await get_tree().process_frame
+		_on_active_cards_changed(new_combat_card)
 
 
 func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
@@ -93,6 +95,8 @@ func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 	new_combat_card.tile_coordinate = Vector2i(tile_idx, 1)
 	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 	[new_combat_card.card_data.name, tile_idx, 1])
+	await get_tree().process_frame
+	_on_active_cards_changed(new_combat_card)
 	return true
 
 
@@ -158,16 +162,31 @@ func get_back_enemies() -> Array[CombatCard]:
 	return res
 
 
+func _on_active_cards_changed(source):
+	var active_cards = get_active_cards()
+	for card : CombatCard in active_cards:
+		for i in range(card.keywords.size()):
+			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
+				card.keywords[i].trigger(source, card, {"active_cards": active_cards})
+				#card.get_node("KeyWords").get_child(i).scale = Vector2(1.2, 1.2)
+				#await get_tree().create_timer(card.keywords[i].highlight_duration).timeout
+				#card.get_node("KeyWords").get_child(i).scale = Vector2.ONE
+
+
 func get_active_cards() -> Array[CombatCard]:
 	return get_friendly_cards() + get_front_enemies()
 
 
+func get_tile(idx, friendly = false):
+	return ($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx)
+
+
 func highlight_tile(idx, friendly = false):
-	($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx).self_modulate = tile_hovered_color
+	get_tile(idx, friendly).self_modulate = tile_hovered_color
 
 
 func end_tile_highlight(idx, friendly = false):
-	($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx).self_modulate = tile_disabled_color
+	get_tile(idx, friendly).self_modulate = tile_disabled_color
 
 
 func _on_card_deletion_button_toggled(toggled_on):
