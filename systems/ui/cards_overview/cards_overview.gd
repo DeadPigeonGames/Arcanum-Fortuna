@@ -4,9 +4,11 @@ extends Control
 
 @export var player_data: PlayerData
 
+var descending = true
+var last_sort: Array[CardData]
 
 func _ready():
-	show_cards(player_data.cardStack)
+	_on_btn_karma_pressed()
 
 
 func filter_cards(cards: Array[CardData], filter_opts: FilterOptions) -> Array[CardData]:
@@ -65,3 +67,33 @@ func _on_confirm_filter_pressed():
 func refresh():
 	var options = %FilterOptions.get_filter_options()
 	show_cards(filter_cards(player_data.cardStack, options))
+
+
+func _on_btn_karma_pressed():
+	var cards = player_data.cardStack.duplicate()
+	cards.sort_custom(func(a, b): return a.cost > b.cost == descending)
+	show_cards(cards)
+	last_sort = cards
+
+
+func _on_btn_health_pressed():
+	var cards = player_data.cardStack.duplicate()
+	cards.sort_custom(func(a, b): return a.health > b.health == descending)
+	show_cards(cards)
+	last_sort = cards
+
+func _on_btn_attack_pressed():
+	var cards = player_data.cardStack.duplicate()
+	cards.sort_custom(func(a, b): return a.attack > b.attack == descending)
+	show_cards(cards)
+	last_sort = cards
+
+
+func _on_btn_ordering_pressed():
+	descending = !descending
+	if descending:
+		%btn_ordering.text = "descending"
+	else:
+		%btn_ordering.text = "ascending"
+	last_sort.reverse()
+	show_cards(last_sort)
