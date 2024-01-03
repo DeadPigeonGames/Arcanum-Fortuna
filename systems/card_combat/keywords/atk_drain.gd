@@ -14,6 +14,7 @@ func init(id = 4):
 	super.init(id)
 
 func trigger(source, target, params={}):
+	super(source, target, params)
 	if not target is CombatCard:
 		push_error("Cannot apply ATKDrain. Invalid target ", target, ".")
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered ATKdrain." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])

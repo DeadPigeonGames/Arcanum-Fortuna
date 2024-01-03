@@ -58,9 +58,6 @@ func get_target_offsets():
 	placed_position = global_position
 	for i in range(keywords.size()):
 		if not keywords[i] is ActivatedKeyword and keywords[i].has_method("get_new_targets"):
-			$KeyWords.get_child(i).scale = Vector2(1.2, 1.2)
-			await get_tree().create_timer(keywords[i].highlight_duration).timeout
-			$KeyWords.get_child(i).scale = Vector2.ONE
 			target_offsets = keywords[i].get_new_targets(target_offsets)
 	return target_offsets
 
@@ -162,9 +159,6 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 		for i in range(keywords.size()):
 			if keywords[i] is ActivatedKeyword and keywords[i].triggers & 1:
 				keywords[i].trigger(target, self)
-				$KeyWords.get_child(i).scale = Vector2(1.2, 1.2)
-				await get_tree().create_timer(keywords[i].highlight_duration).timeout
-				$KeyWords.get_child(i).scale = Vector2.ONE
 	return was_lethal
 
 
