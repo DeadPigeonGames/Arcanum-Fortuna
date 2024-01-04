@@ -68,7 +68,6 @@ func setup():
 	
 	for i in range(keywords.size()):
 		%KeyWords.get_child(i).set_icon(keywords[i].id)
-		keywords[i].icon_node = %KeyWords.get_child(i)
 
 
 func _on_mouse_entered():
