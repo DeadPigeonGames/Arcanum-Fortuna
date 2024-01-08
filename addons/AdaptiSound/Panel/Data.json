@@ -1,1 +1,1 @@
-{"ABGM":"res://data/music/adaptive_music","BGM":"res://assets/sounds/music","BGS":"res://assets/sounds/background_sounds","abgm_bus":"Music","bgm_bus":"Music","bgs_bus":"Music","bgs_extensions":["wav","ogg","tscn"],"debbug":false,"extensions":["wav","ogg"]}
+{"ABGM":"res://data/adaptive_music","BGM":"res://assets/sounds/music","BGS":"res://assets/sounds/background_sounds","abgm_bus":"Music","bgm_bus":"Music","bgs_bus":"BGFX","bgs_extensions":["wav","ogg","tscn"],"debbug":false,"extensions":["wav","ogg"]}

@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0s0oioqpt5fe"]
+
+[ext_resource type="Script" path="res://addons/AdaptiSound/Nodes/ParallelTrack/ParallelTrack.gd" id="1_yyure"]
+[ext_resource type="Script" path="res://addons/AdaptiSound/Nodes/ParallelTrack/ParallelLayer.gd" id="2_8cx1c"]
+[ext_resource type="AudioStream" uid="uid://faytsekspi5b" path="res://assets/sounds/adaptive_music/the_gentleman/track_night_layer_1.ogg" id="3_x0xeo"]
+[ext_resource type="AudioStream" uid="uid://bsfcino1kd53a" path="res://assets/sounds/adaptive_music/the_gentleman/track_night_layer_2.ogg" id="4_2prv5"]
+[ext_resource type="AudioStream" uid="uid://d1o76png1bixt" path="res://assets/sounds/adaptive_music/the_gentleman/track_night_layer_3.ogg" id="5_oxvwy"]
+[ext_resource type="AudioStream" uid="uid://cleo2ncl8kyvt" path="res://assets/sounds/adaptive_music/the_gentleman/track_night_layer_4.ogg" id="6_qdad4"]
+
+[node name="TheWandererNight" type="Node"]
+script = ExtResource("1_yyure")
+
+[node name="Layer1" type="Node" parent="."]
+script = ExtResource("2_8cx1c")
+audio_streams = Array[AudioStream]([ExtResource("3_x0xeo")])
+
+[node name="Layer2" type="Node" parent="."]
+script = ExtResource("2_8cx1c")
+audio_streams = Array[AudioStream]([ExtResource("4_2prv5")])
+layer_on = false
+
+[node name="Layer3" type="Node" parent="."]
+script = ExtResource("2_8cx1c")
+audio_streams = Array[AudioStream]([ExtResource("5_oxvwy")])
+layer_on = false
+
+[node name="Layer4" type="Node" parent="."]
+script = ExtResource("2_8cx1c")
+audio_streams = Array[AudioStream]([ExtResource("6_qdad4")])
+layer_on = false
