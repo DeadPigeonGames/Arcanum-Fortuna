@@ -9,7 +9,6 @@
 
 [node name="TheWandererDay" type="Node"]
 script = ExtResource("1_14wgg")
-volume_db = -67.915
 
 [node name="Layer1" type="Node" parent="."]
 script = ExtResource("2_t0glx")
