@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnsoofya6tv7v"]
+
+[ext_resource type="Script" path="res://systems/ui/menus/utils/bus_slider.gd" id="1_rj2ur"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Audio" type="Control" parent="TabContainer"]
+layout_mode = 2
+
+[node name="sliders" type="VBoxContainer" parent="TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="slider_music" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Audio/sliders/slider_music"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Music"
+
+[node name="enabled" type="CheckBox" parent="TabContainer/Audio/sliders/slider_music"]
+layout_mode = 2
+button_pressed = true
+
+[node name="master_slider" type="HSlider" parent="TabContainer/Audio/sliders/slider_music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_rj2ur")
+target_bus = "Voices"
+
+[node name="Video" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Accessibilty" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_music/enabled" to="TabContainer/Audio/sliders/slider_music/master_slider" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_music/master_slider" to="TabContainer/Audio/sliders/slider_music/master_slider" method="_on_drag_ended"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_music/master_slider" to="TabContainer/Audio/sliders/slider_music/master_slider" method="_on_drag_started"]
