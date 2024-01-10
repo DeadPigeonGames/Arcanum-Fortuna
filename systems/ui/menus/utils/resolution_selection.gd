@@ -16,12 +16,8 @@ func _ready():
 
 func _on_item_selected(index):
 	var desired = resolutions[index]
-	if desired == DisplayServer.WINDOW_MODE_FULLSCREEN:
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
-		DisplayServer.window_set_size(DisplayServer.screen_get_size())
-		DisplayServer.window_set_position(Vector2i.ZERO)
-	if desired != DisplayServer.WINDOW_MODE_FULLSCREEN:
-		DisplayServer.window_set_size(desired)
+	DisplayServer.window_set_size(desired)
+	get_window().move_to_center()
 
 
 func _process(delta):
