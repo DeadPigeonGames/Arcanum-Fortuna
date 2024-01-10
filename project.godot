@@ -45,9 +45,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position_type=2
 window/size/initial_screen=1
+window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [editor_plugins]
@@ -126,7 +127,10 @@ dialogic_default_action={
 
 [rendering]
 
+shader_compiler/shader_cache/compress=false
+shader_compiler/shader_cache/use_zstd_compression=false
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+anti_aliasing/quality/msaa_2d=3
 viewport/hdr_2d=true
 lights_and_shadows/size/viewport_height=800
 lights_and_shadows/size/viewport_width=1920
