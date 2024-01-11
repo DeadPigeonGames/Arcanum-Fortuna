@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnsoofya6tv7v"]
+[gd_scene load_steps=7 format=3 uid="uid://biy5pjrvhi2le"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/options_menu.gd" id="1_38pu7"]
 [ext_resource type="Script" path="res://systems/ui/menus/utils/bus_slider.gd" id="1_rj2ur"]
@@ -30,10 +30,8 @@ theme_override_constants/side_margin = 12
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/panel = SubResource("StyleBoxFlat_t0j42")
-current_tab = 1
 
 [node name="Audio" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="sliders" type="VBoxContainer" parent="TabContainer/Audio"]
@@ -44,6 +42,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="slider_master" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="enabled" type="CheckBox" parent="TabContainer/Audio/sliders/slider_master"]
+layout_mode = 2
+button_pressed = true
+text = "Master"
+
+[node name="master_slider" type="HSlider" parent="TabContainer/Audio/sliders/slider_master"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_rj2ur")
+
 [node name="slider_music" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
@@ -53,17 +70,100 @@ alignment = 1
 [node name="enabled" type="CheckBox" parent="TabContainer/Audio/sliders/slider_music"]
 layout_mode = 2
 button_pressed = true
-text = "Master"
+text = "Music"
 
-[node name="master_slider" type="HSlider" parent="TabContainer/Audio/sliders/slider_music"]
+[node name="music" type="HSlider" parent="TabContainer/Audio/sliders/slider_music"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 max_value = 1.0
 step = 0.01
 script = ExtResource("1_rj2ur")
+target_bus = "Music"
+
+[node name="slider_bgfx" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="enabled" type="CheckBox" parent="TabContainer/Audio/sliders/slider_bgfx"]
+layout_mode = 2
+button_pressed = true
+text = "Background FX"
+
+[node name="bgx" type="HSlider" parent="TabContainer/Audio/sliders/slider_bgfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_rj2ur")
+target_bus = "BGFX"
+
+[node name="slider_ui" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="enabled" type="CheckBox" parent="TabContainer/Audio/sliders/slider_ui"]
+layout_mode = 2
+button_pressed = true
+text = "UI"
+
+[node name="ui" type="HSlider" parent="TabContainer/Audio/sliders/slider_ui"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_rj2ur")
+target_bus = "UI"
+
+[node name="slider_vfx" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="enabled" type="CheckBox" parent="TabContainer/Audio/sliders/slider_vfx"]
+layout_mode = 2
+button_pressed = true
+text = "VFX"
+
+[node name="vfx" type="HSlider" parent="TabContainer/Audio/sliders/slider_vfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_rj2ur")
+target_bus = "VFX"
+
+[node name="slider_voices" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="enabled" type="CheckBox" parent="TabContainer/Audio/sliders/slider_voices"]
+layout_mode = 2
+button_pressed = true
+text = "Voices
+"
+
+[node name="vfx" type="HSlider" parent="TabContainer/Audio/sliders/slider_voices"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_rj2ur")
+target_bus = "Voices"
 
 [node name="Video" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="VideoOptions" type="VBoxContainer" parent="TabContainer/Video"]
@@ -102,7 +202,6 @@ script = ExtResource("3_lts5j")
 [node name="HideInWeb" type="Node" parent="TabContainer/Video/VideoOptions"]
 script = ExtResource("3_wit75")
 show_or_hide = 0
-delete = true
 
 [node name="Accessibilty" type="Control" parent="TabContainer"]
 visible = false
@@ -119,9 +218,24 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "Back"
 
-[connection signal="toggled" from="TabContainer/Audio/sliders/slider_music/enabled" to="TabContainer/Audio/sliders/slider_music/master_slider" method="_on_check_box_toggled"]
-[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_music/master_slider" to="TabContainer/Audio/sliders/slider_music/master_slider" method="_on_drag_ended"]
-[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_music/master_slider" to="TabContainer/Audio/sliders/slider_music/master_slider" method="_on_drag_started"]
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_master/enabled" to="TabContainer/Audio/sliders/slider_master/master_slider" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_master/master_slider" to="TabContainer/Audio/sliders/slider_master/master_slider" method="_on_drag_ended"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_master/master_slider" to="TabContainer/Audio/sliders/slider_master/master_slider" method="_on_drag_started"]
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_music/enabled" to="TabContainer/Audio/sliders/slider_music/music" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_music/music" to="TabContainer/Audio/sliders/slider_music/music" method="_on_drag_ended"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_music/music" to="TabContainer/Audio/sliders/slider_music/music" method="_on_drag_started"]
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_bgfx/enabled" to="TabContainer/Audio/sliders/slider_bgfx/bgx" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_bgfx/bgx" to="TabContainer/Audio/sliders/slider_bgfx/bgx" method="_on_drag_ended"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_bgfx/bgx" to="TabContainer/Audio/sliders/slider_bgfx/bgx" method="_on_drag_started"]
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_ui/enabled" to="TabContainer/Audio/sliders/slider_ui/ui" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_ui/ui" to="TabContainer/Audio/sliders/slider_ui/ui" method="_on_drag_ended"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_ui/ui" to="TabContainer/Audio/sliders/slider_ui/ui" method="_on_drag_started"]
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_vfx/enabled" to="TabContainer/Audio/sliders/slider_vfx/vfx" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_vfx/vfx" to="TabContainer/Audio/sliders/slider_vfx/vfx" method="_on_drag_ended"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_vfx/vfx" to="TabContainer/Audio/sliders/slider_vfx/vfx" method="_on_drag_started"]
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_voices/enabled" to="TabContainer/Audio/sliders/slider_voices/vfx" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_voices/vfx" to="TabContainer/Audio/sliders/slider_voices/vfx" method="_on_drag_ended"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_voices/vfx" to="TabContainer/Audio/sliders/slider_voices/vfx" method="_on_drag_started"]
 [connection signal="item_selected" from="TabContainer/Video/VideoOptions/ResolutionSelection/resolution" to="TabContainer/Video/VideoOptions/ResolutionSelection/resolution" method="_on_item_selected"]
 [connection signal="item_selected" from="TabContainer/Video/VideoOptions/FullscreenSelection/fullscreen_mode" to="TabContainer/Video/VideoOptions/FullscreenSelection/fullscreen_mode" method="_on_item_selected"]
 [connection signal="pressed" from="BtnBack" to="." method="quit_menu"]
