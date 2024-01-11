@@ -20,8 +20,6 @@ config/icon="res://icon.svg"
 
 GlobalLog="*res://utils/autoload/global_log.tscn"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
-MusicPlayer="*res://utils/autoload/music_player.tscn"
-AudioManager="*res://addons/AdaptiSound/Singleton/AudioManager.tscn"
 PauseMenu="*res://systems/ui/menus/pause_menu.tscn"
 
 [dialogic]
