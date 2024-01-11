@@ -44,10 +44,13 @@ func _input(event):
 	for tile in $PlayerTiles.get_children():
 		if tile.get_global_rect().has_point(get_global_mouse_position()):
 			tile.self_modulate = tile_hovered_color
+			if hovered_tile == null:
+				SfxOther._SFX_PlacableHover()
 			hovered_tile = tile
 		else:
 			if tile == hovered_tile:
 				hovered_tile = null
+				SfxOther._SFX_PlacableHoverStop()
 			tile.self_modulate = tile_interactible_color
 
 
@@ -60,6 +63,7 @@ func _on_card_relased(card: Card):
 	card.reparent(hovered_tile)
 	card.global_position = hovered_tile.global_position + Vector2(-20, -40)
 	card.z_index = 2
+	SfxOther._SFX_PlacableHoverStop()
 
 
 func lock_friendly_cards():
@@ -211,5 +215,6 @@ func end_tile_highlight(idx, friendly = false):
 
 
 func _on_card_deletion_button_toggled(toggled_on):
+	SfxOther._SFX_UIButtonPress()
 	for card : CombatCard in get_friendly_cards():
 		card.set_delete_mode(toggled_on)

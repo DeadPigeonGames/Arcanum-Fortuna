@@ -41,7 +41,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 			visualCard.setup()
 			$CanvasLayer/Control/Cards.add_child(visualCard)
 			visualCard.clicked.connect(card_clicked)
-			$AudioStreamPlayer.play()
+			SfxOther._SFX_Draw()
 			visualCard.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	%SkipButton.visible = true

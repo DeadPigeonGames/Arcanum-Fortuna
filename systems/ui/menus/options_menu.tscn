@@ -99,7 +99,7 @@ size_flags_vertical = 4
 max_value = 1.0
 step = 0.01
 script = ExtResource("1_rj2ur")
-target_bus = "BGFX"
+target_bus = "BackgroundFX"
 
 [node name="slider_ui" type="HBoxContainer" parent="TabContainer/Audio/sliders"]
 custom_minimum_size = Vector2(500, 0)
@@ -153,7 +153,7 @@ button_pressed = true
 text = "Voices
 "
 
-[node name="vfx" type="HSlider" parent="TabContainer/Audio/sliders/slider_voices"]
+[node name="voices" type="HSlider" parent="TabContainer/Audio/sliders/slider_voices"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -219,23 +219,23 @@ theme_override_font_sizes/font_size = 64
 text = "Back"
 
 [connection signal="toggled" from="TabContainer/Audio/sliders/slider_master/enabled" to="TabContainer/Audio/sliders/slider_master/master_slider" method="_on_check_box_toggled"]
-[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_master/master_slider" to="TabContainer/Audio/sliders/slider_master/master_slider" method="_on_drag_ended"]
 [connection signal="drag_started" from="TabContainer/Audio/sliders/slider_master/master_slider" to="TabContainer/Audio/sliders/slider_master/master_slider" method="_on_drag_started"]
+[connection signal="value_changed" from="TabContainer/Audio/sliders/slider_master/master_slider" to="TabContainer/Audio/sliders/slider_master/master_slider" method="_on_value_changed"]
 [connection signal="toggled" from="TabContainer/Audio/sliders/slider_music/enabled" to="TabContainer/Audio/sliders/slider_music/music" method="_on_check_box_toggled"]
-[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_music/music" to="TabContainer/Audio/sliders/slider_music/music" method="_on_drag_ended"]
 [connection signal="drag_started" from="TabContainer/Audio/sliders/slider_music/music" to="TabContainer/Audio/sliders/slider_music/music" method="_on_drag_started"]
+[connection signal="value_changed" from="TabContainer/Audio/sliders/slider_music/music" to="TabContainer/Audio/sliders/slider_music/music" method="_on_value_changed"]
 [connection signal="toggled" from="TabContainer/Audio/sliders/slider_bgfx/enabled" to="TabContainer/Audio/sliders/slider_bgfx/bgx" method="_on_check_box_toggled"]
-[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_bgfx/bgx" to="TabContainer/Audio/sliders/slider_bgfx/bgx" method="_on_drag_ended"]
 [connection signal="drag_started" from="TabContainer/Audio/sliders/slider_bgfx/bgx" to="TabContainer/Audio/sliders/slider_bgfx/bgx" method="_on_drag_started"]
+[connection signal="value_changed" from="TabContainer/Audio/sliders/slider_bgfx/bgx" to="TabContainer/Audio/sliders/slider_bgfx/bgx" method="_on_value_changed"]
 [connection signal="toggled" from="TabContainer/Audio/sliders/slider_ui/enabled" to="TabContainer/Audio/sliders/slider_ui/ui" method="_on_check_box_toggled"]
-[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_ui/ui" to="TabContainer/Audio/sliders/slider_ui/ui" method="_on_drag_ended"]
 [connection signal="drag_started" from="TabContainer/Audio/sliders/slider_ui/ui" to="TabContainer/Audio/sliders/slider_ui/ui" method="_on_drag_started"]
+[connection signal="value_changed" from="TabContainer/Audio/sliders/slider_ui/ui" to="TabContainer/Audio/sliders/slider_ui/ui" method="_on_value_changed"]
 [connection signal="toggled" from="TabContainer/Audio/sliders/slider_vfx/enabled" to="TabContainer/Audio/sliders/slider_vfx/vfx" method="_on_check_box_toggled"]
-[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_vfx/vfx" to="TabContainer/Audio/sliders/slider_vfx/vfx" method="_on_drag_ended"]
 [connection signal="drag_started" from="TabContainer/Audio/sliders/slider_vfx/vfx" to="TabContainer/Audio/sliders/slider_vfx/vfx" method="_on_drag_started"]
-[connection signal="toggled" from="TabContainer/Audio/sliders/slider_voices/enabled" to="TabContainer/Audio/sliders/slider_voices/vfx" method="_on_check_box_toggled"]
-[connection signal="drag_ended" from="TabContainer/Audio/sliders/slider_voices/vfx" to="TabContainer/Audio/sliders/slider_voices/vfx" method="_on_drag_ended"]
-[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_voices/vfx" to="TabContainer/Audio/sliders/slider_voices/vfx" method="_on_drag_started"]
+[connection signal="value_changed" from="TabContainer/Audio/sliders/slider_vfx/vfx" to="TabContainer/Audio/sliders/slider_vfx/vfx" method="_on_value_changed"]
+[connection signal="toggled" from="TabContainer/Audio/sliders/slider_voices/enabled" to="TabContainer/Audio/sliders/slider_voices/voices" method="_on_check_box_toggled"]
+[connection signal="drag_started" from="TabContainer/Audio/sliders/slider_voices/voices" to="TabContainer/Audio/sliders/slider_voices/voices" method="_on_drag_started"]
+[connection signal="value_changed" from="TabContainer/Audio/sliders/slider_voices/voices" to="TabContainer/Audio/sliders/slider_voices/voices" method="_on_value_changed"]
 [connection signal="item_selected" from="TabContainer/Video/VideoOptions/ResolutionSelection/resolution" to="TabContainer/Video/VideoOptions/ResolutionSelection/resolution" method="_on_item_selected"]
 [connection signal="item_selected" from="TabContainer/Video/VideoOptions/FullscreenSelection/fullscreen_mode" to="TabContainer/Video/VideoOptions/FullscreenSelection/fullscreen_mode" method="_on_item_selected"]
 [connection signal="pressed" from="BtnBack" to="." method="quit_menu"]

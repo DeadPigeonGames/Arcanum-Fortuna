@@ -96,6 +96,7 @@ _data = {
 }
 
 [node name="SFXOther" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -107,28 +108,28 @@ stream = SubResource("AudioStreamRandomizer_sqnrc")
 volume_db = -3.0
 pitch_scale = 1.25
 max_polyphony = 4
-bus = &"SFXSound"
+bus = &"VFX"
 
 [node name="HandOpen" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_sqnrc")
 volume_db = -3.0
 pitch_scale = 1.25
 max_polyphony = 4
-bus = &"SFXSound"
+bus = &"VFX"
 
 [node name="HandClose" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_sqnrc")
 volume_db = -3.0
 pitch_scale = 1.25
 max_polyphony = 4
-bus = &"SFXSound"
+bus = &"VFX"
 
 [node name="HandCardHover" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_sqnrc")
 volume_db = -3.0
 pitch_scale = 1.25
 max_polyphony = 4
-bus = &"SFXSound"
+bus = &"VFX"
 
 [node name="KarmaPlayerBlip" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_sphk5")
@@ -143,21 +144,21 @@ bus = &"VFX"
 
 [node name="UiButtonHover" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_6ga3n")
-bus = &"SFXUi"
+bus = &"UI"
 
 [node name="UiButtonPress" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_eet8d")
-bus = &"SFXUi"
+bus = &"UI"
 
 [node name="PlacableHover" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_6ga3n")
 max_polyphony = 3
-bus = &"SFXUi"
+bus = &"VFX"
 
 [node name="PlacableHoverLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_36cxs")
 volume_db = -64.0
-bus = &"SFXUi"
+bus = &"VFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlacableHoverLoop"]
 libraries = {
@@ -168,4 +169,4 @@ libraries = {
 stream = ExtResource("22_6gxm1")
 volume_db = -3.0
 max_polyphony = 4
-bus = &"SFXSound"
+bus = &"VFX"

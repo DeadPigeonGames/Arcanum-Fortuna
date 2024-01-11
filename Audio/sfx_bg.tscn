@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://brcarklse3rna" path="res://Audio/Music/Music1.ogg" id="3_hof6i"]
 
 [node name="SFXBG" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -14,7 +15,7 @@ script = ExtResource("1_h5q58")
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rqkcx")
 autoplay = true
-bus = &"SFXAmbience"
+bus = &"BackgroundFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hof6i")

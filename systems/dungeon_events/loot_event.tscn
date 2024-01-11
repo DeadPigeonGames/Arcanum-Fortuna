@@ -1,9 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=19 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_wtojk"]
-[ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="5_dpvki"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="7_3menk"]
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="9_5boo4"]
 [ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="9_mciwm"]
@@ -134,9 +133,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
 text = "continue"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_dpvki")
 
 [connection signal="pressed" from="CanvasLayer/Control/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/SkipButton" to="." method="_on_skip_button_pressed"]
