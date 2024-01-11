@@ -46,6 +46,10 @@ func setup():
 	base_health = health
 	for keyword in %KeyWords.get_children():
 		keyword.animation_finished.connect(check_if_animations_finished)
+	
+	if card_data.sound_effect:
+		%SFXCard.SFX_CardSignature = card_data.sound_effect
+		%SFXCard._SFX_Signature()
 
 
 func make_enemy():
@@ -114,6 +118,7 @@ func restore_default_color():
 
 
 func process_death() -> bool:
+	%SFXCard._SFX_Attack()
 	if health <= 0:
 		await get_tree().process_frame
 		if is_animating:
