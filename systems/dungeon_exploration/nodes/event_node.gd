@@ -118,7 +118,8 @@ func _generated(node_index: int, level: int, _rng: RandomNumberGenerator):
 
 
 func _on_mouse_entered():
-	SfxOther._SFX_UIButtonHover()
+	if selectable:
+		SfxOther._SFX_UIButtonHover()
 	hovering = true
 
 
