@@ -1,5 +1,7 @@
 class_name CombatCard extends Card
 
+@export var buff_color := Color.GREEN
+@export var debuff_color := Color.RED
 
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
 @export var is_auto_flip = true
@@ -35,15 +37,32 @@ var is_animating: bool:
 		return __is_animating
 
 
-func check_if_animations_finished():
-	if not is_animating:
-		animation_finished.emit()
+func set_attack(value):
+	super.set_attack(value)
+	if attack > base_attack:
+		%AttackCost.self_modulate = buff_color
+	elif attack < base_attack:
+		%AttackCost.self_modulate = debuff_color
+	else:
+		%AttackCost.self_modulate = Color.WHITE
+
+
+func set_health(value):
+	super.set_health(value)
+	if health > base_health:
+		%HealthCost.self_modulate = buff_color
+	elif health < base_health:
+		%HealthCost.self_modulate = debuff_color
+	else:
+		%HealthCost.self_modulate = Color.WHITE
 
 
 func setup():
 	super.setup()
 	base_attack = attack
 	base_health = health
+	attack = base_attack
+	health = base_health
 	for keyword in %KeyWords.get_children():
 		keyword.animation_finished.connect(check_if_animations_finished)
 	
@@ -67,6 +86,11 @@ func trigger_keywords(source, owner, trigger : int, combat = null):
 					get_node("KeyWords").get_child(i))
 
 
+func check_if_animations_finished():
+	if not is_animating:
+		animation_finished.emit()
+
+
 func flip():
 	%Artwork.flip_h = !%Artwork.flip_h
 	var flipped_name = ""
@@ -85,9 +109,10 @@ func flip():
 
 func get_target_offsets():
 	placed_position = global_position
+	target_offsets = [0]
 	for i in range(keywords.size()):
 		if not keywords[i] is ActivatedKeyword and keywords[i].has_method("get_new_targets"):
-			target_offsets = keywords[i].get_new_targets(target_offsets)
+			target_offsets = keywords[i].get_new_targets(target_offsets, self)
 	return target_offsets
 
 
@@ -118,7 +143,6 @@ func restore_default_color():
 
 
 func process_death() -> bool:
-	%SFXCard._SFX_Attack()
 	if health <= 0:
 		await get_tree().process_frame
 		if is_animating:
@@ -134,7 +158,6 @@ func process_death() -> bool:
 
 
 func animate_attack(target, tile_idx, tile: Control) -> bool:
-	%SFXCard._SFX_Attack()
 	var target_position
 	var half_card = get_rect().size.x / 2
 	if target is CombatCard:

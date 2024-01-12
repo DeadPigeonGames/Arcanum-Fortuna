@@ -1,4 +1,7 @@
-class_name GameBoard extends VBoxContainer
+class_name GameBoard
+extends VBoxContainer
+
+signal active_cards_changed(new_card : CombatCard)
 
 @export var combat_card_prefab : PackedScene
 
@@ -44,13 +47,10 @@ func _input(event):
 	for tile in $PlayerTiles.get_children():
 		if tile.get_global_rect().has_point(get_global_mouse_position()):
 			tile.self_modulate = tile_hovered_color
-			if hovered_tile == null:
-				SfxOther._SFX_PlacableHover()
 			hovered_tile = tile
 		else:
 			if tile == hovered_tile:
 				hovered_tile = null
-				SfxOther._SFX_PlacableHoverStop()
 			tile.self_modulate = tile_interactible_color
 
 
@@ -63,7 +63,6 @@ func _on_card_relased(card: Card):
 	card.reparent(hovered_tile)
 	card.global_position = hovered_tile.global_position + Vector2(-20, -40)
 	card.z_index = 2
-	SfxOther._SFX_PlacableHoverStop()
 
 
 func lock_friendly_cards():
@@ -84,7 +83,7 @@ func lock_friendly_cards():
 		[new_combat_card.card_data.name, i, 0])
 		card.queue_free()
 		await get_tree().process_frame
-		_on_active_cards_changed(new_combat_card)
+		active_cards_changed.emit(new_combat_card)
 
 
 func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
@@ -101,7 +100,7 @@ func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 	[new_combat_card.card_data.name, tile_idx, 1])
 	await get_tree().process_frame
-	_on_active_cards_changed(new_combat_card)
+	active_cards_changed.emit(new_combat_card)
 	return true
 
 
@@ -114,7 +113,7 @@ func try_move_enemy_card_to_front(tile_idx):
 	await enemy_tiles_back.get_child(tile_idx).get_child(0).animate_move(get_enemy_tile_pos(1, tile_idx))
 	enemy_tiles_back.get_child(tile_idx).get_child(0).reparent(enemy_tiles_front.get_child(tile_idx))
 	await get_tree().process_frame
-	_on_active_cards_changed(enemy_tiles_front.get_child(tile_idx).get_child(0))
+	active_cards_changed.emit(enemy_tiles_front.get_child(tile_idx).get_child(0))
 	return true
 	
 func place_enemy_card_back(cardData : CardData, tile_idx) -> bool:
@@ -189,15 +188,6 @@ func get_enemy_back_row() -> Array[CombatCard]:
 	return res
 
 
-func _on_active_cards_changed(source):
-	var active_cards = get_active_cards()
-	for card : CombatCard in active_cards:
-		for i in range(card.keywords.size()):
-			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
-				await card.keywords[i].trigger(source, card.keywords[i].get_target(self, card), \
-						card.get_node("KeyWords").get_child(i), {"active_cards": active_cards})
-
-
 func get_active_cards() -> Array[CombatCard]:
 	return get_friendly_cards() + get_front_enemies()
 
@@ -215,6 +205,5 @@ func end_tile_highlight(idx, friendly = false):
 
 
 func _on_card_deletion_button_toggled(toggled_on):
-	SfxOther._SFX_UIButtonPress()
 	for card : CombatCard in get_friendly_cards():
 		card.set_delete_mode(toggled_on)
