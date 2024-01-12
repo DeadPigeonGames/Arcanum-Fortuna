@@ -158,6 +158,7 @@ func process_death() -> bool:
 
 
 func animate_attack(target, tile_idx, tile: Control) -> bool:
+	%SFXCard._SFX_Attack()
 	var target_position
 	var half_card = get_rect().size.x / 2
 	if target is CombatCard:
