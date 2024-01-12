@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=20 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_pentacles.tres" id="12_5h8ov"]
 [ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="14_n23su"]
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="15_5fchr"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="15_5vlwj"]
 [ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="16_mhl86"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="17_37lf3"]
 
@@ -76,6 +77,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ConfirmButton" type="Button" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -93,6 +95,16 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
 text = "confirm"
+
+[node name="hoverSound" parent="CanvasLayer/Control/ConfirmButton" instance=ExtResource("15_5vlwj")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="clickSound" parent="CanvasLayer/Control/ConfirmButton" instance=ExtResource("15_5vlwj")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "pressed"
 
 [node name="SkipButton" type="Button" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
@@ -114,25 +126,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
 text = "Skip"
 
-[node name="Button" type="Button" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -91.0
-offset_top = -137.0
-offset_right = 91.0
-offset_bottom = -72.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
-text = "continue"
+[node name="hoverSound" parent="CanvasLayer/Control/SkipButton" instance=ExtResource("15_5vlwj")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="clickSound" parent="CanvasLayer/Control/SkipButton" instance=ExtResource("15_5vlwj")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "pressed"
 
 [connection signal="pressed" from="CanvasLayer/Control/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/SkipButton" to="." method="_on_skip_button_pressed"]

@@ -5,6 +5,7 @@ extends Node
 @export var cardsToChooseFrom := 3
 @export var cardTemplate: PackedScene
 @export var seed := 0
+@export var delay_before_continue = 1.0
 
 var rng := RandomNumberGenerator.new()
 
@@ -81,9 +82,8 @@ func _on_confirm_button_pressed():
 			player_data_ref.cardStack.push_back(c.card_data.duplicate())
 		else:
 			c.queue_free()
-	$CanvasLayer/Control/Button.show()
 	$CanvasLayer/Control/SkipButton.hide()
-	await $CanvasLayer/Control/Button.pressed
+	await get_tree().create_timer(delay_before_continue).timeout
 	CardsOverlay.toggle(prev_mode)
 	finished.emit()
 	queue_free()

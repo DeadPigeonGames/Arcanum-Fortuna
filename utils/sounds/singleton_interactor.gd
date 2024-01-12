@@ -16,6 +16,11 @@ func _ready():
 
 func execute():
 	if singleton == 0:
-		SfxBg[method_to_call].call()
+		if SfxBg.has_method(method_to_call):
+			SfxBg[method_to_call].call()
+			return
 	elif singleton == 1:
-		SfxOther[method_to_call].call()
+		if SfxOther.has_method(method_to_call):
+			SfxOther[method_to_call].call()
+			return
+	push_error("Couldn't find method %s" % method_to_call)
