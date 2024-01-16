@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dnd4as4ntllbq" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_kvi1j"]
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="18_er2n6"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="19_oiaej"]
-[ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="20_qnmls"]
+[ext_resource type="PackedScene" uid="uid://ddu4fiutn7mwc" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="20_pee6j"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="21_fakbl"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
@@ -127,7 +127,7 @@ mouse_filter = 2
 theme_override_constants/separation = 64
 script = ExtResource("15_v0yym")
 combat_card_prefab = ExtResource("16_rdjta")
-enemy_player = NodePath("../EnemyPlayer")
+enemy_player = NodePath("")
 tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 1)
 tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
 tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
@@ -312,17 +312,8 @@ text = "Once you press this the following will happen:
 4. Enemy cards attack from left to rigtht.
 5. The next turn starts and you'll draw a card."
 
-[node name="EnemyPlayer" parent="." instance=ExtResource("20_qnmls")]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -300.0
-offset_top = 30.0
-offset_right = -15.0
-offset_bottom = 0.0
-grow_horizontal = 0
+[node name="CopyOfEnemyPlayer" parent="." instance=ExtResource("20_pee6j")]
+layout_mode = 0
 
 [node name="CurrentPhaseLabel" type="Label" parent="."]
 visible = false
