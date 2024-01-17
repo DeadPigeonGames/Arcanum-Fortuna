@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://irx88bwog6fx"]
+[gd_scene load_steps=42 format=3 uid="uid://bdh0uj6nl62hc"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_djypq"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_ocjat"]
@@ -13,13 +13,18 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="11_rv7wn"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="12_obrfk"]
 [ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="13_l7o3a"]
-[ext_resource type="Texture2D" uid="uid://bqaoik2rrtkum" path="res://assets/sprites/backgrounds/battle_background.jpg" id="14_2hbai"]
+[ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_h3xoh"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="15_v0yym"]
 [ext_resource type="PackedScene" uid="uid://dgdblxt0g8doq" path="res://systems/card_combat/cards/combat_card.tscn" id="16_rdjta"]
-[ext_resource type="PackedScene" uid="uid://dnd4as4ntllbq" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_kvi1j"]
+[ext_resource type="PackedScene" uid="uid://ckn5uoesaguy0" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_kvi1j"]
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="18_er2n6"]
+[ext_resource type="Texture2D" uid="uid://bpxh1tf25d17s" path="res://assets/ui/gameboard/end_turn_element_placeholder.png" id="19_1o6uq"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="19_oiaej"]
-[ext_resource type="PackedScene" uid="uid://ddu4fiutn7mwc" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="20_pee6j"]
+[ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_qcvgh"]
+[ext_resource type="Texture2D" uid="uid://du43fo187hof7" path="res://assets/ui/gameboard/end_turn_element_pressed_placeholder.png" id="20_dl3h4"]
+[ext_resource type="PackedScene" uid="uid://co8hw7e4o4nel" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="20_pee6j"]
+[ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="20_txuo2"]
+[ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="20_wekok"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="21_fakbl"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
@@ -60,11 +65,6 @@ script = ExtResource("11_rv7wn")
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("12_obrfk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1vun5"]
-texture = ExtResource("14_2hbai")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxg0t"]
 bg_color = Color(1, 1, 1, 1)
 
@@ -88,9 +88,6 @@ keycode = 4194312
 [sub_resource type="Shortcut" id="Shortcut_udv11"]
 events = [SubResource("InputEventKey_thsaf"), SubResource("InputEventKey_kwdgl"), SubResource("InputEventKey_vvn32")]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy01y"]
-bg_color = Color(1, 0.505882, 0.137255, 1)
-
 [node name="CardBattle" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -103,17 +100,16 @@ phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd
 phase_end_delay = 0.2
 debug_player_data = ExtResource("13_l7o3a")
 
-[node name="Background" type="Panel" parent="."]
-visible = false
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_1vun5")
+texture = ExtResource("14_h3xoh")
 
-[node name="GameBoard" type="VBoxContainer" parent="." node_paths=PackedStringArray("enemy_player")]
+[node name="GameBoard" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -127,7 +123,6 @@ mouse_filter = 2
 theme_override_constants/separation = 64
 script = ExtResource("15_v0yym")
 combat_card_prefab = ExtResource("16_rdjta")
-enemy_player = NodePath("")
 tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 1)
 tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
 tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
@@ -272,14 +267,17 @@ offset_left = -138.0
 offset_top = 680.0
 offset_right = 32.0
 offset_bottom = 946.0
+texture = ExtResource("19_qcvgh")
 
 [node name="CardDeletionAreaActive" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 680.0
 offset_right = 170.0
 offset_bottom = 946.0
+texture = ExtResource("19_qcvgh")
 
-[node name="EndTurnButton" type="Button" parent="."]
+[node name="EndTurnButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -293,11 +291,10 @@ offset_right = -148.0
 offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_gy01y")
-text = "End Turn
-"
+texture_normal = ExtResource("19_1o6uq")
+texture_pressed = ExtResource("20_dl3h4")
+texture_hover = ExtResource("20_wekok")
+texture_disabled = ExtResource("20_txuo2")
 
 [node name="ShowTooltip" type="Control" parent="EndTurnButton"]
 anchors_preset = 0
