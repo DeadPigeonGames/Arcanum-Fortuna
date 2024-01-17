@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6ng7re6x76bk"]
+[gd_scene load_steps=5 format=3 uid="uid://c6ng7re6x76bk"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_stack.gd" id="1_axc8c"]
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="2_qkmsd"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="3_0vdgp"]
+[ext_resource type="Texture2D" uid="uid://dilv52k7npt88" path="res://assets/ui/gameboard/current_deck_size_underlay_placeholder.png" id="3_ba1gb"]
 
 [node name="CardStack" type="Control"]
 layout_mode = 3
@@ -25,12 +26,18 @@ grow_vertical = 2
 pivot_offset = Vector2(100, 150)
 texture = ExtResource("2_qkmsd")
 
-[node name="CardCount" type="Label" parent="TextureRect"]
-layout_mode = 1
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
 offset_left = 36.0
 offset_top = -70.0
 offset_right = 176.0
 offset_bottom = 70.0
+texture = ExtResource("3_ba1gb")
+
+[node name="CardCount" type="Label" parent="TextureRect/TextureRect"]
+layout_mode = 1
+offset_right = 140.0
+offset_bottom = 140.0
 theme_override_font_sizes/font_size = 50
 text = "100"
 horizontal_alignment = 1
