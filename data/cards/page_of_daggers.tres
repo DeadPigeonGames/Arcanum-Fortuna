@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_2hdh4"]
 [ext_resource type="Texture2D" uid="uid://5gdt1gdtvuea" path="res://assets/sprites/cards/page_of_cups.png" id="1_q5dbj"]
-[ext_resource type="Resource" uid="uid://c0jp8yp2mu58y" path="res://data/keyword/deathrattle_ATK1.tres" id="2_ibd8c"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_63jjv"]
 
 [resource]
 script = ExtResource("1_2hdh4")
@@ -16,3 +16,4 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
+keyword_slot_texture = ExtResource("2_63jjv")

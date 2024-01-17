@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://b5ytokrx5why5"]
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://b5ytokrx5why5"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_4j62v"]
-[ext_resource type="Texture2D" uid="uid://7crdyq3dl3en" path="res://assets/sprites/cards/page_of_swords.png" id="1_m0878"]
+[ext_resource type="Texture2D" uid="uid://7crdyq3dl3en" path="res://assets/sprites/cards/page_of_flags.png" id="1_m0878"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_4fpko"]
+[ext_resource type="Resource" uid="uid://c0jp8yp2mu58y" path="res://data/keyword/deathrattle_ATK1.tres" id="2_u8eyx"]
 
 [resource]
 script = ExtResource("1_4j62v")
@@ -15,3 +17,4 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
+keyword_slot_texture = ExtResource("2_4fpko")
