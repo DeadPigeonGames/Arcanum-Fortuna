@@ -96,3 +96,8 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	is_hovered = false
+
+
+func play_animation(animation):
+	if $AnimationPlayer.has_animation(animation):
+		$AnimationPlayer.play(animation)
