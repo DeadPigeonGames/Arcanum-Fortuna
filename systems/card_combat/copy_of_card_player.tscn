@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckn5uoesaguy0"]
+[gd_scene load_steps=15 format=3 uid="uid://ckn5uoesaguy0"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
 [ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://systems/card_combat/hand.tscn" id="2_mif1c"]
 [ext_resource type="PackedScene" uid="uid://cnw2n821p8qt8" path="res://systems/card_combat/card_stack.tscn" id="3_48drw"]
 [ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="4_j51k8"]
+[ext_resource type="PackedScene" uid="uid://c6ng7re6x76bk" path="res://systems/card_combat/copy_of_card_stack.tscn" id="5_h5pty"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="5_l02yx"]
 [ext_resource type="Texture2D" uid="uid://itwod5hjv66x" path="res://assets/ui/gameboard/board_corner_placeholder.png" id="5_luv56"]
 [ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="5_otkj5"]
@@ -54,8 +55,9 @@ grow_horizontal = 0
 grow_vertical = 2
 border_width = 0.0
 
-[node name="CardStack" parent="Deck" node_paths=PackedStringArray("target") instance=ExtResource("3_48drw")]
+[node name="DELETE_WHEN_ABUNDANTCardStack" parent="Deck" node_paths=PackedStringArray("target") instance=ExtResource("3_48drw")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 offset_left = -1476.0
 offset_top = 469.0
@@ -66,6 +68,13 @@ grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 target = NodePath("../../Hand")
 deckCardTemplate = ExtResource("4_j51k8")
+
+[node name="CardStack" parent="Deck" instance=ExtResource("5_h5pty")]
+offset_left = -1476.0
+offset_top = 469.0
+offset_right = -1226.0
+offset_bottom = 1119.0
+scale = Vector2(0.6, 0.6)
 
 [node name="ResourceContainer" type="Control" parent="."]
 layout_mode = 1
