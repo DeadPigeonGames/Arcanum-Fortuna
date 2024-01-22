@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhks1grxrynox"
-path="res://.godot/imported/card_king_of_coins.png-0285bde0d94e5130ff85a4a8bd94572f.ctex"
+uid="uid://d2rw6y6tcd56a"
+path="res://.godot/imported/dg_hermit.png-d332a774e86675174df1c3e1fa0dbe3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_king_of_coins.png"
-dest_files=["res://.godot/imported/card_king_of_coins.png-0285bde0d94e5130ff85a4a8bd94572f.ctex"]
+source_file="res://assets/sprites/dialogue/dg_hermit.png"
+dest_files=["res://.godot/imported/dg_hermit.png-d332a774e86675174df1c3e1fa0dbe3a.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
