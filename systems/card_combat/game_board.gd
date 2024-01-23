@@ -17,8 +17,8 @@ var accept_card = false
 var hovered_tile = null
 
 @onready var player_tiles = $PlayerTiles
-@onready var enemy_tiles_back = $EnemyTiles/Row1
-@onready var enemy_tiles_front = $EnemyTiles/Row2
+@onready var enemy_tiles_back = $EnemyTiles/EnemyBackrow
+@onready var enemy_tiles_front = $EnemyTiles/EnemyFrontrow
 
 const width = 5
 

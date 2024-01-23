@@ -93,7 +93,8 @@ offset_right = 428.0
 offset_bottom = 132.0
 texture = ExtResource("3_a2yau")
 
-[node name="Label" type="Label" parent="ResourceContainer/Health/HealthIcon"]
+[node name="HealthLabel" type="Label" parent="ResourceContainer/Health/HealthIcon"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

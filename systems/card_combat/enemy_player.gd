@@ -12,7 +12,7 @@ var health := 20 :
 		return health
 	set(value):
 		health = value
-		$Health/Label.text = "Health: " + str(health)
+		%HealthLabel.text = "Health: " + str(health)
 var max_health
 var karma = 0
 
@@ -31,7 +31,7 @@ func init(enemy_data):
 
 func set_health(value):
 	health = value
-	$Health/Label.text = "Health: " + str(health)
+	%HealthLabel.text = "Health: " + str(health)
 
 
 func get_rows():

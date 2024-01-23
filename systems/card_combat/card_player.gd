@@ -28,7 +28,7 @@ var health : int :
 		return health
 	set(value):
 		health = value
-		%Health/Label.text = "Health: " + str(health)
+		%HealthLabel.text = "Health: " + str(health)
 
 var max_health : int
 var karma : int

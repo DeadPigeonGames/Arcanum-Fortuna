@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=37 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -6,21 +6,25 @@
 [ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="2_42xvr"]
 [ext_resource type="PackedScene" uid="uid://dgdblxt0g8doq" path="res://systems/card_combat/cards/combat_card.tscn" id="3_1hhbj"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="3_mws33"]
-[ext_resource type="Texture2D" uid="uid://bqaoik2rrtkum" path="res://assets/sprites/backgrounds/battle_background.jpg" id="3_q3ccm"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="4_qhqtv"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="5_0huhq"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="5_7hc2v"]
 [ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="5_11qft"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_movement_phase.gd" id="5_lslbq"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="6_o6asy"]
-[ext_resource type="PackedScene" uid="uid://eo8nyis4kslg" path="res://systems/card_combat/card_player.tscn" id="6_tn8rr"]
-[ext_resource type="PackedScene" uid="uid://dsd1p31nygox4" path="res://systems/card_combat/enemy_player.tscn" id="7_g0vvg"]
 [ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="7_vptnu"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="8_qbqvo"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="9_j03le"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="10_5pdmy"]
+[ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_dvcfv"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
-[ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="18_mrpnm"]
+[ext_resource type="PackedScene" uid="uid://ckn5uoesaguy0" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
+[ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_43tdh"]
+[ext_resource type="Texture2D" uid="uid://bpxh1tf25d17s" path="res://assets/ui/gameboard/end_turn_element_placeholder.png" id="20_2dix6"]
+[ext_resource type="Texture2D" uid="uid://du43fo187hof7" path="res://assets/ui/gameboard/end_turn_element_pressed_placeholder.png" id="21_k1u0d"]
+[ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="22_mrf7r"]
+[ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="23_vwp6k"]
+[ext_resource type="PackedScene" uid="uid://co8hw7e4o4nel" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -60,36 +64,11 @@ script = ExtResource("9_j03le")
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("8_qbqvo")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1vun5"]
-texture = ExtResource("3_q3ccm")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxg0t"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wessj"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t3xx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rikmg"]
 bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="InputEventKey" id="InputEventKey_thsaf"]
-device = -1
-ctrl_pressed = true
-keycode = 68
-
-[sub_resource type="InputEventKey" id="InputEventKey_kwdgl"]
-device = -1
-ctrl_pressed = true
-keycode = 4194312
-
-[sub_resource type="InputEventKey" id="InputEventKey_vvn32"]
-device = -1
-keycode = 4194312
-
-[sub_resource type="Shortcut" id="Shortcut_udv11"]
-events = [SubResource("InputEventKey_thsaf"), SubResource("InputEventKey_kwdgl"), SubResource("InputEventKey_vvn32")]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy01y"]
-bg_color = Color(1, 0.505882, 0.137255, 1)
 
 [node name="CardBattle" type="Control"]
 layout_mode = 3
@@ -103,184 +82,184 @@ phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd
 phase_end_delay = 0.2
 debug_player_data = ExtResource("2_42xvr")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_1vun5")
+texture = ExtResource("14_dvcfv")
 
-[node name="GameBoard" type="VBoxContainer" parent="." node_paths=PackedStringArray("enemy_player", "player")]
+[node name="GameBoard" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.833
-offset_top = 51.0
-offset_bottom = 51.36
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -521.0
+offset_top = 36.0
+offset_right = 521.0
+offset_bottom = 946.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_constants/separation = 91
-alignment = 1
+theme_override_constants/separation = 64
 script = ExtResource("2_2jjg6")
 combat_card_prefab = ExtResource("3_1hhbj")
-enemy_player = NodePath("../EnemyPlayer")
-player = NodePath("../CardPlayer")
 tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 1)
 tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
 tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
 
 [node name="EnemyTiles" type="VBoxContainer" parent="GameBoard"]
 layout_mode = 2
-theme_override_constants/separation = 29
+theme_override_constants/separation = 48
 
-[node name="Row1" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
+[node name="EnemyBackrow" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
 layout_mode = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Row1"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Row2" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
+[node name="EnemyFrontrow" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
 layout_mode = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Row2"]
-custom_minimum_size = Vector2(164, 257)
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_hxg0t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
 [node name="PlayerTiles" type="HBoxContainer" parent="GameBoard"]
 layout_mode = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 48
 alignment = 1
 
 [node name="Panel" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(164, 257)
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel2" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(164, 257)
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel3" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(164, 257)
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel4" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(164, 257)
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel5" type="Panel" parent="GameBoard/PlayerTiles"]
 self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
-custom_minimum_size = Vector2(164, 257)
+custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="CardPlayer" parent="." instance=ExtResource("6_tn8rr")]
+[node name="CardPlayer" parent="." instance=ExtResource("17_we7n7")]
 layout_mode = 1
 
-[node name="CardDeletionButton" type="CheckButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 28.0
-offset_top = 651.0
-offset_right = 230.0
-offset_bottom = 682.0
-scale = Vector2(1.3, 1.3)
-shortcut = SubResource("Shortcut_udv11")
-text = "Card Deletion Mode"
+[node name="CardDeletionAreaInactive" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -138.0
+offset_top = 680.0
+offset_right = 32.0
+offset_bottom = 946.0
+texture = ExtResource("19_43tdh")
 
-[node name="ShowTooltip" parent="CardDeletionButton" instance=ExtResource("18_mrpnm")]
-layout_mode = 1
-text = "Toggle the delete button on all active cards of your side of the board.
- When deleting a card via their delete button you will gain their karma value once and then the card will be permanently deleted."
+[node name="CardDeletionAreaActive" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 680.0
+offset_right = 170.0
+offset_bottom = 946.0
+texture = ExtResource("19_43tdh")
 
-[node name="EndTurnButton" type="Button" parent="."]
+[node name="EndTurnButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.389
+anchor_top = 0.6
 anchor_right = 1.0
-anchor_bottom = 0.429
-offset_left = -277.0
-offset_top = -0.120026
-offset_right = -84.0
-offset_bottom = -0.320007
-theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_gy01y")
-text = "End Turn
-"
+anchor_bottom = 0.6
+offset_left = -292.0
+offset_top = -72.0
+offset_right = -148.0
+offset_bottom = 72.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("20_2dix6")
+texture_pressed = ExtResource("21_k1u0d")
+texture_hover = ExtResource("22_mrf7r")
+texture_disabled = ExtResource("23_vwp6k")
 
 [node name="ShowTooltip" type="Control" parent="EndTurnButton"]
 anchors_preset = 0
@@ -295,18 +274,11 @@ text = "Once you press this the following will happen:
 4. Enemy cards attack from left to rigtht.
 5. The next turn starts and you'll draw a card."
 
-[node name="EnemyPlayer" parent="." instance=ExtResource("7_g0vvg")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -300.0
-offset_top = 30.0
-offset_right = -15.0
-offset_bottom = 0.0
-grow_horizontal = 0
+[node name="EnemyPlayer" parent="." instance=ExtResource("25_q4n6c")]
+layout_mode = 0
 
 [node name="CurrentPhaseLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 12.0
 offset_top = 982.0
@@ -325,8 +297,3 @@ offset_right = -1577.0
 offset_bottom = -1037.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
-[connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
-[connection signal="toggled" from="CardDeletionButton" to="GameBoard" method="_on_card_deletion_button_toggled"]
-[connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

@@ -322,7 +322,6 @@ offset_bottom = 1060.0
 theme_override_font_sizes/font_size = 19
 
 [node name="BattleLog" parent="." instance=ExtResource("21_fakbl")]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

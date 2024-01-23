@@ -17,7 +17,7 @@ func init(seed : int):
 	rng.seed = rng_seed
 
 func update_text():
-	$TextureRect/CardCount.text = "Cards left: " + str(cardStack.size())
+	%CardCount.text = "Cards left: " + str(cardStack.size())
 
 
 func shuffle():
