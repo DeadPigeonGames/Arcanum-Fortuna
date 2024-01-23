@@ -14,6 +14,6 @@ title = "The bad guy"
 brain = ExtResource("1_d1s8l")
 stats_per_level = Array[Resource("res://systems/card_combat/enemy/enemy_brain_stats.gd")]([ExtResource("3_dcqhg"), ExtResource("4_lrdjn"), ExtResource("5_vxgj5"), ExtResource("6_rvpl7"), ExtResource("7_s17h1")])
 gold_reward = 4
-min_level = 0
+min_level = 1
 max_level = -1
 level = 0
