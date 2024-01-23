@@ -11,6 +11,6 @@ region = Rect2(66, 198, 66, 66)
 script = ExtResource("1_68ao5")
 extra_attacks = 1
 title = "MultiAttack %d"
-description = "Whenever this card attacks it gains %d extra attacks."
+description = "This card attacks 2 times every turn."
 icon = SubResource("AtlasTexture_0e4w5")
 highlight_duration = 0.5
