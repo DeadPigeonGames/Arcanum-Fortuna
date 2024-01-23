@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c16ubw3dckjhv" path="res://systems/dungeon_exploration/player/player.png" id="1_7fbrh"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/player/player_script.gd" id="2_olm7h"]
-[ext_resource type="Resource" uid="uid://22opo18s7wkj" path="res://data/player/basic_player.tres" id="3_we6fb"]
+[ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="3_lu76x"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/player/player_camera.gd" id="4_mq2ua"]
 
 [node name="Player" type="TextureRect"]
@@ -21,7 +21,7 @@ grow_vertical = 2
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("1_7fbrh")
 script = ExtResource("2_olm7h")
-startData = ExtResource("3_we6fb")
+startData = ExtResource("3_lu76x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(32, -132)
