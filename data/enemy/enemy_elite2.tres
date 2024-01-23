@@ -10,7 +10,10 @@
 
 [resource]
 script = ExtResource("2_qpox8")
+title = "The bad guy"
 brain = ExtResource("1_rooo8")
 stats_per_level = Array[Resource("res://systems/card_combat/enemy/enemy_brain_stats.gd")]([ExtResource("3_u7g5v"), ExtResource("4_u0s8q"), ExtResource("5_c1uck"), ExtResource("6_v532i"), ExtResource("7_5t622")])
 gold_reward = 4
+min_level = 0
+max_level = -1
 level = 0
