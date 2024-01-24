@@ -15,5 +15,5 @@ brain = ExtResource("1_bcvyx")
 stats_per_level = Array[Resource("res://systems/card_combat/enemy/enemy_brain_stats.gd")]([ExtResource("3_nqpfd"), ExtResource("4_iywpn"), ExtResource("5_lbs8s"), ExtResource("6_qfhyp"), ExtResource("7_ppioe")])
 gold_reward = 4
 min_level = 0
-max_level = -1
+max_level = 2
 level = 0
