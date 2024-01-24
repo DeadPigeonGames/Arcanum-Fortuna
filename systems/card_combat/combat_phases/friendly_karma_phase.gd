@@ -20,8 +20,8 @@ func _on_karma_decreased(source):
 	for card : CombatCard in combat.game_board.get_active_cards():
 		for i in range(card.keywords.size()):
 			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 2:
-				await card.keywords[i].trigger(source, card.keywords[i].get_target(source, card, combat), \
-						card.get_node("KeyWords").get_child(i), card.get_node("KeyWords").get_child(i))
+				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, combat), \
+						card.get_node("KeyWordSlots").get_child(i).get_child(0))
 
 func get_relevant_cards():
 	return combat.game_board.get_friendly_cards().filter(
@@ -29,8 +29,10 @@ func get_relevant_cards():
 				return card.cost != 0
 				)
 
+
 func get_karma_modify_target():
 	return combat.player
+
 
 func process_effect() -> ExitState:
 	var relevant_cards = get_relevant_cards()
@@ -38,6 +40,14 @@ func process_effect() -> ExitState:
 		return ExitState.DEFAULT
 	
 	var target = get_karma_modify_target()
+	await animate_karma(relevant_cards, target)
+	if await target.process_karma_overflow():
+		combat.finished.emit(combat.player.health)
+		return ExitState.ABORT
+	return ExitState.DEFAULT
+
+
+func animate_karma(relevant_cards, target):
 	# Create Blob
 	var blob = karma_blob.instantiate()
 	combat.game_board.add_child(blob)
@@ -49,7 +59,7 @@ func process_effect() -> ExitState:
 		var health_slot = await card.animate_karma(target)
 		var small_pearl = small_blob.instantiate()
 		combat.game_board.add_child(small_pearl)
-		small_pearl.global_position = health_slot.global_position
+		small_pearl.global_position = health_slot.get_global_rect().get_center()
 		
 		await combat.get_tree().create_timer(karma_delay).timeout
 		var tween = combat.create_tween()
@@ -93,9 +103,3 @@ func process_effect() -> ExitState:
 	await combat.get_tree().create_timer(karma_delay).timeout
 	target.modify_karma(blob.count)
 	blob.delete()
-	
-	if await target.process_karma_overflow():
-		combat.finished.emit(combat.player.health)
-		return ExitState.ABORT
-	return ExitState.DEFAULT
-

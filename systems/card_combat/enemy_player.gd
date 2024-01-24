@@ -7,7 +7,12 @@ class_name EnemyPlayer extends Control
 @export var positive_effect_color : Color = Color.GREEN
 
 var data
-var health = 20
+var health := 20 : 
+	get:
+		return health
+	set(value):
+		health = value
+		$Health/Label.text = "Health: " + str(health)
 var max_health
 var karma = 0
 
@@ -19,6 +24,9 @@ func init(enemy_data):
 	else:
 		set_health(data.get_random_health())
 	max_health = health
+	var name_label = get_node_or_null("Title")
+	if (name_label):
+		name_label.text = name_label.text % enemy_data.title
 
 
 func set_health(value):

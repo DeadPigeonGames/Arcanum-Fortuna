@@ -23,7 +23,13 @@ signal card_drag_ended(card)
 @export var is_debug = false 
 @export var debug_data : PlayerData 
 
-var health : int
+var health : int : 
+	get:
+		return health
+	set(value):
+		health = value
+		%Health/Label.text = "Health: " + str(health)
+
 var max_health : int
 var karma : int
 
@@ -35,7 +41,6 @@ func init(data: PlayerData):
 	health = data.health
 	max_health = health
 	karma = data.karma
-	%Health/Label.text = "Health: " + str(health)
 
 
 func _ready():
@@ -50,14 +55,21 @@ func heal(amount):
 		return
 	health += amount
 	health = min(health, max_health)
-
+	
 
 func take_damage(amount):
-	SfxOther._SFX_Damage()
+	animate_take_damage_feedback(amount)
+	
 	%Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"
 	health -= amount
 	%Health.modulate = attacked_color
 	GlobalLog.add_entry("You took %d damage." % amount)
+
+
+func animate_take_damage_feedback(amount):
+	SfxOther._SFX_Damage()
+	$ScreenshakeCamera2D.add_trauma(0.15 * amount)
+	$HurtOverlay.add_cooldown(0.1 * amount)
 
 
 func restore_default_color():
@@ -92,6 +104,7 @@ func process_karma_overflow() -> bool:
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
 		take_damage(-karma)
+		$ScreenshakeCamera2D.add_trauma(0.1)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
 	var is_lethal = process_death()
@@ -107,11 +120,11 @@ func set_karma(value):
 
 
 func _on_card_dragged():
-	emit_signal("card_drag_started")
+	card_drag_started.emit()
 
 
 func _on_card_released(card):
-	emit_signal("card_drag_ended", card)
+	card_drag_ended.emit(card)
 
 
 func draw_card():
@@ -139,3 +152,9 @@ func _on_bonus_draw_button_button_down():
 	await draw_card()
 	if len(%CardStack.cardStack) > 0 && %Hand.enabled:
 		$BonusDrawButton.disabled = false
+
+func _on_friendly_card_deleted(card : CombatCard):
+	modify_karma(card.cost)
+	await get_tree().create_timer(animation_delay).timeout
+	await process_karma_overflow()
+	restore_default_color()

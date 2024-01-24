@@ -27,7 +27,6 @@ func get_attack():
 	return attack
 
 
-
 func set_health(value):
 	health = value
 	%HealthCost.text = str(health)
@@ -57,7 +56,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	self.cost = cost
 	self.attack = attack
 	self.health = health
-	self.keywords = keywords
+	self.keywords = keywords.duplicate()
 	if card_data == null:
 		card_data = CardData.new()
 		card_data.artwork_texture = artwork_texture
@@ -86,8 +85,13 @@ func setup():
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
 	
+	for slot in %KeyWordSlots.get_children():
+		slot.texture.atlas = null
+		slot.texture = slot.texture.duplicate()
+		slot.texture.atlas = card_data.keyword_slot_texture
+	
 	for i in range(keywords.size()):
-		%KeyWords.get_child(i).set_icon(keywords[i])
+		%KeyWordSlots.get_child(i).get_child(0).set_icon(keywords[i])
 
 
 func _on_mouse_entered():

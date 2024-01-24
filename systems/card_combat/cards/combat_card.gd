@@ -1,5 +1,7 @@
 class_name CombatCard extends Card
 
+signal deleted(card : CombatCard)
+
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
 
@@ -31,8 +33,8 @@ var is_animating: bool:
 	set(new_value):
 		__is_animating = new_value
 	get:
-		for keyword in %KeyWords.get_children():
-			if keyword.is_animating:
+		for keyword_slot in %KeyWordSlots.get_children():
+			if keyword_slot.get_child(0).is_animating:
 				return true
 		return __is_animating
 
@@ -63,8 +65,8 @@ func setup():
 	base_health = health
 	attack = base_attack
 	health = base_health
-	for keyword in %KeyWords.get_children():
-		keyword.animation_finished.connect(check_if_animations_finished)
+	for keyword_slot in %KeyWordSlots.get_children():
+		keyword_slot.get_child(0).animation_finished.connect(check_if_animations_finished)
 	
 	if card_data.sound_effect:
 		%SFXCard.SFX_CardSignature = card_data.sound_effect
@@ -83,7 +85,7 @@ func trigger_keywords(source, owner, trigger : int, combat = null):
 	for i in range(keywords.size()):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & trigger:
 			await keywords[i].trigger(source, owner, keywords[i].get_target(source, owner, combat), \
-					get_node("KeyWords").get_child(i))
+					get_node("KeyWordSlots").get_child(i).get_child(0))
 
 
 func check_if_animations_finished():
@@ -107,6 +109,23 @@ func flip():
 	%HealthCost.text = str(health)
 
 
+func reverse():
+	%Artwork.flip_v = !%Artwork.flip_v
+
+
+func modifiy_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[Keyword]):
+	for keyword : Keyword in keywords_to_remove:
+		if not keyword in keywords:
+			push_error("Cannot remove '%s' keywords from '%s' card, as it does not contain it." % [keyword.title, card_name])
+			continue
+		keywords.erase(keyword)
+	for keyword : Keyword in keywords_to_add:
+		keyword.init()
+		keywords.push_back(keyword)
+	for i in range(keywords.size()):
+		%KeyWordSlots.get_child(i).get_child(0).set_icon(keywords[i])
+
+
 func get_target_offsets():
 	placed_position = global_position
 	target_offsets = [0]
@@ -121,18 +140,25 @@ func get_target_offsets():
 func heal(amount : int):
 	pass
 
+
 func take_damage(amount : int):
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
+	for keyword in keywords:
+		if keyword.has_method("get_reduced_damage"):
+			amount = keyword.get_reduced_damage(self, amount)
 	health -= amount
+	modulate = attacked_color if amount > 0 else active_color
+	await animate_damage()
+
+
+func animate_damage():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(self, "rotation", rotation + deg_to_rad(-5), 0.2)
 	tween.tween_property(self, "rotation", rotation, 0.1)
 	tween.play()
-	%HealthCost.text = str(health)
-	modulate = attacked_color
 
 
 func restore_default_color():
@@ -246,4 +272,5 @@ func set_delete_mode(value : bool):
 
 
 func _on_delete_button_pressed():
+	deleted.emit(self)
 	queue_free()
