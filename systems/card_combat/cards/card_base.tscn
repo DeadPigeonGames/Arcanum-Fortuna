@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="3_cofgw"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="4_y50ar"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_4kaqf"]
-[ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
-[ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
+[ext_resource type="Material" uid="uid://cngc8f5baqaue" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
 atlas = ExtResource("6_4kaqf")
@@ -366,6 +366,7 @@ offset_right = -8.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="ParticleAnchor" type="Control" parent="ArtworkClip"]
 layout_mode = 1
@@ -413,6 +414,7 @@ lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.15
+local_coords = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
