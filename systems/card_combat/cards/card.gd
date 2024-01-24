@@ -105,3 +105,9 @@ func _on_mouse_exited():
 func play_animation(animation):
 	if $AnimationPlayer.has_animation(animation):
 		$AnimationPlayer.play(animation)
+
+
+func animate_icon(emission_texture):
+	%KeywordParticles.emitting = true
+	%KeywordParticles.process_material.emission_point_texture = emission_texture
+	await %KeywordParticles.finished
