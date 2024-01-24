@@ -174,10 +174,10 @@ func process_death() -> bool:
 		await get_tree().process_frame
 		if is_animating:
 			await animation_finished
-		modulate = attacked_color
-		await get_tree().create_timer(death_delay).timeout
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
+		play_animation("die")
+		await $AnimationPlayer.animation_finished
 		queue_free()
 		return true
 	return false
