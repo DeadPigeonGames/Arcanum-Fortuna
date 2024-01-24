@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=41 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -69,6 +69,60 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rikmg"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_q6p43"]
+resource_name = "anim_open_card_delete"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-138, 680), Vector2(0, 680)]
+}
+
+[sub_resource type="Animation" id="Animation_bp16a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-138, 680)]
+}
+
+[sub_resource type="Animation" id="Animation_06del"]
+resource_name = "anim_close_card_delete"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 680), Vector2(-138, 680)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7vi5a"]
+_data = {
+"RESET": SubResource("Animation_bp16a"),
+"anim_close_card_delete": SubResource("Animation_06del"),
+"anim_open_card_delete": SubResource("Animation_q6p43")
+}
 
 [node name="CardBattle" type="Control"]
 layout_mode = 3
@@ -228,7 +282,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 [node name="CardPlayer" parent="." instance=ExtResource("17_we7n7")]
 layout_mode = 1
 
-[node name="CardDeletionAreaInactive" type="TextureRect" parent="."]
+[node name="CardDeletion" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -138.0
 offset_top = 680.0
@@ -236,13 +290,10 @@ offset_right = 32.0
 offset_bottom = 946.0
 texture = ExtResource("19_43tdh")
 
-[node name="CardDeletionAreaActive" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_top = 680.0
-offset_right = 170.0
-offset_bottom = 946.0
-texture = ExtResource("19_43tdh")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CardDeletion"]
+libraries = {
+"": SubResource("AnimationLibrary_7vi5a")
+}
 
 [node name="EndTurnButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
