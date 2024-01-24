@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7crdyq3dl3en"
-path="res://.godot/imported/page_of_swords.png-65adcc33ceb9fbd61a0d063e494defe1.ctex"
+uid="uid://cicfwpfeh1exs"
+path="res://.godot/imported/dg_the_lovers.png-4457df740cfb34709eb99a5e9ab28f8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/page_of_swords.png"
-dest_files=["res://.godot/imported/page_of_swords.png-65adcc33ceb9fbd61a0d063e494defe1.ctex"]
+source_file="res://assets/sprites/dialogue/dg_the_lovers.png"
+dest_files=["res://.godot/imported/dg_the_lovers.png-4457df740cfb34709eb99a5e9ab28f8d.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
