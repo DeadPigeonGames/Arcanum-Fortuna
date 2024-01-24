@@ -91,7 +91,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_dvcfv")
 
-[node name="GameBoard" type="VBoxContainer" parent="."]
+[node name="GameBoard" type="VBoxContainer" parent="." node_paths=PackedStringArray("enemy_player", "player")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -105,6 +105,8 @@ mouse_filter = 2
 theme_override_constants/separation = 64
 script = ExtResource("2_2jjg6")
 combat_card_prefab = ExtResource("3_1hhbj")
+enemy_player = NodePath("../EnemyPlayer")
+player = NodePath("../CardPlayer")
 tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 1)
 tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
 tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
@@ -113,71 +115,71 @@ tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
 layout_mode = 2
 theme_override_constants/separation = 48
 
-[node name="EnemyBackrow" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
+[node name="Backrow" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
 layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/EnemyBackrow"]
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="EnemyFrontrow" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
+[node name="Frontrow" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
 layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/EnemyFrontrow"]
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
@@ -286,14 +288,24 @@ offset_right = 331.0
 offset_bottom = 1060.0
 theme_override_font_sizes/font_size = 19
 
-[node name="BattleLog" parent="." instance=ExtResource("16_kecnr")]
+[node name="DebugOnly" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BattleLog" parent="DebugOnly" instance=ExtResource("16_kecnr")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
 offset_top = 11.0
-offset_right = -1577.0
-offset_bottom = -1037.0
+offset_right = -28.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
+[connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
+[connection signal="button_down" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

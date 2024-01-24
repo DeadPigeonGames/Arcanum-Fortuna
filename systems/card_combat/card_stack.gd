@@ -17,17 +17,14 @@ func init(seed : int):
 	rng.seed = rng_seed
 
 func update_text():
-	%CardCount.text = "Cards left: " + str(cardStack.size())
+	%CardCount.text = str(cardStack.size())
 
 
 func shuffle():
 	if rng == null:
-		print("Shuffling using built-in shuffle")
 		cardStack.shuffle()
 		return
 	
-	# Fisher Shuffle
-	print("Shuffling using fisher technique")
 	for i in range(len(cardStack) - 1, 0, -1):
 		var other = rng.randi_range(0, len(cardStack) - 1)
 		if i == other:

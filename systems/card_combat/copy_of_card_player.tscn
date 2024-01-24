@@ -86,7 +86,8 @@ grow_vertical = 2
 size_flags_vertical = 0
 texture = ExtResource("5_luv56")
 
-[node name="KarmaIcon" type="TextureRect" parent="ResourceContainer"]
+[node name="Karma" type="TextureRect" parent="ResourceContainer"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 376.0
 offset_top = 376.0
@@ -94,7 +95,8 @@ offset_right = 508.0
 offset_bottom = 508.0
 texture = ExtResource("5_otkj5")
 
-[node name="Label" type="Label" parent="ResourceContainer/KarmaIcon"]
+[node name="KarmaLabel" type="Label" parent="ResourceContainer/Karma"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,7 +108,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShowTooltip" type="Control" parent="ResourceContainer/KarmaIcon"]
+[node name="ShowTooltip" type="Control" parent="ResourceContainer/Karma"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -119,6 +121,7 @@ Whenever your karma would go below zero the excess
 amount is substracted from your health instead."
 
 [node name="Health" type="Control" parent="ResourceContainer"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,12 +130,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HealthBar" type="TextureProgressBar" parent="ResourceContainer/Health"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+value = 100.0
 fill_mode = 5
 texture_progress = ExtResource("8_2vgm4")
 radial_initial_angle = 180.0

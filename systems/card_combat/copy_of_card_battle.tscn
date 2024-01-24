@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bdh0uj6nl62hc"]
+[gd_scene load_steps=37 format=3 uid="uid://bdh0uj6nl62hc"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_djypq"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_ocjat"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="15_v0yym"]
 [ext_resource type="PackedScene" uid="uid://dgdblxt0g8doq" path="res://systems/card_combat/cards/combat_card.tscn" id="16_rdjta"]
 [ext_resource type="PackedScene" uid="uid://ckn5uoesaguy0" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_kvi1j"]
-[ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="18_er2n6"]
 [ext_resource type="Texture2D" uid="uid://bpxh1tf25d17s" path="res://assets/ui/gameboard/end_turn_element_placeholder.png" id="19_1o6uq"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="19_oiaej"]
 [ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_qcvgh"]
@@ -70,23 +69,6 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t3xx"]
 bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="InputEventKey" id="InputEventKey_thsaf"]
-device = -1
-ctrl_pressed = true
-keycode = 68
-
-[sub_resource type="InputEventKey" id="InputEventKey_kwdgl"]
-device = -1
-ctrl_pressed = true
-keycode = 4194312
-
-[sub_resource type="InputEventKey" id="InputEventKey_vvn32"]
-device = -1
-keycode = 4194312
-
-[sub_resource type="Shortcut" id="Shortcut_udv11"]
-events = [SubResource("InputEventKey_thsaf"), SubResource("InputEventKey_kwdgl"), SubResource("InputEventKey_vvn32")]
 
 [node name="CardBattle" type="Control"]
 layout_mode = 3
@@ -244,23 +226,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2t3xx")
 [node name="CopyOfCardPlayer" parent="." instance=ExtResource("17_kvi1j")]
 layout_mode = 1
 
-[node name="DELETE_WHEN_ABUNDANTCardDeletionButton" type="CheckButton" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-offset_left = 28.0
-offset_top = 651.0
-offset_right = 230.0
-offset_bottom = 682.0
-scale = Vector2(1.3, 1.3)
-shortcut = SubResource("Shortcut_udv11")
-text = "Card Deletion Mode"
-
-[node name="ShowTooltip" parent="DELETE_WHEN_ABUNDANTCardDeletionButton" instance=ExtResource("18_er2n6")]
-layout_mode = 1
-text = "Toggle the delete button on all active cards of your side of the board.
- When deleting a card via their delete button you will gain their karma value once and then the card will be permanently deleted."
-
 [node name="CardDeletionAreaInactive" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -138.0
@@ -333,5 +298,4 @@ offset_bottom = -1037.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="toggled" from="DELETE_WHEN_ABUNDANTCardDeletionButton" to="GameBoard" method="_on_card_deletion_button_toggled"]
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

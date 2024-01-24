@@ -28,7 +28,8 @@ var health : int :
 		return health
 	set(value):
 		health = value
-		%HealthLabel.text = "Health: " + str(health)
+		%HealthLabel.text = str(health)
+		%HealthBar.value = health
 
 var max_health : int
 var karma : int
@@ -40,6 +41,8 @@ func init(data: PlayerData):
 	card_stack.shuffle()
 	health = data.health
 	max_health = health
+	%HealthBar.max_value = max_health
+	%HealthBar.value = health
 	karma = data.karma
 
 
@@ -60,7 +63,7 @@ func heal(amount):
 func take_damage(amount):
 	animate_take_damage_feedback(amount)
 	
-	%Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"
+	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"
 	health -= amount
 	%Health.modulate = attacked_color
 	GlobalLog.add_entry("You took %d damage." % amount)
@@ -73,7 +76,7 @@ func animate_take_damage_feedback(amount):
 
 
 func restore_default_color():
-	%Health/Label.text = "Health: " + str(health)
+	%HealthLabel.text = str(health)
 	%Health.modulate = Color.WHITE
 	%Karma.modulate = Color.WHITE
 
@@ -94,13 +97,13 @@ func modify_karma(amount):
 		%Karma.modulate = attacked_color
 	else:
 		return
-	%Karma/Label.text = "Karma: "+ str(karma) + \
+	%KarmaLabel.text = str(karma) + \
 		" (" + ("+" if amount >= 0 else "") + str(amount) + ")"
 	karma += amount
 
 
 func process_karma_overflow() -> bool:
-	%Karma/Label.text = "Karma: " + str(karma)
+	%KarmaLabel.text = str(karma)
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
 		take_damage(-karma)
@@ -108,14 +111,14 @@ func process_karma_overflow() -> bool:
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
 	var is_lethal = process_death()
-	%Karma/Label.text = "Karma: " + str(karma)
+	%KarmaLabel.text = str(karma)
 	restore_default_color()
 	return is_lethal
 	
 
 func set_karma(value):
 	karma = value
-	%Karma/Label.text = "Karma: " + str(karma)
+	%KarmaLabel.text = str(karma)
 #endregion
 
 
@@ -132,7 +135,9 @@ func draw_card():
 	if drawn_card != null:
 		drawn_card.drag_started.connect(_on_card_dragged)
 		drawn_card.drag_ended.connect(_on_card_released)
-	await get_tree().create_timer(draw_delay).timeout
+		await get_tree().create_timer(draw_delay).timeout
+	if card_stack.cardStack.size() == 0:
+		$BonusDrawButton.hide()
 
 
 func set_active(value):
@@ -144,7 +149,7 @@ func set_active(value):
 func _on_bonus_draw_button_button_down():
 	modify_karma(-bonus_draw_cost)
 	bonus_draw_cost *= bonus_draw_cost_scale
-	$BonusDrawButton.text = "Draw Extra Card (-%d Karma)" % bonus_draw_cost
+	$BonusDrawButton.text = "-%d K" % bonus_draw_cost
 	$BonusDrawButton.disabled = true
 	await get_tree().create_timer(animation_delay).timeout
 	await process_karma_overflow()
