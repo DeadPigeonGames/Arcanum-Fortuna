@@ -65,6 +65,7 @@ func mouse_exited_event():
 func pickup():
 	%ShowCardTooltip.hide_tooltip()
 	%ShowCardTooltip.set_process(false)
+	$SFXCard._SFX_PickUp()
 	
 	isPickedUp = true
 	if heldCard:
@@ -75,6 +76,7 @@ func pickup():
 	emit_signal("drag_started")
 
 func put(dropNode):
+	$SFXCard._SFX_PutDown()
 	%ShowCardTooltip.set_process(true)
 	isPickedUp = false
 	heldCard = null
