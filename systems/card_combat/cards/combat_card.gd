@@ -1,13 +1,14 @@
 class_name CombatCard extends Card
 
 signal deleted(card : CombatCard)
+signal animation_finished
+signal drag_started
+signal drag_ended(card)
 
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
-
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
 @export var is_auto_flip = false
-
 @export_category("Animation Settings")
 @export var attack_speed = 0.2
 @export var attack_rewind = 0.3
@@ -19,7 +20,9 @@ signal deleted(card : CombatCard)
 @export var active_color : Color
 @export var move_speed = 0.5
 
-signal animation_finished
+static var held_card : CombatCard
+
+var is_picked_up = false
 
 var target_offsets : Array[int] = [0]
 var is_enemy := false
@@ -27,6 +30,10 @@ var tile_coordinate := Vector2i(-1, -1)
 var base_attack : int
 var base_health : int
 var placed_position: Vector2
+
+var is_drag_enabled = false
+var drag_offset := Vector2.ZERO
+var pre_drag_position := Vector2.ZERO
 
 var __is_animating := false
 var is_animating: bool:
@@ -252,7 +259,7 @@ func animate_move(target_pos):
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", target_pos, move_speed)
 	tween.play()
-	await get_tree().create_timer(move_speed).timeout # todo interpolate move 
+	await get_tree().create_timer(move_speed).timeout
 	GlobalLog.add_entry("'%s' at position %d-%d moved to positon %d-%d." % 
 			[card_data.name,
 			tile_coordinate.x,
@@ -263,14 +270,46 @@ func animate_move(target_pos):
 	tile_coordinate = Vector2i(tile_coordinate.x, tile_coordinate.y - 1)
 	modulate = Color.WHITE
 
-
-func set_delete_mode(value : bool):
-	if value:
-		%DeleteButton.show()
-	else:
-		%DeleteButton.hide()
-
-
-func _on_delete_button_pressed():
+# Card deletion
+func delete():
 	deleted.emit(self)
 	queue_free()
+
+
+func _process(delta):
+	if is_picked_up:
+		global_position = drag_offset + get_global_mouse_position()
+
+func _input(event: InputEvent):
+	if not is_drag_enabled:
+		return
+
+	if event.is_action_pressed("pickUpCard") and not is_picked_up:
+		if is_hovered:
+			pickup()
+	
+	if event.is_action_released("pickUpCard") and is_picked_up:
+		put(null)
+		emit_signal("drag_ended", self)
+
+func pickup():
+	%ShowCardTooltip.hide_tooltip()
+	%ShowCardTooltip.set_process(false)
+	
+	is_picked_up = true
+	if held_card:
+		# Edge case if you pick up multiple cards
+		held_card.put(null)
+	held_card = self
+	pre_drag_position = global_position
+	drag_offset = global_position - get_global_mouse_position()
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	emit_signal("drag_started")
+
+func put(dropNode):
+	%ShowCardTooltip.set_process(true)
+	is_picked_up = false
+	held_card = null
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	await get_tree().process_frame
+	animate_move(pre_drag_position)

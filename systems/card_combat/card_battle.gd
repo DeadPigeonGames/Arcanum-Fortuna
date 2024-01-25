@@ -96,6 +96,8 @@ func _on_card_played(new_card : CombatCard):
 				await card.keywords[i].trigger(card, card, card.keywords[i].get_target(card, card, self), \
 						card.get_node("KeyWordSlots").get_child(i).get_child(0), {"active_cards": active_cards})
 	await get_tree().process_frame
+	new_card.drag_started.connect($CardDeletion._on_card_drag_started)
+	new_card.drag_ended.connect($CardDeletion._on_card_drag_ended)
 	is_blocked = false
 
 
@@ -129,14 +131,15 @@ func _on_phase_completed():
 
 func lock_player_actions():
 	player.set_active(false)
-	#%CardDeletionButton.button_pressed = false
-	#%CardDeletionButton.disabled = true
 	%EndTurnButton.disabled = true
+	for card in game_board.get_friendly_cards():
+		card.is_drag_enabled = false
 
 
 func unlock_player_actions():
+	for card in game_board.get_friendly_cards():
+		card.is_drag_enabled = true
 	player.set_active(true)
-	#%CardDeletionButton.disabled = false
 	%EndTurnButton.disabled = false
 
 
@@ -168,32 +171,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	return true
 
 
-#func move_enemies():
-	#for y in range(enemy_board.size() - 1):
-		#for x in range(enemy_board[y].size()):
-			#if (enemy_board[y][x] != null || enemy_board[y+1][x] == null):
-				#continue
-			#if y == 1:
-				#game_board.place_enemy_card_back(enemy_board[y+1][x], x)
-			#elif y == 0:
-				#if await game_board.try_move_enemy_card_to_front(x):
-					#enemy_board[y+1][x] = null
-				#continue
-			#enemy_board[y][x] = enemy_board[y+1][x]
-			#enemy_board[y+1][x] = null
-#
-#
-#func update_enemy_card_placement():
-	#for x in range(board_width):
-		#if enemy_board.size() > 0 && enemy_board[0][x] != null:
-			#game_board.place_enemy_card_front(enemy_board[0][x], x)
-			#enemy_board[0][x] = null # front board row can only be set once via EnemyData
-		#if enemy_board.size() > 1 && enemy_board[1][x] != null:
-			#game_board.place_enemy_card_back(enemy_board[1][x], x)
-
-
 func handle_enemy_attacks():
-	#await move_enemies()
 	for i in range(game_board.enemy_tiles_front.get_child_count()):
 		if game_board.enemy_tiles_front.get_child(i).get_child_count() == 0:
 			continue

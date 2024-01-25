@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=43 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -20,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
 [ext_resource type="PackedScene" uid="uid://ckn5uoesaguy0" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
 [ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_43tdh"]
+[ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
 [ext_resource type="Texture2D" uid="uid://bpxh1tf25d17s" path="res://assets/ui/gameboard/end_turn_element_placeholder.png" id="20_2dix6"]
+[ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
 [ext_resource type="Texture2D" uid="uid://du43fo187hof7" path="res://assets/ui/gameboard/end_turn_element_pressed_placeholder.png" id="21_k1u0d"]
 [ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="22_mrf7r"]
 [ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="23_vwp6k"]
@@ -70,22 +72,6 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rikmg"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_q6p43"]
-resource_name = "anim_open_card_delete"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-138, 680), Vector2(0, 680)]
-}
-
 [sub_resource type="Animation" id="Animation_bp16a"]
 length = 0.001
 tracks/0/type = "value"
@@ -115,6 +101,46 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 680), Vector2(-138, 680)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:is_active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_q6p43"]
+resource_name = "anim_open_card_delete"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-138, 680), Vector2(0, 680)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:is_active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7vi5a"]
@@ -289,11 +315,21 @@ offset_top = 680.0
 offset_right = 32.0
 offset_bottom = 946.0
 texture = ExtResource("19_43tdh")
+script = ExtResource("19_xq5yv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CardDeletion"]
 libraries = {
 "": SubResource("AnimationLibrary_7vi5a")
 }
+
+[node name="ShowTooltip" parent="CardDeletion" instance=ExtResource("20_7e8s5")]
+layout_mode = 1
+title = "Card Deletion"
+text = "Drag you previously placed cards here to
+ get rid of them once and for all. 
+
+Doing this will grant you their karma value once."
+hover_min_duration = 0.2
 
 [node name="EndTurnButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
@@ -359,4 +395,6 @@ grow_vertical = 2
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
+[connection signal="mouse_entered" from="CardDeletion" to="CardDeletion" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardDeletion" to="CardDeletion" method="_on_mouse_exited"]
 [connection signal="button_down" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]
