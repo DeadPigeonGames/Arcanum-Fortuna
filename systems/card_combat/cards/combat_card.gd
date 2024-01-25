@@ -33,8 +33,6 @@ var placed_position: Vector2
 
 var is_drag_enabled = false
 var drag_offset := Vector2.ZERO
-var pre_drag_position := Vector2.ZERO
-
 var __is_animating := false
 var is_animating: bool:
 	set(new_value):
@@ -301,7 +299,6 @@ func pickup():
 		# Edge case if you pick up multiple cards
 		held_card.put(null)
 	held_card = self
-	pre_drag_position = global_position
 	drag_offset = global_position - get_global_mouse_position()
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	emit_signal("drag_started")
@@ -312,4 +309,4 @@ func put(dropNode):
 	held_card = null
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	await get_tree().process_frame
-	animate_move(pre_drag_position)
+	animate_move(placed_position)

@@ -119,6 +119,7 @@ text = "Cards on your side of the boards will add their
 combined cost to your karma total each turn.
 Whenever your karma would go below zero the excess
 amount is substracted from your health instead."
+hover_min_duration = 0.2
 
 [node name="Health" type="Control" parent="ResourceContainer"]
 unique_name_in_owner = true
@@ -178,6 +179,7 @@ script = ExtResource("5_l02yx")
 title = "Your Health"
 text = "Is lowered whenever an enemy card attacks an empty tile.
 If it drops to zero you'll die!"
+hover_min_duration = 0.2
 
 [node name="BonusDrawButton" type="Button" parent="."]
 layout_mode = 1
