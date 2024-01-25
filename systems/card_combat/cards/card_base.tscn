@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=28 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
 [ext_resource type="Material" uid="uid://d4dyg8c8m6yp8" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="11_mto8i"]
+[ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="8_coke3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
 atlas = ExtResource("6_4kaqf")
@@ -510,6 +511,8 @@ local_coords = true
 [node name="SingletonInteractor" parent="." instance=ExtResource("11_mto8i")]
 singleton = 1
 method_to_call = "_SFX_Damage"
+[node name="SFXCard" parent="." instance=ExtResource("8_coke3")]
+unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

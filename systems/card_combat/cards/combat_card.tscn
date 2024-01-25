@@ -33,10 +33,6 @@ offset_bottom = 34.0
 icon = ExtResource("3_dlei7")
 icon_alignment = 1
 
-[node name="SFXCard" parent="." index="9" instance=ExtResource("4_ynbjm")]
-unique_name_in_owner = true
-SFX_CardSignature = null
-
 [connection signal="pressed" from="DeleteButton" to="." method="_on_delete_button_pressed"]
 
 [editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
