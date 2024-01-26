@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://27551peguirl"
-path="res://.godot/imported/king_of_wands.png-55944352a1f4c02fbfd99d3cd2a1c833.ctex"
+path="res://.godot/imported/king_of_herbs.png-2800a4ad306421b9617d943413b67352.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/king_of_wands.png"
-dest_files=["res://.godot/imported/king_of_wands.png-55944352a1f4c02fbfd99d3cd2a1c833.ctex"]
+source_file="res://assets/sprites/cards/king_of_herbs.png"
+dest_files=["res://.godot/imported/king_of_herbs.png-2800a4ad306421b9617d943413b67352.ctex"]
 
 [params]
 
