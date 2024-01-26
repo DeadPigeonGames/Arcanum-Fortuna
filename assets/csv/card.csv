@@ -2,12 +2,23 @@ ResourceName,Name,Cost,Attack,Health,Keywords
 the_magician,The Magician,-3,2,2,companionship_ATK1
 the_high_priestess,The High Priestess,-3,2,2,companionship_HP1
 the_empress,The Empress,-2,1,4,DrainATK1
-the_emperor,The Emperor,-2,4,5,slow
+the_emperor,The Emperor,-2,5,6,slow;kill_switch
 the_hierophant,The Hierophant,-1,1,2,DeathrattleSacrifice3;flip
-the_lovers,The Lovers,-4,2,3,SplitAttack
-the_chariot,The Chariot,-5,2,3,TripleAttack
-death,Death,-5,3,4,ConsumeATK1HP1
+the_lovers,The Lovers,-4,2,3,SplitAttack;alive2_switch
+the_chariot,The Chariot,-5,2,3,TripleAttack;alive2.1_switch
+death,Death,-5,3,3,ConsumeATK1HP1
 page_of_daggers,Page of Daggers,4,0,1,deathrattle_ATK1
 page_of_thorns,Page of Thorns,5,0,2,
 page_of_herbs,Page of Herbs,4,0,1,deathrattle_HP1
 page_of_flags,Page of Flags,5,0,2,
+the_hermit,The Hermit,-2,2,3,atk_nerf_in_front1
+the_moon,The Moon,-4,5,4,damage_controller2;flip
+the_sun,The Sun,-4,2,4,heal_controller2
+strength,Strength,-3,1,5,self_buff1
+the_star,The Star,-3,2,4,atk_nerf1
+the_hanged_man,The Hanged Man,-4,4,6,slow;shield
+the_tower,The Tower,-5,2,6,shield
+king_of_daggers,King of Daggers,4,0,1,deathrattle_ATK1
+king_of_thorns,King of Thorns,5,0,2,
+king_of_herbs,King of Herbs,4,0,1,deathrattle_HP1
+king_of_flags,King of Flags,5,0,2,

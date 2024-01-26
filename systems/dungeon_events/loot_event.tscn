@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=42 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
@@ -13,11 +13,22 @@
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="12_5h8ov"]
 [ext_resource type="Resource" uid="uid://b5ytokrx5why5" path="res://data/cards/page_of_flags.tres" id="13_i20vq"]
 [ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="14_n23su"]
+[ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="14_yblq6"]
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="15_5fchr"]
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="15_lvfx4"]
+[ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="15_pfa0e"]
 [ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="16_mhl86"]
+[ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="16_qho8o"]
 [ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="16_tts5u"]
+[ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="17_0fg6u"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="17_37lf3"]
+[ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="18_avl72"]
+[ext_resource type="Resource" uid="uid://cjas1prwh50gk" path="res://data/cards/the_hanged_man.tres" id="19_cdqgj"]
+[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="20_18p1g"]
+[ext_resource type="Resource" uid="uid://q3wogyvkudaf" path="res://data/cards/king_of_flags.tres" id="21_mpwgk"]
+[ext_resource type="Resource" uid="uid://csr1pvebvy0ae" path="res://data/cards/king_of_herbs.tres" id="22_eqva3"]
+[ext_resource type="Resource" uid="uid://nr5du58leen5" path="res://data/cards/king_of_thorns.tres" id="23_gsrsm"]
+[ext_resource type="Resource" uid="uid://d4guw6tm3pttg" path="res://data/cards/king_of_daggers.tres" id="24_pevg5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oroll"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.87451)
@@ -269,7 +280,7 @@ _data = {
 
 [node name="LootEvent" type="Node"]
 script = ExtResource("1_dmmsx")
-possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov"), ExtResource("13_i20vq")])
+possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov"), ExtResource("13_i20vq"), ExtResource("14_yblq6"), ExtResource("15_pfa0e"), ExtResource("16_qho8o"), ExtResource("17_0fg6u"), ExtResource("18_avl72"), ExtResource("19_cdqgj"), ExtResource("20_18p1g"), ExtResource("21_mpwgk"), ExtResource("22_eqva3"), ExtResource("23_gsrsm"), ExtResource("24_pevg5")])
 cardTemplate = ExtResource("1_panx4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
