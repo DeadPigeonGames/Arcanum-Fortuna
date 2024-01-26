@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27551peguirl"
-path="res://.godot/imported/card_king_of_wands.png-e0f5d8f88293ff14879d7d97d33e8aeb.ctex"
+uid="uid://b7qvkro7h0vni"
+path="res://.godot/imported/life_steal.png-c2c6d137f9e25af7ccf3ff038d6c295f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_king_of_wands.png"
-dest_files=["res://.godot/imported/card_king_of_wands.png-e0f5d8f88293ff14879d7d97d33e8aeb.ctex"]
+source_file="res://assets/sprites/keywords/life_steal.png"
+dest_files=["res://.godot/imported/life_steal.png-c2c6d137f9e25af7ccf3ff038d6c295f.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

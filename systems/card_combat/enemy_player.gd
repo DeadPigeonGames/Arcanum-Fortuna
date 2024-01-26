@@ -12,7 +12,8 @@ var health := 20 :
 		return health
 	set(value):
 		health = value
-		$Health/Label.text = "Health: " + str(health)
+		%HealthLabel.text = str(health)
+		%HealthBar.value = health
 var max_health
 var karma = 0
 
@@ -24,6 +25,8 @@ func init(enemy_data):
 	else:
 		set_health(data.get_random_health())
 	max_health = health
+	%HealthBar.value = health
+	%HealthBar.max_value = max_health
 	var name_label = get_node_or_null("Title")
 	if (name_label):
 		name_label.text = name_label.text % enemy_data.title
@@ -31,7 +34,7 @@ func init(enemy_data):
 
 func set_health(value):
 	health = value
-	$Health/Label.text = "Health: " + str(health)
+	%HealthLabel.text = str(health)
 
 
 func get_rows():
@@ -52,16 +55,16 @@ func heal(amount):
 
 func take_damage(amount):
 	SfxOther._SFX_Damage()
-	$Health/Label.text = "Health: " + str(health) + " (" + str(-amount) + ")"
+	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"
 	health -= amount
-	$Health.modulate = attacked_color
+	%Health.modulate = attacked_color
 	GlobalLog.add_entry("The enemy took %d damage." % amount)
-
+	return amount
 
 func restore_default_color():
-	$Health/Label.text = "Health: " + str(health)
-	$Health.modulate = Color.WHITE
-	%Karma.modulate = Color.WHITE
+	%HealthLabel.text = str(health)
+	%Health.modulate = Color.WHITE
+	%KarmaLabel.modulate = Color.WHITE
 
 func process_death() -> bool:
 	if health < 0:
@@ -77,24 +80,24 @@ func modify_karma(amount):
 		%Karma.modulate = attacked_color
 	else:
 		return
-	%Karma/Label.text = "Karma: "+ str(karma) + \
+	%KarmaLabel.text = str(karma) + \
 		" (" + ("+" if amount >= 0 else "") + str(amount) + ")"
 	karma += amount
 
 func process_karma_overflow() -> bool:
-	%Karma/Label.text = "Karma: " + str(karma)
+	%KarmaLabel.text = str(karma)
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
 		take_damage(-karma)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
 	var was_lethal = process_death()
-	%Karma/Label.text = "Karma: " + str(karma)
+	%KarmaLabel.text = str(karma)
 	restore_default_color()
 	return was_lethal
 	
 
 func set_karma(value):
 	karma = value
-	%Karma/Label.text = "Karma: " + str(karma)
+	%KarmaLabel.text = str(karma)
 #endregion

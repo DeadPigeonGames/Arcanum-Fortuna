@@ -17,8 +17,8 @@ var accept_card = false
 var hovered_tile = null
 
 @onready var player_tiles = $PlayerTiles
-@onready var enemy_tiles_back = $EnemyTiles/Row1
-@onready var enemy_tiles_front = $EnemyTiles/Row2
+@onready var enemy_tiles_back = $EnemyTiles/Backrow
+@onready var enemy_tiles_front = $EnemyTiles/Frontrow
 
 const width = 5
 
@@ -223,7 +223,7 @@ func get_active_cards() -> Array[CombatCard]:
 
 
 func get_tile(idx, friendly = false):
-	return ($PlayerTiles if not friendly else $EnemyTiles/Row2).get_child(idx)
+	return ($PlayerTiles if not friendly else $EnemyTiles/Frontrow).get_child(idx)
 
 
 func highlight_tile(idx, friendly = false):

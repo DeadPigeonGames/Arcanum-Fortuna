@@ -32,5 +32,7 @@ func get_target(source, owner, combat = null):
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
+	if target == null:
+		return
 	for card : CombatCard in target:
 		card.health += health_gain_amount
