@@ -9,7 +9,7 @@ func init():
 		title = title % extra_attacks
 	if description.count('%d') == 1:
 		description = description % extra_attacks
-	super.init(id)
+	super.init()
 
 func get_new_targets(target_offsets, attacker) -> Array[int]:
 	var prev_targets = []
