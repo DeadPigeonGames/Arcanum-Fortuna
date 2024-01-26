@@ -190,6 +190,8 @@ func process_death() -> bool:
 
 
 func animate_attack(target, tile_idx, tile: Control) -> bool:
+	if attack <= 0:
+		return false
 	%SFXCard._SFX_Attack()
 	var target_position
 	var half_card = get_rect().size / 2
