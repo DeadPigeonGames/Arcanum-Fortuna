@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj012pap0dc6w"
-path="res://.godot/imported/card_king_of_daggers.png-e1dedebb5ac4fbbce52cf78a771c3b87.ctex"
+uid="uid://27551peguirl"
+path="res://.godot/imported/king_of_wands.png-55944352a1f4c02fbfd99d3cd2a1c833.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_king_of_daggers.png"
-dest_files=["res://.godot/imported/card_king_of_daggers.png-e1dedebb5ac4fbbce52cf78a771c3b87.ctex"]
+source_file="res://assets/sprites/cards/king_of_wands.png"
+dest_files=["res://.godot/imported/king_of_wands.png-55944352a1f4c02fbfd99d3cd2a1c833.ctex"]
 
 [params]
 
