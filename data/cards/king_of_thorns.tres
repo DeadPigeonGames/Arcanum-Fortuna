@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhks1grxrynox" path="res://assets/sprites/cards/king_of_thorns.png" id="1_5t04l"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_uako4"]
-[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_46rqf"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_ayb3m"]
 
 [resource]
 script = ExtResource("1_uako4")
@@ -16,4 +16,4 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
-keyword_slot_texture = ExtResource("2_46rqf")
+keyword_slot_texture = ExtResource("2_ayb3m")
