@@ -59,7 +59,7 @@ func take_damage(amount):
 	health -= amount
 	%Health.modulate = attacked_color
 	GlobalLog.add_entry("The enemy took %d damage." % amount)
-
+	return amount
 
 func restore_default_color():
 	%HealthLabel.text = str(health)

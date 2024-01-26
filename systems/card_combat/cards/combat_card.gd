@@ -87,11 +87,11 @@ func make_enemy():
 		flip()
 
 
-func trigger_keywords(source, owner, trigger : int, combat = null):
+func trigger_keywords(source, owner, trigger : int, params = {}, combat = null):
 	for i in range(keywords.size()):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & trigger:
 			await keywords[i].trigger(source, owner, keywords[i].get_target(source, owner, combat), \
-					get_node("KeyWordSlots").get_child(i).get_child(0))
+					get_node("KeyWordSlots").get_child(i).get_child(0), params)
 
 
 func check_if_animations_finished():
@@ -120,6 +120,8 @@ func reverse():
 
 
 func modifiy_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[Keyword]):
+	for i in range(keywords.size()):
+		%KeyWordSlots.get_child(i).get_child(0).set_icon(null)
 	for keyword : Keyword in keywords_to_remove:
 		if not keyword in keywords:
 			push_error("Cannot remove '%s' keywords from '%s' card, as it does not contain it." % [keyword.title, card_name])
@@ -156,6 +158,7 @@ func take_damage(amount : int):
 	health -= amount
 	modulate = attacked_color if amount > 0 else active_color
 	await animate_damage()
+	return amount
 
 
 func animate_damage():
@@ -228,8 +231,8 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
 	attack_tween.play()
 	await get_tree().create_timer(attack_speed + wait_mod).timeout
-	
-	target.take_damage(attack)
+	var dealt_damage = target.take_damage(attack)
+	await trigger_keywords(target, self, 32, {"damage_dealt": dealt_damage})
 	
 	if attack > 0:
 		var effect = damage_dealt.instantiate()
@@ -251,7 +254,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 		is_battle_over = true
 	if was_lethal:
 		await get_tree().process_frame
-		trigger_keywords(target, self, 1)
+		await trigger_keywords(target, self, 1)
 	return was_lethal
 
 

@@ -23,6 +23,9 @@ func _ready():
 
 
 func set_icon(keyword : Keyword):
+	if keyword == null:
+		visible = false
+		return
 	texture = keyword.icon
 	visible = true
 	

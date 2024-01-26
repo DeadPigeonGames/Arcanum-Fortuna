@@ -67,7 +67,7 @@ func take_damage(amount):
 	health -= amount
 	%Health.modulate = attacked_color
 	GlobalLog.add_entry("You took %d damage." % amount)
-
+	return amount
 
 func animate_take_damage_feedback(amount):
 	SfxOther._SFX_Damage()
