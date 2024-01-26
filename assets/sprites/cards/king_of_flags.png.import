@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjjut2fgq4iha"
-path="res://.godot/imported/card_king_of_swords.png-f0ef3e4f4a74aa72647cd2d7b04819f4.ctex"
+path="res://.godot/imported/king_of_flags.png-480667cf509e68f9a6fb611d245b3abb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_king_of_swords.png"
-dest_files=["res://.godot/imported/card_king_of_swords.png-f0ef3e4f4a74aa72647cd2d7b04819f4.ctex"]
+source_file="res://assets/sprites/cards/king_of_flags.png"
+dest_files=["res://.godot/imported/king_of_flags.png-480667cf509e68f9a6fb611d245b3abb.ctex"]
 
 [params]
 
