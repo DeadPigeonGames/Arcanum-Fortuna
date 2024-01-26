@@ -8,12 +8,12 @@ extends SwitchKeyword
 
 var trigger_count_lookup : Dictionary
 
-func init(id = 4):
+func init():
 	if description.count('%d') == 1:
 		description = description % required_trigger_count
 	elif description.count('%d') == 2:
 		description = description % [required_trigger_count, required_trigger_count]
-	super.init(id)
+	super.init()
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)

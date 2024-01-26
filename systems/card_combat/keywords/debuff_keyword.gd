@@ -8,7 +8,7 @@ extends ActivatedKeyword
 var debuffed_cards_lookup : Dictionary = {}
 
 
-func init(id = 3):
+func init():
 	if title.count('%d') == 2:
 		title = title % [attack_debuff, health_debuff]
 	elif title.count('%d') == 1:
@@ -18,7 +18,7 @@ func init(id = 3):
 		description = description % [attack_debuff, health_debuff]
 	elif description.count('%d') == 1:
 		description = description % attack_debuff if health_debuff == 0 else health_debuff
-	super.init(id)
+	super.init()
 
 
 func get_target(source, owner, combat = null):
@@ -53,6 +53,9 @@ func append_biggest_attack_target(owner, targets, opposing_cards):
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered '%s'." % [owner.card_data.name, owner.tile_coordinate.x, owner.tile_coordinate.y, title])
+	
+	if target == null:
+		return
 	
 	if not debuffed_cards_lookup.has(owner):
 		debuffed_cards_lookup[owner] = []

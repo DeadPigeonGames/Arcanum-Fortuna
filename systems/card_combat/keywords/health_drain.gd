@@ -11,11 +11,11 @@ var previous_health_gained := 0
 var base_decription := ""
 var granted_bufffs : Dictionary = {}
 
-func init(id = 4):
+func init():
 	if description.count('%d') == 1:
 		base_decription = description
 		description = description % health_gain
-	super.init(id)
+	super.init()
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)

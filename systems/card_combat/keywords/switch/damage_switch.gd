@@ -9,14 +9,14 @@ extends SwitchKeyword
 
 var dealt_damage_lookup : Dictionary
 
-func init(id = 4):
+func init():
 	if title.count('%d') == 1:
 		title = title % required_damage
 	if description.count('%d') == 1:
 		description = description % required_damage
 	elif description.count('%d') == 2:
 		description = description % [required_damage, required_damage]
-	super.init(id)
+	super.init()
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):

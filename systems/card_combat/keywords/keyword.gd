@@ -6,8 +6,7 @@ extends Resource
 @export var icon : Texture
 @export var emission_icon : Texture
 @export var highlight_duration := 0.5
-var id : int
 
 
-func init(id = 0):
-	self.id = id
+func init():
+	pass

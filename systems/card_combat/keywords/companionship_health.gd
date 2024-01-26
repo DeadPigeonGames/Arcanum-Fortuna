@@ -6,12 +6,12 @@ extends ActivatedKeyword
 var buffed_cards_lookup : Dictionary = {}
 
 
-func init(id = 4):
+func init():
 	if title.count('%d') == 1:
 		title = title % health_gain
 	if description.count('%d') == 1:
 		description = description % health_gain
-	super.init(id)
+	super.init()
 
 
 func get_target(source, owner, combat = null):

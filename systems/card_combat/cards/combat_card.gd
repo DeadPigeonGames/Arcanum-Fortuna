@@ -87,7 +87,7 @@ func make_enemy():
 		flip()
 
 
-func trigger_keywords(source, owner, trigger : int, params = {}, combat = null):
+func trigger_keywords(source, owner, trigger : int, combat = null, params = {}):
 	for i in range(keywords.size()):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & trigger:
 			await keywords[i].trigger(source, owner, keywords[i].get_target(source, owner, combat), \
@@ -232,7 +232,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	attack_tween.play()
 	await get_tree().create_timer(attack_speed + wait_mod).timeout
 	var dealt_damage = target.take_damage(attack)
-	await trigger_keywords(target, self, 32, {"damage_dealt": dealt_damage})
+	await trigger_keywords(target, self, 32, null, {"damage_dealt": dealt_damage})
 	
 	if attack > 0:
 		var effect = damage_dealt.instantiate()

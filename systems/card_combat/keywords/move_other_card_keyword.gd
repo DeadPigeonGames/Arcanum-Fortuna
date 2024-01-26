@@ -12,7 +12,7 @@ var combat_ref : CardBattle
 func get_target(source, owner, combat = null):
 	if combat == null:
 		push_error("Cannot trigger DeathrattleAtk: Combat must be provided!")
-		return
+		return null
 	combat_ref = combat
 	var opposing_card = combat.game_board.get_front_enemies() if not owner.is_enemy \
 			else combat.game_board.get_friendly_cards()

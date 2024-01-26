@@ -4,12 +4,12 @@ extends ActivatedKeyword
 @export var health_gain_amount := 2
 
 
-func init(id = 3):
+func init():
 	if title.count('%d') == 1:
 		title = title % [health_gain_amount]
 	if description.count('%d') == 1:
 		description = description % [health_gain_amount]
-	super.init(id)
+	super.init()
 
 
 func get_target(source, owner, combat = null):

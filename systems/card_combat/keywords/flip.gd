@@ -5,8 +5,8 @@ extends ActivatedKeyword
 @export var rotation_duration = 0.8
 @export var icon_rotation = 1.0
 
-func init(id = 2):
-	super.init(id)
+func init():
+	super.init()
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):

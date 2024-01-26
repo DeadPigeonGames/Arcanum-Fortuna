@@ -4,7 +4,7 @@ extends Keyword
 ## Honw many additional times this card can attack.
 @export var extra_attacks := 1
 
-func init(id = 3):
+func init():
 	if title.count('%d') == 1:
 		title = title % extra_attacks
 	if description.count('%d') == 1:

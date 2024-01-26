@@ -6,8 +6,8 @@ extends Keyword
 var turns_skipped_lookup : Dictionary = {}
 
 
-func init(id = 1):
-	super.init(id)
+func init():
+	super.init()
 	if title.count('%d') == 1:
 		title = title % turns_to_skip
 	if description.count('%d') == 1:
