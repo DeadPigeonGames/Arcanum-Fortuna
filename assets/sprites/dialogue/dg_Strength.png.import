@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vhp6qhyxxw2w"
-path="res://.godot/imported/Strength.png-637552a88080454559316cf3e2365ce4.ctex"
+uid="uid://cdye2fdobmty"
+path="res://.godot/imported/dg_Strength.png-deec20491f3bc59ed24fe79a0fbefa50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/Strength.png"
-dest_files=["res://.godot/imported/Strength.png-637552a88080454559316cf3e2365ce4.ctex"]
+source_file="res://assets/sprites/dialogue/dg_Strength.png"
+dest_files=["res://.godot/imported/dg_Strength.png-deec20491f3bc59ed24fe79a0fbefa50.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
