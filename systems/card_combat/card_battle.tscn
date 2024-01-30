@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="10_5pdmy"]
 [ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_dvcfv"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
-[ext_resource type="PackedScene" uid="uid://ckn5uoesaguy0" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
+[ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
 [ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_43tdh"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
 [ext_resource type="Texture2D" uid="uid://bpxh1tf25d17s" path="res://assets/ui/gameboard/end_turn_element_placeholder.png" id="20_2dix6"]
@@ -26,7 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://du43fo187hof7" path="res://assets/ui/gameboard/end_turn_element_pressed_placeholder.png" id="21_k1u0d"]
 [ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="22_mrf7r"]
 [ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="23_vwp6k"]
-[ext_resource type="PackedScene" uid="uid://co8hw7e4o4nel" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
+[ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
+[ext_resource type="Texture2D" uid="uid://c8mmow21m38j8" path="res://assets/ui/gameboard/gradient_1.png" id="27_a53x1"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -65,9 +66,6 @@ script = ExtResource("9_j03le")
 
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("8_qbqvo")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wessj"]
-bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rikmg"]
 bg_color = Color(1, 1, 1, 1)
@@ -200,70 +198,50 @@ layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
+[node name="Panel" type="TextureRect" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
+[node name="Panel2" type="TextureRect" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
+[node name="Panel3" type="TextureRect" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
+[node name="Panel4" type="TextureRect" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Backrow"]
+[node name="Panel5" type="TextureRect" parent="GameBoard/EnemyTiles/Backrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
 [node name="Frontrow" type="HBoxContainer" parent="GameBoard/EnemyTiles"]
 layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel2" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel3" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel4" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
-[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel5" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wessj")
 
 [node name="PlayerTiles" type="HBoxContainer" parent="GameBoard"]
 layout_mode = 2
@@ -374,6 +352,13 @@ offset_top = 982.0
 offset_right = 331.0
 offset_bottom = 1060.0
 theme_override_font_sizes/font_size = 19
+
+[node name="Gradient" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 570.0
+texture = ExtResource("27_a53x1")
 
 [node name="DebugOnly" type="Control" parent="."]
 visible = false
