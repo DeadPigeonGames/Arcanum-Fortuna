@@ -28,9 +28,8 @@ func get_default_audio_dict():
 		if bus_idx == -1:
 			push_error("BUS %s NOT FOUND!!!" % bus)
 			continue
-		if dict.has(bus_idx):
-			continue
-		dict[bus_idx] = AudioServer.get_bus_volume_db(bus_idx)
+		if not dict.has(bus_idx):
+			dict[bus] = AudioServer.get_bus_volume_db(bus_idx)
 	return dict
 
 
@@ -72,7 +71,7 @@ func load_test():
 	dict.merge(settingsDict["Audio"])
 	
 	for key in settingsDict["Audio"].keys():
-		var bus_idx = key as int
+		var bus_idx := AudioServer.get_bus_index(key)
 		if bus_idx == -1:
 			push_error("BUS %s NOT FOUND!!!" % bus_idx)
 			continue
@@ -113,10 +112,10 @@ func get_window_position():
 	return settingsDict["Video"]["window_pos"] as Vector2i
 
 
-func set_audio_slider(bus_idx, value):
-	settingsDict["Audio"][bus_idx] = value
+func set_audio_slider(bus_name, value):
+	settingsDict["Audio"][bus_name] = value
 	save_config()
 
 
-func get_audio_slider(bus_idx):
-	return settingsDict["Audio"][bus_idx] as float
+func get_audio_slider(bus_name):
+	return settingsDict["Audio"][bus_name] as float

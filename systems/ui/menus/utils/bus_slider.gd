@@ -32,7 +32,7 @@ func _on_value_changed(value_changed):
 	
 	var db = linear_to_db(value)
 	AudioServer.set_bus_volume_db(bus_idx, db)
-	Settings.set_audio_slider(bus_idx, db)
+	Settings.set_audio_slider(target_bus, db)
 
 
 func _on_drag_started():
