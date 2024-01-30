@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="3_cofgw"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="4_y50ar"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_4kaqf"]
-[ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
-[ext_resource type="Material" uid="uid://d4dyg8c8m6yp8" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
-[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="11_mto8i"]
 [ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="8_coke3"]
+[ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
+[ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="11_mto8i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
 atlas = ExtResource("6_4kaqf")
@@ -352,6 +352,7 @@ scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_yop51")
 
 [node name="KeywordIcon" parent="KeyWordSlots/KeywordSlot1" instance=ExtResource("2_bo1pm")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -511,6 +512,7 @@ local_coords = true
 [node name="SingletonInteractor" parent="." instance=ExtResource("11_mto8i")]
 singleton = 1
 method_to_call = "_SFX_Damage"
+
 [node name="SFXCard" parent="." instance=ExtResource("8_coke3")]
 unique_name_in_owner = true
 
