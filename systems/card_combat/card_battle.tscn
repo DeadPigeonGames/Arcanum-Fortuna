@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="10_5pdmy"]
 [ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_dvcfv"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
-[ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
+[ext_resource type="PackedScene" uid="uid://ced2ynscdgy5e" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
 [ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_43tdh"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
 [ext_resource type="Texture2D" uid="uid://bpxh1tf25d17s" path="res://assets/ui/gameboard/end_turn_element_placeholder.png" id="20_2dix6"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://du43fo187hof7" path="res://assets/ui/gameboard/end_turn_element_pressed_placeholder.png" id="21_k1u0d"]
 [ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="22_mrf7r"]
 [ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="23_vwp6k"]
-[ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
+[ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")

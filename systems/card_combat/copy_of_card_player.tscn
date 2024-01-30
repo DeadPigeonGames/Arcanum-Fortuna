@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckn5uoesaguy0"]
+[gd_scene load_steps=14 format=3 uid="uid://ced2ynscdgy5e"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
 [ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://systems/card_combat/hand.tscn" id="2_mif1c"]
 [ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="4_j51k8"]
-[ext_resource type="PackedScene" uid="uid://c6ng7re6x76bk" path="res://systems/card_combat/copy_of_card_stack.tscn" id="5_h5pty"]
+[ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_card_stack.tscn" id="5_h5pty"]
+[ext_resource type="Texture2D" uid="uid://bgmo5mpcv3e3m" path="res://assets/ui/gameboard/corner_2.png" id="5_hsyq3"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="5_l02yx"]
-[ext_resource type="Texture2D" uid="uid://itwod5hjv66x" path="res://assets/ui/gameboard/board_corner_placeholder.png" id="5_luv56"]
-[ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="5_otkj5"]
 [ext_resource type="Texture2D" uid="uid://by4v5aq6yrqoh" path="res://assets/sprites/vfx/overlays/hurt_overlay.png" id="6_swmyn"]
+[ext_resource type="Texture2D" uid="uid://bl7462w253t21" path="res://assets/ui/gameboard/uhhh.png" id="6_xv1v3"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="7_6dxbb"]
 [ext_resource type="Script" path="res://systems/card_combat/hurt_overlay.gd" id="7_k4gqe"]
 [ext_resource type="Texture2D" uid="uid://bdjknsdymfsjj" path="res://assets/ui/gameboard/health_bar_placeholder.png" id="8_2vgm4"]
@@ -84,7 +84,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-texture = ExtResource("5_luv56")
+texture = ExtResource("5_hsyq3")
 
 [node name="Karma" type="TextureRect" parent="ResourceContainer"]
 unique_name_in_owner = true
@@ -93,7 +93,7 @@ offset_left = 376.0
 offset_top = 376.0
 offset_right = 508.0
 offset_bottom = 508.0
-texture = ExtResource("5_otkj5")
+texture = ExtResource("6_xv1v3")
 
 [node name="KarmaLabel" type="Label" parent="ResourceContainer/Karma"]
 unique_name_in_owner = true
