@@ -24,6 +24,7 @@ PauseMenu="*res://systems/ui/menus/pause_menu.tscn"
 SfxBg="*res://Audio/sfx_bg.tscn"
 SfxOther="*res://Audio/sfx_other.tscn"
 SceneHandler="*res://utils/autoload/scene_handler.tscn"
+Settings="*res://utils/autoload/settings_data.tscn"
 
 [dialogic]
 
