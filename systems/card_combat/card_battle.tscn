@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=42 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="22_mrf7r"]
 [ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="23_vwp6k"]
 [ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
-[ext_resource type="Texture2D" uid="uid://c8mmow21m38j8" path="res://assets/ui/gameboard/gradient_1.png" id="27_a53x1"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -352,13 +351,6 @@ offset_top = 982.0
 offset_right = 331.0
 offset_bottom = 1060.0
 theme_override_font_sizes/font_size = 19
-
-[node name="Gradient" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 570.0
-texture = ExtResource("27_a53x1")
 
 [node name="DebugOnly" type="Control" parent="."]
 visible = false
