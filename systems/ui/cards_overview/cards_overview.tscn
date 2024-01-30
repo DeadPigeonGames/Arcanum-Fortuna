@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://crfvyvixlipuo"]
+[gd_scene load_steps=20 format=3 uid="uid://crfvyvixlipuo"]
 
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_lynxf"]
 [ext_resource type="Script" path="res://systems/ui/cards_overview/cards_overview.gd" id="1_wkcul"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://deonq2pnkifc2" path="res://data/cards/the_devil.tres" id="9_rfiq2"]
 [ext_resource type="Script" path="res://data/scripts/player_data.gd" id="10_xe2w8"]
 [ext_resource type="Script" path="res://systems/ui/cards_overview/filter_options_menu.gd" id="11_wj856"]
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="12_4lqmk"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="12_s4hu7"]
 
 [sub_resource type="Resource" id="Resource_b8jln"]
@@ -69,6 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("12_4lqmk")
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2

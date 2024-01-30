@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://c7qbbf3idp0cf"]
+[gd_scene load_steps=19 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
 [ext_resource type="Texture2D" uid="uid://ck8w2wmtro7hn" path="res://assets/sprites/cards/chariot.png" id="1_nnqwu"]
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="2_22q2n"]
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="2_yscws"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="3_yndjn"]
 [ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="4_dw4cm"]
 [ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="5_5o7m8"]
 [ext_resource type="Texture2D" uid="uid://c3mveorhm0h1n" path="res://assets/ui/icons/atk_placeholder.png" id="6_pte6t"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_wcvh1"]
 [ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="8_25ce2"]
+[ext_resource type="FontFile" uid="uid://cbi6wymdty6k2" path="res://assets/ui/fonts/TarotPamelaColmanSmith-Regular.ttf" id="10_6h4fc"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hmwet"]
 size = Vector2(200, 100)
@@ -52,6 +54,7 @@ offset_bottom = 87.0
 [node name="HBoxContainer" type="HBoxContainer" parent="Container"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+theme = ExtResource("2_yscws")
 theme_override_constants/separation = 8
 
 [node name="Control" type="Control" parent="Container/HBoxContainer"]
@@ -372,6 +375,7 @@ alignment = 1
 [node name="CardName" type="Label" parent="Container/HBoxContainer/CardInformation"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_6h4fc")
 text = "The Chariot"
 label_settings = SubResource("LabelSettings_fh8de")
 
