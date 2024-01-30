@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=13 format=3 uid="uid://cbpti201obhda"]
+
+[ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="1_2x4xf"]
+[ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="2_vgkp3"]
+[ext_resource type="Resource" uid="uid://b5ytokrx5why5" path="res://data/cards/page_of_flags.tres" id="3_fpr5b"]
+[ext_resource type="Resource" uid="uid://d4guw6tm3pttg" path="res://data/cards/king_of_daggers.tres" id="4_4n3rg"]
+[ext_resource type="Resource" uid="uid://nr5du58leen5" path="res://data/cards/king_of_thorns.tres" id="5_lptdm"]
+[ext_resource type="Resource" uid="uid://ncfdsv56qat7" path="res://data/cards/knight_of_flags.tres" id="6_qexub"]
+[ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="8_gb2fr"]
+[ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="9_pwx81"]
+[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="10_vgry0"]
+[ext_resource type="Resource" uid="uid://cjas1prwh50gk" path="res://data/cards/the_hanged_man.tres" id="12_o8ls8"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="13_31euf"]
+[ext_resource type="Resource" uid="uid://yh1e2xgkqn0b" path="res://data/enemy/StrategyModules/enemy_elite_karma_module.tres" id="14_ut6lc"]
+
+[resource]
+script = ExtResource("13_31euf")
+available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_2x4xf"), ExtResource("2_vgkp3"), ExtResource("3_fpr5b"), ExtResource("4_4n3rg"), ExtResource("5_lptdm"), ExtResource("6_qexub"), ExtResource("8_gb2fr"), ExtResource("9_pwx81"), ExtResource("12_o8ls8"), ExtResource("10_vgry0")])
+strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("14_ut6lc")])
