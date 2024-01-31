@@ -42,6 +42,7 @@ func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
+	game_board.tutorial_overlay = $TutorialOverlay
 	if is_debug:
 		await get_tree().process_frame # game_board needs to be ready first lol
 		init(debug_player_data, debug_enemy_data)
@@ -119,6 +120,7 @@ func _on_phase_completed():
 	if phase_idx >= phases.size():
 		turn += 1
 		phase_idx = 0
+		%EndTurnAnimation.play_backwards()
 	process_next_phase()
 
 
@@ -138,6 +140,7 @@ func unlock_player_actions():
 
 func _on_end_turn_button_pressed():
 	player_turn_ended.emit()
+	%EndTurnAnimation.play()
 
 
 func handle_attacks(attacker, column, is_source_friendly):

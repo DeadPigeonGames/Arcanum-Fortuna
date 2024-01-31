@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=40 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -21,12 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://ced2ynscdgy5e" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
 [ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_43tdh"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
-[ext_resource type="Texture2D" uid="uid://bpxh1tf25d17s" path="res://assets/ui/gameboard/end_turn_element_placeholder.png" id="20_2dix6"]
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
-[ext_resource type="Texture2D" uid="uid://du43fo187hof7" path="res://assets/ui/gameboard/end_turn_element_pressed_placeholder.png" id="21_k1u0d"]
-[ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="22_mrf7r"]
-[ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="23_vwp6k"]
+[ext_resource type="SpriteFrames" uid="uid://c1n1fu0qqediq" path="res://assets/ui/gameboard/coin_sprite_sheet.tres" id="22_8s5et"]
 [ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
+[ext_resource type="PackedScene" uid="uid://cp0f4wuex133u" path="res://systems/tutorial/tutorial_overlay.tscn" id="28_0vqvt"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -322,10 +320,6 @@ offset_right = -148.0
 offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("20_2dix6")
-texture_pressed = ExtResource("21_k1u0d")
-texture_hover = ExtResource("22_mrf7r")
-texture_disabled = ExtResource("23_vwp6k")
 
 [node name="ShowTooltip" type="Control" parent="EndTurnButton"]
 anchors_preset = 0
@@ -339,6 +333,13 @@ text = "Once you press this the following will happen:
 3. Enemy cards move down if possible.
 4. Enemy cards attack from left to rigtht.
 5. The next turn starts and you'll draw a card."
+
+[node name="EndTurnAnimation" type="AnimatedSprite2D" parent="EndTurnButton"]
+unique_name_in_owner = true
+position = Vector2(72, 72)
+sprite_frames = ExtResource("22_8s5et")
+animation = &"coin_flip"
+speed_scale = 0.65
 
 [node name="EnemyPlayer" parent="." instance=ExtResource("25_q4n6c")]
 layout_mode = 0
@@ -369,6 +370,9 @@ offset_right = -28.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TutorialOverlay" parent="." instance=ExtResource("28_0vqvt")]
+layout_mode = 1
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
