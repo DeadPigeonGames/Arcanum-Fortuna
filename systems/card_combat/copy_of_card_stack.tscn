@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6ng7re6x76bk"]
+[gd_scene load_steps=5 format=3 uid="uid://vnsgfexxjwpl"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_stack.gd" id="1_axc8c"]
-[ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="2_qkmsd"]
+[ext_resource type="Texture2D" uid="uid://b6ad0ibdr0h18" path="res://assets/ui/gameboard/card_stack/card_stack_full.png" id="2_o2x10"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="3_0vdgp"]
 [ext_resource type="Texture2D" uid="uid://dilv52k7npt88" path="res://assets/ui/gameboard/current_deck_size_underlay_placeholder.png" id="3_ba1gb"]
 
@@ -24,7 +24,7 @@ offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(100, 150)
-texture = ExtResource("2_qkmsd")
+texture = ExtResource("2_o2x10")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
 layout_mode = 0
