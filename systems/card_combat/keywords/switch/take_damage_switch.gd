@@ -4,7 +4,7 @@ extends SwitchKeyword
 @export_category("Condition")
 ## The Condition is met when this much attack damage was dealt by this card in total
 @export var required_damage := 5
-# If this is enabled all damage will be treated as 1 damage, meaning the times damage was taken are tracked instead of the amount
+## If this is enabled all damage will be treated as 1 damage, meaning the times damage was taken are tracked instead of the amount
 @export var ignore_damage_amount := true
 
 var dealt_damage_lookup : Dictionary

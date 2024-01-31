@@ -63,7 +63,6 @@ func init(player_data, enemy_data):
 	enemy.init(enemy_data)
 	for phase in phases:
 		phase.init(self)
-	game_board.card_played.connect(_on_card_played)
 
 
 func _input(event):
@@ -76,7 +75,7 @@ func _on_active_cards_changed(source, block = true):
 		is_blocked = true
 	var active_cards = game_board.get_active_cards()
 	for card : CombatCard in active_cards:
-		card.trigger_keywords(source, card, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, \
+		await card.trigger_keywords(source, card, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, \
 				self, {"active_cards": active_cards})
 	if block:
 		await get_tree().process_frame
@@ -87,7 +86,7 @@ func _on_card_played(new_card : CombatCard):
 	is_blocked = true
 	await _on_active_cards_changed(new_card, false)
 	var active_cards = game_board.get_active_cards()
-	new_card.trigger_keywords(new_card, new_card, ActivatedKeyword.Triggers.ON_PLAYED, \
+	await new_card.trigger_keywords(new_card, new_card, ActivatedKeyword.Triggers.ON_PLAYED, \
 				self, {"active_cards": active_cards})
 	await get_tree().process_frame
 	new_card.drag_started.connect($CardDeletion._on_card_drag_started)

@@ -1,8 +1,6 @@
 class_name GameBoard
 extends VBoxContainer
 
-signal card_played(card : CombatCard)
-
 @export var combat_card_prefab : PackedScene
 
 @export var enemy_player : EnemyPlayer
@@ -70,7 +68,7 @@ func _on_card_relased(card: Card):
 	card.z_index = 2
 
 
-func lock_friendly_cards():
+func lock_friendly_cards(combat):
 	var i := -1
 	for tile in player_tiles.get_children():
 		i += 1
@@ -89,7 +87,7 @@ func lock_friendly_cards():
 		[new_combat_card.card_data.name, i, 0])
 		card.queue_free()
 		await get_tree().process_frame
-		card_played.emit(new_combat_card)
+		await combat._on_card_played(new_combat_card)
 		await get_tree().process_frame
 
 

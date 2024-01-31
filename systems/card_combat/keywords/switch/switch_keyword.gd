@@ -12,12 +12,16 @@ extends ActivatedKeyword
 @export var rotation_duration = 0.8
 @export var icon_rotation = 1.0
 
-
-func _on_completed(owner : CombatCard, icon_to_animate = null):
-	await animate_transform(owner, icon_to_animate)
-	var additional_keywords_to_remove : Array[Keyword]
+func init():
 	if not self in keywords_to_remove:
 		keywords_to_remove.append(self)
+
+func _on_completed(owner : CombatCard, icon_to_animate = null):
+	if not self in owner.keywords:
+		push_error("Tried to complete switch-keyword '%s' despite not being part if its owner '%s' keywords.")
+		return
+	# owner.keywords.erase(self)
+	await animate_transform(owner, icon_to_animate)
 	owner.modifiy_keywords(keywords_to_remove, keywords_to_gain)
 	owner.health += health_difference
 	owner.health = max(1, owner.health)
