@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://ced2ynscdgy5e"]
+[gd_scene load_steps=16 format=3 uid="uid://ced2ynscdgy5e"]
 
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_ltqqh"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
 [ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://systems/card_combat/hand.tscn" id="2_mif1c"]
 [ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="4_j51k8"]
@@ -24,6 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_ltqqh")
 script = ExtResource("1_y0ggj")
 
 [node name="Hand" parent="." instance=ExtResource("2_mif1c")]
