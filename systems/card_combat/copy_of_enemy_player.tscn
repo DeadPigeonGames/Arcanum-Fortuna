@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://ew0hxbsaa2qn"]
 
 [ext_resource type="Script" path="res://systems/card_combat/enemy_player.gd" id="1_w2nxe"]
+[ext_resource type="Texture2D" uid="uid://bgmo5mpcv3e3m" path="res://assets/ui/gameboard/corner_2.png" id="2_6cfi3"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="2_myi76"]
-[ext_resource type="Texture2D" uid="uid://c001k3rvpc4oo" path="res://assets/ui/gameboard/corner_1.png" id="2_ow1r3"]
-[ext_resource type="Texture2D" uid="uid://bl7462w253t21" path="res://assets/ui/gameboard/uhhh.png" id="3_w2dky"]
+[ext_resource type="Texture2D" uid="uid://ca7vt6lror7v6" path="res://assets/ui/gameboard/karma.png" id="3_j5dsu"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="4_d5hps"]
 [ext_resource type="Texture2D" uid="uid://d0kr3ddbhudeu" path="res://assets/ui/gameboard/hb_4.png" id="6_7i4po"]
 [ext_resource type="Texture2D" uid="uid://bbgh6tgr1fu1y" path="res://assets/ui/gameboard/hb_3.png" id="7_5448k"]
@@ -29,20 +29,16 @@ offset_right = 1256.0
 offset_bottom = 1248.0
 rotation = 3.14159
 size_flags_vertical = 0
-texture = ExtResource("2_ow1r3")
+texture = ExtResource("2_6cfi3")
 flip_h = true
 flip_v = true
 
 [node name="Karma" type="TextureRect" parent="ResourceContainer"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 164.0
-offset_bottom = 164.0
-texture = ExtResource("3_w2dky")
-flip_h = true
-flip_v = true
+offset_right = 212.0
+offset_bottom = 188.0
+texture = ExtResource("3_j5dsu")
 
 [node name="KarmaLabel" type="Label" parent="ResourceContainer/Karma"]
 unique_name_in_owner = true
