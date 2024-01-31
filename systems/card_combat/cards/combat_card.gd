@@ -149,7 +149,7 @@ func heal(amount : int):
 	pass
 
 
-func take_damage(amount : int):
+func take_damage(amount : int, source = null):
 	if amount <= 0:
 		return
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
@@ -160,7 +160,7 @@ func take_damage(amount : int):
 	health -= amount
 	modulate = attacked_color if amount > 0 else active_color
 	await animate_damage()
-	await trigger_keywords(null, self, ActivatedKeyword.Triggers.ON_TAKE_DAMAGE, null, {"taken_damage": amount})
+	await trigger_keywords(source, self, ActivatedKeyword.Triggers.ON_TAKE_DAMAGE, null, {"taken_damage": amount})
 	return amount
 
 
@@ -234,7 +234,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
 	attack_tween.play()
 	await get_tree().create_timer(attack_speed + wait_mod).timeout
-	var dealt_damage = await target.take_damage(attack)
+	var dealt_damage = await target.take_damage(attack, self)
 	await trigger_keywords(target, self, 32, null, {"damage_dealt": dealt_damage})
 	
 	if attack > 0:

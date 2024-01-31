@@ -63,7 +63,7 @@ func heal(amount):
 	health += amount
 	health = min(health, max_health)
 
-func take_damage(amount):
+func take_damage(amount, _source = null):
 	SfxOther._SFX_Damage()
 	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"
 	health -= amount
@@ -98,7 +98,7 @@ func process_karma_overflow() -> bool:
 	%KarmaLabel.text = str(karma)
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
-		take_damage(-karma)
+		take_damage(-karma, self)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
 	var was_lethal = process_death()

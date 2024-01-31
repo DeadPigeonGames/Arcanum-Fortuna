@@ -67,7 +67,7 @@ func heal(amount):
 	health = min(health, max_health)
 	
 
-func take_damage(amount):
+func take_damage(amount, _source = null):
 	animate_take_damage_feedback(amount)
 	
 	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"
@@ -113,7 +113,7 @@ func process_karma_overflow() -> bool:
 	%KarmaLabel.text = str(karma)
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
-		take_damage(-karma)
+		take_damage(-karma, self)
 		$ScreenshakeCamera2D.add_trauma(0.1)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
