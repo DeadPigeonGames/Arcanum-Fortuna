@@ -75,10 +75,8 @@ func _on_active_cards_changed(source, block = true):
 		is_blocked = true
 	var active_cards = game_board.get_active_cards()
 	for card : CombatCard in active_cards:
-		for i in range(card.keywords.size()):
-			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
-				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, self), \
-						card.get_node("KeyWordSlots").get_child(i).get_child(0), {"active_cards": active_cards})
+		card.trigger_keywords(source, card, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, \
+				self, {"active_cards": active_cards})
 	if block:
 		await get_tree().process_frame
 		is_blocked = false
@@ -88,14 +86,8 @@ func _on_card_played(new_card : CombatCard):
 	is_blocked = true
 	await _on_active_cards_changed(new_card, false)
 	var active_cards = game_board.get_active_cards()
-	new_card.trigger_keywords(new_card, new_card, 64, null, {"active_cards": active_cards})
-	for card : CombatCard in active_cards:
-		if card == new_card:
-			continue
-		card.trigger_keywords(new_card, card, ActivatedKeyword.Triggers.ON_CARD_PLAYED, \
-				null, {"active_cards": active_cards})
-	new_card.trigger_keywords(new_card, new_card, ActivatedKeyword.Triggers.ON_ENTER_BOARD, \
-				null, {"active_cards": active_cards})
+	new_card.trigger_keywords(new_card, new_card, ActivatedKeyword.Triggers.ON_PLAYED, \
+				self, {"active_cards": active_cards})
 	await get_tree().process_frame
 	new_card.drag_started.connect($CardDeletion._on_card_drag_started)
 	new_card.drag_ended.connect($CardDeletion._on_card_drag_ended)

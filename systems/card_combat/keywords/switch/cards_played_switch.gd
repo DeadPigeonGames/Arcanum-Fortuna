@@ -8,9 +8,9 @@ extends SwitchKeyword
 var played_count_lookup : Dictionary
 
 func init():
-	if triggers != 16 or combat_phase_triggers.size() != 0:
+	if triggers != ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED or combat_phase_triggers.size() != 0:
 		push_error("CardsPlayedSwitch can only be used with 'On Played' trigger. Set triggers were discarded.")
-		triggers = 16
+		triggers = ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED
 		combat_phase_triggers.clear()
 
 	if title.count('%d') == 1:
