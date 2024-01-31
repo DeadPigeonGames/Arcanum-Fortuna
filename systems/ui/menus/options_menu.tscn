@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://biy5pjrvhi2le"]
+[gd_scene load_steps=9 format=3 uid="uid://biy5pjrvhi2le"]
 
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_1lro1"]
 [ext_resource type="Script" path="res://systems/ui/menus/options_menu.gd" id="1_38pu7"]
 [ext_resource type="Script" path="res://systems/ui/menus/utils/bus_slider.gd" id="1_rj2ur"]
 [ext_resource type="Script" path="res://systems/ui/menus/utils/resolution_selection.gd" id="2_pjhbc"]
 [ext_resource type="Script" path="res://systems/ui/menus/utils/fullscreen_selection.gd" id="3_lts5j"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="3_wit75"]
-[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="6_ym477"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://Utils/sounds/singleton_interactor.tscn" id="6_ym477"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0j42"]
 bg_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1lro1")
 script = ExtResource("1_38pu7")
 
 [node name="TabContainer" type="TabContainer" parent="."]
