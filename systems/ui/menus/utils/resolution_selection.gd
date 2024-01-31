@@ -18,8 +18,10 @@ func _on_item_selected(index):
 	var desired = resolutions[index]
 	DisplayServer.window_set_size(desired)
 	get_window().move_to_center()
+	Settings.save_config()
 
 
 func _process(delta):
 	var window_mode = DisplayServer.window_get_mode()
 	disabled = window_mode != DisplayServer.WINDOW_MODE_WINDOWED
+	

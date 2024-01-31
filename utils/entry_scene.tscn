@@ -17,8 +17,28 @@ func _ready():
 			add_child(instance)
 			await instance.complete
 	
+	load_audio_config()
+	load_video_config()
+	
 	if not main_scene.is_empty():
 		SceneHandler.change_scene(main_scene)
+
+func load_audio_config():
+	var dict = Settings.get_loaded_audiosettings()
+	
+	for key in dict.keys():
+		var bus_idx := AudioServer.get_bus_index(key)
+		if bus_idx == -1:
+			push_error(\"BUS %s NOT FOUND!!!\" % bus_idx)
+			continue
+		AudioServer.set_bus_volume_db(bus_idx, dict[key] as float)
+
+
+func load_video_config():
+	DisplayServer.window_set_size(Settings.get_video_resolution())
+	DisplayServer.window_set_mode(Settings.get_window_mode())
+	DisplayServer.window_set_current_screen(Settings.get_screen_index())
+	DisplayServer.window_set_position(Settings.get_window_position())
 "
 
 [node name="EntryScene" type="Node"]

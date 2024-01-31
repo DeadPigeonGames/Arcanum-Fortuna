@@ -17,3 +17,4 @@ func _ready():
 
 func _on_item_selected(index):
 	DisplayServer.window_set_mode(options.keys()[index])
+	Settings.save_config()
