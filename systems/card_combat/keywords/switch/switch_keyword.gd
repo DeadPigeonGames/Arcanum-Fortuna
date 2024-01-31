@@ -15,7 +15,9 @@ extends ActivatedKeyword
 
 func _on_completed(owner : CombatCard, icon_to_animate = null):
 	await animate_transform(owner, icon_to_animate)
-	keywords_to_remove.append(self)
+	var additional_keywords_to_remove : Array[Keyword]
+	if not self in keywords_to_remove:
+		keywords_to_remove.append(self)
 	owner.modifiy_keywords(keywords_to_remove, keywords_to_gain)
 	owner.health += health_difference
 	owner.health = max(1, owner.health)
