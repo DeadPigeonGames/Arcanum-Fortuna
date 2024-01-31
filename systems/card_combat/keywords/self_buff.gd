@@ -5,7 +5,7 @@ extends ActivatedKeyword
 @export var attack_gain : int = 1
 
 
-func init(id = 3):
+func init():
 	if title.count('%d') == 2:
 		title = title % [attack_gain, health_gain]
 	elif title.count('%d') == 1:
@@ -15,7 +15,7 @@ func init(id = 3):
 		description = description % [attack_gain, health_gain]
 	elif description.count('%d') == 1:
 		description = description % attack_gain if health_gain == 0 else health_gain
-	super.init(id)
+	super.init()
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):

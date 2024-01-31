@@ -30,7 +30,9 @@ func _on_value_changed(value_changed):
 	if bus_idx == -1:
 		push_error("BUS %s MISSING!!!" % target_bus)
 	
-	AudioServer.set_bus_volume_db(bus_idx, linear_to_db(value))
+	var db = linear_to_db(value)
+	AudioServer.set_bus_volume_db(bus_idx, db)
+	Settings.set_audio_slider(target_bus, db)
 
 
 func _on_drag_started():

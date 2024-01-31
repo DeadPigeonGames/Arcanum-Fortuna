@@ -4,12 +4,12 @@ extends ActivatedKeyword
 @export var atk_gain_amount := 2
 
 
-func init(id = 3):
+func init():
 	if title.count('%d') == 1:
 		title = title % [atk_gain_amount]
 	if description.count('%d') == 1:
 		description = description % [atk_gain_amount]
-	super.init(id)
+	super.init()
 
 
 func get_target(source, owner, combat = null):
@@ -32,5 +32,7 @@ func get_target(source, owner, combat = null):
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
+	if target == null:
+		return
 	for card : CombatCard in target:
 		card.attack += atk_gain_amount

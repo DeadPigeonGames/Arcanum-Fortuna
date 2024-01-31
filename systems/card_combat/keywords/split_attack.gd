@@ -1,8 +1,8 @@
 class_name SplitAttack
 extends Keyword
 
-func init(id = 1):
-	super.init(id)
+func init():
+	super.init()
 
 
 func get_new_targets(target_offsets, attacker) -> Array[int]:

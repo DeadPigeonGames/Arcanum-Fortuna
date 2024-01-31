@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_g2abk"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="6_kuo4c"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="7_mp5ns"]
-[ext_resource type="PackedScene" path="res://utils/anti_pause_node.tscn" id="7_ynsi7"]
+[ext_resource type="PackedScene" uid="uid://jn77ec80jhq5" path="res://utils/anti_pause_node.tscn" id="7_ynsi7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -110,7 +110,7 @@ alignment = 1
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-text = "Play!"
+text = "Play"
 
 [node name="HoverSound" parent="VBoxContainer/StartButton" instance=ExtResource("7_mp5ns")]
 singleton = 1
@@ -123,7 +123,8 @@ method_to_call = "_SFX_UIButtonPress"
 [node name="TutorialButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-text = "¡Tutorial!"
+disabled = true
+text = "Tutorial"
 
 [node name="HoverSound" parent="VBoxContainer/TutorialButton" instance=ExtResource("7_mp5ns")]
 singleton = 1
@@ -149,7 +150,7 @@ method_to_call = "_SFX_UIButtonPress"
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-text = "quit the game :)"
+text = "Quit"
 
 [node name="HiddenInBrowser" type="Node" parent="VBoxContainer/QuitButton"]
 script = ExtResource("6_kuo4c")

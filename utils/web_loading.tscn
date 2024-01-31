@@ -1,19 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://ck2g6ko82h0ni"]
+[gd_scene load_steps=9 format=3 uid="uid://ck2g6ko82h0ni"]
 
 [ext_resource type="Script" path="res://utils/web_loading.gd" id="1_4mkkf"]
-[ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="2_2hllf"]
-[ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="3_3papl"]
-[ext_resource type="Material" uid="uid://n67jhv3xv2db" path="res://assets/vfx/materials/karma_particle.tres" id="4_t3ckx"]
-[ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="4_ycnt1"]
-[ext_resource type="Shader" path="res://shaders/fake_3d.gdshader" id="5_ciy2d"]
-[ext_resource type="Material" uid="uid://bvhyxtr0b6ktj" path="res://assets/vfx/materials/trail.tres" id="5_mjaw6"]
-[ext_resource type="Material" uid="uid://x5u303jd0gal" path="res://assets/vfx/materials/big_blob.tres" id="6_6xlt5"]
+[ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="2_6ak0a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nui80"]
 font_size = 128
 
 [sub_resource type="LabelSettings" id="LabelSettings_hwta8"]
 font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebsnl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d665j"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
 
 [sub_resource type="Animation" id="Animation_l6a3s"]
 resource_name = "spin"
@@ -36,22 +35,6 @@ _data = {
 "spin": SubResource("Animation_l6a3s")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0v0vi"]
-shader = ExtResource("4_ycnt1")
-shader_parameter/strength = 0.0
-shader_parameter/noise_speed = 0.1
-shader_parameter/noise_threshold = 0.2
-shader_parameter/noise_falloff = 0.1
-shader_parameter/bleed_strength = 1.1
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvd56"]
-shader = ExtResource("5_ciy2d")
-shader_parameter/fov = 90.0
-shader_parameter/cull_back = true
-shader_parameter/y_rot = 0.0
-shader_parameter/x_rot = 0.0
-shader_parameter/inset = 0.0
-
 [node name="WebLoading" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -60,6 +43,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4mkkf")
+objects_paths_to_load = Array[String](["res://assets/materials/distort_rect.tres", "res://assets/materials/invert.tres", "res://assets/vfx/materials/big_blob.tres", "res://assets/vfx/materials/damage_effect.tres", "res://assets/vfx/materials/karma_particle.tres", "res://assets/vfx/materials/keyword_icon.tres", "res://assets/vfx/materials/trail.tres", "res://shaders/blob_background.gdshader", "res://shaders/fake_3d.gdshader", "res://shaders/invert.gdshader", "res://shaders/noise_walk.gdshader"])
+main_scene = "res://systems/ui/main_menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -93,9 +78,15 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "this might take a moment. (We assure you the game is loading!)"
+text = "this might take a moment."
 label_settings = SubResource("LabelSettings_hwta8")
 horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_ebsnl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d665j")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
@@ -109,6 +100,7 @@ offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
+rotation = 1.92906
 pivot_offset = Vector2(16, 16)
 color = Color(1, 0.172549, 1, 1)
 
@@ -118,80 +110,6 @@ libraries = {
 }
 autoplay = "spin"
 
-[node name="LoadAssets" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.5
-anchor_top = 0.75
-anchor_right = 0.5
-anchor_bottom = 0.75
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect3" type="ColorRect" parent="LoadAssets"]
-material = ExtResource("2_2hllf")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect4" type="ColorRect" parent="LoadAssets"]
-material = ExtResource("3_3papl")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect5" type="ColorRect" parent="LoadAssets"]
-material = SubResource("ShaderMaterial_0v0vi")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect6" type="ColorRect" parent="LoadAssets"]
-material = SubResource("ShaderMaterial_yvd56")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="LoadAssets"]
-process_material = ExtResource("4_t3ckx")
-
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="LoadAssets"]
-process_material = ExtResource("5_mjaw6")
-
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="LoadAssets"]
-process_material = ExtResource("6_6xlt5")
+[node name="KarmaParticle" parent="." instance=ExtResource("2_6ak0a")]
+visible = false
+position = Vector2(-45, 6)

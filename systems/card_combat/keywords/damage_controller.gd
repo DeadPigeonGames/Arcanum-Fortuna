@@ -4,12 +4,12 @@ extends ActivatedKeyword
 ## How much damage is dealt to the cards controller whenever this is triggered
 @export var damage_amount = 1
 
-func init(id = 3):
+func init():
 	if title.count('%d') == 1:
 		title = title % [damage_amount]
 	if description.count('%d') == 1:
 		description = description % [damage_amount]
-	super.init(id)
+	super.init()
 
 
 func get_target(source, owner, combat = null):
