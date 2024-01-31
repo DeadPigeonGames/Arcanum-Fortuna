@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://ced2ynscdgy5e"]
+[gd_scene load_steps=16 format=3 uid="uid://ced2ynscdgy5e"]
 
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_ltqqh"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
 [ext_resource type="PackedScene" uid="uid://d11sabcwtgmsp" path="res://systems/card_combat/hand.tscn" id="2_mif1c"]
 [ext_resource type="PackedScene" uid="uid://blifmtx3ipelv" path="res://systems/card_combat/cards/hand_card.tscn" id="4_j51k8"]
-[ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_card_stack.tscn" id="5_h5pty"]
-[ext_resource type="Texture2D" uid="uid://bgmo5mpcv3e3m" path="res://assets/ui/gameboard/corner_2.png" id="5_hsyq3"]
+[ext_resource type="Texture2D" uid="uid://c001k3rvpc4oo" path="res://assets/ui/gameboard/corner_1.png" id="5_di1ka"]
+[ext_resource type="PackedScene" uid="uid://vnsgfexxjwpl" path="res://systems/card_combat/copy_of_card_stack.tscn" id="5_h5pty"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="5_l02yx"]
+[ext_resource type="Texture2D" uid="uid://ca7vt6lror7v6" path="res://assets/ui/gameboard/karma.png" id="6_0bdpy"]
 [ext_resource type="Texture2D" uid="uid://by4v5aq6yrqoh" path="res://assets/sprites/vfx/overlays/hurt_overlay.png" id="6_swmyn"]
-[ext_resource type="Texture2D" uid="uid://bl7462w253t21" path="res://assets/ui/gameboard/uhhh.png" id="6_xv1v3"]
 [ext_resource type="Script" path="res://systems/card_combat/hurt_overlay.gd" id="7_k4gqe"]
 [ext_resource type="Texture2D" uid="uid://b2oy1bhp7yy1h" path="res://assets/ui/gameboard/hb_2.png" id="8_nlbg8"]
 [ext_resource type="Script" path="res://systems/effects/screenshake_cam.gd" id="8_y2d2q"]
@@ -24,6 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_ltqqh")
 script = ExtResource("1_y0ggj")
 
 [node name="Hand" parent="." instance=ExtResource("2_mif1c")]
@@ -89,16 +91,25 @@ offset_top = -624.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 0
-texture = ExtResource("5_hsyq3")
+texture = ExtResource("5_di1ka")
 
 [node name="Karma" type="TextureRect" parent="ResourceContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 376.0
-offset_top = 376.0
-offset_right = 508.0
-offset_bottom = 508.0
-texture = ExtResource("6_xv1v3")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -191.9
+offset_right = 0.00012207
+offset_bottom = -3.90002
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_0bdpy")
+flip_h = true
+flip_v = true
 
 [node name="KarmaLabel" type="Label" parent="ResourceContainer/Karma"]
 unique_name_in_owner = true

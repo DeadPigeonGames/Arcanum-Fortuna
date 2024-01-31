@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="3_msu6w"]
 
 [node name="HandCard" instance=ExtResource("1_g1h4l")]
-scale = Vector2(1.1, 1.1)
 script = ExtResource("1_85cwi")
 
 [node name="DrawSound" parent="." index="8" instance=ExtResource("3_msu6w")]
@@ -22,3 +21,5 @@ connect_signal = "mouse_entered"
 singleton = 1
 method_to_call = "_SFX_HandCardHover"
 connect_signal = "drag_started"
+
+[editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
