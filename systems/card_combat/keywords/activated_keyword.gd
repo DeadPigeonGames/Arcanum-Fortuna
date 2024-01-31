@@ -1,11 +1,22 @@
 class_name  ActivatedKeyword
 extends Keyword
 
+
+enum Triggers {
+	ON_KILL = 1,
+	ON_KARMA_DECREASE = 2,
+	ON_ACTIVE_CARDS_CHANGED = 4,
+	ON_DEATH = 8,
+	ON_CARD_PLAYED = 16,
+	ON_ATTACK = 32,
+	ON_ENTER_BOARD = 64
+}
+
 ## Setup combat phases that should trigger this keyword
 @export var combat_phase_triggers : Array[CombatPhaseTrigger] = []
 ## Setup other events that should trigger this keyword
 @export_flags("OnKill", "OnKarmaDecrease", "OnActiveCardsChanged", "OnDeath", \
-		"OnPlayed", "OnAttack") var triggers := 0
+		"OnCardPlayed", "OnAttack", "OnEnterBoard") var triggers := 0
 
 @export_category("Animation")
 @export var is_animated := true
