@@ -15,6 +15,7 @@ signal card_played(card : CombatCard)
 
 var accept_card = false
 var hovered_tile = null
+var tutorial_overlay
 
 @onready var player_tiles = $PlayerTiles
 @onready var enemy_tiles_back = $EnemyTiles/Backrow

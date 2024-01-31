@@ -12,6 +12,7 @@ enum SourcePhases {
 	ENEMY_ATTACKS,
 	ENEMY_KARMA,
 	TURN_END,
+	TUTORIAL_PHASE,
 }
 
 enum Timings {
