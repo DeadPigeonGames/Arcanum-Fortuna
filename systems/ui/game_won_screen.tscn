@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cowyw3imwqrte"]
+[gd_scene load_steps=9 format=3 uid="uid://cowyw3imwqrte"]
 
 [ext_resource type="Script" path="res://systems/ui/game_over_screen.gd" id="1_gllgb"]
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="2_0dbnf"]
 [ext_resource type="Texture2D" uid="uid://clotsnwomvrm8" path="res://assets/sprites/cards/star.png" id="2_h6kti"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="2_ttak2"]
-[ext_resource type="PackedScene" path="res://utils/anti_pause_node.tscn" id="4_rgtd4"]
+[ext_resource type="PackedScene" uid="uid://jn77ec80jhq5" path="res://utils/anti_pause_node.tscn" id="4_rgtd4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j67a8"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -27,6 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("2_0dbnf")
 theme_override_styles/panel = SubResource("StyleBoxFlat_j67a8")
 
 [node name="Label" type="Label" parent="Panel"]
