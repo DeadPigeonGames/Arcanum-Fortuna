@@ -23,6 +23,11 @@ signal card_drag_ended(card)
 @export var is_debug = false 
 @export var debug_data : PlayerData 
 
+var max_health : int
+var karma : int
+var stored_health_buff := 0
+var stored_attack_buff := 0
+
 var health : int : 
 	get:
 		return health
@@ -30,10 +35,6 @@ var health : int :
 		health = value
 		%HealthLabel.text = str(health)
 		%HealthBar.value = health
-
-var max_health : int
-var karma : int
-
 
 func init(data: PlayerData):
 	card_stack.cardStack = data.cardStack
@@ -50,6 +51,12 @@ func _ready():
 	if is_debug:
 		init(debug_data)
 
+
+func transfer_stored_buffs(card: CombatCard):
+	card.health += stored_health_buff
+	card.attack += stored_attack_buff
+	stored_attack_buff = 0
+	stored_health_buff = 0
 
 #region damagage functions
 func heal(amount):

@@ -83,6 +83,7 @@ func lock_friendly_cards(combat):
 		new_combat_card.scale_to_fit(tile.get_rect().size)
 		new_combat_card.tile_coordinate = Vector2i(i, 0)
 		new_combat_card.deleted.connect(player._on_friendly_card_deleted)
+		combat.player.transfer_stored_buffs(new_combat_card)
 		GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 		[new_combat_card.card_data.name, i, 0])
 		card.queue_free()

@@ -16,5 +16,6 @@ func process_effect() -> ExitState:
 	for i in range(back_row.size()):
 		if back_row[i] != null:
 			if await combat.game_board.try_move_enemy_card_to_front(i):
+				combat.enemy.transfer_stored_buffs(back_row[i])
 				await combat._on_card_played(back_row[i])
 	return ExitState.DEFAULT
