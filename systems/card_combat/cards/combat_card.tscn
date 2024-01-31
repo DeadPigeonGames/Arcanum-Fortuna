@@ -21,9 +21,6 @@ active_color = Color(0.713726, 0.764706, 0.870588, 1)
 move_speed = 0.2
 damage_dealt = ExtResource("3_tfo72")
 
-[node name="KeywordIcon" parent="KeyWordSlots/KeywordSlot1" index="0"]
-visible = false
-
 [node name="DeleteButton" type="Button" parent="." index="7"]
 unique_name_in_owner = true
 visible = false

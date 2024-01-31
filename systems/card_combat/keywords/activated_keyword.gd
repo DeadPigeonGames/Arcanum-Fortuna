@@ -8,14 +8,15 @@ enum Triggers {
 	ON_ACTIVE_CARDS_CHANGED = 4,
 	ON_DEATH = 8,
 	ON_PLAYED = 16,
-	ON_ATTACK = 32
+	ON_ATTACK = 32,
+	ON_TAKE_DAMAGE = 64,
 }
 
 ## Setup combat phases that should trigger this keyword
 @export var combat_phase_triggers : Array[CombatPhaseTrigger] = []
 ## Setup other events that should trigger this keyword
 @export_flags("OnKill", "OnKarmaDecrease", "OnActiveCardsChanged", "OnDeath", \
-		"OnPlayed", "OnAttack") var triggers := 0
+		"OnPlayed", "OnAttack", "OnTakeDamage") var triggers := 0
 
 @export_category("Animation")
 @export var is_animated := true

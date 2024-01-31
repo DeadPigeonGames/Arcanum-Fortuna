@@ -3,7 +3,6 @@ extends TooltipBase
 
 @export var sigil_info_template: PackedScene = preload("res://systems/ui/tooltips/keyword_info.tscn")
 
-
 func setup(data : CardData):
 	if data == null:
 		push_error("Cannot setup Card Tooltip! CardData is missing!")
@@ -13,7 +12,7 @@ func setup(data : CardData):
 	%Card.card_data = data
 	var added_keywords = []
 	for keyword in data.keywords:
-		if not keyword.get_script() in added_keywords:
+		#if not keyword.get_script() in added_keywords:
 			var keyword_tooltip = sigil_info_template.instantiate()
 			keyword_tooltip.setup(keyword.title, keyword.description, keyword.icon)
 			%Sigils.add_child(keyword_tooltip)
