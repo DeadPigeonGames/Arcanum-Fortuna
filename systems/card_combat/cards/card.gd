@@ -47,6 +47,7 @@ func copy(card : Card):
 
 func load_from_data(data: CardData):
 	card_data = data.duplicate()
+	card_data.owner = self
 	init(data.artwork, data.name, data.cost, data.attack, data.health, data.keywords)
 
 

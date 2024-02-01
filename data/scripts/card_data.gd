@@ -7,7 +7,7 @@ class_name CardData extends Resource
 @export var cost := 1
 ## The Attack value of the card. Must be positive.
 @export var attack := 1
-## The Health value of the card. Must be positive. (Imagine - health, crazy!)
+## The Health value of the card. Must be positive.
 @export var health := 1
 @export var keywords : Array[Keyword]
 @export var spawn_frequency : int = 100
@@ -17,3 +17,4 @@ class_name CardData extends Resource
 @export var trade_override := 0
 @export var sound_effect: AudioStream
 @export var keyword_slot_texture : Texture = preload("res://assets/ui/icons/keyword_slots.png")
+var owner : Card

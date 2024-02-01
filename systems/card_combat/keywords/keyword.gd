@@ -10,3 +10,6 @@ extends Resource
 
 func init():
 	pass
+
+func get_dynamic_description(_owner: Card):
+	return ""

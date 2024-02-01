@@ -22,6 +22,8 @@ func init():
 		description = description % [played_cards_count, played_cards_count]
 	super.init()
 
+func get_dynamic_description(owner: Card):
+	return " (%d cards left.)" % (played_count_lookup[owner] if owner in played_count_lookup else require_allied_cards)
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	if not source is CombatCard:

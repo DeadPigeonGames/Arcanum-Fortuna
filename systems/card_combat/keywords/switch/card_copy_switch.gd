@@ -2,7 +2,7 @@ class_name CardCopySwitch
 extends SwitchKeyword
 
 @export var required_card_count := 3
-
+var current_card_count
 
 func init():
 	if title.count('%d') == 1:
@@ -13,6 +13,9 @@ func init():
 		description = description % [required_card_count, required_card_count]
 	super.init()
 
+
+func get_dynamic_description(owner: Card):
+	return " (%d cards left.)" % (current_card_count - required_card_count)
 
 func get_target(source, owner, combat = null):
 	if combat == null:
@@ -28,5 +31,6 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 		if card.card_name != owner.card_name:
 			continue
 		hit_count += 1
+	current_card_count = hit_count
 	if hit_count >= required_card_count:
 		await _on_completed(owner, icon_to_animate)

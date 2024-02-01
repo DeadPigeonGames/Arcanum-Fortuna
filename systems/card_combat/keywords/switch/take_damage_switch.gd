@@ -19,6 +19,10 @@ func init():
 	super.init()
 
 
+func get_dynamic_description(owner: Card):
+	return " (%d damage left.)" % (dealt_damage_lookup[owner] if owner in dealt_damage_lookup else required_damage)
+
+
 func trigger(source, owner, target, icon_to_animate, params={}):
 	if not ignore_damage_amount and not "taken_damage" in params:
 		push_error("Damage Switch cannot be triggered without taken damage!")
