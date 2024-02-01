@@ -10,3 +10,6 @@ potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtReso
 
 [node name="icon" parent="background" index="0"]
 texture = ExtResource("5_icbpd")
+
+[node name="ShowTooltip" parent="." index="1"]
+mouse_filter = 1
