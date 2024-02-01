@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ced2ynscdgy5e"]
+[gd_scene load_steps=19 format=3 uid="uid://ced2ynscdgy5e"]
 
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_ltqqh"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
@@ -14,6 +14,44 @@
 [ext_resource type="Script" path="res://systems/effects/screenshake_cam.gd" id="8_y2d2q"]
 [ext_resource type="Texture2D" uid="uid://oc76xjyw1lsm" path="res://assets/ui/gameboard/hb_1.png" id="9_nwmk5"]
 [ext_resource type="Texture2D" uid="uid://qop14j0u0eqj" path="res://assets/ui/gameboard/heart_1.png" id="10_x5mo0"]
+
+[sub_resource type="Animation" id="Animation_2x1mk"]
+resource_name = "heartbeat"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(155, 137), Vector2(157, 139), Vector2(155, 137)]
+}
+
+[sub_resource type="Animation" id="Animation_n2ktt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(155, 137)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tv3pq"]
+_data = {
+"RESET": SubResource("Animation_n2ktt"),
+"heartbeat": SubResource("Animation_2x1mk")
+}
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_fq2da"]
 
@@ -207,6 +245,12 @@ title = "Your Health"
 text = "Is lowered whenever an enemy card attacks an empty tile.
 If it drops to zero you'll die!"
 hover_min_duration = 0.2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ResourceContainer/Health/HealthIcon"]
+libraries = {
+"": SubResource("AnimationLibrary_tv3pq")
+}
+autoplay = "heartbeat"
 
 [node name="BonusDrawButton" type="Button" parent="."]
 layout_mode = 1

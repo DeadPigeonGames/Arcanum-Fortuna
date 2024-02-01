@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ew0hxbsaa2qn"]
+[gd_scene load_steps=12 format=3 uid="uid://ew0hxbsaa2qn"]
 
 [ext_resource type="Script" path="res://systems/card_combat/enemy_player.gd" id="1_w2nxe"]
 [ext_resource type="Texture2D" uid="uid://bgmo5mpcv3e3m" path="res://assets/ui/gameboard/corner_2.png" id="2_6cfi3"]
@@ -8,6 +8,44 @@
 [ext_resource type="Texture2D" uid="uid://d0kr3ddbhudeu" path="res://assets/ui/gameboard/hb_4.png" id="6_7i4po"]
 [ext_resource type="Texture2D" uid="uid://bbgh6tgr1fu1y" path="res://assets/ui/gameboard/hb_3.png" id="7_5448k"]
 [ext_resource type="Texture2D" uid="uid://c6y4y66fpd27a" path="res://assets/ui/gameboard/heart_2.png" id="8_5a52r"]
+
+[sub_resource type="Animation" id="Animation_put58"]
+resource_name = "heartbeat"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(155, 143), Vector2(156, 144), Vector2(155, 143)]
+}
+
+[sub_resource type="Animation" id="Animation_yniok"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(155, 143)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxy8i"]
+_data = {
+"RESET": SubResource("Animation_yniok"),
+"heartbeat": SubResource("Animation_put58")
+}
 
 [node name="EnemyPlayer" type="ReferenceRect"]
 offset_right = 250.0
@@ -91,8 +129,8 @@ radial_center_offset = Vector2(270, 270)
 [node name="HealthIcon" type="TextureRect" parent="ResourceContainer/Health"]
 layout_mode = 0
 offset_left = 296.0
-offset_right = 428.0
-offset_bottom = 132.0
+offset_right = 451.0
+offset_bottom = 143.0
 texture = ExtResource("8_5a52r")
 
 [node name="HealthLabel" type="Label" parent="ResourceContainer/Health/HealthIcon"]
@@ -123,3 +161,9 @@ title = "Your Health"
 text = "Is lowered whenever an enemy card attacks an empty tile.
 If it drops to zero you'll die!"
 hover_min_duration = 0.2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ResourceContainer/Health/HealthIcon"]
+libraries = {
+"": SubResource("AnimationLibrary_cxy8i")
+}
+autoplay = "heartbeat"
