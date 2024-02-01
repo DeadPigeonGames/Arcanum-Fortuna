@@ -200,8 +200,8 @@ value = 100.0
 fill_mode = 5
 texture_under = ExtResource("8_nlbg8")
 texture_progress = ExtResource("9_nwmk5")
-radial_initial_angle = 180.0
-radial_fill_degrees = 90.0
+radial_initial_angle = 148.0
+radial_fill_degrees = 51.0
 radial_center_offset = Vector2(-270, -270)
 
 [node name="HealthIcon" type="TextureRect" parent="ResourceContainer/Health"]
