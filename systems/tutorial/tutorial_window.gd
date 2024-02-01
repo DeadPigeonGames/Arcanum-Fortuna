@@ -3,20 +3,26 @@ extends TextureRect
 
 signal condition_met
 
-@export var exclude_areas : Array
+@export var tutorial_name : String
+@export var exclude_areas : Array[ColorRect]
+@export var is_show_next : bool
+
+func _ready():
+	if is_show_next:
+		%NextIndicator.visible = true
 
 
 func show_hide_exclude(value : bool):
 	for exclude in exclude_areas:
 		exclude.visible = value
+		exclude.mouse_filter == MOUSE_FILTER_IGNORE
+		if value:
+			exclude.mouse_filter == MOUSE_FILTER_STOP
 
 
-func show_tutorial(window_position : Vector2, is_show_next, text):
-	position = window_position
+func show_tutorial():
 	visible = true
 	mouse_filter = MOUSE_FILTER_STOP
-	%RichTextLabel.text = text
-	%NextIndicator.visible = is_show_next
 
 
 func hide_tutorial():
@@ -29,5 +35,5 @@ func send_condition_met():
 
 
 func _on_button_pressed():
-	if %NextIndicator.visible == true:
+	if is_show_next == true:
 		send_condition_met()
