@@ -132,6 +132,7 @@ func modifiy_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array
 		keywords.push_back(keyword)
 	for i in range(keywords.size()):
 		%KeyWordSlots.get_child(i).get_child(0).set_icon(keywords[i])
+	card_data.keywords = keywords
 
 
 func get_target_offsets():
@@ -150,13 +151,13 @@ func heal(amount : int):
 
 
 func take_damage(amount : int, source = null):
+	for keyword in keywords:
+		if keyword.has_method("get_reduced_damage"):
+			amount = keyword.get_reduced_damage(self, amount)
 	if amount <= 0:
 		return
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
-	for keyword in keywords:
-		if keyword.has_method("get_reduced_damage"):
-			amount = keyword.get_reduced_damage(self, amount)
 	health -= amount
 	modulate = attacked_color if amount > 0 else active_color
 	await animate_damage()
@@ -286,6 +287,11 @@ func animate_move(target_pos):
 
 # Card deletion
 func delete():
+	health = 0
+	for i in range(keywords.size()):
+		if keywords[i] is ActivatedKeyword and keywords[i].triggers & ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED:
+			await keywords[i].trigger(self, self, null, \
+					get_node("KeyWordSlots").get_child(i).get_child(0))
 	deleted.emit(self)
 	queue_free()
 

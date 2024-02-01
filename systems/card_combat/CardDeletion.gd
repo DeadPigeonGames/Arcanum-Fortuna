@@ -15,8 +15,10 @@ func _on_card_drag_started():
 
 
 func _on_card_drag_ended(dragged_card: CombatCard):
+	var was_deleted = false
 	if is_active and is_hovered:
 		dragged_card.delete()
+		was_deleted = true
 	set_inactive()
 
 
