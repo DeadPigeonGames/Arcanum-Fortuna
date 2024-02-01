@@ -148,11 +148,15 @@ func handle_attacks(attacker, column, is_source_friendly):
 
 
 func try_attack(attacker, column_idx, friendly = false) -> bool:
-	var target = game_board.get_target(column_idx, friendly)
-	var was_target_player = target is CardPlayer or target is EnemyPlayer
-	if target == null:
+	if column_idx < 0 or column_idx >= game_board.width:
 		return false
 	game_board.highlight_tile(column_idx, friendly)
+	for card : CombatCard in game_board.get_active_cards():
+		await card.trigger_keywords(attacker, card, ActivatedKeyword.Triggers.ON_ATTACK_ATTEMPTED, \
+				self, {"target_column": column_idx})
+	
+	var target = game_board.get_target(column_idx, friendly)
+	var was_target_player = target is CardPlayer or target is EnemyPlayer
 	if await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly)):
 		if was_target_player:
 			finished.emit(player.health)
