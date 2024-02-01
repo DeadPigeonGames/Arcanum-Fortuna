@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="2_22q2n"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="2_yscws"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="3_yndjn"]
-[ext_resource type="Texture2D" uid="uid://ocajqsxf58s5" path="res://assets/ui/icons/karma_placeholder.png" id="4_dw4cm"]
-[ext_resource type="Texture2D" uid="uid://bfd66tnlukp1w" path="res://assets/ui/icons/hp_placeholder.png" id="5_5o7m8"]
-[ext_resource type="Texture2D" uid="uid://c3mveorhm0h1n" path="res://assets/ui/icons/atk_placeholder.png" id="6_pte6t"]
+[ext_resource type="Texture2D" uid="uid://ckv3yi4hchdli" path="res://assets/ui/icons/karma_icon_small.png" id="4_06fbu"]
+[ext_resource type="Texture2D" uid="uid://c0ow1gj3wun8a" path="res://assets/ui/icons/hp_icon_small.png" id="5_c2dd1"]
+[ext_resource type="Texture2D" uid="uid://d01gfffwrqcoh" path="res://assets/ui/icons/atk_icon_small.png" id="6_lwri4"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_wcvh1"]
 [ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="8_25ce2"]
 [ext_resource type="FontFile" uid="uid://cbi6wymdty6k2" path="res://assets/ui/fonts/TarotPamelaColmanSmith-Regular.ttf" id="10_6h4fc"]
@@ -138,11 +138,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1.505
-offset_top = -58.0
-offset_right = 65.505
+offset_left = 16.53
+offset_top = -45.0
+offset_right = 53.53
+offset_bottom = -14.0
 grow_vertical = 0
-texture = ExtResource("4_dw4cm")
+texture = ExtResource("4_06fbu")
+expand_mode = 1
 
 [node name="KarmaCost" type="Label" parent="Container/HBoxContainer/Control/Card/Cost"]
 unique_name_in_owner = true
@@ -152,6 +154,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 18
 text = "-100"
 horizontal_alignment = 1
@@ -178,12 +184,13 @@ vertical_alignment = 1
 [node name="Health" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 46.455
-offset_top = -24.3
-offset_right = 110.455
-offset_bottom = 36.7
+offset_left = 33.66
+offset_top = -29.345
+offset_right = 101.66
+offset_bottom = 36.655
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_5o7m8")
+texture = ExtResource("5_c2dd1")
+expand_mode = 1
 
 [node name="HealthCost" type="Label" parent="Container/HBoxContainer/Control/Card/Health"]
 unique_name_in_owner = true
@@ -193,6 +200,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 21
 text = "100"
 horizontal_alignment = 1
@@ -218,11 +229,13 @@ vertical_alignment = 1
 
 [node name="Attack" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
 layout_mode = 0
-offset_top = -41.755
-offset_right = 64.0
-offset_bottom = 53.245
+offset_left = -0.6
+offset_top = -34.55
+offset_right = 67.4
+offset_bottom = 47.45
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("6_pte6t")
+texture = ExtResource("6_lwri4")
+expand_mode = 1
 
 [node name="AttackCost" type="Label" parent="Container/HBoxContainer/Control/Card/Attack"]
 unique_name_in_owner = true
@@ -232,6 +245,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 22
 text = "1"
 horizontal_alignment = 1
