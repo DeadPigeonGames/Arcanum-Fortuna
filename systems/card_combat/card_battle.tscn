@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=42 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
 [ext_resource type="SpriteFrames" uid="uid://c1n1fu0qqediq" path="res://assets/ui/gameboard/coin_sprite_sheet.tres" id="22_8s5et"]
 [ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
+[ext_resource type="Material" uid="uid://ygwq26b11i74" path="res://assets/sprites/vfx/overlays/dust_particles.tres" id="26_o5euh"]
+[ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
 [ext_resource type="PackedScene" uid="uid://cp0f4wuex133u" path="res://systems/tutorial/tutorial_overlay.tscn" id="28_0vqvt"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
@@ -373,6 +375,15 @@ grow_vertical = 2
 
 [node name="TutorialOverlay" parent="." instance=ExtResource("28_0vqvt")]
 layout_mode = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1000, 150)
+amount = 10
+process_material = ExtResource("26_o5euh")
+texture = ExtResource("27_mwe0t")
+lifetime = 3.5
+speed_scale = 0.5
+randomness = 1.0
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
