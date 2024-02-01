@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=44 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -27,6 +27,8 @@
 [ext_resource type="Material" uid="uid://ygwq26b11i74" path="res://assets/sprites/vfx/overlays/dust_particles.tres" id="26_o5euh"]
 [ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
 [ext_resource type="PackedScene" uid="uid://cp0f4wuex133u" path="res://systems/tutorial/tutorial_overlay.tscn" id="28_0vqvt"]
+[ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="28_ntl47"]
+[ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="29_f8a8p"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -374,9 +376,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TutorialOverlay" parent="." instance=ExtResource("28_0vqvt")]
+visible = false
 layout_mode = 1
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Dust" type="GPUParticles2D" parent="."]
 position = Vector2(1000, 150)
 amount = 10
 process_material = ExtResource("26_o5euh")
@@ -384,6 +387,38 @@ texture = ExtResource("27_mwe0t")
 lifetime = 3.5
 speed_scale = 0.5
 randomness = 1.0
+
+[node name="HP sparkle" type="Node" parent="."]
+
+[node name="Sparkle2" type="GPUParticles2D" parent="HP sparkle"]
+position = Vector2(1570.06, 1008.77)
+scale = Vector2(0.345, 0.345)
+amount = 1
+process_material = ExtResource("28_ntl47")
+texture = ExtResource("29_f8a8p")
+
+[node name="Sparkle4" type="GPUParticles2D" parent="HP sparkle"]
+position = Vector2(373.985, 69.85)
+scale = Vector2(0.345, 0.345)
+amount = 1
+process_material = ExtResource("28_ntl47")
+texture = ExtResource("29_f8a8p")
+
+[node name="Karma sparkle" type="Node" parent="."]
+
+[node name="Sparkle2" type="GPUParticles2D" parent="Karma sparkle"]
+position = Vector2(1814.88, 997.85)
+scale = Vector2(0.345, 0.345)
+amount = 1
+process_material = ExtResource("28_ntl47")
+texture = ExtResource("29_f8a8p")
+
+[node name="Sparkle4" type="GPUParticles2D" parent="Karma sparkle"]
+position = Vector2(105.165, 77)
+scale = Vector2(0.345, 0.345)
+amount = 1
+process_material = ExtResource("28_ntl47")
+texture = ExtResource("29_f8a8p")
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
