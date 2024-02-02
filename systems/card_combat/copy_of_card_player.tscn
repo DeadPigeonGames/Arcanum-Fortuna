@@ -107,7 +107,6 @@ offset_top = 469.0
 offset_right = -1226.0
 offset_bottom = 1119.0
 scale = Vector2(0.6, 0.6)
-mouse_filter = 1
 target = NodePath("../../Hand")
 deckCardTemplate = ExtResource("4_j51k8")
 
@@ -293,6 +292,17 @@ theme_override_constants/outline_size = 10
 text = "-2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ShowTooltip" type="Control" parent="BonusDrawButton"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("5_l02yx")
+title = "Bonus Draw "
+text = "Click here to exchange karma for an extra card."
+hover_min_duration = 0.2
 
 [node name="HurtOverlay" type="TextureRect" parent="."]
 layout_mode = 1
