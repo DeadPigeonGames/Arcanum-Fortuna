@@ -156,7 +156,7 @@ func set_active(value):
 func _on_bonus_draw_button_button_down():
 	modify_karma(-bonus_draw_cost)
 	bonus_draw_cost *= bonus_draw_cost_scale
-	$BonusDrawButton.text = "-%d K" % bonus_draw_cost
+	%Value.text = "-%d" % bonus_draw_cost
 	$BonusDrawButton.disabled = true
 	await get_tree().create_timer(animation_delay).timeout
 	await process_karma_overflow()
