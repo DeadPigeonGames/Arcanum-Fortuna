@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ced2ynscdgy5e"]
+[gd_scene load_steps=22 format=3 uid="uid://ced2ynscdgy5e"]
 
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_ltqqh"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
@@ -14,6 +14,9 @@
 [ext_resource type="Script" path="res://systems/effects/screenshake_cam.gd" id="8_y2d2q"]
 [ext_resource type="Texture2D" uid="uid://oc76xjyw1lsm" path="res://assets/ui/gameboard/hb_1.png" id="9_nwmk5"]
 [ext_resource type="Texture2D" uid="uid://qop14j0u0eqj" path="res://assets/ui/gameboard/heart_1.png" id="10_x5mo0"]
+[ext_resource type="Texture2D" uid="uid://r2557aassu7" path="res://assets/ui/icons/broken_karma.png" id="12_6spwy"]
+[ext_resource type="Texture2D" uid="uid://tj5tpqbagegc" path="res://assets/ui/icons/broken_karma_3.png" id="13_sqdsb"]
+[ext_resource type="Texture2D" uid="uid://dwgvjd2verccg" path="res://assets/ui/icons/broken_karma_2.png" id="14_ubj71"]
 
 [sub_resource type="Animation" id="Animation_n2ktt"]
 length = 0.001
@@ -250,7 +253,7 @@ libraries = {
 }
 autoplay = "heartbeat"
 
-[node name="BonusDrawButton" type="Button" parent="."]
+[node name="BonusDrawButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -260,8 +263,26 @@ offset_top = -141.0
 offset_right = 320.0
 offset_bottom = -76.9999
 grow_vertical = 0
-theme_override_font_sizes/font_size = 18
-text = "-2 K"
+texture_normal = ExtResource("12_6spwy")
+texture_pressed = ExtResource("13_sqdsb")
+texture_hover = ExtResource("14_ubj71")
+texture_disabled = ExtResource("13_sqdsb")
+
+[node name="Value" type="Label" parent="BonusDrawButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "-2"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HurtOverlay" type="TextureRect" parent="."]
 layout_mode = 1
