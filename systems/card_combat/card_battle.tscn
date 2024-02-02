@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_dvcfv"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
 [ext_resource type="PackedScene" uid="uid://ced2ynscdgy5e" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
-[ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_43tdh"]
+[ext_resource type="Texture2D" uid="uid://4hupbd7iry1x" path="res://assets/ui/gameboard/card_burner.png" id="18_i7pqs"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
 [ext_resource type="SpriteFrames" uid="uid://c1n1fu0qqediq" path="res://assets/ui/gameboard/coin_sprite_sheet.tres" id="22_8s5et"]
@@ -298,9 +298,9 @@ layout_mode = 1
 layout_mode = 0
 offset_left = -138.0
 offset_top = 680.0
-offset_right = 32.0
-offset_bottom = 946.0
-texture = ExtResource("19_43tdh")
+offset_right = 110.0
+offset_bottom = 1000.0
+texture = ExtResource("18_i7pqs")
 script = ExtResource("19_xq5yv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CardDeletion"]
