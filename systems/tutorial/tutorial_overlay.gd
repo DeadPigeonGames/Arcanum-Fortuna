@@ -1,10 +1,9 @@
 class_name TutorialOverlay
 extends Control
 
-
 var background_dim
 var tween : Tween
-var tutorial_windows : Array[TutorialWindow]
+var tutorial_windows : Array[TutorialPopup]
 
 
 func _ready():
@@ -28,21 +27,7 @@ func fade_background(value, duration):
 	print(background_dim.color)
 	tween = self.create_tween()
 	tween.tween_property(background_dim, "color", color, duration).from_current()
-
-
-func show_tutorial(name : String):
-	var window = get_tutorial_window_by_name(name)
-	window.visible = true
-	window.mouse_filter = MOUSE_FILTER_STOP
-	window.show_tutorial()
-	background_dim.mouse_filter = MOUSE_FILTER_STOP
-
-
-func hide_tutorial(name : String):
-	var window = get_tutorial_window_by_name(name)
-	window.mouse_filter = MOUSE_FILTER_IGNORE
-	window.visible = false
-	background_dim.mouse_filter = MOUSE_FILTER_IGNORE
+	tween.finished.emit()
 
 
 func get_tutorial_window_by_name(name : String):

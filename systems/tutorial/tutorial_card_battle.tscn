@@ -1,0 +1,101 @@
+[gd_scene load_steps=30 format=3 uid="uid://bookhsqnu44x5"]
+
+[ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_popup_data.gd" id="3_erfdf"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_phase.gd" id="4_ohwqy"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="5_68w08"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="6_tnbwt"]
+[ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="7_vagmv"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="8_q2rpp"]
+[ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="9_qokvq"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_movement_phase.gd" id="10_rvppj"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="11_xi7kw"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="12_dnuuf"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="13_7tj4x"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="14_rddjs"]
+
+[sub_resource type="Resource" id="Resource_26qbp"]
+script = ExtResource("2_d1qe7")
+place_enemy_cards_before_first_turn = true
+
+[sub_resource type="Resource" id="Resource_dqkh3"]
+script = ExtResource("3_erfdf")
+popup_type = 1
+title = "Test"
+text = "SomeText"
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel4"), NodePath("GameBoard/PlayerTiles/Panel3"), NodePath("GameBoard/PlayerTiles/Panel2")])
+offset_type = 0
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_j07j0"]
+script = ExtResource("3_erfdf")
+popup_type = 1
+title = "Test 2"
+text = "ABCDEFGsjhasoidasiddujasoiasjoadjsoidjaspoidjasdoiajosaidjsaoidjasoidjsaodijasdoisajdoiasjdasoidjasoidjasodijasdojiasdoiasjdasoidjasodijasdoiasjdaoidsaoji"
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel4"), NodePath("GameBoard/PlayerTiles/Panel3"), NodePath("GameBoard/PlayerTiles/Panel2")])
+offset_type = 2
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_bmu5a"]
+script = ExtResource("4_ohwqy")
+popups = Array[ExtResource("3_erfdf")]([SubResource("Resource_dqkh3"), SubResource("Resource_j07j0")])
+
+[sub_resource type="Resource" id="Resource_7owng"]
+script = ExtResource("5_68w08")
+
+[sub_resource type="Resource" id="Resource_4waph"]
+script = ExtResource("6_tnbwt")
+
+[sub_resource type="Resource" id="Resource_611yk"]
+script = ExtResource("8_q2rpp")
+karma_blob = ExtResource("7_vagmv")
+small_blob = ExtResource("9_qokvq")
+karma_duration = 2.3
+karma_delay = 0.6
+blob_move = 20
+
+[sub_resource type="Resource" id="Resource_d62ed"]
+script = ExtResource("10_rvppj")
+
+[sub_resource type="Resource" id="Resource_4sdqi"]
+script = ExtResource("11_xi7kw")
+
+[sub_resource type="Resource" id="Resource_5dgv3"]
+script = ExtResource("12_dnuuf")
+karma_blob = ExtResource("7_vagmv")
+small_blob = ExtResource("9_qokvq")
+karma_duration = 2.3
+karma_delay = 0.6
+blob_move = 20
+
+[sub_resource type="Resource" id="Resource_n6smt"]
+script = ExtResource("13_7tj4x")
+
+[sub_resource type="Resource" id="Resource_3vjfy"]
+script = ExtResource("14_rddjs")
+
+[sub_resource type="Resource" id="Resource_07mql"]
+script = ExtResource("3_erfdf")
+popup_type = 1
+title = "Ttiel"
+text = "Erklärung"
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel4"), NodePath("")])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_barj4"]
+script = ExtResource("3_erfdf")
+popup_type = 0
+title = ""
+text = ""
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_prx2r"]
+script = ExtResource("4_ohwqy")
+popups = Array[ExtResource("3_erfdf")]([SubResource("Resource_07mql"), SubResource("Resource_barj4"), null])
+
+[node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_bmu5a"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy"), SubResource("Resource_prx2r")])
