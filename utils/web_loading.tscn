@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck2g6ko82h0ni"]
+[gd_scene load_steps=10 format=3 uid="uid://ck2g6ko82h0ni"]
 
 [ext_resource type="Script" path="res://utils/web_loading.gd" id="1_4mkkf"]
-[ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="2_6ak0a"]
+[ext_resource type="PackedScene" uid="uid://4jvegipgfekw" path="res://utils/preloading/shaders_to_load.tscn" id="2_do0qj"]
+[ext_resource type="PackedScene" uid="uid://cpxb0myux3sm3" path="res://utils/preloading/vfx_to_load.tscn" id="3_2lqqa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nui80"]
 font_size = 128
@@ -43,7 +44,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4mkkf")
-objects_paths_to_load = Array[String](["res://assets/materials/distort_rect.tres", "res://assets/materials/invert.tres", "res://assets/vfx/materials/big_blob.tres", "res://assets/vfx/materials/damage_effect.tres", "res://assets/vfx/materials/karma_particle.tres", "res://assets/vfx/materials/keyword_icon.tres", "res://assets/vfx/materials/trail.tres", "res://shaders/blob_background.gdshader", "res://shaders/fake_3d.gdshader", "res://shaders/invert.gdshader", "res://shaders/noise_walk.gdshader"])
+scenes_to_preload = Array[PackedScene]([ExtResource("2_do0qj"), ExtResource("3_2lqqa")])
 main_scene = "res://systems/ui/main_menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -88,6 +89,13 @@ size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_ebsnl")
 theme_override_styles/fill = SubResource("StyleBoxFlat_d665j")
 
+[node name="LoadInfo" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "this might take a moment."
+label_settings = SubResource("LabelSettings_hwta8")
+horizontal_alignment = 1
+
 [node name="ColorRect2" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
@@ -110,6 +118,5 @@ libraries = {
 }
 autoplay = "spin"
 
-[node name="KarmaParticle" parent="." instance=ExtResource("2_6ak0a")]
-visible = false
-position = Vector2(-45, 6)
+[node name="LoadedStorage" type="Node2D" parent="."]
+position = Vector2(-3104, 38)
