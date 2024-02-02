@@ -81,6 +81,7 @@ offset_top = -278.0
 offset_right = 521.0
 mouse_filter = 2
 show_rect = Rect2(0, 0.6, 1, 0.4)
+render_rects = false
 
 [node name="Deck" type="ReferenceRect" parent="."]
 unique_name_in_owner = true
@@ -209,12 +210,15 @@ radial_center_offset = Vector2(-270, -270)
 
 [node name="HealthIcon" type="TextureRect" parent="ResourceContainer/Health"]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 116.0
+offset_left = -424.0
 offset_top = -137.0
-offset_right = 271.0
+offset_right = -269.0
+grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("10_x5mo0")
 
