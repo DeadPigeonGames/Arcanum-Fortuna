@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=45 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
 [ext_resource type="Material" uid="uid://ygwq26b11i74" path="res://assets/sprites/vfx/overlays/dust_particles.tres" id="26_o5euh"]
 [ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
-[ext_resource type="PackedScene" uid="uid://cp0f4wuex133u" path="res://systems/tutorial/tutorial_overlay.tscn" id="28_0vqvt"]
 [ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="28_ntl47"]
 [ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="29_f8a8p"]
 
@@ -382,10 +381,6 @@ offset_right = -28.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TutorialOverlay" parent="." instance=ExtResource("28_0vqvt")]
-visible = false
-layout_mode = 1
 
 [node name="Dust" type="GPUParticles2D" parent="."]
 position = Vector2(1000, 150)

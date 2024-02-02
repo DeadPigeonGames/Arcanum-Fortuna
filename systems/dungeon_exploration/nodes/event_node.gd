@@ -71,7 +71,6 @@ func _process(delta):
 	queue_redraw()
 
 
-
 func _input(event: InputEvent):
 	if (
 			hovering
@@ -79,6 +78,7 @@ func _input(event: InputEvent):
 			and selectable
 		):
 		click()
+
 
 func click():
 	SfxOther._SFX_UIButtonPress()
