@@ -23,6 +23,11 @@ signal card_drag_ended(card)
 @export var is_debug = false 
 @export var debug_data : PlayerData 
 
+var max_health : int
+var karma : int
+var stored_health_buff := 0
+var stored_attack_buff := 0
+
 var health : int : 
 	get:
 		return health
@@ -30,10 +35,6 @@ var health : int :
 		health = value
 		%HealthLabel.text = str(health)
 		%HealthBar.value = health
-
-var max_health : int
-var karma : int
-
 
 func init(data: PlayerData):
 	card_stack.cardStack = data.cardStack
@@ -51,6 +52,12 @@ func _ready():
 		init(debug_data)
 
 
+func transfer_stored_buffs(card: CombatCard):
+	card.health += stored_health_buff
+	card.attack += stored_attack_buff
+	stored_attack_buff = 0
+	stored_health_buff = 0
+
 #region damagage functions
 func heal(amount):
 	if amount < 0:
@@ -60,7 +67,7 @@ func heal(amount):
 	health = min(health, max_health)
 	
 
-func take_damage(amount):
+func take_damage(amount, _source = null):
 	animate_take_damage_feedback(amount)
 	
 	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"
@@ -106,7 +113,7 @@ func process_karma_overflow() -> bool:
 	%KarmaLabel.text = str(karma)
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
-		take_damage(-karma)
+		take_damage(-karma, self)
 		$ScreenshakeCamera2D.add_trauma(0.1)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0

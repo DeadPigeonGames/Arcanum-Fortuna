@@ -27,5 +27,6 @@ texture = ExtResource("3_b4kjy")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("6_fu8cw")
 hover_min_duration = 1.0

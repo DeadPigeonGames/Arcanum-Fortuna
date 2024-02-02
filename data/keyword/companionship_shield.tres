@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="GrantKeywordsKeyword" load_steps=7 format=3 uid="uid://cvcxsb0int18p"]
+
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_l3a0e"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/shield.gd" id="2_8y4tx"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/grant_keywords_keyword.gd" id="3_d5xaw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqjf8"]
+atlas = ExtResource("1_l3a0e")
+region = Rect2(66, 198, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2kef"]
+atlas = ExtResource("1_l3a0e")
+region = Rect2(66, 132, 66, 66)
+
+[sub_resource type="Resource" id="Resource_13x28"]
+script = ExtResource("2_8y4tx")
+damage_reduction = 0.0
+fixed_damage_reduction = 1
+uses = -1
+title = "Damage Reduction %d"
+description = "This card is being protected by its neighbor and takes -%d damage whenever it is attacked. "
+icon = SubResource("AtlasTexture_r2kef")
+emission_icon = SubResource("AtlasTexture_r2kef")
+highlight_duration = 0.5
+
+[resource]
+script = ExtResource("3_d5xaw")
+keywords_to_grant = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_13x28")])
+range = 1
+remove_keywords_on_death = true
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 4
+is_animated = false
+scale_speed = 0.6
+title = "Companionships Shield"
+description = "While this card is alive adjacent cards take 1 less damage."
+icon = SubResource("AtlasTexture_dqjf8")
+highlight_duration = 0.5

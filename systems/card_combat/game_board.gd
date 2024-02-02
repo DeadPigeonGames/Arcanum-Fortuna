@@ -1,8 +1,6 @@
 class_name GameBoard
 extends VBoxContainer
 
-signal card_played(card : CombatCard)
-
 @export var combat_card_prefab : PackedScene
 
 @export var enemy_player : EnemyPlayer
@@ -15,6 +13,7 @@ signal card_played(card : CombatCard)
 
 var accept_card = false
 var hovered_tile = null
+var tutorial_overlay
 
 @onready var player_tiles = $PlayerTiles
 @onready var enemy_tiles_back = $EnemyTiles/Backrow
@@ -69,7 +68,7 @@ func _on_card_relased(card: Card):
 	card.z_index = 2
 
 
-func lock_friendly_cards():
+func lock_friendly_cards(combat):
 	var i := -1
 	for tile in player_tiles.get_children():
 		i += 1
@@ -84,11 +83,12 @@ func lock_friendly_cards():
 		new_combat_card.scale_to_fit(tile.get_rect().size)
 		new_combat_card.tile_coordinate = Vector2i(i, 0)
 		new_combat_card.deleted.connect(player._on_friendly_card_deleted)
+		combat.player.transfer_stored_buffs(new_combat_card)
 		GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 		[new_combat_card.card_data.name, i, 0])
 		card.queue_free()
 		await get_tree().process_frame
-		card_played.emit(new_combat_card)
+		await combat._on_card_played(new_combat_card)
 		await get_tree().process_frame
 
 

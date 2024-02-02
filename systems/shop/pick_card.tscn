@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dohw12papqoct"]
+[gd_scene load_steps=6 format=3 uid="uid://dohw12papqoct"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_mret7"]
 [ext_resource type="Script" path="res://systems/shop/pick_card.gd" id="1_umnf0"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="2_q87rf"]
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="4_af143"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mw580"]
 font_size = 48
@@ -42,6 +43,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme = ExtResource("4_af143")
 text = "Pick a card to trade in."
 label_settings = SubResource("LabelSettings_mw580")
 horizontal_alignment = 1

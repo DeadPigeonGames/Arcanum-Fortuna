@@ -41,12 +41,13 @@ func scale_to_fit(new_size):
 
 
 func copy(card : Card):
-	card_data = card.card_data
+	card_data = card.card_data.duplicate()
 	init(card.artwork_texture, card.card_name, card.cost, card.attack, card.health, card.keywords)
 
 
 func load_from_data(data: CardData):
-	card_data = data
+	card_data = data.duplicate()
+	card_data.owner = self
 	init(data.artwork, data.name, data.cost, data.attack, data.health, data.keywords)
 
 
@@ -56,7 +57,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	self.cost = cost
 	self.attack = attack
 	self.health = health
-	self.keywords = keywords.duplicate()
+	self.keywords = keywords.duplicate(true)
 	if card_data == null:
 		card_data = CardData.new()
 		card_data.artwork_texture = artwork_texture

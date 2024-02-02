@@ -1,11 +1,23 @@
 class_name  ActivatedKeyword
 extends Keyword
 
+
+enum Triggers {
+	ON_KILL = 1,
+	ON_KARMA_DECREASE = 2,
+	ON_ACTIVE_CARDS_CHANGED = 4,
+	ON_DEATH = 8,
+	ON_PLAYED = 16,
+	ON_ATTACK = 32,
+	ON_TAKE_DAMAGE = 64,
+	ON_ATTACK_ATTEMPTED = 128
+}
+
 ## Setup combat phases that should trigger this keyword
 @export var combat_phase_triggers : Array[CombatPhaseTrigger] = []
 ## Setup other events that should trigger this keyword
 @export_flags("OnKill", "OnKarmaDecrease", "OnActiveCardsChanged", "OnDeath", \
-		"OnPlayed", "OnAttack") var triggers := 0
+		"OnPlayed", "OnAttack", "OnTakeDamage", "OnAttackAttempted") var triggers := 0
 
 @export_category("Animation")
 @export var is_animated := true
@@ -25,7 +37,7 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 func animate(source, owner: CombatCard, icon_to_animate, params):
 	if emission_icon:
 		await owner.animate_icon(emission_icon)
-	return
+		return
 	if icon_to_animate:
 		var tween = icon_to_animate.create_tween()
 		tween.set_trans(Tween.TRANS_CUBIC)

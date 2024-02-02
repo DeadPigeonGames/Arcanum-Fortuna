@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ws4saswnfnxg"]
+[gd_scene load_steps=10 format=3 uid="uid://ws4saswnfnxg"]
 
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_byhpx"]
 [ext_resource type="Script" path="res://systems/shop/healing_card.gd" id="1_rqc3o"]
 [ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="3_te2xs"]
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="3_xqc64"]
@@ -41,6 +42,7 @@ anchors_preset = 0
 offset_right = 210.0
 offset_bottom = 330.0
 pivot_offset = Vector2(105, 165)
+theme = ExtResource("1_byhpx")
 script = ExtResource("1_rqc3o")
 
 [node name="selected" type="ColorRect" parent="."]

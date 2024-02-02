@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://jqc67rl1fpl3"]
+[gd_scene load_steps=34 format=3 uid="uid://jqc67rl1fpl3"]
 
 [ext_resource type="Script" path="res://systems/shop/shop_keeper.gd" id="1_hhc2q"]
 [ext_resource type="PackedScene" uid="uid://c3n1r6lr76psq" path="res://systems/shop/shop_card.tscn" id="2_tyne5"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://systems/shop/healing_value.gd" id="17_kahto"]
 [ext_resource type="PackedScene" uid="uid://ws4saswnfnxg" path="res://systems/shop/healing_card.tscn" id="17_wsgkq"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="18_jv607"]
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="21_fjkxn"]
 [ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="23_bk7vy"]
 
 [sub_resource type="Resource" id="Resource_minlu"]
@@ -88,6 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("21_fjkxn")
 
 [node name="Label" type="Label" parent="PanelContainer"]
 layout_mode = 2

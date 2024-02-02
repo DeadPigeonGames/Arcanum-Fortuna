@@ -9,12 +9,12 @@ func init():
 	if title.count('%d') == 2:
 		title = title % [attack_gain, health_gain]
 	elif title.count('%d') == 1:
-		title = title % attack_gain if health_gain == 0 else health_gain
+		title = title % (attack_gain if health_gain == 0 else health_gain)
 
 	if description.count('%d') == 2:
 		description = description % [attack_gain, health_gain]
 	elif description.count('%d') == 1:
-		description = description % attack_gain if health_gain == 0 else health_gain
+		description = description % (attack_gain if health_gain == 0 else health_gain)
 	super.init()
 
 

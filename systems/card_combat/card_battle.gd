@@ -42,6 +42,7 @@ func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
+	game_board.tutorial_overlay = $TutorialOverlay
 	if is_debug:
 		await get_tree().process_frame # game_board needs to be ready first lol
 		init(debug_player_data, debug_enemy_data)
@@ -62,7 +63,6 @@ func init(player_data, enemy_data):
 	enemy.init(enemy_data)
 	for phase in phases:
 		phase.init(self)
-	game_board.card_played.connect(_on_card_played)
 
 
 func _input(event):
@@ -75,10 +75,8 @@ func _on_active_cards_changed(source, block = true):
 		is_blocked = true
 	var active_cards = game_board.get_active_cards()
 	for card : CombatCard in active_cards:
-		for i in range(card.keywords.size()):
-			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 4:
-				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, self), \
-						card.get_node("KeyWordSlots").get_child(i).get_child(0), {"active_cards": active_cards})
+		await card.trigger_keywords(source, card, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, \
+				self, {"active_cards": active_cards})
 	if block:
 		await get_tree().process_frame
 		is_blocked = false
@@ -88,13 +86,8 @@ func _on_card_played(new_card : CombatCard):
 	is_blocked = true
 	await _on_active_cards_changed(new_card, false)
 	var active_cards = game_board.get_active_cards()
-	for card : CombatCard in active_cards:
-		if card != new_card:
-			continue
-		for i in range(card.keywords.size()):
-			if card.keywords[i] is ActivatedKeyword and card.keywords[i].triggers & 16:
-				await card.keywords[i].trigger(card, card, card.keywords[i].get_target(card, card, self), \
-						card.get_node("KeyWordSlots").get_child(i).get_child(0), {"active_cards": active_cards})
+	await new_card.trigger_keywords(new_card, new_card, ActivatedKeyword.Triggers.ON_PLAYED, \
+				self, {"active_cards": active_cards})
 	await get_tree().process_frame
 	new_card.drag_started.connect($CardDeletion._on_card_drag_started)
 	new_card.drag_ended.connect($CardDeletion._on_card_drag_ended)
@@ -126,6 +119,7 @@ func _on_phase_completed():
 	if phase_idx >= phases.size():
 		turn += 1
 		phase_idx = 0
+		%EndTurnAnimation.play_backwards()
 	process_next_phase()
 
 
@@ -145,6 +139,7 @@ func unlock_player_actions():
 
 func _on_end_turn_button_pressed():
 	player_turn_ended.emit()
+	%EndTurnAnimation.play()
 
 
 func handle_attacks(attacker, column, is_source_friendly):
@@ -153,11 +148,15 @@ func handle_attacks(attacker, column, is_source_friendly):
 
 
 func try_attack(attacker, column_idx, friendly = false) -> bool:
-	var target = game_board.get_target(column_idx, friendly)
-	var was_target_player = target is CardPlayer or target is EnemyPlayer
-	if target == null:
+	if column_idx < 0 or column_idx >= game_board.width:
 		return false
 	game_board.highlight_tile(column_idx, friendly)
+	for card : CombatCard in game_board.get_active_cards():
+		await card.trigger_keywords(attacker, card, ActivatedKeyword.Triggers.ON_ATTACK_ATTEMPTED, \
+				self, {"target_column": column_idx})
+	
+	var target = game_board.get_target(column_idx, friendly)
+	var was_target_player = target is CardPlayer or target is EnemyPlayer
 	if await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly)):
 		if was_target_player:
 			finished.emit(player.health)

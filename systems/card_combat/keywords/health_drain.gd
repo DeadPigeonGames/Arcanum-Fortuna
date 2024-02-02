@@ -17,6 +17,13 @@ func init():
 		description = description % health_gain
 	super.init()
 
+
+func get_dynamic_description(owner: Card):
+	if not owner in granted_bufffs:
+		return ""
+	return " (%d)" % (granted_bufffs[owner] / health_gain)
+
+
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
 	if not target is CombatCard:

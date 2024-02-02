@@ -7,14 +7,19 @@ extends ActivatedKeyword
 @export var scale_from_same_side_only = false
 @export var enable_debug_print = false
 
-var base_decription := ""
 var granted_bufffs : Dictionary = {}
 
 func init():
 	if description.count('%d') == 1:
-		base_decription = description
 		description = description % attack_gain
 	super.init()
+
+
+func get_dynamic_description(owner: Card):
+	if not owner in granted_bufffs:
+		return ""
+	return " (%d)" % (granted_bufffs[owner] / attack_gain)
+
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
@@ -41,6 +46,3 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	if enable_debug_print:
 		print(str(target.attack) + " => " + str(target.attack + granted_bufffs[owner]))
 	target.attack += granted_bufffs[owner]
-	if base_decription.count('%d') < 2:
-		base_decription += " (%d)"
-	description = base_decription % [attack_gain, hit_count]

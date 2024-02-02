@@ -5,8 +5,26 @@
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="3_msu6w"]
 
 [node name="HandCard" instance=ExtResource("1_g1h4l")]
-scale = Vector2(1.1, 1.1)
 script = ExtResource("1_85cwi")
+
+[node name="KarmaCost" parent="Cost" index="0"]
+offset_top = 5.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+
+[node name="HealthCost" parent="Health" index="0"]
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+
+[node name="Attack" parent="." index="4"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -0.9
+offset_right = 67.1
+
+[node name="AttackCost" parent="Attack" index="0"]
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 
 [node name="DrawSound" parent="." index="8" instance=ExtResource("3_msu6w")]
 singleton = 1
@@ -22,3 +40,5 @@ connect_signal = "mouse_entered"
 singleton = 1
 method_to_call = "_SFX_HandCardHover"
 connect_signal = "drag_started"
+
+[editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
