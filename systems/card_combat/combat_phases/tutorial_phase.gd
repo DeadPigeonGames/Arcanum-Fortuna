@@ -1,22 +1,9 @@
 class_name TutorialPhase
 extends CombatPhase
 
-enum PopupType
-{
-	NONE,
-	CLICKABLE,
-	SHOW_TOOLTIP,
-	PLAY_CARD,
-	END_TURN
-}
-
 @export var popups : Array[TutorialPopupData]
 
 var tutorial_overlay_path := "res://systems/tutorial/tutorial_overlay.tscn"
-var clickable_path := "res://systems/tutorial/tutorial_popup_click.tscn"
-var show_tooltip_path := ""
-var play_card_path := ""
-var end_turn_path := ""
 
 var tutorial_overlay_instance : TutorialOverlay
 
@@ -45,7 +32,7 @@ func execute():
 func process_effect() -> ExitState:
 	tutorial_overlay_instance.fade_background(0.9, 0.2)
 	for i in popups.size():
-		var popup_instance : TutorialPopup = create_popup(popups[i].popup_type)
+		var popup_instance : TutorialPopup = create_popup(popups[i].popup_path)
 		popup_instance.init(popups[i], combat)
 		await popup_instance.completed
 		popup_instance.queue_free()
@@ -63,27 +50,9 @@ func reset():
 #endregion
 
 
-func create_popup(popup_type : PopupType):
-	var template = get_popup_by_type(popup_type)
-	var instance = template.instantiate()
+func create_popup(popup_path : String):
+	var popup_template = load(popup_path)
+	var instance = popup_template.instantiate()
 	tutorial_overlay_instance.add_child(instance)
 	
 	return instance
-
-
-func get_popup_by_type(popupType : PopupType):
-	var path
-	
-	match popupType:
-		PopupType.NONE:
-			push_error("ERROR: NO POPUP TYPE SELECTED!")
-		PopupType.CLICKABLE:
-			path = clickable_path
-		PopupType.SHOW_TOOLTIP:
-			path = show_tooltip_path
-		PopupType.PLAY_CARD:
-			path = play_card_path
-		PopupType.END_TURN:
-			path = end_turn_path
-	
-	return load(path)
