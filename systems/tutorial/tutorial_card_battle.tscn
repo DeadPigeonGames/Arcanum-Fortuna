@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=26 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
@@ -23,21 +23,13 @@ place_enemy_cards_before_first_turn = true
 script = ExtResource("3_wtwgy")
 title = "Title"
 text = "Text"
-highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel3")])
+highlighted_elements = Array[NodePath]([NodePath("Button")])
 offset_type = 2
 distance = 200.0
 
-[sub_resource type="Resource" id="Resource_gtfml"]
-script = ExtResource("3_wtwgy")
-title = "Title"
-text = "Text"
-highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel4")])
-offset_type = 0
-distance = 100.0
-
 [sub_resource type="Resource" id="Resource_jtlh8"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_fkkp8"), SubResource("Resource_gtfml")])
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_fkkp8")])
 
 [sub_resource type="Resource" id="Resource_7owng"]
 script = ExtResource("5_68w08")

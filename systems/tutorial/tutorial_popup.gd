@@ -4,6 +4,7 @@ extends Control
 signal completed
 
 var highlighted_elements : Array[Node]
+var clickable_rects : Array[Rect2]
 var data : TutorialPopupData
 var combat : CardBattle
 
@@ -14,6 +15,7 @@ var combat : CardBattle
 
 #region override functions
 
+
 func init(data : TutorialPopupData, combat : CardBattle):
 	self.data = data
 	self.combat = combat
@@ -21,6 +23,9 @@ func init(data : TutorialPopupData, combat : CardBattle):
 	text.text = data.text
 	for node_path in data.highlighted_elements:
 		highlighted_elements.append(combat.get_node(node_path))
+	for node in highlighted_elements:
+		clickable_rects.append((node as Control).get_rect())
+	print(highlighted_elements.size())
 	await get_tree().process_frame
 	arrow.position = container.size / 2
 	var internal_offset = (container.size.x / 2) + 20

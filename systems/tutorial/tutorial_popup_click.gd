@@ -8,7 +8,9 @@ extends TutorialPopup
 func init(data : TutorialPopupData, combat : CardBattle):
 	super.init(data, combat)
 
+
 func execute():
+	highlight_elements(false)
 	completed.emit()
 
 #endregion

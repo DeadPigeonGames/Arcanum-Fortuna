@@ -4,7 +4,6 @@ extends CombatPhase
 @export var popups : Array[TutorialPopupData]
 
 var tutorial_overlay_path := "res://systems/tutorial/tutorial_overlay.tscn"
-
 var tutorial_overlay_instance : TutorialOverlay
 
 #region override functions
@@ -33,7 +32,8 @@ func process_effect() -> ExitState:
 	tutorial_overlay_instance.fade_background(0.9, 0.2)
 	for i in popups.size():
 		var popup_instance : TutorialPopup = create_popup(popups[i].popup_path)
-		popup_instance.init(popups[i], combat)
+		await popup_instance.init(popups[i], combat)
+		tutorial_overlay_instance.clickable_rects = popup_instance.clickable_rects
 		await popup_instance.completed
 		popup_instance.queue_free()
 	tutorial_overlay_instance.fade_background(0, 0.2)
