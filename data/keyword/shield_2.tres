@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="shield" load_steps=5 format=3 uid="uid://bwiahbpe7ag6l"]
+
+[ext_resource type="Texture2D" uid="uid://cche4b42pk5fs" path="res://assets/sprites/keywords/unknown_emission.tres" id="1_vn5x1"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_7mkoa"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/shield.gd" id="3_su3jl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqjf8"]
+atlas = ExtResource("2_7mkoa")
+region = Rect2(66, 198, 66, 66)
+
+[resource]
+script = ExtResource("3_su3jl")
+damage_reduction = 0.0
+fixed_damage_reduction = 1
+uses = -1
+title = "Damage Reducition %d"
+description = "Any damage dealt to this cards is reduced by %d."
+icon = SubResource("AtlasTexture_dqjf8")
+emission_icon = ExtResource("1_vn5x1")
+highlight_duration = 0.5

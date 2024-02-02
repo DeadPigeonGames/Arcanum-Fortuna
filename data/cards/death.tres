@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://biih8ndy7cwuu"]
+[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://biih8ndy7cwuu"]
 
 [ext_resource type="Texture2D" uid="uid://h0448sn65e2l" path="res://assets/sprites/cards/death.png" id="1_lancp"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_4eh3m"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_340qs"]
 [ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_nat0g"]
+[ext_resource type="Resource" uid="uid://bafb656cxo3x" path="res://data/keyword/switch_player_hp.tres" id="4_77yn4"]
 [ext_resource type="AudioStream" uid="uid://17snb76pndmu" path="res://assets/sounds/cards/voices/death.ogg" id="4_xmg1h"]
 
 [resource]
@@ -14,7 +15,7 @@ artwork = ExtResource("1_lancp")
 cost = -5
 attack = 3
 health = 3
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_nat0g")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_nat0g"), ExtResource("4_77yn4")])
 spawn_frequency = 20
 shop_cost = 5
 trade_override = 0

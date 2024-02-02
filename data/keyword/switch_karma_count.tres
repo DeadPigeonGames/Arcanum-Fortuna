@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="KarmaCountSwitch" load_steps=7 format=3 uid="uid://cewdv00iul7fu"]
+[gd_resource type="Resource" script_class="KarmaCountSwitch" load_steps=8 format=3 uid="uid://cewdv00iul7fu"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/karma_count_switch.gd" id="1_bse4f"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_i541t"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_wjnet"]
+[ext_resource type="Resource" uid="uid://dgbj2m033s16y" path="res://data/keyword/lifesteal_keyword.tres" id="3_lwbiv"]
 
 [sub_resource type="Resource" id="Resource_o2st2"]
 script = ExtResource("1_i541t")
@@ -20,11 +21,11 @@ region = Rect2(0, 264, 66, 66)
 
 [resource]
 script = ExtResource("1_bse4f")
-target_karma_count = 3
-comparison_type = 4
+target_karma_count = 15
+comparison_type = 2
 attack_difference = 0
 health_difference = 0
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_lwbiv")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
 rotation_duration = 0.8
