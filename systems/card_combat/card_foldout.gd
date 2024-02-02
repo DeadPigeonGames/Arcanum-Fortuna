@@ -117,8 +117,9 @@ func _draw():
 	__hide_rect.position *= get_rect().size
 	__hide_rect.size *= get_rect().size
 	
-	draw_rect(__show_rect, Color.hex(0x00ff0002))
-	draw_rect(__hide_rect, Color.hex(0xff000002))
+	if OS.has_feature("editor") and Engine.is_editor_hint():
+		draw_rect(__show_rect, Color.hex(0x00ff0002))
+		draw_rect(__hide_rect, Color.hex(0xff000002))
 
 
 func _on_card_drag_started():
