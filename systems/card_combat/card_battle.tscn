@@ -192,7 +192,7 @@ script = ExtResource("2_2jjg6")
 combat_card_prefab = ExtResource("3_1hhbj")
 enemy_player = NodePath("../EnemyPlayer")
 player = NodePath("../CardPlayer")
-tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 1)
+tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 0)
 tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
 tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
 
@@ -230,25 +230,40 @@ layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel2" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel3" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel4" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel5" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="PlayerTiles" type="HBoxContainer" parent="GameBoard"]
 layout_mode = 2
@@ -256,35 +271,35 @@ theme_override_constants/separation = 48
 alignment = 1
 
 [node name="Panel" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel2" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel3" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel4" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel5" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
@@ -335,6 +350,7 @@ grow_vertical = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("6_o6asy")
 title = "End Turn Button"
 text = "Once you press this the following will happen:
