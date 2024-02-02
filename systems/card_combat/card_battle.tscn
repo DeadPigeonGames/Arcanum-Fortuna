@@ -325,8 +325,8 @@ libraries = {
 [node name="ShowTooltip" parent="CardDeletion" instance=ExtResource("20_7e8s5")]
 layout_mode = 1
 title = "Card Deletion"
-text = "Drag you previously placed cards here to
- get rid of them once and for all. 
+text = "Drag your previously placed cards here to
+get rid of them once and for all. 
 
 Doing this will grant you their karma value once."
 hover_min_duration = 0.2
