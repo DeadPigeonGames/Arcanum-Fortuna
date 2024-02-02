@@ -35,9 +35,11 @@ func init(data : TutorialPopupData, combat : CardBattle):
 	position += offset
 	highlight_elements(true)
 
+
 func execute():
 	push_error("ERROR: NO IMPLEMENTATION! (USED BASE POPUP)")
 	pass
+
 
 #endregion
 

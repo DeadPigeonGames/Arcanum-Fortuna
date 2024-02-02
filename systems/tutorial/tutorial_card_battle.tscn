@@ -25,7 +25,7 @@ title = "Title"
 text = "Text"
 highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel3")])
 offset_type = 2
-distance = 100.0
+distance = 200.0
 
 [sub_resource type="Resource" id="Resource_gtfml"]
 script = ExtResource("3_wtwgy")
