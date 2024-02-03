@@ -119,4 +119,3 @@ libraries = {
 autoplay = "spin"
 
 [node name="LoadedStorage" type="Node2D" parent="."]
-position = Vector2(-3104, 38)
