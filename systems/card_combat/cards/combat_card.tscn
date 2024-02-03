@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgdblxt0g8doq"]
+[gd_scene load_steps=6 format=3 uid="uid://dgdblxt0g8doq"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/combat_card.gd" id="1_3lxv2"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_8u6ck"]
+[ext_resource type="Material" uid="uid://c1731w1ldpqvh" path="res://shaders/card_burn.tres" id="3_d0i18"]
 [ext_resource type="Texture2D" uid="uid://j8o1whwr6cmm" path="res://assets/ui/icons/ui_icon_delete_forever.svg" id="3_dlei7"]
 [ext_resource type="PackedScene" uid="uid://fmvi54pcpwrl" path="res://systems/effects/damage_effect.tscn" id="3_tfo72"]
 
@@ -9,6 +10,7 @@
 script = ExtResource("1_3lxv2")
 buff_color = Color(0, 1, 0, 1)
 debuff_color = Color(1, 0, 0, 1)
+delete_material = ExtResource("3_d0i18")
 is_auto_flip = false
 attack_speed = 0.2
 attack_rewind = 0.3

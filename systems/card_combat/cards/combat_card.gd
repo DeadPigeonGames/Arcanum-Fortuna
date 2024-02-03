@@ -7,6 +7,7 @@ signal drag_ended(card)
 
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
+@export var delete_material : ShaderMaterial
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
 @export var is_auto_flip = false
 @export_category("Animation Settings")
@@ -24,6 +25,7 @@ signal drag_ended(card)
 static var held_card : CombatCard
 
 var is_picked_up = false
+var is_deletion_queued := false
 
 var target_offsets : Array[int] = [0]
 var is_enemy := false
@@ -287,11 +289,18 @@ func animate_move(target_pos):
 
 # Card deletion
 func delete():
+	held_card = null
+	is_deletion_queued = true
+	set_process(false)
+	set_process_input(false)
+	%Artwork.material = delete_material
+	await get_tree().create_timer(1).timeout
 	health = 0
 	for i in range(keywords.size()):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED:
-			await keywords[i].trigger(self, self, null, \
+			await keywords[i].trigger(self, self, self, \
 					get_node("KeyWordSlots").get_child(i).get_child(0))
+	await get_tree().process_frame
 	deleted.emit(self)
 	queue_free()
 
@@ -326,9 +335,12 @@ func pickup():
 	emit_signal("drag_started")
 
 func put(dropNode):
+	await get_tree().process_frame
+	if is_deletion_queued:
+		return
 	%ShowCardTooltip.set_process(true)
 	is_picked_up = false
 	held_card = null
 	mouse_filter = Control.MOUSE_FILTER_PASS
-	await get_tree().process_frame
+
 	animate_move(placed_position)
