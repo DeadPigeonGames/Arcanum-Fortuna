@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=6 format=3 uid="uid://dfcbdoa13thhv"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=5 format=3 uid="uid://dfcbdoa13thhv"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_3nsjq"]
-[ext_resource type="Texture2D" uid="uid://d7mv6gjyqdp5" path="res://assets/sprites/keywords/switch_emission.tres" id="1_v14b5"]
 [ext_resource type="Resource" uid="uid://fvab8xjppdba" path="res://data/keyword/multi_attack.tres" id="2_v3d4s"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="3_jxni1"]
 
@@ -12,6 +11,7 @@ region = Rect2(0, 264, 66, 66)
 [resource]
 script = ExtResource("3_jxni1")
 required_trigger_count = 1
+dynamic_tooltip_unit_name = "times"
 attack_difference = 1
 health_difference = 3
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_v3d4s")])
@@ -26,5 +26,4 @@ scale_speed = 0.6
 title = "Destiny: Perseverance"
 description = "This card will reveal it's true form once it survived %d turns on the board. "
 icon = SubResource("AtlasTexture_xuji6")
-emission_icon = ExtResource("1_v14b5")
 highlight_duration = 0.5
