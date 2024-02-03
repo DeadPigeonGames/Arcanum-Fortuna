@@ -23,7 +23,7 @@ place_enemy_cards_before_first_turn = true
 script = ExtResource("3_wtwgy")
 title = "Title"
 text = "Text"
-highlighted_elements = Array[NodePath]([NodePath("Button")])
+highlighted_elements = Array[NodePath]([NodePath("EndTurnButton")])
 offset_type = 2
 distance = 200.0
 
