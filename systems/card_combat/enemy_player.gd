@@ -77,7 +77,7 @@ func take_damage(amount, _source = null):
 func restore_default_color():
 	%HealthLabel.text = str(health)
 	%Health.modulate = Color.WHITE
-	%KarmaLabel.modulate = Color.WHITE
+	%Karma.modulate = Color.WHITE
 
 func process_death() -> bool:
 	if health < 0:
