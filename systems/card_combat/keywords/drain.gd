@@ -15,6 +15,7 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
 	if not target is CombatCard:
 		push_error("Cannot apply Drain. Invalid target ", target, ".")
+		return
 		
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered drain." % [target.card_data.name, target.tile_coordinate.x, target.tile_coordinate.y])
 	target.attack += attack_gain

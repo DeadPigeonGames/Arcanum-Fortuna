@@ -12,7 +12,7 @@ var empty_array : Array[Keyword]
 func get_target(source, owner, combat = null):
 	if combat == null:
 		push_error("Cannot trigger PermaBuff: Combat must be provided!")
-		return
+		return []
 	var targets : Array[CombatCard] = []
 	var cards = combat.game_board.get_front_enemies() if owner.is_enemy \
 			else combat.game_board.get_friendly_cards()

@@ -15,7 +15,7 @@ func init():
 func get_target(source, owner, combat = null):
 	if combat == null:
 		push_error("Cannot trigger PlayerHpSwitch: Combat must be provided!")
-		return null
+		return []
 	return combat.enemy if  owner.is_enemy \
 			else combat.player
 
