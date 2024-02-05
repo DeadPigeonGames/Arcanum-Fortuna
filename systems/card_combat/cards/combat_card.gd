@@ -117,6 +117,12 @@ func flip():
 	%HealthCost.text = str(health)
 
 
+func set_transformed_visuals(shader_material: ShaderMaterial, \
+		border_texture: Texture, keyword_slot_atlas : Texture):
+	%Artwork.material = shader_material
+	for slot in %KeyWordSlots.get_children():
+		slot.texture.atlas = card_data.keyword_slot_texture
+
 func reverse():
 	%Artwork.flip_v = !%Artwork.flip_v
 
@@ -287,7 +293,8 @@ func animate_move(target_pos):
 	tile_coordinate = Vector2i(tile_coordinate.x, tile_coordinate.y - 1)
 	modulate = Color.WHITE
 
-# Card deletion
+
+#region Card deletion
 func delete():
 	held_card = null
 	is_deletion_queued = true
@@ -309,6 +316,7 @@ func _process(delta):
 	if is_picked_up:
 		global_position = drag_offset + get_global_mouse_position()
 
+
 func _input(event: InputEvent):
 	if not is_drag_enabled:
 		return
@@ -320,6 +328,7 @@ func _input(event: InputEvent):
 	if event.is_action_released("pickUpCard") and is_picked_up:
 		put(null)
 		emit_signal("drag_ended", self)
+
 
 func pickup():
 	%ShowCardTooltip.hide_tooltip()
@@ -334,6 +343,7 @@ func pickup():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	emit_signal("drag_started")
 
+
 func put(dropNode):
 	await get_tree().process_frame
 	if is_deletion_queued:
@@ -344,3 +354,4 @@ func put(dropNode):
 	mouse_filter = Control.MOUSE_FILTER_PASS
 
 	animate_move(placed_position)
+#endregion
