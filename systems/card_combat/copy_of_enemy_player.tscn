@@ -51,6 +51,7 @@ _data = {
 offset_right = 250.0
 offset_bottom = 81.0
 size_flags_horizontal = 0
+mouse_filter = 1
 script = ExtResource("1_w2nxe")
 
 [node name="ResourceContainer" type="Control" parent="."]
@@ -58,6 +59,7 @@ layout_mode = 1
 anchors_preset = 0
 offset_right = 540.0
 offset_bottom = 540.0
+mouse_filter = 1
 
 [node name="CornerBackground" type="TextureRect" parent="ResourceContainer"]
 layout_mode = 1
@@ -97,6 +99,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("2_myi76")
 title = "Your Karma"
 text = "Cards on your side of the boards will add their
@@ -113,6 +116,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="HealthBar" type="TextureProgressBar" parent="ResourceContainer/Health"]
 unique_name_in_owner = true
@@ -157,6 +161,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("2_myi76")
 title = "Your Health"
 text = "Is lowered whenever an enemy card attacks an empty tile.

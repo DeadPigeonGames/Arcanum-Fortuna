@@ -42,7 +42,6 @@ func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
-	game_board.tutorial_overlay = $TutorialOverlay
 	if is_debug:
 		await get_tree().process_frame # game_board needs to be ready first lol
 		init(debug_player_data, debug_enemy_data)

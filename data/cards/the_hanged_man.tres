@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://cjas1prwh50gk"]
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://cjas1prwh50gk"]
 
 [ext_resource type="Texture2D" uid="uid://dupt72ornov5p" path="res://assets/sprites/cards/hanged_man.png" id="1_8mjix"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_caw47"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_2bxhi"]
 [ext_resource type="Resource" uid="uid://l23udqkfbm1c" path="res://data/keyword/slow.tres" id="3_xontg"]
 [ext_resource type="AudioStream" uid="uid://d3ruga1nroy5h" path="res://assets/sounds/cards/voices/the_hanged_man.ogg" id="4_5odmf"]
-[ext_resource type="Resource" uid="uid://c4xuviu0gmmgg" path="res://data/keyword/shield.tres" id="4_8bxm5"]
+[ext_resource type="Resource" uid="uid://chpr5uue01ill" path="res://data/keyword/shield.tres" id="4_8bxm5"]
+[ext_resource type="Resource" uid="uid://cgggfw7x22l8w" path="res://data/keyword/switch_karma_count_2.tres" id="5_rdu4g"]
 
 [resource]
 script = ExtResource("1_caw47")
@@ -15,7 +16,7 @@ artwork = ExtResource("1_8mjix")
 cost = -4
 attack = 4
 health = 6
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_xontg"), ExtResource("4_8bxm5")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_xontg"), ExtResource("4_8bxm5"), ExtResource("5_rdu4g")])
 spawn_frequency = 20
 shop_cost = 5
 trade_override = 0

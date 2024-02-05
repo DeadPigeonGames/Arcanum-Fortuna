@@ -2,7 +2,7 @@ class_name CardCopySwitch
 extends SwitchKeyword
 
 @export var required_card_count := 3
-var current_card_count
+var current_card_count := 0
 
 func init():
 	if title.count('%d') == 1:

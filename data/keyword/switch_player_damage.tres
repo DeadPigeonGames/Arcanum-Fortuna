@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="DamageSwitch" load_steps=4 format=3 uid="uid://b0k33hdemfl27"]
+[gd_resource type="Resource" script_class="DamageSwitch" load_steps=5 format=3 uid="uid://b0k33hdemfl27"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/damage_switch.gd" id="1_2pdxi"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_s5j2u"]
+[ext_resource type="Resource" uid="uid://d4iohlqflx6ik" path="res://data/keyword/companionship_HP1.tres" id="2_g4ykh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj8qu"]
 atlas = ExtResource("1_s5j2u")
@@ -9,11 +10,11 @@ region = Rect2(0, 264, 66, 66)
 
 [resource]
 script = ExtResource("1_2pdxi")
-required_damage = 5
-damage_to_track = 1
-attack_difference = 420
-health_difference = 69
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+required_damage = 4
+damage_to_track = 2
+attack_difference = -1
+health_difference = 2
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_g4ykh")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
 rotation_duration = 0.8

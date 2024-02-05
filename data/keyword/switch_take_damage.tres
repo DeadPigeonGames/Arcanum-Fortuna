@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="TakeDamageSwitch" load_steps=4 format=3 uid="uid://ddkx8hekj2sws"]
+[gd_resource type="Resource" script_class="TakeDamageSwitch" load_steps=5 format=3 uid="uid://ddkx8hekj2sws"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/take_damage_switch.gd" id="1_3d2bu"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_62fj4"]
+[ext_resource type="Resource" uid="uid://cpxcddsxlgqw6" path="res://data/keyword/DrainATK1.tres" id="2_qxsnm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
 atlas = ExtResource("1_62fj4")
@@ -11,9 +12,9 @@ region = Rect2(0, 264, 66, 66)
 script = ExtResource("1_3d2bu")
 required_damage = 2
 ignore_damage_amount = true
-attack_difference = 69
-health_difference = 420
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+attack_difference = 1
+health_difference = 1
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_qxsnm")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
 rotation_duration = 0.8

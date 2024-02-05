@@ -11,6 +11,7 @@ var isHovered = false
 var move_around := true
 var base_scale = 1.0
 
+@onready var show_card_tooltip = %ShowCardTooltip
 
 func _ready():
 	super._ready()
@@ -63,8 +64,8 @@ func mouse_exited_event():
 	isHovered = false
 
 func pickup():
-	%ShowCardTooltip.hide_tooltip()
-	%ShowCardTooltip.set_process(false)
+	show_card_tooltip.hide_tooltip()
+	show_card_tooltip.set_process(false)
 	$SFXCard._SFX_PickUp()
 	
 	isPickedUp = true
@@ -75,9 +76,10 @@ func pickup():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	emit_signal("drag_started")
 
+
 func put(dropNode):
 	$SFXCard._SFX_PutDown()
-	%ShowCardTooltip.set_process(true)
+	show_card_tooltip.set_process(true)
 	isPickedUp = false
 	heldCard = null
 	mouse_filter = Control.MOUSE_FILTER_PASS

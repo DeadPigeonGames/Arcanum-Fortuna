@@ -22,6 +22,8 @@ func get_dynamic_description(owner: Card):
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):
+	if not "active_cards" in params:
+		return
 	await super(source, owner, target, icon_to_animate, params)
 	if not target is CombatCard:
 		push_error("Cannot apply ATKDrain. Invalid target ", target, ".")

@@ -11,6 +11,7 @@ region = Rect2(0, 264, 66, 66)
 [resource]
 script = ExtResource("4_px5lu")
 required_trigger_count = 1
+dynamic_tooltip_unit_name = "kills"
 attack_difference = 1
 health_difference = 1
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_xx231")])

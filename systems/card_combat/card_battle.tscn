@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=45 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_dvcfv"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="16_kecnr"]
 [ext_resource type="PackedScene" uid="uid://ced2ynscdgy5e" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
-[ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_43tdh"]
+[ext_resource type="Texture2D" uid="uid://4hupbd7iry1x" path="res://assets/ui/gameboard/card_burner.png" id="18_i7pqs"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
 [ext_resource type="SpriteFrames" uid="uid://c1n1fu0qqediq" path="res://assets/ui/gameboard/coin_sprite_sheet.tres" id="22_8s5et"]
@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
 [ext_resource type="Material" uid="uid://ygwq26b11i74" path="res://assets/sprites/vfx/overlays/dust_particles.tres" id="26_o5euh"]
 [ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
-[ext_resource type="PackedScene" uid="uid://cp0f4wuex133u" path="res://systems/tutorial/tutorial_overlay.tscn" id="28_0vqvt"]
 [ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="28_ntl47"]
 [ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="29_f8a8p"]
 
@@ -193,7 +192,7 @@ script = ExtResource("2_2jjg6")
 combat_card_prefab = ExtResource("3_1hhbj")
 enemy_player = NodePath("../EnemyPlayer")
 player = NodePath("../CardPlayer")
-tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 1)
+tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 0)
 tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
 tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
 
@@ -231,25 +230,40 @@ layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Panel" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel2" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel2" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel3" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel3" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel4" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel4" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
-[node name="Panel5" type="TextureRect" parent="GameBoard/EnemyTiles/Frontrow"]
+[node name="Panel5" type="Panel" parent="GameBoard/EnemyTiles/Frontrow"]
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="PlayerTiles" type="HBoxContainer" parent="GameBoard"]
 layout_mode = 2
@@ -257,35 +271,35 @@ theme_override_constants/separation = 48
 alignment = 1
 
 [node name="Panel" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel2" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel3" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel4" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="Panel5" type="Panel" parent="GameBoard/PlayerTiles"]
-self_modulate = Color(0.341176, 0.294118, 0.278431, 1)
+self_modulate = Color(0.341176, 0.294118, 0.278431, 0)
 custom_minimum_size = Vector2(170, 266)
 layout_mode = 2
 mouse_filter = 1
@@ -298,9 +312,9 @@ layout_mode = 1
 layout_mode = 0
 offset_left = -138.0
 offset_top = 680.0
-offset_right = 32.0
-offset_bottom = 946.0
-texture = ExtResource("19_43tdh")
+offset_right = 110.0
+offset_bottom = 1000.0
+texture = ExtResource("18_i7pqs")
 script = ExtResource("19_xq5yv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CardDeletion"]
@@ -311,8 +325,8 @@ libraries = {
 [node name="ShowTooltip" parent="CardDeletion" instance=ExtResource("20_7e8s5")]
 layout_mode = 1
 title = "Card Deletion"
-text = "Drag you previously placed cards here to
- get rid of them once and for all. 
+text = "Drag your previously placed cards here to
+get rid of them once and for all. 
 
 Doing this will grant you their karma value once."
 hover_min_duration = 0.2
@@ -336,6 +350,7 @@ grow_vertical = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("6_o6asy")
 title = "End Turn Button"
 text = "Once you press this the following will happen:
@@ -382,10 +397,6 @@ offset_right = -28.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TutorialOverlay" parent="." instance=ExtResource("28_0vqvt")]
-visible = false
-layout_mode = 1
 
 [node name="Dust" type="GPUParticles2D" parent="."]
 position = Vector2(1000, 150)

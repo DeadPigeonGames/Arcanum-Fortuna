@@ -31,6 +31,12 @@ func _on_start_button_button_down():
 
 func _on_tutorial_button_button_down():
 	SceneHandler.change_scene(tutorial_scene)
+	var tutorial : CardBattle = SceneHandler.current_scene
+	var player_data : PlayerData = load("res://data/player/basic_player.tres")
+	var enemy_data : EnemyData = load("res://data/enemy/enemy_basic.tres")
+	
+	tutorial.init(player_data, enemy_data)
+	tutorial.start_combat()
 
 
 func _on_quit_button_pressed():

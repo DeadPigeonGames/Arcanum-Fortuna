@@ -14,6 +14,9 @@ var health := 20 :
 		health = value
 		%HealthLabel.text = str(health)
 		%HealthBar.value = health
+		if !max_health or max_health <= 0:
+			return
+		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 1.0 / (float(health) / float(max_health))
 var max_health
 var karma = 0
 
@@ -74,7 +77,7 @@ func take_damage(amount, _source = null):
 func restore_default_color():
 	%HealthLabel.text = str(health)
 	%Health.modulate = Color.WHITE
-	%KarmaLabel.modulate = Color.WHITE
+	%Karma.modulate = Color.WHITE
 
 func process_death() -> bool:
 	if health < 0:

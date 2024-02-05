@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://b45r81lj73pdb"]
+
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_popup.gd" id="1_4ukef"]
+[ext_resource type="Texture2D" uid="uid://cqgd8kv6l6uen" path="res://assets/sprites/dialogue/dg_dog.png" id="2_74fvs"]
+[ext_resource type="Texture2D" uid="uid://dfqcasb3fk8gh" path="res://assets/ui/Arrow.png" id="3_ndkc2"]
+
+[node name="TutorialPopup" type="Control"]
+process_mode = 1
+z_index = 1000
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4ukef")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 154.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Title"
+clip_text = true
+max_lines_visible = 1
+
+[node name="Text" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lorem Ipsum"
+autowrap_mode = 3
+max_lines_visible = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Image" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_74fvs")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("3_ndkc2")

@@ -13,6 +13,15 @@ func init():
 	if description.count('%d') == 1:
 		description = description % turns_to_skip
 
+
+func get_dynamic_description(owner: Card):
+	if not owner in turns_skipped_lookup and attack_on_first_turn:
+		return ""
+	var turns_left_to_skip = turns_to_skip - (turns_skipped_lookup[owner] if owner in turns_skipped_lookup else 0)
+	if turns_left_to_skip == 0:
+		return " (Is able to attack!)"
+	return " (Can't attack for %d turns.)" % turns_left_to_skip
+
 func get_new_targets(target_offsets, attacker) -> Array[int]:
 	if not turns_skipped_lookup.has(attacker):
 		turns_skipped_lookup[attacker] = turns_to_skip + 1 if attack_on_first_turn else 0

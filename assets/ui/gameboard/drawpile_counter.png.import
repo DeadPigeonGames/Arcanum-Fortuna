@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl7462w253t21"
-path="res://.godot/imported/uhhh.png-40abe2b31ac18320a59f4e71cb700342.ctex"
+uid="uid://dv7ry2fvsl1r7"
+path="res://.godot/imported/drawpile_counter.png-9d3cbc953521bc79f63bc4b595ae7f73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/gameboard/uhhh.png"
-dest_files=["res://.godot/imported/uhhh.png-40abe2b31ac18320a59f4e71cb700342.ctex"]
+source_file="res://assets/ui/gameboard/drawpile_counter.png"
+dest_files=["res://.godot/imported/drawpile_counter.png-9d3cbc953521bc79f63bc4b595ae7f73.ctex"]
 
 [params]
 

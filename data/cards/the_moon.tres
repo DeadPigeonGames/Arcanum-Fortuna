@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://bitn4lw4darn4"]
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://bitn4lw4darn4"]
 
 [ext_resource type="Texture2D" uid="uid://dp4o7wrdsgven" path="res://assets/sprites/cards/moon.png" id="1_u3r3r"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_guiip"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://b7b1qjvocpnpq" path="res://data/keyword/damage_controller2.tres" id="3_1svxg"]
 [ext_resource type="AudioStream" uid="uid://bqnry8pp55vsj" path="res://assets/sounds/cards/voices/the_moon.ogg" id="3_gl4dh"]
 [ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="4_4pif5"]
+[ext_resource type="Resource" uid="uid://cxy7n34dqywkm" path="res://data/keyword/switch_card_karma_negative.tres" id="5_au1a1"]
 
 [resource]
 script = ExtResource("2_w1k5e")
@@ -15,7 +16,7 @@ artwork = ExtResource("1_u3r3r")
 cost = -4
 attack = 5
 health = 4
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_1svxg"), ExtResource("4_4pif5")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_1svxg"), ExtResource("4_4pif5"), ExtResource("5_au1a1")])
 spawn_frequency = 30
 shop_cost = 5
 trade_override = 0

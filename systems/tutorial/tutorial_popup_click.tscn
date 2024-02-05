@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://tc4whhrc5x6h"]
+
+[ext_resource type="PackedScene" uid="uid://b45r81lj73pdb" path="res://systems/tutorial/tutorial_popup.tscn" id="1_1jvbl"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_popup_click.gd" id="2_ehqj2"]
+
+[node name="TutorialPopupClick" instance=ExtResource("1_1jvbl")]
+script = ExtResource("2_ehqj2")
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Next"
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_button_up"]
