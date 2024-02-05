@@ -8,11 +8,14 @@ var clickable_rects : Array[Rect2]
 
 
 func _process(delta):
+	var value : bool
 	if clickable_rects.size() > 0:
 		for rect in clickable_rects:
-			var value : bool = rect.has_point(get_global_mouse_position())
-			set_mouse_filter_passthrough(value)
-			print(value)
+			value = rect.has_point(get_global_mouse_position())
+			if value:
+				break
+		set_mouse_filter_passthrough(value)
+	print(value)
 
 
 func fade_background(value, duration):
