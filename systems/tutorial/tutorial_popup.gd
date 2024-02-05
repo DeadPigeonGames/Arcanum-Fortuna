@@ -24,8 +24,7 @@ func init(data : TutorialPopupData, combat : CardBattle):
 	for node_path in data.highlighted_elements:
 		highlighted_elements.append(combat.get_node(node_path))
 	for node in highlighted_elements:
-		clickable_rects.append((node as Control).get_rect())
-	print(highlighted_elements.size())
+		clickable_rects.append((node as Control).get_global_rect())
 	await get_tree().process_frame
 	arrow.position = container.size / 2
 	var internal_offset = (container.size.x / 2) + 20
@@ -52,6 +51,7 @@ func execute():
 func highlight_elements(value : bool):
 	for node in highlighted_elements:
 		node.set_z_index(100 if value else 0)
+
 
 
 func get_offset_type_rotation(offset_type : TutorialPopupData.OffsetType):

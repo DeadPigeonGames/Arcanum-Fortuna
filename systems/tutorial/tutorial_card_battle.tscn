@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
-[ext_resource type="Script" path="res://systems/tutorial/tutorial_click_data.gd" id="3_wtwgy"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_playcard_data.gd" id="3_6cqie"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_phase.gd" id="4_ohwqy"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="5_68w08"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="6_tnbwt"]
@@ -19,17 +19,18 @@
 script = ExtResource("2_d1qe7")
 place_enemy_cards_before_first_turn = true
 
-[sub_resource type="Resource" id="Resource_fkkp8"]
-script = ExtResource("3_wtwgy")
-title = "Title"
-text = "Text"
-highlighted_elements = Array[NodePath]([NodePath("EndTurnButton")])
-offset_type = 2
-distance = 200.0
+[sub_resource type="Resource" id="Resource_4x2xt"]
+script = ExtResource("3_6cqie")
+target_card_slot = NodePath("GameBoard/PlayerTiles/Panel3")
+title = "Bla"
+text = "BlaBla"
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 500.0
 
 [sub_resource type="Resource" id="Resource_jtlh8"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_fkkp8")])
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_4x2xt")])
 
 [sub_resource type="Resource" id="Resource_7owng"]
 script = ExtResource("5_68w08")
@@ -67,3 +68,9 @@ script = ExtResource("14_rddjs")
 
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
 phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_jtlh8"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy")])
+
+[node name="EnemyPlayer" parent="." index="5"]
+offset_left = -1899.0
+offset_top = 365.0
+offset_right = -1649.0
+offset_bottom = 446.0

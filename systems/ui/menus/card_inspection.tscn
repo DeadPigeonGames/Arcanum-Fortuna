@@ -1,0 +1,757 @@
+[gd_scene load_steps=39 format=3 uid="uid://bncdhusoiqqcj"]
+
+[ext_resource type="Texture2D" uid="uid://do32ub6ykpjq4" path="res://assets/ui/placeholders/keyword_description_underlay.png" id="1_mrn7k"]
+[ext_resource type="PackedScene" uid="uid://pe6tqla32quk" path="res://systems/ui/menus/menu_elements/stat_change.tscn" id="3_d8e8f"]
+[ext_resource type="Texture2D" uid="uid://d253xrxv604q5" path="res://assets/ui/placeholders/card_flavour_underlay.png" id="3_ksjhc"]
+[ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="4_ctvwa"]
+[ext_resource type="Texture2D" uid="uid://dmvf4y1rexuxt" path="res://assets/ui/placeholders/switch_condition_underlay.png" id="5_1tskj"]
+[ext_resource type="Texture2D" uid="uid://8cguh5h1crom" path="res://assets/ui/placeholders/awaken_icon_placeholder.png" id="5_e3rdj"]
+[ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://assets/sprites/cards/emperor.png" id="5_l1v7b"]
+[ext_resource type="Texture2D" uid="uid://ckv3yi4hchdli" path="res://assets/ui/icons/karma_icon_small.png" id="6_hj2xt"]
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="7_orq47"]
+[ext_resource type="Texture2D" uid="uid://bnfj7t34405xc" path="res://assets/ui/placeholders/close_window_button_default_placeholder.png" id="7_sk6p5"]
+[ext_resource type="Texture2D" uid="uid://c0ow1gj3wun8a" path="res://assets/ui/icons/hp_icon_small.png" id="8_6ml0x"]
+[ext_resource type="Texture2D" uid="uid://d01gfffwrqcoh" path="res://assets/ui/icons/atk_icon_small.png" id="9_mk0fa"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="10_k7ab5"]
+[ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="11_bmvuh"]
+[ext_resource type="PackedScene" uid="uid://c21gcj8wgm736" path="res://systems/ui/tooltips/show_card_tooltip.tscn" id="12_eupws"]
+[ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="13_2ga8s"]
+[ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="14_sl7dj"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="15_mh8ok"]
+[ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="16_5mjjx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
+atlas = ExtResource("10_k7ab5")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vo4j"]
+atlas = ExtResource("10_k7ab5")
+region = Rect2(0, 92, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ati"]
+atlas = ExtResource("10_k7ab5")
+region = Rect2(0, 184, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0j57"]
+atlas = ExtResource("10_k7ab5")
+region = Rect2(0, 276, 80, 80)
+
+[sub_resource type="Curve" id="Curve_enjfs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.105, 0.987572), 0.0, 0.0, 0, 0, Vector2(0.66, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_svhri"]
+curve = SubResource("Curve_enjfs")
+
+[sub_resource type="Gradient" id="Gradient_y4aia"]
+colors = PackedColorArray(0.129558, 0.129558, 0.129558, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6cdoa"]
+gradient = SubResource("Gradient_y4aia")
+
+[sub_resource type="Curve" id="Curve_h0ckp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_tx4q8"]
+curve = SubResource("Curve_h0ckp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8onbq"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -20, 0)
+emission_shape = 3
+emission_box_extents = Vector3(60, 5, 0)
+direction = Vector3(0, -1, 0)
+angular_velocity_min = -29.3
+angular_velocity_max = 53.25
+radial_velocity_max = 20.0
+gravity = Vector3(0, -98, 0)
+radial_accel_max = 10.0
+tangential_accel_min = 5.0
+tangential_accel_max = 5.0
+damping_max = 50.0
+attractor_interaction_enabled = false
+color = Color(1, 0.478431, 0.0823529, 1)
+color_initial_ramp = SubResource("GradientTexture1D_6cdoa")
+alpha_curve = SubResource("CurveTexture_svhri")
+emission_curve = SubResource("CurveTexture_tx4q8")
+
+[sub_resource type="Animation" id="Animation_xmpfi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArtworkClip/ParticleAnchor/buff_particles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fhgog"]
+resource_name = "buff"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArtworkClip/ParticleAnchor/buff_particles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_hnrs5"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [0.0, -0.523599]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(2, 1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.682353, 0.027451, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SingletonInteractor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"execute"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrceq"]
+_data = {
+"RESET": SubResource("Animation_xmpfi"),
+"buff": SubResource("Animation_fhgog"),
+"die": SubResource("Animation_hnrs5")
+}
+
+[sub_resource type="Gradient" id="Gradient_0nagi"]
+colors = PackedColorArray(0.215686, 0.352941, 0.462745, 1, 0.215686, 0.352941, 0.462745, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6q5c5"]
+gradient = SubResource("Gradient_0nagi")
+
+[sub_resource type="Gradient" id="Gradient_3rdab"]
+colors = PackedColorArray(0.448727, 0.464516, 0.555199, 1, 0.447059, 0.462745, 0.556863, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ncu2"]
+gradient = SubResource("Gradient_3rdab")
+
+[node name="CardInspection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordDescriptions" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -248.0
+offset_right = 680.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordDescriptionUnderlay" type="TextureRect" parent="KeywordDescriptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -184.0
+offset_right = 360.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mrn7k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KeywordDescriptions"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 368.0
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -740.0
+offset_top = -248.0
+offset_right = -460.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentStatChanges" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="StatChange" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange2" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange3" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange4" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange5" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="CardFlavour" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardFlavourUnderlay" type="TextureRect" parent="CardFlavour"]
+layout_mode = 0
+offset_left = -568.0
+offset_top = 318.0
+offset_right = 108.0
+offset_bottom = 446.0
+texture = ExtResource("3_ksjhc")
+
+[node name="CardFlavourText" type="Label" parent="CardFlavour"]
+layout_mode = 0
+offset_left = -568.0
+offset_top = 350.0
+offset_right = 108.0
+offset_bottom = 446.0
+text = "Card Flavour
+Card Flavour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card" type="Control" parent="."]
+z_index = 2
+custom_minimum_size = Vector2(164, 257)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -128.0
+offset_right = -168.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(82, 128)
+script = ExtResource("4_ctvwa")
+
+[node name="Artwork" type="TextureRect" parent="Card"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("5_l1v7b")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Card"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="ColorRect" parent="Card/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[node name="Name" type="Label" parent="Card/VBoxContainer/Name"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type" type="ColorRect" parent="Card/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 8
+color = Color(0.32549, 0.631373, 0.768627, 1)
+
+[node name="Label" type="Label" parent="Card/VBoxContainer/Type"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Type Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cost" type="TextureRect" parent="Card"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.53
+offset_top = -45.0
+offset_right = 53.53
+offset_bottom = -14.0
+grow_vertical = 0
+texture = ExtResource("6_hj2xt")
+expand_mode = 1
+
+[node name="KarmaCost" type="Label" parent="Card/Cost"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_orq47")
+theme_override_font_sizes/font_size = 18
+text = "-100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="TextureRect" parent="Card"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 33.66
+offset_top = -29.345
+offset_right = 101.66
+offset_bottom = 36.655
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_6ml0x")
+expand_mode = 1
+
+[node name="HealthCost" type="Label" parent="Card/Health"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_orq47")
+theme_override_font_sizes/font_size = 21
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_left = -0.6
+offset_top = -34.55
+offset_right = 67.4
+offset_bottom = 47.45
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9_mk0fa")
+expand_mode = 1
+
+[node name="AttackCost" type="Label" parent="Card/Attack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_orq47")
+theme_override_font_sizes/font_size = 22
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyWordSlots" type="Control" parent="Card"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 66.0
+pivot_offset = Vector2(33, 33)
+
+[node name="KeywordSlot1" type="TextureRect" parent="Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 34.0
+offset_right = 225.0
+offset_bottom = 114.0
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_yop51")
+
+[node name="KeywordIcon" parent="Card/KeyWordSlots/KeywordSlot1" instance=ExtResource("11_bmvuh")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5758
+offset_top = -22.0051
+offset_right = 25.4242
+offset_bottom = 27.9949
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="KeywordSlot2" type="TextureRect" parent="Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 144.891
+offset_top = 69.7969
+offset_right = 224.891
+offset_bottom = 149.797
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_4vo4j")
+
+[node name="KeywordIcon2" parent="Card/KeyWordSlots/KeywordSlot2" instance=ExtResource("11_bmvuh")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.5758
+offset_top = -62.0051
+offset_right = -14.5758
+offset_bottom = -12.0051
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(16, 16)
+
+[node name="KeywordSlot3" type="TextureRect" parent="Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 144.891
+offset_top = 105.734
+offset_right = 224.891
+offset_bottom = 185.734
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_40ati")
+
+[node name="KeywordIcon3" parent="Card/KeyWordSlots/KeywordSlot3" instance=ExtResource("11_bmvuh")]
+visible = false
+layout_mode = 1
+offset_left = 15.4242
+offset_top = 17.9949
+offset_right = 65.4242
+offset_bottom = 67.9949
+pivot_offset = Vector2(16, 16)
+
+[node name="KeywordSlot4" type="TextureRect" parent="Card/KeyWordSlots"]
+layout_mode = 0
+offset_left = 144.891
+offset_top = 140.891
+offset_right = 224.891
+offset_bottom = 220.891
+scale = Vector2(0.389, 0.389)
+texture = SubResource("AtlasTexture_f0j57")
+
+[node name="KeywordIcon4" parent="Card/KeyWordSlots/KeywordSlot4" instance=ExtResource("11_bmvuh")]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.5758
+offset_top = 17.9949
+offset_right = -14.5758
+offset_bottom = 67.9949
+grow_horizontal = 0
+pivot_offset = Vector2(16, 16)
+
+[node name="ShowCardTooltip" parent="Card" instance=ExtResource("12_eupws")]
+unique_name_in_owner = true
+layout_mode = 1
+tooltip_template = "res://systems/ui/tooltips/card_tooltip.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Card"]
+bus = &"Voices"
+
+[node name="KeywordSlots" type="Control" parent="Card"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ArtworkClip" type="ColorRect" parent="Card"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 20.0
+offset_right = -8.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ParticleAnchor" type="Control" parent="Card/ArtworkClip"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="buff_particles" type="GPUParticles2D" parent="Card/ArtworkClip/ParticleAnchor"]
+emitting = false
+amount = 256
+process_material = SubResource("ParticleProcessMaterial_8onbq")
+texture = ExtResource("13_2ga8s")
+lifetime = 2.0
+speed_scale = 2.0
+visibility_rect = Rect2(-153.868, -279.532, 315.949, 311.532)
+local_coords = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Card"]
+libraries = {
+"": SubResource("AnimationLibrary_wrceq")
+}
+
+[node name="CenterAnchor" type="Control" parent="Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordParticles" type="GPUParticles2D" parent="Card/CenterAnchor"]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+emitting = false
+amount = 1024
+process_material = ExtResource("14_sl7dj")
+texture = ExtResource("13_2ga8s")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.15
+local_coords = true
+
+[node name="SingletonInteractor" parent="Card" instance=ExtResource("15_mh8ok")]
+singleton = 1
+method_to_call = "_SFX_Damage"
+
+[node name="SFXCard" parent="Card" instance=ExtResource("16_5mjjx")]
+unique_name_in_owner = true
+
+[node name="SwitchCondition" type="Control" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SwitchConditionUnderlay" type="TextureRect" parent="SwitchCondition"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 182.0
+offset_right = 700.0
+offset_bottom = 274.0
+texture = ExtResource("5_1tskj")
+
+[node name="SwitchIcon" type="TextureRect" parent="SwitchCondition"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = 188.0
+offset_right = 12.0
+offset_bottom = 268.0
+texture = ExtResource("5_e3rdj")
+
+[node name="Label" type="Label" parent="SwitchCondition"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 182.0
+offset_right = 660.0
+offset_bottom = 274.0
+size_flags_horizontal = 4
+text = "Switch Condition
+Switch Condition"
+vertical_alignment = 1
+
+[node name="CloseWindowButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 96.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_sk6p5")
+texture_pressed = SubResource("GradientTexture2D_6q5c5")
+texture_hover = SubResource("GradientTexture2D_4ncu2")
+
+[connection signal="mouse_entered" from="Card" to="Card" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="Card" method="_on_mouse_exited"]
+
+[editable path="Card/KeyWordSlots/KeywordSlot1/KeywordIcon"]

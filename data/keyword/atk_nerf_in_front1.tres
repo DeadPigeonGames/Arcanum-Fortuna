@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="DebuffKeyword" load_steps=4 format=3 uid="uid://s0ldta5qu4fp"]
+[gd_resource type="Resource" script_class="DebuffKeyword" load_steps=3 format=3 uid="uid://s0ldta5qu4fp"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_eun73"]
+[ext_resource type="Texture2D" uid="uid://disegs21pix2r" path="res://assets/sprites/keywords/kw_intimidation.png" id="1_506f7"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/debuff_keyword.gd" id="2_e7kx5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7vju0"]
-atlas = ExtResource("1_eun73")
-region = Rect2(66, 198, 66, 66)
 
 [resource]
 script = ExtResource("2_e7kx5")
@@ -18,5 +14,5 @@ is_animated = false
 scale_speed = 0.6
 title = "Keyword"
 description = "While this card is alive the opposing card in front of it loses %d attack."
-icon = SubResource("AtlasTexture_7vju0")
+icon = ExtResource("1_506f7")
 highlight_duration = 0.5

@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="DeathrattleHeal" load_steps=4 format=3 uid="uid://dv0ag3x7lmh2b"]
+[gd_resource type="Resource" script_class="DeathrattleHeal" load_steps=3 format=3 uid="uid://dv0ag3x7lmh2b"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_6mk8f"]
+[ext_resource type="Texture2D" uid="uid://deh2xxxn76dff" path="res://assets/sprites/keywords/kw_health.png" id="1_eysn7"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/deathrattle_heal.gd" id="2_61dry"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6x746"]
-atlas = ExtResource("1_6mk8f")
-region = Rect2(66, 132, 66, 66)
 
 [resource]
 script = ExtResource("2_61dry")
@@ -16,5 +12,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Deathrattle HP %d"
 description = "When this card dies cards to its left and right will gain %d health."
-icon = SubResource("AtlasTexture_6x746")
+icon = ExtResource("1_eysn7")
 highlight_duration = 0.5
