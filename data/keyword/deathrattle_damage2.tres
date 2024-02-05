@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DeathrattleDamage" load_steps=4 format=3 uid="uid://bcxa302os4ovu"]
+
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_c64ux"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/deathrattle_damage.gd" id="2_hfbnr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2tft"]
+atlas = ExtResource("1_c64ux")
+region = Rect2(0, 198, 66, 66)
+
+[resource]
+script = ExtResource("2_hfbnr")
+damage_amount = 2
+target_type = 1
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 8
+is_animated = true
+scale_speed = 0.6
+title = "Deathrattle Damage %d"
+description = "This card deals %d to the opposing player when dying."
+icon = SubResource("AtlasTexture_h2tft")
+highlight_duration = 0.5
