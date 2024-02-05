@@ -15,7 +15,6 @@ func _process(delta):
 			if value:
 				break
 		set_mouse_filter_passthrough(value)
-	print(value)
 
 
 func fade_background(value, duration):
