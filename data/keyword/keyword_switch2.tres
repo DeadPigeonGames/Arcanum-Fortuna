@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=7 format=3 uid="uid://c5ulc8oi77w36"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=9 format=3 uid="uid://c5ulc8oi77w36"]
 
 [ext_resource type="Texture2D" uid="uid://d7mv6gjyqdp5" path="res://assets/sprites/keywords/switch_emission.tres" id="1_bd0tv"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_t6t4m"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_8wyj4"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="4_g7tsi"]
+[ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="5_akljm"]
+[ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_to0ki"]
 
 [sub_resource type="Resource" id="Resource_fuwh5"]
 script = ExtResource("1_t6t4m")
@@ -16,13 +18,15 @@ region = Rect2(0, 264, 66, 66)
 
 [resource]
 script = ExtResource("4_g7tsi")
-required_trigger_count = 1
+required_trigger_count = 2
 dynamic_tooltip_unit_name = "times"
 attack_difference = 2
 health_difference = 1
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
+transformed_artwork_shader = ExtResource("5_akljm")
+transformed_keyword_slot_atlas = ExtResource("6_to0ki")
 rotation_duration = 0.8
 icon_rotation = 1.0
 combat_phase_triggers = Array[ExtResource("1_t6t4m")]([SubResource("Resource_fuwh5")])
