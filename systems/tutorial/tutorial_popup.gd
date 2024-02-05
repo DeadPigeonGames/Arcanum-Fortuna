@@ -25,7 +25,6 @@ func init(data : TutorialPopupData, combat : CardBattle):
 		highlighted_elements.append(combat.get_node(node_path))
 	for node in highlighted_elements:
 		clickable_rects.append((node as Control).get_rect())
-	print(highlighted_elements.size())
 	await get_tree().process_frame
 	arrow.position = container.size / 2
 	var internal_offset = (container.size.x / 2) + 20
