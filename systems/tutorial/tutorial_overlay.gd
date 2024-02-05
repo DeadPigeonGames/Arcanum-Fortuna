@@ -12,6 +12,7 @@ func _process(delta):
 		for rect in clickable_rects:
 			var value : bool = rect.has_point(get_global_mouse_position())
 			set_mouse_filter_passthrough(value)
+			print(value)
 
 
 func fade_background(value, duration):
