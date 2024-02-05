@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="BuffNextCardKeyword" load_steps=4 format=3 uid="uid://buyei5ntmvrx3"]
+[gd_resource type="Resource" script_class="BuffNextCardKeyword" load_steps=3 format=3 uid="uid://buyei5ntmvrx3"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_e2e0q"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/buff_next_card_keyword.gd" id="1_emhlm"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6x746"]
-atlas = ExtResource("1_e2e0q")
-region = Rect2(66, 132, 66, 66)
+[ext_resource type="Texture2D" uid="uid://bpfn7l0ncl4yh" path="res://assets/sprites/keywords/kw_empower_health.png" id="1_u57tj"]
 
 [resource]
 script = ExtResource("1_emhlm")
@@ -17,5 +13,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Health Transfer %d"
 description = "The next card you play after this one will spawn with +%d health."
-icon = SubResource("AtlasTexture_6x746")
+icon = ExtResource("1_u57tj")
 highlight_duration = 0.5

@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="MoveOtherCardKeyword" load_steps=4 format=3 uid="uid://brc0cecmp05sp"]
+[gd_resource type="Resource" script_class="MoveOtherCardKeyword" load_steps=3 format=3 uid="uid://brc0cecmp05sp"]
 
+[ext_resource type="Texture2D" uid="uid://cwjmp32yee6wc" path="res://assets/sprites/keywords/kw_authority.png" id="1_awqpn"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/move_other_card_keyword.gd" id="1_bntlq"]
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_w8rj2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0e4w5"]
-atlas = ExtResource("1_w8rj2")
-region = Rect2(66, 198, 66, 66)
 
 [resource]
 script = ExtResource("1_bntlq")
@@ -16,5 +12,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Position Summon"
 description = "When this card is played opposite to an empty tile it will move the oppsing card with the lowest health to it."
-icon = SubResource("AtlasTexture_0e4w5")
+icon = ExtResource("1_awqpn")
 highlight_duration = 0.5

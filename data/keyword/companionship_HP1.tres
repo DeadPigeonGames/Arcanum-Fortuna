@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="CompanionshipHealth" load_steps=4 format=3 uid="uid://d4iohlqflx6ik"]
+[gd_resource type="Resource" script_class="CompanionshipHealth" load_steps=3 format=3 uid="uid://d4iohlqflx6ik"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_i1216"]
+[ext_resource type="Texture2D" uid="uid://brltkxlqecosp" path="res://assets/sprites/keywords/kw_comp_health.png" id="1_4her0"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/companionship_health.gd" id="2_t01xj"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6x746"]
-atlas = ExtResource("1_i1216")
-region = Rect2(66, 132, 66, 66)
 
 [resource]
 script = ExtResource("2_t01xj")
@@ -16,5 +12,5 @@ is_animated = false
 scale_speed = 0.6
 title = "Companionship %d"
 description = "While this card is alive cards to its left and right are granted +%d health."
-icon = SubResource("AtlasTexture_6x746")
+icon = ExtResource("1_4her0")
 highlight_duration = 0.5

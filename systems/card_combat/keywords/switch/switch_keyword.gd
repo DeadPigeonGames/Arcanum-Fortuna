@@ -7,18 +7,24 @@ extends ActivatedKeyword
 @export var keywords_to_gain : Array[Keyword]
 @export var keywords_to_remove : Array[Keyword]
 @export var tranform_delay := 1.0
+@export var transformed_artwork_shader : ShaderMaterial = preload("res://assets/materials/invert.tres")
+@export var transformed_border_texture : Texture2D
+@export var transformed_keyword_slot_atlas : Texture = preload("res://assets/ui/icons/keyword_slots_reversed.png")
 
 @export_category("Animation")
 @export var rotation_duration = 0.8
 @export var icon_rotation = 1.0
 
+
 func init():
 	if not self in keywords_to_remove:
 		keywords_to_remove.append(self)
 
+
 func _on_completed(owner : CombatCard, icon_to_animate = null):
 	if not self in owner.keywords:
-		push_error("Tried to complete switch-keyword '%s' despite not being part if its owner '%s' keywords.")
+		push_error("Tried to complete switch-keyword '%s'
+				despite not being part if its owner '%s' keywords.")
 		return
 	# owner.keywords.erase(self)
 	await animate_transform(owner, icon_to_animate)
@@ -26,6 +32,7 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 	owner.health += health_difference
 	owner.health = max(1, owner.health)
 	owner.attack += attack_difference
+	
 
 
 func animate_transform(target, icon_to_animate):
@@ -53,5 +60,7 @@ func animate_transform(target, icon_to_animate):
 	tween.finished.connect(func(): icon_to_animate.is_animating = false)
 	tween.play()
 	await card.get_tree().create_timer(rotation_duration / 2).timeout
-	target.reverse()
+	target.set_transformed_visuals(transformed_artwork_shader, \
+	transformed_border_texture, transformed_keyword_slot_atlas)
+	#target.reverse()
 	await card.get_tree().create_timer(rotation_duration / 2).timeout
