@@ -1,0 +1,259 @@
+[gd_scene load_steps=12 format=3 uid="uid://bncdhusoiqqcj"]
+
+[ext_resource type="Texture2D" uid="uid://do32ub6ykpjq4" path="res://assets/ui/placeholders/keyword_description_underlay.png" id="1_mrn7k"]
+[ext_resource type="PackedScene" uid="uid://pe6tqla32quk" path="res://systems/ui/menus/menu_elements/stat_change.tscn" id="3_d8e8f"]
+[ext_resource type="Texture2D" uid="uid://d253xrxv604q5" path="res://assets/ui/placeholders/card_flavour_underlay.png" id="3_ksjhc"]
+[ext_resource type="Texture2D" uid="uid://dmvf4y1rexuxt" path="res://assets/ui/placeholders/switch_condition_underlay.png" id="5_1tskj"]
+[ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="5_3xtq5"]
+[ext_resource type="Texture2D" uid="uid://8cguh5h1crom" path="res://assets/ui/placeholders/awaken_icon_placeholder.png" id="5_e3rdj"]
+[ext_resource type="Texture2D" uid="uid://bnfj7t34405xc" path="res://assets/ui/placeholders/close_window_button_default_placeholder.png" id="7_sk6p5"]
+
+[sub_resource type="Gradient" id="Gradient_0nagi"]
+colors = PackedColorArray(0.215686, 0.352941, 0.462745, 1, 0.215686, 0.352941, 0.462745, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6q5c5"]
+gradient = SubResource("Gradient_0nagi")
+
+[sub_resource type="Gradient" id="Gradient_3rdab"]
+colors = PackedColorArray(0.448727, 0.464516, 0.555199, 1, 0.447059, 0.462745, 0.556863, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ncu2"]
+gradient = SubResource("Gradient_3rdab")
+
+[node name="CardInspection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordDescriptions" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -248.0
+offset_right = 680.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeywordDescriptionUnderlay" type="TextureRect" parent="KeywordDescriptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -184.0
+offset_right = 360.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mrn7k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KeywordDescriptions"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 368.0
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Keyword
+Keyword"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -740.0
+offset_top = -248.0
+offset_right = -460.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentStatChanges" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="StatChange" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange2" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange3" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange4" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="StatChange5" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
+layout_mode = 2
+
+[node name="CardFlavour" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardFlavourUnderlay" type="TextureRect" parent="CardFlavour"]
+layout_mode = 0
+offset_left = -568.0
+offset_top = 318.0
+offset_right = 108.0
+offset_bottom = 446.0
+texture = ExtResource("3_ksjhc")
+
+[node name="CardFlavourText" type="Label" parent="CardFlavour"]
+layout_mode = 0
+offset_left = -568.0
+offset_top = 350.0
+offset_right = 108.0
+offset_bottom = 446.0
+text = "Card Flavour
+Card Flavour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card" parent="." instance=ExtResource("5_3xtq5")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -128.0
+offset_right = -168.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Artwork" parent="Card" index="0"]
+offset_top = -1.0
+
+[node name="KeywordSlot2" parent="Card/KeyWordSlots" index="1"]
+offset_left = 144.891
+offset_top = 69.7969
+offset_right = 224.891
+offset_bottom = 149.797
+
+[node name="KeywordSlot3" parent="Card/KeyWordSlots" index="2"]
+offset_left = 144.891
+offset_top = 105.734
+offset_right = 224.891
+offset_bottom = 185.734
+
+[node name="KeywordSlot4" parent="Card/KeyWordSlots" index="3"]
+offset_left = 144.891
+offset_top = 140.891
+offset_right = 224.891
+offset_bottom = 220.891
+
+[node name="SwitchCondition" type="Control" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SwitchConditionUnderlay" type="TextureRect" parent="SwitchCondition"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 182.0
+offset_right = 700.0
+offset_bottom = 274.0
+texture = ExtResource("5_1tskj")
+
+[node name="SwitchIcon" type="TextureRect" parent="SwitchCondition"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = 188.0
+offset_right = 12.0
+offset_bottom = 268.0
+texture = ExtResource("5_e3rdj")
+
+[node name="Label" type="Label" parent="SwitchCondition"]
+custom_minimum_size = Vector2(640, 92)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 182.0
+offset_right = 660.0
+offset_bottom = 274.0
+size_flags_horizontal = 4
+text = "Switch Condition
+Switch Condition"
+vertical_alignment = 1
+
+[node name="CloseWindowButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 96.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_sk6p5")
+texture_pressed = SubResource("GradientTexture2D_6q5c5")
+texture_hover = SubResource("GradientTexture2D_4ncu2")
+
+[editable path="Card"]
+[editable path="Card/KeyWordSlots/KeywordSlot1/KeywordIcon"]

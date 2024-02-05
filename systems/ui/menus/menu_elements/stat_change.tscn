@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://pe6tqla32quk"]
+
+[ext_resource type="Texture2D" uid="uid://c770xs8dvmvpc" path="res://assets/ui/placeholders/stat_change_underlay.png" id="1_3m71c"]
+[ext_resource type="Texture2D" uid="uid://c0ow1gj3wun8a" path="res://assets/ui/icons/hp_icon_small.png" id="1_yx1qt"]
+[ext_resource type="Texture2D" uid="uid://d01gfffwrqcoh" path="res://assets/ui/icons/atk_icon_small.png" id="2_7h3j6"]
+
+[node name="StatChange" type="Control"]
+custom_minimum_size = Vector2(280, 62)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="StatChangeUnderlay" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3m71c")
+
+[node name="StatChangeElements" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 280.0
+offset_bottom = 62.0
+
+[node name="Attack" type="Control" parent="StatChangeElements"]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 54.0
+offset_bottom = 54.0
+
+[node name="AttackIcon" type="TextureRect" parent="StatChangeElements/Attack"]
+layout_mode = 2
+offset_right = 46.0
+offset_bottom = 46.0
+texture = ExtResource("2_7h3j6")
+expand_mode = 3
+
+[node name="AttackChangeLabel" type="Label" parent="StatChangeElements/Attack"]
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 46.0
+text = "+0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 58.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 54.0
+
+[node name="HealthIcon" type="TextureRect" parent="Health"]
+layout_mode = 2
+offset_right = 46.0
+offset_bottom = 46.0
+texture = ExtResource("1_yx1qt")
+expand_mode = 1
+
+[node name="HealthChangeLabel" type="Label" parent="Health"]
+layout_mode = 2
+offset_right = 46.0
+offset_bottom = 46.0
+text = "+0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChangeSource" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 120.0
+offset_top = 8.0
+offset_right = 166.0
+offset_bottom = 54.0
+
+[node name="HealthChangeLabel" type="Label" parent="ChangeSource"]
+layout_mode = 2
+offset_right = 46.0
+offset_bottom = 46.0
+text = "KEYWORD_HERE"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
