@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="KarmaCountSwitch" load_steps=8 format=3 uid="uid://8y5alvi5ttnj"]
+[gd_resource type="Resource" script_class="KarmaCountSwitch" load_steps=9 format=3 uid="uid://8y5alvi5ttnj"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_cx1j6"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_ahuvr"]
-[ext_resource type="Resource" uid="uid://dgbj2m033s16y" path="res://data/keyword/lifesteal_keyword.tres" id="3_ptvcr"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/slow.gd" id="3_x1w4x"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/karma_count_switch.gd" id="4_nr0ng"]
 
 [sub_resource type="Resource" id="Resource_o2st2"]
@@ -19,13 +19,21 @@ timing = 1
 atlas = ExtResource("2_ahuvr")
 region = Rect2(0, 264, 66, 66)
 
+[sub_resource type="Resource" id="Resource_h5f5v"]
+script = ExtResource("3_x1w4x")
+turns_to_skip = 1
+attack_on_first_turn = true
+title = "Keyword"
+description = "Gives your card an ability and stuff"
+highlight_duration = 0.5
+
 [resource]
 script = ExtResource("4_nr0ng")
 target_karma_count = 10
 comparison_type = 2
-attack_difference = 0
+attack_difference = -1
 health_difference = 0
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_ptvcr")])
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_h5f5v")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
 rotation_duration = 0.8

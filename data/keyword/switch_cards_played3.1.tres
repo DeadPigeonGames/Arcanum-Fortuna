@@ -1,32 +1,32 @@
-[gd_resource type="Resource" script_class="CardsPlayedSwitch" load_steps=8 format=3 uid="uid://jbnynt55oogu"]
+[gd_resource type="Resource" script_class="CardsPlayedSwitch" load_steps=8 format=3 uid="uid://c1j15idnn8qfw"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_n7f2c"]
-[ext_resource type="Script" path="res://systems/card_combat/keywords/triple_attack.gd" id="2_bxa2j"]
-[ext_resource type="Script" path="res://systems/card_combat/keywords/switch/cards_played_switch.gd" id="2_hpou0"]
-[ext_resource type="Script" path="res://systems/card_combat/keywords/split_attack.gd" id="3_8xxe0"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_qryhm"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/triple_attack.gd" id="2_83nc5"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/split_attack.gd" id="3_fm2ya"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/switch/cards_played_switch.gd" id="4_hwlkf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj8qu"]
-atlas = ExtResource("1_n7f2c")
+atlas = ExtResource("1_qryhm")
 region = Rect2(0, 264, 66, 66)
 
 [sub_resource type="Resource" id="Resource_o88vq"]
-script = ExtResource("2_bxa2j")
+script = ExtResource("2_83nc5")
 title = "Keyword"
 description = "Gives your card an ability and stuff"
 highlight_duration = 0.5
 
 [sub_resource type="Resource" id="Resource_1xols"]
-script = ExtResource("3_8xxe0")
+script = ExtResource("3_fm2ya")
 title = "Keyword"
 description = "Gives your card an ability and stuff"
 highlight_duration = 0.5
 
 [resource]
-script = ExtResource("2_hpou0")
+script = ExtResource("4_hwlkf")
 played_cards_count = 3
 require_allied_cards = true
 attack_difference = 0
-health_difference = 1
+health_difference = 2
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_o88vq")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_1xols")])
 tranform_delay = 1.0

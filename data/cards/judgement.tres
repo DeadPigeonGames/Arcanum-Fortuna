@@ -1,20 +1,23 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://bw4sry587x05m"]
+[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://bw4sry587x05m"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_3cnmo"]
 [ext_resource type="Texture2D" uid="uid://kjvyclxm18qu" path="res://assets/sprites/cards/judgement.png" id="1_e5oar"]
-[ext_resource type="Resource" uid="uid://drtnl4dtcqfpq" path="res://data/keyword/consume.tres" id="3_kdec5"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_10e6m"]
+[ext_resource type="Resource" uid="uid://brc0cecmp05sp" path="res://data/keyword/position_summon.tres" id="3_lg5o8"]
 [ext_resource type="AudioStream" uid="uid://dx6cm4lojlfve" path="res://assets/sounds/cards/voices/judgement.ogg" id="4_26wb4"]
+[ext_resource type="Resource" uid="uid://ca84p2c047b55" path="res://data/keyword/switch_player_hp20.1.tres" id="4_w60y2"]
 
 [resource]
 script = ExtResource("1_3cnmo")
 name = "Judgement"
 description = "\"Judge lest ye be judged.\""
 artwork = ExtResource("1_e5oar")
-cost = -1
-attack = 2
+cost = -3
+attack = 3
 health = 1
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_kdec5")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_lg5o8"), ExtResource("4_w60y2")])
 spawn_frequency = 40
 shop_cost = 5
 trade_override = 0
 sound_effect = ExtResource("4_26wb4")
+keyword_slot_texture = ExtResource("2_10e6m")

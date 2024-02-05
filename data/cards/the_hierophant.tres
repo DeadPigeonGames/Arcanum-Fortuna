@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nwcwr"]
 [ext_resource type="Texture2D" uid="uid://vy0ulm2qucxw" path="res://assets/sprites/cards/hierophant.png" id="1_tibtj"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_86h34"]
-[ext_resource type="Resource" uid="uid://cpyd5jcb4kdm" path="res://data/keyword/DeathrattleSacrifice3.tres" id="2_unwwk"]
 [ext_resource type="AudioStream" uid="uid://biapfu538sjhj" path="res://assets/sounds/cards/voices/the_hierophant.ogg" id="3_fhnuy"]
 [ext_resource type="Resource" uid="uid://b7si7oceraga6" path="res://data/keyword/flip.tres" id="3_g73ps"]
+[ext_resource type="Resource" uid="uid://dj1ot1up85sup" path="res://data/keyword/deathrattle_sacrifice.tres" id="3_s1ycw"]
 [ext_resource type="Resource" uid="uid://c5ulc8oi77w36" path="res://data/keyword/keyword_switch2.tres" id="5_ucnmy"]
 
 [resource]
@@ -16,7 +16,7 @@ artwork = ExtResource("1_tibtj")
 cost = -1
 attack = 1
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_unwwk"), ExtResource("3_g73ps"), ExtResource("5_ucnmy")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_s1ycw"), ExtResource("3_g73ps"), ExtResource("5_ucnmy")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

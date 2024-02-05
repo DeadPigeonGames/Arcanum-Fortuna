@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_kmx3s"]
 [ext_resource type="AudioStream" uid="uid://cbhtvx4e1ar1" path="res://assets/sounds/cards/voices/the_star.ogg" id="3_hajlb"]
 [ext_resource type="Resource" uid="uid://cla7wpd2pd8cb" path="res://data/keyword/atk_nerf1.tres" id="3_rsrtk"]
-[ext_resource type="Resource" uid="uid://cmlm21xqwh04s" path="res://data/keyword/switch_card_copy.tres" id="4_wm83t"]
+[ext_resource type="Resource" uid="uid://870j03plstop" path="res://data/keyword/switch_card_copy2.tres" id="4_g64r0"]
 
 [resource]
 script = ExtResource("2_kmx3s")
@@ -15,7 +15,7 @@ artwork = ExtResource("1_owdc4")
 cost = -3
 attack = 2
 health = 4
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_rsrtk"), ExtResource("4_wm83t")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_rsrtk"), ExtResource("4_g64r0")])
 spawn_frequency = 34
 shop_cost = 5
 trade_override = 0

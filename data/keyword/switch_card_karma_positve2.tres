@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=5 format=3 uid="uid://dhffjhtlxyrqq"]
+[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=4 format=3 uid="uid://dhffjhtlxyrqq"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_r56jd"]
-[ext_resource type="Resource" uid="uid://cpyd5jcb4kdm" path="res://data/keyword/DeathrattleSacrifice3.tres" id="2_66u4g"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/cards_karma_switch.gd" id="3_f2ncv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj8qu"]
@@ -12,9 +11,9 @@ region = Rect2(0, 264, 66, 66)
 script = ExtResource("3_f2ncv")
 required_card_count = 2
 required_karma_type = 0
-attack_difference = 0
-health_difference = 0
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_66u4g")])
+attack_difference = -1
+health_difference = 2
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
 rotation_duration = 0.8

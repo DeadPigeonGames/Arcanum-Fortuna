@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_y1met"]
 [ext_resource type="Resource" uid="uid://s0ldta5qu4fp" path="res://data/keyword/atk_nerf_in_front1.tres" id="3_1tfkv"]
 [ext_resource type="AudioStream" uid="uid://c6xyt404s1dkn" path="res://assets/sounds/cards/voices/the_hermit.ogg" id="3_jbq5n"]
-[ext_resource type="Resource" uid="uid://b0k33hdemfl27" path="res://data/keyword/switch_player_damage.tres" id="4_k7rbk"]
+[ext_resource type="Resource" uid="uid://cf67du5ujtd67" path="res://data/keyword/switch_take_damage2.tres" id="4_7m8i1"]
 
 [resource]
 script = ExtResource("2_y1met")
@@ -15,7 +15,7 @@ artwork = ExtResource("1_rhqay")
 cost = -2
 attack = 2
 health = 3
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_1tfkv"), ExtResource("4_k7rbk")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_1tfkv"), ExtResource("4_7m8i1")])
 spawn_frequency = 40
 shop_cost = 5
 trade_override = 0

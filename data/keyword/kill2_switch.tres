@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=6 format=3 uid="uid://uik4l46sy6qd"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=5 format=3 uid="uid://uik4l46sy6qd"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_gxs32"]
-[ext_resource type="Resource" uid="uid://dvt6vrtfufa0t" path="res://data/keyword/TripleAttack.tres" id="2_vnk7c"]
-[ext_resource type="Resource" uid="uid://ues1kduox2nf" path="res://data/keyword/SplitAttack.tres" id="3_asf23"]
+[ext_resource type="Resource" uid="uid://l23udqkfbm1c" path="res://data/keyword/slow.tres" id="2_rthn0"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="3_nqs1n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
@@ -13,10 +12,10 @@ region = Rect2(0, 264, 66, 66)
 script = ExtResource("3_nqs1n")
 required_trigger_count = 2
 dynamic_tooltip_unit_name = "kills"
-attack_difference = 1
-health_difference = 1
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_vnk7c")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_asf23")])
+attack_difference = -2
+health_difference = 0
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_rthn0")])
 tranform_delay = 1.0
 rotation_duration = 0.8
 icon_rotation = 1.0

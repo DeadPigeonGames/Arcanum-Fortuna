@@ -10,8 +10,8 @@ region = Rect2(0, 264, 66, 66)
 [resource]
 script = ExtResource("1_f787o")
 comparison_type = 1
-attack_difference = 69
-health_difference = 42
+attack_difference = 1
+health_difference = 1
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0

@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=4 format=3 uid="uid://b0awlto4wgoub"]
+[gd_resource type="Resource" script_class="DamageSwitch" load_steps=4 format=3 uid="uid://bpcptww5sd06f"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_ixx1e"]
-[ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="3_cs520"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_nejem"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/switch/damage_switch.gd" id="2_j6myn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
-atlas = ExtResource("2_ixx1e")
+atlas = ExtResource("1_nejem")
 region = Rect2(0, 264, 66, 66)
 
 [resource]
-script = ExtResource("3_cs520")
-required_trigger_count = 2
-dynamic_tooltip_unit_name = "times"
+script = ExtResource("2_j6myn")
+required_damage = 9
+damage_to_track = 2
 attack_difference = 1
 health_difference = 2
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
@@ -22,7 +22,7 @@ combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/comba
 triggers = 32
 is_animated = true
 scale_speed = 0.6
-title = "Destiny: Perseverance"
-description = "This card will reveal it's true form once it survived %d turns on the board. "
+title = "Attack Damage Switch %d"
+description = "This card will reveal it's true form once it dealt a total of %d damage."
 icon = SubResource("AtlasTexture_xuji6")
 highlight_duration = 0.5
