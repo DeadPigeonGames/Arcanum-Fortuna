@@ -5,6 +5,8 @@ var target_card_slot : Control
 var hand
 var player_tiles
 
+var card
+
 #region override functions
 
 func init(data : TutorialPopupData, combat : CardBattle):
@@ -36,15 +38,19 @@ func highlight_elements(value : bool):
 		color.a = 0.15
 	target_card_slot.set_self_modulate(color)
 	
-	for tile in player_tiles:
+	for tile : Node in player_tiles:
 		if value:
 			if tile != target_card_slot:
 				tile.add_child(Node.new())
 		else:
-			tile.remove_child(0)
+				if tile.get_child(0) != card and tile.get_child(0) != null:
+					tile.get_child(0).queue_free()
 
 
 #endregion
 
+
 func on_card_drag_ended(card):
-	pass
+	if target_card_slot.get_child(0) == card:
+		self.card = card
+		execute()
