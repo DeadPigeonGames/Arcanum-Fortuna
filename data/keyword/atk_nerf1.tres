@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="DebuffKeyword" load_steps=4 format=3 uid="uid://cla7wpd2pd8cb"]
+[gd_resource type="Resource" script_class="DebuffKeyword" load_steps=3 format=3 uid="uid://cla7wpd2pd8cb"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_glbvy"]
+[ext_resource type="Texture2D" uid="uid://debls002onral" path="res://assets/sprites/keywords/kw_surveillance.png" id="1_c1d2m"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/debuff_keyword.gd" id="2_etpu1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i28ef"]
-atlas = ExtResource("1_glbvy")
-region = Rect2(66, 198, 66, 66)
 
 [resource]
 script = ExtResource("2_etpu1")
@@ -18,5 +14,5 @@ is_animated = false
 scale_speed = 0.6
 title = "Atk Nerf"
 description = "While this card is alive the opposing card with the highest attack loses %d attack."
-icon = SubResource("AtlasTexture_i28ef")
+icon = ExtResource("1_c1d2m")
 highlight_duration = 0.5

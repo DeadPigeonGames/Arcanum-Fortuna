@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="LifestealKeyword" load_steps=4 format=3 uid="uid://dgbj2m033s16y"]
+[gd_resource type="Resource" script_class="LifestealKeyword" load_steps=3 format=3 uid="uid://dgbj2m033s16y"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_m0ugw"]
+[ext_resource type="Texture2D" uid="uid://fvdj24fb1cbx" path="res://assets/sprites/keywords/kw_lifesteal.png" id="1_6d3y0"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/life_steal_keyword.gd" id="1_rhao6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6x746"]
-atlas = ExtResource("1_m0ugw")
-region = Rect2(66, 132, 66, 66)
 
 [resource]
 script = ExtResource("1_rhao6")
@@ -15,5 +11,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Lifesteal"
 description = "Whenever this card attacks it will gain health equal to the dealt damage."
-icon = SubResource("AtlasTexture_6x746")
+icon = ExtResource("1_6d3y0")
 highlight_duration = 0.5

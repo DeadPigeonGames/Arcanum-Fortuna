@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="ATK_Drain" load_steps=4 format=3 uid="uid://4g0i0fjq2dum"]
+[gd_resource type="Resource" script_class="ATK_Drain" load_steps=3 format=3 uid="uid://4g0i0fjq2dum"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_opa6y"]
+[ext_resource type="Texture2D" uid="uid://cr5lg67ebuw2x" path="res://assets/sprites/keywords/kw_idol.png" id="1_37l4m"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/atk_drain.gd" id="1_ybxio"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1o6as"]
-atlas = ExtResource("1_opa6y")
-region = Rect2(66, 66, 66, 66)
 
 [resource]
 script = ExtResource("1_ybxio")
@@ -18,5 +14,5 @@ is_animated = false
 scale_speed = 0.6
 title = "ATK Drain"
 description = "This gains %d attack for each card on the board with a positve karma value."
-icon = SubResource("AtlasTexture_1o6as")
+icon = ExtResource("1_37l4m")
 highlight_duration = 0.5
