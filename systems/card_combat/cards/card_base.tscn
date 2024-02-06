@@ -201,8 +201,8 @@ z_index = 2
 custom_minimum_size = Vector2(164, 257)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 164.0
-offset_bottom = 257.0
+offset_right = 170.0
+offset_bottom = 266.0
 pivot_offset = Vector2(82, 128)
 script = ExtResource("1_04ic4")
 
@@ -345,16 +345,19 @@ vertical_alignment = 1
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
-anchors_preset = 0
-offset_right = 66.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
 offset_bottom = 66.0
+grow_horizontal = 0
 pivot_offset = Vector2(33, 33)
 
 [node name="KeywordSlot1" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
-offset_left = 145.0
+offset_left = 48.0
 offset_top = 34.0
-offset_right = 225.0
+offset_right = 128.0
 offset_bottom = 114.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_yop51")
@@ -379,9 +382,9 @@ size_flags_vertical = 0
 
 [node name="KeywordSlot2" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
-offset_left = 145.0
+offset_left = 48.0
 offset_top = 69.0
-offset_right = 225.0
+offset_right = 128.0
 offset_bottom = 149.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_4vo4j")
@@ -404,9 +407,9 @@ pivot_offset = Vector2(16, 16)
 
 [node name="KeywordSlot3" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
-offset_left = 145.0
+offset_left = 48.0
 offset_top = 104.0
-offset_right = 225.0
+offset_right = 128.0
 offset_bottom = 184.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_40ati")
@@ -422,9 +425,9 @@ pivot_offset = Vector2(16, 16)
 
 [node name="KeywordSlot4" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
-offset_left = 145.0
+offset_left = 48.0
 offset_top = 139.0
-offset_right = 225.0
+offset_right = 128.0
 offset_bottom = 219.0
 scale = Vector2(0.389, 0.389)
 texture = SubResource("AtlasTexture_f0j57")
