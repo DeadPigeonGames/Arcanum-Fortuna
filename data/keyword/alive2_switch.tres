@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_bvdlq"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_yks7q"]
-[ext_resource type="Resource" uid="uid://s0ldta5qu4fp" path="res://data/keyword/atk_nerf_in_front1.tres" id="3_olkas"]
+[ext_resource type="Resource" path="res://data/keyword/atk_nerf_in_front1.tres" id="3_olkas"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="4_r8x1c"]
 [ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="5_0413e"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_bsc43"]

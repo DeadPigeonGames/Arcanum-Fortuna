@@ -7,8 +7,8 @@ extends ActivatedKeyword
 @export var keywords_to_gain : Array[Keyword]
 @export var keywords_to_remove : Array[Keyword]
 @export var tranform_delay := 1.0
-@export var transformed_artwork_shader : ShaderMaterial = preload("res://assets/materials/invert.tres")
-@export var transformed_border_texture : Texture2D = null
+@export var transformed_artwork_shader : ShaderMaterial = preload("res://shaders/gradient_shader.tres")
+@export var transformed_border_texture : Texture2D = preload("res://assets/sprites/cards/switch_frame.png")
 @export var transformed_keyword_slot_atlas : Texture = preload("res://assets/ui/icons/keyword_slots_reversed.png")
 
 @export_category("Animation")
