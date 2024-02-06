@@ -204,6 +204,7 @@ anchors_preset = 0
 offset_right = 170.0
 offset_bottom = 266.0
 pivot_offset = Vector2(82, 128)
+mouse_filter = 1
 script = ExtResource("1_04ic4")
 
 [node name="Artwork" type="TextureRect" parent="."]
@@ -231,6 +232,7 @@ grow_vertical = 2
 [node name="Name" type="ColorRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+mouse_filter = 1
 color = Color(0.588235, 0.588235, 0.588235, 1)
 
 [node name="Name" type="Label" parent="VBoxContainer/Name"]
@@ -250,6 +252,7 @@ visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 1
 color = Color(0.32549, 0.631373, 0.768627, 1)
 
 [node name="Label" type="Label" parent="VBoxContainer/Type"]
@@ -352,6 +355,7 @@ offset_left = -66.0
 offset_bottom = 66.0
 grow_horizontal = 0
 pivot_offset = Vector2(33, 33)
+mouse_filter = 1
 
 [node name="KeywordSlot1" type="TextureRect" parent="KeyWordSlots"]
 layout_mode = 0
@@ -470,7 +474,7 @@ offset_right = -8.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 
 [node name="ParticleAnchor" type="Control" parent="ArtworkClip"]
 layout_mode = 1

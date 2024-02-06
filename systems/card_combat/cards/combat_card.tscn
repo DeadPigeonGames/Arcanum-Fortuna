@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cbi6wymdty6k2" path="res://assets/ui/fonts/TarotPamelaColmanSmith-Regular.ttf" id="6_so02i"]
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
+mouse_filter = 1
 script = ExtResource("1_3lxv2")
 buff_color = Color(0, 1, 0, 1)
 debuff_color = Color(1, 0, 0, 1)
@@ -48,6 +49,12 @@ text = "Yas Queen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Name" parent="VBoxContainer" index="0"]
+mouse_filter = 1
+
+[node name="Type" parent="VBoxContainer" index="1"]
+mouse_filter = 1
+
 [node name="KarmaCost" parent="Cost" index="0"]
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -60,6 +67,9 @@ theme_override_constants/outline_size = 8
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 
+[node name="KeyWordSlots" parent="." index="5"]
+mouse_filter = 1
+
 [node name="DeleteButton" type="Button" parent="." index="7"]
 unique_name_in_owner = true
 visible = false
@@ -70,6 +80,15 @@ offset_right = 164.0
 offset_bottom = 34.0
 icon = ExtResource("3_dlei7")
 icon_alignment = 1
+
+[node name="KeywordSlots" parent="." index="9"]
+mouse_filter = 1
+
+[node name="ParticleAnchor" parent="ArtworkClip" index="0"]
+mouse_filter = 2
+
+[node name="CenterAnchor" parent="." index="12"]
+mouse_filter = 2
 
 [connection signal="pressed" from="DeleteButton" to="." method="_on_delete_button_pressed"]
 

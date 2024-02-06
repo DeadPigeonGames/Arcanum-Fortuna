@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_772n4"]
 [ext_resource type="AudioStream" uid="uid://dlotfju0taou" path="res://assets/sounds/cards/voices/the_tower.ogg" id="3_2y7nu"]
 [ext_resource type="Resource" uid="uid://chpr5uue01ill" path="res://data/keyword/shield.tres" id="3_w10wa"]
-[ext_resource type="Resource" uid="uid://ddkx8hekj2sws" path="res://data/keyword/switch_take_damage.tres" id="4_moex1"]
+[ext_resource type="Resource" uid="uid://dx40hq8d5snfq" path="res://data/keyword/switch_card_copy2.1.tres" id="4_17waa"]
 
 [resource]
 script = ExtResource("2_1jc2m")
@@ -15,7 +15,7 @@ artwork = ExtResource("1_qhii3")
 cost = -5
 attack = 2
 health = 6
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_w10wa"), ExtResource("4_moex1")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_w10wa"), ExtResource("4_17waa")])
 spawn_frequency = 80
 shop_cost = 5
 trade_override = 0

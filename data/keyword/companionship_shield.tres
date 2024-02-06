@@ -1,13 +1,9 @@
-[gd_resource type="Resource" script_class="GrantKeywordsKeyword" load_steps=7 format=3 uid="uid://cvcxsb0int18p"]
+[gd_resource type="Resource" script_class="GrantKeywordsKeyword" load_steps=6 format=3 uid="uid://cvcxsb0int18p"]
 
 [ext_resource type="Texture2D" uid="uid://cun3wcvpa18uq" path="res://assets/sprites/keywords/kw_comp_protection.png" id="1_fxc1c"]
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_l3a0e"]
+[ext_resource type="Texture2D" uid="uid://d0ynpjxgwyb2c" path="res://assets/sprites/keywords/kw_fortified.png" id="2_6oh0l"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/shield.gd" id="2_8y4tx"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/grant_keywords_keyword.gd" id="3_d5xaw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2kef"]
-atlas = ExtResource("1_l3a0e")
-region = Rect2(66, 132, 66, 66)
 
 [sub_resource type="Resource" id="Resource_13x28"]
 script = ExtResource("2_8y4tx")
@@ -16,8 +12,8 @@ fixed_damage_reduction = 1
 uses = -1
 title = "Damage Reduction %d"
 description = "This card is being protected by its neighbor and takes -%d damage whenever it is attacked. "
-icon = SubResource("AtlasTexture_r2kef")
-emission_icon = SubResource("AtlasTexture_r2kef")
+icon = ExtResource("2_6oh0l")
+emission_icon = ExtResource("2_6oh0l")
 highlight_duration = 0.5
 
 [resource]
