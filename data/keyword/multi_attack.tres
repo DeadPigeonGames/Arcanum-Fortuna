@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_68ao5")
 extra_attacks = 1
-title = "MultiAttack %d"
+title = "Aggression"
 description = "This card attacks 2 times every turn."
 icon = ExtResource("1_m60jc")
 highlight_duration = 0.5

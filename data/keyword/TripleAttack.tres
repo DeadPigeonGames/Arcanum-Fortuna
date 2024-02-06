@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_dn2gv")
-title = "TripleAttack"
+title = "Trinity"
 description = "A card with this keyword will both attack diagonally and straight. "
 icon = ExtResource("1_vay6t")
 highlight_duration = 1.0

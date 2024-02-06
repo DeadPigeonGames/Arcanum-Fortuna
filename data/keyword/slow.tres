@@ -7,7 +7,7 @@
 script = ExtResource("1_v7xas")
 turns_to_skip = 1
 attack_on_first_turn = true
-title = "Slow %d"
+title = "Patience"
 description = "This card has to skip %d turn(s) after each attack."
 icon = ExtResource("1_yvotc")
 highlight_duration = 0.5

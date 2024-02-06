@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_qg2bb")
-title = "SplitAttack"
+title = "Duality"
 description = "A card with this keyword will attack diagonally instead of straight."
 icon = ExtResource("1_s5iob")
 highlight_duration = 1.0
