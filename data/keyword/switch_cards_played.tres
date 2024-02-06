@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="CardsPlayedSwitch" load_steps=7 format=3 uid="uid://cp2nyuraw1j1q"]
+[gd_resource type="Resource" script_class="CardsPlayedSwitch" load_steps=6 format=3 uid="uid://cp2nyuraw1j1q"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_1r8iv"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/cards_played_switch.gd" id="1_yjsy3"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="3_0e30m"]
-[ext_resource type="Texture2D" uid="uid://cn4qyopwfekb7" path="res://assets/sprites/cards/switch_frame.png" id="4_8c85b"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="4_piygv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj8qu"]
@@ -20,7 +19,6 @@ keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("3_0e30m")
-transformed_border_texture = ExtResource("4_8c85b")
 transformed_keyword_slot_atlas = ExtResource("4_piygv")
 rotation_duration = 0.8
 icon_rotation = 1.0

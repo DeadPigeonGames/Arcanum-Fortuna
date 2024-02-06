@@ -41,10 +41,9 @@ func highlight_elements(value : bool):
 	for tile : Node in player_tiles:
 		if value:
 			if tile != target_card_slot:
-				tile.add_child(Node.new())
+				pass # Should disable tile here
 		else:
-				if tile.get_child(0) != card and tile.get_child(0) != null:
-					tile.get_child(0).queue_free()
+				pass # Should enable all
 
 
 #endregion

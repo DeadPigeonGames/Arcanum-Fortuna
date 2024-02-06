@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://cyu186axhjfax"]
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://cyu186axhjfax"]
 
 [ext_resource type="Texture2D" uid="uid://bgqy2ut5amxhf" path="res://assets/sprites/cards/justice.png" id="1_aecmw"]
-[ext_resource type="Resource" uid="uid://ues1kduox2nf" path="res://data/keyword/SplitAttack.tres" id="2_7vyyo"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_fwtl7"]
-[ext_resource type="Resource" uid="uid://drtnl4dtcqfpq" path="res://data/keyword/consume.tres" id="3_rpu7v"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_gk1bb"]
+[ext_resource type="Resource" uid="uid://cla7wpd2pd8cb" path="res://data/keyword/atk_nerf1.tres" id="3_ss65f"]
+[ext_resource type="Resource" uid="uid://s0ldta5qu4fp" path="res://data/keyword/atk_nerf_in_front1.tres" id="4_riuec"]
+[ext_resource type="Resource" uid="uid://dks5et8l7ntkw" path="res://data/keyword/switch_take_damage_amount6.tres" id="5_24p4f"]
 [ext_resource type="AudioStream" uid="uid://j2hqp74k7iil" path="res://assets/sounds/cards/voices/justice.ogg" id="5_t8y6f"]
 
 [resource]
@@ -11,9 +13,12 @@ script = ExtResource("2_fwtl7")
 name = "Justice"
 description = "\"May your future become balanced.\""
 artwork = ExtResource("1_aecmw")
-cost = -4
-attack = 2
-health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_7vyyo"), ExtResource("3_rpu7v")])
+cost = -3
+attack = 0
+health = 4
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_ss65f"), ExtResource("4_riuec"), ExtResource("5_24p4f")])
 spawn_frequency = 10
+shop_cost = 5
+trade_override = 0
 sound_effect = ExtResource("5_t8y6f")
+keyword_slot_texture = ExtResource("2_gk1bb")
