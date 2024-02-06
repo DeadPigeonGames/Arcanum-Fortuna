@@ -25,7 +25,7 @@ func _ready():
 		tile.self_modulate = tile_disabled_color
 	for tile in $EnemyTiles.get_child(1).get_children():
 		tile.self_modulate = tile_disabled_color
-	for tile in $PlayerTiles.get_children():
+	for tile in player_tiles.get_children():
 		tile.self_modulate = tile_disabled_color
 
 
@@ -38,7 +38,9 @@ func get_enemy_tile_pos(y, x):
 
 
 func _on_card_dragged():
-	for tile in $PlayerTiles.get_children():
+	for tile in player_tiles.get_children():
+		if tile.get_child_count() > 0:
+			continue
 		tile.self_modulate = tile_interactible_color
 	accept_card = true
 
@@ -46,18 +48,18 @@ func _on_card_dragged():
 func _input(event):
 	if not accept_card or not event is InputEventMouseMotion:
 		return
-	for tile in $PlayerTiles.get_children():
+	for tile in player_tiles.get_children():
 		if tile.get_global_rect().has_point(get_global_mouse_position()):
 			tile.self_modulate = tile_hovered_color
 			hovered_tile = tile
 		else:
 			if tile == hovered_tile:
 				hovered_tile = null
-			tile.self_modulate = tile_interactible_color
+				#tile.self_modulate = tile_interactible_color
 
 
 func _on_card_relased(card: Card):
-	for tile in $PlayerTiles.get_children():
+	for tile in player_tiles.get_children():
 		tile.self_modulate = tile_disabled_color
 	accept_card = false
 	if not hovered_tile or hovered_tile.get_child_count() != 0:
@@ -222,7 +224,7 @@ func get_active_cards() -> Array[CombatCard]:
 
 
 func get_tile(idx, friendly = false):
-	return ($PlayerTiles if not friendly else $EnemyTiles/Frontrow).get_child(idx)
+	return (player_tiles if not friendly else $EnemyTiles/Frontrow).get_child(idx)
 
 
 func highlight_tile(idx, friendly = false):

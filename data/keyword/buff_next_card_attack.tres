@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="BuffNextCardKeyword" load_steps=4 format=3 uid="uid://drvm1tnfo6hm6"]
+[gd_resource type="Resource" script_class="BuffNextCardKeyword" load_steps=3 format=3 uid="uid://drvm1tnfo6hm6"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_oenup"]
+[ext_resource type="Texture2D" uid="uid://du38td3q3hybh" path="res://assets/sprites/keywords/kw_empower_strength.png" id="1_m4fsu"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/buff_next_card_keyword.gd" id="1_ssh8l"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1o6as"]
-atlas = ExtResource("1_oenup")
-region = Rect2(66, 66, 66, 66)
 
 [resource]
 script = ExtResource("1_ssh8l")
@@ -17,5 +13,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Attack Transfer %d"
 description = "The next card you play after this one will spawn with +%d attack."
-icon = SubResource("AtlasTexture_1o6as")
+icon = ExtResource("1_m4fsu")
 highlight_duration = 0.5

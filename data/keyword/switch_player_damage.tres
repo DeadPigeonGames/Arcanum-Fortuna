@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="DamageSwitch" load_steps=5 format=3 uid="uid://b0k33hdemfl27"]
+[gd_resource type="Resource" script_class="DamageSwitch" load_steps=7 format=3 uid="uid://b0k33hdemfl27"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/damage_switch.gd" id="1_2pdxi"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_s5j2u"]
 [ext_resource type="Resource" uid="uid://d4iohlqflx6ik" path="res://data/keyword/companionship_HP1.tres" id="2_g4ykh"]
+[ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="4_x7xp6"]
+[ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="5_t6dul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj8qu"]
 atlas = ExtResource("1_s5j2u")
@@ -17,6 +19,8 @@ health_difference = 2
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_g4ykh")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
+transformed_artwork_shader = ExtResource("4_x7xp6")
+transformed_keyword_slot_atlas = ExtResource("5_t6dul")
 rotation_duration = 0.8
 icon_rotation = 1.0
 combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])

@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="DeathrattleSacrifice" load_steps=4 format=3 uid="uid://cpyd5jcb4kdm"]
+[gd_resource type="Resource" script_class="DeathrattleSacrifice" load_steps=3 format=3 uid="uid://cpyd5jcb4kdm"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_osqf2"]
+[ext_resource type="Texture2D" uid="uid://cphv2ex44ox8w" path="res://assets/sprites/keywords/kw_sacrifice.png" id="1_bxtdj"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/deathrattle_sacrifice.gd" id="2_frln1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l0ds3"]
-atlas = ExtResource("1_osqf2")
-region = Rect2(66, 132, 66, 66)
 
 [resource]
 script = ExtResource("2_frln1")
@@ -16,5 +12,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Sacrifice %d"
 description = "When this card dies, its owner will receive %d health. (Cannot surpass max health.)"
-icon = SubResource("AtlasTexture_l0ds3")
+icon = ExtResource("1_bxtdj")
 highlight_duration = 0.5

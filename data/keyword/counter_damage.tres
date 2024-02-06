@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="CounterDamageKeyword" load_steps=4 format=3 uid="uid://dgrlss1x1wbu1"]
+[gd_resource type="Resource" script_class="CounterDamageKeyword" load_steps=3 format=3 uid="uid://dgrlss1x1wbu1"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_335i6"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/counter_damage_keyword.gd" id="1_opr7c"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6owf"]
-atlas = ExtResource("1_335i6")
-region = Rect2(66, 66, 66, 66)
+[ext_resource type="Texture2D" uid="uid://caps3nw0e772" path="res://assets/sprites/keywords/kw_vengeance.png" id="1_w2iwl"]
 
 [resource]
 script = ExtResource("1_opr7c")
@@ -16,5 +12,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Counter Damage %d"
 description = "Whenever this card is attacked it will deal %d damage to the attacker."
-icon = SubResource("AtlasTexture_a6owf")
+icon = ExtResource("1_w2iwl")
 highlight_duration = 0.5

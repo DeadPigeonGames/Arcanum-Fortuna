@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="Consume" load_steps=4 format=3 uid="uid://bp5p7q43w8i5p"]
+[gd_resource type="Resource" script_class="Consume" load_steps=3 format=3 uid="uid://bp5p7q43w8i5p"]
 
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_yqm88"]
+[ext_resource type="Texture2D" uid="uid://8fk1078sddyp" path="res://assets/sprites/keywords/kw_insatiable.png" id="1_g4k6p"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/consume.gd" id="2_3qo6q"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tssjv"]
-atlas = ExtResource("1_yqm88")
-region = Rect2(0, 66, 66, 66)
 
 [resource]
 script = ExtResource("2_3qo6q")
@@ -17,5 +13,5 @@ is_animated = true
 scale_speed = 0.6
 title = "Consume %d/%d"
 description = "Whenever a card with this keyword attacks and kills a card it gains %d Attack and %d Health."
-icon = SubResource("AtlasTexture_tssjv")
+icon = ExtResource("1_g4k6p")
 highlight_duration = 1.0

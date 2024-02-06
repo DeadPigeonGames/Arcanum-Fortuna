@@ -23,7 +23,7 @@ func init():
 func get_target(source, owner, combat = null):
 	if combat == null:
 		push_error("Cannot trigger CardsKarmaSwitch: Combat must be provided!")
-		return null
+		return []
 	return combat.game_board.get_front_enemies() if owner.is_enemy \
 			else combat.game_board.get_friendly_cards()
 
