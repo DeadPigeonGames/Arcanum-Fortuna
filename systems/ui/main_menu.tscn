@@ -125,7 +125,6 @@ method_to_call = "_SFX_UIButtonPress"
 [node name="TutorialButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-disabled = true
 text = "Tutorial"
 
 [node name="HoverSound" parent="VBoxContainer/TutorialButton" instance=ExtResource("7_mp5ns")]

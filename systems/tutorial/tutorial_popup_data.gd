@@ -10,7 +10,7 @@ enum OffsetType
 }
 
 @export var title : String
-@export var text : String
+@export_multiline var text : String
 @export var highlighted_elements : Array[NodePath]
 @export var offset_type : OffsetType
 @export var distance : float
