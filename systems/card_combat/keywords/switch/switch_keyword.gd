@@ -7,8 +7,7 @@ extends ActivatedKeyword
 @export var keywords_to_gain : Array[Keyword]
 @export var keywords_to_remove : Array[Keyword]
 @export var tranform_delay := 1.0
-@export var transformed_artwork_shader : ShaderMaterial = preload("res://assets/materials/invert.tres")
-@export var transformed_border_texture : Texture2D
+@export var transformed_artwork_shader : ShaderMaterial = preload("res://shaders/gradient_shader.tres")
 @export var transformed_keyword_slot_atlas : Texture = preload("res://assets/ui/icons/keyword_slots_reversed.png")
 
 @export_category("Animation")
@@ -60,7 +59,6 @@ func animate_transform(target, icon_to_animate):
 	tween.finished.connect(func(): icon_to_animate.is_animating = false)
 	tween.play()
 	await card.get_tree().create_timer(rotation_duration / 2).timeout
-	target.set_transformed_visuals(transformed_artwork_shader, \
-	transformed_border_texture, transformed_keyword_slot_atlas)
+	target.set_transformed_visuals(transformed_artwork_shader, transformed_keyword_slot_atlas)
 	#target.reverse()
 	await card.get_tree().create_timer(rotation_duration / 2).timeout
