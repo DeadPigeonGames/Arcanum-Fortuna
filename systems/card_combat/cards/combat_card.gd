@@ -120,6 +120,8 @@ func flip():
 func set_transformed_visuals(shader_material: ShaderMaterial, \
 		border_texture: Texture, keyword_slot_atlas : Texture):
 	%Artwork.material = shader_material
+	if border_texture:
+		%SwitchFrame.texture = border_texture
 	for slot in %KeyWordSlots.get_children():
 		slot.texture.atlas = card_data.keyword_slot_texture
 
