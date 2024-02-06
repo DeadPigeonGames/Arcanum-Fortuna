@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=5 format=3 uid="uid://dfcbdoa13thhv"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=8 format=3 uid="uid://dfcbdoa13thhv"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_3nsjq"]
 [ext_resource type="Resource" uid="uid://fvab8xjppdba" path="res://data/keyword/multi_attack.tres" id="2_v3d4s"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="3_jxni1"]
+[ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="4_7hkqx"]
+[ext_resource type="Texture2D" uid="uid://cn4qyopwfekb7" path="res://assets/sprites/cards/switch_frame.png" id="5_5hbgw"]
+[ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_y2fsc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
 atlas = ExtResource("1_3nsjq")
@@ -17,6 +20,9 @@ health_difference = 3
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_v3d4s")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
+transformed_artwork_shader = ExtResource("4_7hkqx")
+transformed_border_texture = ExtResource("5_5hbgw")
+transformed_keyword_slot_atlas = ExtResource("6_y2fsc")
 rotation_duration = 0.8
 icon_rotation = 1.0
 combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])

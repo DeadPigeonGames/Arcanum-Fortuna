@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=9 format=3 uid="uid://jp7i7xjl1g4u"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=10 format=3 uid="uid://jp7i7xjl1g4u"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_bvdlq"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_yks7q"]
-[ext_resource type="Resource" path="res://data/keyword/atk_nerf_in_front1.tres" id="3_olkas"]
+[ext_resource type="Resource" uid="uid://s0ldta5qu4fp" path="res://data/keyword/atk_nerf_in_front1.tres" id="3_olkas"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="4_r8x1c"]
-[ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="5_0413e"]
+[ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="5_vm38y"]
+[ext_resource type="Texture2D" uid="uid://cn4qyopwfekb7" path="res://assets/sprites/cards/switch_frame.png" id="6_b5tcv"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_bsc43"]
 
 [sub_resource type="Resource" id="Resource_yutjw"]
@@ -25,7 +26,8 @@ health_difference = 2
 keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_olkas")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
-transformed_artwork_shader = ExtResource("5_0413e")
+transformed_artwork_shader = ExtResource("5_vm38y")
+transformed_border_texture = ExtResource("6_b5tcv")
 transformed_keyword_slot_atlas = ExtResource("6_bsc43")
 rotation_duration = 0.8
 icon_rotation = 1.0
