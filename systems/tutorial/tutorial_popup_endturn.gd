@@ -11,6 +11,7 @@ func init(data : TutorialPopupData, combat : CardBattle):
 
 func execute():
 	highlight_elements(false)
+	combat.lock_player_actions()
 	completed.emit()
 
 #endregion
