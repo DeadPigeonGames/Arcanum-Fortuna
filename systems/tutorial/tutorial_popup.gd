@@ -83,7 +83,6 @@ func get_offset_type_position(offset_type : TutorialPopupData.OffsetType, distan
 
 func setup_window_position(center_position : Vector2):
 	global_position = center_position
-	#global_position = highlighted_elements[0].get_global_rect().get_center()
 	var center = container.size / 2
 	position.x -= center.x
 	position.y -= center.y
