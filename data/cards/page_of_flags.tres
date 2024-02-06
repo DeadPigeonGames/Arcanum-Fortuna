@@ -3,17 +3,17 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_4j62v"]
 [ext_resource type="Texture2D" uid="uid://7crdyq3dl3en" path="res://assets/sprites/cards/page_of_flags.png" id="1_m0878"]
 [ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_4fpko"]
-[ext_resource type="Resource" uid="uid://c0jp8yp2mu58y" path="res://data/keyword/deathrattle_ATK1.tres" id="2_u8eyx"]
+[ext_resource type="Resource" uid="uid://bwiahbpe7ag6l" path="res://data/keyword/shield_2.tres" id="3_2hh8h"]
 
 [resource]
 script = ExtResource("1_4j62v")
 name = "Page of Flags"
 description = "It doesn't do stuff."
 artwork = ExtResource("1_m0878")
-cost = 5
-attack = 1
-health = 1
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+cost = 3
+attack = 0
+health = 3
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_2hh8h")])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
