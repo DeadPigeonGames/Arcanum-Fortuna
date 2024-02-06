@@ -8,6 +8,7 @@ signal drag_ended(card)
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
 @export var delete_material : ShaderMaterial
+@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
 @export var is_auto_flip = false
 @export_category("Animation Settings")
@@ -321,6 +322,13 @@ func _process(delta):
 
 
 func _input(event: InputEvent):
+	if not is_hovered:
+		return
+	if event.is_action_pressed("open_inspection"):
+		var new_inspection = inspection.instantiate()
+		new_inspection.init(self)
+		SceneHandler.combat.add_child(new_inspection)
+	
 	if not is_drag_enabled:
 		return
 

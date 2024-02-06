@@ -6,7 +6,7 @@
 
 [node name="HandCard" instance=ExtResource("1_g1h4l")]
 script = ExtResource("1_85cwi")
-drag_offset = Vector2(25, 5)
+drag_offset = Vector2(25, 25)
 
 [node name="KarmaCost" parent="Cost" index="0"]
 offset_top = 5.0

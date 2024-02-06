@@ -8,7 +8,6 @@ var cost : int
 var attack : int : set = set_attack, get = get_attack
 var health: int : set = set_health, get = get_health
 var keywords : Array[Keyword] = []
-
 var is_hovered := false
 
 
@@ -34,10 +33,6 @@ func set_health(value):
 
 func get_health():
 	return health
-
-
-func scale_to_fit(new_size):
-	scale = get_rect().size / new_size
 
 
 func copy(card : Card):
@@ -97,10 +92,12 @@ func setup():
 
 func _on_mouse_entered():
 	is_hovered = true
+	print("HOVERED")
 
 
 func _on_mouse_exited():
 	is_hovered = false
+	print("NO HOVER")
 
 
 func play_animation(animation):

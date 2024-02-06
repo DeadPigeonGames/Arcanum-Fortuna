@@ -3,7 +3,7 @@ extends Node
 var current_scene
 @onready var scene_container = $CurrentScene
 @onready var shelf = $Shelf
-
+var combat
 
 func _ready():
 	await get_tree().root.ready

@@ -81,7 +81,6 @@ func lock_friendly_cards(combat):
 		var new_combat_card = combat_card_prefab.instantiate()
 		new_combat_card.copy(card)
 		tile.add_child(new_combat_card)
-		new_combat_card.scale_to_fit(tile.get_rect().size)
 		new_combat_card.tile_coordinate = Vector2i(i, 0)
 		new_combat_card.deleted.connect(player._on_friendly_card_deleted)
 		combat.player.transfer_stored_buffs(new_combat_card)
@@ -144,7 +143,6 @@ func place_enemy_card_back(cardData : CardData, tile_idx) -> bool:
 		return false
 	var new_combat_card = combat_card_prefab.instantiate()
 	new_combat_card.card_data = cardData
-	new_combat_card.scale_to_fit(target_tile.get_rect().size)
 	target_tile.add_child(new_combat_card)
 	new_combat_card.make_enemy()
 	new_combat_card.tile_coordinate = Vector2i(tile_idx, 2)

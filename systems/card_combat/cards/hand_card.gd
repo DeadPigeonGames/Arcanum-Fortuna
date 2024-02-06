@@ -8,7 +8,6 @@ static var heldCard : HandCard
 @export var drag_offset := Vector2(25, 25)
 
 var isPickedUp = false
-var isHovered = false
 
 var move_around := true
 var base_scale = 1.0
@@ -29,13 +28,11 @@ func _notification(what):
 
 func setup():
 	super()
-	mouse_entered.connect(self.mouse_entered_event)
-	mouse_exited.connect(self.mouse_exited_event)
 
 
 func _process(delta):
 	var target_scale = base_scale
-	if isHovered:
+	if is_hovered:
 		target_scale = base_scale * 1.1
 		z_index = 4
 	else:
@@ -52,18 +49,13 @@ func _process(delta):
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("pickUpCard") and not isPickedUp:
-		if isHovered:
+		if is_hovered:
 			pickup()
 	
 	if event.is_action_released("pickUpCard") and isPickedUp:
 		put(null)
 		emit_signal("drag_ended", self)
 
-func mouse_entered_event():
-	isHovered = true
-
-func mouse_exited_event():
-	isHovered = false
 
 func pickup():
 	show_card_tooltip.hide_tooltip()
@@ -75,7 +67,6 @@ func pickup():
 		# Edge case if you pick up multiple cards
 		heldCard.put(null)
 	heldCard = self
-	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	emit_signal("drag_started")
 
 
@@ -84,4 +75,3 @@ func put(dropNode):
 	show_card_tooltip.set_process(true)
 	isPickedUp = false
 	heldCard = null
-	mouse_filter = Control.MOUSE_FILTER_PASS
