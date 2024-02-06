@@ -169,7 +169,7 @@ offset_left = -540.0
 offset_top = -540.0
 grow_horizontal = 0
 grow_vertical = 0
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="CornerBackground" type="TextureRect" parent="ResourceContainer"]
 layout_mode = 1
@@ -183,6 +183,7 @@ offset_top = -624.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 0
+mouse_filter = 2
 texture = ExtResource("5_di1ka")
 
 [node name="Karma" type="TextureRect" parent="ResourceContainer"]
@@ -238,7 +239,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="HealthBar" type="TextureProgressBar" parent="ResourceContainer/Health"]
 unique_name_in_owner = true
@@ -252,6 +253,7 @@ offset_left = -628.0
 offset_top = -624.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 value = 100.0
 fill_mode = 5
 texture_under = ExtResource("8_nlbg8")
@@ -266,9 +268,8 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 116.0
-offset_top = 403.0
+offset_top = -137.0
 offset_right = 271.0
-offset_bottom = 540.0
 grow_vertical = 0
 texture = ExtResource("10_x5mo0")
 
