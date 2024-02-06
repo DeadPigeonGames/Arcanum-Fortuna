@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgdblxt0g8doq"]
+[gd_scene load_steps=8 format=3 uid="uid://dgdblxt0g8doq"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/combat_card.gd" id="1_3lxv2"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_8u6ck"]
 [ext_resource type="Material" uid="uid://ug0loj8j0dgh" path="res://shaders/card_burn.tres" id="3_d0i18"]
 [ext_resource type="Texture2D" uid="uid://j8o1whwr6cmm" path="res://assets/ui/icons/ui_icon_delete_forever.svg" id="3_dlei7"]
-[ext_resource type="PackedScene" path="res://systems/effects/damage_effect.tscn" id="3_tfo72"]
+[ext_resource type="PackedScene" uid="uid://fmvi54pcpwrl" path="res://systems/effects/damage_effect.tscn" id="3_tfo72"]
 [ext_resource type="Texture2D" uid="uid://cn4qyopwfekb7" path="res://assets/sprites/cards/switch_frame.png" id="5_41h73"]
+[ext_resource type="FontFile" uid="uid://cbi6wymdty6k2" path="res://assets/ui/fonts/TarotPamelaColmanSmith-Regular.ttf" id="6_so02i"]
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
 script = ExtResource("1_3lxv2")
@@ -35,6 +36,17 @@ offset_bottom = 246.0
 scale = Vector2(1.12, 1.12)
 texture = ExtResource("5_41h73")
 expand_mode = 1
+
+[node name="Label" type="Label" parent="Artwork/SwitchFrame" index="0"]
+layout_mode = 0
+offset_left = 56.25
+offset_top = 224.107
+offset_right = 155.25
+offset_bottom = 247.107
+theme_override_fonts/font = ExtResource("6_so02i")
+text = "Yas Queen"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="KarmaCost" parent="Cost" index="0"]
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

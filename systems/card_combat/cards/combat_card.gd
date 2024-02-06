@@ -117,13 +117,14 @@ func flip():
 	%HealthCost.text = str(health)
 
 
-func set_transformed_visuals(shader_material: ShaderMaterial, \
-		border_texture: Texture, keyword_slot_atlas : Texture):
+func set_transformed_visuals(shader_material: ShaderMaterial, keyword_slot_atlas : Texture):
 	%Artwork.material = shader_material
-	if border_texture:
-		%SwitchFrame.texture = border_texture
+	%SwitchFrame/Label.text = card_name
+	%SwitchFrame.show()
 	for slot in %KeyWordSlots.get_children():
-		slot.texture.atlas = card_data.keyword_slot_texture
+		slot.texture.atlas = null
+		slot.texture = slot.texture.duplicate()
+		slot.texture.atlas = keyword_slot_atlas
 
 func reverse():
 	%Artwork.flip_v = !%Artwork.flip_v
