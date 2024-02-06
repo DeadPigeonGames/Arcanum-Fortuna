@@ -47,9 +47,7 @@ func draw_card(hand: Node):
 	card.load_from_data(cardData)
 	add_child(card)
 	card.global_position = global_position
-	card.mouse_filter = MOUSE_FILTER_IGNORE
 	card.reparent(hand)
-	card.mouse_filter = MOUSE_FILTER_STOP
 
 	#visible = len(cardStack) > 0
 	update_text()

@@ -11,7 +11,7 @@ extends VBoxContainer
 @export var tile_interactible_color : Color
 @export var tile_hovered_color : Color
 
-var accept_card = false
+var accept_card := false
 var hovered_tile = null
 
 @onready var player_tiles = $PlayerTiles
@@ -27,6 +27,19 @@ func _ready():
 		tile.self_modulate = tile_disabled_color
 	for tile in player_tiles.get_children():
 		tile.self_modulate = tile_disabled_color
+		tile.mouse_entered.connect(
+			func (): 
+				if not accept_card:
+					return
+				tile.self_modulate = tile_hovered_color
+				hovered_tile = tile
+		)
+		tile.mouse_exited.connect(
+			func (): 
+				tile.self_modulate = tile_interactible_color if accept_card else tile_disabled_color
+				if hovered_tile == tile: 
+					hovered_tile = null
+		)
 
 
 func get_friendly_tile_position(x):
@@ -43,19 +56,6 @@ func _on_card_dragged():
 			continue
 		tile.self_modulate = tile_interactible_color
 	accept_card = true
-
-
-func _input(event):
-	if not accept_card or not event is InputEventMouseMotion:
-		return
-	for tile in player_tiles.get_children():
-		if tile.get_global_rect().has_point(get_global_mouse_position()):
-			tile.self_modulate = tile_hovered_color
-			hovered_tile = tile
-		else:
-			if tile == hovered_tile:
-				hovered_tile = null
-				#tile.self_modulate = tile_interactible_color
 
 
 func _on_card_relased(card: Card):

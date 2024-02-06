@@ -5,6 +5,8 @@ signal drag_ended(card)
 
 static var heldCard : HandCard
 
+@export var drag_offset := Vector2(25, 25)
+
 var isPickedUp = false
 var isHovered = false
 
@@ -41,7 +43,7 @@ func _process(delta):
 	
 	if isPickedUp:
 		z_index = 5
-		var target_position = get_global_mouse_position()
+		var target_position = get_global_mouse_position() + drag_offset
 		global_position = global_position.lerp(target_position, 0.1)
 		%SFXCard._SFX_SetLoopProps((global_position - target_position).length(), global_position)
 		target_scale = base_scale
