@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_iyn7x"]
 [ext_resource type="Texture2D" uid="uid://bwnsccdkrqrhh" path="res://assets/sprites/cards/lovers.png" id="1_souf4"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_ie2qw"]
 [ext_resource type="Resource" uid="uid://ues1kduox2nf" path="res://data/keyword/SplitAttack.tres" id="2_j3vsg"]
-[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_ktjfa"]
 [ext_resource type="AudioStream" uid="uid://32ci8bnoy7qx" path="res://assets/sounds/cards/voices/the_lovers.ogg" id="4_g0nw0"]
-[ext_resource type="Resource" uid="uid://uik4l46sy6qd" path="res://data/keyword/kill2_switch.tres" id="4_wy2nl"]
+[ext_resource type="Resource" uid="uid://uik4l46sy6qd" path="res://data/keyword/kill2_switch.tres" id="4_nymvi"]
 
 [resource]
 script = ExtResource("1_iyn7x")
@@ -15,9 +15,9 @@ artwork = ExtResource("1_souf4")
 cost = -4
 attack = 2
 health = 3
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_j3vsg"), ExtResource("4_wy2nl")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_j3vsg"), ExtResource("4_nymvi")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
 sound_effect = ExtResource("4_g0nw0")
-keyword_slot_texture = ExtResource("2_ktjfa")
+keyword_slot_texture = ExtResource("2_ie2qw")

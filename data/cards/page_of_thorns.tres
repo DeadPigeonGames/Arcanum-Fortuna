@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_0y20a"]
 [ext_resource type="Texture2D" uid="uid://qysj1kw6xmlr" path="res://assets/sprites/cards/page_of_thorns.png" id="1_modx0"]
-[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_wcats"]
-[ext_resource type="Resource" uid="uid://b24slhlmlwgwl" path="res://data/keyword/deathrattle_damage.tres" id="3_1ojyt"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_gff8j"]
+[ext_resource type="Resource" uid="uid://b24slhlmlwgwl" path="res://data/keyword/deathrattle_damage.tres" id="3_rb8v3"]
 
 [resource]
 script = ExtResource("1_0y20a")
@@ -13,8 +13,8 @@ artwork = ExtResource("1_modx0")
 cost = 4
 attack = 0
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_1ojyt")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_rb8v3")])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
-keyword_slot_texture = ExtResource("2_wcats")
+keyword_slot_texture = ExtResource("2_gff8j")
