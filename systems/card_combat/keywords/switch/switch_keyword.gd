@@ -31,6 +31,7 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 	owner.health += health_difference
 	owner.health = max(1, owner.health)
 	owner.attack += attack_difference
+	await owner.get_tree().create_timer(1.0).timeout
 	
 
 

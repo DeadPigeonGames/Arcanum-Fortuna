@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardsPlayedSwitch" load_steps=9 format=3 uid="uid://82swcg7y1g0n"]
+[gd_resource type="Resource" script_class="CardsPlayedSwitch" load_steps=9 format=3 uid="uid://c258wbgyqv6u6"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_fa0tt"]
 [ext_resource type="Resource" uid="uid://dvt6vrtfufa0t" path="res://data/keyword/TripleAttack.tres" id="2_2wkbg"]

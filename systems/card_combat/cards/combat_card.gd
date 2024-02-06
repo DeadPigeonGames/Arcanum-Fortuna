@@ -91,9 +91,10 @@ func make_enemy():
 
 
 func trigger_keywords(source, owner, trigger : int, combat = null, params = {}):
-	for i in range(keywords.size()):
-		if keywords[i] is ActivatedKeyword and keywords[i].triggers & trigger:
-			await keywords[i].trigger(source, owner, keywords[i].get_target(source, owner, combat), \
+	var keyword_copy = keywords.duplicate()
+	for i in range(keyword_copy.size()):
+		if keyword_copy[i] is ActivatedKeyword and keywords[i].triggers & trigger:
+			await keyword_copy[i].trigger(source, owner, keyword_copy[i].get_target(source, owner, combat), \
 					get_node("KeyWordSlots").get_child(i).get_child(0), params)
 
 
@@ -167,7 +168,7 @@ func take_damage(amount : int, source = null):
 		if keyword.has_method("get_reduced_damage"):
 			amount = keyword.get_reduced_damage(self, amount)
 	if amount <= 0:
-		return
+		return 0
 	GlobalLog.add_entry("'%s' at position %d-%d was dealt %d damage!" % \
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
 	health -= amount
@@ -247,7 +248,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
 	attack_tween.play()
 	await get_tree().create_timer(attack_speed + wait_mod).timeout
-	var dealt_damage = await target.take_damage(attack, self)
+	var dealt_damage : int = await target.take_damage(attack, self)
 	await trigger_keywords(target, self, 32, null, {"damage_dealt": dealt_damage})
 	
 	if attack > 0:
@@ -322,9 +323,7 @@ func _process(delta):
 
 
 func _input(event: InputEvent):
-	if not is_hovered:
-		return
-	if event.is_action_pressed("open_inspection"):
+	if is_hovered and event.is_action_pressed("open_inspection"):
 		var new_inspection = inspection.instantiate()
 		new_inspection.init(self)
 		SceneHandler.combat.add_child(new_inspection)

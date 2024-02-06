@@ -67,6 +67,7 @@ func pickup():
 		# Edge case if you pick up multiple cards
 		heldCard.put(null)
 	heldCard = self
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	emit_signal("drag_started")
 
 
@@ -74,4 +75,5 @@ func put(dropNode):
 	$SFXCard._SFX_PutDown()
 	show_card_tooltip.set_process(true)
 	isPickedUp = false
+	mouse_filter = Control.MOUSE_FILTER_PASS
 	heldCard = null
