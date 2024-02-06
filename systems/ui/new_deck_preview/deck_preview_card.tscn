@@ -20,7 +20,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
 
-[node name="TextureRect" type="TextureRect" parent="CopyCounter"]
+[node name="CopyCounterUnderlay" type="TextureRect" parent="CopyCounter"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 8
@@ -36,7 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_n5bhg")
 
-[node name="Label" type="Label" parent="CopyCounter"]
+[node name="CopyCounterLabel" type="Label" parent="CopyCounter"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
