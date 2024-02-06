@@ -163,24 +163,6 @@ text = "-100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="KarmaCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Cost"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 51.8283
-offset_top = 1.0
-offset_right = 53.8283
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 21
-text = "Karma"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Health" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
 layout_mode = 1
 anchors_preset = -1
@@ -209,24 +191,6 @@ text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HealthCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Health"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.681267
-offset_top = 45.375
-offset_right = 0.681259
-offset_bottom = 45.375
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 21
-text = "HP"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Attack" type="TextureRect" parent="Container/HBoxContainer/Control/Card"]
 layout_mode = 0
 offset_left = -0.6
@@ -251,24 +215,6 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 22
 text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AttackCost2" type="Label" parent="Container/HBoxContainer/Control/Card/Attack"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.985419
-offset_top = 51.2083
-offset_right = -0.985424
-offset_bottom = 51.2083
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 21
-text = "ATK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
