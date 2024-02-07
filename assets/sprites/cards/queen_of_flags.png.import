@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp7762e2ryu5g"
-path="res://.godot/imported/card_knight_of_coins.png-c64da56390a1a5f538b75f6420776fa2.ctex"
+uid="uid://chikjibyqo17p"
+path="res://.godot/imported/queen_of_flags.png-0ccac51038bd34aaecbd2362f6777d4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_knight_of_coins.png"
-dest_files=["res://.godot/imported/card_knight_of_coins.png-c64da56390a1a5f538b75f6420776fa2.ctex"]
+source_file="res://assets/sprites/cards/queen_of_flags.png"
+dest_files=["res://.godot/imported/queen_of_flags.png-0ccac51038bd34aaecbd2362f6777d4d.ctex"]
 
 [params]
 

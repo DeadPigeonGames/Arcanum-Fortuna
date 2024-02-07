@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://d2b7yscmtse2l"]
 
-[ext_resource type="Texture2D" uid="uid://b6vsqvjd4cjla" path="res://assets/sprites/cards/card_queen_of_wands.png" id="1_b0wwj"]
+[ext_resource type="Texture2D" uid="uid://b6vsqvjd4cjla" path="res://assets/sprites/cards/queen_of_thorns.png" id="1_b0wwj"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_rnlue"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_peepn"]
 [ext_resource type="Resource" uid="uid://48wwq8uiodfc" path="res://data/keyword/play_heal.tres" id="3_8wxvo"]

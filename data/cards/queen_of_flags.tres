@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://co84mncwqr573"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_0fc1k"]
-[ext_resource type="Texture2D" uid="uid://chikjibyqo17p" path="res://assets/sprites/cards/card_queen_of_swords.png" id="1_74kki"]
+[ext_resource type="Texture2D" uid="uid://chikjibyqo17p" path="res://assets/sprites/cards/queen_of_flags.png" id="1_74kki"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_8w5hb"]
 [ext_resource type="Resource" uid="uid://buyei5ntmvrx3" path="res://data/keyword/buff_next_card_hp.tres" id="3_km1cd"]
 

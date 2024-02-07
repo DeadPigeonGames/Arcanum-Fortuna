@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6j2kiuxxwhbk"
-path="res://.godot/imported/card_queen_of_coins.png-ae8f5ffadcc57a1b4804ea7936803f93.ctex"
+uid="uid://b6vsqvjd4cjla"
+path="res://.godot/imported/queen_of_thorns.png-ce3188784d13dbb36e52e369643655be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_queen_of_coins.png"
-dest_files=["res://.godot/imported/card_queen_of_coins.png-ae8f5ffadcc57a1b4804ea7936803f93.ctex"]
+source_file="res://assets/sprites/cards/queen_of_thorns.png"
+dest_files=["res://.godot/imported/queen_of_thorns.png-ce3188784d13dbb36e52e369643655be.ctex"]
 
 [params]
 
