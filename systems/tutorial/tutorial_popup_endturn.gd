@@ -11,7 +11,6 @@ func init(data : TutorialPopupData, combat : CardBattle):
 
 func execute():
 	highlight_elements(false)
-	await combat.game_board.lock_friendly_cards(combat)
 	combat.lock_player_actions()
 	completed.emit()
 
