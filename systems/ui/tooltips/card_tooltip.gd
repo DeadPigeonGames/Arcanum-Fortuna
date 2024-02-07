@@ -21,6 +21,10 @@ func setup(data : CardData):
 
 
 func _process(delta):
+	move_to_mouse_pos()
+
+
+func move_to_mouse_pos():
 	var target_position = get_global_mouse_position() + mouse_offset
 	var max_size = get_viewport_rect().size - $Container.get_rect().size
 	target_position.x = clampf(target_position.x, 0, max_size.x)

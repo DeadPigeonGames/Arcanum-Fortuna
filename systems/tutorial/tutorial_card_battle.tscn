@@ -1,7 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=56 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
+[ext_resource type="Script" path="res://systems/tutorial/arrow_data.gd" id="4_7j8tl"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_phase.gd" id="4_ohwqy"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_playcard_data.gd" id="5_4e3gy"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_click_data.gd" id="5_6q4qr"]
@@ -23,13 +24,20 @@
 script = ExtResource("17_g5qtn")
 card_data = Array[Resource("res://data/scripts/card_data.gd")]([null, null, ExtResource("16_tdfyf"), null, null])
 
+[sub_resource type="Resource" id="Resource_gmthy"]
+script = ExtResource("4_7j8tl")
+offset_type = 7
+distance = 100.0
+element = NodePath("GameBoard/EnemyTiles/Frontrow/Panel5")
+
 [sub_resource type="Resource" id="Resource_qb4ck"]
 script = ExtResource("5_6q4qr")
 title = ""
 text = "Well hello there, buddy!"
 highlighted_elements = Array[NodePath]([])
-offset_type = 0
-distance = 0.0
+arrows = Array[ExtResource("4_7j8tl")]([SubResource("Resource_gmthy")])
+offset_type = 7
+distance = 200.0
 
 [sub_resource type="Resource" id="Resource_w2dui"]
 script = ExtResource("5_6q4qr")
@@ -37,6 +45,7 @@ title = ""
 text = "What all of this is, you ask? Do you not remember?
 We used to play this game day and night."
 highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 0
 distance = 0.0
 
@@ -45,6 +54,7 @@ script = ExtResource("5_6q4qr")
 title = ""
 text = "It seems you may have forgotten the rules. Would you like me to remind you?"
 highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 0
 distance = 0.0
 
@@ -63,6 +73,7 @@ text = "You've drawn a card just now, well remembered.
 You'll get to draw a new one at the start of each turn.
 Usually, you'd start with four cards instead of one but we can continue like this."
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/Hand")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 0
 distance = 300.0
 
@@ -72,6 +83,7 @@ title = ""
 text = "Feel free to take a closer look at it!
 (RMB or double click to inspect)"
 highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 0
 distance = 0.0
 
@@ -85,6 +97,7 @@ target_card_slot = NodePath("GameBoard/PlayerTiles/Panel3")
 title = ""
 text = "Now, do me a favor and play your card, will you?"
 highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 0
 distance = 300.0
 
@@ -95,6 +108,7 @@ text = "And now, the only thing left to do is to end your turn.
 You flip a coin to tell your opponent that you have finished your turn.
 And as soon as you do so, you'll cards will attack."
 highlighted_elements = Array[NodePath]([NodePath("EndTurnButton")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 2
 distance = 300.0
 
@@ -111,6 +125,7 @@ title = ""
 text = "Your cards' attack just dealt some damage to your opponent.
 You should always keep an eye on how much health your foe still has; as soon as it reaches 0, the match ends and you'll win!"
 highlighted_elements = Array[NodePath]([NodePath("EnemyPlayer/ResourceContainer/Health/HealthIcon")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 1
 distance = 300.0
 
@@ -132,6 +147,7 @@ title = ""
 text = "Your cards' karma value just got added to your karma pool!
 This will always happen after your cards are done attacking!"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Karma"), NodePath("GameBoard/PlayerTiles/Panel3")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 2
 distance = 300.0
 
@@ -140,6 +156,7 @@ script = ExtResource("5_6q4qr")
 title = ""
 text = "Each card has its own karma value which will influence how much you will gain."
 highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel3"), NodePath("CardPlayer/ResourceContainer/Karma")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 3
 distance = 300.0
 
@@ -155,6 +172,7 @@ script = ExtResource("5_6q4qr")
 title = ""
 text = "Your enemy just played a card!"
 highlighted_elements = Array[NodePath]([NodePath("GameBoard/EnemyTiles/Frontrow/Panel3")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 3
 distance = 300.0
 
@@ -163,6 +181,7 @@ script = ExtResource("5_6q4qr")
 title = ""
 text = "You can always preview their next turn in the backrow."
 highlighted_elements = Array[NodePath]([NodePath("GameBoard/EnemyTiles/Backrow")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 1
 distance = 300.0
 
@@ -180,6 +199,7 @@ text = "As you can see, your card just died.
 Cards will always attack the slot in front of them.
 And if there is no card, they will attack the player instead."
 highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 0
 distance = 0.0
 
@@ -189,6 +209,7 @@ title = ""
 text = "Make sure to always keep an eye on your own health!
 As soon as it reaches 0, you'll lose!"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Health/HealthIcon")])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 2
 distance = 300.0
 
@@ -219,6 +240,7 @@ script = ExtResource("5_6q4qr")
 title = ""
 text = "Here, have a new card to play."
 highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 0
 distance = 0.0
 
@@ -228,6 +250,7 @@ target_card_slot = NodePath("GameBoard/PlayerTiles/Panel3")
 title = ""
 text = ""
 highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("4_7j8tl")]([])
 offset_type = 1
 distance = 750.0
 
