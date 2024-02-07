@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b45r81lj73pdb"]
+[gd_scene load_steps=4 format=3 uid="uid://b45r81lj73pdb"]
 
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_popup.gd" id="1_4ukef"]
 [ext_resource type="Texture2D" uid="uid://cqgd8kv6l6uen" path="res://assets/sprites/dialogue/dg_dog.png" id="2_74fvs"]
 [ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_mjfs2"]
-[ext_resource type="Texture2D" uid="uid://b4lht5rrqjqrd" path="res://assets/ui/placeholders/tutorial_popup_arrow_placeholder.png" id="4_bkcqd"]
 
 [node name="TutorialPopup" type="Control"]
 process_mode = 1
@@ -63,15 +62,3 @@ size_flags_vertical = 0
 texture = ExtResource("2_74fvs")
 expand_mode = 1
 stretch_mode = 4
-
-[node name="Arrow" type="TextureRect" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(16, 16)
-texture = ExtResource("4_bkcqd")

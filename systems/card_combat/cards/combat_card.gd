@@ -330,7 +330,7 @@ func _input(event: InputEvent):
 	
 	if not is_drag_enabled:
 		return
-
+	
 	if event.is_action_pressed("pickUpCard") and not is_picked_up:
 		if is_hovered:
 			pickup()
