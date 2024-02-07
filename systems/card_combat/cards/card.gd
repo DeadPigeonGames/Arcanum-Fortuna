@@ -10,11 +10,13 @@ var health: int : set = set_health, get = get_health
 var keywords : Array[Keyword] = []
 var is_hovered := false
 
+@onready var card_flip_animation = %CardFlipAnimation
 
 func _ready():
 	if card_data != null:
 		load_from_data(card_data)
 	setup()
+	play_cardflip(true)
 
 
 func set_attack(value):
@@ -70,13 +72,12 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 
 
 func update_texts():
-	%Name.text = card_name
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
 
+
 func setup():
 	%Artwork.texture = artwork_texture
-	%Name.text = card_name
 	%KarmaCost.text = str(cost)
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
@@ -101,6 +102,15 @@ func _on_mouse_exited():
 func play_animation(animation):
 	if $AnimationPlayer.has_animation(animation):
 		$AnimationPlayer.play(animation)
+
+
+func play_cardflip(forward : bool):
+	if card_flip_animation == null:
+		return
+	if forward:
+		card_flip_animation.play("card_flip")
+	else:
+		card_flip_animation.play_backwards("card_flip")
 
 
 func animate_icon(emission_texture):
