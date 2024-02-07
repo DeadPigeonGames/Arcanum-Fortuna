@@ -127,7 +127,9 @@ func setup_arrow_positions():
 
 func tween_arrow(arrow, direction):
 	var tween = self.create_tween()
-	var end_pos = arrow.position + direction * 50
+	var end_pos = arrow.position + direction * 15
+	tween.set_ease(Tween.EASE_OUT_IN)
+	tween.set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(arrow, "position", end_pos, 0.5).from_current()
 	tween.tween_interval(0.1)
 	tween.tween_callback(tween_arrow.bind(arrow, direction * -1))

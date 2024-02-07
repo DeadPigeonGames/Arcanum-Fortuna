@@ -18,6 +18,5 @@ func process_effect() -> ExitState:
 		if not card:
 			continue
 		combat.game_board.place_enemy_card_back(card, slot_idx)
-		print(slot_idx)
 		
 	return ExitState.DEFAULT

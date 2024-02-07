@@ -20,7 +20,6 @@ func _process(delta):
 func fade_background(value, duration):
 	var color := Color.BLACK
 	color.a = value
-	print(background_dim.color)
 	tween = self.create_tween()
 	tween.tween_property(background_dim, "color", color, duration).from_current()
 	tween.finished.emit()
