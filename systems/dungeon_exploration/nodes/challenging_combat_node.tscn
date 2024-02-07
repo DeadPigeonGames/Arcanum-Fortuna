@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbwr6rvspwq1j"]
+[gd_scene load_steps=11 format=3 uid="uid://bbwr6rvspwq1j"]
 
 [ext_resource type="PackedScene" uid="uid://b5mnw025kyefa" path="res://systems/dungeon_exploration/nodes/combat_node.tscn" id="1_bjf1o"]
-[ext_resource type="Resource" uid="uid://dows6m8ajlccp" path="res://data/enemy/enemy_elite.tres" id="2_1npad"]
+[ext_resource type="Resource" uid="uid://dows6m8ajlccp" path="res://data/enemy/enemy_elite1.tres" id="2_abfo4"]
 [ext_resource type="Resource" uid="uid://b84wfhshysdh8" path="res://data/enemy/enemy_elite2.tres" id="3_swdl7"]
+[ext_resource type="Resource" uid="uid://cujcolw66kdil" path="res://data/enemy/enemy_elite3.tres" id="4_q32aa"]
 [ext_resource type="Texture2D" uid="uid://c4txvwxxbco0f" path="res://assets/sprites/nodemap/combat_challenging.png" id="5_icbpd"]
+[ext_resource type="Resource" uid="uid://dnrh06owgw4hu" path="res://data/enemy/enemy_elite4.tres" id="5_pbr2m"]
+[ext_resource type="Resource" uid="uid://cxb8fdx8l8rsc" path="res://data/enemy/enemy_elite5.tres" id="6_584w1"]
+[ext_resource type="Resource" uid="uid://dnp5x28ymobnp" path="res://data/enemy/enemy_elite6.tres" id="7_vprh8"]
+[ext_resource type="Resource" uid="uid://bm2j1pyax8ikj" path="res://data/enemy/enemy_elite7.tres" id="8_rqgfb"]
+[ext_resource type="Resource" uid="uid://wt8pkh2ow4qy" path="res://data/enemy/enemy_elite8.tres" id="9_l1uop"]
 
 [node name="ChallengingCombatNode" instance=ExtResource("1_bjf1o")]
-potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtResource("2_1npad"), ExtResource("3_swdl7")])
+potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtResource("2_abfo4"), ExtResource("3_swdl7"), ExtResource("4_q32aa"), ExtResource("5_pbr2m"), ExtResource("6_584w1"), ExtResource("7_vprh8"), ExtResource("8_rqgfb"), ExtResource("9_l1uop")])
 
 [node name="icon" parent="background" index="0"]
 texture = ExtResource("5_icbpd")
-
-[node name="ShowTooltip" parent="." index="1"]
-mouse_filter = 1

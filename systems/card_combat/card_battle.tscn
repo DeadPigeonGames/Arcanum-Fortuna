@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
 [ext_resource type="SpriteFrames" uid="uid://c1n1fu0qqediq" path="res://assets/ui/gameboard/coin_sprite_sheet.tres" id="22_8s5et"]
 [ext_resource type="Shader" path="res://assets/sprites/vfx/coin_shine.gdshader" id="22_wv27h"]
-[ext_resource type="PackedScene" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
+[ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
 [ext_resource type="Material" uid="uid://ygwq26b11i74" path="res://assets/sprites/vfx/overlays/dust_particles.tres" id="26_o5euh"]
 [ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
 [ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="28_ntl47"]
