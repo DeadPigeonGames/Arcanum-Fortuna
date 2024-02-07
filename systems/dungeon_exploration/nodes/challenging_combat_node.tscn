@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bbwr6rvspwq1j"]
 
 [ext_resource type="PackedScene" uid="uid://b5mnw025kyefa" path="res://systems/dungeon_exploration/nodes/combat_node.tscn" id="1_bjf1o"]
-[ext_resource type="Resource" uid="uid://dows6m8ajlccp" path="res://data/enemy/enemy_elite1.tres" id="2_2gjf3"]
+[ext_resource type="Resource" uid="uid://dows6m8ajlccp" path="res://data/enemy/enemy_elite.tres" id="2_2gjf3"]
 [ext_resource type="Resource" uid="uid://b84wfhshysdh8" path="res://data/enemy/enemy_elite2.tres" id="3_swdl7"]
 [ext_resource type="Resource" uid="uid://cujcolw66kdil" path="res://data/enemy/enemy_elite3.tres" id="4_q32aa"]
 [ext_resource type="Texture2D" uid="uid://c4txvwxxbco0f" path="res://assets/sprites/nodemap/combat_challenging.png" id="5_icbpd"]
