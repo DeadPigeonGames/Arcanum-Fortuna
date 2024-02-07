@@ -8,8 +8,14 @@ func _process(delta):
 
 
 func move_to_mouse_pos(tooltip_rect : Rect2):
-	var target_position = get_global_mouse_position() + mouse_offset
+	var target_position = get_global_mouse_position()
 	var max_size = get_viewport_rect().size - tooltip_rect.size
-	target_position.x = clampf(target_position.x, 0, max_size.x)
-	target_position.y = clampf(target_position.y, 0, max_size.y)
+	if target_position.x > max_size.x:
+		target_position.x -= tooltip_rect.size.x
+		target_position.x -= mouse_offset.x
+	else:
+		target_position.x += mouse_offset.x
+	if target_position.y > max_size.y:
+		target_position.y -= tooltip_rect.size.y
+	target_position.y += mouse_offset.y
 	global_position = target_position
