@@ -19,7 +19,6 @@ func _SFX_PickUp():
 	# Start Loop
 	randomize()
 	var randomLoopStart = audioRandom.randf_range(0.0, $LoopRumble.get_stream().get_length())
-	print("random", randomLoopStart)
 	$LoopRumble/AnimationPlayer.play("Fade", 1, 10, false)
 	$LoopRumble.play(randomLoopStart)
 	$LoopFoley.play(randomLoopStart)
