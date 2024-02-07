@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b45r81lj73pdb"]
+[gd_scene load_steps=5 format=3 uid="uid://b45r81lj73pdb"]
 
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_popup.gd" id="1_4ukef"]
 [ext_resource type="Texture2D" uid="uid://cqgd8kv6l6uen" path="res://assets/sprites/dialogue/dg_dog.png" id="2_74fvs"]
-[ext_resource type="Texture2D" uid="uid://dfqcasb3fk8gh" path="res://assets/ui/Arrow.png" id="3_ndkc2"]
+[ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_mjfs2"]
+[ext_resource type="Texture2D" uid="uid://b4lht5rrqjqrd" path="res://assets/ui/placeholders/tutorial_popup_arrow_placeholder.png" id="4_bkcqd"]
 
 [node name="TutorialPopup" type="Control"]
 process_mode = 1
@@ -17,8 +18,13 @@ layout_mode = 0
 offset_right = 200.0
 offset_bottom = 154.0
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+[node name="ColorRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
+texture = ExtResource("2_mjfs2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -61,4 +67,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(16, 16)
-texture = ExtResource("3_ndkc2")
+texture = ExtResource("4_bkcqd")

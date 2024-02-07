@@ -1,11 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=54 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_phase.gd" id="4_ohwqy"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_playcard_data.gd" id="5_4e3gy"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_click_data.gd" id="5_6q4qr"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="5_68w08"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="6_tnbwt"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_endturn_data.gd" id="6_xqnrx"]
 [ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="7_vagmv"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="8_q2rpp"]
 [ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="9_qokvq"]
@@ -14,28 +16,107 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="12_dnuuf"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="13_7tj4x"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="14_rddjs"]
+[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="16_tdfyf"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_enemy_placement_phase.gd" id="17_g5qtn"]
+
+[sub_resource type="Resource" id="Resource_m5y5j"]
+script = ExtResource("17_g5qtn")
+card_data = Array[Resource("res://data/scripts/card_data.gd")]([null, null, ExtResource("16_tdfyf"), null, null])
+
+[sub_resource type="Resource" id="Resource_qb4ck"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Well hello there, buddy!"
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_w2dui"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "What all of this is, you ask? Do you not remember?
+We used to play this game day and night."
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_2kh7w"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "It seems you may have forgotten the rules. Would you like me to remind you?"
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_p71t0"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_qb4ck"), SubResource("Resource_w2dui"), SubResource("Resource_2kh7w")])
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_d1qe7")
-place_enemy_cards_before_first_turn = true
+place_enemy_cards_before_first_turn = false
 
 [sub_resource type="Resource" id="Resource_mvog4"]
 script = ExtResource("5_6q4qr")
-title = "Hallo"
-text = "Welt"
+title = ""
+text = "You've drawn a card just now, well remembered.
+You'll get to draw a new one at the start of each turn.
+Usually, you'd start with four cards instead of one but we can continue like this."
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer/Hand")])
+offset_type = 0
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_65wvs"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Feel free to take a closer look at it!
+(RMB or double click to inspect)"
 highlighted_elements = Array[NodePath]([])
 offset_type = 0
-distance = 500.0
+distance = 0.0
 
 [sub_resource type="Resource" id="Resource_dglp0"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_mvog4")])
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_mvog4"), SubResource("Resource_65wvs")])
 
-[sub_resource type="Resource" id="Resource_7owng"]
-script = ExtResource("5_68w08")
+[sub_resource type="Resource" id="Resource_l3816"]
+script = ExtResource("5_4e3gy")
+target_card_slot = NodePath("GameBoard/PlayerTiles/Panel3")
+title = ""
+text = "Now, do me a favor and play your card, will you?"
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_fvkap"]
+script = ExtResource("6_xqnrx")
+title = ""
+text = "And now, the only thing left to do is to end your turn.
+You flip a coin to tell your opponent that you have finished your turn.
+And as soon as you do so, you'll cards will attack."
+highlighted_elements = Array[NodePath]([NodePath("EndTurnButton")])
+offset_type = 2
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_xbsee"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_l3816"), SubResource("Resource_fvkap")])
 
 [sub_resource type="Resource" id="Resource_4waph"]
 script = ExtResource("6_tnbwt")
+
+[sub_resource type="Resource" id="Resource_dni4d"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Your cards' attack just dealt some damage to your opponent.
+You should always keep an eye on how much health your foe still has; as soon as it reaches 0, the match ends and you'll win!"
+highlighted_elements = Array[NodePath]([NodePath("EnemyPlayer/ResourceContainer/Health/HealthIcon")])
+offset_type = 1
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_nu3nw"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_dni4d")])
 
 [sub_resource type="Resource" id="Resource_611yk"]
 script = ExtResource("8_q2rpp")
@@ -45,11 +126,75 @@ karma_duration = 2.3
 karma_delay = 0.6
 blob_move = 20
 
+[sub_resource type="Resource" id="Resource_rbjvu"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Your cards' karma value just got added to your karma pool!
+This will always happen after your cards are done attacking!"
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Karma"), NodePath("GameBoard/PlayerTiles/Panel3")])
+offset_type = 2
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_r1rcr"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Each card has its own karma value which will influence how much you will gain."
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel3"), NodePath("CardPlayer/ResourceContainer/Karma")])
+offset_type = 3
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_1w3pg"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_rbjvu"), SubResource("Resource_r1rcr")])
+
 [sub_resource type="Resource" id="Resource_d62ed"]
 script = ExtResource("10_rvppj")
 
+[sub_resource type="Resource" id="Resource_xv1ch"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Your enemy just played a card!"
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/EnemyTiles/Frontrow/Panel3")])
+offset_type = 3
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_o5mkq"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "You can always preview their next turn in the backrow."
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/EnemyTiles/Backrow")])
+offset_type = 1
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_be3np"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_xv1ch"), SubResource("Resource_o5mkq")])
+
 [sub_resource type="Resource" id="Resource_4sdqi"]
 script = ExtResource("11_xi7kw")
+
+[sub_resource type="Resource" id="Resource_lfmsq"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "As you can see, your card just died.
+Cards will always attack the slot in front of them.
+And if there is no card, they will attack the player instead."
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_lvque"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Make sure to always keep an eye on your own health!
+As soon as it reaches 0, you'll lose!"
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Health/HealthIcon")])
+offset_type = 2
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_gsqia"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_lfmsq"), SubResource("Resource_lvque")])
 
 [sub_resource type="Resource" id="Resource_5dgv3"]
 script = ExtResource("12_dnuuf")
@@ -65,5 +210,36 @@ script = ExtResource("13_7tj4x")
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("14_rddjs")
 
+[sub_resource type="Resource" id="Resource_fsrai"]
+script = ExtResource("2_d1qe7")
+place_enemy_cards_before_first_turn = false
+
+[sub_resource type="Resource" id="Resource_i510g"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "Here, have a new card to play."
+highlighted_elements = Array[NodePath]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_fa1yi"]
+script = ExtResource("5_4e3gy")
+target_card_slot = NodePath("GameBoard/PlayerTiles/Panel3")
+title = ""
+text = ""
+highlighted_elements = Array[NodePath]([])
+offset_type = 1
+distance = 750.0
+
+[sub_resource type="Resource" id="Resource_aryj6"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_i510g"), SubResource("Resource_fa1yi")])
+
+[sub_resource type="Resource" id="Resource_7yn6v"]
+script = ExtResource("5_68w08")
+
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy")])
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_7yn6v")])
+
+[editable path="CardPlayer"]
+[editable path="EnemyPlayer"]
