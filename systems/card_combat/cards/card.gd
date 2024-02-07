@@ -92,12 +92,10 @@ func setup():
 
 func _on_mouse_entered():
 	is_hovered = true
-	print("HOVERED", " KARL")
 
 
 func _on_mouse_exited():
 	is_hovered = false
-	print("NO HOVER", " KARL")
 
 
 func play_animation(animation):
