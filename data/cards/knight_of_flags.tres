@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://ncfdsv56qat7"]
 
-[ext_resource type="Texture2D" uid="uid://b3n1modi50l3w" path="res://assets/sprites/cards/card_knight_of_swords.png" id="1_4do24"]
+[ext_resource type="Texture2D" uid="uid://b3n1modi50l3w" path="res://assets/sprites/cards/knight_of_flags.png" id="1_4do24"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_jk337"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_u5k7q"]
 [ext_resource type="Resource" uid="uid://buyei5ntmvrx3" path="res://data/keyword/buff_next_card_hp.tres" id="3_kvr1w"]
