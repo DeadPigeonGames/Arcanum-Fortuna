@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg5wcb1w8sf8h"
-path="res://.godot/imported/card_knight_of_cups.png-05d4dfcc568290c99fa91e2f01f870a4.ctex"
+uid="uid://b5y1g7dcngito"
+path="res://.godot/imported/knight_of_herbs.png-cb312e1be9fa59278b4676cbc4118ca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_knight_of_cups.png"
-dest_files=["res://.godot/imported/card_knight_of_cups.png-05d4dfcc568290c99fa91e2f01f870a4.ctex"]
+source_file="res://assets/sprites/cards/knight_of_herbs.png"
+dest_files=["res://.godot/imported/knight_of_herbs.png-cb312e1be9fa59278b4676cbc4118ca3.ctex"]
 
 [params]
 

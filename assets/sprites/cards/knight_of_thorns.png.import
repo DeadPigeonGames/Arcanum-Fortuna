@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chikjibyqo17p"
-path="res://.godot/imported/card_queen_of_swords.png-407bdcad49cbe2dfaef763a8a2105053.ctex"
+uid="uid://cp7762e2ryu5g"
+path="res://.godot/imported/knight_of_thorns.png-2e0edf83e28d1775540f7b3fbb4e1f42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_queen_of_swords.png"
-dest_files=["res://.godot/imported/card_queen_of_swords.png-407bdcad49cbe2dfaef763a8a2105053.ctex"]
+source_file="res://assets/sprites/cards/knight_of_thorns.png"
+dest_files=["res://.godot/imported/knight_of_thorns.png-2e0edf83e28d1775540f7b3fbb4e1f42.ctex"]
 
 [params]
 

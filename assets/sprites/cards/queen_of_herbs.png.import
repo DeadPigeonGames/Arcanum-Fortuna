@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5y1g7dcngito"
-path="res://.godot/imported/card_knight_of_wands.png-3ab305032c59924899ce31f2ca7683d9.ctex"
+uid="uid://b6j2kiuxxwhbk"
+path="res://.godot/imported/queen_of_herbs.png-2df75c74111d006f3785a7cf5424c68f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card_knight_of_wands.png"
-dest_files=["res://.godot/imported/card_knight_of_wands.png-3ab305032c59924899ce31f2ca7683d9.ctex"]
+source_file="res://assets/sprites/cards/queen_of_herbs.png"
+dest_files=["res://.godot/imported/queen_of_herbs.png-2df75c74111d006f3785a7cf5424c68f.ctex"]
 
 [params]
 
