@@ -17,7 +17,7 @@ layout_mode = 0
 offset_right = 200.0
 offset_bottom = 154.0
 
-[node name="ColorRect" type="NinePatchRect" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
 texture = ExtResource("2_mjfs2")
 patch_margin_left = 5

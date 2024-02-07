@@ -59,14 +59,37 @@ text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ShowTooltip" type="Control" parent="TextureRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 22.0
+offset_right = -23.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.785398
+pivot_offset = Vector2(37, 37)
+script = ExtResource("3_0vdgp")
+title = "Your Deck"
+text = "Shows the amount of cards in your deck."
+
 [node name="ShowTooltip" type="Control" parent="TextureRect"]
 anchors_preset = 0
 offset_left = 100.0
 offset_top = 56.0
 offset_right = 460.0
 offset_bottom = 649.0
+mouse_filter = 1
 script = ExtResource("3_0vdgp")
 title = "Your Deck"
 text = "Contains all cards you collected this run.
 You'll draw 4 cards on your first turn
 and 1 card at the start of every turn after that."
+
+[connection signal="mouse_entered" from="TextureRect/TextureRect/ShowTooltip" to="TextureRect/TextureRect/ShowTooltip" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/TextureRect/ShowTooltip" to="TextureRect/TextureRect/ShowTooltip" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ShowTooltip" to="TextureRect/ShowTooltip" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ShowTooltip" to="TextureRect/ShowTooltip" method="_on_mouse_exited"]

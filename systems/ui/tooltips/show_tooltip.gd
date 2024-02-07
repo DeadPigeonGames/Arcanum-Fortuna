@@ -8,7 +8,6 @@ extends Control
 @export var tooltip_template : PackedScene = preload("res://systems/ui/tooltips/tooltip_basic.tscn")
 @export var offset := Vector2.ZERO
 @export_subgroup("Trigger Settings")
-@export var trigger_automatically := true
 @export_flags("Hover Duration", "Right-Click") var trigger_mode := 0b11
 @export var hover_min_duration := 0.5
 
@@ -21,36 +20,17 @@ static var tooltip_container = null
 @onready var cooldown := hover_min_duration
 
 
+func _ready():
+	self.mouse_entered.connect(on_mouse_entered)
+	self.mouse_exited.connect(on_mouse_exited)
+
+
 func _input(event: InputEvent):
-	if not trigger_automatically:
-		return
-	
 	if not (trigger_mode & 0b1 << 1):
 		return
-	
-	if event.is_action_pressed("show_tooltip"):
-		if is_hovered:
-			show_tooltip()
 
 
 func _process(delta):
-	if not trigger_automatically:
-		return
-	
-	var parent_control = get_parent_control()
-	if not parent_control:
-		return
-	
-	if parent_control.has_method("is_hovered"):
-		is_hovered = parent_control.is_hovered()
-	elif "is_hovered" in parent_control:
-		is_hovered = parent_control.is_hovered
-	else:
-		is_hovered = (
-				Rect2(Vector2(), parent_control.get_rect().size)
-				.has_point(parent_control.get_local_mouse_position())
-			)
-	
 	if is_hovered:
 		cooldown -= delta
 	else:
@@ -90,3 +70,12 @@ func hide_tooltip():
 	if instance:
 		instance.queue_free()
 		instance = null
+
+
+func on_mouse_entered():
+	is_hovered = true
+
+
+func on_mouse_exited():
+	is_hovered = false
+

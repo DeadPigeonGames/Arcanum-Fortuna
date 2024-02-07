@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
 [ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="28_ntl47"]
 [ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="29_f8a8p"]
-[ext_resource type="Material" uid="uid://dcfv0vvexhq5y" path="res://shaders/chromatic_aberration.tres" id="30_jtbas"]
+[ext_resource type="Material" path="res://shaders/chromatic_aberration.tres" id="30_jtbas"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -348,9 +348,12 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="ShowTooltip" type="Control" parent="EndTurnButton"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("6_o6asy")
 title = "End Turn Button"
@@ -382,12 +385,13 @@ offset_bottom = 1060.0
 theme_override_font_sizes/font_size = 19
 
 [node name="DebugOnly" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="BattleLog" parent="DebugOnly" instance=ExtResource("16_kecnr")]
+visible = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -451,4 +455,8 @@ offset_bottom = 1080.0
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
 [connection signal="mouse_entered" from="CardDeletion" to="CardDeletion" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CardDeletion" to="CardDeletion" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CardDeletion/ShowTooltip" to="CardDeletion/ShowTooltip" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardDeletion/ShowTooltip" to="CardDeletion/ShowTooltip" method="_on_mouse_exited"]
 [connection signal="button_down" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[connection signal="mouse_entered" from="EndTurnButton/ShowTooltip" to="EndTurnButton/ShowTooltip" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EndTurnButton/ShowTooltip" to="EndTurnButton/ShowTooltip" method="_on_mouse_exited"]
