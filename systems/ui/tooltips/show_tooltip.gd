@@ -7,14 +7,10 @@ extends Control
 @export_multiline var text := "Lorem Ipsum... dolor sit amet..."
 @export var tooltip_template : PackedScene = preload("res://systems/ui/tooltips/tooltip_basic.tscn")
 @export var offset := Vector2.ZERO
-
-
 @export_subgroup("Trigger Settings")
 @export var trigger_automatically := true
 @export_flags("Hover Duration", "Right-Click") var trigger_mode := 0b11
 @export var hover_min_duration := 0.5
-
-@onready var cooldown := hover_min_duration
 
 var is_hovered := false
 var instance: TooltipBase = null:
@@ -22,35 +18,7 @@ var instance: TooltipBase = null:
 
 static var tooltip_container = null
 
-
-func _exit_tree():
-	hide_tooltip()
-
-
-func create_instance(value):
-	if value == null:
-		return null
-	var new_instance = value as TooltipBasic
-	new_instance.setup(title, icon, text)
-	return new_instance
-
-func show_tooltip():
-	if not tooltip_container:
-		tooltip_container = CanvasLayer.new()
-		tooltip_container.name = "tooltip_container"
-		tooltip_container.layer = 10
-		SceneHandler.add_shelf_element(tooltip_container)
-
-	if not instance:
-		instance = tooltip_template.instantiate()
-		tooltip_container.add_child(instance)
-		instance.global_position = get_global_mouse_position() + offset
-
-
-func hide_tooltip():
-	if instance:
-		instance.queue_free()
-		instance = null
+@onready var cooldown := hover_min_duration
 
 
 func _input(event: InputEvent):
@@ -63,6 +31,7 @@ func _input(event: InputEvent):
 	if event.is_action_pressed("show_tooltip"):
 		if is_hovered:
 			show_tooltip()
+
 
 func _process(delta):
 	if not trigger_automatically:
@@ -90,3 +59,34 @@ func _process(delta):
 	
 	if cooldown <= 0 and trigger_mode & 0b1:
 		show_tooltip()
+
+
+func _exit_tree():
+	hide_tooltip()
+
+
+func create_instance(value):
+	if value == null:
+		return null
+	var new_instance = value as TooltipBasic
+	new_instance.setup(title, icon, text)
+	return new_instance
+
+
+func show_tooltip():
+	if not tooltip_container:
+		tooltip_container = CanvasLayer.new()
+		tooltip_container.name = "tooltip_container"
+		tooltip_container.layer = 10
+		SceneHandler.add_shelf_element(tooltip_container)
+	
+	if not instance:
+		instance = tooltip_template.instantiate()
+		tooltip_container.add_child(instance)
+		instance.global_position = get_global_mouse_position() + offset
+
+
+func hide_tooltip():
+	if instance:
+		instance.queue_free()
+		instance = null
