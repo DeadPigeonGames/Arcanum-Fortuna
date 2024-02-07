@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://ch7in1gthnkqo"]
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://ch7in1gthnkqo"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_mcccw"]
 [ext_resource type="Texture2D" uid="uid://dwpc114c3w8tu" path="res://assets/sprites/cards/card_swords_9.png" id="1_sn4pp"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_dievh"]
 
 [resource]
 script = ExtResource("1_mcccw")
@@ -13,3 +14,6 @@ attack = 4
 health = 1
 keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 0
+shop_cost = 5
+trade_override = 0
+keyword_slot_texture = ExtResource("2_dievh")

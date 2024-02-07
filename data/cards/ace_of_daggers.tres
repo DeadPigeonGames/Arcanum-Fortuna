@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_01wyf"]
 [ext_resource type="Texture2D" uid="uid://n7ls2x2hy7sq" path="res://assets/sprites/cards/card_cups_1.png" id="1_m1llw"]
-[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_h6mmq"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_3b8h6"]
 
 [resource]
 script = ExtResource("1_01wyf")
@@ -16,4 +16,4 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
-keyword_slot_texture = ExtResource("2_h6mmq")
+keyword_slot_texture = ExtResource("2_3b8h6")
