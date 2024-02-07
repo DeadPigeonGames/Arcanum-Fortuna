@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="11_mto8i"]
-[ext_resource type="PackedScene" uid="uid://b2v3al7ld0tdd" path="res://assets/vfx/cardback.tscn" id="14_60jqu"]
+[ext_resource type="PackedScene" path="res://assets/vfx/cardback.tscn" id="14_4d2cs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
 atlas = ExtResource("6_4kaqf")
@@ -217,7 +217,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(85, 0)
+pivot_offset = Vector2(82, 128)
 size_flags_vertical = 3
 texture = ExtResource("2_pcclt")
 expand_mode = 1
@@ -228,7 +228,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -461,7 +460,6 @@ tooltip_template = "res://systems/ui/tooltips/card_tooltip.tscn"
 bus = &"Voices"
 
 [node name="KeywordSlots" type="Control" parent="."]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -474,8 +472,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 20.0
-offset_right = 7.0
-offset_bottom = 19.0
+offset_right = -8.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -535,11 +533,13 @@ method_to_call = "_SFX_Damage"
 [node name="SFXCard" parent="." instance=ExtResource("8_coke3")]
 unique_name_in_owner = true
 
-[node name="Cardback" parent="." instance=ExtResource("14_60jqu")]
+[node name="Cardback" parent="." instance=ExtResource("14_4d2cs")]
 layout_mode = 0
 anchors_preset = 0
+offset_bottom = 3.05176e-05
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 
 [editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
+[editable path="Cardback"]
