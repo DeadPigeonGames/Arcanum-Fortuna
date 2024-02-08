@@ -75,7 +75,6 @@ texture_hover = ExtResource("2_jy8p6")
 texture_focused = ExtResource("1_f2i8i")
 
 [node name="ShopBuySection" parent="." instance=ExtResource("4_s3t54")]
-visible = false
 layout_mode = 1
 
 [node name="ShopTradeSection" parent="." instance=ExtResource("4_en8fe")]
@@ -83,4 +82,5 @@ visible = false
 layout_mode = 1
 
 [node name="ShopBurnSection" parent="." instance=ExtResource("6_nknc1")]
+visible = false
 layout_mode = 1
