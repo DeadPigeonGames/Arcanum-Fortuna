@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=41 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_4kaqf"]
 [ext_resource type="Texture2D" uid="uid://cor7fkv822hhc" path="res://assets/ui/icons/switch_eye_2.png" id="6_atgve"]
 [ext_resource type="Texture2D" uid="uid://d01gfffwrqcoh" path="res://assets/ui/icons/atk_icon_small.png" id="6_xx4u4"]
+[ext_resource type="Texture2D" uid="uid://dlq7j4d0ebyye" path="res://assets/ui/icons/switch_eye_3.png" id="7_acmtm"]
 [ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="8_coke3"]
 [ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
@@ -21,7 +22,7 @@
 
 [sub_resource type="Animation" id="Animation_uujf5"]
 resource_name = "eye_movement"
-length = 6.0
+length = 6.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -34,6 +35,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 2.46229, 1, 1, 1.56917, 2.46229, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0.845, 0), Vector2(0, 0), Vector2(-0.745, 0), Vector2(0, 0), Vector2(0.605, -1.445), Vector2(0.132, 2.206), Vector2(0.131522, -0.31413)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.1, 5.3),
+"transitions": PackedFloat32Array(1, 1.51572, 1.51572),
+"update": 1,
+"values": [ExtResource("5_f07ua"), ExtResource("7_acmtm"), ExtResource("5_f07ua")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.1, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_n7fbk"]
@@ -49,6 +74,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_f07ua")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oltvv"]
@@ -502,7 +551,6 @@ texture = ExtResource("5_f07ua")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Artwork/SwitchFrame/Eyecon"]
-layout_mode = 0
 offset_right = 14.0
 offset_bottom = 14.0
 texture = ExtResource("6_atgve")
