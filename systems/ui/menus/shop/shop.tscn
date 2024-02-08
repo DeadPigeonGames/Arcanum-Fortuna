@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://313ltwpa7fyq"]
+
+[ext_resource type="Texture2D" uid="uid://b5afkfy613wxv" path="res://assets/ui/placeholders/shop_section_button_focused_placeholder.png" id="1_f2i8i"]
+[ext_resource type="Texture2D" uid="uid://duv2of85sje8k" path="res://assets/ui/placeholders/shop_section_button_default_placeholder.png" id="1_i7xu1"]
+[ext_resource type="Texture2D" uid="uid://cg8w46s17rskd" path="res://assets/ui/placeholders/shop_section_button_hover_placeholder.png" id="2_jy8p6"]
+
+[sub_resource type="Gradient" id="Gradient_mjy55"]
+colors = PackedColorArray(0.351476, 0.22058, 0.107841, 1, 0.352941, 0.219608, 0.105882, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mscm7"]
+gradient = SubResource("Gradient_mjy55")
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ShopUnderlay" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 928)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture1D_mscm7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -720.0
+offset_top = -1008.0
+offset_right = 720.0
+offset_bottom = -928.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 240
+
+[node name="BuySectionButton" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 2
+texture_normal = ExtResource("1_i7xu1")
+texture_hover = ExtResource("2_jy8p6")
+texture_focused = ExtResource("1_f2i8i")
+
+[node name="TradeSectionButton" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 2
+texture_normal = ExtResource("1_i7xu1")
+texture_hover = ExtResource("2_jy8p6")
+texture_focused = ExtResource("1_f2i8i")
+
+[node name="BurnSectionButton" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 2
+texture_normal = ExtResource("1_i7xu1")
+texture_hover = ExtResource("2_jy8p6")
+texture_focused = ExtResource("1_f2i8i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -801.0
+offset_top = -752.0
+offset_right = -561.0
+offset_bottom = -712.0

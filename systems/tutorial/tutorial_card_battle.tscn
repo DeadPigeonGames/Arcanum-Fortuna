@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=63 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
@@ -14,10 +14,10 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_movement_phase.gd" id="10_rvppj"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="11_xi7kw"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="12_dnuuf"]
-[ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="13_7tj4x"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="14_rddjs"]
 [ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="16_tdfyf"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_enemy_placement_phase.gd" id="17_g5qtn"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_tooltip_data.gd" id="18_kbwkv"]
 
 [sub_resource type="Resource" id="Resource_m5y5j"]
 script = ExtResource("17_g5qtn")
@@ -218,9 +218,6 @@ karma_duration = 2.3
 karma_delay = 0.6
 blob_move = 20
 
-[sub_resource type="Resource" id="Resource_n6smt"]
-script = ExtResource("13_7tj4x")
-
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("14_rddjs")
 
@@ -254,12 +251,67 @@ popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubRe
 [sub_resource type="Resource" id="Resource_7yn6v"]
 script = ExtResource("5_68w08")
 
+[sub_resource type="Resource" id="Resource_8ywms"]
+script = ExtResource("6_tnbwt")
+
+[sub_resource type="Resource" id="Resource_62jb1"]
+script = ExtResource("18_kbwkv")
+slot_with_card = NodePath("GameBoard/PlayerTiles/Panel3")
+title = ""
+text = "As you can see, your card just grew in power.
+That's because it has a special ability which you can identify by the symbol on the right of the card.
+If you hover the card real quick, you can see a short explanation on what its exact effects are!"
+highlighted_elements = Array[NodePath]([])
+arrows = Array[Resource("res://systems/tutorial/arrow_data.gd")]([])
+offset_type = 3
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_v18om"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_62jb1")])
+
+[sub_resource type="Resource" id="Resource_jsiee"]
+script = ExtResource("8_q2rpp")
+karma_blob = ExtResource("7_vagmv")
+small_blob = ExtResource("9_qokvq")
+karma_duration = 2.3
+karma_delay = 0.6
+blob_move = 20
+
+[sub_resource type="Resource" id="Resource_lbpna"]
+script = ExtResource("5_6q4qr")
+title = ""
+text = "You just took some damage!
+Whenever your total karma goes below 0, the remaining cost will be taken from your health.
+So make sure to always find a balance so that you can pay fates' price!"
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Karma"), NodePath("CardPlayer/ResourceContainer/Health/HealthIcon"), NodePath("GameBoard/PlayerTiles/Panel3")])
+arrows = Array[Resource("res://systems/tutorial/arrow_data.gd")]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_lebng"]
+script = ExtResource("4_ohwqy")
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_lbpna")])
+
+[sub_resource type="Resource" id="Resource_losxt"]
+script = ExtResource("14_rddjs")
+
+[sub_resource type="Resource" id="Resource_d5ek4"]
+script = ExtResource("2_d1qe7")
+place_enemy_cards_before_first_turn = true
+
+[sub_resource type="Resource" id="Resource_fmibs"]
+script = ExtResource("5_68w08")
+
+[sub_resource type="Resource" id="Resource_3kiem"]
+script = ExtResource("6_tnbwt")
+
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_7yn6v")])
+phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_7yn6v"), SubResource("Resource_8ywms"), SubResource("Resource_v18om"), SubResource("Resource_jsiee"), SubResource("Resource_lebng"), SubResource("Resource_losxt"), SubResource("Resource_d5ek4"), SubResource("Resource_fmibs"), SubResource("Resource_3kiem")])
 
 [node name="HealthIcon" parent="CardPlayer/ResourceContainer/Health" index="1"]
-offset_top = 403.0
-offset_bottom = 540.0
+offset_top = -137.0
+offset_bottom = 0.0
 
 [editable path="CardPlayer"]
 [editable path="EnemyPlayer"]
