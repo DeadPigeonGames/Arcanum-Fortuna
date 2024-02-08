@@ -27,7 +27,7 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 		return
 	# owner.keywords.erase(self)
 	await animate_transform(owner, icon_to_animate)
-	owner.modifiy_keywords(keywords_to_remove, keywords_to_gain)
+	owner.modify_keywords(keywords_to_remove, keywords_to_gain)
 	owner.health += health_difference
 	owner.health = max(1, owner.health)
 	owner.attack += attack_difference

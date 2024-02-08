@@ -10,6 +10,9 @@ var health: int : set = set_health, get = get_health
 var keywords : Array[Keyword] = []
 var is_hovered := false
 
+var default_material : Material
+var default_keywordslot_atlas : Texture
+
 @onready var card_flip_animation = %CardFlipAnimation
 
 func _ready():
@@ -80,6 +83,8 @@ func setup():
 	%KarmaCost.text = str(cost)
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
+	default_material = %Artwork.material
+	default_keywordslot_atlas = card_data.keyword_slot_texture
 	
 	for slot in %KeyWordSlots.get_children():
 		slot.texture.atlas = null
@@ -96,6 +101,39 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	is_hovered = false
+
+
+func modify_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[Keyword]):
+	for i in range(keywords.size()):
+		%KeyWordSlots.get_child(i).get_child(0).set_icon(null)
+	for keyword : Keyword in keywords_to_remove:
+		if not keyword in keywords:
+			push_error("Cannot remove '%s' keywords from '%s' card, as it does not contain it." % [keyword.title, card_name])
+			continue
+		keywords.erase(keyword)
+	for keyword : Keyword in keywords_to_add:
+		keyword.init()
+		keywords.push_back(keyword)
+	for i in range(keywords.size()):
+		%KeyWordSlots.get_child(i).get_child(0).set_icon(keywords[i])
+	card_data.keywords = keywords
+
+
+func set_transformed_visuals(shader_material: ShaderMaterial, keyword_slot_atlas : Texture):
+	%Artwork.material = shader_material
+	%SwitchFrame/Label.text = card_name
+	%SwitchFrame.show()
+	for slot in %KeyWordSlots.get_children():
+		slot.texture.atlas = null
+		slot.texture = slot.texture.duplicate()
+		slot.texture.atlas = keyword_slot_atlas
+
+
+func set_default_visuals():
+	%SwitchFrame.hide()
+	%Artwork.material = default_material
+	for i in range(%KeyWordSlots.get_child_count()):
+		%KeyWordSlots.get_child(i).texture.atlas = default_keywordslot_atlas
 
 
 func play_animation(animation):
