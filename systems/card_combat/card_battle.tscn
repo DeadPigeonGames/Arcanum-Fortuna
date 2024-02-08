@@ -432,6 +432,7 @@ material = ExtResource("29_10hk0")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="ChromaticAberration" type="ColorRect" parent="."]
 visible = false
