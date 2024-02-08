@@ -1,16 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://4ksadcfwwt52"]
+[gd_scene load_steps=10 format=3 uid="uid://b1x2ts07qkvj8"]
 
-[ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="1_7y624"]
-[ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="2_fmrg3"]
-[ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="2_lrt16"]
-[ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="4_a1v5r"]
-[ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="5_gtqyr"]
-[ext_resource type="Texture2D" uid="uid://do0e6paeiwi3x" path="res://assets/ui/placeholders/shop_price_explanation_underlay_placeholder.png" id="6_8x8m8"]
-[ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="7_4bgqj"]
-[ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="8_qh15x"]
-[ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="9_oydgg"]
+[ext_resource type="Texture2D" uid="uid://do0e6paeiwi3x" path="res://assets/ui/placeholders/shop_price_explanation_underlay_placeholder.png" id="1_1wkkn"]
+[ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5sgb4"]
+[ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="3_oaeng"]
+[ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="4_pfin6"]
+[ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="5_n0y7o"]
+[ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="6_b0rs8"]
+[ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="7_pcr6t"]
+[ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="8_c5fhv"]
+[ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="9_kpfdl"]
 
-[node name="ShopBuySection" type="Control"]
+[node name="ShopTradeSection" type="Control"]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -28,9 +28,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -800.0
+offset_left = -240.0
 offset_top = -928.0
-offset_right = -320.0
+offset_right = 240.0
 offset_bottom = -808.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -40,7 +40,7 @@ custom_minimum_size = Vector2(480, 120)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("6_8x8m8")
+texture = ExtResource("1_1wkkn")
 
 [node name="Label" type="Label" parent="SectionExplanation"]
 custom_minimum_size = Vector2(480, 120)
@@ -57,7 +57,7 @@ offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "Pay 5 Gold to add a card to your deck"
+text = "Pay 3 Gold and one of your cards for a new one"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -89,15 +89,15 @@ grow_vertical = 0
 theme_override_constants/separation = 72
 alignment = 1
 
-[node name="ShopCard" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
+[node name="ShopCard" parent="AvailableOffer/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShopCard2" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
+[node name="ShopCard2" parent="AvailableOffer/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShopCard3" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
+[node name="ShopCard3" parent="AvailableOffer/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -114,10 +114,10 @@ offset_right = 200.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("1_7y624")
-texture_pressed = ExtResource("2_fmrg3")
-texture_hover = ExtResource("2_lrt16")
-texture_disabled = ExtResource("4_a1v5r")
+texture_normal = ExtResource("3_oaeng")
+texture_pressed = ExtResource("4_pfin6")
+texture_hover = ExtResource("5_n0y7o")
+texture_disabled = ExtResource("6_b0rs8")
 
 [node name="Label" type="Label" parent="PayButton"]
 layout_mode = 1
@@ -132,7 +132,7 @@ offset_right = 200.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Buy for X Gold"
+text = "Trade for X Gold"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -149,9 +149,9 @@ offset_right = 944.0
 offset_bottom = -112.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("7_4bgqj")
-texture_pressed = ExtResource("8_qh15x")
-texture_hover = ExtResource("9_oydgg")
+texture_normal = ExtResource("7_pcr6t")
+texture_pressed = ExtResource("8_c5fhv")
+texture_hover = ExtResource("9_kpfdl")
 
 [node name="Label" type="Label" parent="LeaveShopButton"]
 layout_mode = 1
@@ -169,3 +169,16 @@ grow_vertical = 2
 text = "Journey on"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HandCards" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -120.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 0
