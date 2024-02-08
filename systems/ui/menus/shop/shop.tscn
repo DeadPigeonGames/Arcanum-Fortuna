@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://313ltwpa7fyq"]
+[gd_scene load_steps=9 format=3 uid="uid://313ltwpa7fyq"]
 
 [ext_resource type="Texture2D" uid="uid://b5afkfy613wxv" path="res://assets/ui/placeholders/shop_section_button_focused_placeholder.png" id="1_f2i8i"]
 [ext_resource type="Texture2D" uid="uid://duv2of85sje8k" path="res://assets/ui/placeholders/shop_section_button_default_placeholder.png" id="1_i7xu1"]
 [ext_resource type="Texture2D" uid="uid://cg8w46s17rskd" path="res://assets/ui/placeholders/shop_section_button_hover_placeholder.png" id="2_jy8p6"]
+[ext_resource type="PackedScene" uid="uid://b1x2ts07qkvj8" path="res://systems/ui/menus/shop/shop_trade_section.tscn" id="4_en8fe"]
+[ext_resource type="PackedScene" uid="uid://4ksadcfwwt52" path="res://systems/ui/menus/shop/shop_buy_section.tscn" id="4_s3t54"]
+[ext_resource type="PackedScene" uid="uid://cx0lut3bbosw1" path="res://systems/ui/menus/shop/shop_burn_section.tscn" id="6_nknc1"]
 
 [sub_resource type="Gradient" id="Gradient_mjy55"]
 colors = PackedColorArray(0.351476, 0.22058, 0.107841, 1, 0.352941, 0.219608, 0.105882, 1)
@@ -71,9 +74,13 @@ texture_normal = ExtResource("1_i7xu1")
 texture_hover = ExtResource("2_jy8p6")
 texture_focused = ExtResource("1_f2i8i")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -801.0
-offset_top = -752.0
-offset_right = -561.0
-offset_bottom = -712.0
+[node name="ShopBuySection" parent="." instance=ExtResource("4_s3t54")]
+layout_mode = 1
+
+[node name="ShopTradeSection" parent="." instance=ExtResource("4_en8fe")]
+visible = false
+layout_mode = 1
+
+[node name="ShopBurnSection" parent="." instance=ExtResource("6_nknc1")]
+visible = false
+layout_mode = 1

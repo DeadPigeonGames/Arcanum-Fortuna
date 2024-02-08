@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=44 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://do32ub6ykpjq4" path="res://assets/ui/placeholders/keyword_description_underlay.png" id="1_mrn7k"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://d253xrxv604q5" path="res://assets/ui/placeholders/card_flavour_underlay.png" id="3_ksjhc"]
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="4_ctvwa"]
 [ext_resource type="Texture2D" uid="uid://dmvf4y1rexuxt" path="res://assets/ui/placeholders/switch_condition_underlay.png" id="5_1tskj"]
-[ext_resource type="Texture2D" uid="uid://8cguh5h1crom" path="res://assets/ui/placeholders/awaken_icon_placeholder.png" id="5_e3rdj"]
 [ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://assets/sprites/cards/emperor.png" id="5_l1v7b"]
 [ext_resource type="Texture2D" uid="uid://ckv3yi4hchdli" path="res://assets/ui/icons/karma_icon_small.png" id="6_hj2xt"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="7_orq47"]
@@ -19,6 +18,7 @@
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="14_sl7dj"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="15_mh8ok"]
 [ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="16_5mjjx"]
+[ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
 atlas = ExtResource("10_k7ab5")
@@ -202,6 +202,41 @@ _data = {
 "die": SubResource("Animation_hnrs5")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt7uj"]
+bg_color = Color(0.0784314, 0.631373, 0.592157, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvl8h"]
+bg_color = Color(0.105882, 0.835294, 0.784314, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxnba"]
+bg_color = Color(0.0627451, 0.513726, 0.482353, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhiq8"]
+bg_color = Color(0.0313726, 0.360784, 0.337255, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5midk"]
+bg_color = Color(0.0784314, 0.631373, 0.592157, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [sub_resource type="Gradient" id="Gradient_0nagi"]
 colors = PackedColorArray(0.215686, 0.352941, 0.462745, 1, 0.215686, 0.352941, 0.462745, 1)
 
@@ -268,37 +303,33 @@ offset_right = 720.0
 offset_bottom = 368.0
 theme_override_constants/separation = 0
 
-[node name="Label1" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+[node name="Label1" type="RichTextLabel" parent="KeywordDescriptions/VBoxContainer"]
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Keyword
-Keyword"
-vertical_alignment = 1
+bbcode_enabled = true
+text = "[b]%s -[/b] %s"
 
-[node name="Label2" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+[node name="Label2" type="RichTextLabel" parent="KeywordDescriptions/VBoxContainer"]
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Keyword
-Keyword"
-vertical_alignment = 1
+bbcode_enabled = true
+text = "[b]%s -[/b] %s"
 
-[node name="Label3" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+[node name="Label3" type="RichTextLabel" parent="KeywordDescriptions/VBoxContainer"]
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Keyword
-Keyword"
-vertical_alignment = 1
+bbcode_enabled = true
+text = "[b]%s -[/b] %s"
 
-[node name="Label4" type="Label" parent="KeywordDescriptions/VBoxContainer"]
+[node name="Label4" type="RichTextLabel" parent="KeywordDescriptions/VBoxContainer"]
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Keyword
-Keyword"
-vertical_alignment = 1
+bbcode_enabled = true
+text = "[b]%s -[/b] %s"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -722,15 +753,21 @@ offset_right = 700.0
 offset_bottom = 274.0
 texture = ExtResource("5_1tskj")
 
-[node name="SwitchIcon" type="TextureRect" parent="SwitchCondition"]
+[node name="SwitchButton" type="Button" parent="SwitchCondition"]
 layout_mode = 0
 offset_left = -68.0
 offset_top = 188.0
 offset_right = 12.0
 offset_bottom = 268.0
-texture = ExtResource("5_e3rdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lt7uj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uvl8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oxnba")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bhiq8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5midk")
+icon = ExtResource("18_4f2ee")
+icon_alignment = 1
 
-[node name="Label" type="Label" parent="SwitchCondition"]
+[node name="Label" type="RichTextLabel" parent="SwitchCondition"]
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 0
 offset_left = 20.0
@@ -738,9 +775,8 @@ offset_top = 182.0
 offset_right = 660.0
 offset_bottom = 274.0
 size_flags_horizontal = 4
-text = "Switch Condition
-Switch Condition"
-vertical_alignment = 1
+bbcode_enabled = true
+text = "[b]%s -[/b] %s"
 
 [node name="CloseWindowButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)

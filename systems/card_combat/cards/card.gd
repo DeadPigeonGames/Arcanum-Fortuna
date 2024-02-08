@@ -104,6 +104,7 @@ func play_animation(animation):
 
 
 func play_cardflip(forward : bool):
+	%Artwork.visible = false
 	if card_flip_animation == null:
 		return
 	if forward:

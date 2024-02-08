@@ -16,10 +16,10 @@ func init(data : TutorialPopupData, combat : CardBattle):
 
 
 func execute():
-	highlight_elements(false)
-	completed.emit()
+	super.execute()
 
 #endregion
 
 func on_card_mouse_entered():
-	execute()
+	highlight_elements(false)
+	completed.emit()
