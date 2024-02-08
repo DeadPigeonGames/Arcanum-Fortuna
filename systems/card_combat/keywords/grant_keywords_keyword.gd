@@ -38,9 +38,9 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 		print("[Keyword] Card " + str(owner) + " died and removed their Companionship Health.")
 		for card in buffed_cards_lookup[owner]:
 			if is_instance_valid(card):
-				card.modifiy_keywords(keywords_to_grant, empty_array)
+				card.modify_keywords(keywords_to_grant, empty_array)
 		return
 	for card : CombatCard in target:
 		if not card in buffed_cards_lookup[owner]:
-			card.modifiy_keywords(empty_array, keywords_to_grant)
+			card.modify_keywords(empty_array, keywords_to_grant)
 	buffed_cards_lookup[owner] = target
