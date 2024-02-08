@@ -11,17 +11,17 @@ func init(card_to_display: Card):
 	$SwitchCondition.hide()
 	
 	for i in range(4):
+		var keyword_label = get_node("KeywordDescriptions/VBoxContainer/Label%d" % (i+1))
 		if i >= card.keywords.size():
-			get_node("KeywordDescriptions/VBoxContainer/Label%d" % (i+1)).text = ""
+			keyword_label.text = ""
 			continue
 		var keyword = card.keywords[i]
 		if card.keywords[i] is SwitchKeyword:
 			$SwitchCondition.show()
-			$SwitchCondition/Label.text = keyword.title + "\n" + keyword.description
-			get_node("KeywordDescriptions/VBoxContainer/Label%d" % (i+1)).text = ""
+			$SwitchCondition/Label.text = $SwitchCondition/Label.text % [keyword.title, keyword.description]
+			keyword_label.text = ""
 			continue
-		get_node("KeywordDescriptions/VBoxContainer/Label%d" % (i+1)).text = keyword.title + "\n"
-		get_node("KeywordDescriptions/VBoxContainer/Label%d" % (i+1)).text += keyword.description
+		keyword_label.text = keyword_label.text % [keyword.title, keyword.description]
 
 func _on_close_window_button_button_down():
 	queue_free()
