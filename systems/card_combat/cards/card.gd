@@ -16,7 +16,6 @@ func _ready():
 	if card_data != null:
 		load_from_data(card_data)
 	setup()
-	play_cardflip(true)
 
 
 func set_attack(value):

@@ -116,3 +116,4 @@ func set_karma(value):
 	karma = value
 	%KarmaLabel.text = str(karma)
 #endregion
+

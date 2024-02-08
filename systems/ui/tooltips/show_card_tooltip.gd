@@ -4,6 +4,10 @@ extends ShowTooltip
 var card_data : CardData
 
 
+func init(data : CardData):
+	card_data = data
+
+
 func create_instance(value):
 	if value == null:
 		return null
@@ -12,5 +16,9 @@ func create_instance(value):
 	return new_instance
 
 
-func init(data : CardData):
-	card_data = data
+func _on_mouse_entered():
+	is_hovered = true
+
+
+func _on_mouse_exited():
+	is_hovered = false

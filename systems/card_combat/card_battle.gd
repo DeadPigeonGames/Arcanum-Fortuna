@@ -185,3 +185,4 @@ func handle_friendly_attacks():
 		await handle_attacks(game_board.player_tiles.get_child(i).get_child(0), i, true)
 		if is_battle_over:
 			return
+

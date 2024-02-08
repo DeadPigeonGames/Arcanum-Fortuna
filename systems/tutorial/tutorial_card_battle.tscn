@@ -257,5 +257,9 @@ script = ExtResource("5_68w08")
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
 phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_7yn6v")])
 
+[node name="HealthIcon" parent="CardPlayer/ResourceContainer/Health" index="1"]
+offset_top = 403.0
+offset_bottom = 540.0
+
 [editable path="CardPlayer"]
 [editable path="EnemyPlayer"]

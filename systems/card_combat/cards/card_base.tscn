@@ -321,7 +321,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [100, -1]
+"values": [0, -1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -451,6 +451,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 text = "Type Placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -478,6 +479,7 @@ offset_left = -4.0
 offset_right = -4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("4_3aln2")
 theme_override_font_sizes/font_size = 18
 text = "-100"
@@ -503,6 +505,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("4_3aln2")
 theme_override_font_sizes/font_size = 21
 text = "100"
@@ -527,6 +530,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("4_3aln2")
 theme_override_font_sizes/font_size = 22
 text = "1"
@@ -638,11 +642,6 @@ offset_bottom = 67.9949
 grow_horizontal = 0
 pivot_offset = Vector2(16, 16)
 
-[node name="ShowCardTooltip" parent="." instance=ExtResource("3_cofgw")]
-unique_name_in_owner = true
-layout_mode = 1
-tooltip_template = "res://systems/ui/tooltips/card_tooltip.tscn"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Voices"
 
@@ -650,6 +649,7 @@ bus = &"Voices"
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="ArtworkClip" type="ColorRect" parent="."]
 clip_children = 1
@@ -674,6 +674,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 
 [node name="buff_particles" type="GPUParticles2D" parent="ArtworkClip/ParticleAnchor"]
 emitting = false
@@ -699,6 +700,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="KeywordParticles" type="GPUParticles2D" parent="CenterAnchor"]
 unique_name_in_owner = true
@@ -719,6 +721,7 @@ method_to_call = "_SFX_Damage"
 
 [node name="SFXCard" parent="." instance=ExtResource("8_coke3")]
 unique_name_in_owner = true
+mouse_filter = 1
 
 [node name="Cardback" type="TextureRect" parent="."]
 z_index = -1
@@ -736,7 +739,13 @@ libraries = {
 "": SubResource("AnimationLibrary_n6v6f")
 }
 
+[node name="ShowCardTooltip" parent="." instance=ExtResource("3_cofgw")]
+unique_name_in_owner = true
+layout_mode = 1
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ShowCardTooltip" to="ShowCardTooltip" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ShowCardTooltip" to="ShowCardTooltip" method="_on_mouse_exited"]
 
 [editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]

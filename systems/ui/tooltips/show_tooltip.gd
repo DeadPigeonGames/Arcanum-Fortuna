@@ -20,16 +20,6 @@ static var tooltip_container = null
 @onready var cooldown := hover_min_duration
 
 
-func _ready():
-	self.mouse_entered.connect(on_mouse_entered)
-	self.mouse_exited.connect(on_mouse_exited)
-
-
-func _input(event: InputEvent):
-	if not (trigger_mode & 0b1 << 1):
-		return
-
-
 func _process(delta):
 	if is_hovered:
 		cooldown -= delta
@@ -37,7 +27,7 @@ func _process(delta):
 		cooldown = hover_min_duration
 		hide_tooltip()
 	
-	if cooldown <= 0 and trigger_mode & 0b1:
+	if is_hovered:
 		show_tooltip()
 
 
@@ -72,10 +62,9 @@ func hide_tooltip():
 		instance = null
 
 
-func on_mouse_entered():
+func _on_mouse_entered():
 	is_hovered = true
 
 
-func on_mouse_exited():
+func _on_mouse_exited():
 	is_hovered = false
-
