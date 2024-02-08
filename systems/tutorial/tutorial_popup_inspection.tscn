@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://hfbadyl0fua"]
+
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_popup_inspection.gd" id="1_k7x4m"]
+[ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_68wb3"]
+[ext_resource type="Texture2D" uid="uid://cqgd8kv6l6uen" path="res://assets/sprites/dialogue/dg_dog.png" id="3_swbw0"]
+
+[node name="TutorialPopupInspection" type="Control"]
+process_mode = 1
+z_index = 1000
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k7x4m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 154.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_68wb3")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Title"
+fit_content = true
+
+[node name="Text" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Lorem Ipsum"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Image" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3_swbw0")
+expand_mode = 1
+stretch_mode = 4

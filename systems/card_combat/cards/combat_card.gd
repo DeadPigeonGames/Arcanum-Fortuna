@@ -200,14 +200,13 @@ func process_death() -> bool:
 			await animation_finished
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
-		await animate_death()
 		queue_free()
 		return true
 	return false
 #endregion
 
 
-func animate_death():
+func animate_burn():
 	play_animation("die")
 	%Artwork.material = delete_material
 	%Cardback.visible = false
@@ -322,7 +321,7 @@ func delete():
 	is_deletion_queued = true
 	set_process(false)
 	set_process_input(false)
-	await get_tree().create_timer(1).timeout
+	await animate_burn()
 	health = 0
 	for i in range(keywords.size()):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED:

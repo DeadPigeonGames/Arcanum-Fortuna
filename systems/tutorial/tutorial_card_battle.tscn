@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=64 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="5_68w08"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="6_tnbwt"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_endturn_data.gd" id="6_xqnrx"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_inspection_data.gd" id="7_8lmnc"]
 [ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="7_vagmv"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="8_q2rpp"]
 [ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="9_qokvq"]
@@ -70,19 +71,19 @@ arrows = Array[Resource("res://systems/tutorial/arrow_data.gd")]([])
 offset_type = 0
 distance = 300.0
 
-[sub_resource type="Resource" id="Resource_65wvs"]
-script = ExtResource("5_6q4qr")
+[sub_resource type="Resource" id="Resource_rivlh"]
+script = ExtResource("7_8lmnc")
 title = ""
 text = "Feel free to take a closer look at it!
 (RMB or double click to inspect)"
-highlighted_elements = Array[NodePath]([])
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer/Hand")])
 arrows = Array[Resource("res://systems/tutorial/arrow_data.gd")]([])
 offset_type = 0
 distance = 0.0
 
 [sub_resource type="Resource" id="Resource_dglp0"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_mvog4"), SubResource("Resource_65wvs")])
+popups = Array[Resource("res://systems/tutorial/tutorial_popup_data.gd")]([SubResource("Resource_mvog4"), SubResource("Resource_rivlh")])
 
 [sub_resource type="Resource" id="Resource_l3816"]
 script = ExtResource("5_4e3gy")

@@ -21,7 +21,9 @@ func init(data : TutorialPopupData, combat : CardBattle):
 	self.combat = combat
 	title.text = data.title
 	text.text = data.text
-	
+
+
+func execute():
 	for node_path in data.highlighted_elements:
 		highlighted_elements.append(combat.get_node(node_path))
 	for node in highlighted_elements:
@@ -34,11 +36,6 @@ func init(data : TutorialPopupData, combat : CardBattle):
 	if data.arrows.size() > 0:
 		setup_arrow_positions()
 	highlight_elements(true)
-
-
-func execute():
-	push_error("ERROR: NO IMPLEMENTATION! (USED BASE POPUP)")
-	pass
 
 
 #endregion

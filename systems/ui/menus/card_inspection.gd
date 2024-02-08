@@ -1,10 +1,13 @@
+class_name CardInspection
 extends Control
+
+signal inspection_closed
 
 var card : Card
 
 func init(card_to_display: Card):
 	card = card_to_display
-	var card_data = card_to_display.card_data 
+	var card_data = card_to_display.card_data
 	$Card.card_data = card_data
 	$Card.scale = Vector2(2.56, 2.56)
 	$CardFlavour/CardFlavourText.text = card_data.description
@@ -23,5 +26,7 @@ func init(card_to_display: Card):
 			continue
 		keyword_label.text = keyword_label.text % [keyword.title, keyword.description]
 
+
 func _on_close_window_button_button_down():
+	inspection_closed.emit()
 	queue_free()

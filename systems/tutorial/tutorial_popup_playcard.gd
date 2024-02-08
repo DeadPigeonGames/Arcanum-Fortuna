@@ -7,7 +7,9 @@ var player_tiles
 
 var card
 
+
 #region override functions
+
 
 func init(data : TutorialPopupData, combat : CardBattle):
 	var playcard_data = data as TutorialPlaycardData
@@ -17,14 +19,13 @@ func init(data : TutorialPopupData, combat : CardBattle):
 	highlighted_elements.append(hand)
 	highlighted_elements.append(target_card_slot)
 	super.init(data, combat)
-	self.highlight_elements(true)
-	combat.unlock_player_actions()
 	combat.game_board.player.card_drag_ended.connect(on_card_drag_ended)
 
 
 func execute():
-	highlight_elements(false)
-	completed.emit()
+	super.execute()
+	self.highlight_elements(true)
+	combat.unlock_player_actions()
 
 
 func highlight_elements(value : bool):
@@ -50,6 +51,11 @@ func highlight_elements(value : bool):
 
 
 func on_card_drag_ended(card):
+	complete_condition(card)
+
+
+func complete_condition(card):
 	if target_card_slot.get_child(0) == card:
 		self.card = card
-		execute()
+		highlight_elements(false)
+		completed.emit()

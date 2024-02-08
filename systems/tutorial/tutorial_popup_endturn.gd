@@ -5,18 +5,18 @@ extends TutorialPopup
 
 func init(data : TutorialPopupData, combat : CardBattle):
 	super.init(data, combat)
-	combat.unlock_player_actions()
-	combat.player_turn_ended.connect(on_player_turn_ended)
 
 
 func execute():
-	highlight_elements(false)
-	combat.lock_player_actions()
-	completed.emit()
+	super.execute()
+	combat.unlock_player_actions()
+	combat.player_turn_ended.connect(on_player_turn_ended)
 
 
 #endregion
 
 
 func on_player_turn_ended():
-	execute()
+	highlight_elements(false)
+	combat.lock_player_actions()
+	completed.emit()

@@ -86,6 +86,7 @@ func lock_friendly_cards(combat):
 		combat.player.transfer_stored_buffs(new_combat_card)
 		GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 		[new_combat_card.card_data.name, i, 0])
+		card.reparent(SceneHandler.shelf)
 		card.queue_free()
 		await get_tree().process_frame
 		await combat._on_card_played(new_combat_card)
