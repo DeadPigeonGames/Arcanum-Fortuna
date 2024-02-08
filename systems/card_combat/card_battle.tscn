@@ -427,7 +427,7 @@ amount = 1
 process_material = ExtResource("28_ntl47")
 texture = ExtResource("29_f8a8p")
 
-[node name="LightRays" type="ColorRect" parent="."]
+[node name="LightRays2" type="ColorRect" parent="."]
 material = ExtResource("29_10hk0")
 layout_mode = 0
 offset_right = 1920.0

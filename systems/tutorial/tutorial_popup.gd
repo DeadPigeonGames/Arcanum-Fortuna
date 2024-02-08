@@ -17,6 +17,7 @@ var combat : CardBattle
 
 
 func init(data : TutorialPopupData, combat : CardBattle):
+	visible = false
 	self.data = data
 	self.combat = combat
 	title.text = data.title
@@ -28,7 +29,6 @@ func execute():
 		highlighted_elements.append(combat.get_node(node_path))
 	for node in highlighted_elements:
 		clickable_rects.append((node as Control).get_global_rect())
-	await get_tree().process_frame
 	var position = get_viewport_rect().get_center()
 	if highlighted_elements.size() > 0:
 		position = highlighted_elements[0].get_global_rect().get_center()
@@ -36,6 +36,8 @@ func execute():
 	if data.arrows.size() > 0:
 		setup_arrow_positions()
 	highlight_elements(true)
+	await get_tree().process_frame
+	visible = true
 
 
 #endregion
