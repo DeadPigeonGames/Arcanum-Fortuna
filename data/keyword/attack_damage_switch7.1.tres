@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DamageSwitch" load_steps=7 format=3 uid="uid://bkyx7bk3ntp2k"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_80idb"]
-[ext_resource type="Resource" uid="uid://dgbj2m033s16y" path="res://data/keyword/lifesteal_keyword.tres" id="2_fymwh"]
+[ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_6vvrm"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/damage_switch.gd" id="2_ickao"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="3_863ic"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="4_gsn3j"]
@@ -16,7 +16,7 @@ required_damage = 7
 damage_to_track = 2
 attack_difference = 0
 health_difference = 0
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_fymwh")])
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_6vvrm")])
 keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("3_863ic")
