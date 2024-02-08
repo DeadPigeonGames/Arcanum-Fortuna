@@ -6,6 +6,7 @@ extends Control
 var node_map : NodeMapGenerator
 var seed := 0
 
+
 func _ready():
 	node_map = node_map_scene.instantiate()
 	randomize()
@@ -33,7 +34,6 @@ func _on_tutorial_button_button_down():
 	SceneHandler.change_scene(tutorial_scene)
 	var tutorial : CardBattle = SceneHandler.current_scene
 	SceneHandler.combat = tutorial
-	var enemy_data : EnemyData = load("res://data/enemy/enemy_basic.tres")
 
 
 func _on_quit_button_pressed():
