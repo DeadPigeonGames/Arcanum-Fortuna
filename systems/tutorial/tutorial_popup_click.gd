@@ -5,15 +5,16 @@ extends TutorialPopup
 
 #region override functions
 
+
 func init(data : TutorialPopupData, combat : CardBattle):
 	super.init(data, combat)
 
 
 func execute():
-	highlight_elements(false)
-	completed.emit()
+	super.execute()
 
 #endregion
 
 func _on_next_button_button_up():
-	execute()
+	highlight_elements(false)
+	completed.emit()
