@@ -147,12 +147,16 @@ func take_damage(amount : int, source = null):
 	[card_data.name, tile_coordinate.x, tile_coordinate.y, amount])
 	health -= amount
 	modulate = attacked_color if amount > 0 else active_color
-	await animate_damage()
+	await animate_damage(amount)
 	await trigger_keywords(source, self, ActivatedKeyword.Triggers.ON_TAKE_DAMAGE, null, {"taken_damage": amount})
 	return amount
 
 
-func animate_damage():
+func animate_damage(amount):
+	var effect = damage_dealt.instantiate()
+	effect.setup(amount)
+	get_parent().add_child(effect)
+	effect.global_position = global_position + get_rect().size / 2
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
@@ -173,12 +177,15 @@ func process_death() -> bool:
 		await get_tree().process_frame
 		if is_animating:
 			await animation_finished
+		await animate_burn()
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
 		queue_free()
 		return true
+	restore_default_color()
 	return false
 #endregion
+
 
 
 func animate_burn():
@@ -201,12 +208,14 @@ func set_shader_value(value: float):
 
 
 func animate_attack(target, tile_idx, tile: Control) -> bool:
+	var target_position
+	var half_card = get_rect().size / 2
+	
 	if attack <= 0:
 		return false
 	%SFXCard._SFX_Attack()
-	var target_position
-	var half_card = get_rect().size / 2
 	if target is CombatCard:
+		target_position = target.global_position
 		GlobalLog.add_entry(
 				"'%s' at position %d-%d attacked '%s' at position %d-%d." %
 				[card_data.name,
@@ -215,8 +224,8 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 				target.card_data.name,
 				target.tile_coordinate.x,
 				target.tile_coordinate.y])
-		target_position = target.global_position
 	else:
+		target_position = tile.global_position
 		GlobalLog.add_entry(
 				"'%s' at position %d-%d attacked empty tile at position %d-%d." %
 				[card_data.name,
@@ -224,10 +233,11 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 				tile_coordinate.y,
 				tile_idx, 0 if is_enemy else 1
 				])
-		target_position = tile.global_position
+	$Attack.modulate = active_color
+	modulate = highlight_color
 	
-	var attack_tween = create_tween()
 	z_index += 1
+	var attack_tween = create_tween()
 	attack_tween.set_trans(Tween.TRANS_SINE)
 	attack_tween.set_ease(Tween.EASE_IN)
 	var wait_mod = 0
@@ -239,30 +249,24 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
 	attack_tween.play()
 	await get_tree().create_timer(attack_speed + wait_mod).timeout
+	
 	var dealt_damage : int = await target.take_damage(attack, self)
 	await trigger_keywords(target, self, 32, null, {"damage_dealt": dealt_damage})
 	
-	if attack > 0:
+	if dealt_damage > 0 and not target is CombatCard:
 		var effect = damage_dealt.instantiate()
-		effect.setup(attack)
+		effect.setup(dealt_damage)
 		get_parent().add_child(effect)
 		effect.global_position = target_position + half_card
 	
-	$Attack.modulate = active_color
-	modulate = highlight_color
-	get_tree().create_timer(max(attack_delay - wait_mod, 0)).timeout.connect(func():
-		target.restore_default_color()
-		restore_default_color()
-		z_index -= 1
-	)
-	
+	z_index -= 1
 	var was_lethal = target.health <= 0
 	var is_battle_over = false
 	if was_lethal and (target is EnemyPlayer or target is CardPlayer):
 		is_battle_over = true
 	if was_lethal:
 		await get_tree().process_frame
-		await trigger_keywords(target, self, 1)
+		await trigger_keywords(target, self, ActivatedKeyword.Triggers.ON_KILL)
 	return was_lethal
 
 

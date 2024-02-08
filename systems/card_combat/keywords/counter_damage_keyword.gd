@@ -15,4 +15,3 @@ func init():
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
 	await source.take_damage(counter_damage)
-	await source.process_death()

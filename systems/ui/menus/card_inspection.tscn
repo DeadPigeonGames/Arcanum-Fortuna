@@ -439,6 +439,7 @@ expand_mode = 1
 [node name="SwitchFrame" type="TextureRect" parent="PreviewCard/Artwork"]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 offset_left = -10.0
 offset_top = -11.0
 offset_right = 161.0
