@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://313ltwpa7fyq"]
+[gd_scene load_steps=10 format=3 uid="uid://313ltwpa7fyq"]
 
 [ext_resource type="Texture2D" uid="uid://b5afkfy613wxv" path="res://assets/ui/placeholders/shop_section_button_focused_placeholder.png" id="1_f2i8i"]
 [ext_resource type="Texture2D" uid="uid://duv2of85sje8k" path="res://assets/ui/placeholders/shop_section_button_default_placeholder.png" id="1_i7xu1"]
+[ext_resource type="Texture2D" uid="uid://ciikg3layvgng" path="res://assets/ui/placeholders/upper_shop_underlay.png" id="1_svqgw"]
 [ext_resource type="Texture2D" uid="uid://cg8w46s17rskd" path="res://assets/ui/placeholders/shop_section_button_hover_placeholder.png" id="2_jy8p6"]
 [ext_resource type="PackedScene" uid="uid://b1x2ts07qkvj8" path="res://systems/ui/menus/shop/shop_trade_section.tscn" id="4_en8fe"]
 [ext_resource type="PackedScene" uid="uid://4ksadcfwwt52" path="res://systems/ui/menus/shop/shop_buy_section.tscn" id="4_s3t54"]
@@ -22,6 +23,21 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="UpperShopUnderlay" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1080.0
+offset_right = 960.0
+offset_bottom = -928.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_svqgw")
 
 [node name="ShopUnderlay" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1920, 928)

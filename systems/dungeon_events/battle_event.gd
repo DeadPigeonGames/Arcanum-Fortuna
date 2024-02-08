@@ -15,7 +15,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	var field = battleField.instantiate()
 	$CanvasLayer.add_child(field)
 	SceneHandler.combat = field
-	field.is_debug = false
+	#field.is_debug = false
 	field.init(player_data.duplicate(true), enemy_data.duplicate(true))
 	field.start_combat()
 	

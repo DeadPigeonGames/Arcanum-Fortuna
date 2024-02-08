@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=66 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
@@ -19,6 +19,8 @@
 [ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="16_tdfyf"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_enemy_placement_phase.gd" id="17_g5qtn"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_tooltip_data.gd" id="18_kbwkv"]
+[ext_resource type="Resource" uid="uid://h3ql6ab1rcfn" path="res://data/player/tutorial_player.tres" id="20_f584r"]
+[ext_resource type="Resource" uid="uid://cfo1qaoei72s6" path="res://data/enemy/enemy_basic.tres" id="21_xusau"]
 
 [sub_resource type="Resource" id="Resource_m5y5j"]
 script = ExtResource("17_g5qtn")
@@ -309,10 +311,9 @@ script = ExtResource("6_tnbwt")
 
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
 phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_7yn6v"), SubResource("Resource_8ywms"), SubResource("Resource_v18om"), SubResource("Resource_jsiee"), SubResource("Resource_lebng"), SubResource("Resource_losxt"), SubResource("Resource_d5ek4"), SubResource("Resource_fmibs"), SubResource("Resource_3kiem")])
-
-[node name="HealthIcon" parent="CardPlayer/ResourceContainer/Health" index="1"]
-offset_top = -137.0
-offset_bottom = 0.0
+is_tutorial = true
+debug_player_data = ExtResource("20_f584r")
+debug_enemy_data = ExtResource("21_xusau")
 
 [editable path="CardPlayer"]
 [editable path="EnemyPlayer"]
