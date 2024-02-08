@@ -15,7 +15,7 @@ signal drag_ended(card)
 @export var attack_speed = 0.2
 @export var attack_rewind = 0.3
 @export var attack_delay = 0.1
-@export var death_delay = 1.0
+@export var death_delay = 1.25
 @export var karma_delay = 1.0
 @export var attacked_color : Color
 @export var highlight_color : Color
@@ -114,7 +114,6 @@ func flip():
 	attack = health_transfer
 	#cost = -cost
 	%KarmaCost.text = str(cost)
-	%Name.text = card_name
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
 
@@ -201,12 +200,30 @@ func process_death() -> bool:
 			await animation_finished
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
-		play_animation("die")
-		await $AnimationPlayer.animation_finished
+		await animate_death()
 		queue_free()
 		return true
 	return false
 #endregion
+
+
+func animate_death():
+	play_animation("die")
+	%Artwork.material = delete_material
+	%Cardback.visible = false
+	var random_angle = [-1, -0.5, 0.5, 1, 1.5, 2]
+	random_angle = random_angle[randi_range(0, random_angle.size() - 1)]
+	%Artwork.material.set_shader_parameter("angle", random_angle)
+	var shader_noise : NoiseTexture2D = %Artwork.material.get_shader_parameter("noise")
+	shader_noise.noise.seed = randf_range(0.0, 100.0)
+	%Artwork.material.set_shader_parameter("noise", shader_noise)
+	var tween = create_tween()
+	tween.tween_method(set_shader_value, -1.0, 2.0, death_delay)
+	await tween.finished
+
+
+func set_shader_value(value: float):
+	%Artwork.material.set_shader_parameter("progress", value);
 
 
 func animate_attack(target, tile_idx, tile: Control) -> bool:
@@ -305,7 +322,6 @@ func delete():
 	is_deletion_queued = true
 	set_process(false)
 	set_process_input(false)
-	%Artwork.material = delete_material
 	await get_tree().create_timer(1).timeout
 	health = 0
 	for i in range(keywords.size()):

@@ -19,7 +19,7 @@ is_auto_flip = false
 attack_speed = 0.2
 attack_rewind = 0.3
 attack_delay = 0.5
-death_delay = 0.5
+death_delay = 1.25
 karma_delay = 0.3
 attacked_color = Color(1, 0.172549, 0.129412, 1)
 highlight_color = Color(0.623529, 0.721569, 0.894118, 1)
@@ -73,13 +73,10 @@ offset_bottom = 34.0
 icon = ExtResource("3_dlei7")
 icon_alignment = 1
 
-[node name="KeywordSlots" parent="." index="9"]
-mouse_filter = 1
-
 [node name="ParticleAnchor" parent="ArtworkClip" index="0"]
 mouse_filter = 2
 
-[node name="CenterAnchor" parent="." index="12"]
+[node name="CenterAnchor" parent="." index="11"]
 mouse_filter = 2
 
 [connection signal="pressed" from="DeleteButton" to="." method="_on_delete_button_pressed"]

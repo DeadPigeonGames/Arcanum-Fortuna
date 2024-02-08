@@ -83,7 +83,7 @@ func _process(delta):
 
 func adjust_positions():
 	var count = get_child_count()
-
+	
 	if count < 1:
 		return
 	

@@ -17,9 +17,9 @@ noise = SubResource("FastNoiseLite_hse0m")
 
 [resource]
 shader = ExtResource("1_q2ii3")
-shader_parameter/progress = 0.0
+shader_parameter/progress = 2.0
 shader_parameter/width = 0.5
-shader_parameter/timed = true
+shader_parameter/timed = false
 shader_parameter/speed = 1.0
 shader_parameter/angle = -1.0
 shader_parameter/noise = SubResource("NoiseTexture2D_mx8aj")

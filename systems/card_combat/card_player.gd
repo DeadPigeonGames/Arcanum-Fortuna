@@ -141,7 +141,7 @@ func _on_card_released(card):
 
 
 func draw_card():
-	var drawn_card = card_stack.draw_card(hand)
+	var drawn_card = await card_stack.draw_card(hand)
 	if drawn_card != null:
 		drawn_card.drag_started.connect(_on_card_dragged)
 		drawn_card.drag_ended.connect(_on_card_released)

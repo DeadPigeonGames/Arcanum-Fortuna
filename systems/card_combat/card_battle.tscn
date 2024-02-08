@@ -375,7 +375,6 @@ speed_scale = 0.65
 
 [node name="EnemyPlayer" parent="." instance=ExtResource("25_q4n6c")]
 layout_mode = 0
-mouse_filter = 2
 
 [node name="CurrentPhaseLabel" type="Label" parent="."]
 visible = false
