@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=46 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -27,8 +27,9 @@
 [ext_resource type="Material" uid="uid://ygwq26b11i74" path="res://assets/sprites/vfx/overlays/dust_particles.tres" id="26_o5euh"]
 [ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
 [ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="28_ntl47"]
+[ext_resource type="Material" uid="uid://bdmbj4ep0jmu2" path="res://shaders/light_rays.tres" id="29_10hk0"]
 [ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="29_f8a8p"]
-[ext_resource type="Material" path="res://shaders/chromatic_aberration.tres" id="30_jtbas"]
+[ext_resource type="Material" uid="uid://dcfv0vvexhq5y" path="res://shaders/chromatic_aberration.tres" id="30_jtbas"]
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_2m38c")
@@ -425,6 +426,13 @@ scale = Vector2(0.345, 0.345)
 amount = 1
 process_material = ExtResource("28_ntl47")
 texture = ExtResource("29_f8a8p")
+
+[node name="LightRays2" type="ColorRect" parent="."]
+material = ExtResource("29_10hk0")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="ChromaticAberration" type="ColorRect" parent="."]
 visible = false
