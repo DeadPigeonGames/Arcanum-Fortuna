@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_otgqu"]
 [ext_resource type="Texture2D" uid="uid://cg5wcb1w8sf8h" path="res://assets/sprites/cards/knight_of_daggers.png" id="1_s1bsp"]
-[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_35c3i"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_vpdba"]
 [ext_resource type="Resource" uid="uid://drvm1tnfo6hm6" path="res://data/keyword/buff_next_card_attack.tres" id="3_wl32n"]
 
 [resource]
@@ -17,4 +17,4 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
-keyword_slot_texture = ExtResource("2_35c3i")
+keyword_slot_texture = ExtResource("2_vpdba")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6j2kiuxxwhbk" path="res://assets/sprites/cards/queen_of_herbs.png" id="1_6bgbb"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_rnlue"]
-[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_peepn"]
+[ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_hwnrn"]
 [ext_resource type="Resource" uid="uid://48wwq8uiodfc" path="res://data/keyword/play_heal.tres" id="3_8wxvo"]
 
 [resource]
@@ -17,4 +17,4 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0
-keyword_slot_texture = ExtResource("2_peepn")
+keyword_slot_texture = ExtResource("2_hwnrn")
