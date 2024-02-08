@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://deqxg805404yn" path="res://assets/sprites/cards/world.png" id="1_j3v4b"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_t81n0"]
 [ext_resource type="Resource" uid="uid://fvab8xjppdba" path="res://data/keyword/multi_attack.tres" id="3_wnhoy"]
-[ext_resource type="Resource" uid="uid://blcsgr8t2i8fd" path="res://data/keyword/switch_card_karma_negative2.1.tres" id="4_6av3s"]
+[ext_resource type="Resource" uid="uid://dfps01cnfrdye" path="res://data/keyword/switch_card_karma_negative3.1.tres" id="4_3gumo"]
 [ext_resource type="AudioStream" uid="uid://y6quqim1o1qc" path="res://assets/sounds/cards/voices/the_world.ogg" id="6_5ud5c"]
 
 [resource]
@@ -15,7 +15,7 @@ artwork = ExtResource("1_j3v4b")
 cost = -5
 attack = 2
 health = 3
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_wnhoy"), ExtResource("4_6av3s")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_wnhoy"), ExtResource("4_3gumo")])
 spawn_frequency = 50
 shop_cost = 5
 trade_override = 0
