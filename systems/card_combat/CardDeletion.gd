@@ -17,6 +17,15 @@ func _on_card_drag_started():
 func _on_card_drag_ended(dragged_card: CombatCard):
 	var was_deleted = false
 	if is_active and is_hovered:
+		dragged_card.is_deletion_queued = true
+		var tween = create_tween()
+		var self_rect = get_global_rect()
+		var target_position = self_rect.get_center()
+		target_position.y -= self_rect.size.y / 2
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(dragged_card, "global_position", target_position, 0.2)
+		await tween.finished
 		dragged_card.delete()
 		was_deleted = true
 	set_inactive()

@@ -148,9 +148,8 @@ func restore_default_color():
 func process_death() -> bool:
 	if health <= 0:
 		await get_tree().process_frame
-		if is_animating:
-			await animation_finished
-		await animate_burn()
+		play_animation("die")
+		await get_tree().create_timer(1).timeout
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
 		queue_free()
@@ -160,9 +159,7 @@ func process_death() -> bool:
 #endregion
 
 
-
 func animate_burn():
-	play_animation("die")
 	%Artwork.material = delete_material
 	%Cardback.visible = false
 	var random_angle = [-1, -0.5, 0.5, 1, 1.5, 2]
@@ -171,6 +168,7 @@ func animate_burn():
 	var shader_noise : NoiseTexture2D = %Artwork.material.get_shader_parameter("noise")
 	shader_noise.noise.seed = randf_range(0.0, 100.0)
 	%Artwork.material.set_shader_parameter("noise", shader_noise)
+	play_animation("fade_out_icons")
 	var tween = create_tween()
 	tween.tween_method(set_shader_value, -1.0, 2.0, death_delay)
 	await tween.finished
