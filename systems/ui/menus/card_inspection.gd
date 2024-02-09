@@ -19,8 +19,8 @@ var preview_card : Card
 func init(card_to_display: Card):
 	preview_card = %PreviewCard
 	$SwitchCondition.hide()
-	%BaseAttackLabel.text = str(card_to_display.card_data.attack)
-	%BaseHealthLabel.text = str(card_to_display.card_data.health)
+	preview_card.set_base_attack_text(str(card_to_display.card_data.attack))
+	preview_card.set_base_health_text(str(card_to_display.card_data.health))
 	var card_data = card_to_display.card_data
 	preview_card.load_from_data(card_to_display.card_data)
 	preview_card.scale = Vector2(2.56, 2.56)
