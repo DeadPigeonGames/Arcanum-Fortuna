@@ -34,20 +34,20 @@ func _changeMap(mapTypes):
 		tween.tween_property($Music, "volume_db", -80.0, 5)
 
 func _playTrack(mapTypes):
-		randomize()
+	randomize()
 	
 	#currentMapType = currentMapType.keys()[randi() % currentMapType.size()]
 	#print_debug(currentMapType)
 	
-	if currentMapType == mapTypes.CITY:
-		$Music.set_stream(musicCity)
-		$Ambience.set_stream(ambienceCity)
-	elif currentMapType == mapTypes.SPRING:
-		$Music.set_stream(musicSpring)
-		$Ambience.set_stream(ambienceSpring)
-	elif currentMapType == mapTypes.WINTER:
-		$Music.set_stream(musicWinter)
-		$Ambience.set_stream(ambienceWinter)
+	#if currentMapType == mapTypes.CITY:
+		#$Music.set_stream(musicCity)
+		#$Ambience.set_stream(ambienceCity)
+	#elif currentMapType == mapTypes.SPRING:
+		#$Music.set_stream(musicSpring)
+		#$Ambience.set_stream(ambienceSpring)
+	#elif currentMapType == mapTypes.WINTER:
+		#$Music.set_stream(musicWinter)
+		#$Ambience.set_stream(ambienceWinter)
 	
 	
 	
