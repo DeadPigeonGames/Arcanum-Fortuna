@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://clotsnwomvrm8" path="res://assets/sprites/cards/star.png" id="1_owdc4"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_8ef8r"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_kmx3s"]
-[ext_resource type="AudioStream" uid="uid://cbhtvx4e1ar1" path="res://assets/sounds/cards/voices/the_star.ogg" id="3_hajlb"]
 [ext_resource type="Resource" uid="uid://cla7wpd2pd8cb" path="res://data/keyword/atk_nerf1.tres" id="3_rsrtk"]
 [ext_resource type="Resource" uid="uid://dir5s5t2y3ne0" path="res://data/keyword/switch_card_copy2.tres" id="4_salv1"]
+[ext_resource type="AudioStream" uid="uid://bovegs7oulks3" path="res://Audio/Signatures/SignatureStar.ogg" id="6_l1rxf"]
 
 [resource]
 script = ExtResource("2_kmx3s")
@@ -19,5 +19,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 34
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("3_hajlb")
+sound_effect = ExtResource("6_l1rxf")
 keyword_slot_texture = ExtResource("2_8ef8r")

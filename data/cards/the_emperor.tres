@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_ruegd"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u4j5u"]
 [ext_resource type="Resource" uid="uid://uik4l46sy6qd" path="res://data/keyword/kill2_switch.tres" id="4_inm4n"]
-[ext_resource type="AudioStream" uid="uid://vdtbxmilhgaf" path="res://assets/sounds/cards/voices/the_emperor.ogg" id="5_gfkah"]
+[ext_resource type="AudioStream" uid="uid://3f4ak71boesh" path="res://Audio/Signatures/SignatureEmperor.ogg" id="6_uim2b"]
 
 [resource]
 script = ExtResource("2_u4j5u")
@@ -19,5 +19,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("5_gfkah")
+sound_effect = ExtResource("6_uim2b")
 keyword_slot_texture = ExtResource("2_ruegd")

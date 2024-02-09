@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_r5yfv"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_y1met"]
 [ext_resource type="Resource" uid="uid://s0ldta5qu4fp" path="res://data/keyword/atk_nerf_in_front1.tres" id="3_1tfkv"]
-[ext_resource type="AudioStream" uid="uid://c6xyt404s1dkn" path="res://assets/sounds/cards/voices/the_hermit.ogg" id="3_jbq5n"]
 [ext_resource type="Resource" uid="uid://bwsexctmht4nb" path="res://data/keyword/switch_take_damage2.tres" id="4_41rtk"]
+[ext_resource type="AudioStream" uid="uid://dknfk4uhbrehd" path="res://Audio/Signatures/SignatureHermit.ogg" id="6_x07y8"]
 
 [resource]
 script = ExtResource("2_y1met")
@@ -19,5 +19,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 40
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("3_jbq5n")
+sound_effect = ExtResource("6_x07y8")
 keyword_slot_texture = ExtResource("2_r5yfv")

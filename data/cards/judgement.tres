@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://kjvyclxm18qu" path="res://assets/sprites/cards/judgement.png" id="1_e5oar"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_hsgwm"]
 [ext_resource type="Resource" uid="uid://brc0cecmp05sp" path="res://data/keyword/position_summon.tres" id="3_m1as6"]
-[ext_resource type="AudioStream" uid="uid://dx6cm4lojlfve" path="res://assets/sounds/cards/voices/judgement.ogg" id="4_26wb4"]
 [ext_resource type="Resource" uid="uid://pvnh1xtfx3ou" path="res://data/keyword/switch_player_hp20.1.tres" id="4_bw0bx"]
+[ext_resource type="AudioStream" uid="uid://dp6tr407dp5l4" path="res://Audio/Signatures/SignatureJudgement.ogg" id="6_e5q5g"]
 
 [resource]
 script = ExtResource("1_3cnmo")
@@ -19,5 +19,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 40
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("4_26wb4")
+sound_effect = ExtResource("6_e5q5g")
 keyword_slot_texture = ExtResource("2_hsgwm")

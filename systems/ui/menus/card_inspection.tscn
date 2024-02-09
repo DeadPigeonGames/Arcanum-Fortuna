@@ -1,15 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=20 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://do32ub6ykpjq4" path="res://assets/ui/placeholders/keyword_description_underlay.png" id="1_mrn7k"]
 [ext_resource type="Texture2D" uid="uid://cof5lb3kf7g0w" path="res://assets/sprites/keywords/kw_switch_2.png" id="2_unu64"]
 [ext_resource type="PackedScene" uid="uid://pe6tqla32quk" path="res://systems/ui/menus/menu_elements/stat_change.tscn" id="3_d8e8f"]
-[ext_resource type="Texture2D" uid="uid://d253xrxv604q5" path="res://assets/ui/placeholders/card_flavour_underlay.png" id="3_ksjhc"]
 [ext_resource type="Texture2D" uid="uid://dmvf4y1rexuxt" path="res://assets/ui/placeholders/switch_condition_underlay.png" id="5_1tskj"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="5_xkl1s"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_0xrdx"]
-[ext_resource type="Texture2D" uid="uid://bnfj7t34405xc" path="res://assets/ui/placeholders/close_window_button_default_placeholder.png" id="7_sk6p5"]
+[ext_resource type="Texture2D" uid="uid://b16p52hwm0lh1" path="res://assets/ui/underlays/banner.png" id="8_61u2l"]
+[ext_resource type="FontFile" uid="uid://c8tjrdvbc5hnb" path="res://assets/ui/fonts/Old_Englished_Boots.ttf" id="9_1xmqd"]
 [ext_resource type="PackedScene" uid="uid://jfsadju3ylrq" path="res://systems/card_combat/cards/preview_card.tscn" id="9_rm3wo"]
+[ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="11_6uiwl"]
+[ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="12_tp7it"]
+[ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="13_6mpdr"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt7uj"]
@@ -46,18 +49,6 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
-
-[sub_resource type="Gradient" id="Gradient_0nagi"]
-colors = PackedColorArray(0.215686, 0.352941, 0.462745, 1, 0.215686, 0.352941, 0.462745, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6q5c5"]
-gradient = SubResource("Gradient_0nagi")
-
-[sub_resource type="Gradient" id="Gradient_3rdab"]
-colors = PackedColorArray(0.448727, 0.464516, 0.555199, 1, 0.447059, 0.462745, 0.556863, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ncu2"]
-gradient = SubResource("Gradient_3rdab")
 
 [node name="CardInspection" type="Control"]
 z_index = 4096
@@ -182,6 +173,13 @@ layout_mode = 2
 [node name="StatChange5" parent="ScrollContainer/CurrentStatChanges" instance=ExtResource("3_d8e8f")]
 layout_mode = 2
 
+[node name="PreviewCard" parent="." instance=ExtResource("9_rm3wo")]
+unique_name_in_owner = true
+offset_left = 628.0
+offset_top = 412.0
+offset_right = 798.0
+offset_bottom = 678.0
+
 [node name="CardFlavour" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -198,29 +196,28 @@ grow_vertical = 2
 
 [node name="CardFlavourUnderlay" type="TextureRect" parent="CardFlavour"]
 layout_mode = 0
-offset_left = -568.0
-offset_top = 318.0
-offset_right = 108.0
-offset_bottom = 446.0
-texture = ExtResource("3_ksjhc")
+offset_left = -716.0
+offset_top = 280.0
+offset_right = 289.0
+offset_bottom = 541.0
+texture = ExtResource("8_61u2l")
 
 [node name="CardFlavourText" type="Label" parent="CardFlavour"]
 layout_mode = 0
-offset_left = -568.0
-offset_top = 350.0
-offset_right = 108.0
-offset_bottom = 446.0
+offset_left = -478.0
+offset_top = 386.0
+offset_right = 33.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0.117647, 0.0196078, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.858824, 0.643137, 0.572549)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_1xmqd")
+theme_override_font_sizes/font_size = 55
 text = "Card Flavour
 Card Flavour"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="PreviewCard" parent="." instance=ExtResource("9_rm3wo")]
-unique_name_in_owner = true
-offset_left = 628.0
-offset_top = 412.0
-offset_right = 798.0
-offset_bottom = 678.0
+autowrap_mode = 2
 
 [node name="SwitchCondition" type="Control" parent="."]
 z_index = 2
@@ -282,9 +279,9 @@ offset_top = 32.0
 offset_right = -32.0
 offset_bottom = 96.0
 grow_horizontal = 0
-texture_normal = ExtResource("7_sk6p5")
-texture_pressed = SubResource("GradientTexture2D_6q5c5")
-texture_hover = SubResource("GradientTexture2D_4ncu2")
+texture_normal = ExtResource("11_6uiwl")
+texture_pressed = ExtResource("13_6mpdr")
+texture_hover = ExtResource("12_tp7it")
 
 [connection signal="button_down" from="SwitchCondition/SwitchButton" to="." method="_on_switch_button_button_down"]
 [connection signal="button_down" from="CloseWindowButton" to="." method="_on_close_window_button_button_down"]

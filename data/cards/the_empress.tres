@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cpxcddsxlgqw6" path="res://data/keyword/DrainATK1.tres" id="2_q44ni"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_y1dfv"]
 [ext_resource type="Resource" uid="uid://d23xhdftbeivr" path="res://data/keyword/attack_damage_switch7.tres" id="4_q3s6c"]
-[ext_resource type="AudioStream" uid="uid://cuhllynyw5t2u" path="res://assets/sounds/cards/voices/the_empress.ogg" id="6_lw6mj"]
+[ext_resource type="AudioStream" uid="uid://baqpk48a6vq5x" path="res://Audio/Signatures/SignatureEmpress.ogg" id="6_wmc1s"]
 
 [resource]
 script = ExtResource("2_hwoqx")
@@ -19,5 +19,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("6_lw6mj")
+sound_effect = ExtResource("6_wmc1s")
 keyword_slot_texture = ExtResource("2_y1dfv")

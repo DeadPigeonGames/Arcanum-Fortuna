@@ -1,6 +1,6 @@
 extends Node
 
-@export var SFX_CardSignature: AudioStream
+#@export var SFX_CardSignature: AudioStream
 
 const SFX_CardPickUp = preload("res://Audio/Card/CardPickUp.ogg")
 const SFX_CardPutDown = preload("res://Audio/Card/CardPutDown.ogg")
@@ -36,11 +36,6 @@ func _SFX_PutDown():
 	
 	_SFX_Signature()
 
-func _SFX_Signature():
-	$Signature.set_stream(SFX_CardSignature)
-	$Signature/SignatureTimer.start()
-
-
 
 func _SFX_Attack():
 	#Want to implement "Does card die from this attack? then, CardAttack2.ogg, otherwise, CardAttack1.ogg"
@@ -64,10 +59,16 @@ func _SFX_SetLoopProps(speed, mousePos):
 func _SFX_HandCardHover():
 	$HandHover.play()
 
+func _SFX_KarmaBlip():
 	$KarmaPlayerDroplet.play()
 	$KarmaPlayerDroplet.set_pitch_scale(0.5*sqrt(dropletScaler)+1)
 	dropletScaler += 1
-	
+
+func _SFX_Signature():
+	#print_debug(get_parent().sound_effect)
+	var signatureSFX = get_parent().card_data.sound_effect
+	$Signature.set_stream(signatureSFX)
+	$Signature/SignatureTimer.start()
 
 func _on_signature_timer_timeout():
 	$Signature.play()

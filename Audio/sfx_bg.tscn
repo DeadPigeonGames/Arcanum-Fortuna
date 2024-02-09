@@ -11,12 +11,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_h5q58")
+currentMapType = 1
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rqkcx")
 bus = &"BackgroundFX"
 
+[node name="Ambience2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rqkcx")
+bus = &"BackgroundFX"
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hof6i")
+volume_db = -6.0
+bus = &"Music"
+
+[node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hof6i")
 volume_db = -6.0
 bus = &"Music"
