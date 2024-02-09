@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=28 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://cof5lb3kf7g0w" path="res://assets/sprites/keywords/kw_switch_2.png" id="2_unu64"]
@@ -11,12 +11,37 @@
 [ext_resource type="FontFile" uid="uid://c8tjrdvbc5hnb" path="res://assets/ui/fonts/Old_Englished_Boots.ttf" id="9_1xmqd"]
 [ext_resource type="PackedScene" uid="uid://jfsadju3ylrq" path="res://systems/card_combat/cards/preview_card.tscn" id="9_rm3wo"]
 [ext_resource type="Texture2D" uid="uid://bn208w4go5iai" path="res://assets/ui/underlays/stat_change_underlay.png" id="9_vlt6i"]
+[ext_resource type="Shader" path="res://shaders/sway.gdshader" id="10_a8mqj"]
 [ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="11_6uiwl"]
+[ext_resource type="Texture2D" uid="uid://dfr4uqw6jr3sn" path="res://assets/ui/underlays/stat_change_underlay_2.png" id="11_u5ssy"]
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="12_tp7it"]
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="13_6mpdr"]
 [ext_resource type="Texture2D" uid="uid://brmabqhg6pwau" path="res://assets/ui/underlays/awaken_overlay.png" id="13_oiaxd"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="14_s103n"]
+[ext_resource type="Texture2D" uid="uid://bc2u3mwwf3ibl" path="res://assets/ui/underlays/awaken_overlay_2.png" id="16_r327o"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_muo8s"]
+shader = ExtResource("10_a8mqj")
+shader_parameter/speed = 0.5
+shader_parameter/minStrength = 0.4
+shader_parameter/maxStrength = 1.0
+shader_parameter/strengthScale = 15.0
+shader_parameter/interval = 0.0
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n1gww"]
+shader = ExtResource("10_a8mqj")
+shader_parameter/speed = 0.5
+shader_parameter/minStrength = 0.4
+shader_parameter/maxStrength = 1.0
+shader_parameter/strengthScale = 50.0
+shader_parameter/interval = 0.0
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = 1.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt7uj"]
 bg_color = Color(0.0784314, 0.631373, 0.592157, 1)
@@ -157,6 +182,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_vlt6i")
 
+[node name="StatChangeUnderlay2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_muo8s")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -774.0
+offset_top = -280.0
+offset_right = -435.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_u5ssy")
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -260,6 +301,15 @@ offset_top = 142.0
 offset_right = 706.0
 offset_bottom = 546.0
 texture = ExtResource("13_oiaxd")
+
+[node name="SwitchConditionUnderlay2" type="TextureRect" parent="SwitchCondition"]
+material = SubResource("ShaderMaterial_n1gww")
+layout_mode = 0
+offset_left = -82.0
+offset_top = 142.0
+offset_right = 706.0
+offset_bottom = 546.0
+texture = ExtResource("16_r327o")
 
 [node name="SwitchButton" type="Button" parent="SwitchCondition"]
 unique_name_in_owner = true
