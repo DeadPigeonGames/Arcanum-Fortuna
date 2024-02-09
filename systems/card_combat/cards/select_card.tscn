@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxphpuocbhbrg"]
+[gd_scene load_steps=9 format=3 uid="uid://dxphpuocbhbrg"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/select_card.gd" id="1_gup87"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_xraf4"]
 [ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="3_1n1oj"]
+[ext_resource type="PackedScene" uid="uid://bncdhusoiqqcj" path="res://systems/ui/menus/card_inspection.tscn" id="3_dhfid"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="4_0aol1"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vw3vf"]
@@ -27,6 +28,7 @@ shader_parameter/noise = SubResource("NoiseTexture2D_68116")
 [node name="SelectCard" instance=ExtResource("1_xraf4")]
 scale = Vector2(1.28, 1.28)
 script = ExtResource("1_gup87")
+inspection = ExtResource("3_dhfid")
 
 [node name="selected" type="ColorRect" parent="." index="0"]
 unique_name_in_owner = true
@@ -43,8 +45,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.968627, 0.509804, 0, 1)
 
-[node name="SingletonInteractor" parent="." index="9" instance=ExtResource("4_0aol1")]
+[node name="SingletonInteractor2" parent="." index="9" instance=ExtResource("4_0aol1")]
 singleton = 1
 method_to_call = "_SFX_HandCardHover"
 
 [connection signal="mouse_entered" from="." to="SingletonInteractor" method="execute"]
+
+[editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]

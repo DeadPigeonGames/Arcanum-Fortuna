@@ -5,6 +5,7 @@ extends ActivatedKeyword
 @export var attack_debuff := 1
 @export var health_debuff := 0
 
+var debuff_lookup : Dictionary = {}
 var debuffed_cards_lookup : Dictionary = {}
 
 
@@ -43,7 +44,7 @@ func append_biggest_attack_target(owner, targets, opposing_cards):
 	for card : CombatCard in opposing_cards:
 		var attack = card.attack
 		if owner in debuffed_cards_lookup and card in debuffed_cards_lookup[owner]:
-			attack += attack_debuff
+			attack -= attack_debuff
 		if attack > highest_attack:
 			target = card
 	if target != null:
@@ -59,15 +60,14 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	
 	if not debuffed_cards_lookup.has(owner):
 		debuffed_cards_lookup[owner] = []
+		debuff_lookup[owner] = Buff.new(-attack_debuff, -health_debuff, self, owner)
 	
 	for card in debuffed_cards_lookup[owner]:
 		if is_instance_valid(card):
-			card.attack += attack_debuff
-			card.health += health_debuff
+			card.try_remove_buff(debuff_lookup[owner])
 	if owner.health <= 0:
 		print("[Keyword] Card " + str(owner) + " died and removed their Debuff.")
 		return
 	for card : CombatCard in target:
-		card.attack -= attack_debuff
-		card.health -= health_debuff
+		card.try_add_buff(debuff_lookup[owner])
 	debuffed_cards_lookup[owner] = target

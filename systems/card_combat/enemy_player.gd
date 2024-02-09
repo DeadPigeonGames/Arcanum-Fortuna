@@ -20,8 +20,7 @@ var health := 20 :
 var max_health
 var karma = 0
 
-var stored_health_buff := 0
-var stored_attack_buff := 0
+var stored_buffs : Array[Buff]
 
 
 func init(enemy_data):
@@ -51,11 +50,17 @@ func calc_card_placements() -> Array[EnemyBrain.CardPlacement]:
 	return data.brain.calc_card_placements()
 
 
+func try_add_stored_buff(buff : Buff) -> bool:
+	if buff in stored_buffs:
+		return false
+	stored_buffs.push_back(buff)
+	return true
+
+
 func transfer_stored_buffs(card: CombatCard):
-	card.health += stored_health_buff
-	card.attack += stored_attack_buff
-	stored_attack_buff = 0
-	stored_health_buff = 0
+	for buff in stored_buffs:
+		card.try_add_buff(buff)
+	stored_buffs.clear()
 
 
 #region damage function

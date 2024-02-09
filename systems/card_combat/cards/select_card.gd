@@ -8,7 +8,7 @@ var isHovered := false
 var selected := false
 
 @onready var base_scale = scale
-
+@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 
 func _ready():
 	mouse_entered.connect(mouse_entered_event)
@@ -34,5 +34,10 @@ func mouse_exited_event():
 
 
 func _input(event):
+	if is_hovered and event.is_action_pressed("open_inspection"):
+		var new_inspection = inspection.instantiate()
+		new_inspection.init(self)
+		get_parent().get_parent().get_parent().add_child(new_inspection)
+	
 	if isHovered and event.is_action_pressed("pickUpCard"):
 		clicked.emit(self)

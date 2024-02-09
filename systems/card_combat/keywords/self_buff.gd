@@ -24,5 +24,4 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 		push_error("Cannot apply Self-Buff. Invalid target ", owner, ".")
 		return
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered self_buff." % [owner.card_data.name, owner.tile_coordinate.x, owner.tile_coordinate.y])
-	owner.attack += attack_gain
-	owner.health += health_gain
+	owner.try_add_buff(attack_gain, health_gain, self, owner)

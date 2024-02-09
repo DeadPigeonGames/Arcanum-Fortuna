@@ -9,8 +9,6 @@
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
 script = ExtResource("1_3lxv2")
-buff_color = Color(0, 1, 0, 1)
-debuff_color = Color(1, 0, 0, 1)
 delete_material = ExtResource("3_d0i18")
 inspection = ExtResource("4_bfjyx")
 is_auto_flip = false
@@ -24,13 +22,6 @@ highlight_color = Color(0.623529, 0.721569, 0.894118, 1)
 active_color = Color(0.713726, 0.764706, 0.870588, 1)
 move_speed = 0.2
 damage_dealt = ExtResource("5_dk6p8")
-
-[node name="SwitchFrame" parent="Artwork" index="0"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 171.0
-offset_bottom = 257.0
 
 [node name="KarmaCost" parent="Cost" index="0"]
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

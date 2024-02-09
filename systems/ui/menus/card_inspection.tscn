@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=59 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://do32ub6ykpjq4" path="res://assets/ui/placeholders/keyword_description_underlay.png" id="1_mrn7k"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="4_ctvwa"]
 [ext_resource type="Texture2D" uid="uid://dmvf4y1rexuxt" path="res://assets/ui/placeholders/switch_condition_underlay.png" id="5_1tskj"]
 [ext_resource type="Texture2D" uid="uid://2k427t62yypc" path="res://assets/sprites/cards/emperor.png" id="5_l1v7b"]
+[ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="5_xkl1s"]
+[ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_0xrdx"]
 [ext_resource type="Texture2D" uid="uid://ckv3yi4hchdli" path="res://assets/ui/icons/karma_icon_small.png" id="6_hj2xt"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="7_orq47"]
 [ext_resource type="Texture2D" uid="uid://bnfj7t34405xc" path="res://assets/ui/placeholders/close_window_button_default_placeholder.png" id="7_sk6p5"]
@@ -16,12 +18,102 @@
 [ext_resource type="Texture2D" uid="uid://d01gfffwrqcoh" path="res://assets/ui/icons/atk_icon_small.png" id="9_mk0fa"]
 [ext_resource type="FontFile" uid="uid://cbi6wymdty6k2" path="res://assets/ui/fonts/TarotPamelaColmanSmith-Regular.ttf" id="10_2t13i"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="10_k7ab5"]
+[ext_resource type="Texture2D" uid="uid://cxpu2wfsj2ng8" path="res://assets/ui/icons/switch_eye_1.png" id="11_4i5q0"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="11_bmvuh"]
+[ext_resource type="Texture2D" uid="uid://cor7fkv822hhc" path="res://assets/ui/icons/switch_eye_2.png" id="12_v6b12"]
 [ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="13_2ga8s"]
+[ext_resource type="Texture2D" uid="uid://dlq7j4d0ebyye" path="res://assets/ui/icons/switch_eye_3.png" id="13_qyqn6"]
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="14_sl7dj"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="15_mh8ok"]
 [ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="16_5mjjx"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
+[ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="26_w58e4"]
+
+[sub_resource type="Animation" id="Animation_n7fbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_4i5q0")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_uujf5"]
+resource_name = "eye_movement"
+length = 6.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9, 1.7, 2.2, 2.9, 3.6, 4.3),
+"transitions": PackedFloat32Array(1, 2.46229, 1, 1, 1.56917, 2.46229, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.845, 0), Vector2(0, 0), Vector2(-0.745, 0), Vector2(0, 0), Vector2(0.605, -1.445), Vector2(0.132, 2.206), Vector2(0.131522, -0.31413)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.1, 5.3),
+"transitions": PackedFloat32Array(1, 1.51572, 1.51572),
+"update": 1,
+"values": [ExtResource("11_4i5q0"), ExtResource("13_qyqn6"), ExtResource("11_4i5q0")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.1, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oltvv"]
+_data = {
+"RESET": SubResource("Animation_n7fbk"),
+"eye_movement": SubResource("Animation_uujf5")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yop51"]
 atlas = ExtResource("10_k7ab5")
@@ -205,6 +297,211 @@ _data = {
 "die": SubResource("Animation_hnrs5")
 }
 
+[sub_resource type="Animation" id="Animation_aytqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Artwork:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Artwork:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Cost:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Attack:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%KeyWordSlots:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Health:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l2vxh"]
+resource_name = "card_flip"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.02, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, -1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Artwork:visible")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.22962),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Artwork:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.02, 1), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Cost:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Attack:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%KeyWordSlots:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Health:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6v6f"]
+_data = {
+"RESET": SubResource("Animation_aytqs"),
+"card_flip": SubResource("Animation_l2vxh")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt7uj"]
 bg_color = Color(0.0784314, 0.631373, 0.592157, 1)
 corner_radius_top_left = 50
@@ -263,6 +560,9 @@ grow_vertical = 2
 script = ExtResource("1_373cu")
 default_icon = ExtResource("2_unu64")
 switched_icon = ExtResource("18_4f2ee")
+stat_change_scene = ExtResource("3_d8e8f")
+switch_artwork_shader = ExtResource("5_xkl1s")
+switch_keyword_slots = ExtResource("6_0xrdx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -350,6 +650,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CurrentStatChanges" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -441,23 +742,44 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 0
 offset_left = -10.0
-offset_top = -11.0
-offset_right = 161.0
-offset_bottom = 246.0
-scale = Vector2(1.12, 1.12)
+offset_top = -10.0
+offset_right = 175.0
+offset_bottom = 268.0
 texture = ExtResource("9_4jylx")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="PreviewCard/Artwork/SwitchFrame"]
 layout_mode = 0
-offset_left = 56.25
-offset_top = 224.107
-offset_right = 155.25
-offset_bottom = 247.107
+offset_left = 60.5469
+offset_top = 243.638
+offset_right = 159.547
+offset_bottom = 266.638
 theme_override_fonts/font = ExtResource("10_2t13i")
 text = "Yas Queen"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Eyecon" type="TextureRect" parent="PreviewCard/Artwork/SwitchFrame"]
+layout_mode = 0
+offset_left = 81.25
+offset_top = 13.5602
+offset_right = 95.25
+offset_bottom = 27.5602
+texture = ExtResource("11_4i5q0")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="PreviewCard/Artwork/SwitchFrame/Eyecon"]
+layout_mode = 0
+offset_right = 14.0
+offset_bottom = 14.0
+texture = ExtResource("12_v6b12")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PreviewCard/Artwork/SwitchFrame/Eyecon"]
+libraries = {
+"": SubResource("AnimationLibrary_oltvv")
+}
+autoplay = "eye_movement"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PreviewCard"]
 visible = false
@@ -543,6 +865,21 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_6ml0x")
 expand_mode = 1
 
+[node name="BaseHealthLabel" type="Label" parent="PreviewCard/Health"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 13.9766
+offset_top = 11.9531
+offset_right = 53.9766
+offset_bottom = 34.9531
+theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 9
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HealthCost" type="Label" parent="PreviewCard/Health"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -552,6 +889,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_orq47")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 21
 text = "100"
 horizontal_alignment = 1
@@ -567,6 +906,21 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("9_mk0fa")
 expand_mode = 1
 
+[node name="BaseAttackLabel" type="Label" parent="PreviewCard/Attack"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.9179
+offset_top = 19.5937
+offset_right = 52.9179
+offset_bottom = 42.5937
+theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 9
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AttackCost" type="Label" parent="PreviewCard/Attack"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -576,6 +930,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_orq47")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 22
 text = "1"
 horizontal_alignment = 1
@@ -758,6 +1114,23 @@ method_to_call = "_SFX_Damage"
 
 [node name="SFXCard" parent="PreviewCard" instance=ExtResource("16_5mjjx")]
 unique_name_in_owner = true
+
+[node name="Cardback" type="TextureRect" parent="PreviewCard"]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 266.0
+pivot_offset = Vector2(85, 0)
+texture = ExtResource("26_w58e4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CardFlipAnimation" type="AnimationPlayer" parent="PreviewCard/Cardback"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_n6v6f")
+}
 
 [node name="SwitchCondition" type="Control" parent="."]
 z_index = 2

@@ -5,8 +5,6 @@ signal animation_finished
 signal drag_started
 signal drag_ended(card)
 
-@export var buff_color := Color.GREEN
-@export var debuff_color := Color.RED
 @export var delete_material : ShaderMaterial
 @export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 ## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
@@ -31,8 +29,7 @@ var is_deletion_queued := false
 var target_offsets : Array[int] = [0]
 var is_enemy := false
 var tile_coordinate := Vector2i(-1, -1)
-var base_attack : int
-var base_health : int
+
 var placed_position: Vector2
 
 var is_drag_enabled = false
@@ -48,32 +45,8 @@ var is_animating: bool:
 		return __is_animating
 
 
-func set_attack(value):
-	super.set_attack(value)
-	if attack > base_attack:
-		%AttackCost.self_modulate = buff_color
-	elif attack < base_attack:
-		%AttackCost.self_modulate = debuff_color
-	else:
-		%AttackCost.self_modulate = Color.WHITE
-
-
-func set_health(value):
-	super.set_health(value)
-	if health > base_health:
-		%HealthCost.self_modulate = buff_color
-	elif health < base_health:
-		%HealthCost.self_modulate = debuff_color
-	else:
-		%HealthCost.self_modulate = Color.WHITE
-
-
 func setup():
 	super.setup()
-	base_attack = attack
-	base_health = health
-	attack = base_attack
-	health = base_health
 	for keyword_slot in %KeyWordSlots.get_children():
 		keyword_slot.get_child(0).animation_finished.connect(check_if_animations_finished)
 	

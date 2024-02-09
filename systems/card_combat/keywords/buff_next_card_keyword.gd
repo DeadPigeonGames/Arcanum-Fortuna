@@ -25,6 +25,5 @@ func get_target(source, owner, combat = null):
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):
-	target.stored_attack_buff += attack_gain
-	target.stored_health_buff += health_gain
+	target.try_add_stored_buff(Buff.new(attack_gain, health_gain, self, owner))
 	await super(source, owner, target, icon_to_animate, params)
