@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=23 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://cof5lb3kf7g0w" path="res://assets/sprites/keywords/kw_switch_2.png" id="2_unu64"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="12_tp7it"]
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="13_6mpdr"]
 [ext_resource type="Texture2D" uid="uid://brmabqhg6pwau" path="res://assets/ui/underlays/awaken_overlay.png" id="13_oiaxd"]
+[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="14_s103n"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt7uj"]
@@ -108,8 +109,9 @@ texture = ExtResource("8_tt6j0")
 [node name="VBoxContainer" type="VBoxContainer" parent="KeywordDescriptions"]
 layout_mode = 0
 offset_left = 9.0
+offset_top = 23.0
 offset_right = 729.0
-offset_bottom = 368.0
+offset_bottom = 391.0
 theme_override_constants/separation = 0
 
 [node name="Label1" type="RichTextLabel" parent="KeywordDescriptions/VBoxContainer"]
@@ -253,10 +255,10 @@ grow_vertical = 2
 
 [node name="SwitchConditionUnderlay" type="TextureRect" parent="SwitchCondition"]
 layout_mode = 0
-offset_left = -55.0
-offset_top = 141.15
+offset_left = -82.0
+offset_top = 142.0
 offset_right = 706.0
-offset_bottom = 545.15
+offset_bottom = 546.0
 texture = ExtResource("13_oiaxd")
 
 [node name="SwitchButton" type="Button" parent="SwitchCondition"]
@@ -272,16 +274,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_oxnba")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_bhiq8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5midk")
 icon = ExtResource("2_unu64")
+flat = true
 icon_alignment = 1
 
 [node name="Label" type="RichTextLabel" parent="SwitchCondition"]
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 0
-offset_left = 20.0
-offset_top = 182.0
-offset_right = 660.0
-offset_bottom = 274.0
+offset_left = 37.0
+offset_top = 213.0
+offset_right = 685.0
+offset_bottom = 305.0
 size_flags_horizontal = 4
+theme = ExtResource("14_s103n")
 bbcode_enabled = true
 text = "[b]%s -[/b] %s"
 
