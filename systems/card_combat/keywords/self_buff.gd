@@ -4,6 +4,7 @@ extends ActivatedKeyword
 @export var health_gain : int = 0
 @export var attack_gain : int = 1
 
+var buff_lookup := {}
 
 func init():
 	if title.count('%d') == 2:
@@ -24,4 +25,11 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 		push_error("Cannot apply Self-Buff. Invalid target ", owner, ".")
 		return
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered self_buff." % [owner.card_data.name, owner.tile_coordinate.x, owner.tile_coordinate.y])
-	owner.try_add_buff(attack_gain, health_gain, self, owner)
+	
+	if not buff_lookup.has(owner):
+		buff_lookup[owner] = Buff.new(attack_gain, health_gain, self, owner)
+	else:
+		owner.try_remove_buff(buff_lookup[owner])
+		buff_lookup[owner].attack_gain += attack_gain
+		buff_lookup[owner].health_gain += health_gain
+	owner.try_add_buff(buff_lookup[owner])
