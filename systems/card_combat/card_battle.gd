@@ -50,7 +50,7 @@ func _ready():
 		#start_combat()
 	if is_tutorial:
 		await get_tree().process_frame # game_board needs to be ready first lol
-		init(debug_player_data, debug_enemy_data)
+		init(debug_player_data.duplicate(), debug_enemy_data.duplicate())
 		start_combat()
 		enemy.set_health(tutorial_health)
 
