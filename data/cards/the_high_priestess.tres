@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_wr8i2"]
 [ext_resource type="Resource" uid="uid://cvcxsb0int18p" path="res://data/keyword/companionship_shield.tres" id="3_atq2j"]
 [ext_resource type="Resource" uid="uid://dlnqeo3uhjr05" path="res://data/keyword/alive2.1_switch.tres" id="4_1cqx4"]
-[ext_resource type="AudioStream" uid="uid://bqbc1gd2th44n" path="res://assets/sounds/cards/voices/the_high_priestess.ogg" id="4_es0g3"]
+[ext_resource type="AudioStream" uid="uid://d4hs5lvjjk6ol" path="res://Audio/Signatures/SignatureHighPriestess.ogg" id="6_vk1q7"]
 
 [resource]
 script = ExtResource("2_ako5p")
@@ -19,5 +19,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("4_es0g3")
+sound_effect = ExtResource("6_vk1q7")
 keyword_slot_texture = ExtResource("2_wr8i2")

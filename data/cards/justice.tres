@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://cla7wpd2pd8cb" path="res://data/keyword/atk_nerf1.tres" id="3_ss65f"]
 [ext_resource type="Resource" uid="uid://s0ldta5qu4fp" path="res://data/keyword/atk_nerf_in_front1.tres" id="4_riuec"]
 [ext_resource type="Resource" uid="uid://d31srswsakyk8" path="res://data/keyword/switch_take_damage_amount4.tres" id="5_raaom"]
-[ext_resource type="AudioStream" uid="uid://j2hqp74k7iil" path="res://assets/sounds/cards/voices/justice.ogg" id="5_t8y6f"]
+[ext_resource type="AudioStream" uid="uid://b2m6qfa85ckgx" path="res://Audio/Signatures/SignatureJustice.ogg" id="7_rt200"]
 
 [resource]
 script = ExtResource("2_fwtl7")
@@ -20,5 +20,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 10
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("5_t8y6f")
+sound_effect = ExtResource("7_rt200")
 keyword_slot_texture = ExtResource("2_gk1bb")

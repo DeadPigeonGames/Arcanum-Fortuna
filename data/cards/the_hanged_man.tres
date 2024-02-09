@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_caw47"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_2bxhi"]
 [ext_resource type="Resource" uid="uid://l23udqkfbm1c" path="res://data/keyword/slow.tres" id="3_xontg"]
-[ext_resource type="AudioStream" uid="uid://d3ruga1nroy5h" path="res://assets/sounds/cards/voices/the_hanged_man.ogg" id="4_5odmf"]
 [ext_resource type="Resource" uid="uid://chpr5uue01ill" path="res://data/keyword/shield.tres" id="4_8bxm5"]
 [ext_resource type="Resource" uid="uid://cknfremw2x1w5" path="res://data/keyword/switch_karma_count10.tres" id="5_o4021"]
+[ext_resource type="AudioStream" uid="uid://bl5tjfoo7lk2l" path="res://Audio/Signatures/SignatureHangedMan.ogg" id="7_xplyn"]
 
 [resource]
 script = ExtResource("1_caw47")
@@ -20,5 +20,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 20
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("4_5odmf")
+sound_effect = ExtResource("7_xplyn")
 keyword_slot_texture = ExtResource("2_2bxhi")

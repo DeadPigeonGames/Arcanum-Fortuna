@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_340qs"]
 [ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="2_nat0g"]
 [ext_resource type="Resource" uid="uid://clej2ss56ddog" path="res://data/keyword/switch_player_hp20.tres" id="4_aka0q"]
-[ext_resource type="AudioStream" uid="uid://17snb76pndmu" path="res://assets/sounds/cards/voices/death.ogg" id="4_xmg1h"]
+[ext_resource type="AudioStream" uid="uid://b3geylsb3okyg" path="res://Audio/Signatures/SignatureDeath.ogg" id="6_f4hdl"]
 
 [resource]
 script = ExtResource("2_4eh3m")
@@ -19,5 +19,5 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([Ext
 spawn_frequency = 20
 shop_cost = 5
 trade_override = 0
-sound_effect = ExtResource("4_xmg1h")
+sound_effect = ExtResource("6_f4hdl")
 keyword_slot_texture = ExtResource("2_340qs")

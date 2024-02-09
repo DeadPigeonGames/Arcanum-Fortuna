@@ -77,9 +77,9 @@ func setup():
 	for keyword_slot in %KeyWordSlots.get_children():
 		keyword_slot.get_child(0).animation_finished.connect(check_if_animations_finished)
 	
-	if card_data.sound_effect:
-		%SFXCard.SFX_CardSignature = card_data.sound_effect
-		%SFXCard._SFX_Signature()
+	#if card_data.sound_effect:
+		#%SFXCard.SFX_CardSignature = card_data.sound_effect
+		#%SFXCard._SFX_Signature()
 
 
 func make_enemy():

@@ -144,6 +144,7 @@ bus = &"VFX"
 
 [node name="UiButtonHover" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_6ga3n")
+max_polyphony = 4
 bus = &"UI"
 
 [node name="UiButtonPress" type="AudioStreamPlayer" parent="."]
