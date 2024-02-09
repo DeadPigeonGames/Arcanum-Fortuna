@@ -169,7 +169,8 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	if was_lethal:
 		if was_target_player:
 			finished.emit(player.health)
-			is_battle_over = true
+			if not is_tutorial:
+				is_battle_over = true
 		else:
 			await _on_active_cards_changed(target)
 			await target.trigger_keywords(attacker, target, ActivatedKeyword.Triggers.ON_DEATH, self)
