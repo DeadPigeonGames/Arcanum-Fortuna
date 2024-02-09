@@ -16,6 +16,8 @@ extends ActivatedKeyword
 
 
 func init():
+	icon = load("res://assets/sprites/keywords/kw_switch_1.png")
+	emission_icon = load("res://assets/sprites/keywords/kw_switch_1.png")
 	if not self in keywords_to_remove:
 		keywords_to_remove.append(self)
 
@@ -27,11 +29,11 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 		return
 	# owner.keywords.erase(self)
 	await animate_transform(owner, icon_to_animate)
-	owner.modifiy_keywords(keywords_to_remove, keywords_to_gain)
-	owner.health += health_difference
-	owner.health = max(1, owner.health)
-	owner.attack += attack_difference
+	owner.modify_keywords(keywords_to_remove, keywords_to_gain)
+	owner.try_add_buff(Buff.new(attack_difference, health_difference, self, owner))
 	await owner.get_tree().create_timer(1.0).timeout
+	await owner.trigger_keywords(owner, owner, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED)
+	
 	
 
 

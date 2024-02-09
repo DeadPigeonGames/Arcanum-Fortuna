@@ -17,9 +17,11 @@ var player_data : PlayerData
 
 @export_category("Debug")
 @export var show_current_phase_text := true
-@export var is_debug : bool
+#@export var is_debug : bool
+@export var is_tutorial : bool #sorry....
+@export var tutorial_health := 7
 @export var debug_player_data : PlayerData
-@export var debug_enemy_data : DebugEnemyData
+@export var debug_enemy_data : EnemyData
 
 @onready var game_board : GameBoard = $GameBoard
 @onready var player : CardPlayer = $CardPlayer
@@ -42,10 +44,15 @@ func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
-	if is_debug:
+	#if is_debug:
+		#await get_tree().process_frame # game_board needs to be ready first lol
+		#init(debug_player_data, debug_enemy_data)
+		#start_combat()
+	if is_tutorial:
 		await get_tree().process_frame # game_board needs to be ready first lol
-		init(debug_player_data, debug_enemy_data)
+		init(debug_player_data.duplicate(), debug_enemy_data.duplicate())
 		start_combat()
+		enemy.set_health(tutorial_health)
 
 
 func _exit_tree():
@@ -143,6 +150,8 @@ func _on_end_turn_button_pressed():
 
 func handle_attacks(attacker, column, is_source_friendly):
 	for offset in await attacker.get_target_offsets():
+		if not is_instance_valid(attacker):
+			break
 		await try_attack(attacker, column + offset, is_source_friendly)
 
 
@@ -156,14 +165,25 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	
 	var target = game_board.get_target(column_idx, friendly)
 	var was_target_player = target is CardPlayer or target is EnemyPlayer
-	if await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly)):
+	var was_lethal = await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly))
+	if was_lethal:
 		if was_target_player:
 			finished.emit(player.health)
-			is_battle_over = true
+			if not is_tutorial:
+				is_battle_over = true
 		else:
 			await _on_active_cards_changed(target)
-			await target.trigger_keywords(attacker, target, 8, self)
+			await target.trigger_keywords(attacker, target, ActivatedKeyword.Triggers.ON_DEATH, self)
 			await target.process_death()
+	else:
+		target.restore_default_color()
+	if attacker.health <= 0:
+		await _on_active_cards_changed(attacker)
+		await attacker.trigger_keywords(target, attacker, ActivatedKeyword.Triggers.ON_DEATH, self)
+		await attacker.process_death()
+	else:
+		attacker.restore_default_color()
+	
 	game_board.end_tile_highlight(column_idx, friendly)
 	await get_tree().process_frame
 	return true

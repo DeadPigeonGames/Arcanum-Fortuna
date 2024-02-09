@@ -8,20 +8,18 @@ extends ActivatedKeyword
 @export var enable_debug_print = false
 
 var previous_health_gained := 0
-var base_decription := ""
-var granted_bufffs : Dictionary = {}
+var buff_lookup : Dictionary = {}
 
 func init():
 	if description.count('%d') == 1:
-		base_decription = description
 		description = description % health_gain
 	super.init()
 
 
 func get_dynamic_description(owner: Card):
-	if not owner in granted_bufffs:
+	if not owner in buff_lookup:
 		return ""
-	return " (%d)" % (granted_bufffs[owner] / health_gain)
+	return " (%d)" % (buff_lookup[owner].health_gain / health_gain)
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):
@@ -33,23 +31,13 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	if enable_debug_print:
 		print("Health Drain triggered on ", target.card_name)
 	var hit_count = 0
-	if not granted_bufffs.has(owner):
-		granted_bufffs[owner] = 0
+	if not buff_lookup.has(owner):
+		buff_lookup[owner] = Buff.new(0, health_gain, self, owner)
 	else:
-		target.health -= granted_bufffs[owner]
-		granted_bufffs[owner] = 0 
+		target.try_remove_buff(buff_lookup[owner])
 	for card : CombatCard in params.active_cards:
 		if enable_debug_print:
 			print("Card '" + card.card_name + "' costs " + str(card.cost))
 		if card.cost > 0 and (!scale_from_same_side_only or card.is_enemy == owner.is_enemy):
 			hit_count += 1
-			var print_str = str(granted_bufffs[owner])
-			granted_bufffs[owner] += health_gain
-			if enable_debug_print:
-				print(print_str + " + " + str(health_gain) + " = " + str(granted_bufffs[owner]))
-	if enable_debug_print:
-		print(str(target.health) + " => " + str(target.health + granted_bufffs[owner]))
-	target.health = max(1, target.health + granted_bufffs[owner])
-	if base_decription.count('%d') < 2:
-		base_decription += " (%d)"
-	description = base_decription % [health_gain, hit_count]
+	target.try_add_buff(buff_lookup[owner])

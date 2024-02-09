@@ -42,5 +42,4 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	if target == null:
 		return
 	for card in target:
-		card.attack += attack_gain
-		card.health += health_gain
+		card.try_add_buff(Buff.new(attack_gain, health_gain, self, owner))

@@ -35,4 +35,4 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	if target == null:
 		return
 	for card : CombatCard in target:
-		card.health += health_gain_amount
+		card.try_add_buff(Buff.new(0, health_gain_amount, self, owner))

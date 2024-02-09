@@ -4,6 +4,7 @@ extends Card
 signal clicked(card: ShopCard)
 
 @export var discount := 0.3
+@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 
 var is_trade_card := false
 var hovered := false
@@ -37,5 +38,10 @@ func _process(delta):
 
 
 func _gui_input(event):
+	if is_hovered and event.is_action_pressed("open_inspection"):
+		var new_inspection = inspection.instantiate()
+		new_inspection.init(self)
+		get_parent().get_parent().get_parent().get_parent().get_parent().add_child(new_inspection)
+	
 	if event.is_action("pickUpCard"):
 		clicked.emit(self)

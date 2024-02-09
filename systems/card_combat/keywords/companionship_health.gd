@@ -3,6 +3,7 @@ extends ActivatedKeyword
 
 @export var health_gain = 1
 
+var buff_lookup : Dictionary = {}
 var buffed_cards_lookup : Dictionary = {}
 
 
@@ -37,15 +38,16 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	GlobalLog.add_entry("Card '%s' at position %d-%d triggered Companionship Health." % [owner.card_data.name, owner.tile_coordinate.x, owner.tile_coordinate.y])
 	
 	if not buffed_cards_lookup.has(owner):
+		buff_lookup[owner] = Buff.new(0, health_gain, self, owner)
 		buffed_cards_lookup[owner] = []
 	
 	if owner.health <= 0:
 		print("[Keyword] Card " + str(owner) + " died and removed their Companionship Health.")
 		for card in buffed_cards_lookup[owner]:
 			if is_instance_valid(card):
-				card.health = max(1, card.health - health_gain)
+				card.try_remove_buff(buff_lookup[owner])
 		return
 	for card : CombatCard in target:
 		if not card in buffed_cards_lookup[owner]:
-			card.health += health_gain
+			card.try_add_buff(buff_lookup[owner])
 	buffed_cards_lookup[owner] = target

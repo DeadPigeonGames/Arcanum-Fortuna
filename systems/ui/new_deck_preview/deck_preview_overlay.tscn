@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cbsn1r2h288lq"]
+[gd_scene load_steps=25 format=3 uid="uid://cbsn1r2h288lq"]
 
 [ext_resource type="Texture2D" uid="uid://ch1ct0w4v6y7x" path="res://assets/ui/placeholders/deck_preview_underlay_placeholder.png" id="1_nn6al"]
 [ext_resource type="Texture2D" uid="uid://bf3aasd15g4xc" path="res://assets/ui/placeholders/deck_preview_title_underlay_placeholder.png" id="2_wh8bo"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://byqxco0m7v684" path="res://assets/ui/placeholders/sort_by_health_button_hover_placeholder.png" id="10_b62fb"]
 [ext_resource type="Texture2D" uid="uid://bnfj7t34405xc" path="res://assets/ui/placeholders/close_window_button_default_placeholder.png" id="12_g6vk7"]
 [ext_resource type="PackedScene" uid="uid://cecd2obec3kr0" path="res://systems/ui/new_deck_preview/player_deck.tscn" id="12_odq63"]
+[ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="14_iayku"]
+[ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="15_hea4m"]
+[ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="16_y70wc"]
 
 [sub_resource type="Gradient" id="Gradient_0nagi"]
 colors = PackedColorArray(0.215686, 0.352941, 0.462745, 1, 0.215686, 0.352941, 0.462745, 1)
@@ -294,3 +297,37 @@ texture_hover = SubResource("GradientTexture2D_tixtj")
 libraries = {
 "": SubResource("AnimationLibrary_4nkvf")
 }
+
+[node name="SelectCardsToBurnShopButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 624.0
+offset_top = -192.0
+offset_right = 944.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("14_iayku")
+texture_pressed = ExtResource("15_hea4m")
+texture_hover = ExtResource("16_y70wc")
+
+[node name="Label" type="Label" parent="SelectCardsToBurnShopButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+horizontal_alignment = 1
+vertical_alignment = 1

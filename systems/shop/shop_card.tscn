@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3n1r6lr76psq"]
+[gd_scene load_steps=9 format=3 uid="uid://c3n1r6lr76psq"]
 
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_quohb"]
 [ext_resource type="Script" path="res://systems/shop/shop_card.gd" id="2_xx82y"]
+[ext_resource type="PackedScene" uid="uid://bncdhusoiqqcj" path="res://systems/ui/menus/card_inspection.tscn" id="3_elk3o"]
 [ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="3_i50oa"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ibg53"]
@@ -33,6 +34,7 @@ corner_radius_bottom_left = 64
 [node name="ShopCard" instance=ExtResource("1_quohb")]
 script = ExtResource("2_xx82y")
 discount = 0.3
+inspection = ExtResource("3_elk3o")
 
 [node name="selected" type="ColorRect" parent="." index="0"]
 unique_name_in_owner = true
@@ -73,3 +75,5 @@ grow_vertical = 2
 text = "24"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
