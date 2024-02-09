@@ -44,8 +44,11 @@ func append_biggest_attack_target(owner, targets, opposing_cards):
 	for card : CombatCard in opposing_cards:
 		var attack = card.attack
 		if owner in debuffed_cards_lookup and card in debuffed_cards_lookup[owner]:
-			attack -= attack_debuff
+			for buff in card.buffs:
+				if buff.created_by is DebuffKeyword:
+					attack -= buff.attack_gain
 		if attack > highest_attack:
+			highest_attack = attack
 			target = card
 	if target != null:
 		targets.append(target)
@@ -53,10 +56,11 @@ func append_biggest_attack_target(owner, targets, opposing_cards):
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	await super(source, owner, target, icon_to_animate, params)
-	GlobalLog.add_entry("Card '%s' at position %d-%d triggered '%s'." % [owner.card_data.name, owner.tile_coordinate.x, owner.tile_coordinate.y, title])
 	
 	if target == null:
 		return
+	
+	GlobalLog.add_entry("Card '%s' at position %d-%d triggered '%s'." % [owner.card_data.name, owner.tile_coordinate.x, owner.tile_coordinate.y, title])
 	
 	if not debuffed_cards_lookup.has(owner):
 		debuffed_cards_lookup[owner] = []

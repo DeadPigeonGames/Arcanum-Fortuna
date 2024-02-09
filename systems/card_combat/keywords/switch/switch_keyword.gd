@@ -14,6 +14,8 @@ extends ActivatedKeyword
 @export var rotation_duration = 0.8
 @export var icon_rotation = 1.0
 
+var combat_ref : CardBattle
+
 
 func init():
 	icon = load("res://assets/sprites/keywords/kw_switch_1.png")
@@ -21,6 +23,8 @@ func init():
 	if not self in keywords_to_remove:
 		keywords_to_remove.append(self)
 
+func get_target(source, owner, combat = null):
+	combat_ref = combat
 
 func _on_completed(owner : CombatCard, icon_to_animate = null):
 	if not self in owner.keywords:
@@ -32,7 +36,7 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 	owner.modify_keywords(keywords_to_remove, keywords_to_gain)
 	owner.try_add_buff(Buff.new(attack_difference, health_difference, self, owner))
 	await owner.get_tree().create_timer(1.0).timeout
-	await owner.trigger_keywords(owner, owner, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED)
+	await owner.trigger_keywords(owner, owner, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, combat_ref)
 	
 	
 

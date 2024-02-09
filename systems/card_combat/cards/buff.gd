@@ -26,9 +26,9 @@ func get_creator_name():
 
 func add_stats(to : Card):
 	to.health = max(1, to.health + health_gain)
-	to.attack = max(0, to.attack + attack_gain)
+	to.attack += attack_gain
 
 
 func remove_stats(from : Card):
 	from.health = max(1, from.health - health_gain)
-	from.attack = max(0, from.attack - attack_gain)
+	from.attack -= attack_gain
