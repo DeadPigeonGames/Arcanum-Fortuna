@@ -13,6 +13,7 @@ anchors_preset = 0
 script = ExtResource("1_oxt10")
 
 [node name="StatChangeUnderlay" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
