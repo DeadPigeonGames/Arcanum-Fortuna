@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cn4qyopwfekb7" path="res://assets/sprites/cards/switch_frame.png" id="3_yfn4l"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="4_3aln2"]
 [ext_resource type="FontFile" uid="uid://cbi6wymdty6k2" path="res://assets/ui/fonts/TarotPamelaColmanSmith-Regular.ttf" id="4_5tth2"]
-[ext_resource type="Texture2D" uid="uid://cxpu2wfsj2ng8" path="res://assets/ui/icons/switch_eye_1.png" id="5_f07ua"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/switch_eye_1.png" id="5_f07ua"]
 [ext_resource type="Texture2D" uid="uid://c0ow1gj3wun8a" path="res://assets/ui/icons/hp_icon_small.png" id="5_k0ofd"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="6_4kaqf"]
-[ext_resource type="Texture2D" uid="uid://cor7fkv822hhc" path="res://assets/ui/icons/switch_eye_2.png" id="6_atgve"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/switch_eye_2.png" id="6_atgve"]
 [ext_resource type="Texture2D" uid="uid://d01gfffwrqcoh" path="res://assets/ui/icons/atk_icon_small.png" id="6_xx4u4"]
-[ext_resource type="Texture2D" uid="uid://dlq7j4d0ebyye" path="res://assets/ui/icons/switch_eye_3.png" id="7_acmtm"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/switch_eye_3.png" id="7_acmtm"]
 [ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="8_coke3"]
 [ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
@@ -276,6 +276,45 @@ tracks/0/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_4to6p"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.785398]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.125, 0.125)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_hnrs5"]
 resource_name = "die"
 length = 0.75
@@ -340,45 +379,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_4to6p"]
-resource_name = "die"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, -0.785398]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.125, 0.125)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wrceq"]
