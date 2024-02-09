@@ -7,8 +7,6 @@ signal drag_ended(card)
 
 @export var delete_material : ShaderMaterial
 @export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
-## If enabled enemy cards will flip (switch attack and health) when spawning with 0 Attack and having no way to increase it
-@export var is_auto_flip = false
 @export_category("Animation Settings")
 @export var attack_speed = 0.2
 @export var attack_rewind = 0.3
@@ -57,10 +55,6 @@ func setup():
 
 func make_enemy():
 	is_enemy = true
-	#$Cost.hide()
-	if is_auto_flip and attack == 0 and keywords.filter(func(keyword): 
-			return keyword is Drain or keyword is Flip or keyword is ATK_Drain).size() == 0:
-		flip()
 
 
 func trigger_keywords(source, owner, trigger : int, combat = null, params = {}):
@@ -74,21 +68,6 @@ func trigger_keywords(source, owner, trigger : int, combat = null, params = {}):
 func check_if_animations_finished():
 	if not is_animating:
 		animation_finished.emit()
-
-
-func flip():
-	%Artwork.flip_h = !%Artwork.flip_h
-	var flipped_name = ""
-	for c in card_name:
-		flipped_name = flipped_name.insert(0, c)
-	card_name = flipped_name
-	var health_transfer = health
-	health = attack
-	attack = health_transfer
-	#cost = -cost
-	%KarmaCost.text = str(cost)
-	%AttackCost.text = str(attack)
-	%HealthCost.text = str(health)
 
 
 func reverse():

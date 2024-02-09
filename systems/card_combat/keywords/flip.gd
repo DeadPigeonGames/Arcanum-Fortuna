@@ -5,17 +5,29 @@ extends ActivatedKeyword
 @export var rotation_duration = 0.8
 @export var icon_rotation = 1.0
 
+var buff_lookup := {}
+
 func init():
 	super.init()
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):
-	if not target.has_method("flip"):
-		push_error("Keyword Flip was triggered from ", source, \
-		", but target '", target, "' has no flip method!")
-		return
 	await super(source, owner, target, icon_to_animate, params)
-
+	
+	if not buff_lookup.has(owner):
+		buff_lookup[owner] = Buff.new(0, 0, self, owner)
+	else:
+		buff_lookup[owner].attack_gain = 0
+		buff_lookup[owner].health_gain = 0
+		owner.try_remove_buff(buff_lookup[owner])
+	var health_transfer = owner.health
+	var health_target = owner.attack
+	var attack_target = health_transfer
+	buff_lookup[owner].attack_gain = attack_target - owner.attack
+	buff_lookup[owner].health_gain = health_target - owner.health
+	owner.try_add_buff(buff_lookup[owner])
+	
+	await owner.get_tree().create_timer(rotation_duration / 2).timeout
 
 func animate(source, target, icon_to_animate, params={}):
 	if not target is Card:
@@ -41,6 +53,4 @@ func animate(source, target, icon_to_animate, params={}):
 	tween.tween_property(card, "scale", Vector2.ONE, rotation_duration / 2.0)
 	tween.finished.connect(func(): icon_to_animate.is_animating = false)
 	tween.play()
-	await card.get_tree().create_timer(rotation_duration / 2).timeout
-	target.flip()
 	await card.get_tree().create_timer(rotation_duration / 2).timeout

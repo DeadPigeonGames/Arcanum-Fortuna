@@ -34,7 +34,7 @@ func _ready():
 
 func set_attack(value):
 	attack = value
-	%AttackCost.text = str(attack)
+	%AttackCost.text = str(max(0, attack))
 	if attack > base_attack:
 		%AttackCost.self_modulate = buff_color
 	elif attack < base_attack:

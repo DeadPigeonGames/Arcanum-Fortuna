@@ -11,7 +11,6 @@
 script = ExtResource("1_3lxv2")
 delete_material = ExtResource("3_d0i18")
 inspection = ExtResource("4_bfjyx")
-is_auto_flip = false
 attack_speed = 0.2
 attack_rewind = 0.3
 attack_delay = 0.5
