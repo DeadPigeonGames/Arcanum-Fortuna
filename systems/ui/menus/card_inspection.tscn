@@ -1,18 +1,20 @@
-[gd_scene load_steps=20 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=22 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
-[ext_resource type="Texture2D" uid="uid://do32ub6ykpjq4" path="res://assets/ui/placeholders/keyword_description_underlay.png" id="1_mrn7k"]
 [ext_resource type="Texture2D" uid="uid://cof5lb3kf7g0w" path="res://assets/sprites/keywords/kw_switch_2.png" id="2_unu64"]
 [ext_resource type="PackedScene" uid="uid://pe6tqla32quk" path="res://systems/ui/menus/menu_elements/stat_change.tscn" id="3_d8e8f"]
-[ext_resource type="Texture2D" uid="uid://dmvf4y1rexuxt" path="res://assets/ui/placeholders/switch_condition_underlay.png" id="5_1tskj"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="5_xkl1s"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_0xrdx"]
+[ext_resource type="Texture2D" uid="uid://duu0kqe7ybgs1" path="res://assets/ui/underlays/overlay_darken.png" id="7_vmtqk"]
 [ext_resource type="Texture2D" uid="uid://b16p52hwm0lh1" path="res://assets/ui/underlays/banner.png" id="8_61u2l"]
+[ext_resource type="Texture2D" uid="uid://8sv1i5fu41gv" path="res://assets/ui/underlays/keyword_underlay.png" id="8_tt6j0"]
 [ext_resource type="FontFile" uid="uid://c8tjrdvbc5hnb" path="res://assets/ui/fonts/Old_Englished_Boots.ttf" id="9_1xmqd"]
 [ext_resource type="PackedScene" uid="uid://jfsadju3ylrq" path="res://systems/card_combat/cards/preview_card.tscn" id="9_rm3wo"]
+[ext_resource type="Texture2D" uid="uid://bn208w4go5iai" path="res://assets/ui/underlays/stat_change_underlay.png" id="9_vlt6i"]
 [ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="11_6uiwl"]
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="12_tp7it"]
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="13_6mpdr"]
+[ext_resource type="Texture2D" uid="uid://brmabqhg6pwau" path="res://assets/ui/underlays/awaken_overlay.png" id="13_oiaxd"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt7uj"]
@@ -65,14 +67,14 @@ stat_change_scene = ExtResource("3_d8e8f")
 switch_artwork_shader = ExtResource("5_xkl1s")
 switch_keyword_slots = ExtResource("6_0xrdx")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4, 0.4, 0.4, 0.392157)
+texture = ExtResource("7_vmtqk")
 
 [node name="KeywordDescriptions" type="Control" parent="."]
 layout_mode = 1
@@ -95,13 +97,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -360.0
-offset_top = -184.0
-offset_right = 360.0
-offset_bottom = 184.0
+offset_left = -480.0
+offset_top = -247.0
+offset_right = 389.0
+offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_mrn7k")
+texture = ExtResource("8_tt6j0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="KeywordDescriptions"]
 layout_mode = 0
@@ -145,11 +147,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -740.0
-offset_top = -248.0
-offset_right = -460.0
+offset_left = -774.0
+offset_top = -280.0
+offset_right = -435.0
+offset_bottom = 261.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("9_vlt6i")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -249,11 +253,11 @@ grow_vertical = 2
 
 [node name="SwitchConditionUnderlay" type="TextureRect" parent="SwitchCondition"]
 layout_mode = 0
-offset_left = -20.0
-offset_top = 182.0
-offset_right = 700.0
-offset_bottom = 274.0
-texture = ExtResource("5_1tskj")
+offset_left = -55.0
+offset_top = 141.15
+offset_right = 706.0
+offset_bottom = 545.15
+texture = ExtResource("13_oiaxd")
 
 [node name="SwitchButton" type="Button" parent="SwitchCondition"]
 unique_name_in_owner = true
