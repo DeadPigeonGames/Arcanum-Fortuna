@@ -1,0 +1,136 @@
+[gd_scene load_steps=15 format=3 uid="uid://cy7r8u5ck052l"]
+
+[ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="1_4wcvd"]
+[ext_resource type="Texture2D" uid="uid://2c184n3ld2p3" path="res://assets/ui/placeholders/nodemap_1_background.png" id="2_vkfl3"]
+[ext_resource type="Texture2D" uid="uid://g623lf2fjfvj" path="res://assets/ui/placeholders/nodemap_1_foreground.png" id="3_7jy3d"]
+[ext_resource type="Shader" path="res://shaders/wind.gdshader" id="3_fnpom"]
+[ext_resource type="Texture2D" uid="uid://clda7gnqq52gc" path="res://assets/ui/placeholders/nodemap_1_decoration.png" id="5_bdy2c"]
+[ext_resource type="Shader" path="res://shaders/snow_rain.gdshader" id="5_f5b0f"]
+[ext_resource type="Shader" path="res://shaders/fog.gdshader" id="6_g3on7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ru5t"]
+shader = ExtResource("3_fnpom")
+shader_parameter/speed = 0.3
+shader_parameter/minStrength = 0.2
+shader_parameter/maxStrength = 0.3
+shader_parameter/strengthScale = 200.0
+shader_parameter/interval = 0.0
+shader_parameter/detail = 5.0
+shader_parameter/distortion = 1.0
+shader_parameter/heightOffset = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fjdya"]
+resource_name = "help"
+texture = ExtResource("5_bdy2c")
+1:6/size_in_atlas = Vector2i(5, 2)
+1:6/0 = 0
+9:6/size_in_atlas = Vector2i(5, 2)
+9:6/0 = 0
+17:5/size_in_atlas = Vector2i(5, 3)
+17:5/0 = 0
+26:6/size_in_atlas = Vector2i(3, 2)
+26:6/0 = 0
+33:6/size_in_atlas = Vector2i(5, 2)
+33:6/0 = 0
+41:4/size_in_atlas = Vector2i(4, 4)
+41:4/0 = 0
+48:4/size_in_atlas = Vector2i(5, 4)
+48:4/0 = 0
+0:11/size_in_atlas = Vector2i(16, 5)
+0:11/0 = 0
+16:11/size_in_atlas = Vector2i(14, 5)
+16:11/0 = 0
+33:11/size_in_atlas = Vector2i(4, 5)
+33:11/0 = 0
+40:9/size_in_atlas = Vector2i(6, 7)
+40:9/0 = 0
+1:22/size_in_atlas = Vector2i(13, 9)
+1:22/0 = 0
+17:20/size_in_atlas = Vector2i(14, 11)
+17:20/0 = 0
+33:18/size_in_atlas = Vector2i(11, 13)
+33:18/0 = 0
+49:19/size_in_atlas = Vector2i(10, 12)
+49:19/0 = 0
+2:40/size_in_atlas = Vector2i(18, 6)
+2:40/0 = 0
+26:39/size_in_atlas = Vector2i(18, 7)
+26:39/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mue5v"]
+sources/2 = SubResource("TileSetAtlasSource_fjdya")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v7s72"]
+shader = ExtResource("5_f5b0f")
+shader_parameter/rain_amount = 200.0
+shader_parameter/near_rain_length = 0.01
+shader_parameter/far_rain_length = 0.01
+shader_parameter/near_rain_width = 1.0
+shader_parameter/far_rain_width = 1.0
+shader_parameter/near_rain_transparency = 0.536
+shader_parameter/far_rain_transparency = 0.1
+shader_parameter/rain_color = Color(0.803922, 0.937255, 0.968627, 1)
+shader_parameter/base_rain_speed = 0.1
+shader_parameter/additional_rain_speed = 0.1
+shader_parameter/slant = -0.05
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rlm6j"]
+noise_type = 2
+seed = 411
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_l1o83"]
+width = 500
+height = 500
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_rlm6j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8aog"]
+shader = ExtResource("6_g3on7")
+shader_parameter/density = 0.155
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_l1o83")
+
+[node name="NodemapTest" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(0, -180)
+transform = Transform2D(1, 0, 0, 1, 0, -180)
+
+[node name="BaseLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2760, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BaseLayer"]
+position = Vector2(0, 720)
+texture = ExtResource("1_4wcvd")
+
+[node name="TopLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/TopLayer"]
+position = Vector2(0, 720)
+texture = ExtResource("2_vkfl3")
+
+[node name="BottomLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BottomLayer"]
+material = SubResource("ShaderMaterial_6ru5t")
+position = Vector2(0, 720)
+texture = ExtResource("3_7jy3d")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mue5v")
+format = 2
+layer_0/tile_data = PackedInt32Array(3342366, 2, 11, 917589, 1048578, 11, 852048, 2621442, 9, 589911, 2162690, 18, 131092, 1114114, 20, 3932163, 589826, 6, 3538963, 589826, 6, 589855, 589826, 6, 1769475, 589826, 6, 1376365, 65538, 6, 655393, 65538, 6, 458755, 65538, 6, 1179646, 65538, 6, 3211331, 65538, 6, 2949202, 65538, 6, 3473446, 2162690, 6, 917570, 2162690, 6, 1703941, 2686978, 4, 3997736, 2686978, 4, 3997806, 2686978, 4, 4063320, 2162690, 11, 4194314, 2162690, 11, 2949148, 3211266, 19, 2490485, 65538, 22, 196718, 131074, 40, 2097211, 1703938, 39)
+
+[node name="Effects" type="Node" parent="."]
+
+[node name="Snow" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_v7s72")
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0)
+
+[node name="Fog" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_n8aog")
+offset_right = 1920.0
+offset_bottom = 1080.0
