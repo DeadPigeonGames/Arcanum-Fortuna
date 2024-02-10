@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqpb3ie51rwl5"]
+[gd_scene load_steps=18 format=3 uid="uid://cqpb3ie51rwl5"]
 
 [ext_resource type="Script" path="res://assets/ui/themes/CustomDialogicFoolTheme/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_418yt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5afkfy613wxv" path="res://assets/ui/placeholders/shop_section_button_focused_placeholder.png" id="5_fv088"]
 [ext_resource type="Texture2D" uid="uid://8cguh5h1crom" path="res://assets/ui/placeholders/awaken_icon_placeholder.png" id="5_w0elu"]
 [ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_nthki"]
+[ext_resource type="Texture2D" uid="uid://d253xrxv604q5" path="res://assets/ui/placeholders/card_flavour_underlay.png" id="6_ywjv3"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="8_wfcga"]
 [ext_resource type="Texture2D" uid="uid://b30s5oxcmbpfp" path="res://assets/ui/placeholders/dialog_choice_button_default_placeholder.png" id="10_byad5"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_x302a"]
@@ -14,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_vvbym"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16h0e"]
-texture = ExtResource("5_w0elu")
+texture = ExtResource("6_ywjv3")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvj1c"]
 
@@ -48,7 +49,7 @@ box_color_use_global = false
 box_color_custom = Color(1, 1, 1, 1)
 box_size = Vector2(1280, 206)
 box_margin_bottom = 32
-name_label_box_offset = Vector2(32, -54)
+name_label_box_offset = Vector2(32, -38)
 next_indicator_enabled = false
 apply_overrides_on_ready = true
 
@@ -89,9 +90,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -624.0
-offset_top = -302.0
+offset_top = -286.0
 offset_right = -224.0
-offset_bottom = -222.0
+offset_bottom = -206.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("5_fv088")
