@@ -53,8 +53,8 @@ directories/dtl_directory={
 variables={
 "player_name": ""
 }
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://assets/ui/themes/dialogic_fool_theme.tres"]
+layout/default_style="res://assets/ui/themes/dialogic_fool_theme.tres"
 glossary/default_case_sensitive=true
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
