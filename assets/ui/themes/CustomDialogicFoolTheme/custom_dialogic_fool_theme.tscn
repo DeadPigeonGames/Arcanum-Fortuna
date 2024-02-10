@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqpb3ie51rwl5"]
+
+[ext_resource type="Script" path="res://assets/ui/themes/CustomDialogicFoolTheme/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_418yt"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_5cmgm"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_nthki"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="8_wfcga"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_x302a"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_76885"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_au8lx"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_vvbym"]
+
+[node name="Custom" type="CanvasLayer"]
+script = ExtResource("1_ifsho")
+global_bg_color = Color(0.352941, 0.254902, 0.168627, 1)
+
+[node name="BackgroundLayer" parent="." instance=ExtResource("2_418yt")]
+apply_overrides_on_ready = true
+
+[node name="VN_PortraitLayer" parent="." instance=ExtResource("4_5cmgm")]
+apply_overrides_on_ready = true
+
+[node name="VN_Textbox_Layer" parent="." instance=ExtResource("6_nthki")]
+text_alignment = 1
+box_panel = "res://assets/ui/themes/dialogic_fool_theme.tres"
+box_size = Vector2(1280, 206)
+box_margin_bottom = 32
+name_label_box_offset = Vector2(32, 0)
+apply_overrides_on_ready = true
+
+[node name="Sizer" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent" index="0"]
+offset_left = -640.0
+offset_top = -238.0
+offset_right = 640.0
+offset_bottom = -32.0
+
+[node name="DialogTextPanel" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer" index="0"]
+self_modulate = Color(0.352941, 0.254902, 0.168627, 1)
+
+[node name="DialogicNode_DialogText" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer/DialogTextPanel" index="0"]
+alignment = 1
+
+[node name="NameLabelPanel" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer/DialogTextPanel/NameLabelHolder" index="0"]
+offset_left = 16.0
+offset_top = -96.0
+offset_right = 416.0
+offset_bottom = -16.0
+
+[node name="DialogicNode_NameLabel" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer/DialogTextPanel/NameLabelHolder/NameLabelPanel" index="0"]
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FullAdvanceInputLayer" parent="." instance=ExtResource("8_wfcga")]
+apply_overrides_on_ready = true
+
+[node name="Glossary" parent="." instance=ExtResource("10_x302a")]
+apply_overrides_on_ready = true
+
+[node name="VN_Choice_Layer" parent="." instance=ExtResource("12_76885")]
+boxes_v_separation = 14
+boxes_min_size = Vector2(1248, 80)
+apply_overrides_on_ready = true
+
+[node name="Choices" parent="VN_Choice_Layer" index="0"]
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -624.0
+offset_top = -222.0
+offset_right = 624.0
+offset_bottom = 798.0
+grow_vertical = 0
+theme_override_constants/separation = 14
+
+[node name="DialogicNode_ChoiceButton1" parent="VN_Choice_Layer/Choices" index="0"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton2" parent="VN_Choice_Layer/Choices" index="1"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton3" parent="VN_Choice_Layer/Choices" index="2"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton4" parent="VN_Choice_Layer/Choices" index="3"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton5" parent="VN_Choice_Layer/Choices" index="4"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton6" parent="VN_Choice_Layer/Choices" index="5"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton7" parent="VN_Choice_Layer/Choices" index="6"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton8" parent="VN_Choice_Layer/Choices" index="7"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton9" parent="VN_Choice_Layer/Choices" index="8"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton10" parent="VN_Choice_Layer/Choices" index="9"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="DialogicNode_ChoiceButton11" parent="VN_Choice_Layer/Choices" index="10"]
+custom_minimum_size = Vector2(1248, 80)
+size_flags_vertical = 2
+
+[node name="TextInputLayer" parent="." instance=ExtResource("14_au8lx")]
+apply_overrides_on_ready = true
+
+[node name="ExampleHistoryScene" parent="." instance=ExtResource("16_vvbym")]
+font_use_global_size = true
+font_custom_size = 15
+font_use_global_fonts = true
+font_custom_normal = ""
+font_custom_bold = ""
+font_custom_italics = ""
+disabled = false
+apply_overrides_on_ready = true
+
+[editable path="VN_Textbox_Layer"]
+[editable path="VN_Choice_Layer"]
