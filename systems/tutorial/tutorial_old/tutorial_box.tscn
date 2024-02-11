@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2hl78obwhmmt"]
 
-[ext_resource type="Script" path="res://systems/tutorial/tutorial_box.gd" id="1_shq2j"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_old/tutorial_box.gd" id="1_shq2j"]
 [ext_resource type="Texture2D" uid="uid://chn0s2w1mnhj0" path="res://assets/sprites/magician.png" id="2_46r3r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_71lga"]
