@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_2hdh4")
 name = "Page of Daggers"
-description = "It doesn't do stuff."
+description = "No strangers to treason, mutiny and murder. "
 artwork = ExtResource("1_q5dbj")
 cost = 5
 attack = 0

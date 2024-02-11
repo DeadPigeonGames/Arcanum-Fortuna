@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_rvq1k")
 name = "Queen of Daggers"
-description = "It doesn't do stuff."
+description = "Powerful and widely feared, she controls conflict like a marionette."
 artwork = ExtResource("1_idm7s")
 cost = 4
 attack = 0

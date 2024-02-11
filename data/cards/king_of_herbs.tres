@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_008br")
 name = "King of Herbs"
-description = "It doesn't do stuff."
+description = "As elusive as he is territorial. "
 artwork = ExtResource("1_73w70")
 cost = 4
 attack = 0
