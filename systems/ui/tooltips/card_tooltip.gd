@@ -5,6 +5,8 @@ extends TooltipBase
 
 var sigils : Node
 
+@onready var background : Sprite2D = %Background
+
 func setup(data : CardData):
 	sigils = %Sigils
 	visible = false
@@ -26,3 +28,5 @@ func setup(data : CardData):
 
 func _process(delta):
 	move_to_mouse_pos(%NinePatchRect.get_rect())
+	background.get_rect().size = get_viewport_rect().size
+	background.global_position = Vector2.ZERO

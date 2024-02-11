@@ -435,9 +435,5 @@ is_tutorial = true
 debug_player_data = ExtResource("20_f584r")
 debug_enemy_data = ExtResource("21_xusau")
 
-[node name="HealthIcon" parent="CardPlayer/ResourceContainer/Health" index="1"]
-offset_top = -137.0
-offset_bottom = 0.0
-
 [editable path="CardPlayer"]
 [editable path="EnemyPlayer"]
