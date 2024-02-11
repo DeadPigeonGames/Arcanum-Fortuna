@@ -1,12 +1,14 @@
-extends Control
-
-
-func quit_menu():
-	queue_free()
+class_name OptionsMenu
+extends UIBase
 
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		quit_menu()
-		get_viewport().set_input_as_handled()
+	super._input(event)
+	if event.is_action_released("ui_cancel"):
+		called_by.close()
+		close()
 
+
+func _on_btn_back_button_up():
+	close()
+	print("Test")

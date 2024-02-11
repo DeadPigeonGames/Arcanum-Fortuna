@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://fmvi54pcpwrl" path="res://systems/effects/damage_effect.tscn" id="5_dk6p8"]
 
 [node name="CombatCard" instance=ExtResource("1_8u6ck")]
+process_mode = 1
 script = ExtResource("1_3lxv2")
 delete_material = ExtResource("3_d0i18")
 inspection = ExtResource("4_bfjyx")

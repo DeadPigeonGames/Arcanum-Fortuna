@@ -9,13 +9,15 @@ static var node_count = 0
 
 func _ready():
 	node_count += 1
-	PauseMenu.can_pause = false
+	Pause.can_pause = false
 
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
 		node_count -= 1
 		if node_count <= 0:
-			PauseMenu.can_pause = true
+			if Pause == null:
+				return
+			Pause.can_pause = true
 "
 
 [node name="AntiPauseNode" type="Node"]
