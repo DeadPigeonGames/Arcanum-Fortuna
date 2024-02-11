@@ -10,6 +10,15 @@ func setup():
 	switch_tab(shop_buy_tab)
 
 
+func receive_result(result):
+	if current_tab is ShopBuySection:
+		print("BUY: ", result)
+	if current_tab is ShopTradeSection:
+		print("TRADE: ", result)
+	if current_tab is ShopBurnSection:
+		print("BURN: ", result)
+
+
 func _on_buy_section_button_button_up():
 	switch_tab(shop_buy_tab)
 

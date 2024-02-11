@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjaecj5rdauy3"]
+[gd_scene load_steps=10 format=3 uid="uid://cjaecj5rdauy3"]
 
 [ext_resource type="Texture2D" uid="uid://do0e6paeiwi3x" path="res://assets/ui/placeholders/shop_price_explanation_underlay_placeholder.png" id="1_1wkkn"]
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_trade_section.gd" id="1_li3lg"]
 [ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5sgb4"]
+[ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_6oljb"]
 [ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="3_oaeng"]
 [ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="4_pfin6"]
 [ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="5_n0y7o"]
 [ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="6_b0rs8"]
+
+[sub_resource type="Resource" id="Resource_jke14"]
+script = ExtResource("2_6oljb")
+title_text = "Trade"
+content_text = "Really trade?"
+confirm_label_text = "Yes"
+decline_label_text = "No"
 
 [node name="ShopTradeSection" type="Control"]
 layout_mode = 3
@@ -18,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_li3lg")
+confirm_trade_data = SubResource("Resource_jke14")
 
 [node name="SectionExplanation" type="Control" parent="."]
 custom_minimum_size = Vector2(480, 120)
@@ -100,7 +109,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PayButton" type="TextureButton" parent="."]
+[node name="TradeButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -118,7 +127,7 @@ texture_pressed = ExtResource("4_pfin6")
 texture_hover = ExtResource("5_n0y7o")
 texture_disabled = ExtResource("6_b0rs8")
 
-[node name="Label" type="Label" parent="PayButton"]
+[node name="Label" type="Label" parent="TradeButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,3 +156,5 @@ offset_top = -120.0
 offset_right = 360.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[connection signal="button_up" from="TradeButton" to="." method="_on_trade_button_button_up"]

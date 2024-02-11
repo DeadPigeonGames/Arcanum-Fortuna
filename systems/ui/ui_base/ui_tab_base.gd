@@ -23,3 +23,8 @@ func _input(event):
 func call_ui_element_by_caller(element):
 	if called_by is UIBase:
 		called_by.call_ui_element(element)
+
+
+func call_ui_popup_by_caller(popup_data : UIPopupData):
+	if called_by is UIBase:
+		called_by.call_ui_popup(popup_data)

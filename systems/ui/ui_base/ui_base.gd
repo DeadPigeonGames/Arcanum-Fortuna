@@ -42,6 +42,15 @@ func call_ui_element(element):
 		self.is_current_window = false
 
 
+func call_ui_popup(popup_data : UIPopupData):
+	var called_element = SceneHandler.add_ui_element(popup_data.ui_popup_path)
+	if called_element is UIPopup:
+		called_element.init(self.get_layer(), self)
+		called_element.setup()
+		called_element.setup_popup(popup_data)
+		self.is_current_window = false
+
+
 func receive_result(result):
 	push_error("ERROR! No receive_result implementation in UIBase!")
 
@@ -49,6 +58,8 @@ func receive_result(result):
 func switch_tab(tab : PackedScene):
 	if current_tab:
 		current_tab.close()
-	var tab_instance = tab.instantiate()
+	var tab_instance = tab.instantiate() as UITabBase
+	tab_instance.init(self)
 	add_child(tab_instance)
 	current_tab = tab_instance
+	

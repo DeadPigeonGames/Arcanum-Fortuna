@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://4ksadcfwwt52"]
+[gd_scene load_steps=10 format=3 uid="uid://4ksadcfwwt52"]
 
 [ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="1_7y624"]
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_buy_section.gd" id="1_nlq55"]
 [ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="2_fmrg3"]
 [ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="2_lrt16"]
+[ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_tpvif"]
 [ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="4_a1v5r"]
 [ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="5_gtqyr"]
 [ext_resource type="Texture2D" uid="uid://do0e6paeiwi3x" path="res://assets/ui/placeholders/shop_price_explanation_underlay_placeholder.png" id="6_8x8m8"]
+
+[sub_resource type="Resource" id="Resource_5s83o"]
+script = ExtResource("2_tpvif")
+title_text = "Test"
+content_text = "some text"
+confirm_label_text = "si"
+decline_label_text = "nada"
 
 [node name="ShopBuySection" type="Control"]
 layout_mode = 3
@@ -18,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_nlq55")
+confirm_pay_data = SubResource("Resource_5s83o")
 
 [node name="SectionExplanation" type="Control" parent="."]
 custom_minimum_size = Vector2(480, 120)
@@ -134,3 +143,5 @@ grow_vertical = 2
 text = "Buy for X Gold"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_up" from="PayButton" to="." method="_on_pay_button_button_up"]
