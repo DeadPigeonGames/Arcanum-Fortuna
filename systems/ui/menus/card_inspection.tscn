@@ -305,9 +305,9 @@ texture = ExtResource("13_oiaxd")
 [node name="SwitchConditionUnderlay2" type="TextureRect" parent="SwitchCondition"]
 material = SubResource("ShaderMaterial_n1gww")
 layout_mode = 0
-offset_left = -82.0
+offset_left = -88.0
 offset_top = 142.0
-offset_right = 706.0
+offset_right = 707.0
 offset_bottom = 546.0
 texture = ExtResource("16_r327o")
 
@@ -315,9 +315,9 @@ texture = ExtResource("16_r327o")
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -68.0
-offset_top = 188.0
+offset_top = 185.0
 offset_right = 12.0
-offset_bottom = 268.0
+offset_bottom = 265.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_lt7uj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uvl8h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oxnba")
