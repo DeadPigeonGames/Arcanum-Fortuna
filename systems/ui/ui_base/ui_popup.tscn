@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq1c3cgx11dk8"]
+
+[ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup.gd" id="1_uc4qs"]
+
+[node name="UIPopup" type="CanvasLayer"]
+script = ExtResource("1_uc4qs")

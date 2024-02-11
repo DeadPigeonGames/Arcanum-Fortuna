@@ -5,10 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="3_5pa53tt1"]
 [ext_resource type="Texture2D" uid="uid://c5uyxabahx82i" path="res://assets/sprites/nodemap/shop.png" id="4_om52u"]
 
-[node name="EventNode" instance=ExtResource("3_5pa53tt1")]
+[node name="ShopNode" instance=ExtResource("3_5pa53tt1")]
 script = ExtResource("1_77k18")
 event = ExtResource("2_eesgv")
 
 [node name="icon" parent="background" index="0"]
-visible = true
 texture = ExtResource("4_om52u")

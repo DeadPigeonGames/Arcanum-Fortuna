@@ -27,18 +27,13 @@ func change_scene(new_scene):
 
 func add_shelf_element(element):
 	var element_to_add = get_instantiated_scene(element)
-	
 	shelf.add_child(element_to_add)
 
 
 func add_ui_element(element):
-	if ui_container.get_child_count() > 0:
-		return false
-	
 	var element_to_add = get_instantiated_scene(element)
 	ui_container.add_child(element_to_add)
-	
-	return true
+	return element_to_add
 
 
 func get_instantiated_scene(element):
