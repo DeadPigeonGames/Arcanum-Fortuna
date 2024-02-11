@@ -306,9 +306,9 @@ texture = ExtResource("13_oiaxd")
 [node name="SwitchConditionUnderlay2" type="TextureRect" parent="SwitchCondition"]
 material = SubResource("ShaderMaterial_n1gww")
 layout_mode = 0
-offset_left = -88.0
+offset_left = -80.0
 offset_top = 142.0
-offset_right = 707.0
+offset_right = 699.0
 offset_bottom = 546.0
 texture = ExtResource("16_r327o")
 
