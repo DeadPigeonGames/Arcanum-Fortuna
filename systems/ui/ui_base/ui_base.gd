@@ -17,8 +17,8 @@ func init(layer : int, caller):
 	is_current_window = true
 
 
-func execute():
-	pass
+func setup():
+	push_error("ERROR: no setup implementation in UIBase!")
 
 
 func close_with_result(result):
