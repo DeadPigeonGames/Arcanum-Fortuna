@@ -15,8 +15,10 @@ script = ExtResource("2_nvahl")
 offset_left = -11.0
 
 [node name="Label" parent="Artwork/SwitchFrame" index="0"]
-offset_right = 61.25
-offset_bottom = 226.107
+offset_left = 70.0
+offset_top = 228.5
+offset_right = 140.0
+offset_bottom = 243.5
 
 [node name="Cost" parent="." index="2"]
 offset_left = 17.2
