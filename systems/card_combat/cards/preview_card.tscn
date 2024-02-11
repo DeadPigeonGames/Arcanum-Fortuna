@@ -11,6 +11,9 @@
 mouse_filter = 2
 script = ExtResource("2_nvahl")
 
+[node name="SwitchFrame" parent="Artwork" index="0"]
+offset_left = -11.0
+
 [node name="Cost" parent="." index="2"]
 texture = ExtResource("3_1wpwd")
 
