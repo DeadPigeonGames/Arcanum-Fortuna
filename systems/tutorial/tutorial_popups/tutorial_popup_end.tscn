@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckwgnvwet52st"]
 
-[ext_resource type="PackedScene" uid="uid://b45r81lj73pdb" path="res://systems/tutorial/tutorial_popup.tscn" id="1_3njrx"]
-[ext_resource type="Script" path="res://systems/tutorial/tutorial_popup_end.gd" id="2_1yejo"]
+[ext_resource type="PackedScene" uid="uid://b45r81lj73pdb" path="res://systems/tutorial/tutorial_popups/tutorial_popup.tscn" id="1_3njrx"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_popups/tutorial_popup_end.gd" id="2_1yejo"]
 
 [node name="TutorialPopupEnd" instance=ExtResource("1_3njrx")]
 script = ExtResource("2_1yejo")
