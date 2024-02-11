@@ -29,7 +29,7 @@ func close_with_result(result):
 
 
 func close():
-	if called_by is UIBase:
+	if called_by != null and called_by is UIBase:
 		called_by.is_current_window = true
 	queue_free()
 

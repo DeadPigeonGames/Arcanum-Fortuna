@@ -57,7 +57,7 @@ func show_tooltip():
 
 
 func hide_tooltip():
-	if instance:
+	if instance != null:
 		instance.queue_free()
 		instance = null
 

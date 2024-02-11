@@ -13,14 +13,16 @@ func _ready():
 
 
 func change_scene(new_scene):
-	var scene_to_change = get_instantiated_scene(new_scene)
-	
 	for child in scene_container.get_children():
 		child.queue_free()
 	
 	for child in shelf.get_children():
 		child.queue_free()
 	
+	for child in ui_container.get_children():
+		child.queue_free()
+	
+	var scene_to_change = get_instantiated_scene(new_scene)
 	current_scene = scene_to_change
 	scene_container.add_child(current_scene)
 
