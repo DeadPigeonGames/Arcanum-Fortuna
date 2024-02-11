@@ -38,6 +38,7 @@ func call_ui_element(element):
 	var called_element = SceneHandler.add_ui_element(element)
 	if called_element is UIBase:
 		called_element.init(self.get_layer(), self)
+		called_element.setup()
 		self.is_current_window = false
 
 

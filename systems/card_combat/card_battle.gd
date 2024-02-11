@@ -105,6 +105,8 @@ func start_combat():
 
 
 func process_next_phase():
+	if Pause.is_game_paused():
+		await Pause.game_continued
 	if show_current_phase_text:
 		$CurrentPhaseLabel.text = "Current Phase: \n" + \
 		phases[phase_idx].get_class_name()
@@ -156,6 +158,8 @@ func handle_attacks(attacker, column, is_source_friendly):
 
 
 func try_attack(attacker, column_idx, friendly = false) -> bool:
+	if Pause.is_game_paused():
+		await Pause.game_continued
 	if column_idx < 0 or column_idx >= game_board.width:
 		return false
 	game_board.highlight_tile(column_idx, friendly)
