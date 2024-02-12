@@ -44,7 +44,7 @@ grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CardTooltip/MarginContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(768, 440)
 layout_mode = 2
 texture = ExtResource("2_kwsuy")
 patch_margin_left = 5
@@ -57,7 +57,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CardTooltip/MarginContainer/MarginContainer"]
 layout_mode = 2
@@ -86,18 +86,18 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_nfhd7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Confirm" type="Button" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 30)
+custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 text = "Confirm"
 
 [node name="Decline" type="Button" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 30)
+custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 text = "Decline"
 
