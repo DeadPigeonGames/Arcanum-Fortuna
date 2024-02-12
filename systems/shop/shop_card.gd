@@ -4,7 +4,6 @@ extends Card
 signal clicked(card: ShopCard)
 
 @export var discount := 0.3
-@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 
 var is_trade_card := false
 var hovered := false

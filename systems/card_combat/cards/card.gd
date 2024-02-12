@@ -3,6 +3,7 @@ class_name Card extends Control
 @export var card_data: CardData
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
+@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 
 
 var artwork_texture : Texture2D
@@ -30,6 +31,14 @@ func _ready():
 		load_from_data(card_data)
 	if !was_preloaded:
 		setup()
+
+
+func _input(event: InputEvent):
+	if is_hovered and event.is_action_pressed("open_inspection"):
+		var new_inspection = inspection.instantiate() as CardInspection
+		new_inspection.init(75, self)
+		new_inspection.inspection_init(self)
+		SceneHandler.add_ui_element(new_inspection)
 
 
 func set_attack(value):
