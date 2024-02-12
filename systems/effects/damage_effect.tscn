@@ -1,11 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://fmvi54pcpwrl"]
+[gd_scene load_steps=8 format=3 uid="uid://fmvi54pcpwrl"]
 
 [ext_resource type="Script" path="res://systems/effects/damage_effect.gd" id="1_oey1p"]
-[ext_resource type="Texture2D" uid="uid://c1o60aibngi18" path="res://assets/sprites/nodemap/background.png" id="2_gpoda"]
+[ext_resource type="Texture2D" uid="uid://umd7vfge7vhl" path="res://systems/effects/damage_effect_ph.png" id="2_2i63e"]
+[ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="3_wp2x7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_unxj3"]
 font_size = 64
 font_color = Color(0.584314, 0.0392157, 0, 1)
+
+[sub_resource type="Animation" id="Animation_57pyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_a0g05"]
 resource_name = "rotate"
@@ -48,45 +88,6 @@ tracks/2/keys = {
 "values": [2.0944, 8.37758]
 }
 
-[sub_resource type="Animation" id="Animation_57pyi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect3:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_63dx5"]
 _data = {
 "RESET": SubResource("Animation_57pyi"),
@@ -101,7 +102,7 @@ anchors_preset = 0
 script = ExtResource("1_oey1p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.807843, 0.0941176, 0, 1)
+modulate = Color(0.490196, 0.00392157, 0.0784314, 1)
 self_modulate = Color(2, 2, 2, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -116,10 +117,10 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(64, 64)
-texture = ExtResource("2_gpoda")
+texture = ExtResource("2_2i63e")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(0.807843, 0.0941176, 0, 1)
+modulate = Color(0.490196, 0.00392157, 0.0784314, 1)
 self_modulate = Color(2, 2, 2, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -135,10 +136,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.66, 0.66)
 pivot_offset = Vector2(64, 64)
-texture = ExtResource("2_gpoda")
+texture = ExtResource("2_2i63e")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-modulate = Color(0.807843, 0.0941176, 0, 1)
+modulate = Color(0.490196, 0.00392157, 0.0784314, 1)
 self_modulate = Color(2, 2, 2, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -154,10 +155,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.33, 0.33)
 pivot_offset = Vector2(64, 64)
-texture = ExtResource("2_gpoda")
+texture = ExtResource("2_2i63e")
 
 [node name="Amount" type="Label" parent="."]
 unique_name_in_owner = true
+modulate = Color(0.584314, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -170,6 +172,7 @@ offset_right = 18.5
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_wp2x7")
 text = "5"
 label_settings = SubResource("LabelSettings_unxj3")
 horizontal_alignment = 1

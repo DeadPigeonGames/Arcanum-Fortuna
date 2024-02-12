@@ -27,5 +27,5 @@ radial_velocity_curve = SubResource("CurveTexture_3k1ei")
 gravity = Vector3(0, 0, 0)
 radial_accel_min = -5.0
 scale_min = 4.0
-scale_max = 5.0
+scale_max = 7.0
 scale_curve = SubResource("CurveTexture_r0vbo")
