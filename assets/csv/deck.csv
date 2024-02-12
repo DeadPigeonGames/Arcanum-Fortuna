@@ -1,0 +1,17 @@
+ResourceName,AvailableCards
+enemy_basic_brain,The Hierophant;The Empress;Page of Daggers;Page of Flags
+enemy_basic2_brain,King of Flags;King of Thorns;Page of Flags;Page of Thorns;The Hierophant;The Empress;The Empress;The Hermit;The Emperor
+enemy_basic3_brain,Page of Herbs;Page of Daggers;King of Herbs;King of Daggers;The Magician;The High Priestess;Strength;The Star
+enemy_basic4_brain,Page of Herbs;Page of Daggers;King of Herbs;King of Daggers;The Magician;The High Priestess;The Lovers;The Moon;The Sun;The Hanged Man
+enemy_basic5_brain,Page of Herbs;Page of Daggers;King of Herbs;King of Daggers;The Lovers;The Chariot;Death;The Hanged Man;The Tower;The Star;The Moon;The Hierophant
+enemy_basic6_brain,Queen of Daggers;Knight of Daggers;Queen of Thorns;Knight of Thorns;Justice;Judgement;The Star;The High Priestess
+enemy_basic7_brain,Queen of Daggers;Queen of Thorns;Knight of Daggers;Knight of Thorns;Temperance;Wheel of Fortune;Strength;The Magician
+enemy_basic8_brain,Queen of Daggers;Queen of Thorns;Knight of Daggers;Knight of Thorns;The Devil;Temperance;Wheel of Fortune;The World;The Tower;The Chariot
+enemy_elite_brain,Page of Daggers;Page of Thorns;Knight of Daggers;Knight of Thorns;The Hierophant;The Hermit;The Empress;The Emperor
+enemy_elite2_brain,Page of Daggers;Page of Thorns;Page of Herbs;King of Daggers;King of Thorns;King of Herbs;The Empress;The Emperor;The Magician;The High Priestess
+enemy_elite3_brain,Page of Daggers;Page of Thorns;Page of Herbs;King of Daggers;Knight of Thorns;Knight of Herbs;The Star;Strength;The Magician;The High Priestess
+enemy_elite4_brain,Page of Daggers;Page of Thorns;Page of Flags;King of Daggers;King of Thorns;King of Flags;The Lovers;The Moon;The Sun;The Hanged Man
+enemy_elite5_brain,Page of Daggers;Page of Thorns;Page of Flags;King of Daggers;King of Thorns;Page of Flags;The Chariot;Death;The Hanged Man;The Tower
+enemy_elite6_brain,Queen of Daggers;Queen of Flags;Queen of Herbs;Knight of Daggers;Knight of Flags;Knight of Herbs;Justice;Judgement;Strength;The Magician;The High Priestess;The Star
+enemy_elite7_brain,Page of Daggers;Page of Thorns;Page of Flags;King of Daggers;King of Thorns;King of Flags;The Lovers;The Moon;The Sun;The Hanged Man
+enemy_elite8_brain,Queen of Daggers;Page of Flags;Queen of Herbs;Knight of Daggers;Knight of Flags;Knight of Herbs;The Devil;The World;The Tower;Death;The Chariot;Temperance
