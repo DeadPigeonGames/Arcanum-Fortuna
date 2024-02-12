@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://systems/ui/new_deck_preview/deck_preview_overlay.gd" id="1_mj3a2"]
 [ext_resource type="Texture2D" uid="uid://ch1ct0w4v6y7x" path="res://assets/ui/placeholders/deck_preview_underlay_placeholder.png" id="1_nn6al"]
 [ext_resource type="PackedScene" uid="uid://djimo5osb2i1s" path="res://systems/ui/new_deck_preview/deck_preview_card.tscn" id="2_ilop0"]
-[ext_resource type="Texture2D" uid="uid://bf3aasd15g4xc" path="res://assets/ui/placeholders/deck_preview_title_underlay_placeholder.png" id="2_wh8bo"]
 [ext_resource type="Texture2D" uid="uid://buyksmxphvyw1" path="res://assets/ui/placeholders/sort_by_karma_button_focused_placeholder.png" id="3_mj5gk"]
+[ext_resource type="Texture2D" uid="uid://bwexgd4isf4pt" path="res://assets/ui/underlays/shop_tab_focused.png" id="4_3luy0"]
 [ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="4_8wy74"]
 [ext_resource type="Texture2D" uid="uid://cfiorekcvp03n" path="res://assets/ui/placeholders/sort_by_karma_button_default_placeholder.png" id="4_55w0m"]
 [ext_resource type="Texture2D" uid="uid://bidqt3oqi07t5" path="res://assets/ui/placeholders/sort_by_karma_button_hover_placeholder.png" id="4_086th"]
@@ -209,7 +209,7 @@ offset_right = 160.0
 offset_bottom = -928.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_wh8bo")
+texture = ExtResource("4_3luy0")
 
 [node name="Label" type="Label" parent="DeckPreviewOverlay/DeckPreview/DeckPreviewFrame"]
 layout_mode = 1
