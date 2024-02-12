@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cbsn1r2h288lq"]
+[gd_scene load_steps=27 format=3 uid="uid://cbsn1r2h288lq"]
 
 [ext_resource type="Script" path="res://systems/ui/new_deck_preview/deck_preview_overlay.gd" id="1_mj3a2"]
 [ext_resource type="Texture2D" uid="uid://ch1ct0w4v6y7x" path="res://assets/ui/placeholders/deck_preview_underlay_placeholder.png" id="1_nn6al"]
+[ext_resource type="PackedScene" uid="uid://djimo5osb2i1s" path="res://systems/ui/new_deck_preview/deck_preview_card.tscn" id="2_ilop0"]
 [ext_resource type="Texture2D" uid="uid://bf3aasd15g4xc" path="res://assets/ui/placeholders/deck_preview_title_underlay_placeholder.png" id="2_wh8bo"]
 [ext_resource type="Texture2D" uid="uid://buyksmxphvyw1" path="res://assets/ui/placeholders/sort_by_karma_button_focused_placeholder.png" id="3_mj5gk"]
 [ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="4_8wy74"]
@@ -158,6 +159,7 @@ _data = {
 
 [node name="DeckPreviewOverlay" type="CanvasLayer"]
 script = ExtResource("1_mj3a2")
+deck_card_template = ExtResource("2_ilop0")
 
 [node name="DeckPreviewOverlay" type="Control" parent="."]
 layout_mode = 3
@@ -243,6 +245,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="SortByKarmaButton" type="TextureButton" parent="DeckPreviewOverlay/DeckPreview/SortCategories"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -619.0
 offset_top = -832.0
@@ -273,6 +276,7 @@ texture_hover = ExtResource("10_b62fb")
 texture_focused = ExtResource("5_gcki3")
 
 [node name="PlayerDeck" parent="DeckPreviewOverlay/DeckPreview" instance=ExtResource("12_odq63")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_top = 1.0
@@ -341,4 +345,7 @@ text = "Select"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByKarmaButton" to="." method="_on_sort_by_karma_button_button_up"]
+[connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByAttackButton" to="." method="_on_sort_by_attack_button_button_up"]
+[connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByHealthButton" to="." method="_on_sort_by_health_button_button_up"]
 [connection signal="button_up" from="DeckPreviewOverlay/CloseWindowButton" to="." method="_on_close_window_button_button_up"]
