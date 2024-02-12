@@ -39,6 +39,7 @@ var health : int :
 			return
 		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 1.0 / (float(health) / float(max_health))
 
+
 func init(data: PlayerData):
 	card_stack.cardStack = data.cardStack
 	card_stack.init(data.draw_rng_seed)
@@ -74,7 +75,9 @@ func heal(amount):
 		push_error("Heal must be positive!")
 		return
 	health += amount
-	health = min(health, max_health)
+	if health > max_health:
+		health = max_health
+	#health = min(health, max_health)
 	
 
 func take_damage(amount, _source = null):
