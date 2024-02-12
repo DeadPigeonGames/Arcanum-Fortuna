@@ -12,6 +12,11 @@ var combat : CardBattle
 @onready var container := %MarginContainer
 @onready var title := %Title
 @onready var text := %Text
+@onready var background := %Background
+
+func _process(delta):
+	background.global_position = Vector2.ZERO
+
 
 #region override functions
 
