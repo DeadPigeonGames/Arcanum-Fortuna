@@ -2,51 +2,63 @@ extends Node
 const musicCity = preload("res://Audio/Music/Music1.ogg")
 const musicSpring = preload("res://Audio/Music/SpringSong1.ogg")
 const musicWinter = preload("res://Audio/Music/MusicWinter1.ogg")
+const musicShop = preload("res://Audio/Music/ShopSong1.ogg")
 
 const ambienceCity = preload("res://Audio/Ambience/BackgroundAmbienceLoop1.ogg")
 const ambienceSpring = preload("res://Audio/Ambience/AmbienceSpring.ogg")
 const ambienceWinter = preload("res://Audio/Ambience/AmbienceWinter.ogg")
 
-enum MapTypes { CITY, SPRING, WINTER }
+enum MapTypes { CITY, SPRING, WINTER, SHOP }
 @export var currentMapType:= MapTypes.CITY
+var mapTypeToChangeTo:= MapTypes.CITY
 
-var isEvenTurn = true
+var isEvenTurn = false
 
 var musicRandom = RandomNumberGenerator.new()
 
+@export var criticalHealth:= 50.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print_debug(currentMapType)
 	_playTrack(currentMapType)
 
 
-func _playTrack(currentMapType):
+func _on_timer_timeout():
+	pass
+	#_SFX_ThinkMode(true)
+	#_playTrack(MapTypes.SHOP)
+	#_SFX_BG_SetLowPass(true)
+	#testHealth -= 10
+	#_SFX_HealthToHighPass(testHealth)
+	
+
+func _playTrack(mapTypeToChangeTo):
+	
 	randomize()
 	
 	var musicPlayerToChange
 	var ambiencePlayerToChange
 	
-	if isEvenTurn:
+	if !isEvenTurn:
 		musicPlayerToChange = $Music
 		ambiencePlayerToChange = $Ambience
 	else:
 		musicPlayerToChange = $Music2
 		ambiencePlayerToChange = $Ambience2
 	
-	#currentMapType = currentMapType.keys()[randi() % currentMapType.size()]
-	#print_debug(currentMapType)
-	
-	print_debug(currentMapType)
-	
-	if currentMapType == MapTypes.CITY:
+	#Set music and ambience variables to mapTypeToChangeTo
+	if mapTypeToChangeTo == MapTypes.CITY:
 		musicPlayerToChange.set_stream(musicCity)
 		ambiencePlayerToChange.set_stream(ambienceCity)
-	elif currentMapType == MapTypes.SPRING:
+	elif mapTypeToChangeTo == MapTypes.SPRING:
 		musicPlayerToChange.set_stream(musicSpring)
 		ambiencePlayerToChange.set_stream(ambienceSpring)
-	elif currentMapType == MapTypes.WINTER:
+	elif mapTypeToChangeTo == MapTypes.WINTER:
 		musicPlayerToChange.set_stream(musicWinter)
 		ambiencePlayerToChange.set_stream(ambienceWinter)
+	elif mapTypeToChangeTo == MapTypes.SHOP:
+		musicPlayerToChange.set_stream(musicShop)
+		ambiencePlayerToChange.set_stream(ambienceCity)
 	
 	await get_tree().create_timer(0.1).timeout
 	var randomMusicLoopStart = musicRandom.randf_range(0.0, musicPlayerToChange.get_stream().get_length())
@@ -54,20 +66,47 @@ func _playTrack(currentMapType):
 	
 	musicPlayerToChange.play(randomMusicLoopStart)
 	ambiencePlayerToChange.play(randomAmbienceLoopStart)
-
-func _changeMap(MapTypes):
 	
-	var tween = get_tree().create_tween()
-	
-	if isEvenTurn == true:
-		tween.tween_property($Ambience, "volume_db", -80.0, 5)
-		tween.tween_property($Music, "volume_db", -80.0, 5)
-		_playTrack(currentMapType)
-		tween.tween_property($Ambience2, "volume_db", 0.0, 5)
-		tween.tween_property($Music2, "volume_db", 0.0, 5)
+	if !isEvenTurn:
+		$AnimationPlayer1.play("FadeAM1", -1, -1, true)
+		$AnimationPlayer2.play("FadeAM2", -1, 0.2, false)
 	else:
-		tween.tween_property($Ambience2, "volume_db", -80.0, 5)
-		tween.tween_property($Music2, "volume_db", -80.0, 5)
-		_playTrack(currentMapType)
-		tween.tween_property($Ambience, "volume_db", 0.0, 5)
-		tween.tween_property($Music, "volume_db", 0.0, 5)
+		$AnimationPlayer1.play("FadeAM1", -1, 0.2, false)
+		$AnimationPlayer2.play("FadeAM2", -1, -1, true)
+	
+	isEvenTurn = !isEvenTurn
+
+func _SFX_BG_SetLowPass(toState):
+	var lowPassTween = get_tree().create_tween()
+	var lowPass = AudioServer.get_bus_effect(1, 0)
+	var desiredLowPassHz
+	if toState == true:
+		desiredLowPassHz = 800
+	else:
+		desiredLowPassHz = 20500
+		
+	lowPassTween.tween_property(lowPass, "cutoff_hz", desiredLowPassHz, 1)
+
+func _SFX_HealthToHighPass(health):
+	var highPassStrength = clamp(remap(health, criticalHealth, 0.0, 1.0, 10000.0), 1.0, 15000.0)
+	_SFX_BG_SetHighPass(highPassStrength)
+
+func _SFX_BG_SetHighPass(hz):
+	var highPassTween = get_tree().create_tween()
+	var highPass = AudioServer.get_bus_effect(1, 1)
+	highPassTween.tween_property(highPass, "cutoff_hz", hz, 1)
+
+func _SFX_ThinkMode(toState):
+	var amplifierTween = get_tree().create_tween()
+	var amplifierMusic = AudioServer.get_bus_effect(1, 4)
+	var amplifierAmbience = AudioServer.get_bus_effect(2, 1)
+	
+	var desiredVolume
+	if toState == true:
+		desiredVolume = -10
+	else:
+		desiredVolume = 0
+		
+	amplifierTween.tween_property(amplifierMusic, "volume_db", desiredVolume, 0.5)
+	amplifierTween.tween_property(amplifierAmbience, "volume_db", desiredVolume, 0.5)
+	

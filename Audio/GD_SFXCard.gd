@@ -35,6 +35,9 @@ func _SFX_PutDown():
 	$HandleHit.play()
 	
 	_SFX_Signature()
+	
+	await get_tree().create_timer(2).timeout
+	$LoopRumble.stop()
 
 
 func _SFX_Attack():

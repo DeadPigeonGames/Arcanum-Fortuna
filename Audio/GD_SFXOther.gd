@@ -5,6 +5,7 @@ const SFX_VFXKarmaBlipMid = preload("res://Audio/Karma/VFXKarmaBlipMid.ogg")
 const SFX_VFXKarmaBlipHi = preload("res://Audio/Karma/VFXKarmaBlipHi.ogg")
 
 var dropletScaler = 0.0
+var waitingOnKarma = false
 
 func _SFX_Draw():
 	$Draw.play()
@@ -49,6 +50,15 @@ func _SFX_Blip(karmaValue):
 	$KarmaPlayerDroplet.set_pitch_scale(0.5*sqrt(dropletScaler)+1)
 	dropletScaler += 1
 	
+	#_SFX_KarmaResult()
+
+func _SFX_KarmaResult():
+	if waitingOnKarma == false:
+		waitingOnKarma = true
+		await get_tree().create_timer(1).timeout
+		$KarmaResult.play()
+		waitingOnKarma = false
+
 
 func _SFX_UIButtonHover():
 	$UiButtonHover.play()
@@ -56,3 +66,15 @@ func _SFX_UIButtonHover():
 
 func _SFX_UIButtonPress():
 	$UiButtonPress.play()
+
+func _SFX_Knock():
+	$Knocks.play()
+
+func _on_test_knock_timer_timeout():
+	_SFX_Knock()
+
+func _SFX_EnterLevel():
+	$LevelDenoter.play()
+
+func _SFX_DestroyCard():
+	$DestroyCard.play()

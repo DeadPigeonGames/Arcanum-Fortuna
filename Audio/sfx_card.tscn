@@ -75,7 +75,7 @@ script = ExtResource("1_pajxo")
 [node name="LoopRumble" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_14qu8")
 volume_db = -64.0
-bus = &"VFX"
+bus = &"SFXOther"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LoopRumble"]
 libraries = {
@@ -84,12 +84,13 @@ libraries = {
 
 [node name="LoopFoley" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_dsyxd")
-bus = &"VFX"
+volume_db = 3.0
+bus = &"SFXOther"
 
 [node name="HandleHit" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_c4u1x")
 max_polyphony = 3
-bus = &"VFX"
+bus = &"Diagetics"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -98,18 +99,18 @@ texture = ExtResource("5_jrvin")
 [node name="Attack" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_1p128")
 max_polyphony = 4
-bus = &"VFX"
+bus = &"Diagetics"
 
 [node name="Flip" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_lgibw")
 pitch_scale = 1.2
 max_polyphony = 4
-bus = &"VFX"
+bus = &"Diagetics"
 
 [node name="Signature" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStream_3h4he")
 volume_db = -4.0
-bus = &"Voices"
+bus = &"Signature"
 
 [node name="SignatureTimer" type="Timer" parent="Signature"]
 wait_time = 0.15
