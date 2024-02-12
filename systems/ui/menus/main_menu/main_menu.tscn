@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=7 format=3 uid="uid://byccv8hmd45ln"]
 
 [ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
+[ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
+[ext_resource type="PackedScene" uid="uid://bdkhck4lxvdx5" path="res://systems/dungeon_exploration/maps/generated_node_map.tscn" id="2_0rqra"]
+[ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="3_c5lml"]
+[ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_h2wo1"]
+[ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="5_cwqwb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +16,11 @@ offset_top = -540.0
 offset_right = 1920.0
 offset_bottom = 540.0
 grow_vertical = 2
+script = ExtResource("1_pcc4c")
+node_map_scene = ExtResource("2_0rqra")
+tutorial_scene = ExtResource("3_c5lml")
+options_scene = ExtResource("4_h2wo1")
+credits_scene = ExtResource("5_cwqwb")
 
 [node name="MenuTitle" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 128)
@@ -87,3 +97,8 @@ grow_vertical = 0
 theme = ExtResource("1_ix3bk")
 text = "QUIT"
 alignment = 0
+
+[connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/PrepareButton" to="." method="_on_prepare_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/CreditsButton" to="." method="_on_credits_button_button_up"]

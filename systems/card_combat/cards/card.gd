@@ -179,7 +179,8 @@ func modify_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[
 
 func set_transformed_visuals(shader_material: ShaderMaterial, keyword_slot_atlas : Texture):
 	%Artwork.material = shader_material
-	%SwitchFrame/Label.text = card_name
+	%SwitchLabel.visible = true
+	%SwitchLabel.text = card_name
 	%SwitchFrame.show()
 	for slot in %KeyWordSlots.get_children():
 		slot.texture.atlas = null
@@ -190,6 +191,7 @@ func set_transformed_visuals(shader_material: ShaderMaterial, keyword_slot_atlas
 
 func set_default_visuals():
 	%SwitchFrame.hide()
+	%SwitchLabel.visible = false
 	%Artwork.material = default_material
 	for i in range(%KeyWordSlots.get_child_count()):
 		%KeyWordSlots.get_child(i).texture.atlas = default_keywordslot_atlas

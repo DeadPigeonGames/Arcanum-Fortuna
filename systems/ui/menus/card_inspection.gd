@@ -39,6 +39,7 @@ func inspection_init(card_to_display: Card):
 	update_keyword_labels()
 	update_buff_display()
 
+
 func update_keyword_labels():
 	for i in range(4):
 		get_node("CardInspection/KeywordDescriptions/VBoxContainer/Label%d" % (i+1)).text = ""
@@ -68,7 +69,7 @@ func update_buff_display():
 		%CurrentStatChanges.add_child(new_stat_change)
 
 
-func _on_switch_button_button_down():
+func _on_switch_button_button_up():
 	if not switch_keyword:
 		return
 	is_switched = not is_switched

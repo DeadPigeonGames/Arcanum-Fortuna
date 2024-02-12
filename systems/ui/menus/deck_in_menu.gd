@@ -7,9 +7,17 @@ var player_data : PlayerData
 var card_stack_node : CardStack
 var deck_preview : DeckPreviewOverlay
 
+
+func _process(delta):
+	visible = SceneHandler.combat == null
+	# I know this is bad, but Week 10
+	# Please do not kill me, I am little good boy,
+	# take care of me, need food
+
+
 func setup():
 	super.setup()
-	set_layer(50)
+	set_layer(1)
 
 
 func setup_player_data(player_data : PlayerData):

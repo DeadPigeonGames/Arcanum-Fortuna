@@ -1,13 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=23 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://cof5lb3kf7g0w" path="res://assets/sprites/keywords/kw_switch_2.png" id="2_unu64"]
 [ext_resource type="PackedScene" uid="uid://pe6tqla32quk" path="res://systems/ui/menus/menu_elements/stat_change.tscn" id="3_d8e8f"]
+[ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="3_rc3s5"]
+[ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="4_pj6c4"]
 [ext_resource type="Texture2D" uid="uid://duu0kqe7ybgs1" path="res://assets/ui/underlays/overlay_darken.png" id="7_vmtqk"]
 [ext_resource type="Texture2D" uid="uid://b16p52hwm0lh1" path="res://assets/ui/underlays/banner.png" id="8_61u2l"]
 [ext_resource type="Texture2D" uid="uid://8sv1i5fu41gv" path="res://assets/ui/underlays/keyword_underlay.png" id="8_tt6j0"]
 [ext_resource type="FontFile" uid="uid://c8tjrdvbc5hnb" path="res://assets/ui/fonts/Old_Englished_Boots.ttf" id="9_1xmqd"]
-[ext_resource type="PackedScene" path="res://systems/card_combat/cards/preview_card.tscn" id="9_rm3wo"]
+[ext_resource type="PackedScene" uid="uid://dw6nap050sofb" path="res://systems/card_combat/cards/preview_card.tscn" id="9_rm3wo"]
 [ext_resource type="Texture2D" uid="uid://bn208w4go5iai" path="res://assets/ui/underlays/stat_change_underlay.png" id="9_vlt6i"]
 [ext_resource type="Shader" path="res://shaders/sway.gdshader" id="10_a8mqj"]
 [ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="11_6uiwl"]
@@ -43,6 +45,9 @@ shader_parameter/heightOffset = 1.5
 
 [node name="CardInspection" type="CanvasLayer"]
 script = ExtResource("1_373cu")
+stat_change_scene = ExtResource("3_d8e8f")
+switch_artwork_shader = ExtResource("3_rc3s5")
+switch_keyword_slots = ExtResource("4_pj6c4")
 
 [node name="CardInspection" type="Control" parent="."]
 z_index = 4096
@@ -310,7 +315,7 @@ texture_normal = ExtResource("11_6uiwl")
 texture_pressed = ExtResource("13_6mpdr")
 texture_hover = ExtResource("12_tp7it")
 
-[connection signal="button_down" from="CardInspection/SwitchCondition/SwitchButton" to="CardInspection" method="_on_switch_button_button_down"]
+[connection signal="button_up" from="CardInspection/SwitchCondition/SwitchButton" to="." method="_on_switch_button_button_up"]
 [connection signal="mouse_entered" from="CardInspection/SwitchCondition/SwitchButton" to="CardInspection" method="_on_switch_button_mouse_entered"]
 [connection signal="mouse_exited" from="CardInspection/SwitchCondition/SwitchButton" to="CardInspection" method="_on_switch_button_mouse_exited"]
 [connection signal="button_up" from="CardInspection/CloseWindowButton" to="." method="_on_close_window_button_button_up"]
