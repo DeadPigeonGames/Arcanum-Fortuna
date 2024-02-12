@@ -8,12 +8,12 @@
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="6_gw2o4"]
 [ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="7_a1ko6"]
 [ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="8_2su2d"]
+[ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="8_bfdsa"]
 [ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="9_ajeny"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="9_rux3h"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="10_2c3cv"]
-[ext_resource type="Resource" uid="uid://cjas1prwh50gk" path="res://data/cards/the_hanged_man.tres" id="10_nbstd"]
 
 [resource]
 script = ExtResource("9_rux3h")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_j8wja"), ExtResource("2_ucrqa"), ExtResource("3_bftas"), ExtResource("4_plo3t"), ExtResource("5_stdgv"), ExtResource("6_gw2o4"), ExtResource("7_a1ko6"), ExtResource("8_2su2d"), ExtResource("9_ajeny"), ExtResource("10_nbstd")])
+available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_ucrqa"), ExtResource("1_j8wja"), ExtResource("4_plo3t"), ExtResource("3_bftas"), ExtResource("5_stdgv"), ExtResource("6_gw2o4"), ExtResource("7_a1ko6"), ExtResource("8_bfdsa"), ExtResource("8_2su2d"), ExtResource("9_ajeny")])
 strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("10_2c3cv")])
