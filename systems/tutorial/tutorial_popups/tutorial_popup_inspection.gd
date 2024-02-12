@@ -6,7 +6,7 @@ var card_inspection
 func _input(event):
 	if Input.is_action_just_released("open_inspection"):
 		await get_tree().process_frame
-		for node in combat.get_children():
+		for node in SceneHandler.ui_container.get_children():
 			if node is CardInspection:
 				node.inspection_closed.connect(on_inspection_closed)
 
