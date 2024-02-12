@@ -7,12 +7,14 @@
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="4_iw4ky"]
 
 [node name="CardStack" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_axc8c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+process_mode = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,6 +33,7 @@ mouse_filter = 2
 texture = ExtResource("2_ybovi")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
+process_mode = 1
 layout_mode = 0
 offset_left = -1.52588e-05
 offset_top = -138.75
@@ -42,6 +45,7 @@ texture = ExtResource("3_rofdm")
 
 [node name="CardCount" type="Label" parent="TextureRect/TextureRect"]
 unique_name_in_owner = true
+process_mode = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -63,6 +67,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShowTooltip" type="Control" parent="TextureRect/TextureRect"]
+process_mode = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,6 +86,7 @@ title = "Your Deck"
 text = "Shows the amount of cards in your deck."
 
 [node name="ShowTooltip" type="Control" parent="TextureRect"]
+process_mode = 1
 anchors_preset = 0
 offset_left = 100.0
 offset_top = 56.0

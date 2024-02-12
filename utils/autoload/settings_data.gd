@@ -1,4 +1,5 @@
-class_name SettingsData extends Node
+class_name SettingsData
+extends Node
 
 var settings_dict : Dictionary:
 	set(value):
@@ -25,7 +26,7 @@ func get_settings_dict():
 
 func get_current_audio_dict():
 	var dict : Dictionary
-	var audio_busses = ["Master", "Music", "Ambience", "Diagetics", "SFXOther", "UI", "Signature"]
+	var audio_busses = ["Master", "Music", "Ambience", "SFX", "Diagetics", "SFXOther", "Signature", "UI"]
 	
 	for bus in audio_busses:
 		var bus_idx = AudioServer.get_bus_index(bus)

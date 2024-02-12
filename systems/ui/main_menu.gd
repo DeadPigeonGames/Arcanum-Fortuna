@@ -37,6 +37,7 @@ func _on_start_button_button_up():
 	node_map.get_node("Generator").random_seed = false
 	#node_map.rng_seed_text = $SeedInput.text
 	#GlobalLog.add_entry("Seed used: " + $SeedInput.text)
+	Pause.can_pause = true
 	SceneHandler.change_scene(node_map)
 
 
