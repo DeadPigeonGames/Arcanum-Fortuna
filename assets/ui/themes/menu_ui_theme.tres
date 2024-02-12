@@ -1,0 +1,126 @@
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://gdg11k5bmpte"]
+
+[ext_resource type="Texture2D" uid="uid://diuotxd43kep6" path="res://assets/ui/placeholders/empty.png" id="1_nhmbk"]
+[ext_resource type="Texture2D" uid="uid://bk4awi081narj" path="res://assets/ui/placeholders/checkbox_check_placeholder.png" id="2_tlh4s"]
+[ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="3_5an84"]
+[ext_resource type="Texture2D" uid="uid://ucp5uptgmfr1" path="res://assets/ui/placeholders/chechbox_hover_placeholder.png" id="4_4yns2"]
+[ext_resource type="Texture2D" uid="uid://c1qm6wtdsqwjc" path="res://assets/ui/placeholders/slider_fill_placeholder.png" id="5_cof3b"]
+[ext_resource type="Texture2D" uid="uid://c7p1723d7vwmm" path="res://assets/ui/placeholders/slider_underlay_placeholder.png" id="6_gytlh"]
+[ext_resource type="Texture2D" uid="uid://dusq10w67u3oy" path="res://assets/ui/placeholders/dropdown_arrow_placeholder.png" id="7_overk"]
+[ext_resource type="Texture2D" uid="uid://dy6nbud4hpk3c" path="res://assets/ui/placeholders/dropdown_hover_placeholder.png" id="8_rbxx6"]
+[ext_resource type="Texture2D" uid="uid://dydu3iy8wtmru" path="res://assets/ui/placeholders/dropdown_default_placeholder.png" id="9_jqeaf"]
+[ext_resource type="Texture2D" uid="uid://cyebfbvn468de" path="res://assets/ui/placeholders/dropdown_pressed_placeholder.png" id="10_t4fst"]
+[ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="11_ujdwx"]
+[ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="12_jpktw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exx6k"]
+texture = ExtResource("1_nhmbk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kkpcq"]
+texture = ExtResource("1_nhmbk")
+
+[sub_resource type="Gradient" id="Gradient_k0kyb"]
+offsets = PackedFloat32Array(0, 0.660853, 1)
+colors = PackedColorArray(0.445017, 0.157709, 0.160385, 1, 0.139411, 0.256646, 0.588802, 1, 0.135266, 0.362181, 0.396884, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_01mv3"]
+gradient = SubResource("Gradient_k0kyb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgai2"]
+texture = SubResource("GradientTexture2D_01mv3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s818a"]
+texture = ExtResource("1_nhmbk")
+
+[sub_resource type="Gradient" id="Gradient_287h5"]
+offsets = PackedFloat32Array(0, 0.651163, 1)
+colors = PackedColorArray(0.391473, 0.120103, 0.039411, 1, 0.375189, 0.301763, 0.0883211, 1, 0.367864, 0.183887, 0.447801, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wjgu7"]
+gradient = SubResource("Gradient_287h5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3s28"]
+texture = SubResource("GradientTexture2D_wjgu7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jihiw"]
+texture = ExtResource("3_5an84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3bmuj"]
+texture = ExtResource("4_4yns2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3x4j4"]
+texture = ExtResource("4_4yns2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81h4m"]
+texture = ExtResource("3_5an84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ordp0"]
+texture = ExtResource("3_5an84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efcj6"]
+texture = ExtResource("5_cof3b")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ro8bn"]
+texture = ExtResource("5_cof3b")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgg8s"]
+texture = ExtResource("6_gytlh")
+texture_margin_top = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h467q"]
+texture = ExtResource("8_rbxx6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kml1y"]
+texture = ExtResource("8_rbxx6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awlsg"]
+texture = ExtResource("9_jqeaf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7fqw"]
+texture = ExtResource("10_t4fst")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xvo6"]
+texture = ExtResource("5_cof3b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_obkvj"]
+texture = ExtResource("11_ujdwx")
+
+[resource]
+default_font = ExtResource("12_jpktw")
+default_font_size = 25
+Button/font_sizes/font_size = 80
+Button/styles/disabled = SubResource("StyleBoxTexture_exx6k")
+Button/styles/focus = SubResource("StyleBoxTexture_kkpcq")
+Button/styles/hover = SubResource("StyleBoxTexture_fgai2")
+Button/styles/normal = SubResource("StyleBoxTexture_s818a")
+Button/styles/pressed = SubResource("StyleBoxTexture_m3s28")
+CheckBox/constants/check_v_offset = 0
+CheckBox/constants/h_separation = 40
+CheckBox/icons/checked = ExtResource("2_tlh4s")
+CheckBox/icons/checked_disabled = null
+CheckBox/icons/unchecked = ExtResource("1_nhmbk")
+CheckBox/icons/unchecked_disabled = null
+CheckBox/styles/focus = SubResource("StyleBoxTexture_jihiw")
+CheckBox/styles/hover = SubResource("StyleBoxTexture_3bmuj")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxTexture_3x4j4")
+CheckBox/styles/normal = SubResource("StyleBoxTexture_81h4m")
+CheckBox/styles/pressed = SubResource("StyleBoxTexture_ordp0")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_efcj6")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_ro8bn")
+HSlider/styles/slider = SubResource("StyleBoxTexture_lgg8s")
+OptionButton/constants/arrow_margin = 16
+OptionButton/icons/arrow = ExtResource("7_overk")
+OptionButton/styles/focus = SubResource("StyleBoxTexture_h467q")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_kml1y")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_awlsg")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_q7fqw")
+PopupMenu/icons/radio_checked = ExtResource("2_tlh4s")
+PopupMenu/styles/hover = SubResource("StyleBoxTexture_1xvo6")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_obkvj")
+RichTextLabel/constants/line_separation = 12
+RichTextLabel/font_sizes/bold_font_size = 50
+RichTextLabel/font_sizes/normal_font_size = 35

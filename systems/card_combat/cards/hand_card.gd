@@ -3,7 +3,6 @@ class_name HandCard extends Card
 signal drag_started
 signal drag_ended(card)
 
-@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 @export var drag_offset := Vector2(25, 25)
 
 static var heldCard : HandCard
@@ -48,9 +47,10 @@ func _process(delta):
 
 func _input(event: InputEvent):
 	if is_hovered and event.is_action_pressed("open_inspection"):
-		var new_inspection = inspection.instantiate()
-		new_inspection.init(self)
-		SceneHandler.combat.add_child(new_inspection)
+		var new_inspection = inspection.instantiate() as CardInspection
+		new_inspection.init(75, self)
+		new_inspection.inspection_init(self)
+		SceneHandler.add_ui_element(new_inspection)
 	
 	if event.is_action_pressed("pickUpCard") and not isPickedUp:
 		if is_hovered:
