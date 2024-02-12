@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://djimo5osb2i1s"]
+[gd_scene load_steps=6 format=3 uid="uid://djimo5osb2i1s"]
 
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_l7h7s"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_8ut0w"]
 [ext_resource type="Texture2D" uid="uid://1o6whlyoc2er" path="res://assets/ui/placeholders/deck_preview_copy_counter_underlay_placeholder.png" id="2_n5bhg"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="3_wrqfu"]
+
+[sub_resource type="Resource" id="Resource_8qttj"]
+script = ExtResource("3_wrqfu")
+name = "Your Card"
+description = "It can do stuff."
+cost = 1
+attack = 1
+health = 1
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+spawn_frequency = 100
+shop_cost = 5
+trade_override = 0
+keyword_slot_texture = ExtResource("2_8ut0w")
 
 [node name="DeckPreviewCard" type="Control"]
 custom_minimum_size = Vector2(170, 266)
@@ -11,6 +26,7 @@ offset_right = 170.0
 offset_bottom = 266.0
 
 [node name="Card" parent="." instance=ExtResource("1_l7h7s")]
+card_data = SubResource("Resource_8qttj")
 
 [node name="CopyCounter" type="Control" parent="."]
 z_index = 2
