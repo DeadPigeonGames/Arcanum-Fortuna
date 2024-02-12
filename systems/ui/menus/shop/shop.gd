@@ -7,9 +7,9 @@ signal shop_closed
 @export var shop_trade_tab : PackedScene
 @export var shop_burn_tab : PackedScene
 
-
 func setup():
 	switch_tab(shop_buy_tab)
+	$Shop/HBoxContainer/BuySectionButton.grab_focus()
 
 
 func receive_result(result):
