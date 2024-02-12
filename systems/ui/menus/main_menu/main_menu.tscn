@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://byccv8hmd45ln"]
 
-[sub_resource type="Gradient" id="Gradient_1p20x"]
+[sub_resource type="Gradient" id="Gradient_a0r8j"]
 offsets = PackedFloat32Array(0, 0.298329, 1)
 colors = PackedColorArray(0.368686, 0.114148, 0.245366, 1, 0.397178, 0.233198, 0.501939, 1, 0.0980397, 0.255654, 0.220282, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8iqlb"]
-gradient = SubResource("Gradient_1p20x")
+gradient = SubResource("Gradient_a0r8j")
 width = 320
 height = 80
 
-[sub_resource type="Gradient" id="Gradient_dkfjh"]
+[sub_resource type="Gradient" id="Gradient_e0ngi"]
 offsets = PackedFloat32Array(0, 0.630072, 1)
 colors = PackedColorArray(0.122597, 0.295771, 0.150034, 1, 0.316053, 0.344579, 0.494389, 1, 0.407876, 0.188671, 0.215122, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wtlqw"]
-gradient = SubResource("Gradient_dkfjh")
+gradient = SubResource("Gradient_e0ngi")
 width = 320
 height = 80
 
@@ -28,7 +28,7 @@ offset_right = 1920.0
 offset_bottom = 540.0
 grow_vertical = 2
 
-[node name="GameTitle" type="Label" parent="."]
+[node name="MenuTitle" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 0
 offset_left = 64.0
@@ -40,7 +40,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 93
 text = "ARCANUM FORTUNA"
 
-[node name="GameSubtitle" type="Label" parent="."]
+[node name="MenuSubtitle" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 0
 offset_left = 64.0
