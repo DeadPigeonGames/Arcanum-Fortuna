@@ -30,6 +30,7 @@ grow_vertical = 2
 
 [node name="MenuTitle" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 128)
+layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 994.0
@@ -41,6 +42,7 @@ text = "PAUSED"
 
 [node name="MenuSubtitle" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 48)
+layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
 offset_right = 415.0
@@ -52,6 +54,7 @@ theme_override_font_sizes/font_size = 34
 text = "but not over"
 
 [node name="PauseMenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 320.0
 offset_right = 384.0
