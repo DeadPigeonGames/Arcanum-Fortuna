@@ -43,10 +43,11 @@ func clear():
 	card_data_lookup.clear()
 	get_cards()
 
-#
+
 func sort_karma():
 	clear()
 	var deck_cards = get_deck_preview_cards()
+	card_data_lookup.keys()
 	deck_cards.sort_custom(
 		func(a, b): return a.card.card_data.cost > b.card.card_data.cost
 	)
