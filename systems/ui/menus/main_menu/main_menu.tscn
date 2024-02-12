@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=8 format=3 uid="uid://byccv8hmd45ln"]
 
 [ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="3_c5lml"]
 [ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_h2wo1"]
 [ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="5_cwqwb"]
+[ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="7_w5744"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -98,7 +99,15 @@ theme = ExtResource("1_ix3bk")
 text = "QUIT"
 alignment = 0
 
+[node name="Nodemap1" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+z_index = -1
+position = Vector2(671, 539.5)
+scale = Vector2(1, 1.01944)
+texture = ExtResource("7_w5744")
+
 [connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/PrepareButton" to="." method="_on_prepare_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditsButton" to="." method="_on_credits_button_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]

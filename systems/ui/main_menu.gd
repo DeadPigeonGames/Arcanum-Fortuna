@@ -17,6 +17,15 @@ func _ready():
 	GlobalLog.add_entry("Main Menu loaded.")
 
 
+func _process(delta):
+	visible = !SceneHandler.ui_container.get_child_count() > 0
+	# I know this is bad, but Week 10
+	# Please do not kill me, I am little good boy,
+	# take care of me, need food
+	# (will be changed)
+
+
+
 func _on_seed_input_text_changed(new_text : String):
 	seed = 0
 	for i in range(new_text.length()):

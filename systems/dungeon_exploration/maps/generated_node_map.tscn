@@ -153,16 +153,7 @@ script = ExtResource("11_jsff7")
 
 [node name="CardsOverlay" parent="." instance=ExtResource("13_sj6n6")]
 
-[node name="TestShop" type="Button" parent="CardsOverlay"]
-offset_left = 1781.0
-offset_top = 1001.0
-offset_right = 1831.0
-offset_bottom = 1055.0
-text = "Test
-Shop"
-
 [node name="Deck" parent="." instance=ExtResource("14_sf86w")]
 
 [connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]
-[connection signal="button_up" from="CardsOverlay/TestShop" to="." method="_on_test_shop_button_up"]

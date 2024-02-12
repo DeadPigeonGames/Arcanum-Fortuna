@@ -152,4 +152,4 @@ libraries = {
 }
 autoplay = "credits_rolling"
 
-[connection signal="button_up" from="CreditsMenu/ReturnButton" to="CreditsMenu" method="_on_return_button_button_up"]
+[connection signal="button_up" from="CreditsMenu/ReturnButton" to="." method="_on_return_button_button_up"]
