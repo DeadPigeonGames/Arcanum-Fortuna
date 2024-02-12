@@ -2,23 +2,23 @@
 
 [ext_resource type="Texture2D" uid="uid://b24ss0es2wjxk" path="res://assets/ui/placeholders/options_underlay_placeholder.png" id="1_45ycb"]
 [ext_resource type="Texture2D" uid="uid://cs0rxs0yhh3qy" path="res://assets/ui/placeholders/options_title_underlay_placeholder.png" id="2_4iaqa"]
-[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/options_ui_theme.tres" id="3_x54wv"]
+[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="3_x54wv"]
 
-[sub_resource type="Gradient" id="Gradient_1p20x"]
+[sub_resource type="Gradient" id="Gradient_neltp"]
 offsets = PackedFloat32Array(0, 0.298329, 1)
 colors = PackedColorArray(0.368686, 0.114148, 0.245366, 1, 0.397178, 0.233198, 0.501939, 1, 0.0980397, 0.255654, 0.220282, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_26jqf"]
-gradient = SubResource("Gradient_1p20x")
+gradient = SubResource("Gradient_neltp")
 width = 320
 height = 80
 
-[sub_resource type="Gradient" id="Gradient_dkfjh"]
+[sub_resource type="Gradient" id="Gradient_5vv0i"]
 offsets = PackedFloat32Array(0, 0.630072, 1)
 colors = PackedColorArray(0.122597, 0.295771, 0.150034, 1, 0.316053, 0.344579, 0.494389, 1, 0.407876, 0.188671, 0.215122, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d1pt4"]
-gradient = SubResource("Gradient_dkfjh")
+gradient = SubResource("Gradient_5vv0i")
 width = 320
 height = 80
 
@@ -174,6 +174,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_x54wv")
+theme_override_font_sizes/font_size = 35
 text = "AUDIO"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -184,19 +186,22 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -301.0
-offset_top = 8.0
+offset_top = 40.0
 offset_right = 301.0
-offset_bottom = 123.0
+offset_bottom = 362.0
 grow_horizontal = 2
 theme_override_constants/separation = 23
 
 [node name="MasterVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="Options/AudioOptions/Options/MasterVolume"]
-custom_minimum_size = Vector2(240, 46)
+custom_minimum_size = Vector2(296, 46)
 layout_mode = 2
+theme = ExtResource("3_x54wv")
 text = "MASTER VOLUME"
 vertical_alignment = 1
 
@@ -217,10 +222,13 @@ theme = ExtResource("3_x54wv")
 [node name="MusicVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="Options/AudioOptions/Options/MusicVolume"]
-custom_minimum_size = Vector2(240, 46)
+custom_minimum_size = Vector2(296, 46)
 layout_mode = 2
+theme = ExtResource("3_x54wv")
 text = "MUSIC VOLUME"
 vertical_alignment = 1
 
@@ -238,25 +246,82 @@ layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_x54wv")
 
-[node name="MusicVolume2" type="HBoxContainer" parent="Options/AudioOptions/Options"]
+[node name="AmbienceVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="Label" type="Label" parent="Options/AudioOptions/Options/MusicVolume2"]
-custom_minimum_size = Vector2(240, 46)
+[node name="Label" type="Label" parent="Options/AudioOptions/Options/AmbienceVolume"]
+custom_minimum_size = Vector2(296, 46)
 layout_mode = 2
-text = "MUSIC VOLUME"
+theme = ExtResource("3_x54wv")
+text = "AMBEINCE VOLUME"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/MusicVolume2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/AmbienceVolume"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/MusicVolume2/HBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/AmbienceVolume/HBoxContainer"]
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
 
-[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/MusicVolume2/HBoxContainer"]
+[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/AmbienceVolume/HBoxContainer"]
+custom_minimum_size = Vector2(246, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_x54wv")
+
+[node name="SFXVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/AudioOptions/Options/SFXVolume"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "SFX VOLUME"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/SFXVolume"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/SFXVolume/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+
+[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/SFXVolume/HBoxContainer"]
+custom_minimum_size = Vector2(246, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_x54wv")
+
+[node name="UIVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/AudioOptions/Options/UIVolume"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "UI VOLUME"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/UIVolume"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/UIVolume/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+
+[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/UIVolume/HBoxContainer"]
 custom_minimum_size = Vector2(246, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -292,9 +357,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_x54wv")
+theme_override_font_sizes/font_size = 35
 text = "VIDEO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="Options/VideoOptions"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.0
+offset_top = 40.0
+offset_right = 301.0
+offset_bottom = 86.0
+grow_horizontal = 2
+
+[node name="Resolution" type="HBoxContainer" parent="Options/VideoOptions/Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/VideoOptions/Options/Resolution"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "RESOLUTION"
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Options/VideoOptions/Options/Resolution"]
+custom_minimum_size = Vector2(296, 0)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+item_count = 4
+popup/item_0/text = "slay"
+popup/item_0/id = 0
+popup/item_1/text = "more slay"
+popup/item_1/id = 1
+popup/item_2/text = "less slay"
+popup/item_2/id = 2
+popup/item_3/text = "hella slay so gay"
+popup/item_3/id = 3
 
 [node name="AccessibilityOptions" type="Control" parent="Options"]
 visible = false
@@ -326,9 +428,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_x54wv")
+theme_override_font_sizes/font_size = 35
 text = "ACCESSIBILITY"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="Options/AccessibilityOptions"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -311.0
+offset_top = 40.0
+offset_right = 311.0
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_constants/separation = 23
+
+[node name="DyslexiaFont" type="HBoxContainer" parent="Options/AccessibilityOptions/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/AccessibilityOptions/Options/DyslexiaFont"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "DYSLEXIA FONT"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AccessibilityOptions/Options/DyslexiaFont"]
+custom_minimum_size = Vector2(296, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Options/AccessibilityOptions/Options/DyslexiaFont/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
 
 [node name="ReturnButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(0, 80)

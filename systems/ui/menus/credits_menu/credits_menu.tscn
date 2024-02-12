@@ -1,0 +1,176 @@
+[gd_scene load_steps=10 format=3 uid="uid://d101m5rvvp1kq"]
+
+[ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="1_ed5nk"]
+[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="2_3l6i4"]
+
+[sub_resource type="Gradient" id="Gradient_1p20x"]
+offsets = PackedFloat32Array(0, 0.298329, 1)
+colors = PackedColorArray(0.368686, 0.114148, 0.245366, 1, 0.397178, 0.233198, 0.501939, 1, 0.0980397, 0.255654, 0.220282, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aomnn"]
+gradient = SubResource("Gradient_1p20x")
+width = 320
+height = 80
+
+[sub_resource type="Gradient" id="Gradient_dkfjh"]
+offsets = PackedFloat32Array(0, 0.630072, 1)
+colors = PackedColorArray(0.122597, 0.295771, 0.150034, 1, 0.316053, 0.344579, 0.494389, 1, 0.407876, 0.188671, 0.215122, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8a2e0"]
+gradient = SubResource("Gradient_dkfjh")
+width = 320
+height = 80
+
+[sub_resource type="Animation" id="Animation_vt6pb"]
+resource_name = "credits_rolling"
+length = 25.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 1080), Vector2(960, -1080)]
+}
+
+[sub_resource type="Animation" id="Animation_f6rfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1080)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bulqn"]
+_data = {
+"RESET": SubResource("Animation_f6rfj"),
+"credits_rolling": SubResource("Animation_vt6pb")
+}
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuTitle" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 128)
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 994.0
+offset_bottom = 192.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 93
+text = "CREDITS"
+
+[node name="MenuSubtitle" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 48)
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 415.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 34
+text = "to those sought and found"
+
+[node name="ReturnButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -144.0
+offset_right = 384.0
+offset_bottom = -64.0
+grow_vertical = 0
+texture_pressed = SubResource("GradientTexture2D_aomnn")
+texture_hover = SubResource("GradientTexture2D_8a2e0")
+
+[node name="ButtonLabel" type="Label" parent="ReturnButton"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 58
+text = "RETURN"
+vertical_alignment = 1
+
+[node name="Credits" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Logo" type="TextureRect" parent="Credits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.5
+offset_right = 248.5
+offset_bottom = 314.0
+grow_horizontal = 2
+texture = ExtResource("1_ed5nk")
+
+[node name="Credits" type="RichTextLabel" parent="Credits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.0
+offset_top = 314.0
+offset_right = 454.0
+offset_bottom = 1192.99
+grow_horizontal = 2
+theme = ExtResource("2_3l6i4")
+bbcode_enabled = true
+text = "[center][b]Department[/b]
+Person 1 - Tasks
+Person 2 - Tasks
+
+[center][b]Department[/b]
+Person 1 - Tasks
+Person 2 - Tasks
+
+[center][b]Department[/b]
+Person 1 - Tasks
+Person 2 - Tasks
+
+[center][b]Special Thanks[/b]
+Person 1 - Tasks
+Person 2 - Tasks"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bulqn")
+}
+autoplay = "credits_rolling"
