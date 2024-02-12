@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjaecj5rdauy3"]
 
-[ext_resource type="Texture2D" uid="uid://do0e6paeiwi3x" path="res://assets/ui/placeholders/shop_price_explanation_underlay_placeholder.png" id="1_1wkkn"]
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_trade_section.gd" id="1_li3lg"]
 [ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5sgb4"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_6oljb"]
+[ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="3_dd2nf"]
 [ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="3_oaeng"]
 [ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="4_pfin6"]
 [ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="5_n0y7o"]
@@ -46,9 +46,11 @@ grow_vertical = 0
 [node name="TextureRect" type="TextureRect" parent="SectionExplanation"]
 custom_minimum_size = Vector2(480, 120)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_1wkkn")
+offset_left = -7.5
+offset_top = -21.0
+offset_right = 486.5
+offset_bottom = 150.0
+texture = ExtResource("3_dd2nf")
 
 [node name="Label" type="Label" parent="SectionExplanation"]
 custom_minimum_size = Vector2(480, 120)

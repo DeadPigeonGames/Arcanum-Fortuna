@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="2_fmrg3"]
 [ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="2_lrt16"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_tpvif"]
+[ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="3_dc1wl"]
 [ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="4_a1v5r"]
 [ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="5_gtqyr"]
-[ext_resource type="Texture2D" uid="uid://do0e6paeiwi3x" path="res://assets/ui/placeholders/shop_price_explanation_underlay_placeholder.png" id="6_8x8m8"]
 
 [sub_resource type="Resource" id="Resource_5s83o"]
 script = ExtResource("2_tpvif")
@@ -44,11 +44,12 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="SectionExplanation"]
-custom_minimum_size = Vector2(480, 120)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_8x8m8")
+offset_left = -1.0
+offset_top = -21.0
+offset_right = 493.0
+offset_bottom = 146.0
+texture = ExtResource("3_dc1wl")
 
 [node name="Label" type="Label" parent="SectionExplanation"]
 custom_minimum_size = Vector2(480, 120)
