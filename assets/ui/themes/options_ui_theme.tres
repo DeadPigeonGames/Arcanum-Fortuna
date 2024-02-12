@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://gdg11k5bmpte"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://gdg11k5bmpte"]
 
 [ext_resource type="Texture2D" uid="uid://bk4awi081narj" path="res://assets/ui/placeholders/checkbox_check_placeholder.png" id="1_ad8ym"]
 [ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="1_g0qs6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dydu3iy8wtmru" path="res://assets/ui/placeholders/dropdown_default_placeholder.png" id="8_erl2l"]
 [ext_resource type="Texture2D" uid="uid://dy6nbud4hpk3c" path="res://assets/ui/placeholders/dropdown_hover_placeholder.png" id="8_pblh0"]
 [ext_resource type="Texture2D" uid="uid://cyebfbvn468de" path="res://assets/ui/placeholders/dropdown_pressed_placeholder.png" id="10_1m1xk"]
+[ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="11_xhsqw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jihiw"]
 texture = ExtResource("1_g0qs6")
@@ -52,6 +53,12 @@ texture = ExtResource("8_erl2l")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7fqw"]
 texture = ExtResource("10_1m1xk")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xvo6"]
+texture = ExtResource("4_ujy3y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_obkvj"]
+texture = ExtResource("11_xhsqw")
+
 [resource]
 CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 40
@@ -73,3 +80,6 @@ OptionButton/styles/focus = SubResource("StyleBoxTexture_h467q")
 OptionButton/styles/hover = SubResource("StyleBoxTexture_kml1y")
 OptionButton/styles/normal = SubResource("StyleBoxTexture_awlsg")
 OptionButton/styles/pressed = SubResource("StyleBoxTexture_q7fqw")
+PopupMenu/icons/radio_checked = ExtResource("1_ad8ym")
+PopupMenu/styles/hover = SubResource("StyleBoxTexture_1xvo6")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_obkvj")
