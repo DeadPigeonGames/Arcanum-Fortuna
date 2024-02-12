@@ -1,26 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8xs6q5trxx58"]
+[gd_scene load_steps=4 format=3 uid="uid://b8xs6q5trxx58"]
 
 [ext_resource type="Texture2D" uid="uid://b24ss0es2wjxk" path="res://assets/ui/placeholders/options_underlay_placeholder.png" id="1_45ycb"]
 [ext_resource type="Texture2D" uid="uid://cs0rxs0yhh3qy" path="res://assets/ui/placeholders/options_title_underlay_placeholder.png" id="2_4iaqa"]
 [ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="3_x54wv"]
-
-[sub_resource type="Gradient" id="Gradient_neltp"]
-offsets = PackedFloat32Array(0, 0.298329, 1)
-colors = PackedColorArray(0.368686, 0.114148, 0.245366, 1, 0.397178, 0.233198, 0.501939, 1, 0.0980397, 0.255654, 0.220282, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_26jqf"]
-gradient = SubResource("Gradient_neltp")
-width = 320
-height = 80
-
-[sub_resource type="Gradient" id="Gradient_5vv0i"]
-offsets = PackedFloat32Array(0, 0.630072, 1)
-colors = PackedColorArray(0.122597, 0.295771, 0.150034, 1, 0.316053, 0.344579, 0.494389, 1, 0.407876, 0.188671, 0.215122, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_d1pt4"]
-gradient = SubResource("Gradient_5vv0i")
-width = 320
-height = 80
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -63,71 +45,26 @@ offset_right = 384.0
 offset_bottom = 560.0
 theme_override_constants/separation = 0
 
-[node name="AudioButton" type="TextureButton" parent="OptionsMenuButtons"]
+[node name="AudioButton" type="Button" parent="OptionsMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-texture_pressed = SubResource("GradientTexture2D_26jqf")
-texture_hover = SubResource("GradientTexture2D_d1pt4")
-
-[node name="ButtonLabel" type="Label" parent="OptionsMenuButtons/AudioButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("3_x54wv")
 text = "AUDIO"
-vertical_alignment = 1
+alignment = 0
 
-[node name="VideoButton" type="TextureButton" parent="OptionsMenuButtons"]
+[node name="VideoButton" type="Button" parent="OptionsMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-texture_pressed = SubResource("GradientTexture2D_26jqf")
-texture_hover = SubResource("GradientTexture2D_d1pt4")
-
-[node name="ButtonLabel" type="Label" parent="OptionsMenuButtons/VideoButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("3_x54wv")
 text = "VIDEO"
-vertical_alignment = 1
+alignment = 0
 
-[node name="AccessibilityButton" type="TextureButton" parent="OptionsMenuButtons"]
+[node name="AccessibilityButton" type="Button" parent="OptionsMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-texture_pressed = SubResource("GradientTexture2D_26jqf")
-texture_hover = SubResource("GradientTexture2D_d1pt4")
-
-[node name="ButtonLabel" type="Label" parent="OptionsMenuButtons/AccessibilityButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("3_x54wv")
 text = "ACCESSIBILITY"
-vertical_alignment = 1
+alignment = 0
 
 [node name="Options" type="Control" parent="."]
 anchors_preset = 0
@@ -469,7 +406,7 @@ custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
 
-[node name="ReturnButton" type="TextureButton" parent="."]
+[node name="ReturnButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 anchors_preset = 2
@@ -480,21 +417,6 @@ offset_top = -144.0
 offset_right = 384.0
 offset_bottom = -64.0
 grow_vertical = 0
-texture_pressed = SubResource("GradientTexture2D_26jqf")
-texture_hover = SubResource("GradientTexture2D_d1pt4")
-
-[node name="ButtonLabel" type="Label" parent="ReturnButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("3_x54wv")
 text = "RETURN"
-vertical_alignment = 1
+alignment = 0
