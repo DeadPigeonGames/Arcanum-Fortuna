@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d101m5rvvp1kq"]
+[gd_scene load_steps=10 format=3 uid="uid://d101m5rvvp1kq"]
 
 [ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="1_ed5nk"]
+[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="2_3l6i4"]
 
 [sub_resource type="Gradient" id="Gradient_1p20x"]
 offsets = PackedFloat32Array(0, 0.298329, 1)
@@ -87,7 +88,7 @@ theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 34
-text = "to those we met along our journey"
+text = "to those sought and found"
 
 [node name="ReturnButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(0, 80)
@@ -150,8 +151,7 @@ offset_top = 314.0
 offset_right = 454.0
 offset_bottom = 1192.99
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 40
+theme = ExtResource("2_3l6i4")
 bbcode_enabled = true
 text = "[center][b]Department[/b]
 Person 1 - Tasks

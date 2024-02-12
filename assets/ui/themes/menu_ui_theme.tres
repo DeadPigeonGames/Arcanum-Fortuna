@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=26 format=3 uid="uid://gdg11k5bmpte"]
+[gd_resource type="Theme" load_steps=27 format=3 uid="uid://gdg11k5bmpte"]
 
 [ext_resource type="Texture2D" uid="uid://bk4awi081narj" path="res://assets/ui/placeholders/checkbox_check_placeholder.png" id="1_ad8ym"]
 [ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="1_g0qs6"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dy6nbud4hpk3c" path="res://assets/ui/placeholders/dropdown_hover_placeholder.png" id="8_pblh0"]
 [ext_resource type="Texture2D" uid="uid://cyebfbvn468de" path="res://assets/ui/placeholders/dropdown_pressed_placeholder.png" id="10_1m1xk"]
 [ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="11_xhsqw"]
+[ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="12_y4mt7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jihiw"]
 texture = ExtResource("1_g0qs6")
@@ -60,6 +61,8 @@ texture = ExtResource("4_ujy3y")
 texture = ExtResource("11_xhsqw")
 
 [resource]
+default_font = ExtResource("12_y4mt7")
+default_font_size = 25
 CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 40
 CheckBox/icons/checked = ExtResource("1_ad8ym")
@@ -83,3 +86,6 @@ OptionButton/styles/pressed = SubResource("StyleBoxTexture_q7fqw")
 PopupMenu/icons/radio_checked = ExtResource("1_ad8ym")
 PopupMenu/styles/hover = SubResource("StyleBoxTexture_1xvo6")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_obkvj")
+RichTextLabel/constants/line_separation = 12
+RichTextLabel/font_sizes/bold_font_size = 50
+RichTextLabel/font_sizes/normal_font_size = 35
