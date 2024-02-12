@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://cbsn1r2h288lq"]
+[gd_scene load_steps=25 format=3 uid="uid://cbsn1r2h288lq"]
 
 [ext_resource type="Script" path="res://systems/ui/new_deck_preview/deck_preview_overlay.gd" id="1_mj3a2"]
 [ext_resource type="Texture2D" uid="uid://ch1ct0w4v6y7x" path="res://assets/ui/placeholders/deck_preview_underlay_placeholder.png" id="1_nn6al"]
 [ext_resource type="PackedScene" uid="uid://djimo5osb2i1s" path="res://systems/ui/new_deck_preview/deck_preview_card.tscn" id="2_ilop0"]
-[ext_resource type="Texture2D" uid="uid://bf3aasd15g4xc" path="res://assets/ui/placeholders/deck_preview_title_underlay_placeholder.png" id="2_wh8bo"]
 [ext_resource type="Texture2D" uid="uid://buyksmxphvyw1" path="res://assets/ui/placeholders/sort_by_karma_button_focused_placeholder.png" id="3_mj5gk"]
+[ext_resource type="Texture2D" uid="uid://bwexgd4isf4pt" path="res://assets/ui/underlays/shop_tab_focused.png" id="4_3luy0"]
 [ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="4_8wy74"]
 [ext_resource type="Texture2D" uid="uid://cfiorekcvp03n" path="res://assets/ui/placeholders/sort_by_karma_button_default_placeholder.png" id="4_55w0m"]
 [ext_resource type="Texture2D" uid="uid://bidqt3oqi07t5" path="res://assets/ui/placeholders/sort_by_karma_button_hover_placeholder.png" id="4_086th"]
@@ -13,23 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://da13f8w2ugs2b" path="res://assets/ui/placeholders/sort_by_attack_button_hover_placeholder.png" id="7_5sxuq"]
 [ext_resource type="Texture2D" uid="uid://c0h4lr8fkmh01" path="res://assets/ui/placeholders/sort_by_health_button_default_placeholder.png" id="8_33sfp"]
 [ext_resource type="Texture2D" uid="uid://byqxco0m7v684" path="res://assets/ui/placeholders/sort_by_health_button_hover_placeholder.png" id="10_b62fb"]
-[ext_resource type="Texture2D" uid="uid://bnfj7t34405xc" path="res://assets/ui/placeholders/close_window_button_default_placeholder.png" id="12_g6vk7"]
 [ext_resource type="PackedScene" uid="uid://cecd2obec3kr0" path="res://systems/ui/new_deck_preview/player_deck.tscn" id="12_odq63"]
 [ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="14_iayku"]
+[ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="15_eqh66"]
 [ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="15_hea4m"]
+[ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="16_lrcsa"]
 [ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="16_y70wc"]
-
-[sub_resource type="Gradient" id="Gradient_0nagi"]
-colors = PackedColorArray(0.215686, 0.352941, 0.462745, 1, 0.215686, 0.352941, 0.462745, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nagvt"]
-gradient = SubResource("Gradient_0nagi")
-
-[sub_resource type="Gradient" id="Gradient_3rdab"]
-colors = PackedColorArray(0.448727, 0.464516, 0.555199, 1, 0.447059, 0.462745, 0.556863, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tixtj"]
-gradient = SubResource("Gradient_3rdab")
+[ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="17_pnl16"]
 
 [sub_resource type="Animation" id="Animation_7857e"]
 length = 0.001
@@ -219,7 +209,7 @@ offset_right = 160.0
 offset_bottom = -928.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_wh8bo")
+texture = ExtResource("4_3luy0")
 
 [node name="Label" type="Label" parent="DeckPreviewOverlay/DeckPreview/DeckPreviewFrame"]
 layout_mode = 1
@@ -300,9 +290,9 @@ offset_bottom = -984.0
 grow_horizontal = 0
 mouse_filter = 1
 disabled = true
-texture_normal = ExtResource("12_g6vk7")
-texture_pressed = SubResource("GradientTexture2D_nagvt")
-texture_hover = SubResource("GradientTexture2D_tixtj")
+texture_normal = ExtResource("15_eqh66")
+texture_pressed = ExtResource("16_lrcsa")
+texture_hover = ExtResource("17_pnl16")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DeckPreviewOverlay"]
 unique_name_in_owner = true
