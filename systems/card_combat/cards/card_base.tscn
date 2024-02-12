@@ -780,7 +780,6 @@ grow_horizontal = 0
 pivot_offset = Vector2(16, 16)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Voices"
 
 [node name="KeywordSlots" type="Control" parent="."]
 anchors_preset = 0
