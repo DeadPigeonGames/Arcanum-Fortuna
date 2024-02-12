@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d101m5rvvp1kq"]
+[gd_scene load_steps=9 format=3 uid="uid://d101m5rvvp1kq"]
+
+[ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="1_ed5nk"]
 
 [sub_resource type="Gradient" id="Gradient_1p20x"]
 offsets = PackedFloat32Array(0, 0.298329, 1)
@@ -32,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(506, 1080), Vector2(506, -879)]
+"values": [Vector2(960, 1080), Vector2(960, -1080)]
 }
 
 [sub_resource type="Animation" id="Animation_f6rfj"]
@@ -47,7 +49,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(506, 1080)]
+"values": [Vector2(960, 1080)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bulqn"]
@@ -117,18 +119,37 @@ theme_override_font_sizes/font_size = 58
 text = "RETURN"
 vertical_alignment = 1
 
-[node name="Credits" type="RichTextLabel" parent="."]
+[node name="Credits" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -454.0
-offset_right = 454.0
-offset_bottom = 878.985
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Logo" type="TextureRect" parent="Credits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.5
+offset_right = 248.5
+offset_bottom = 314.0
+grow_horizontal = 2
+texture = ExtResource("1_ed5nk")
+
+[node name="Credits" type="RichTextLabel" parent="Credits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.0
+offset_top = 314.0
+offset_right = 454.0
+offset_bottom = 1192.99
+grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
