@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5sgb4"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_6oljb"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="3_dd2nf"]
-[ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="3_oaeng"]
-[ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="4_pfin6"]
-[ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="5_n0y7o"]
-[ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="6_b0rs8"]
+[ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="5_e27xk"]
+[ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="6_x6y62"]
+[ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="7_rt4em"]
+[ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="8_cotqf"]
 
 [sub_resource type="Resource" id="Resource_jke14"]
 script = ExtResource("2_6oljb")
@@ -118,16 +118,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -248.0
-offset_right = 200.0
-offset_bottom = -168.0
+offset_left = -219.0
+offset_top = -270.0
+offset_right = 219.0
+offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("3_oaeng")
-texture_pressed = ExtResource("4_pfin6")
-texture_hover = ExtResource("5_n0y7o")
-texture_disabled = ExtResource("6_b0rs8")
+texture_normal = ExtResource("5_e27xk")
+texture_pressed = ExtResource("6_x6y62")
+texture_hover = ExtResource("7_rt4em")
+texture_disabled = ExtResource("8_cotqf")
 
 [node name="Label" type="Label" parent="TradeButton"]
 layout_mode = 1

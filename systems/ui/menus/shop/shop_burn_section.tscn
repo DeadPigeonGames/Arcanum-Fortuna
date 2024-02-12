@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5tl8o"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="2_8dnxu"]
 [ext_resource type="Texture2D" uid="uid://cva15wlxtmy0e" path="res://assets/ui/placeholders/shop_burn_section_open_deck_button_default_placeholder.png" id="3_601oy"]
-[ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="3_q6sq1"]
 [ext_resource type="Texture2D" uid="uid://b67xtx0b1ricu" path="res://assets/ui/placeholders/shop_burn_section_open_deck_button_hover_placeholder.png" id="4_1k2yi"]
-[ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="4_ohas7"]
-[ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="5_ph4uv"]
-[ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="6_cn4dk"]
+[ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="6_7o87m"]
+[ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="7_rcu5e"]
+[ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="8_yxhup"]
+[ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="9_oaws2"]
 
 [node name="ShopBurnSection" type="Control"]
 layout_mode = 3
@@ -108,16 +108,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -248.0
-offset_right = 200.0
-offset_bottom = -168.0
+offset_left = -219.0
+offset_top = -270.0
+offset_right = 219.0
+offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("3_q6sq1")
-texture_pressed = ExtResource("4_ohas7")
-texture_hover = ExtResource("5_ph4uv")
-texture_disabled = ExtResource("6_cn4dk")
+texture_normal = ExtResource("6_7o87m")
+texture_pressed = ExtResource("7_rcu5e")
+texture_hover = ExtResource("8_yxhup")
+texture_disabled = ExtResource("9_oaws2")
 
 [node name="Label" type="Label" parent="PayButton"]
 layout_mode = 1
