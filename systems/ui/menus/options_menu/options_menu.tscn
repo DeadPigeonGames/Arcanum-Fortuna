@@ -4,21 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://cs0rxs0yhh3qy" path="res://assets/ui/placeholders/options_title_underlay_placeholder.png" id="2_4iaqa"]
 [ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/options_ui_theme.tres" id="3_x54wv"]
 
-[sub_resource type="Gradient" id="Gradient_1p20x"]
+[sub_resource type="Gradient" id="Gradient_neltp"]
 offsets = PackedFloat32Array(0, 0.298329, 1)
 colors = PackedColorArray(0.368686, 0.114148, 0.245366, 1, 0.397178, 0.233198, 0.501939, 1, 0.0980397, 0.255654, 0.220282, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_26jqf"]
-gradient = SubResource("Gradient_1p20x")
+gradient = SubResource("Gradient_neltp")
 width = 320
 height = 80
 
-[sub_resource type="Gradient" id="Gradient_dkfjh"]
+[sub_resource type="Gradient" id="Gradient_5vv0i"]
 offsets = PackedFloat32Array(0, 0.630072, 1)
 colors = PackedColorArray(0.122597, 0.295771, 0.150034, 1, 0.316053, 0.344579, 0.494389, 1, 0.407876, 0.188671, 0.215122, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d1pt4"]
-gradient = SubResource("Gradient_dkfjh")
+gradient = SubResource("Gradient_5vv0i")
 width = 320
 height = 80
 
