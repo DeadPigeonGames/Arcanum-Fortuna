@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=42 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
@@ -19,6 +19,7 @@
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="11_mto8i"]
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="14_yoojl"]
+[ext_resource type="Texture2D" uid="uid://bawbyueie70c3" path="res://assets/sprites/keywords/kw_duality.png" id="16_kkaoq"]
 
 [sub_resource type="Animation" id="Animation_n7fbk"]
 length = 0.001
@@ -780,7 +781,6 @@ grow_horizontal = 0
 pivot_offset = Vector2(16, 16)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Voices"
 
 [node name="KeywordSlots" type="Control" parent="."]
 anchors_preset = 0
@@ -841,11 +841,11 @@ mouse_filter = 1
 
 [node name="KeywordParticles" type="GPUParticles2D" parent="CenterAnchor"]
 unique_name_in_owner = true
-scale = Vector2(1.5, 1.5)
+scale = Vector2(6, 6)
 emitting = false
-amount = 1024
+amount = 1
 process_material = ExtResource("10_yfr0r")
-texture = ExtResource("9_lhvyd")
+texture = ExtResource("16_kkaoq")
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0

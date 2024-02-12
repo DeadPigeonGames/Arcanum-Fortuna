@@ -27,6 +27,6 @@ triggers = 4
 is_animated = true
 scale_speed = 0.6
 title = "Karma Switch Negative %d"
-description = "Transforms once its owner controls %d cards with a positive karma value."
+description = "Transforms once its owner controls %d cards with a negative karma value."
 icon = SubResource("AtlasTexture_tj8qu")
 highlight_duration = 0.5

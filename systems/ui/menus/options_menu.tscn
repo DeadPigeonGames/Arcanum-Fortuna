@@ -116,7 +116,7 @@ alignment = 1
 [node name="enabled" type="CheckBox" parent="OptionsMenu/TabContainer/Audio/sliders/slider_bgfx"]
 layout_mode = 2
 button_pressed = true
-text = "Background FX"
+text = "Ambience"
 
 [node name="hoverSound" parent="OptionsMenu/TabContainer/Audio/sliders/slider_bgfx/enabled" instance=ExtResource("6_ym477")]
 singleton = 1
@@ -146,7 +146,7 @@ alignment = 1
 [node name="enabled" type="CheckBox" parent="OptionsMenu/TabContainer/Audio/sliders/slider_ui"]
 layout_mode = 2
 button_pressed = true
-text = "UI"
+text = "Diagetics"
 
 [node name="hoverSound" parent="OptionsMenu/TabContainer/Audio/sliders/slider_ui/enabled" instance=ExtResource("6_ym477")]
 singleton = 1
@@ -176,7 +176,7 @@ alignment = 1
 [node name="enabled" type="CheckBox" parent="OptionsMenu/TabContainer/Audio/sliders/slider_vfx"]
 layout_mode = 2
 button_pressed = true
-text = "VFX"
+text = "SFXOther"
 
 [node name="hoverSound" parent="OptionsMenu/TabContainer/Audio/sliders/slider_vfx/enabled" instance=ExtResource("6_ym477")]
 singleton = 1
@@ -206,8 +206,7 @@ alignment = 1
 [node name="enabled" type="CheckBox" parent="OptionsMenu/TabContainer/Audio/sliders/slider_voices"]
 layout_mode = 2
 button_pressed = true
-text = "Voices
-"
+text = "UI"
 
 [node name="hoverSound" parent="OptionsMenu/TabContainer/Audio/sliders/slider_voices/enabled" instance=ExtResource("6_ym477")]
 singleton = 1

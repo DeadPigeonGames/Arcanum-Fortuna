@@ -8,3 +8,11 @@ func setup(from : Buff):
 	%KeywordIcon.texture = from.created_by.icon
 	%AttackChangeLabel.text = ("+" if from.attack_gain >= 0 else "") + str(from.attack_gain)
 	%HealthChangeLabel.text = ("+" if from.health_gain >= 0 else "") + str(from.health_gain)
+
+
+func setup_as_base_stat(attack : int, health: int, owner_name : String):
+	%KeywordLabel.text = %KeywordLabel.text % owner_name
+	%OwnerLabel.text = %OwnerLabel.text % "Base Stats"
+	%KeywordIcon.hide()
+	%AttackChangeLabel.text =  str(attack)
+	%HealthChangeLabel.text = str(health)

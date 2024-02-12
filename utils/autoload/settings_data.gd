@@ -25,7 +25,7 @@ func get_settings_dict():
 
 func get_current_audio_dict():
 	var dict : Dictionary
-	var audio_busses = ["Master", "Music", "BackgroundFX", "UI", "VFX", "VFX Echo", "Voices"]
+	var audio_busses = ["Master", "Music", "Ambience", "Diagetics", "SFXOther", "UI", "Signature"]
 	
 	for bus in audio_busses:
 		var bus_idx = AudioServer.get_bus_index(bus)

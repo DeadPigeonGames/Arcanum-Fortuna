@@ -23,6 +23,8 @@ func get_dynamic_description(owner: Card):
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):
+	if owner.health <= 0:
+		return
 	await super(source, owner, target, icon_to_animate, params)
 	if not target is CombatCard:
 		push_error("Cannot apply HealthDrain. Invalid target ", target, ".")

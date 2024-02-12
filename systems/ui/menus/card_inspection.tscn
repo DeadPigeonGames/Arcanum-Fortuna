@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=23 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://cof5lb3kf7g0w" path="res://assets/sprites/keywords/kw_switch_2.png" id="2_unu64"]
@@ -43,41 +43,6 @@ shader_parameter/detail = 1.0
 shader_parameter/distortion = null
 shader_parameter/heightOffset = 1.5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt7uj"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvl8h"]
-bg_color = Color(0.105882, 0.835294, 0.784314, 0)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxnba"]
-bg_color = Color(0.0627451, 0.513726, 0.482353, 0)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhiq8"]
-bg_color = Color(0.0313726, 0.360784, 0.337255, 0)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5midk"]
-bg_color = Color(0.0784314, 0.631373, 0.592157, 0)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
 [node name="CardInspection" type="Control"]
 z_index = 4096
 layout_mode = 3
@@ -87,8 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_373cu")
-default_icon = ExtResource("2_unu64")
-switched_icon = ExtResource("18_4f2ee")
+hover_color = Color(0.107422, 0.312807, 0.496135, 1)
 stat_change_scene = ExtResource("3_d8e8f")
 switch_artwork_shader = ExtResource("5_xkl1s")
 switch_keyword_slots = ExtResource("6_0xrdx")
@@ -312,21 +276,16 @@ offset_right = 699.0
 offset_bottom = 546.0
 texture = ExtResource("16_r327o")
 
-[node name="SwitchButton" type="Button" parent="SwitchCondition"]
+[node name="SwitchButton" type="TextureButton" parent="SwitchCondition"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -68.0
-offset_top = 185.0
-offset_right = 12.0
-offset_bottom = 265.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_lt7uj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uvl8h")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oxnba")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_bhiq8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_5midk")
-icon = ExtResource("2_unu64")
-flat = true
-icon_alignment = 1
+offset_left = -62.0
+offset_top = 190.0
+offset_right = 18.0
+offset_bottom = 270.0
+toggle_mode = true
+texture_normal = ExtResource("2_unu64")
+texture_pressed = ExtResource("18_4f2ee")
 
 [node name="Label" type="RichTextLabel" parent="SwitchCondition"]
 custom_minimum_size = Vector2(640, 92)
@@ -356,4 +315,6 @@ texture_pressed = ExtResource("13_6mpdr")
 texture_hover = ExtResource("12_tp7it")
 
 [connection signal="button_down" from="SwitchCondition/SwitchButton" to="." method="_on_switch_button_button_down"]
+[connection signal="mouse_entered" from="SwitchCondition/SwitchButton" to="." method="_on_switch_button_mouse_entered"]
+[connection signal="mouse_exited" from="SwitchCondition/SwitchButton" to="." method="_on_switch_button_mouse_exited"]
 [connection signal="button_down" from="CloseWindowButton" to="." method="_on_close_window_button_button_down"]
