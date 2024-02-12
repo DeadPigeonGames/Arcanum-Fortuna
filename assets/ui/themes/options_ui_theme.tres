@@ -1,12 +1,33 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://gdg11k5bmpte"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://gdg11k5bmpte"]
 
 [ext_resource type="Texture2D" uid="uid://bk4awi081narj" path="res://assets/ui/placeholders/checkbox_check_placeholder.png" id="1_ad8ym"]
 [ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="1_g0qs6"]
+[ext_resource type="Texture2D" uid="uid://ucp5uptgmfr1" path="res://assets/ui/placeholders/chechbox_hover_placeholder.png" id="2_qix05"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jihiw"]
+texture = ExtResource("1_g0qs6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3bmuj"]
+texture = ExtResource("2_qix05")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3x4j4"]
+texture = ExtResource("2_qix05")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81h4m"]
 texture = ExtResource("1_g0qs6")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ordp0"]
+texture = ExtResource("1_g0qs6")
+
 [resource]
-CheckBox/constants/check_v_offset = 6
+CheckBox/constants/check_v_offset = 0
+CheckBox/constants/h_separation = 40
 CheckBox/icons/checked = ExtResource("1_ad8ym")
+CheckBox/icons/checked_disabled = null
+CheckBox/icons/unchecked = null
+CheckBox/icons/unchecked_disabled = null
+CheckBox/styles/focus = SubResource("StyleBoxTexture_jihiw")
+CheckBox/styles/hover = SubResource("StyleBoxTexture_3bmuj")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxTexture_3x4j4")
 CheckBox/styles/normal = SubResource("StyleBoxTexture_81h4m")
+CheckBox/styles/pressed = SubResource("StyleBoxTexture_ordp0")
