@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_id6c3")
 name = "Page of Herbs"
-description = "It doesn't do stuff."
+description = "Usually timid, these denizens of field and forest prefer to keep to themselves. "
 artwork = ExtResource("1_bauew")
 cost = 4
 attack = 0

@@ -1,52 +1,31 @@
-extends CanvasLayer
+class_name PauseMenu
+extends UIBase
 
-@export_category("Pause Menu")
-@export var can_pause = true
 @export var options_scene: PackedScene
 
 
-var pre_paused = false
+func setup():
+	pass
 
 
-
-func _ready():
-	visible = false
-
-
-func toggle_pause_menu():
-	if visible:
-		hide_pause_menu()
-	else:
-		show_pause_menu()
-
-
-func hide_pause_menu():
-	visible = false
-	get_tree().paused = pre_paused
-
-
-func show_pause_menu():
-	if not can_pause:
-		return
-	visible = true
-	pre_paused = get_tree().paused
-	get_tree().paused = true
+func close_pause_menu():
+	Pause.continue_game()
+	close()
 
 
 func _on_btn_continue_pressed():
-	hide_pause_menu()
+	close_pause_menu()
 
 
 func _on_btn_back_to_menu_pressed():
 	SceneHandler.change_scene("res://systems/ui/main_menu.tscn")
-	hide_pause_menu()
+	close_pause_menu()
 
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		toggle_pause_menu()
+	if event.is_action_released("ui_cancel"):
+		close_pause_menu()
 
 
 func _on_btn_options_pressed():
-	var options = options_scene.instantiate()
-	add_child(options)
+	call_ui_element(options_scene)

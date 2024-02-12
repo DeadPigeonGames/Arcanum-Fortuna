@@ -38,7 +38,6 @@ func process_effect() -> ExitState:
 	var relevant_cards = get_relevant_cards()
 	if len(relevant_cards) <= 0:
 		return ExitState.DEFAULT
-	
 	var target = get_karma_modify_target()
 	await animate_karma(relevant_cards, target)
 	if await target.process_karma_overflow():
@@ -56,6 +55,8 @@ func animate_karma(relevant_cards, target):
 	var total_wait_count = 0.0
 
 	for card : CombatCard in relevant_cards:
+		Pause.can_pause = false
+		
 		var health_slot = await card.animate_karma(target)
 		var small_pearl = small_blob.instantiate()
 		combat.game_board.add_child(small_pearl)
@@ -103,3 +104,5 @@ func animate_karma(relevant_cards, target):
 	await combat.get_tree().create_timer(karma_delay).timeout
 	target.modify_karma(blob.count)
 	blob.delete()
+	
+	Pause.can_pause = true

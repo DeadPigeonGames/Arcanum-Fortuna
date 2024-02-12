@@ -3,8 +3,13 @@
 [ext_resource type="Script" path="res://utils/autoload/scene_handler.gd" id="1_5ea16"]
 
 [node name="SceneHandler" type="Node"]
+process_mode = 3
 script = ExtResource("1_5ea16")
 
 [node name="CurrentScene" type="Node" parent="."]
+process_mode = 1
 
 [node name="Shelf" type="Node" parent="."]
+process_mode = 1
+
+[node name="UIContainer" type="Node" parent="."]

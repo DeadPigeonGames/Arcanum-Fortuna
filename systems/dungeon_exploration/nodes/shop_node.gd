@@ -1,3 +1,4 @@
+class_name ShopNode
 extends EventNode
 
 func _trigger_event():

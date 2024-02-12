@@ -11,7 +11,20 @@
 mouse_filter = 2
 script = ExtResource("2_nvahl")
 
+[node name="SwitchFrame" parent="Artwork" index="0"]
+offset_left = -11.0
+
+[node name="Label" parent="Artwork/SwitchFrame" index="0"]
+offset_left = 70.0
+offset_top = 228.5
+offset_right = 140.0
+offset_bottom = 243.5
+
 [node name="Cost" parent="." index="2"]
+offset_left = 17.2
+offset_top = -48.0
+offset_right = 57.2
+offset_bottom = -8.0
 texture = ExtResource("3_1wpwd")
 
 [node name="Health" parent="." index="3"]

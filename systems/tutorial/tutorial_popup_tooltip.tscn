@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://31aqxfyoi4ha"]
-
-[ext_resource type="PackedScene" uid="uid://b45r81lj73pdb" path="res://systems/tutorial/tutorial_popup.tscn" id="1_fltoy"]
-[ext_resource type="Script" path="res://systems/tutorial/tutorial_popup_tooltip.gd" id="2_bi0aa"]
-
-[node name="TutorialPopupTooltip" instance=ExtResource("1_fltoy")]
-script = ExtResource("2_bi0aa")

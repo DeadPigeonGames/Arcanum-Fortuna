@@ -1,31 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7qbbf3idp0cf"]
+[gd_scene load_steps=4 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
 [ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_r5jdh"]
+[ext_resource type="Texture2D" uid="uid://egdd3thbadgy" path="res://assets/ui/placeholders/test_bg.jpg" id="3_i2jhm"]
 
 [node name="CardTooltip" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 400.0
-offset_bottom = 87.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_j2xxw")
 mouse_offset = Vector2(35, -60)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+clip_contents = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/margin_left = -1
+theme_override_constants/margin_top = -1
+theme_override_constants/margin_right = -1
+theme_override_constants/margin_bottom = -1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 unique_name_in_owner = true
+clip_contents = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 texture = ExtResource("2_r5jdh")
+draw_center = false
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
+
+[node name="Background" type="Sprite2D" parent="MarginContainer/NinePatchRect"]
+unique_name_in_owner = true
+z_index = -1
+scale = Vector2(3.00469, 3)
+texture = ExtResource("3_i2jhm")
+centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2

@@ -1,12 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://313ltwpa7fyq"]
+[gd_scene load_steps=14 format=3 uid="uid://313ltwpa7fyq"]
 
+[ext_resource type="Script" path="res://systems/ui/menus/shop/shop.gd" id="1_555t3"]
 [ext_resource type="Texture2D" uid="uid://b5afkfy613wxv" path="res://assets/ui/placeholders/shop_section_button_focused_placeholder.png" id="1_f2i8i"]
 [ext_resource type="Texture2D" uid="uid://duv2of85sje8k" path="res://assets/ui/placeholders/shop_section_button_default_placeholder.png" id="1_i7xu1"]
 [ext_resource type="Texture2D" uid="uid://ciikg3layvgng" path="res://assets/ui/placeholders/upper_shop_underlay.png" id="1_svqgw"]
 [ext_resource type="Texture2D" uid="uid://cg8w46s17rskd" path="res://assets/ui/placeholders/shop_section_button_hover_placeholder.png" id="2_jy8p6"]
-[ext_resource type="PackedScene" uid="uid://b1x2ts07qkvj8" path="res://systems/ui/menus/shop/shop_trade_section.tscn" id="4_en8fe"]
+[ext_resource type="PackedScene" uid="uid://cjaecj5rdauy3" path="res://systems/ui/menus/shop/shop_trade_section.tscn" id="4_en8fe"]
 [ext_resource type="PackedScene" uid="uid://4ksadcfwwt52" path="res://systems/ui/menus/shop/shop_buy_section.tscn" id="4_s3t54"]
-[ext_resource type="PackedScene" uid="uid://cx0lut3bbosw1" path="res://systems/ui/menus/shop/shop_burn_section.tscn" id="6_nknc1"]
+[ext_resource type="PackedScene" uid="uid://fa4xb26tm6iu" path="res://systems/ui/menus/shop/shop_burn_section.tscn" id="6_nknc1"]
+[ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="9_lxyr5"]
+[ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="10_jehay"]
+[ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="11_uwthw"]
 
 [sub_resource type="Gradient" id="Gradient_mjy55"]
 colors = PackedColorArray(0.351476, 0.22058, 0.107841, 1, 0.352941, 0.219608, 0.105882, 1)
@@ -14,7 +18,13 @@ colors = PackedColorArray(0.351476, 0.22058, 0.107841, 1, 0.352941, 0.219608, 0.
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_mscm7"]
 gradient = SubResource("Gradient_mjy55")
 
-[node name="Shop" type="Control"]
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_555t3")
+shop_buy_tab = ExtResource("4_s3t54")
+shop_trade_tab = ExtResource("4_en8fe")
+shop_burn_tab = ExtResource("6_nknc1")
+
+[node name="Shop" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -24,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="UpperShopUnderlay" type="TextureRect" parent="."]
+[node name="UpperShopUnderlay" type="TextureRect" parent="Shop"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -39,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("1_svqgw")
 
-[node name="ShopUnderlay" type="TextureRect" parent="."]
+[node name="ShopUnderlay" type="TextureRect" parent="Shop"]
 custom_minimum_size = Vector2(1920, 928)
 layout_mode = 1
 anchors_preset = 7
@@ -54,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("GradientTexture1D_mscm7")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -69,34 +79,62 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 240
 
-[node name="BuySectionButton" type="TextureButton" parent="HBoxContainer"]
+[node name="BuySectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_i7xu1")
 texture_hover = ExtResource("2_jy8p6")
 texture_focused = ExtResource("1_f2i8i")
 
-[node name="TradeSectionButton" type="TextureButton" parent="HBoxContainer"]
+[node name="TradeSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_i7xu1")
 texture_hover = ExtResource("2_jy8p6")
 texture_focused = ExtResource("1_f2i8i")
 
-[node name="BurnSectionButton" type="TextureButton" parent="HBoxContainer"]
+[node name="BurnSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_i7xu1")
 texture_hover = ExtResource("2_jy8p6")
 texture_focused = ExtResource("1_f2i8i")
 
-[node name="ShopBuySection" parent="." instance=ExtResource("4_s3t54")]
+[node name="LeaveShopButton" type="TextureButton" parent="Shop"]
 layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 624.0
+offset_top = -192.0
+offset_right = 944.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("9_lxyr5")
+texture_pressed = ExtResource("10_jehay")
+texture_hover = ExtResource("11_uwthw")
 
-[node name="ShopTradeSection" parent="." instance=ExtResource("4_en8fe")]
-visible = false
+[node name="Label" type="Label" parent="Shop/LeaveShopButton"]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Journey on"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ShopBurnSection" parent="." instance=ExtResource("6_nknc1")]
-visible = false
-layout_mode = 1
+[connection signal="button_up" from="Shop/HBoxContainer/BuySectionButton" to="." method="_on_buy_section_button_button_up"]
+[connection signal="button_up" from="Shop/HBoxContainer/TradeSectionButton" to="." method="_on_trade_section_button_button_up"]
+[connection signal="button_up" from="Shop/HBoxContainer/BurnSectionButton" to="." method="_on_burn_section_button_button_up"]
+[connection signal="button_up" from="Shop/LeaveShopButton" to="." method="_on_leave_shop_button_button_up"]

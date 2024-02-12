@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_otgqu")
 name = "Knight of Daggers"
-description = "It doesn't do stuff."
+description = "Ravenous in their bloodthirst, these warriors know little fear. "
 artwork = ExtResource("1_s1bsp")
 cost = 4
 attack = 0

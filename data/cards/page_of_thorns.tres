@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_0y20a")
 name = "Page of Thorns"
-description = "It doesn't do stuff."
+description = "Unheeding worshippers of revelry and excess. "
 artwork = ExtResource("1_modx0")
 cost = 4
 attack = 0

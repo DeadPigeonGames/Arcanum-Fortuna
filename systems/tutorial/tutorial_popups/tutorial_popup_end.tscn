@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckwgnvwet52st"]
+
+[ext_resource type="PackedScene" uid="uid://b45r81lj73pdb" path="res://systems/tutorial/tutorial_popups/tutorial_popup.tscn" id="1_3njrx"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_popups/tutorial_popup_end.gd" id="2_1yejo"]
+
+[node name="TutorialPopupEnd" instance=ExtResource("1_3njrx")]
+script = ExtResource("2_1yejo")
+
+[node name="EndButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+text = "End"
+
+[connection signal="button_up" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/EndButton" to="." method="_on_end_button_button_up"]

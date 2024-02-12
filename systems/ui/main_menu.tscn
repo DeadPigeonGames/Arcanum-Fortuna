@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xd6gb0dp1t4s"]
+[gd_scene load_steps=12 format=3 uid="uid://xd6gb0dp1t4s"]
 
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_ap4ji"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_lt3o0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="4_e66lc"]
 [ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_g2abk"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="6_kuo4c"]
+[ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="6_qsfvr"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="7_mp5ns"]
 [ext_resource type="PackedScene" uid="uid://jn77ec80jhq5" path="res://utils/anti_pause_node.tscn" id="7_ynsi7"]
 
@@ -33,17 +34,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.709804, 0.584314, 0.545098, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 113.0
+offset_left = 740.0
+offset_top = 20.0
+offset_right = -791.0
+offset_bottom = 266.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 82
-text = "ARCANUM FORTUNA"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("6_qsfvr")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

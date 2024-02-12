@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_uako4")
 name = "King of Thorns"
-description = "It doesn't do stuff."
+description = "Stoic in essence, but accordingly reckless. "
 artwork = ExtResource("1_5t04l")
 cost = 5
 attack = 0

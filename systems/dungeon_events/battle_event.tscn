@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://sqcbrvq8vlwu" path="res://systems/ui/game_over_screen.tscn" id="4_ig2d4"]
 
 [node name="BattleEvent" type="Node"]
+process_mode = 1
 script = ExtResource("1_wmokr")
 battleField = ExtResource("2_lypsq")
 winEvent = ExtResource("3_ukc1v")

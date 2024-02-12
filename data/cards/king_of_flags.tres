@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_4rtwi")
 name = "King of Flags"
-description = "It doesn't do stuff."
+description = "Zealous to a fault, with an unmatched thirst for conquering. "
 artwork = ExtResource("1_8jfg4")
 cost = 4
 attack = 0

@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq1c3cgx11dk8"]
+
+[ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup.gd" id="1_uc4qs"]
+[ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_kwsuy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfhd7"]
+
+[node name="UIPopup" type="CanvasLayer"]
+script = ExtResource("1_uc4qs")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.843137)
+
+[node name="CardTooltip" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CardTooltip"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -214.0
+offset_right = 200.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CardTooltip/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+texture = ExtResource("2_kwsuy")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="CardTooltip/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardTooltip/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center]Title[/center]"
+fit_content = true
+
+[node name="Content" type="RichTextLabel" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+fit_content = true
+
+[node name="HSeparatorButton" type="HSeparator" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nfhd7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Confirm" type="Button" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Confirm"
+
+[node name="Decline" type="Button" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Decline"
+
+[connection signal="button_up" from="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_confirm_button_up"]
+[connection signal="button_up" from="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Decline" to="." method="_on_decline_button_up"]

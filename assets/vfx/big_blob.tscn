@@ -9,6 +9,7 @@
 font_size = 72
 
 [node name="BigBlob" type="GPUParticles2D"]
+process_mode = 1
 self_modulate = Color(0.67451, 0.109804, 1, 1)
 z_index = 5
 z_as_relative = false

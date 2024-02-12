@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_4j62v")
 name = "Page of Flags"
-description = "It doesn't do stuff."
+description = "Scouts notorious for their swiftness."
 artwork = ExtResource("1_m0878")
 cost = 2
 attack = 1
