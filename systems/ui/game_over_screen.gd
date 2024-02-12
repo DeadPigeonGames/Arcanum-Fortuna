@@ -18,8 +18,9 @@ func quit():
 
 
 func restart():
+	get_tree().current_scene = SceneHandler.current_scene
 	get_tree().reload_current_scene()
 
 
 func _on_btn_main_menu_button_down():
-	get_tree().change_scene_to_file(main_menu_scene)
+	SceneHandler.change_scene(main_menu_scene)

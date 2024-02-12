@@ -21,8 +21,8 @@ func get_target(source, owner, combat = null):
 
 func trigger(source, owner, target, icon_to_animate, params={}):
 	if not target is EnemyPlayer and not target is CardPlayer:
-		push_error("PlayerHpSwitch triggerde with invalid target: ", target)
+		push_error("PlayerHpSwitch triggered with invalid target: ", target)
 		return
 	
 	if target.health <= min_hp:
-		_on_completed(owner, icon_to_animate)
+		await _on_completed(owner, icon_to_animate)

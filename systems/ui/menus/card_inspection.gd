@@ -3,8 +3,7 @@ extends Control
 
 signal inspection_closed
 
-@export var default_icon : Texture
-@export var switched_icon : Texture
+@export var hover_color : Color
 @export var stat_change_scene : PackedScene
 @export var switch_artwork_shader : Material
 @export var switch_keyword_slots : Texture
@@ -63,6 +62,8 @@ func update_buff_display():
 	for stat_change in %CurrentStatChanges.get_children():
 		stat_change.free()
 	for buff in preview_card.buffs:
+		if buff.health_gain == 0 and buff.attack_gain == 0:
+			continue
 		var new_stat_change = stat_change_scene.instantiate()
 		new_stat_change.setup(buff)
 		%CurrentStatChanges.add_child(new_stat_change)
@@ -78,7 +79,7 @@ func _on_switch_button_button_down():
 		return
 	is_switched = not is_switched
 	if is_switched:
-		%SwitchButton.icon = switched_icon
+		
 		preview_card.modify_keywords(switch_keyword.keywords_to_remove, switch_keyword.keywords_to_gain)
 		preview_card.try_add_buff(switch_buff)
 		preview_card.set_transformed_visuals(switch_keyword.transformed_artwork_shader, \
@@ -86,8 +87,15 @@ func _on_switch_button_button_down():
 	else:
 		preview_card.try_remove_buff(switch_buff)
 		preview_card.modify_keywords(switch_keyword.keywords_to_gain, switch_keyword.keywords_to_remove)
-		%SwitchButton.icon = default_icon
 		preview_card.set_default_visuals()
 	await get_tree().process_frame
 	update_keyword_labels()
 	update_buff_display()
+
+
+func _on_switch_button_mouse_entered():
+	%SwitchButton.modulate = hover_color
+
+
+func _on_switch_button_mouse_exited():
+	%SwitchButton.modulate = Color.WHITE

@@ -22,7 +22,7 @@ func get_dynamic_description(owner: Card):
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):
-	if not "active_cards" in params:
+	if not "active_cards" in params or owner.health <= 0:
 		return
 	await super(source, owner, target, icon_to_animate, params)
 	if not target is CombatCard:

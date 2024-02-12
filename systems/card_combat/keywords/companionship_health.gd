@@ -17,7 +17,7 @@ func init():
 
 func get_target(source, owner, combat = null):
 	if combat == null:
-		push_error("Cannot trigger DeathrattleHealth: Combat must be provided!")
+		push_error("Cannot trigger CompanionshipHealth: Combat must be provided!")
 		return []
 	var targets : Array[CombatCard] = []
 	var cards = combat.game_board.get_front_enemies() if owner.is_enemy \

@@ -26,4 +26,7 @@ func get_reduced_damage(owner, damage):
 	if user_lookup[owner] <= 0 or damage == 0:
 		return damage
 	user_lookup[owner] -= 1
+	if user_lookup[owner] <= 0:
+		var to_remove : Array[Keyword] = [self]
+		owner.modify_keywords(to_remove)
 	return max(0, damage - damage * damage_reduction - fixed_damage_reduction)

@@ -148,7 +148,7 @@ func try_remove_buff(buff: Buff) -> bool:
 	return true
 
 
-func modify_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[Keyword]):
+func modify_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[Keyword] = []):
 	for i in range(keywords.size()):
 		%KeyWordSlots.get_child(i).get_child(0).set_icon(null)
 	for keyword : Keyword in keywords_to_remove:
@@ -202,6 +202,6 @@ func play_cardflip(forward : bool):
 
 
 func animate_icon(emission_texture):
+	%KeywordParticles.texture = emission_texture
 	%KeywordParticles.emitting = true
-	%KeywordParticles.process_material.emission_point_texture = emission_texture
 	await %KeywordParticles.finished
