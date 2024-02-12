@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cegqtmafpc7yc"]
+[gd_scene load_steps=10 format=3 uid="uid://cegqtmafpc7yc"]
 
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="1_btvdi"]
 [ext_resource type="Script" path="res://systems/effects/victory_animation.gd" id="1_gnn8w"]
 [ext_resource type="Shader" path="res://shaders/fake_3d.gdshader" id="2_7ldh2"]
 [ext_resource type="Texture2D" uid="uid://celd3g1asnsr7" path="res://assets/sprites/vfx/text_card_victorious.png" id="3_tpy3n"]
+[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="5_73ir2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4wfv"]
 shader = ExtResource("2_7ldh2")
@@ -293,7 +294,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 1)
 pivot_offset = Vector2(210, 330)
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("5_73ir2")
+theme_override_font_sizes/font_size = 84
 text = "Victorious"
 horizontal_alignment = 1
 vertical_alignment = 1
