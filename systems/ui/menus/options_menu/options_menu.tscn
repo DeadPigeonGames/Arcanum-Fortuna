@@ -146,6 +146,7 @@ grow_vertical = 2
 texture = ExtResource("1_45ycb")
 
 [node name="AudioOptions" type="Control" parent="Options"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -238,32 +239,79 @@ layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_x54wv")
 
-[node name="MusicVolume2" type="HBoxContainer" parent="Options/AudioOptions/Options"]
+[node name="AmbienceVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Options/AudioOptions/Options/MusicVolume2"]
+[node name="Label" type="Label" parent="Options/AudioOptions/Options/AmbienceVolume"]
 custom_minimum_size = Vector2(240, 46)
 layout_mode = 2
-text = "MUSIC VOLUME"
+text = "AMBEINCE VOLUME"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/MusicVolume2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/AmbienceVolume"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/MusicVolume2/HBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/AmbienceVolume/HBoxContainer"]
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
 
-[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/MusicVolume2/HBoxContainer"]
+[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/AmbienceVolume/HBoxContainer"]
+custom_minimum_size = Vector2(246, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_x54wv")
+
+[node name="SFXVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Options/AudioOptions/Options/SFXVolume"]
+custom_minimum_size = Vector2(240, 46)
+layout_mode = 2
+text = "SFX VOLUME"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/SFXVolume"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/SFXVolume/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+
+[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/SFXVolume/HBoxContainer"]
+custom_minimum_size = Vector2(246, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_x54wv")
+
+[node name="UIVolume" type="HBoxContainer" parent="Options/AudioOptions/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Options/AudioOptions/Options/UIVolume"]
+custom_minimum_size = Vector2(240, 46)
+layout_mode = 2
+text = "UI VOLUME"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/UIVolume"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Options/AudioOptions/Options/UIVolume/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+
+[node name="HSlider" type="HSlider" parent="Options/AudioOptions/Options/UIVolume/HBoxContainer"]
 custom_minimum_size = Vector2(246, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_x54wv")
 
 [node name="VideoOptions" type="Control" parent="Options"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -295,6 +343,39 @@ grow_vertical = 2
 text = "VIDEO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/VideoOptions"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.0
+offset_top = 8.0
+offset_right = 301.0
+offset_bottom = 54.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VideoOptions/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/VideoOptions/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(240, 46)
+layout_mode = 2
+text = "RESOLUTION"
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Options/VideoOptions/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+item_count = 4
+popup/item_0/text = "slay"
+popup/item_0/id = 0
+popup/item_1/text = "more slay"
+popup/item_1/id = 1
+popup/item_2/text = "less slay"
+popup/item_2/id = 2
+popup/item_3/text = "hella slay so gay"
+popup/item_3/id = 3
 
 [node name="AccessibilityOptions" type="Control" parent="Options"]
 visible = false
