@@ -22,7 +22,8 @@ enum Triggers {
 @export_category("Animation")
 @export var is_animated := true
 @export var scale_speed = 0.6
-
+@export var animate_scale := false
+@export var animate_particle := true
 
 func get_target(source, owner, combat = null):
 	return owner
@@ -35,10 +36,7 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 
 
 func animate(source, owner: CombatCard, icon_to_animate, params):
-	if emission_icon:
-		await owner.animate_icon(emission_icon)
-		return
-	if icon_to_animate:
+	if icon_to_animate and animate_scale:
 		var tween = icon_to_animate.create_tween()
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.set_ease(Tween.EASE_IN)
@@ -53,3 +51,5 @@ func animate(source, owner: CombatCard, icon_to_animate, params):
 		tween.finished.connect(func(): icon_to_animate.is_animating = false)
 		tween.play()
 		await icon_to_animate.get_tree().create_timer(scale_speed).timeout
+	if animate_particle:
+		await owner.animate_icon(icon)

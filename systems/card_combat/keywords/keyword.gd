@@ -14,3 +14,7 @@ func init():
 
 func get_dynamic_description(_owner: Card):
 	return ""
+
+
+func animate_keyword_particle(owner: CombatCard):
+	await owner.animate_icon(icon)
