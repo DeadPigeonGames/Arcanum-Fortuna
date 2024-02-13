@@ -48,11 +48,14 @@ func draw_card(hand: Node):
 	var card = deckCardTemplate.instantiate() as Card
 	card.load_from_data(cardData)
 	add_child(card)
+	card.visible = false
 	card.global_position = get_child(0).global_position
+	await get_tree().process_frame
+	card.visible = true
 	var tween = create_tween()
 	card.play_cardflip(true)
 	var hand_center =  hand.get_global_rect().get_center()
-	tween.set_trans(tween.TRANS_CUBIC)
+	tween.set_trans(tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(card, "global_position", hand_center, 0.5).from_current()
 	await tween.finished

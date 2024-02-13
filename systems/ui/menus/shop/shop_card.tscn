@@ -1,26 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://b04h4sharbssh"]
+[gd_scene load_steps=8 format=3 uid="uid://ba7hqrlkxau6b"]
 
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_l5f7e"]
-[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_locns"]
-[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="3_pe64i"]
+[ext_resource type="Script" path="res://systems/ui/menus/shop/shop_card.gd" id="2_seet4"]
+[ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="3_3mhlc"]
+[ext_resource type="Shader" path="res://shaders/noise_walk.gdshader" id="3_r5rvw"]
 
-[sub_resource type="Resource" id="Resource_gausd"]
-script = ExtResource("3_pe64i")
-name = "Your Card"
-description = "It can do stuff."
-cost = 1
-attack = 1
-health = 1
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
-spawn_frequency = 100
-shop_cost = 5
-trade_override = 0
-keyword_slot_texture = ExtResource("2_locns")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_213d2"]
+noise_type = 0
+frequency = 0.0161
+domain_warp_type = 2
 
-[node name="ShopCard" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6ymb3"]
+seamless = true
+normalize = false
+noise = SubResource("FastNoiseLite_213d2")
 
-[node name="Card" parent="." instance=ExtResource("1_l5f7e")]
-pivot_offset = Vector2(0, 0)
-card_data = SubResource("Resource_gausd")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2yvh"]
+shader = ExtResource("3_r5rvw")
+shader_parameter/strength = 109.095
+shader_parameter/noise_speed = 0.05
+shader_parameter/noise_threshold = -0.155
+shader_parameter/noise_falloff = 0.06
+shader_parameter/bleed_strength = 1.375
+shader_parameter/noise = SubResource("NoiseTexture2D_6ymb3")
+
+[node name="ShopCard" node_paths=PackedStringArray("selected_shader") instance=ExtResource("1_l5f7e")]
+script = ExtResource("2_seet4")
+selected_shader = NodePath("SelectedShader")
+card_data = ExtResource("3_3mhlc")
+
+[node name="SelectedShader" type="ColorRect" parent="." index="15"]
+visible = false
+z_index = -2
+material = SubResource("ShaderMaterial_i2yvh")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.968627, 0.509804, 0, 1)
+
+[editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
