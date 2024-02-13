@@ -19,7 +19,6 @@ func setup():
 	switch_tab(shop_buy_tab)
 	last_clicked_tab = %BuySectionButton
 	player_data = Player.instance.data
-	player_data.currency = 20
 
 
 func receive_result(result):
