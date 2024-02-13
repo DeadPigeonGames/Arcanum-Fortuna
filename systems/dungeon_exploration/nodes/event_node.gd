@@ -19,7 +19,6 @@ var currentLookahead = 0
 
 @export_category("Display Options")
 
-@export var no_card_overview := false
 @export var defaultColor := Color.WHITE
 @export var pickedColor := Color.YELLOW
 @export var disabledColor := Color.GRAY
@@ -129,15 +128,11 @@ func _trigger_event():
 	if is_scene_switch:
 		SceneHandler.change_scene(event)
 		return
-	if no_card_overview:
-		CardsOverlay.toggle(false)
 	var instance = event.instantiate()
 	if "seed" in instance:
 		instance.seed = seed
 	instance.trigger(player.data, null)
 	await instance.finished
-	if no_card_overview:
-		CardsOverlay.toggle(true)
 
 
 func _draw():

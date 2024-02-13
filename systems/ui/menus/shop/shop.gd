@@ -7,6 +7,10 @@ signal shop_closed
 @export var shop_trade_tab : PackedScene
 @export var shop_burn_tab : PackedScene
 
+var buy_tab_instance
+var trade_tab_instance
+var burn_tab_instance
+
 var last_clicked_tab
 var player_data : PlayerData
 
@@ -16,9 +20,25 @@ func _process(delta):
 
 
 func setup():
-	switch_tab(shop_buy_tab)
 	last_clicked_tab = %BuySectionButton
 	player_data = Player.instance.data
+	buy_tab_instance = instance_tab(shop_buy_tab)
+	buy_tab_instance.visible = false
+	trade_tab_instance = instance_tab(shop_trade_tab)
+	trade_tab_instance.visible = false
+	burn_tab_instance = instance_tab(shop_burn_tab)
+	burn_tab_instance.visible = false
+	current_tab = buy_tab_instance
+	switch_tab_visible(buy_tab_instance)
+
+
+func instance_tab(tab : PackedScene):
+	var tab_instance = tab.instantiate() as UITabBase
+	tab_instance.init(self)
+	tab_instance.setup()
+	add_child(tab_instance)
+	
+	return tab_instance
 
 
 func receive_result(result):
@@ -33,17 +53,17 @@ func receive_result(result):
 
 func _on_buy_section_button_button_up():
 	last_clicked_tab = %BuySectionButton
-	switch_tab(shop_buy_tab)
+	super.switch_tab_visible(buy_tab_instance)
 
 
 func _on_trade_section_button_button_up():
 	last_clicked_tab = %TradeSectionButton
-	switch_tab(shop_trade_tab)
+	super.switch_tab_visible(trade_tab_instance)
 
 
 func _on_burn_section_button_button_up():
 	last_clicked_tab = %BurnSectionButton
-	switch_tab(shop_burn_tab)
+	super.switch_tab_visible(burn_tab_instance)
 
 
 func _on_leave_shop_button_button_up():

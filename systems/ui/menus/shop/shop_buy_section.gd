@@ -12,6 +12,7 @@ var player_data : PlayerData
 
 func setup():
 	player_data = Player.instance.data
+	player_data.currency = 30
 
 
 func _on_pay_button_button_up():

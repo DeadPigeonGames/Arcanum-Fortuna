@@ -42,8 +42,6 @@ func _trigger_event():
 	if is_scene_switch:
 		SceneHandler.change_scene(event)
 		return
-	if no_card_overview:
-		CardsOverlay.toggle(false)
 	var instance = event.instantiate()
 	if instance is BattleEvent:
 		instance.seed = combat_seed
@@ -57,5 +55,3 @@ func _trigger_event():
 		instance.seed = seed
 	instance.trigger(player.data, selected_enemy)
 	await instance.finished
-	if no_card_overview:
-		CardsOverlay.toggle(true)

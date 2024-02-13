@@ -37,6 +37,8 @@ offset_top = -821.0
 offset_right = -972.0
 offset_bottom = -821.0
 connectsTo = [NodePath("../CombatNode3")]
+level_gain = 0.0
+is_scene_switch = false
 offset = 50.0
 
 [node name="CombatNode3" parent="right_ risky, advanced" index="1" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
@@ -61,6 +63,8 @@ offset_top = -1511.0
 offset_right = -734.0
 offset_bottom = -1511.0
 connectsTo = [NodePath("../CombatNode2")]
+level_gain = 0.0
+is_scene_switch = false
 offset = 50.0
 
 [node name="CombatNode2" parent="right need help_ less risky path" index="1" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
@@ -85,6 +89,8 @@ offset_top = -818.0
 offset_right = -1381.0
 offset_bottom = -818.0
 connectsTo = [NodePath("../CombatNode2")]
+level_gain = 0.0
+is_scene_switch = false
 offset = 50.0
 
 [node name="CombatNode2" parent="left_ safe, beginner" index="1" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
@@ -100,6 +106,8 @@ offset_top = -1307.0
 offset_right = -1559.0
 offset_bottom = -1307.0
 connectsTo = [NodePath("../CombatNode3"), NodePath("../../left goes right_ riskier/CombatNode5")]
+level_gain = 0.0
+is_scene_switch = false
 offset = 50.0
 
 [node name="CombatNode3" parent="left_ safe, beginner" index="3" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
@@ -122,6 +130,8 @@ offset_top = -1954.0
 offset_right = -1576.0
 offset_bottom = -1954.0
 connectsTo = [NodePath("../CardLootNode2")]
+level_gain = 0.0
+is_scene_switch = false
 offset = 50.0
 
 [node name="CardLootNode2" parent="left_ safe, beginner" index="6" node_paths=PackedStringArray("connectsTo") instance=ExtResource("3_0gmtk")]
@@ -130,6 +140,8 @@ offset_top = -2113.0
 offset_right = -1373.0
 offset_bottom = -2113.0
 connectsTo = [NodePath("../../Enboss")]
+level_gain = 0.0
+is_scene_switch = false
 offset = 50.0
 
 [node name="left goes right_ riskier" type="Node" parent="." index="7"]
@@ -147,4 +159,6 @@ offset_top = -1708.0
 offset_right = -1225.0
 offset_bottom = -1708.0
 connectsTo = [NodePath("../../Enboss")]
+level_gain = 0.0
+is_scene_switch = false
 offset = 50.0

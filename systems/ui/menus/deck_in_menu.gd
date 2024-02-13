@@ -19,13 +19,8 @@ func _process(delta):
 func setup():
 	super.setup()
 	set_layer(1)
-
-
-func setup_player_data(player_data : PlayerData):
-	card_stack_node = %CardStack
-	self.player_data = player_data
-	for card in player_data.cardStack:
-		card_stack_node.put_card_in_stack(card)
+	await get_tree().process_frame
+	player_data = Player.instance.data
 
 
 func _on_button_button_up():
