@@ -21,6 +21,7 @@ deck_preview_overlay = ExtResource("2_as7na")
 
 [node name="Control" type="Control" parent="."]
 process_mode = 1
+z_index = 100
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5

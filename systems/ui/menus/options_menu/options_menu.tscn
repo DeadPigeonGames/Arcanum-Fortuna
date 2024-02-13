@@ -85,7 +85,6 @@ grow_vertical = 2
 texture = ExtResource("1_45ycb")
 
 [node name="AudioOptions" type="Control" parent="Options"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -267,7 +266,28 @@ layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_x54wv")
 
+[node name="WindowMode" type="HBoxContainer" parent="Options/AudioOptions/Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/AudioOptions/Options/WindowMode"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "SOUNDTRACK"
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Options/AudioOptions/Options/WindowMode"]
+custom_minimum_size = Vector2(296, 0)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+item_count = 2
+popup/item_0/text = "Winter"
+popup/item_0/id = 0
+popup/item_1/text = "Spring"
+popup/item_1/id = 1
+
 [node name="VideoOptions" type="Control" parent="Options"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

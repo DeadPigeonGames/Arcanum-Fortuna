@@ -14,7 +14,7 @@ func init(rng_seed, rng_text):
 
 func setup_ui():
 	var deck_in_menu = SceneHandler.add_ui_element("res://systems/ui/menus/deck_in_menu.tscn") as DeckInMenu
-	deck_in_menu.init(50, self)
+	deck_in_menu.init(100, self)
 	deck_in_menu.setup()
 
 
