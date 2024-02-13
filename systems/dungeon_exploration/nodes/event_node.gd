@@ -1,17 +1,25 @@
 @tool
 class_name EventNode extends Control
 
+signal activated(EventNode)
+signal completed(EventNode)
+
 var isCurrent := false
 @export var connectsTo: Array[EventNode]
 var connectedFrom: Array[EventNode] = []
 @export_range(0, 10) var lookahead := 2
 var currentLookahead = 0
 
-@export var no_card_overview := false
-
+@export_category("Gameplay Options")
 @export var event: PackedScene
+## How much the enemy level should increase after the event completed
+@export var level_gain := 0.0
+## Should the scene be switched to the event scene instead of awaiting the event?
+@export var is_scene_switch := false
 
 @export_category("Display Options")
+
+@export var no_card_overview := false
 @export var defaultColor := Color.WHITE
 @export var pickedColor := Color.YELLOW
 @export var disabledColor := Color.GRAY
@@ -23,16 +31,19 @@ var currentLookahead = 0
 var selectable = false
 var player: Player
 var selectedNode: EventNode
-var hovering = false
+var is_hovered = false
 var eventInProgress := false
 var passed = false
 var seed = 0
 static var nodes_counter := 0
 
-signal on_stepped_on
 
 
 func _ready():
+	if get_parent().has_method("_on_node_activated"):
+		activated.connect(get_parent()._on_node_activated)
+	if get_parent().has_method("_on_node_completed"):
+		completed.connect(get_parent()._on_node_completed)
 	if not Engine.is_editor_hint():
 		nodes_counter += 1
 		name += "+" + str(nodes_counter)
@@ -40,13 +51,22 @@ func _ready():
 	for n in connectsTo:
 		n.connectedFrom.append(self)
 
+func init(_level: int, _rng: RandomNumberGenerator):
+	return
 
-func get_required_color(node: EventNode):
-	if node.hovering and node.selectable:
-		return node.pickedColor
-	if node.selectable:
-		return defaultColor
-	return node.disabledColor
+
+func _generated(node_index: int, _level: int, _rng: RandomNumberGenerator):
+	init(_level, _rng)
+
+
+func _on_mouse_entered():
+	if selectable:
+		SfxOther._SFX_UIButtonHover()
+	is_hovered = true
+
+
+func _on_mouse_exited():
+	is_hovered = false
 
 
 func _process(delta):
@@ -73,16 +93,24 @@ func _process(delta):
 
 func _input(event: InputEvent):
 	if (
-			hovering
+			is_hovered
 			and event.is_action_pressed("pickUpCard")
 			and selectable
 		):
 		click()
 
 
+func get_required_color():
+	if is_hovered and selectable:
+		return pickedColor
+	if selectable:
+		return defaultColor
+	return disabledColor
+
+
 func click():
 	SfxOther._SFX_UIButtonPress()
-	on_stepped_on.emit()
+	activated.emit(self)
 	GlobalLog.set_context(GlobalLog.Context.NODEMAP)
 	GlobalLog.add_entry("went to " + name)
 	player.update_target(self)
@@ -92,41 +120,28 @@ func click():
 	eventInProgress = true
 	await _trigger_event()
 	eventInProgress = false
+	completed.emit(self)
+
 
 func _trigger_event():
-	if event:
-		if no_card_overview:
-			CardsOverlay.toggle(false)
-		var instance = event.instantiate()
-		if "seed" in instance:
-			instance.seed = seed
-		instance.trigger(player.data, null)
-		await instance.finished
-		if no_card_overview:
-			CardsOverlay.toggle(true)
+	if not event:
+		return
+	if is_scene_switch:
+		SceneHandler.change_scene(event)
+		return
+	if no_card_overview:
+		CardsOverlay.toggle(false)
+	var instance = event.instantiate()
+	if "seed" in instance:
+		instance.seed = seed
+	instance.trigger(player.data, null)
+	await instance.finished
+	if no_card_overview:
+		CardsOverlay.toggle(true)
 
 
 func _draw():
-	for node in connectedFrom:
-		var target = node.position + (node.get_rect().size * Vector2(1, -1)) / 2 - position
-		var direction = target.normalized()
-		draw_dashed_line(direction * offset, target - direction * offset, get_required_color(self), width, dashed_width, true)
-		
 	for node in connectsTo:
 		var target = node.position + (node.get_rect().size * Vector2(1, -1)) / 2 - position
 		var direction = target.normalized()
-		draw_dashed_line(direction * offset, target - direction * offset, get_required_color(node), width, dashed_width, true)
-
-
-func _generated(node_index: int, level: int, _rng: RandomNumberGenerator):
-	seed = _rng.randi()
-
-
-func _on_mouse_entered():
-	if selectable:
-		SfxOther._SFX_UIButtonHover()
-	hovering = true
-
-
-func _on_mouse_exited():
-	hovering = false
+		draw_dashed_line(direction * offset, target - direction * offset, node.get_required_color(), node.width, node.dashed_width, true)

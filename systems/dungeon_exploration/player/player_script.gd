@@ -1,9 +1,12 @@
-class_name Player extends Control
+class_name Player 
+extends Control
 
 @export var startNode: EventNode
 @export var startData: PlayerData
 @export var mouse_track := 0.2
 @export var setup_nodes : Array[Node]
+
+@export var enable_camera_control := false
 
 @export_category("Debug")
 @export var is_debug := false
@@ -11,7 +14,14 @@ class_name Player extends Control
 var data: PlayerData
 var targetNode: EventNode
 
+static var instance : Player
+
 func _ready():
+	if not instance:
+		instance = self
+	if not enable_camera_control:
+		$Camera2D.queue_free()
+	global_position = startNode.global_position
 	data = startData.duplicate(true)
 	update_target(startNode)
 	for node in setup_nodes:
@@ -34,7 +44,8 @@ func _process(delta):
 		var target = targetNode.position
 		position = position.lerp(target - get_rect().size / 2, 0.1)
 	
-	$Camera2D.position = $Camera2D.position.lerp(get_viewport().get_mouse_position() * mouse_track, 0.05)
+	if enable_camera_control:
+		$Camera2D.position = $Camera2D.position.lerp(get_viewport().get_mouse_position() * mouse_track, 0.05)
 	debug_movement()
 
 var debug_movement_on := false

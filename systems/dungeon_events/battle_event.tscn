@@ -1,13 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bml43x2miuf00"]
+[gd_scene load_steps=13 format=3 uid="uid://bml43x2miuf00"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/battle_event.gd" id="1_wmokr"]
+[ext_resource type="Resource" uid="uid://cfo1qaoei72s6" path="res://data/enemy/enemy_basic1.tres" id="2_bgqnu"]
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="2_lypsq"]
+[ext_resource type="Resource" uid="uid://dsnuml0koyymo" path="res://data/enemy/enemy_basic2.tres" id="3_5cs1e"]
 [ext_resource type="PackedScene" uid="uid://cn0otoe0nvpis" path="res://systems/dungeon_events/battle_over_reward.tscn" id="3_ukc1v"]
 [ext_resource type="PackedScene" uid="uid://sqcbrvq8vlwu" path="res://systems/ui/game_over_screen.tscn" id="4_ig2d4"]
+[ext_resource type="Resource" uid="uid://dxl1hxrirkmwg" path="res://data/enemy/enemy_basic3.tres" id="4_whs7y"]
+[ext_resource type="Resource" uid="uid://bofquw5kvq26v" path="res://data/enemy/enemy_basic4.tres" id="5_7xyn1"]
+[ext_resource type="Resource" uid="uid://csg83e4kph6xm" path="res://data/enemy/enemy_basic5.tres" id="6_58mr7"]
+[ext_resource type="Resource" uid="uid://donbjfyb40dw5" path="res://data/enemy/enemy_basic6.tres" id="7_upvdn"]
+[ext_resource type="Resource" uid="uid://danbe0wd215aa" path="res://data/enemy/enemy_basic7.tres" id="8_3yu1a"]
+[ext_resource type="Resource" uid="uid://t8cac64e8aue" path="res://data/enemy/enemy_basic8.tres" id="9_uf5en"]
 
 [node name="BattleEvent" type="Node"]
 process_mode = 1
 script = ExtResource("1_wmokr")
+potential_enemies = Array[Resource("res://data/scripts/enemy_data.gd")]([ExtResource("2_bgqnu"), ExtResource("3_5cs1e"), ExtResource("4_whs7y"), ExtResource("5_7xyn1"), ExtResource("6_58mr7"), ExtResource("7_upvdn"), ExtResource("8_3yu1a"), ExtResource("9_uf5en")])
 battleField = ExtResource("2_lypsq")
 winEvent = ExtResource("3_ukc1v")
 loseEvent = ExtResource("4_ig2d4")

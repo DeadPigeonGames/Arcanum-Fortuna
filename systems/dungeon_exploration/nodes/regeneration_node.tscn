@@ -6,6 +6,8 @@
 
 [node name="RegenerationNode" instance=ExtResource("1_brtep")]
 event = ExtResource("2_g4x36")
+level_gain = null
+is_scene_switch = null
 
 [node name="icon" parent="background" index="0"]
 texture = ExtResource("3_qan20")

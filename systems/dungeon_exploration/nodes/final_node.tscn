@@ -6,6 +6,7 @@
 
 [node name="FinalNode" instance=ExtResource("1_e2aug")]
 event = ExtResource("2_aa5ll")
+is_scene_switch = true
 
 [node name="icon" parent="background" index="0"]
 texture = ExtResource("3_rour2")

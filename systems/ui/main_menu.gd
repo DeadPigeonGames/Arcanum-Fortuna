@@ -3,7 +3,7 @@ extends Control
 @export var node_map_scene : PackedScene
 @export var tutorial_scene : PackedScene
 @export var options_scene : PackedScene
-var node_map : NodeMapGenerator
+var node_map
 var seed := 0
 
 
@@ -23,9 +23,7 @@ func _on_seed_input_text_changed(new_text : String):
 
 
 func _on_start_button_button_down():
-	node_map.rng_seed = seed
-	node_map.get_node("Generator").random_seed = false
-	node_map.rng_seed_text = $SeedInput.text
+	node_map.init(seed, $SeedInput.text)
 	GlobalLog.add_entry("Seed used: " + $SeedInput.text)
 	SceneHandler.change_scene(node_map)
 

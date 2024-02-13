@@ -1,12 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy7r8u5ck052l"]
+[gd_scene load_steps=23 format=3 uid="uid://cy7r8u5ck052l"]
 
 [ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="1_4wcvd"]
+[ext_resource type="Script" path="res://systems/dungeon_exploration/maps/level.gd" id="1_44yos"]
 [ext_resource type="Texture2D" uid="uid://2c184n3ld2p3" path="res://assets/ui/placeholders/nodemap_1_background.png" id="2_vkfl3"]
 [ext_resource type="Texture2D" uid="uid://g623lf2fjfvj" path="res://assets/ui/placeholders/nodemap_1_foreground.png" id="3_7jy3d"]
 [ext_resource type="Shader" path="res://shaders/wind.gdshader" id="3_fnpom"]
 [ext_resource type="Texture2D" uid="uid://clda7gnqq52gc" path="res://assets/ui/placeholders/nodemap_1_decoration.png" id="5_bdy2c"]
 [ext_resource type="Shader" path="res://shaders/snow_rain.gdshader" id="5_f5b0f"]
 [ext_resource type="Shader" path="res://shaders/fog.gdshader" id="6_g3on7"]
+[ext_resource type="PackedScene" uid="uid://u6bv0sd2v3es" path="res://systems/dungeon_exploration/maps/layouts/node_map_test_1.tscn" id="10_3mqxt"]
+[ext_resource type="Script" path="res://utils/random_scene.gd" id="11_fvnbs"]
+[ext_resource type="Script" path="res://systems/dungeon_exploration/limited_camera.gd" id="12_3m17x"]
+[ext_resource type="PackedScene" uid="uid://bbhypmndv2m7q" path="res://systems/dungeon_exploration/maps/node_map_loader.tscn" id="12_c42ig"]
+[ext_resource type="PackedScene" uid="uid://n6x1mb4dktgr" path="res://systems/dungeon_exploration/maps/layouts/node_map_test_2.tscn" id="12_iuld8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ru5t"]
 shader = ExtResource("3_fnpom")
@@ -91,11 +97,24 @@ shader_parameter/density = 0.155
 shader_parameter/speed = Vector2(0.02, 0.01)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_l1o83")
 
+[sub_resource type="Resource" id="Resource_gijmu"]
+script = ExtResource("11_fvnbs")
+chance_weight = 1
+scene = ExtResource("10_3mqxt")
+
+[sub_resource type="Resource" id="Resource_ntgcp"]
+script = ExtResource("11_fvnbs")
+chance_weight = 1
+scene = ExtResource("12_iuld8")
+
 [node name="NodemapTest" type="Node2D"]
+script = ExtResource("1_44yos")
+node_map_path = NodePath("NodeMapLoader")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, -180)
 transform = Transform2D(1, 0, 0, 1, 0, -180)
+scroll_offset = Vector2(792.066, -26.0311)
 
 [node name="BaseLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(2760, 0)
@@ -128,9 +147,30 @@ layer_0/tile_data = PackedInt32Array(3342366, 2, 11, 917589, 1048578, 11, 852048
 material = SubResource("ShaderMaterial_v7s72")
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
 [node name="Fog" type="ColorRect" parent="Effects"]
 material = SubResource("ShaderMaterial_n8aog")
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
+
+[node name="LimitedCamera" type="Camera2D" parent="."]
+position = Vector2(19, 534)
+script = ExtResource("12_3m17x")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="LimitedCamera"]
+offset_left = -2901.0
+offset_top = -537.0
+offset_right = 5620.0
+offset_bottom = 545.0
+mouse_filter = 2
+
+[node name="NodeMapLoader" parent="." instance=ExtResource("12_c42ig")]
+offset_left = 153.0
+offset_top = 696.0
+offset_right = 153.0
+offset_bottom = 696.0
+mouse_filter = 1
+potential_node_maps = Array[ExtResource("11_fvnbs")]([SubResource("Resource_gijmu"), SubResource("Resource_ntgcp")])

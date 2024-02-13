@@ -1,6 +1,7 @@
 class_name BattleEvent
 extends EventBase
 
+@export var potential_enemies: Array[EnemyData]
 @export var battleField: PackedScene
 @export var winEvent: PackedScene
 @export var loseEvent: PackedScene

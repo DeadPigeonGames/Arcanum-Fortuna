@@ -7,7 +7,13 @@ signal finished
 func _ready():
 	GlobalLog.set_context(GlobalLog.Context.MENU)
 	GlobalLog.add_entry(name + " loaded.")
-
+	$Panel/btn_quit.disabled = true
+	$Panel/btn_restart.disabled = true
+	$Panel/btn_main_menu.disabled = true
+	await get_tree().process_frame
+	$Panel/btn_quit.disabled = false
+	$Panel/btn_restart.disabled = false
+	$Panel/btn_main_menu.disabled = false
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	pass

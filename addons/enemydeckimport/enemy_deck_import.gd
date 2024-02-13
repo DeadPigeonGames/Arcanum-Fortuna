@@ -2,14 +2,6 @@
 extends EditorPlugin
 
 
-var data = {
-	"ResourceName": "blabla",
-	"AvailableCards": [],
-	"subdata": {
-		"moredata": "a"
-	}
-}
-
 func _enter_tree():
 	# Initialization of the plugin goes here.
 	add_tool_menu_item("Import Enemy Decks", try_import_decks)
@@ -18,6 +10,7 @@ func _enter_tree():
 func _exit_tree():
 	# Clean-up of the plugin goes here.
 	pass
+
 
 func try_import_decks():
 	var file_dialog = EditorFileDialog.new()

@@ -37,6 +37,11 @@ signal finished_generating(generated_nodes: Array[EventNode])
 
 static var nodes_counter := 0
 
+func init(rng_seed, rng_text):
+	self.rng_seed = rng_seed
+	rng_seed_text = rng_text
+
+
 func _ready():
 	if name == "node-map":
 		GlobalLog.set_context(GlobalLog.Context.NODEMAP)

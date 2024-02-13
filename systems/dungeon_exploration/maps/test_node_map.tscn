@@ -47,19 +47,19 @@ offset_bottom = -1074.0
 connectsTo = [NodePath("../CombatNode2")]
 
 [node name="CombatNode2" parent="right_ risky, advanced" index="2" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
-offset_left = -888.0
-offset_top = -1286.0
-offset_right = -888.0
-offset_bottom = -1286.0
+offset_left = -1010.0
+offset_top = -1358.0
+offset_right = -1010.0
+offset_bottom = -1358.0
 connectsTo = [NodePath("../../right need help_ less risky path/RegenerationNode"), NodePath("../../left goes right_ riskier/CardLootNode2")]
 
 [node name="right need help_ less risky path" type="Node" parent="." index="5"]
 
 [node name="RegenerationNode" parent="right need help_ less risky path" index="0" node_paths=PackedStringArray("connectsTo") instance=ExtResource("4_2kob0")]
-offset_left = -608.0
-offset_top = -1483.0
-offset_right = -608.0
-offset_bottom = -1483.0
+offset_left = -734.0
+offset_top = -1511.0
+offset_right = -734.0
+offset_bottom = -1511.0
 connectsTo = [NodePath("../CombatNode2")]
 offset = 50.0
 
@@ -80,18 +80,18 @@ connectsTo = [NodePath("../../Enboss")]
 [node name="left_ safe, beginner" type="Node" parent="." index="6"]
 
 [node name="RegenerationNode" parent="left_ safe, beginner" index="0" node_paths=PackedStringArray("connectsTo") instance=ExtResource("4_2kob0")]
-offset_left = -1489.0
-offset_top = -828.0
-offset_right = -1489.0
-offset_bottom = -828.0
+offset_left = -1381.0
+offset_top = -818.0
+offset_right = -1381.0
+offset_bottom = -818.0
 connectsTo = [NodePath("../CombatNode2")]
 offset = 50.0
 
 [node name="CombatNode2" parent="left_ safe, beginner" index="1" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
-offset_left = -1554.0
-offset_top = -1074.0
-offset_right = -1554.0
-offset_bottom = -1074.0
+offset_left = -1549.0
+offset_top = -1088.0
+offset_right = -1549.0
+offset_bottom = -1088.0
 connectsTo = [NodePath("../CardLootNode")]
 
 [node name="CardLootNode" parent="left_ safe, beginner" index="2" node_paths=PackedStringArray("connectsTo") instance=ExtResource("3_0gmtk")]
@@ -142,9 +142,9 @@ offset_bottom = -1470.0
 connectsTo = [NodePath("../CardLootNode2")]
 
 [node name="CardLootNode2" parent="left goes right_ riskier" index="1" node_paths=PackedStringArray("connectsTo") instance=ExtResource("3_0gmtk")]
-offset_left = -1116.0
-offset_top = -1710.0
-offset_right = -1116.0
-offset_bottom = -1710.0
+offset_left = -1225.0
+offset_top = -1708.0
+offset_right = -1225.0
+offset_bottom = -1708.0
 connectsTo = [NodePath("../../Enboss")]
 offset = 50.0

@@ -1,5 +1,5 @@
 class_name ShopKeeper
-extends Node
+extends EventBase
 
 signal close_shop
 
@@ -9,8 +9,6 @@ signal close_shop
 @export var cards_to_offer: Array[CardData]
 ## How much discount is this trader offering? Can only be between 0 and 1
 @export_range(0.0, 1.0) var discount := 0.3
-## The seed used for rng calculations. Will be set automatically.
-@export var seed := 0
 
 @export_category("Debug")
 ## Debug Player Data to use
@@ -20,6 +18,7 @@ signal close_shop
 
 var player_data_ref: PlayerData
 var rng := RandomNumberGenerator.new()
+var seed := 0
 var processing_purchase := false
 
 func _ready():

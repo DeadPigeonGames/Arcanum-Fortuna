@@ -8,6 +8,8 @@
 pivot_offset = Vector2(64, 64)
 lookahead = 2
 event = ExtResource("2_ccsv8")
+level_gain = null
+is_scene_switch = null
 
 [node name="icon" parent="background" index="0"]
 texture = ExtResource("3_e0t7d")

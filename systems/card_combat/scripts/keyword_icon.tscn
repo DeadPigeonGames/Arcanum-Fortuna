@@ -65,6 +65,7 @@ tooltip_description = "Cards with this sigil will attack diagonally accessible t
 in addition to the tile in front of it."
 
 [node name="KeywordIcon" type="TextureRect"]
+visible = false
 custom_minimum_size = Vector2(33, 33)
 offset_right = 33.0
 offset_bottom = 33.0
