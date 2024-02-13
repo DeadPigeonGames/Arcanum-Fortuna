@@ -19,8 +19,8 @@ func _input(event):
 	
 	if is_hovered and event.is_action_pressed("pickUpCard"):
 		clicked.emit(self)
-		selected = not selected
-		selected_shader.visible = selected
+		self.selected = not selected
+		self.selected_shader.visible = selected
 
 
 func _process(delta):

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://systems/effects/damage_effect.gd" id="1_oey1p"]
 [ext_resource type="Texture2D" uid="uid://umd7vfge7vhl" path="res://systems/effects/damage_effect_ph.png" id="2_2i63e"]
-[ext_resource type="Texture2D" path="res://systems/effects/damage_splatter_test.png" id="3_kvaaq"]
+[ext_resource type="Texture2D" uid="uid://bpst3pmsk35ym" path="res://systems/effects/damage_splatter_test.png" id="3_kvaaq"]
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="3_wp2x7"]
 
 [sub_resource type="Curve" id="Curve_ow1bw"]
@@ -195,7 +195,6 @@ texture = ExtResource("2_2i63e")
 
 [node name="blood_splatter" type="GPUParticles2D" parent="."]
 self_modulate = Color(0.745098, 0, 0, 1)
-emitting = false
 amount = 2
 process_material = SubResource("ParticleProcessMaterial_nl2l6")
 texture = ExtResource("3_kvaaq")
