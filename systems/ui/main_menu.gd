@@ -13,7 +13,7 @@ func _ready():
 	node_map = node_map_scene.instantiate()
 	randomize()
 	seed = randi()
-	#$SeedInput.text = str(seed)
+	$SeedInput.text = str(seed)
 	GlobalLog.set_context(GlobalLog.Context.MENU)
 	GlobalLog.add_entry("Main Menu loaded.")
 
