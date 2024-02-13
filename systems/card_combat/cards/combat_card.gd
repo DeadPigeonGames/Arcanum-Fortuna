@@ -198,7 +198,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	attack_tween.set_ease(Tween.EASE_OUT)
 	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
 	attack_tween.play()
-	await get_tree().create_timer(attack_speed + wait_mod).timeout
+	await attack_tween.finished
 	
 	var dealt_damage : int = await target.take_damage(attack, self)
 	await trigger_keywords(target, self, 32, null, {"damage_dealt": dealt_damage})
@@ -210,6 +210,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 		effect.global_position = target_position + half_card
 	
 	z_index -= 1
+	
 	var was_lethal = target.health <= 0
 	var is_battle_over = false
 	if was_lethal and (target is EnemyPlayer or target is CardPlayer):
@@ -217,6 +218,10 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	if was_lethal:
 		await get_tree().process_frame
 		await trigger_keywords(target, self, ActivatedKeyword.Triggers.ON_KILL)
+	for keyword in keywords:
+		if keyword.has_method("is_disabled"):
+			await keyword.animate_keyword_particle(self)
+			set_disabled_overlay_visible(keyword.is_disabled(self))
 	return was_lethal
 
 

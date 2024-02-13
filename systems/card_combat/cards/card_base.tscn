@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=44 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cor7fkv822hhc" path="res://assets/ui/icons/switch_eye_2.png" id="6_atgve"]
 [ext_resource type="Texture2D" uid="uid://d01gfffwrqcoh" path="res://assets/ui/icons/atk_icon_small.png" id="6_xx4u4"]
 [ext_resource type="Texture2D" uid="uid://dlq7j4d0ebyye" path="res://assets/ui/icons/switch_eye_3.png" id="7_acmtm"]
+[ext_resource type="Texture2D" uid="uid://xls4xmra0mf" path="res://assets/sprites/cards/slow_chains_sprite.png" id="8_aw7re"]
 [ext_resource type="PackedScene" uid="uid://fqgongu3mdf7" path="res://Audio/sfx_card.tscn" id="8_coke3"]
 [ext_resource type="Texture2D" uid="uid://dh7u4g2msgy5l" path="res://assets/sprites/vfx/vfx_buff_effect.png" id="9_lhvyd"]
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="10_yfr0r"]
@@ -649,6 +650,14 @@ theme_override_font_sizes/font_size = 128
 text = "Yas Queen"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DisabledOverlay" type="TextureRect" parent="Artwork"]
+visible = false
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 266.0
+texture = ExtResource("8_aw7re")
+expand_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false

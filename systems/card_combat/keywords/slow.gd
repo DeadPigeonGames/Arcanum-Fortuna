@@ -14,6 +14,11 @@ func init():
 		description = description % turns_to_skip
 
 
+
+func is_disabled(owner: Card):
+	return turns_skipped_lookup[owner] <= turns_to_skip if owner in turns_skipped_lookup else not attack_on_first_turn
+
+
 func get_dynamic_description(owner: Card):
 	if not owner in turns_skipped_lookup and attack_on_first_turn:
 		return ""
@@ -28,6 +33,7 @@ func get_new_targets(target_offsets, attacker) -> Array[int]:
 	turns_skipped_lookup[attacker] += 1
 	if turns_skipped_lookup[attacker] <= turns_to_skip:
 		await animate_keyword_particle(attacker)
+		attacker.set_disabled_overlay_visible(false)
 		return []
 	turns_skipped_lookup[attacker] = 0
 	return target_offsets

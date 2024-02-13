@@ -162,6 +162,15 @@ func modify_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[
 	for keyword : Keyword in keywords_to_add:
 		keyword.init()
 		keywords.push_back(keyword)
+	var is_disabling_keyword_left = false
+	for keyword in keywords:
+		if keyword.has_method("is_disabled"):
+			set_disabled_overlay_visible(keyword.is_disabled(self))
+			is_disabling_keyword_left = true
+			return
+	if not is_disabling_keyword_left:
+		set_disabled_overlay_visible(false)
+	
 	var offset = 0
 	for i in range(keywords.size()):
 		if keywords[i] is SwitchKeyword:
@@ -169,6 +178,10 @@ func modify_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[
 			continue
 		%KeyWordSlots.get_child(i-offset).get_child(0).set_icon(keywords[i])
 	card_data.keywords = keywords
+
+
+func set_disabled_overlay_visible(value : bool):
+	$Artwork/DisabledOverlay.visible = value
 
 
 func set_transformed_visuals(shader_material: ShaderMaterial, keyword_slot_atlas : Texture):
