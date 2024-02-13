@@ -163,7 +163,9 @@ func draw_card():
 func set_active(value):
 	set_process(value)
 	%Hand.enabled = value
-	$BonusDrawButton.disabled = !value && len(%CardStack.cardStack) > 0
+	$BonusDrawButton.disabled = !value
+	if value:
+		$BonusDrawButton.disabled = %CardStack.cardStack.size() <= 0
 
 
 func _on_bonus_draw_button_button_down():

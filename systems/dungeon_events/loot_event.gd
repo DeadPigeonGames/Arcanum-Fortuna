@@ -20,7 +20,7 @@ var pauseMovement := true
 
 var player_data_ref : PlayerData
 var selected_cards = []
-var prev_mode: bool = true
+#var prev_mode: bool = true
 
 func _ready():
 	rng.seed = seed
@@ -29,8 +29,8 @@ func _ready():
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	super(player_data, enemy_data)
-	prev_mode = CardsOverlay.is_available()
-	CardsOverlay.toggle(true)
+	#prev_mode = CardsOverlay.is_available()
+	#CardsOverlay.toggle(true)
 	if cardsToChooseFrom < cardsToReward:
 		push_error("Cards to Choose from is less than the Cards that get rewarded! force adjusting")
 		cardsToChooseFrom = cardsToReward
@@ -84,7 +84,7 @@ func _on_confirm_button_pressed():
 	$CanvasLayer/Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$CanvasLayer/Control/SkipButton.hide()
 	$CanvasLayer/Control/ConfirmButton.hide()
-	CardsOverlay.toggle(prev_mode)
+	#CardsOverlay.toggle(prev_mode)
 	
 	for c : Card in $CanvasLayer/Control/Cards.get_children():
 		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -139,7 +139,7 @@ func get_reward_text(value):
 
 
 func _on_skip_button_pressed():
-	CardsOverlay.toggle(prev_mode)
+	#CardsOverlay.toggle(prev_mode)
 	
 	%AnimationPlayer.play("skipped")
 	await %AnimationPlayer.animation_finished

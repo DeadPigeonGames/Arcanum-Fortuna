@@ -66,3 +66,10 @@ func switch_tab(tab : PackedScene):
 	add_child(tab_instance)
 	current_tab = tab_instance
 	
+	return tab_instance
+
+
+func switch_tab_visible(tab):
+	current_tab.visible = false
+	tab.visible = true
+	current_tab = tab

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgbod0er521or"]
+[gd_scene load_steps=7 format=3 uid="uid://dgbod0er521or"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_ig6cw"]
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_jwvtv"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="3_he6bg"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="3_k4v05"]
 [ext_resource type="Resource" uid="uid://22opo18s7wkj" path="res://data/player/basic_player.tres" id="3_w6koa"]
-[ext_resource type="PackedScene" uid="uid://divw7h5guhbc8" path="res://systems/ui/cards_overview/cards_overlay.tscn" id="4_ggnre"]
 
 [node name="node-map" type="Control"]
 layout_mode = 3
@@ -24,7 +23,7 @@ offset_top = 413.0
 offset_right = -256.0
 offset_bottom = 413.0
 
-[node name="Player" parent="." node_paths=PackedStringArray("startNode", "setup_nodes") instance=ExtResource("2_we5fp")]
+[node name="Player" parent="." node_paths=PackedStringArray("startNode") instance=ExtResource("2_we5fp")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -39,7 +38,6 @@ grow_horizontal = 1
 grow_vertical = 1
 startNode = NodePath("../StartNode")
 startData = ExtResource("3_w6koa")
-setup_nodes = [NodePath("../CardsOverlay")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -58,5 +56,3 @@ text = "Seed: 1337"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("3_k4v05")
-
-[node name="CardsOverlay" parent="." instance=ExtResource("4_ggnre")]
