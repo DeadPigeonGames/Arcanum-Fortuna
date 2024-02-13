@@ -1,5 +1,7 @@
 class_name Card extends Control
 
+@export var delete_material : ShaderMaterial
+@export var death_delay = 1.25
 @export var card_data: CardData
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
@@ -106,6 +108,7 @@ func init(artwork_texture, name, cost, attack, health, keywords):
 	if card_data.sound_effect:
 		$AudioStreamPlayer.stream = card_data.sound_effect
 
+
 func setup():
 	base_attack = attack
 	base_health = health
@@ -134,6 +137,7 @@ func setup():
 func update_texts():
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
+
 
 func try_add_buff(buff : Buff) -> bool:
 	if buff in buffs:
@@ -210,13 +214,37 @@ func play_animation(animation):
 
 
 func play_cardflip(forward : bool):
-	%Artwork.visible = false
 	if card_flip_animation == null:
 		return
 	if forward:
+		%Artwork.visible = false
 		card_flip_animation.play("card_flip")
 	else:
+		%Artwork.visible = true
 		card_flip_animation.play_backwards("card_flip")
+
+
+func animate_burn():
+	var artwork = %Artwork
+	delete_material = load("res://shaders/card_burn.tres")
+	artwork.material = self.delete_material
+	await get_tree().process_frame
+	%Cardback.visible = false
+	var random_angle = [-1, -0.5, 0.5, 1, 1.5, 2]
+	random_angle = random_angle[randi_range(0, random_angle.size() - 1)]
+	artwork.material.set_shader_parameter("angle", random_angle)
+	var shader_noise : NoiseTexture2D = %Artwork.material.get_shader_parameter("noise")
+	shader_noise.noise.seed = randf_range(0.0, 100.0)
+	artwork.material.set_shader_parameter("noise", shader_noise)
+	play_animation("fade_out_icons")
+	var tween = create_tween()
+	tween.tween_method(set_shader_value, -1.0, 2.0, death_delay)
+	await tween.finished
+
+
+func set_shader_value(value: float):
+	var artwork = %Artwork
+	artwork.material.set_shader_parameter("progress", value);
 
 
 func animate_icon(emission_texture):

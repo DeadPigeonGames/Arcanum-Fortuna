@@ -29,7 +29,7 @@ func pause_game():
 	if not can_pause:
 		return
 	var pause = SceneHandler.add_ui_element(pause_scene) as PauseMenu
-	pause.init(100, self)
+	pause.init(150, self)
 	pause.setup()
 	pre_paused = get_tree().paused
 	get_tree().paused = true
