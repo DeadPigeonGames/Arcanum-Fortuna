@@ -14,7 +14,6 @@ static func init(base_rng):
 	rng.seed = base_rng.randi()
 
 static func get_random_from(list: Array[RandomScene]) -> RandomScene:
-	print(list)
 	if rng == null:
 		push_error("RandomScene was called witout being intialised!")
 		init(RandomNumberGenerator.new())
