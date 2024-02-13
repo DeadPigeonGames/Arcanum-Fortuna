@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dodfhimio8w5g"]
+[gd_scene load_steps=10 format=3 uid="uid://dodfhimio8w5g"]
 
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_5avjp"]
 [ext_resource type="Texture2D" uid="uid://bmkljvdymeqv0" path="res://assets/ui/placeholders/major_arcana_choice_placeholder.png" id="1_e7a7s"]
 [ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="2_57xyr"]
 [ext_resource type="Texture2D" uid="uid://d2jir55uumin5" path="res://assets/ui/placeholders/minor_arcana_choice_placeholder.png" id="2_fw1hn"]
@@ -22,69 +23,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PreChoice" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MenuTitlePreChoice" type="Label" parent="PreChoice"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 348.5
-offset_top = 64.0
-offset_right = 1531.5
-offset_bottom = 192.0
-grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 93
-text = "IS THERE A RIGHT CHOICE?"
-horizontal_alignment = 1
-
-[node name="MenuSubtitlePreChoice" type="Label" parent="PreChoice"]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 764.5
-offset_top = 192.0
-offset_right = 1115.5
-offset_bottom = 240.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 34
-text = "and is it yours?"
-horizontal_alignment = 1
-
-[node name="PostChoice" type="Control" parent="."]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MenuTitlePostChoice" type="Label" parent="PostChoice"]
+[node name="MenuTitlePreChoice" type="RichTextLabel" parent="PreChoice"]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 348.5
+offset_left = 97.0
 offset_top = 64.0
-offset_right = 1531.5
+offset_right = 1783.0
 offset_bottom = 192.0
 grow_horizontal = 2
+theme = ExtResource("1_5avjp")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 93
-text = "YOU HAVE CHOSEN"
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "[center][b]IS THERE A RIGHT CHOICE?"
 
-[node name="MenuSubtitlePostChoice" type="Label" parent="PostChoice"]
+[node name="MenuSubtitlePreChoice" type="RichTextLabel" parent="PreChoice"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 1
 anchors_preset = 5
@@ -95,12 +56,52 @@ offset_top = 192.0
 offset_right = 1115.5
 offset_bottom = 240.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme = ExtResource("1_5avjp")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 34
-text = "and you will do so again"
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "[center]and is it yours?"
+
+[node name="PostChoice" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuTitlePostChoice" type="RichTextLabel" parent="PostChoice"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 325.0
+offset_top = 64.0
+offset_right = 1554.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme = ExtResource("1_5avjp")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+bbcode_enabled = true
+text = "[center][b]YOU HAVE CHOSEN"
+
+[node name="MenuSubtitlePostChoice" type="RichTextLabel" parent="PostChoice"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 740.0
+offset_top = 192.0
+offset_right = 1138.0
+offset_bottom = 240.0
+grow_horizontal = 2
+theme = ExtResource("1_5avjp")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+bbcode_enabled = true
+text = "[center]and you will do so again"
 
 [node name="CardChoices" type="Control" parent="."]
 layout_mode = 1

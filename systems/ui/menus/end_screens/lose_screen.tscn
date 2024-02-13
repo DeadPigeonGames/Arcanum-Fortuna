@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddpmd4cji8uva"]
+[gd_scene load_steps=6 format=3 uid="uid://ddpmd4cji8uva"]
 
 [ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="1_agx8l"]
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_b05bo"]
 [ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="2_addci"]
 [ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="3_1semy"]
 [ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="4_xvk7s"]
@@ -13,24 +14,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuTitle" type="Label" parent="."]
+[node name="MenuTitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -591.5
+offset_left = -1015.5
 offset_top = 64.0
-offset_right = 591.5
+offset_right = 1015.5
 offset_bottom = 192.0
 grow_horizontal = 2
+theme = ExtResource("1_b05bo")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 93
-text = "NOT AN END, ONLY A DETOUR"
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "[center][b]NOT AN END, ONLY A DETOUR"
 
-[node name="MenuSubtitle" type="Label" parent="."]
+[node name="MenuSubtitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 1
 anchors_preset = 5
@@ -41,12 +42,12 @@ offset_top = 192.0
 offset_right = 175.5
 offset_bottom = 240.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme = ExtResource("1_b05bo")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 34
-text = "will you persist?"
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "[center]will you persist?"
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
