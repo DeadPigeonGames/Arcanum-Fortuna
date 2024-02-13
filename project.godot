@@ -184,8 +184,10 @@ open_inspection={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 shader_compiler/shader_cache/compress=false
 shader_compiler/shader_cache/use_zstd_compression=false
+textures/default_filters/use_nearest_mipmap_filter=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 anti_aliasing/quality/msaa_2d=3
 viewport/hdr_2d=true
