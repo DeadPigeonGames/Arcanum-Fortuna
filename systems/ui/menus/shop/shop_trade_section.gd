@@ -17,7 +17,6 @@ var trade_button
 func setup():
 	trade_button = $TradeButton
 	player_data = Player.instance.data
-	player_data.currency = 30
 	randomize_shop_cards()
 	randomize_hand_cards()
 	hand_card_1.selected_shader.color = Color.DARK_BLUE

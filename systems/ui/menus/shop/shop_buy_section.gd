@@ -12,7 +12,6 @@ var player_data : PlayerData
 
 func setup():
 	player_data = Player.instance.data
-	player_data.currency = 30
 	randomize()
 	var possible_cards = all_cards_resource.all_cards
 	shop_card_1.card_data = possible_cards.pick_random()

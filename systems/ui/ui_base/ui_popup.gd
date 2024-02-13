@@ -3,8 +3,8 @@ extends UIBase
 
 @onready var title : RichTextLabel = %Title
 @onready var content : RichTextLabel = %Content
-@onready var confirm_button : Button = %Confirm
-@onready var decline_button : Button = %Decline
+@onready var confirm_button : TextureButton = %ConfirmButton
+@onready var decline_button : TextureButton = %DeclineButton
 
 
 func setup_popup(data : UIPopupData):
@@ -24,3 +24,4 @@ func _on_decline_button_up():
 
 func close_with_result(value):
 	super.close_with_result(value)
+
