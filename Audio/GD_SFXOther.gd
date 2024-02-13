@@ -4,6 +4,9 @@ const SFX_VFXKarmaBlipLo = preload("res://Audio/Karma/VFXKarmaBlipLo.ogg")
 const SFX_VFXKarmaBlipMid = preload("res://Audio/Karma/VFXKarmaBlipMid.ogg")
 const SFX_VFXKarmaBlipHi = preload("res://Audio/Karma/VFXKarmaBlipHi.ogg")
 
+const SFX_DamagePlayer = preload("res://Audio/Card/PlayerDamage.ogg")
+const SFX_DamageEnemy = preload("res://Audio/Card/DamageEnemy.tres")
+
 var dropletScaler = 0.0
 var waitingOnKarma = false
 
@@ -18,10 +21,18 @@ func _SFX_HandClose():
 
 func _SFX_HandCardHover():
 	$HandCardHover.play()
-	
+
 func _SFX_Damage():
+	print_debug("Pls update function to call _SFX_DamagePlayer() or _SFX_DamageEnemy()")
+
+
+func _SFX_DamagePlayer():
+	$Damage.set_stream(SFX_DamagePlayer)
 	$Damage.play()
 
+func _SFX_DamageEnemy():
+	$Damage.set_stream(SFX_DamageEnemy)
+	$Damage.play()
 
 func _SFX_PlacableHover():
 	$PlacableHover.play();

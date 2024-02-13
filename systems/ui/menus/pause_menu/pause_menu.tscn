@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cglhkt704cl5u"]
+[gd_scene load_steps=7 format=3 uid="uid://cglhkt704cl5u"]
 
-[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_nbw54"]
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_ejo7b"]
+[ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_nbw54"]
 
 [sub_resource type="Animation" id="Animation_fhxqc"]
 length = 0.001
@@ -61,33 +62,36 @@ layout_mode = 3
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_top = -540.0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 540.0
 grow_vertical = 2
 
-[node name="MenuTitle" type="Label" parent="."]
+[node name="MenuTitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 994.0
 offset_bottom = 192.0
+theme = ExtResource("1_ejo7b")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 93
-text = "PAUSED"
+bbcode_enabled = true
+text = "[b]PAUSED"
 
-[node name="MenuSubtitle" type="Label" parent="."]
+[node name="MenuSubtitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
 offset_right = 415.0
 offset_bottom = 240.0
-theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme = ExtResource("1_ejo7b")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 34
+bbcode_enabled = true
 text = "but not over"
 
 [node name="PauseMenuButtons" type="VBoxContainer" parent="."]

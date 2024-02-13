@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8xs6q5trxx58"]
+[gd_scene load_steps=5 format=3 uid="uid://b8xs6q5trxx58"]
 
 [ext_resource type="Texture2D" uid="uid://b24ss0es2wjxk" path="res://assets/ui/placeholders/options_underlay_placeholder.png" id="1_45ycb"]
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_yx2ik"]
 [ext_resource type="Texture2D" uid="uid://cs0rxs0yhh3qy" path="res://assets/ui/placeholders/options_title_underlay_placeholder.png" id="2_4iaqa"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="3_x54wv"]
 
@@ -12,29 +13,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuTitle" type="Label" parent="."]
+[node name="MenuTitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 994.0
 offset_bottom = 192.0
+theme = ExtResource("1_yx2ik")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 93
-text = "OPTIONS"
+bbcode_enabled = true
+text = "[b]OPTIONS"
 
-[node name="MenuSubtitle" type="Label" parent="."]
+[node name="MenuSubtitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
-offset_right = 415.0
+offset_right = 628.0
 offset_bottom = 240.0
-theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme = ExtResource("1_yx2ik")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 34
 text = "or the illusion of them"
 
 [node name="OptionsMenuButtons" type="VBoxContainer" parent="."]
@@ -83,6 +85,7 @@ grow_vertical = 2
 texture = ExtResource("1_45ycb")
 
 [node name="AudioOptions" type="Control" parent="Options"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -193,7 +196,7 @@ alignment = 1
 custom_minimum_size = Vector2(296, 46)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = "AMBEINCE VOLUME"
+text = "AMBIENCE VOLUME"
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Options/AudioOptions/Options/AmbienceVolume"]
@@ -265,7 +268,6 @@ size_flags_vertical = 4
 theme = ExtResource("3_x54wv")
 
 [node name="VideoOptions" type="Control" parent="Options"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -310,6 +312,7 @@ offset_top = 40.0
 offset_right = 301.0
 offset_bottom = 86.0
 grow_horizontal = 2
+theme_override_constants/separation = 23
 
 [node name="Resolution" type="HBoxContainer" parent="Options/VideoOptions/Options"]
 layout_mode = 2
@@ -322,6 +325,30 @@ text = "RESOLUTION"
 vertical_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="Options/VideoOptions/Options/Resolution"]
+custom_minimum_size = Vector2(296, 0)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+item_count = 4
+popup/item_0/text = "slay"
+popup/item_0/id = 0
+popup/item_1/text = "more slay"
+popup/item_1/id = 1
+popup/item_2/text = "less slay"
+popup/item_2/id = 2
+popup/item_3/text = "hella slay so gay"
+popup/item_3/id = 3
+
+[node name="WindowMode" type="HBoxContainer" parent="Options/VideoOptions/Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/VideoOptions/Options/WindowMode"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "WINDOW MODE"
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Options/VideoOptions/Options/WindowMode"]
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")

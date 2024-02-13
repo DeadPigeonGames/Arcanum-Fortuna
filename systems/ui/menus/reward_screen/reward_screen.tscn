@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs55embs42lnu"]
+[gd_scene load_steps=8 format=3 uid="uid://cs55embs42lnu"]
 
 [ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="1_ck8dq"]
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_n3hj5"]
 [ext_resource type="PackedScene" uid="uid://4prwhv136psq" path="res://systems/ui/menus/card_pick_node/reward_card.tscn" id="1_vlbvl"]
 [ext_resource type="Texture2D" uid="uid://ds1ks1xhe0qq8" path="res://assets/ui/placeholders/gold_choice_placeholder.png" id="2_2kj4b"]
 [ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="2_38qw7"]
@@ -17,40 +18,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuTitle" type="Label" parent="."]
+[node name="MenuTitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -591.5
+offset_left = -765.5
 offset_top = 64.0
-offset_right = 591.5
+offset_right = 765.5
 offset_bottom = 192.0
 grow_horizontal = 2
+theme = ExtResource("1_n3hj5")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 93
-text = "A CHALLENGER BEATEN"
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "[center][b]A CHALLENGER BEATEN"
 
-[node name="MenuSubtitle" type="Label" parent="."]
+[node name="MenuSubtitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -175.5
+offset_left = -406.5
 offset_top = 192.0
-offset_right = 175.5
+offset_right = 406.5
 offset_bottom = 240.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme = ExtResource("1_n3hj5")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 34
-text = "you receive X gold and a reward of your choice"
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "[center]you receive X gold and a reward of your choice"
 
 [node name="RewardChoice" type="Control" parent="."]
 layout_mode = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=9 format=3 uid="uid://byccv8hmd45ln"]
 
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="3_c5lml"]
 [ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_h2wo1"]
 [ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="5_cwqwb"]
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="6_uytas"]
 [ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="7_w5744"]
 
 [node name="MainMenu" type="Control"]
@@ -23,29 +24,31 @@ tutorial_scene = ExtResource("3_c5lml")
 options_scene = ExtResource("4_h2wo1")
 credits_scene = ExtResource("5_cwqwb")
 
-[node name="MenuTitle" type="Label" parent="."]
+[node name="MenuTitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
-offset_right = 225.0
-offset_bottom = 87.0
+offset_right = 1409.0
+offset_bottom = 192.0
+theme = ExtResource("6_uytas")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 93
-text = "ARCANUM FORTUNA"
+bbcode_enabled = true
+text = "[b]ARCANUM FORTUNA"
 
-[node name="MenuSubtitle" type="Label" parent="."]
+[node name="MenuSubtitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
 offset_right = 415.0
 offset_bottom = 240.0
-theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme = ExtResource("6_uytas")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 34
+bbcode_enabled = true
 text = "per aspera ad arcana"
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="."]
@@ -63,11 +66,11 @@ theme = ExtResource("1_ix3bk")
 text = "PLAY"
 alignment = 0
 
-[node name="PrepareButton" type="Button" parent="MainMenuButtons"]
+[node name="CustomSeedButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
-text = "PREPARE"
+text = "YOUR MAP"
 alignment = 0
 
 [node name="OptionsButton" type="Button" parent="MainMenuButtons"]
@@ -107,7 +110,7 @@ scale = Vector2(1, 1.01944)
 texture = ExtResource("7_w5744")
 
 [connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
-[connection signal="button_up" from="MainMenuButtons/PrepareButton" to="." method="_on_prepare_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/CustomSeedButton" to="." method="_on_prepare_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditsButton" to="." method="_on_credits_button_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
