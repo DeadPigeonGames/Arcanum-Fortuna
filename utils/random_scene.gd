@@ -14,12 +14,15 @@ static func init(base_rng):
 	rng.seed = base_rng.randi()
 
 static func get_random_from(list: Array[RandomScene]) -> RandomScene:
+	print(list)
 	if rng == null:
 		push_error("RandomScene was called witout being intialised!")
 		init(RandomNumberGenerator.new())
 	var total_chance_weight := 0
 	
 	for random_scene in list:
+		if random_scene == null:
+			continue
 		total_chance_weight += random_scene.chance_weight
 	var hit := rng.randi_range(1, total_chance_weight)
 	var change_weight_index := 0

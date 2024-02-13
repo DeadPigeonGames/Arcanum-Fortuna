@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cy7r8u5ck052l"]
+[gd_scene load_steps=25 format=3 uid="uid://cy7r8u5ck052l"]
 
 [ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="1_4wcvd"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/level.gd" id="1_44yos"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://systems/dungeon_exploration/limited_camera.gd" id="12_3m17x"]
 [ext_resource type="PackedScene" uid="uid://bbhypmndv2m7q" path="res://systems/dungeon_exploration/maps/node_map_loader.tscn" id="12_c42ig"]
 [ext_resource type="PackedScene" uid="uid://n6x1mb4dktgr" path="res://systems/dungeon_exploration/maps/layouts/node_map_test_2.tscn" id="12_iuld8"]
+[ext_resource type="PackedScene" uid="uid://c8wrkx1o0ism" path="res://systems/dungeon_exploration/maps/node_maps_winter/node_map_winter_1.tscn" id="14_841d0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ru5t"]
 shader = ExtResource("3_fnpom")
@@ -107,6 +108,11 @@ script = ExtResource("11_fvnbs")
 chance_weight = 1
 scene = ExtResource("12_iuld8")
 
+[sub_resource type="Resource" id="Resource_wlrje"]
+script = ExtResource("11_fvnbs")
+chance_weight = 98
+scene = ExtResource("14_841d0")
+
 [node name="NodemapTest" type="Node2D"]
 script = ExtResource("1_44yos")
 node_map_path = NodePath("NodeMapLoader")
@@ -114,7 +120,7 @@ node_map_path = NodePath("NodeMapLoader")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, -180)
 transform = Transform2D(1, 0, 0, 1, 0, -180)
-scroll_offset = Vector2(792.066, -26.0311)
+scroll_offset = Vector2(-1487.44, -81.9713)
 
 [node name="BaseLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(2760, 0)
@@ -173,4 +179,4 @@ offset_top = 696.0
 offset_right = 153.0
 offset_bottom = 696.0
 mouse_filter = 1
-potential_node_maps = Array[ExtResource("11_fvnbs")]([SubResource("Resource_gijmu"), SubResource("Resource_ntgcp")])
+potential_node_maps = Array[ExtResource("11_fvnbs")]([SubResource("Resource_gijmu"), SubResource("Resource_ntgcp"), SubResource("Resource_wlrje")])

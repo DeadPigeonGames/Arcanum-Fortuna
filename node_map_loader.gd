@@ -14,6 +14,7 @@ func init(rng_seed, rng_text):
 
 
 func _ready():
+	print(potential_node_maps)
 	var chosen_map = RandomScene.get_random_from(potential_node_maps).scene.instantiate()
 	var player = chosen_map.get_node("Player")
 	var remote_transform = RemoteTransform2D.new()
