@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://2jbrg4k8rquv"]
+[gd_scene load_steps=8 format=3 uid="uid://2jbrg4k8rquv"]
 
 [ext_resource type="Script" path="res://Audio/GD_SFXBG.gd" id="1_h5q58"]
 [ext_resource type="AudioStream" uid="uid://dohuw0jci361o" path="res://Audio/Ambience/BackgroundAmbienceLoop1.ogg" id="2_rqkcx"]
 [ext_resource type="AudioStream" uid="uid://brcarklse3rna" path="res://Audio/Music/Music1.ogg" id="3_hof6i"]
+[ext_resource type="AudioStream" uid="uid://dtqovmvgm4rfx" path="res://Audio/UI/Heart1.ogg" id="4_b1r6n"]
 
 [sub_resource type="Animation" id="Animation_8vt74"]
 resource_name = "FadeAM1"
@@ -94,8 +95,7 @@ volume_db = -6.0
 bus = &"Music"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
+wait_time = 2.0
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
 libraries = {
@@ -107,4 +107,11 @@ libraries = {
 "": SubResource("AnimationLibrary_62kpw")
 }
 
+[node name="Heart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_b1r6n")
+volume_db = -80.0
+
+[node name="HeartTimer" type="Timer" parent="Heart"]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Heart/HeartTimer" to="." method="_on_heart_timer_timeout"]
