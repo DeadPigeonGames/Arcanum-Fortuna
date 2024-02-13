@@ -63,11 +63,11 @@ theme = ExtResource("1_ix3bk")
 text = "PLAY"
 alignment = 0
 
-[node name="PrepareButton" type="Button" parent="MainMenuButtons"]
+[node name="CustomSeedButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
-text = "PREPARE"
+text = "YOUR MAP"
 alignment = 0
 
 [node name="OptionsButton" type="Button" parent="MainMenuButtons"]
@@ -107,7 +107,7 @@ scale = Vector2(1, 1.01944)
 texture = ExtResource("7_w5744")
 
 [connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
-[connection signal="button_up" from="MainMenuButtons/PrepareButton" to="." method="_on_prepare_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/CustomSeedButton" to="." method="_on_prepare_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditsButton" to="." method="_on_credits_button_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
