@@ -1,20 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://4ksadcfwwt52"]
+[gd_scene load_steps=9 format=3 uid="uid://4ksadcfwwt52"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_buy_section.gd" id="1_nlq55"]
-[ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_tpvif"]
+[ext_resource type="Resource" uid="uid://du4544pn8giog" path="res://utils/all_cards_resource.tres" id="2_i7f4d"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="3_dc1wl"]
 [ext_resource type="PackedScene" uid="uid://ba7hqrlkxau6b" path="res://systems/ui/menus/shop/shop_card.tscn" id="5_gtqyr"]
 [ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="5_mrvvq"]
 [ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="6_orp16"]
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="7_y4382"]
 [ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="8_f1wal"]
-
-[sub_resource type="Resource" id="Resource_5s83o"]
-script = ExtResource("2_tpvif")
-title_text = "Test"
-content_text = "some text"
-confirm_label_text = "si"
-decline_label_text = "nada"
 
 [node name="ShopBuySection" type="Control" node_paths=PackedStringArray("shop_card_1", "shop_card_2", "shop_card_3")]
 layout_mode = 3
@@ -26,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_nlq55")
-confirm_pay_data = SubResource("Resource_5s83o")
+all_cards_resource = ExtResource("2_i7f4d")
 shop_card_1 = NodePath("AvailableOffer/HBoxContainer/ShopCard1")
 shop_card_2 = NodePath("AvailableOffer/HBoxContainer/ShopCard2")
 shop_card_3 = NodePath("AvailableOffer/HBoxContainer/ShopCard3")

@@ -1,8 +1,7 @@
 class_name ShopBuySection
 extends UITabBase
 
-@export var possible_cards: Array[CardData]
-@export var confirm_pay_data : UIPopupData
+@export var all_cards_resource : AllCards
 @export var shop_card_1 : ShopPreviewCard
 @export var shop_card_2 : ShopPreviewCard
 @export var shop_card_3 : ShopPreviewCard
@@ -15,6 +14,7 @@ func setup():
 	player_data = Player.instance.data
 	player_data.currency = 30
 	randomize()
+	var possible_cards = all_cards_resource.all_cards
 	shop_card_1.card_data = possible_cards.pick_random()
 	shop_card_2.card_data = possible_cards.pick_random()
 	shop_card_3.card_data = possible_cards.pick_random()

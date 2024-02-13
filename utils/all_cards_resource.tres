@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=33 format=3 uid="uid://c8b20bmcwl8i5"]
+[gd_resource type="Resource" script_class="AllCards" load_steps=33 format=3 uid="uid://du4544pn8giog"]
 
 [ext_resource type="Script" path="res://utils/all_cards.gd" id="1_es1nr"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="1_ug56k"]

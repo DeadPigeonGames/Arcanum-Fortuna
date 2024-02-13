@@ -1,22 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjaecj5rdauy3"]
+[gd_scene load_steps=9 format=3 uid="uid://cjaecj5rdauy3"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_trade_section.gd" id="1_li3lg"]
 [ext_resource type="PackedScene" uid="uid://ba7hqrlkxau6b" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5sgb4"]
-[ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_6oljb"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="3_dd2nf"]
+[ext_resource type="Resource" uid="uid://du4544pn8giog" path="res://utils/all_cards_resource.tres" id="3_fyg27"]
 [ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="5_e27xk"]
 [ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="6_x6y62"]
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="7_rt4em"]
 [ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="8_cotqf"]
 
-[sub_resource type="Resource" id="Resource_jke14"]
-script = ExtResource("2_6oljb")
-title_text = "Trade"
-content_text = "Really trade?"
-confirm_label_text = "Yes"
-decline_label_text = "No"
-
-[node name="ShopTradeSection" type="Control"]
+[node name="ShopTradeSection" type="Control" node_paths=PackedStringArray("shop_card_1", "shop_card_2", "shop_card_3", "hand_card_1", "hand_card_2", "hand_card_3")]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -26,7 +19,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_li3lg")
-confirm_trade_data = SubResource("Resource_jke14")
+all_cards_resource = ExtResource("3_fyg27")
+shop_card_1 = NodePath("AvailableOffer/HBoxContainer/ShopCard1")
+shop_card_2 = NodePath("AvailableOffer/HBoxContainer/ShopCard2")
+shop_card_3 = NodePath("AvailableOffer/HBoxContainer/ShopCard3")
+hand_card_1 = NodePath("HandCards/HBoxContainer/HandCard1")
+hand_card_2 = NodePath("HandCards/HBoxContainer/HandCard2")
+hand_card_3 = NodePath("HandCards/HBoxContainer/HandCard3")
 
 [node name="SectionExplanation" type="Control" parent="."]
 custom_minimum_size = Vector2(480, 120)
@@ -156,4 +155,31 @@ offset_right = 360.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="HandCards"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.0
+offset_right = 259.0
+offset_bottom = 266.0
+grow_horizontal = 2
+mouse_filter = 0
+theme_override_constants/separation = 50
+
+[node name="HandCard1" parent="HandCards/HBoxContainer" instance=ExtResource("2_5sgb4")]
+layout_mode = 2
+
+[node name="HandCard2" parent="HandCards/HBoxContainer" instance=ExtResource("2_5sgb4")]
+layout_mode = 2
+
+[node name="HandCard3" parent="HandCards/HBoxContainer" instance=ExtResource("2_5sgb4")]
+layout_mode = 2
+
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard1" to="." method="_on_shop_card_1_clicked"]
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard2" to="." method="_on_shop_card_2_clicked"]
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard3" to="." method="_on_shop_card_3_clicked"]
 [connection signal="button_up" from="TradeButton" to="." method="_on_trade_button_button_up"]
+[connection signal="clicked" from="HandCards/HBoxContainer/HandCard1" to="." method="_on_hand_card_1_clicked"]
+[connection signal="clicked" from="HandCards/HBoxContainer/HandCard2" to="." method="_on_hand_card_2_clicked"]
+[connection signal="clicked" from="HandCards/HBoxContainer/HandCard3" to="." method="_on_hand_card_3_clicked"]

@@ -15,7 +15,7 @@ seamless = true
 normalize = false
 noise = SubResource("FastNoiseLite_213d2")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2yvh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yawpg"]
 shader = ExtResource("3_r5rvw")
 shader_parameter/strength = 109.095
 shader_parameter/noise_speed = 0.05
@@ -32,7 +32,7 @@ card_data = ExtResource("3_3mhlc")
 [node name="SelectedShader" type="ColorRect" parent="." index="15"]
 visible = false
 z_index = -2
-material = SubResource("ShaderMaterial_i2yvh")
+material = SubResource("ShaderMaterial_yawpg")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
