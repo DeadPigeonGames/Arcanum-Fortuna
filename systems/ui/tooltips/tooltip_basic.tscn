@@ -1,100 +1,72 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2qmncwrxdeer"]
+[gd_scene load_steps=5 format=3 uid="uid://b2qmncwrxdeer"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/tooltip_basic.gd" id="1_titoy"]
-[ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="2_f4e28"]
-[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="3_pr56c"]
-[ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="4_dlbbh"]
-[ext_resource type="Theme" uid="uid://cdhvtisluxnhu" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="5_511dl"]
+[ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_l2ww3"]
+[ext_resource type="Texture2D" uid="uid://b3j5y2qsvio5b" path="res://assets/ui/underlays/tutorial_underlay.png" id="3_e0dkh"]
+[ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="5_511dl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf6co"]
-bg_color = Color(0.270588, 0.270588, 0.270588, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pii2q"]
-bg_color = Color(0, 0, 0, 0.709804)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljn2j"]
-atlas = ExtResource("3_pr56c")
-region = Rect2(0, 0, 64, 64)
-
-[node name="TooltipBase" type="MarginContainer"]
-z_index = 10
-z_as_relative = false
-custom_minimum_size = Vector2(300, 25)
-offset_right = 300.0
-offset_bottom = 25.0
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
+[node name="TooltipBase" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_titoy")
+mouse_offset = Vector2(1, 1)
 
-[node name="TooltipBackground" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(50, 0)
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qf6co")
+offset_right = 218.0
+offset_bottom = 69.0
+size_flags_vertical = 0
+theme_override_constants/margin_left = -1
+theme_override_constants/margin_top = -1
+theme_override_constants/margin_right = -1
+theme_override_constants/margin_bottom = -1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TooltipBackground"]
-layout_mode = 2
-
-[node name="TooltipTitleBg" type="PanelContainer" parent="TooltipBackground/VBoxContainer"]
-custom_minimum_size = Vector2(100, 25)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pii2q")
-
-[node name="MarginContainer" type="MarginContainer" parent="TooltipBackground/VBoxContainer/TooltipTitleBg"]
-layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 4
-
-[node name="HFlowContainer" type="HFlowContainer" parent="TooltipBackground/VBoxContainer/TooltipTitleBg/MarginContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 12
-
-[node name="TooltipIcon" type="TextureRect" parent="TooltipBackground/VBoxContainer/TooltipTitleBg/MarginContainer/HFlowContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 unique_name_in_owner = true
-material = ExtResource("2_f4e28")
+clip_contents = true
 layout_mode = 2
-texture = SubResource("AtlasTexture_ljn2j")
-expand_mode = 2
+texture = ExtResource("2_l2ww3")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 
-[node name="TooltipTitle" type="Label" parent="TooltipBackground/VBoxContainer/TooltipTitleBg/MarginContainer/HFlowContainer"]
+[node name="Background" type="Sprite2D" parent="MarginContainer/NinePatchRect"]
 unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("5_511dl")
-text = "Split-Strike"
-vertical_alignment = 1
+z_index = -1
+texture = ExtResource("3_e0dkh")
+centered = false
 
-[node name="MarginContainer" type="MarginContainer" parent="TooltipBackground/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
 
-[node name="TooltipText" type="Label" parent="TooltipBackground/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("5_511dl")
-text = "Cards with this symbol will only
-attack cards diagonally."
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Name"
+fit_content = true
 
-[node name="Control" type="Control" parent="."]
-show_behind_parent = true
+[node name="Text" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-show_behind_parent = true
-material = ExtResource("4_dlbbh")
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.270588, 0.270588, 0.270588, 1)
+theme = ExtResource("5_511dl")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Text"
+fit_content = true

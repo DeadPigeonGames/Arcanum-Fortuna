@@ -34,6 +34,7 @@ func receive_result(result):
 	if result is String:
 		seed_text = result
 		generate_seed(result)
+		_on_start_button_button_up()
 
 
 func generate_seed(text : String):
@@ -42,12 +43,15 @@ func generate_seed(text : String):
 		seed += text.unicode_at(i)
 
 
-func _on_start_button_button_up():
-	print(seed_text)
+func start_game():
 	node_map.init(seed, seed_text)
 	GlobalLog.add_entry("Seed used: " + seed_text)
 	Pause.can_pause = true
 	SceneHandler.change_scene(node_map)
+
+
+func _on_start_button_button_up():
+	start_game()
 
 
 func _on_tutorial_button_button_up():

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_mjfs2"]
 [ext_resource type="Texture2D" uid="uid://nhex5yw7m7ag" path="res://assets/ui/placeholders/tutorial_popup_doggo_placeholder.png" id="3_p7yul"]
 [ext_resource type="Texture2D" uid="uid://b3j5y2qsvio5b" path="res://assets/ui/underlays/tutorial_underlay.png" id="3_x8n3p"]
-[ext_resource type="Theme" uid="uid://cdhvtisluxnhu" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="4_8f1u2"]
+[ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="4_8f1u2"]
 
 [node name="TutorialPopup" type="Control"]
 process_mode = 1
