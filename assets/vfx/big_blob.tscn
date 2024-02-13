@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://d04yhti50qih4"]
 
 [ext_resource type="Material" uid="uid://x5u303jd0gal" path="res://assets/vfx/materials/big_blob.tres" id="1_o1e25"]
+[ext_resource type="Texture2D" uid="uid://c77cyj3pckb7t" path="res://assets/sprites/vfx/big_blob_texture05.png" id="2_7hc3m"]
 [ext_resource type="Script" path="res://assets/vfx/big_blob.gd" id="2_tkwfq"]
-[ext_resource type="Texture2D" uid="uid://c77cyj3pckb7t" path="res://assets/sprites/vfx/big_blob_texture05.png" id="2_yufyg"]
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="4_bi3ey"]
 [ext_resource type="Material" uid="uid://bvhyxtr0b6ktj" path="res://assets/vfx/materials/trail.tres" id="4_hm82m"]
 [ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="6_oocnb"]
@@ -39,7 +39,7 @@ z_index = 5
 z_as_relative = false
 amount = 7
 process_material = ExtResource("1_o1e25")
-texture = ExtResource("2_yufyg")
+texture = ExtResource("2_7hc3m")
 local_coords = true
 script = ExtResource("2_tkwfq")
 worse_digit = -5
@@ -70,7 +70,7 @@ vertical_alignment = 1
 amount = 2
 amount_ratio = 0.5638
 process_material = SubResource("ParticleProcessMaterial_3kctl")
-texture = ExtResource("2_yufyg")
+texture = ExtResource("2_7hc3m")
 
 [node name="sparkles" type="GPUParticles2D" parent="."]
 amount = 2
@@ -82,7 +82,7 @@ texture = ExtResource("6_oocnb")
 z_index = -1
 amount = 64
 process_material = ExtResource("4_hm82m")
-texture = ExtResource("2_yufyg")
+texture = ExtResource("2_7hc3m")
 lifetime = 0.65
 randomness = 0.07
 trail_lifetime = 0.2
