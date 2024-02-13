@@ -33,7 +33,7 @@ func _on_seed_input_text_changed(new_text : String):
 		seed += new_text.unicode_at(i)
 
 
-func _on_start_button_button_down():
+func _on_start_button_button_up():
 	node_map.init(seed, $SeedInput.text)
 	GlobalLog.add_entry("Seed used: " + $SeedInput.text)
 	Pause.can_pause = true

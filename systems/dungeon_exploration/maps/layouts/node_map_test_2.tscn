@@ -15,9 +15,6 @@ offset_right = -1.0
 offset_bottom = 7.0
 connectsTo = [NodePath("../CombatNode"), NodePath("../ChallengingCombatNode"), NodePath("../ShopNode")]
 
-[node name="CardsOverlay" parent="." index="3"]
-visible = false
-
 [node name="FinalNode" parent="." index="4" instance=ExtResource("2_5n5yr")]
 layout_mode = 1
 offset_left = 685.0

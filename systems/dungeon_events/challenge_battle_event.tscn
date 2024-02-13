@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cdmbv5kshgi6w"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/battle_event.gd" id="1_jn11o"]
-[ext_resource type="Resource" uid="uid://dows6m8ajlccp" path="res://data/enemy/enemy_elite1.tres" id="2_o4rtw"]
+[ext_resource type="Resource" uid="uid://dows6m8ajlccp" path="res://data/enemy/enemy_elite.tres" id="2_o4rtw"]
 [ext_resource type="Resource" uid="uid://b84wfhshysdh8" path="res://data/enemy/enemy_elite2.tres" id="3_qao00"]
 [ext_resource type="Resource" uid="uid://cujcolw66kdil" path="res://data/enemy/enemy_elite3.tres" id="4_tsqw4"]
 [ext_resource type="Resource" uid="uid://dnrh06owgw4hu" path="res://data/enemy/enemy_elite4.tres" id="5_mn0ua"]

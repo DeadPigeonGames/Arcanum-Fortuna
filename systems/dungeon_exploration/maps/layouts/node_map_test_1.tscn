@@ -14,7 +14,6 @@ offset_top = -7.0
 offset_right = -709.0
 offset_bottom = -7.0
 connectsTo = [NodePath("../RandomNode")]
-is_scene_switch = false
 
 [node name="Player" parent="." index="1"]
 offset_left = 0.0
@@ -22,16 +21,12 @@ offset_top = 0.0
 offset_right = 64.0
 offset_bottom = 64.0
 
-[node name="CardsOverlay" parent="." index="3"]
-visible = false
-
 [node name="FinalNode" parent="." index="4" instance=ExtResource("2_wamc1")]
 layout_mode = 1
 offset_left = 1049.0
 offset_top = 5.0
 offset_right = 1049.0
 offset_bottom = 5.0
-level_gain = 0.0
 
 [node name="CombatNode" parent="." index="5" node_paths=PackedStringArray("connectsTo") instance=ExtResource("3_frcfq")]
 layout_mode = 1

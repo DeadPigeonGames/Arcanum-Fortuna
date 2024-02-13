@@ -23,7 +23,6 @@ offset_left = -256.0
 offset_top = 413.0
 offset_right = -256.0
 offset_bottom = 413.0
-is_scene_switch = null
 
 [node name="Player" parent="." node_paths=PackedStringArray("startNode", "setup_nodes") instance=ExtResource("2_we5fp")]
 layout_mode = 0
