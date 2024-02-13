@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cy7r8u5ck052l"]
+[gd_scene load_steps=27 format=3 uid="uid://cy7r8u5ck052l"]
 
 [ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="1_4wcvd"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/level.gd" id="1_44yos"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" path="res://shaders/snow_rain.gdshader" id="5_f5b0f"]
 [ext_resource type="Shader" path="res://shaders/fog.gdshader" id="6_g3on7"]
 [ext_resource type="PackedScene" uid="uid://u6bv0sd2v3es" path="res://systems/dungeon_exploration/maps/layouts/node_map_test_1.tscn" id="10_3mqxt"]
+[ext_resource type="Texture2D" uid="uid://can862dqmhwwo" path="res://assets/ui/placeholders/snowflake_test.png" id="10_v8li0"]
 [ext_resource type="Script" path="res://utils/random_scene.gd" id="11_fvnbs"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/limited_camera.gd" id="12_3m17x"]
 [ext_resource type="PackedScene" uid="uid://bbhypmndv2m7q" path="res://systems/dungeon_exploration/maps/node_map_loader.tscn" id="12_c42ig"]
@@ -98,6 +99,19 @@ shader_parameter/density = 0.155
 shader_parameter/speed = Vector2(0.02, 0.01)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_l1o83")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_op1x3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 1, 1)
+angle_max = 720.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 100.0
+initial_velocity_max = 175.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.8
+
 [sub_resource type="Resource" id="Resource_gijmu"]
 script = ExtResource("11_fvnbs")
 chance_weight = 1
@@ -150,6 +164,7 @@ layer_0/tile_data = PackedInt32Array(3342366, 2, 11, 917589, 1048578, 11, 852048
 [node name="Effects" type="Node" parent="."]
 
 [node name="Snow" type="ColorRect" parent="Effects"]
+visible = false
 material = SubResource("ShaderMaterial_v7s72")
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -164,6 +179,7 @@ mouse_filter = 1
 
 [node name="LimitedCamera" type="Camera2D" parent="."]
 position = Vector2(19, 534)
+offset = Vector2(480, 0)
 script = ExtResource("12_3m17x")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="LimitedCamera"]
@@ -172,6 +188,14 @@ offset_top = -537.0
 offset_right = 5620.0
 offset_bottom = 545.0
 mouse_filter = 2
+
+[node name="SnowParticles" type="GPUParticles2D" parent="LimitedCamera"]
+position = Vector2(480, -600)
+amount = 160
+process_material = SubResource("ParticleProcessMaterial_op1x3")
+texture = ExtResource("10_v8li0")
+lifetime = 12.0
+preprocess = 10.0
 
 [node name="NodeMapLoader" parent="." instance=ExtResource("12_c42ig")]
 offset_left = 153.0

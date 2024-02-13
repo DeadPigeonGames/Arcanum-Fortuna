@@ -254,19 +254,19 @@ script = ExtResource("6_wk5c6")
 
 [node name="StartNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_jx6qu")]
 layout_mode = 1
-offset_left = -813.0
-offset_top = 67.0
-offset_right = -813.0
-offset_bottom = 67.0
+offset_left = -807.0
+offset_top = -128.0
+offset_right = -807.0
+offset_bottom = -128.0
 connectsTo = [NodePath("../RandomNode")]
 offset = 45.0
 
 [node name="RandomNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = -455.0
-offset_top = 44.0
-offset_right = -455.0
-offset_bottom = 44.0
+offset_left = -449.0
+offset_top = -151.0
+offset_right = -449.0
+offset_bottom = -151.0
 potential_events = Array[ExtResource("10_ttikx")]([SubResource("Resource_ig0b3"), SubResource("Resource_i25gk"), SubResource("Resource_w5a6b")])
 connectsTo = [NodePath("../RandomEventNode"), NodePath("../RandomEventNode2")]
 dashed_width = 12.0
@@ -274,20 +274,20 @@ offset = 45.0
 
 [node name="RandomEventNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = -86.0
-offset_top = -129.0
-offset_right = -86.0
-offset_bottom = -129.0
+offset_left = -80.0
+offset_top = -324.0
+offset_right = -80.0
+offset_bottom = -324.0
 connectsTo = [NodePath("../RandomEventNode3")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode2" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = -213.0
-offset_top = 192.0
-offset_right = -213.0
-offset_bottom = 192.0
+offset_left = -207.0
+offset_top = -3.0
+offset_right = -207.0
+offset_bottom = -3.0
 potential_events = Array[ExtResource("10_ttikx")]([SubResource("Resource_27kte"), SubResource("Resource_e5c68"), SubResource("Resource_m1a8u"), null, null])
 connectsTo = [NodePath("../RandomEventNode3")]
 dashed_width = 12.0
@@ -295,337 +295,342 @@ offset = 45.0
 
 [node name="RandomEventNode3" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 184.0
-offset_top = 42.0
-offset_right = 184.0
-offset_bottom = 42.0
+offset_left = 190.0
+offset_top = -153.0
+offset_right = 190.0
+offset_bottom = -153.0
 connectsTo = [NodePath("../RandomEventNode4"), NodePath("../RandomEventNode5"), NodePath("../RandomEventNode6")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode4" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 432.0
-offset_top = -284.0
-offset_right = 432.0
-offset_bottom = -284.0
+offset_left = 438.0
+offset_top = -479.0
+offset_right = 438.0
+offset_bottom = -479.0
 connectsTo = [NodePath("../RandomEventNode7")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode5" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 560.0
-offset_top = -41.0
-offset_right = 560.0
-offset_bottom = -41.0
+offset_left = 566.0
+offset_top = -236.0
+offset_right = 566.0
+offset_bottom = -236.0
 connectsTo = [NodePath("../RandomEventNode7")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode6" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 409.0
-offset_top = 303.0
-offset_right = 409.0
-offset_bottom = 303.0
+offset_left = 415.0
+offset_top = 108.0
+offset_right = 415.0
+offset_bottom = 108.0
 connectsTo = [NodePath("../RandomEventNode8")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode7" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 852.0
-offset_top = -164.0
-offset_right = 852.0
-offset_bottom = -164.0
+offset_left = 858.0
+offset_top = -359.0
+offset_right = 858.0
+offset_bottom = -359.0
 connectsTo = [NodePath("../RandomEventNode10")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode8" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 790.0
-offset_top = 236.0
-offset_right = 790.0
-offset_bottom = 236.0
+offset_left = 796.0
+offset_top = 41.0
+offset_right = 796.0
+offset_bottom = 41.0
 connectsTo = [NodePath("../RandomEventNode9")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode9" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 1058.0
-offset_top = 280.0
-offset_right = 1058.0
-offset_bottom = 280.0
+offset_left = 1064.0
+offset_top = 85.0
+offset_right = 1064.0
+offset_bottom = 85.0
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode10" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 1178.0
-offset_top = -298.0
-offset_right = 1178.0
-offset_bottom = -298.0
+offset_left = 1184.0
+offset_top = -493.0
+offset_right = 1184.0
+offset_bottom = -493.0
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode11" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 1474.0
-offset_top = 44.0
-offset_right = 1474.0
-offset_bottom = 44.0
+offset_left = 1480.0
+offset_top = -151.0
+offset_right = 1480.0
+offset_bottom = -151.0
 connectsTo = [NodePath("../RandomEventNode12"), NodePath("../RandomEventNode13")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode12" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 1696.0
-offset_top = -128.0
-offset_right = 1696.0
-offset_bottom = -128.0
+offset_left = 1702.0
+offset_top = -323.0
+offset_right = 1702.0
+offset_bottom = -323.0
 connectsTo = [NodePath("../RandomEventNode15"), NodePath("../RandomEventNode16")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode13" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 1814.0
-offset_top = 178.0
-offset_right = 1814.0
-offset_bottom = 178.0
+offset_left = 1820.0
+offset_top = -17.0
+offset_right = 1820.0
+offset_bottom = -17.0
 connectsTo = [NodePath("../RandomEventNode14")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode14" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 2078.0
-offset_top = 222.0
-offset_right = 2078.0
-offset_bottom = 222.0
+offset_left = 2084.0
+offset_top = 27.0
+offset_right = 2084.0
+offset_bottom = 27.0
 connectsTo = [NodePath("../RandomEventNode17")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode15" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 2126.0
-offset_top = -280.0
-offset_right = 2126.0
-offset_bottom = -280.0
+offset_left = 2132.0
+offset_top = -475.0
+offset_right = 2132.0
+offset_bottom = -475.0
 connectsTo = [NodePath("../RandomEventNode17")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode16" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 2042.0
-offset_top = -66.0
-offset_right = 2042.0
-offset_bottom = -66.0
+offset_left = 2048.0
+offset_top = -261.0
+offset_right = 2048.0
+offset_bottom = -261.0
 connectsTo = [NodePath("../RandomEventNode17")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode17" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 2439.0
-offset_top = -123.0
-offset_right = 2439.0
-offset_bottom = -123.0
+offset_left = 2445.0
+offset_top = -318.0
+offset_right = 2445.0
+offset_bottom = -318.0
 connectsTo = [NodePath("../RandomEventNode18"), NodePath("../RandomEventNode19")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode18" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 2784.0
-offset_top = -171.0
-offset_right = 2784.0
-offset_bottom = -171.0
+offset_left = 2790.0
+offset_top = -366.0
+offset_right = 2790.0
+offset_bottom = -366.0
 connectsTo = [NodePath("../RandomEventNode22")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode19" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 2650.0
-offset_top = 152.0
-offset_right = 2650.0
-offset_bottom = 152.0
+offset_left = 2656.0
+offset_top = -43.0
+offset_right = 2656.0
+offset_bottom = -43.0
 connectsTo = [NodePath("../RandomEventNode20"), NodePath("../RandomEventNode21")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode20" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3091.0
-offset_top = 250.0
-offset_right = 3091.0
-offset_bottom = 250.0
+offset_left = 3097.0
+offset_top = 55.0
+offset_right = 3097.0
+offset_bottom = 55.0
 connectsTo = [NodePath("../RandomEventNode23"), NodePath("../RandomEventNode24")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode21" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3010.0
-offset_top = -32.0
-offset_right = 3010.0
-offset_bottom = -32.0
+offset_left = 3016.0
+offset_top = -227.0
+offset_right = 3016.0
+offset_bottom = -227.0
 connectsTo = [NodePath("../RandomEventNode24")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode22" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3123.0
-offset_top = -324.0
-offset_right = 3123.0
-offset_bottom = -324.0
+offset_left = 3129.0
+offset_top = -519.0
+offset_right = 3129.0
+offset_bottom = -519.0
 connectsTo = [NodePath("../RandomEventNode25")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode23" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3394.0
-offset_top = 237.0
-offset_right = 3394.0
-offset_bottom = 237.0
+offset_left = 3400.0
+offset_top = 42.0
+offset_right = 3400.0
+offset_bottom = 42.0
 connectsTo = [NodePath("../RandomEventNode26")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode24" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3448.0
-offset_top = 6.0
-offset_right = 3448.0
-offset_bottom = 6.0
+offset_left = 3454.0
+offset_top = -189.0
+offset_right = 3454.0
+offset_bottom = -189.0
 connectsTo = [NodePath("../RandomEventNode27")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode25" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3362.0
-offset_top = -243.0
-offset_right = 3362.0
-offset_bottom = -243.0
+offset_left = 3368.0
+offset_top = -438.0
+offset_right = 3368.0
+offset_bottom = -438.0
 connectsTo = [NodePath("../RandomEventNode27")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode26" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3705.0
-offset_top = 180.0
-offset_right = 3705.0
-offset_bottom = 180.0
+offset_left = 3711.0
+offset_top = -15.0
+offset_right = 3711.0
+offset_bottom = -15.0
 connectsTo = [NodePath("../RandomEventNode29")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode27" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3713.0
-offset_top = -291.0
-offset_right = 3713.0
-offset_bottom = -291.0
+offset_left = 3719.0
+offset_top = -486.0
+offset_right = 3719.0
+offset_bottom = -486.0
 connectsTo = [NodePath("../RandomEventNode28")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode28" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 4056.0
-offset_top = -190.0
-offset_right = 4056.0
-offset_bottom = -190.0
+offset_left = 4062.0
+offset_top = -385.0
+offset_right = 4062.0
+offset_bottom = -385.0
 connectsTo = [NodePath("../RandomEventNode30"), NodePath("../RandomEventNode31")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode29" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 3950.0
-offset_top = 62.0
-offset_right = 3950.0
-offset_bottom = 62.0
+offset_left = 3956.0
+offset_top = -133.0
+offset_right = 3956.0
+offset_bottom = -133.0
 connectsTo = [NodePath("../RandomEventNode30")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode30" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 4318.0
-offset_top = 232.0
-offset_right = 4318.0
-offset_bottom = 232.0
+offset_left = 4324.0
+offset_top = 37.0
+offset_right = 4324.0
+offset_bottom = 37.0
 connectsTo = [NodePath("../RandomEventNode34")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode31" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 4356.0
-offset_top = -219.0
-offset_right = 4356.0
-offset_bottom = -219.0
+offset_left = 4362.0
+offset_top = -414.0
+offset_right = 4362.0
+offset_bottom = -414.0
 connectsTo = [NodePath("../RandomEventNode32"), NodePath("../RandomEventNode33")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode32" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 4654.0
-offset_top = -293.0
-offset_right = 4654.0
-offset_bottom = -293.0
+offset_left = 4660.0
+offset_top = -488.0
+offset_right = 4660.0
+offset_bottom = -488.0
 connectsTo = [NodePath("../RandomEventNode35")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode33" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 4722.0
-offset_top = -3.0
-offset_right = 4722.0
-offset_bottom = -3.0
+offset_left = 4728.0
+offset_top = -198.0
+offset_right = 4728.0
+offset_bottom = -198.0
 connectsTo = [NodePath("../RandomEventNode35")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode34" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 4561.0
-offset_top = 178.0
-offset_right = 4561.0
-offset_bottom = 178.0
+offset_left = 4567.0
+offset_top = -17.0
+offset_right = 4567.0
+offset_bottom = -17.0
 connectsTo = [NodePath("../RandomEventNode35")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="RandomEventNode35" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("7_7t6tu")]
 layout_mode = 1
-offset_left = 5025.0
-offset_top = 67.0
-offset_right = 5025.0
-offset_bottom = 67.0
+offset_left = 5031.0
+offset_top = -128.0
+offset_right = 5031.0
+offset_bottom = -128.0
 connectsTo = [NodePath("../FinalNode")]
 dashed_width = 12.0
 offset = 45.0
 
 [node name="FinalNode" parent="." instance=ExtResource("15_ocwq0")]
 layout_mode = 1
-offset_left = 5305.0
-offset_top = 4.0
-offset_right = 5305.0
-offset_bottom = 4.0
+offset_left = 5311.0
+offset_top = -191.0
+offset_right = 5311.0
+offset_bottom = -191.0
+
+[node name="LevelDecorations" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
