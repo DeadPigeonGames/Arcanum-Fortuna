@@ -1,13 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://blifmtx3ipelv"]
+[gd_scene load_steps=4 format=3 uid="uid://blifmtx3ipelv"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/hand_card.gd" id="1_85cwi"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_g1h4l"]
-[ext_resource type="PackedScene" uid="uid://bncdhusoiqqcj" path="res://systems/ui/menus/card_inspection.tscn" id="3_jvbtb"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="3_msu6w"]
 
 [node name="HandCard" instance=ExtResource("1_g1h4l")]
 script = ExtResource("1_85cwi")
-inspection = ExtResource("3_jvbtb")
 drag_offset = Vector2(25, 25)
 
 [node name="SwitchFrame" parent="Artwork" index="0"]

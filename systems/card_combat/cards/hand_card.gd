@@ -76,7 +76,6 @@ func pickup():
 
 
 func put(dropNode):
-	$SFXCard._SFX_PutDown()
 	show_card_tooltip.set_process(true)
 	isPickedUp = false
 	mouse_filter = Control.MOUSE_FILTER_PASS

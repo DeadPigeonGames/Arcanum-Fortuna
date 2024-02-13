@@ -15,6 +15,7 @@ var dropletScaler = 0.0
 
 var audioRandom = RandomNumberGenerator.new()
 
+
 func _SFX_PickUp():
 	# Start Loop
 	randomize()
@@ -26,6 +27,7 @@ func _SFX_PickUp():
 	# Start OneShot
 	$HandleHit.get_stream().set_stream(0, SFX_CardPickUp)
 	$HandleHit.play()
+
 
 func _SFX_PutDown():
 	$LoopRumble/AnimationPlayer.play("Fade", 1, -1, true)

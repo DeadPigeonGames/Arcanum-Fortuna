@@ -15,7 +15,6 @@ no_card_overview = true
 disabledColor = Color(0.745098, 0.745098, 0.745098, 1)
 
 [node name="icon" parent="background" index="0"]
-visible = false
 texture = ExtResource("3_b4kjy")
 
 [node name="ShowTooltip" type="Control" parent="." index="1"]

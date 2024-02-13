@@ -26,6 +26,7 @@ func _on_card_drag_ended(dragged_card: CombatCard):
 		tween.set_ease(Tween.EASE_IN_OUT)
 		tween.tween_property(dragged_card, "global_position", target_position, 0.2)
 		await tween.finished
+		dragged_card.reparent(self)
 		dragged_card.delete()
 		was_deleted = true
 	set_inactive()

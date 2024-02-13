@@ -103,6 +103,7 @@ func animate_karma(relevant_cards, target):
 	t.play()
 	await combat.get_tree().create_timer(karma_delay).timeout
 	target.modify_karma(blob.count)
+	SfxOther._SFX_Blip(blob.count)
 	blob.delete()
 	
 	Pause.can_pause = true

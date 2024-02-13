@@ -707,7 +707,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_yop51")
 
 [node name="KeywordIcon" parent="KeyWordSlots/KeywordSlot1" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -734,7 +733,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_4vo4j")
 
 [node name="KeywordIcon2" parent="KeyWordSlots/KeywordSlot2" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -759,7 +757,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_40ati")
 
 [node name="KeywordIcon3" parent="KeyWordSlots/KeywordSlot3" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 offset_left = 15.4242
 offset_top = 17.9949
@@ -777,7 +774,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_f0j57")
 
 [node name="KeywordIcon4" parent="KeyWordSlots/KeywordSlot4" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

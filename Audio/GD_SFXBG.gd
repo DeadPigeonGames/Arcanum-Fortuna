@@ -16,7 +16,6 @@ var isEvenTurn = false
 
 var musicRandom = RandomNumberGenerator.new()
 
-@export var criticalHealth:= 50.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -87,9 +86,11 @@ func _SFX_BG_SetLowPass(toState):
 		
 	lowPassTween.tween_property(lowPass, "cutoff_hz", desiredLowPassHz, 1)
 
-func _SFX_HealthToHighPass(health):
-	var highPassStrength = clamp(remap(health, criticalHealth, 0.0, 1.0, 10000.0), 1.0, 15000.0)
+
+func _SFX_HealthToHighPass(health, max_health):
+	var highPassStrength = clamp(remap(health, max_health / 2, 0.0, 1.0, 10000.0), 1.0, 15000.0)
 	_SFX_BG_SetHighPass(highPassStrength)
+
 
 func _SFX_BG_SetHighPass(hz):
 	var highPassTween = get_tree().create_tween()

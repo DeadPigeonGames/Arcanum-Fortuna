@@ -37,7 +37,8 @@ var health : int :
 		%HealthBar.value = health
 		if !max_health or max_health <= 0:
 			return
-		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 1.0 / (float(health) / float(max_health))
+		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 0.5 / (float(health) / float(max_health))
+		SfxBg._SFX_HealthToHighPass(health, max_health)
 
 
 func init(data: PlayerData):
