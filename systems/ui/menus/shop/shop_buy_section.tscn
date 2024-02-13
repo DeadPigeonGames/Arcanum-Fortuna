@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_buy_section.gd" id="1_nlq55"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_tpvif"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="3_dc1wl"]
-[ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="5_gtqyr"]
+[ext_resource type="PackedScene" uid="uid://ba7hqrlkxau6b" path="res://systems/ui/menus/shop/shop_card.tscn" id="5_gtqyr"]
 [ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="5_mrvvq"]
 [ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="6_orp16"]
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="7_y4382"]
@@ -16,7 +16,7 @@ content_text = "some text"
 confirm_label_text = "si"
 decline_label_text = "nada"
 
-[node name="ShopBuySection" type="Control"]
+[node name="ShopBuySection" type="Control" node_paths=PackedStringArray("shop_card_1", "shop_card_2", "shop_card_3")]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -27,6 +27,9 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_nlq55")
 confirm_pay_data = SubResource("Resource_5s83o")
+shop_card_1 = NodePath("AvailableOffer/HBoxContainer/ShopCard1")
+shop_card_2 = NodePath("AvailableOffer/HBoxContainer/ShopCard2")
+shop_card_3 = NodePath("AvailableOffer/HBoxContainer/ShopCard3")
 
 [node name="SectionExplanation" type="Control" parent="."]
 custom_minimum_size = Vector2(480, 120)
@@ -98,17 +101,14 @@ grow_vertical = 0
 theme_override_constants/separation = 72
 alignment = 1
 
-[node name="ShopCard" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
+[node name="ShopCard1" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="ShopCard2" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="ShopCard3" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="PayButton" type="TextureButton" parent="."]
 layout_mode = 1

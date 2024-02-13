@@ -43,5 +43,5 @@ func load_video_config():
 
 [node name="EntryScene" type="Node"]
 script = SubResource("GDScript_gwrei")
-main_scene = "res://systems/ui/main_menu.tscn"
+main_scene = "res://systems/ui/menus/main_menu/main_menu.tscn"
 web_load_scene = "res://utils/web_loading.tscn"

@@ -25,6 +25,8 @@ func close_with_result(result):
 	if called_by is UIBase:
 		called_by.is_current_window = true
 		called_by.receive_result(result)
+	if called_by.has_method("receive_result"):
+		called_by.receive_result(result)
 	queue_free()
 
 
@@ -60,6 +62,7 @@ func switch_tab(tab : PackedScene):
 		current_tab.close()
 	var tab_instance = tab.instantiate() as UITabBase
 	tab_instance.init(self)
+	tab_instance.setup()
 	add_child(tab_instance)
 	current_tab = tab_instance
 	
