@@ -6,11 +6,10 @@
 [node name="TutorialPopupClick" instance=ExtResource("1_1jvbl")]
 script = ExtResource("2_ehqj2")
 
-[node name="NextButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+[node name="NextButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer" index="1"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 8
+size_flags_horizontal = 3
 text = "Next"
 
-[connection signal="button_up" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_button_up"]
+[connection signal="button_up" from="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/NextButton" to="." method="_on_next_button_button_up"]
