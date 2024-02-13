@@ -214,17 +214,19 @@ func play_animation(animation):
 
 
 func play_cardflip(forward : bool):
-	%Artwork.visible = false
 	if card_flip_animation == null:
 		return
 	if forward:
+		%Artwork.visible = false
 		card_flip_animation.play("card_flip")
 	else:
+		%Artwork.visible = true
 		card_flip_animation.play_backwards("card_flip")
 
 
 func animate_burn():
 	var artwork = %Artwork
+	delete_material = load("res://shaders/card_burn.tres")
 	artwork.material = self.delete_material
 	await get_tree().process_frame
 	%Cardback.visible = false
