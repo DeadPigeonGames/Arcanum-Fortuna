@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq1c3cgx11dk8"]
+[gd_scene load_steps=11 format=3 uid="uid://dq1c3cgx11dk8"]
 
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup.gd" id="1_uc4qs"]
 [ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_kwsuy"]
+[ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="3_3xiu2"]
+[ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="4_gv58y"]
+[ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="5_2hte8"]
+[ext_resource type="Texture2D" uid="uid://df2r4ns72cbex" path="res://assets/ui/buttons/default_button_disabled.png" id="6_y41qu"]
+[ext_resource type="Texture2D" uid="uid://c48u8hn8flumi" path="res://assets/ui/buttons/r_default_button_normal.png" id="7_20s2a"]
+[ext_resource type="Texture2D" uid="uid://bomjy6ur8pe7e" path="res://assets/ui/buttons/r_default_button_pressed.png" id="8_fhwej"]
+[ext_resource type="Texture2D" uid="uid://c7lhocjhym6xs" path="res://assets/ui/buttons/r_default_button_hover.png" id="9_qcawb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfhd7"]
 
@@ -57,7 +64,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_bottom = 18
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CardTooltip/MarginContainer/MarginContainer"]
 layout_mode = 2
@@ -86,20 +93,59 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_nfhd7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Confirm" type="Button" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
+[node name="ConfirmButton" type="TextureButton" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
+texture_normal = ExtResource("3_3xiu2")
+texture_pressed = ExtResource("4_gv58y")
+texture_hover = ExtResource("5_2hte8")
+texture_disabled = ExtResource("6_y41qu")
+
+[node name="Confirm" type="Label" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Confirm"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Decline" type="Button" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
+[node name="DeclineButton" type="TextureButton" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
-text = "Decline"
+texture_normal = ExtResource("7_20s2a")
+texture_pressed = ExtResource("8_fhwej")
+texture_hover = ExtResource("9_qcawb")
+texture_disabled = ExtResource("6_y41qu")
 
-[connection signal="button_up" from="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_confirm_button_up"]
-[connection signal="button_up" from="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Decline" to="." method="_on_decline_button_up"]
+[node name="Decline" type="Label" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/DeclineButton"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Decline"
+horizontal_alignment = 1
+vertical_alignment = 1
