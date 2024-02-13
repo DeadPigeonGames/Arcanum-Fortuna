@@ -16,7 +16,7 @@ var health := 20 :
 		%HealthBar.value = health
 		if !max_health or max_health <= 0:
 			return
-		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 1.0 / (float(health) / float(max_health))
+		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 0.5 / (float(health) / float(max_health))
 var max_health
 var karma = 0
 

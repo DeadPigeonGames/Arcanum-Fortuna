@@ -44,8 +44,6 @@ offset_top = 173.0
 offset_right = 697.0
 offset_bottom = 173.0
 connectsTo = [NodePath("../FinalNode")]
-level_gain = 0.0
-is_scene_switch = false
 
 [node name="RandomNode" parent="." index="7" node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_0yopx")]
 layout_mode = 1
@@ -83,7 +81,7 @@ offset_left = 258.0
 offset_top = -191.0
 offset_right = 258.0
 offset_bottom = -191.0
-connectsTo = [NodePath("../RandomNode7")]
+connectsTo = [NodePath("../RandomNode7"), NodePath("../CombatNode2")]
 
 [node name="RandomNode6" parent="." index="12" node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_0yopx")]
 layout_mode = 1
@@ -100,3 +98,11 @@ offset_top = -11.0
 offset_right = 481.0
 offset_bottom = -11.0
 connectsTo = [NodePath("../CombatNode"), NodePath("../CardLootNode")]
+
+[node name="CombatNode2" parent="." index="14" node_paths=PackedStringArray("connectsTo") instance=ExtResource("3_frcfq")]
+layout_mode = 1
+offset_left = 492.0
+offset_top = -323.0
+offset_right = 492.0
+offset_bottom = -323.0
+connectsTo = [NodePath("../CombatNode")]

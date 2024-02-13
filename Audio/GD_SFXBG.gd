@@ -16,7 +16,6 @@ var isEvenTurn = false
 
 var musicRandom = RandomNumberGenerator.new()
 
-@export var criticalHealth:= 50.0
 
 var testHealth = 100
 
@@ -26,12 +25,12 @@ func _ready():
 
 
 func _on_timer_timeout():
-	
+	pass
 	#_SFX_ThinkMode(true)
 	#_playTrack(MapTypes.SHOP)
 	#_SFX_BG_SetLowPass(true)
-	testHealth -= 10
-	_SFX_HealthToHighPass(testHealth)
+	#testHealth -= 10
+	#_SFX_HealthToHighPass(testHealth)
 	
 
 func _playTrack(mapTypeToChangeTo):
@@ -89,24 +88,25 @@ func _SFX_BG_SetLowPass(toState):
 		
 	lowPassTween.tween_property(lowPass, "cutoff_hz", desiredLowPassHz, 1)
 
-func _SFX_HealthToHighPass(health):
-	var highPassStrength = clamp(remap(health, criticalHealth, 0.0, 1.0, 10000.0), 1.0, 15000.0)
-	var heartVolume = clamp(remap(health, criticalHealth, 0.0, -12.0, 0.0), -80.0, 0.0)
-	var heartPitch = clamp(remap(health, criticalHealth, 0.0, 0.8, 1.2), 0.8, 1.2)
-	var heartSpeed = clamp(remap(health, criticalHealth, 0.0, 4.0, 0.8), 0.8, 0.4)
-	
+
+func _SFX_HealthToHighPass(health, max_health):
+	var highPassStrength = clamp(remap(health, max_health / 2, 0.0, 1.0, 10000.0), 1.0, 15000.0)
+	var heartVolume = clamp(remap(health, max_health / 2, 0.0, -12.0, 0.0), -80.0, 0.0)
+	var heartPitch = clamp(remap(health, max_health / 2, 0.0, 0.8, 1.2), 0.8, 1.2)
+	var heartSpeed = clamp(remap(health, max_health / 2, 0.0, 4.0, 0.8), 0.8, 0.4)
 	_SFX_BG_SetHighPass(highPassStrength)
 	
 	#print_debug(heartSpeed)
-	
 	$Heart.set_pitch_scale(heartPitch)
 	$Heart.set_volume_db(heartVolume)
 	$Heart/HeartTimer.set_wait_time(heartSpeed)
 	#$Heart/HeartTimer.start()
 
+
 func _on_heart_timer_timeout():
 	$Heart.play()
 	#print_debug($Heart/HeartTimer.get_wait_time())
+
 
 func _SFX_BG_SetHighPass(hz):
 	var highPassTween = get_tree().create_tween()

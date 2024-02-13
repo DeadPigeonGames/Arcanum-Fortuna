@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cdhvtisluxnhu"]
+
+[ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="1_dvxjm"]
+[ext_resource type="FontFile" uid="uid://iwhf5740jgca" path="res://assets/ui/fonts/RomanAntique-Italic.ttf" id="1_r0sra"]
+[ext_resource type="Texture2D" uid="uid://bc2x3mp3j7q4o" path="res://assets/ui/placeholders/tutorial_popup_next_button_hover_placeholder.png" id="2_45jsr"]
+[ext_resource type="Texture2D" uid="uid://4noi1qdru2wp" path="res://assets/ui/placeholders/tutorial_popup_next_button_default_placeholder.png" id="3_3lqw5"]
+[ext_resource type="Texture2D" uid="uid://cij4e3qijecka" path="res://assets/ui/placeholders/tutorial_popup_next_button_pressed_placeholder.png" id="4_7pp33"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mi2jn"]
+texture = ExtResource("2_45jsr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpfds"]
+texture = ExtResource("3_3lqw5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o8e2"]
+texture = ExtResource("4_7pp33")
+
+[resource]
+Button/font_sizes/font_size = 26
+Button/fonts/font = ExtResource("1_dvxjm")
+Button/styles/hover = SubResource("StyleBoxTexture_mi2jn")
+Button/styles/normal = SubResource("StyleBoxTexture_dpfds")
+Button/styles/pressed = SubResource("StyleBoxTexture_3o8e2")
+RichTextLabel/constants/line_separation = 4
+RichTextLabel/font_sizes/bold_font_size = 26
+RichTextLabel/font_sizes/normal_font_size = 26
+RichTextLabel/fonts/bold_font = ExtResource("1_r0sra")
+RichTextLabel/fonts/normal_font = ExtResource("1_dvxjm")

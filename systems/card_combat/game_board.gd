@@ -64,6 +64,7 @@ func _on_card_relased(card: Card):
 	accept_card = false
 	if not hovered_tile or hovered_tile.get_child_count() != 0:
 		return
+	card.get_node("SFXCard")._SFX_PutDown()
 	card.reparent(hovered_tile)
 	card.global_position = hovered_tile.global_position + Vector2(-20, -40)
 	card.z_index = 2

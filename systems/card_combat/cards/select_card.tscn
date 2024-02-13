@@ -24,9 +24,10 @@ shader_parameter/noise_falloff = 0.06
 shader_parameter/bleed_strength = 1.375
 shader_parameter/noise = SubResource("NoiseTexture2D_68116")
 
-[node name="SelectCard" instance=ExtResource("1_xraf4")]
+[node name="SelectCard" node_paths=PackedStringArray("selected_shader") instance=ExtResource("1_xraf4")]
 scale = Vector2(1.28, 1.28)
 script = ExtResource("1_gup87")
+selected_shader = NodePath("selected")
 
 [node name="selected" type="ColorRect" parent="." index="0"]
 unique_name_in_owner = true

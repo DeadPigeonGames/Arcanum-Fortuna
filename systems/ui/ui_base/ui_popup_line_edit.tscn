@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://x8nkshufx2a5"]
+[gd_scene load_steps=4 format=3 uid="uid://cegqty5ihavkg"]
 
 [ext_resource type="PackedScene" uid="uid://dq1c3cgx11dk8" path="res://systems/ui/ui_base/ui_popup.tscn" id="1_705p1"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_line_edit.gd" id="2_gf1vo"]
@@ -8,13 +8,16 @@
 [node name="UIPopupLineEdit" instance=ExtResource("1_705p1")]
 script = ExtResource("2_gf1vo")
 
+[node name="Content" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer" index="1"]
+text = "[center]Which route did you plan?"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer" index="3"]
 layout_mode = 2
 alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 60)
+custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 
 [node name="HSeparatorButton2" type="HSeparator" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer" index="4"]

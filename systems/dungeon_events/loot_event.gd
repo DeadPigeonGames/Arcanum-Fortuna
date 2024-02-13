@@ -88,7 +88,7 @@ func _on_confirm_button_pressed():
 	
 	for c : Card in $CanvasLayer/Control/Cards.get_children():
 		c.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		c.isHovered = false
+		c.is_hovered = false
 		if c in selected_cards:
 			player_data_ref.cardStack.push_back(c.card_data.duplicate())
 	

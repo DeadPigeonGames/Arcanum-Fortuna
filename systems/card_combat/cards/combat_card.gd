@@ -125,6 +125,7 @@ func restore_default_color():
 
 func process_death() -> bool:
 	if health <= 0:
+		SfxOther._SFX_DestroyCard()
 		await get_tree().process_frame
 		play_animation("die")
 		await get_tree().create_timer(1).timeout
@@ -249,6 +250,7 @@ func delete():
 	is_deletion_queued = true
 	set_process(false)
 	set_process_input(false)
+	SfxOther._SFX_DestroyCard()
 	await animate_burn()
 	health = 0
 	for i in range(keywords.size()):
