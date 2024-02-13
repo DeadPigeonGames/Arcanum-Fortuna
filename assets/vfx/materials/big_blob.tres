@@ -15,6 +15,7 @@ point_count = 3
 curve = SubResource("Curve_e6slv")
 
 [resource]
+lifetime_randomness = 0.05
 particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 5.0
@@ -26,8 +27,8 @@ radial_velocity_max = 3.0
 radial_velocity_curve = SubResource("CurveTexture_3k1ei")
 gravity = Vector3(0, 0, 0)
 radial_accel_min = -5.0
-scale_min = 4.0
-scale_max = 7.0
+scale_min = 2.0
+scale_max = 5.0
 scale_curve = SubResource("CurveTexture_r0vbo")
-hue_variation_min = -0.05
-hue_variation_max = 0.03
+hue_variation_min = 0.01
+hue_variation_max = 0.05
