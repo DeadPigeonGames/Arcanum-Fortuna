@@ -1,19 +1,17 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=13 format=3 uid="uid://7mbds23atues"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=11 format=3 uid="uid://7mbds23atues"]
 
-[ext_resource type="Resource" uid="uid://bjlneh5al3d8x" path="res://data/cards/queen_of_daggers.tres" id="1_qfcrp"]
-[ext_resource type="Resource" uid="uid://ciai4bipoidj6" path="res://data/cards/queen_of_thorns.tres" id="2_2ji36"]
-[ext_resource type="Resource" uid="uid://s2luhru0dtce" path="res://data/cards/knight_of_daggers.tres" id="3_bjrsc"]
-[ext_resource type="Resource" uid="uid://vtxg3gn2kpbu" path="res://data/cards/knight_of_thorns.tres" id="4_yudq6"]
-[ext_resource type="Resource" uid="uid://deonq2pnkifc2" path="res://data/cards/the_devil.tres" id="5_y6hoi"]
-[ext_resource type="Resource" uid="uid://buthwniwc7tav" path="res://data/cards/temperance.tres" id="6_euini"]
-[ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="6_qpgde"]
-[ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="7_ar6y8"]
-[ext_resource type="Resource" uid="uid://dpspidmqwqebx" path="res://data/cards/the_world.tres" id="8_24urp"]
-[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="9_r4xtw"]
+[ext_resource type="Resource" uid="uid://b5ytokrx5why5" path="res://data/cards/page_of_flags.tres" id="1_tm6mt"]
+[ext_resource type="Resource" uid="uid://q3wogyvkudaf" path="res://data/cards/king_of_flags.tres" id="2_gvrfq"]
+[ext_resource type="Resource" uid="uid://ncfdsv56qat7" path="res://data/cards/knight_of_flags.tres" id="3_jv4yv"]
+[ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="4_pc48h"]
+[ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="5_uqvls"]
+[ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="6_3ssgt"]
+[ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="7_tr1jj"]
+[ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="8_2o7r5"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="13_xku7q"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="14_ori73"]
 
 [resource]
 script = ExtResource("13_xku7q")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_qfcrp"), ExtResource("2_2ji36"), ExtResource("3_bjrsc"), ExtResource("4_yudq6"), ExtResource("5_y6hoi"), ExtResource("6_euini"), ExtResource("7_ar6y8"), ExtResource("8_24urp"), ExtResource("9_r4xtw"), ExtResource("6_qpgde")])
+available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_tm6mt"), ExtResource("2_gvrfq"), ExtResource("3_jv4yv"), ExtResource("4_pc48h"), ExtResource("5_uqvls"), ExtResource("6_3ssgt"), ExtResource("7_tr1jj"), ExtResource("8_2o7r5")])
 strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("14_ori73")])
