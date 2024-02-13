@@ -1,16 +1,16 @@
-class_name CombatCard extends Card
+class_name CombatCard 
+extends Card
 
 signal deleted(card : CombatCard)
 signal animation_finished
 signal drag_started
 signal drag_ended(card)
 
-@export var delete_material : ShaderMaterial
+
 @export_category("Animation Settings")
 @export var attack_speed = 0.2
 @export var attack_rewind = 0.3
 @export var attack_delay = 0.1
-@export var death_delay = 1.25
 @export var karma_delay = 1.0
 @export var attacked_color : Color
 @export var highlight_color : Color
@@ -138,23 +138,23 @@ func process_death() -> bool:
 #endregion
 
 
-func animate_burn():
-	%Artwork.material = delete_material
-	%Cardback.visible = false
-	var random_angle = [-1, -0.5, 0.5, 1, 1.5, 2]
-	random_angle = random_angle[randi_range(0, random_angle.size() - 1)]
-	%Artwork.material.set_shader_parameter("angle", random_angle)
-	var shader_noise : NoiseTexture2D = %Artwork.material.get_shader_parameter("noise")
-	shader_noise.noise.seed = randf_range(0.0, 100.0)
-	%Artwork.material.set_shader_parameter("noise", shader_noise)
-	play_animation("fade_out_icons")
-	var tween = create_tween()
-	tween.tween_method(set_shader_value, -1.0, 2.0, death_delay)
-	await tween.finished
-
-
-func set_shader_value(value: float):
-	%Artwork.material.set_shader_parameter("progress", value);
+#func animate_burn():
+	#%Artwork.material = delete_material
+	#%Cardback.visible = false
+	#var random_angle = [-1, -0.5, 0.5, 1, 1.5, 2]
+	#random_angle = random_angle[randi_range(0, random_angle.size() - 1)]
+	#%Artwork.material.set_shader_parameter("angle", random_angle)
+	#var shader_noise : NoiseTexture2D = %Artwork.material.get_shader_parameter("noise")
+	#shader_noise.noise.seed = randf_range(0.0, 100.0)
+	#%Artwork.material.set_shader_parameter("noise", shader_noise)
+	#play_animation("fade_out_icons")
+	#var tween = create_tween()
+	#tween.tween_method(set_shader_value, -1.0, 2.0, death_delay)
+	#await tween.finished
+#
+#
+#func set_shader_value(value: float):
+	#%Artwork.material.set_shader_parameter("progress", value);
 
 
 func animate_attack(target, tile_idx, tile: Control) -> bool:
@@ -251,7 +251,7 @@ func delete():
 	set_process(false)
 	set_process_input(false)
 	SfxOther._SFX_DestroyCard()
-	await animate_burn()
+	await super.animate_burn()
 	health = 0
 	for i in range(keywords.size()):
 		if keywords[i] is ActivatedKeyword and keywords[i].triggers & ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED:

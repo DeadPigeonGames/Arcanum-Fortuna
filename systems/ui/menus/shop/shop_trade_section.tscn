@@ -100,12 +100,15 @@ alignment = 1
 
 [node name="ShopCard1" parent="AvailableOffer/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
+delete_material = null
 
 [node name="ShopCard2" parent="AvailableOffer/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
+delete_material = null
 
 [node name="ShopCard3" parent="AvailableOffer/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
+delete_material = null
 
 [node name="TradeButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -169,17 +172,20 @@ theme_override_constants/separation = 50
 
 [node name="HandCard1" parent="HandCards/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
+delete_material = null
 
 [node name="HandCard2" parent="HandCards/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
+delete_material = null
 
 [node name="HandCard3" parent="HandCards/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2
+delete_material = null
 
-[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard1" to="." method="_on_shop_card_1_clicked"]
-[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard2" to="." method="_on_shop_card_2_clicked"]
-[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard3" to="." method="_on_shop_card_3_clicked"]
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard1" to="." method="_on_shop_card_clicked"]
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard2" to="." method="_on_shop_card_clicked"]
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard3" to="." method="_on_shop_card_clicked"]
 [connection signal="button_up" from="TradeButton" to="." method="_on_trade_button_button_up"]
-[connection signal="clicked" from="HandCards/HBoxContainer/HandCard1" to="." method="_on_hand_card_1_clicked"]
-[connection signal="clicked" from="HandCards/HBoxContainer/HandCard2" to="." method="_on_hand_card_2_clicked"]
-[connection signal="clicked" from="HandCards/HBoxContainer/HandCard3" to="." method="_on_hand_card_3_clicked"]
+[connection signal="clicked" from="HandCards/HBoxContainer/HandCard1" to="." method="_on_hand_card_clicked"]
+[connection signal="clicked" from="HandCards/HBoxContainer/HandCard2" to="." method="_on_hand_card_clicked"]
+[connection signal="clicked" from="HandCards/HBoxContainer/HandCard3" to="." method="_on_hand_card_clicked"]

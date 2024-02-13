@@ -1,7 +1,7 @@
 class_name ShopTradeSection
 extends UITabBase
 
-
+@export var card_prize := 3
 @export var all_cards_resource : AllCards
 @export var shop_card_1 : ShopPreviewCard
 @export var shop_card_2 : ShopPreviewCard
@@ -10,11 +10,12 @@ extends UITabBase
 @export var hand_card_2 : ShopPreviewCard
 @export var hand_card_3 : ShopPreviewCard
 
-
 var player_data : PlayerData
+var trade_button
 
 
 func setup():
+	trade_button = $TradeButton
 	player_data = Player.instance.data
 	player_data.currency = 30
 	randomize_shop_cards()
@@ -22,6 +23,7 @@ func setup():
 	hand_card_1.selected_shader.color = Color.DARK_BLUE
 	hand_card_2.selected_shader.color = Color.DARK_BLUE
 	hand_card_3.selected_shader.color = Color.DARK_BLUE
+	set_trade_button_enabled()
 	
 
 
@@ -47,33 +49,83 @@ func randomize_hand_cards():
 	card_stack.erase(card)
 
 
-func on_card_clicked():
-	pass
+func process_trade():
+	var s_cards : Array[ShopPreviewCard] = get_shop_cards()
+	var h_cards : Array[ShopPreviewCard] = get_hand_cards()
+	
+	for card in h_cards:
+		await card.animate_burn()
+
+
+
+func get_shop_cards():
+	var s_cards : Array[ShopPreviewCard]
+	
+	if shop_card_1.selected == true:
+		s_cards.append(shop_card_1)
+	if shop_card_2.selected == true:
+		s_cards.append(shop_card_2)
+	if shop_card_3.selected == true:
+		s_cards.append(shop_card_3)
+	
+	return s_cards
+
+
+func get_hand_cards():
+	var h_cards : Array[ShopPreviewCard]
+	
+	if hand_card_1.selected == true:
+		h_cards.append(hand_card_1)
+	if hand_card_2.selected == true:
+		h_cards.append(hand_card_2)
+	if hand_card_3.selected == true:
+		h_cards.append(hand_card_3)
+	
+	return h_cards
+
+
+func is_card_count_matched():
+	return get_selected_shop_card_count() == get_selected_hand_card_count()
+
+
+func get_selected_shop_card_count():
+	var shop_count := 0
+	for card in get_shop_cards():
+		if card.selected:
+			shop_count += 1
+	return shop_count
+
+
+func get_selected_hand_card_count():
+	var hand_count := 0
+	for card in get_hand_cards():
+		if card.selected:
+			hand_count += 1
+	return hand_count
+
+
+func set_trade_button_enabled():
+	await SceneHandler.scene_container.get_tree().process_frame
+	
+	if get_selected_shop_card_count() == 0:
+		trade_button.disabled = true
+		return
+	if is_card_count_matched() == false:
+		trade_button.disabled = true
+		return
+	if get_selected_shop_card_count() * card_prize > player_data.currency:
+		trade_button.disabled = true
+		return
+	trade_button.disabled = false
+
+
+func _on_shop_card_clicked():
+	set_trade_button_enabled()
+
+
+func _on_hand_card_clicked():
+	set_trade_button_enabled()
 
 
 func _on_trade_button_button_up():
-	pass #call_ui_popup_by_caller(confirm_trade_data)
-
-
-func _on_shop_card_1_clicked():
-	on_card_clicked()
-
-
-func _on_shop_card_2_clicked():
-	on_card_clicked()
-
-
-func _on_shop_card_3_clicked():
-	on_card_clicked()
-
-
-func _on_hand_card_1_clicked():
-	on_card_clicked()
-
-
-func _on_hand_card_2_clicked():
-	on_card_clicked()
-
-
-func _on_hand_card_3_clicked():
-	on_card_clicked()
+	process_trade()

@@ -96,12 +96,15 @@ alignment = 1
 
 [node name="ShopCard1" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
 layout_mode = 2
+delete_material = null
 
 [node name="ShopCard2" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
 layout_mode = 2
+delete_material = null
 
 [node name="ShopCard3" parent="AvailableOffer/HBoxContainer" instance=ExtResource("5_gtqyr")]
 layout_mode = 2
+delete_material = null
 
 [node name="PayButton" type="TextureButton" parent="."]
 layout_mode = 1

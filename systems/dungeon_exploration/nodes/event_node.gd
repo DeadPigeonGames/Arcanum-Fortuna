@@ -136,6 +136,8 @@ func _trigger_event():
 
 
 func _draw():
+	if connectsTo.size() == 0:
+		return
 	for node in connectsTo:
 		var target = node.position + (node.get_rect().size * Vector2(1, -1)) / 2 - position
 		var direction = target.normalized()
