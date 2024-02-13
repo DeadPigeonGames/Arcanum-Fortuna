@@ -18,7 +18,6 @@ func _process(delta):
 
 func setup():
 	super.setup()
-	set_layer(1)
 	await get_tree().process_frame
 	player_data = Player.instance.data
 

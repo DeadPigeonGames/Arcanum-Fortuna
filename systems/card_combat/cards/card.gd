@@ -66,6 +66,7 @@ func set_health(value):
 	else:
 		%HealthCost.self_modulate = Color.WHITE
 
+
 func get_health():
 	return health
 
@@ -81,6 +82,7 @@ func load_from_data(data: CardData):
 	init(data.artwork, data.name, data.cost, data.attack, data.health, data.keywords)
 	setup()
 	was_preloaded = true
+
 
 func init(artwork_texture, name, cost, attack, health, keywords):
 	self.artwork_texture = artwork_texture
@@ -216,4 +218,3 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	is_hovered = false
-
