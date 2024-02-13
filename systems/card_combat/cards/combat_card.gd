@@ -126,10 +126,9 @@ func restore_default_color():
 func process_death() -> bool:
 	if health <= 0:
 		SfxOther._SFX_DestroyCard()
-		await animate_burn()
-		#await get_tree().process_frame
-		#play_animation("die")
-		#await get_tree().create_timer(1).timeout
+		await get_tree().process_frame
+		play_animation("die")
+		await get_tree().create_timer(1).timeout
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
 		queue_free()

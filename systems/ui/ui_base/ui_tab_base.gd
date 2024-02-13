@@ -10,6 +10,10 @@ func init(caller):
 	is_current_tab = true
 
 
+func setup():
+	pass
+
+
 func close():
 	is_current_tab = false
 	queue_free()
@@ -28,3 +32,8 @@ func call_ui_element_by_caller(element):
 func call_ui_popup_by_caller(popup_data : UIPopupData):
 	if called_by is UIBase:
 		called_by.call_ui_popup(popup_data)
+
+
+func send_result(result):
+	if called_by.has_method("receive_result"):
+		called_by.receive_result(result)

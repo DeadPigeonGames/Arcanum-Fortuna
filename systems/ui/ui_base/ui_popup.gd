@@ -15,8 +15,12 @@ func setup_popup(data : UIPopupData):
 
 
 func _on_confirm_button_up():
-	super.close_with_result(true)
+	close_with_result(true)
 
 
 func _on_decline_button_up():
-	super.close_with_result(false)
+	close_with_result(false)
+
+
+func close_with_result(value):
+	super.close_with_result(value)

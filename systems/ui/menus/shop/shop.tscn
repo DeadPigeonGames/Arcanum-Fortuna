@@ -75,6 +75,7 @@ grow_vertical = 0
 theme_override_constants/separation = 160
 
 [node name="BuySectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 texture_normal = ExtResource("7_xj0gx")
@@ -82,6 +83,7 @@ texture_hover = ExtResource("8_kd4rt")
 texture_focused = ExtResource("9_u6va7")
 
 [node name="TradeSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 texture_normal = ExtResource("7_xj0gx")
@@ -89,6 +91,7 @@ texture_hover = ExtResource("8_kd4rt")
 texture_focused = ExtResource("9_u6va7")
 
 [node name="BurnSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
 texture_normal = ExtResource("7_xj0gx")

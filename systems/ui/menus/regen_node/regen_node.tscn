@@ -1,0 +1,236 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdngdl1iyp4rj"]
+
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_fy34b"]
+[ext_resource type="Texture2D" uid="uid://voo7eogydvbk" path="res://assets/ui/placeholders/cauldron_texture_placeholder.png" id="1_tk450"]
+[ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="1_xr6fg"]
+[ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="2_cakog"]
+[ext_resource type="Texture2D" uid="uid://dthwd4kyk3ant" path="res://assets/ui/placeholders/cauldron_card_slot_placeholder.png" id="2_rpger"]
+[ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="2_y1dg2"]
+[ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="3_cbqh0"]
+[ext_resource type="Texture2D" uid="uid://bwuccedvd5nxx" path="res://assets/ui/placeholders/mushroom_ingredient_placeholder.png" id="3_dl1ai"]
+[ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="3_qeqi6"]
+[ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="4_1ilt0"]
+[ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="5_ok3q4"]
+
+[node name="RegenNode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuTitle" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.5
+offset_top = 64.0
+offset_right = 736.5
+offset_bottom = 192.0
+grow_horizontal = 2
+theme = ExtResource("1_fy34b")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+bbcode_enabled = true
+text = "[center][b]TAKE ALL YOU NEED"
+
+[node name="MenuSubtitle" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.5
+offset_top = 192.0
+offset_right = 175.5
+offset_bottom = 240.0
+grow_horizontal = 2
+theme = ExtResource("1_fy34b")
+theme_override_colors/default_color = Color(0.545098, 0.545098, 0.545098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+bbcode_enabled = true
+text = "[center]or all you want"
+
+[node name="Cauldron" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cauldron" type="TextureRect" parent="Cauldron"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -208.0
+offset_right = 488.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tk450")
+
+[node name="CauldronCardSlot" type="TextureRect" parent="Cauldron"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -125.0
+offset_right = 85.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rpger")
+
+[node name="Ingredients" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ingredient1" type="Control" parent="Ingredients"]
+anchors_preset = 0
+offset_left = -567.0
+offset_top = -227.0
+offset_right = -567.0
+offset_bottom = -227.0
+
+[node name="CostLabel" type="RichTextLabel" parent="Ingredients/Ingredient1"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -63.0
+offset_right = 25.0
+offset_bottom = -40.0
+text = "X Gold"
+
+[node name="TextureRect" type="TextureRect" parent="Ingredients/Ingredient1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dl1ai")
+
+[node name="HealthGainLabel" type="RichTextLabel" parent="Ingredients/Ingredient1"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 40.0
+offset_right = 33.0
+offset_bottom = 64.0
+bbcode_enabled = true
+text = "X [color=goldenrod]Health"
+
+[node name="Ingredient2" type="Control" parent="Ingredients"]
+anchors_preset = 0
+
+[node name="Ingredient3" type="Control" parent="Ingredients"]
+anchors_preset = 0
+
+[node name="Ingredient4" type="Control" parent="Ingredients"]
+anchors_preset = 0
+
+[node name="DrinkUpButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -248.0
+offset_right = 200.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_y1dg2")
+texture_pressed = ExtResource("3_cbqh0")
+texture_hover = ExtResource("4_1ilt0")
+texture_disabled = ExtResource("5_ok3q4")
+
+[node name="Label" type="Label" parent="DrinkUpButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -11.5
+offset_right = 33.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drink up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeaveNodeButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -336.0
+offset_top = -208.0
+offset_right = -16.0
+offset_bottom = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("1_xr6fg")
+texture_pressed = ExtResource("2_cakog")
+texture_hover = ExtResource("3_qeqi6")
+
+[node name="Label" type="Label" parent="LeaveNodeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -11.5
+offset_right = 42.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Journey on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HandCards" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -120.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 0

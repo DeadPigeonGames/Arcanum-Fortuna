@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://fa4xb26tm6iu"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_burn_section.gd" id="1_21rt2"]
-[ext_resource type="PackedScene" uid="uid://b04h4sharbssh" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5tl8o"]
+[ext_resource type="PackedScene" uid="uid://ba7hqrlkxau6b" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5tl8o"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="2_8dnxu"]
 [ext_resource type="Texture2D" uid="uid://dars7yhkvi48j" path="res://assets/ui/underlays/shop_burn.png" id="4_s18qy"]
 [ext_resource type="Texture2D" uid="uid://mg2c1qenfgr0" path="res://assets/ui/underlays/shop_burn_hover.png" id="5_bikae"]
@@ -77,12 +77,18 @@ grow_vertical = 0
 scale = Vector2(1.65, 1.65)
 
 [node name="ShopCard" parent="AvailableOffer" instance=ExtResource("2_5tl8o")]
-layout_mode = 2
-offset_left = -84.0
-offset_top = -452.727
-offset_right = 86.0
-offset_bottom = -186.727
-size_flags_horizontal = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -452.0
+offset_right = 85.0
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="TextureButton" type="TextureButton" parent="AvailableOffer"]
 layout_mode = 1

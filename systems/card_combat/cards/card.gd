@@ -129,14 +129,6 @@ func setup():
 		%KeyWordSlots.get_child(i-offset).get_child(0).set_icon(keywords[i])
 
 
-func _on_mouse_entered():
-	is_hovered = true
-
-
-func _on_mouse_exited():
-	is_hovered = false
-
-
 func update_texts():
 	%AttackCost.text = str(attack)
 	%HealthCost.text = str(health)
@@ -216,3 +208,12 @@ func animate_icon(emission_texture):
 	%KeywordParticles.texture = emission_texture
 	%KeywordParticles.emitting = true
 	await %KeywordParticles.finished
+
+
+func _on_mouse_entered():
+	is_hovered = true
+
+
+func _on_mouse_exited():
+	is_hovered = false
+

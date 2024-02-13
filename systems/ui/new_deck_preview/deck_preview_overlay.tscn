@@ -2,24 +2,24 @@
 
 [ext_resource type="Script" path="res://systems/ui/new_deck_preview/deck_preview_overlay.gd" id="1_mj3a2"]
 [ext_resource type="PackedScene" uid="uid://djimo5osb2i1s" path="res://systems/ui/new_deck_preview/deck_preview_card.tscn" id="2_ilop0"]
-[ext_resource type="Texture2D" uid="uid://buyksmxphvyw1" path="res://assets/ui/placeholders/sort_by_karma_button_focused_placeholder.png" id="3_mj5gk"]
-[ext_resource type="Texture2D" uid="uid://bwexgd4isf4pt" path="res://assets/ui/underlays/shop_tab_focused.png" id="4_3luy0"]
-[ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="4_8wy74"]
-[ext_resource type="Texture2D" uid="uid://cfiorekcvp03n" path="res://assets/ui/placeholders/sort_by_karma_button_default_placeholder.png" id="4_55w0m"]
-[ext_resource type="Texture2D" uid="uid://bidqt3oqi07t5" path="res://assets/ui/placeholders/sort_by_karma_button_hover_placeholder.png" id="4_086th"]
+[ext_resource type="Texture2D" uid="uid://bvnruxmnnshsm" path="res://assets/ui/underlays/deck_tab.png" id="3_2fnly"]
 [ext_resource type="Texture2D" uid="uid://863840k0cerb" path="res://assets/ui/underlays/deck_underlay.png" id="4_cswfr"]
-[ext_resource type="Texture2D" uid="uid://btvtl6j05jpey" path="res://assets/ui/placeholders/sort_by_health_button_focused_placeholder.png" id="5_gcki3"]
-[ext_resource type="Texture2D" uid="uid://dhtqp260so5hl" path="res://assets/ui/placeholders/sort_by_attack_button_default_placeholder.png" id="6_fh7mn"]
-[ext_resource type="Texture2D" uid="uid://da13f8w2ugs2b" path="res://assets/ui/placeholders/sort_by_attack_button_hover_placeholder.png" id="7_5sxuq"]
-[ext_resource type="Texture2D" uid="uid://c0h4lr8fkmh01" path="res://assets/ui/placeholders/sort_by_health_button_default_placeholder.png" id="8_33sfp"]
-[ext_resource type="Texture2D" uid="uid://byqxco0m7v684" path="res://assets/ui/placeholders/sort_by_health_button_hover_placeholder.png" id="10_b62fb"]
+[ext_resource type="Texture2D" uid="uid://ccpoxcmcvxn4u" path="res://assets/ui/buttons/deck_k_normal.png" id="5_0lvex"]
+[ext_resource type="Texture2D" uid="uid://dvna27tlep0o8" path="res://assets/ui/buttons/deck_k_hover.png" id="6_at3c3"]
+[ext_resource type="Texture2D" uid="uid://b28mteee5836h" path="res://assets/ui/buttons/deck_k_focus.png" id="7_l4icu"]
+[ext_resource type="Texture2D" uid="uid://ih5nm4ivt1ok" path="res://assets/ui/buttons/deck_atk_normal.png" id="8_mmhbq"]
+[ext_resource type="Texture2D" uid="uid://hgfrbu6t8huw" path="res://assets/ui/buttons/deck_atk_hover.png" id="9_xssl8"]
+[ext_resource type="Texture2D" uid="uid://dxsy12r3wtcd" path="res://assets/ui/buttons/deck_atk_focus.png" id="10_c0sn4"]
+[ext_resource type="Texture2D" uid="uid://cm4okmxdsbf4e" path="res://assets/ui/buttons/deck_hp_normal.png" id="11_utsbn"]
+[ext_resource type="Texture2D" uid="uid://d32jj70uqug7p" path="res://assets/ui/buttons/deck_hp_hover.png" id="12_fyjpl"]
 [ext_resource type="PackedScene" uid="uid://cecd2obec3kr0" path="res://systems/ui/new_deck_preview/player_deck.tscn" id="12_odq63"]
-[ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="14_iayku"]
+[ext_resource type="Texture2D" uid="uid://dgyfujgafmpvi" path="res://assets/ui/buttons/deck_hp_focus.png" id="13_bnowr"]
 [ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="15_eqh66"]
-[ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="15_hea4m"]
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="16_lrcsa"]
-[ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="16_y70wc"]
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="17_pnl16"]
+[ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="18_4n4xa"]
+[ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="19_eo4s1"]
+[ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="20_puisa"]
 
 [sub_resource type="Animation" id="Animation_7857e"]
 length = 0.001
@@ -67,13 +67,13 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("DeckPreview:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1008)]
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, 1035)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -107,13 +107,13 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("DeckPreview:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 1008), Vector2(0, 0)]
+"values": [Vector2(0, 1008), Vector2(0, 261.333), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -164,7 +164,7 @@ grow_vertical = 0
 [node name="DeckPreview" type="Control" parent="DeckPreviewOverlay"]
 anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 40.0002
+offset_bottom = 40.0004
 
 [node name="DeckPreviewFrame" type="Control" parent="DeckPreviewOverlay/DeckPreview"]
 layout_mode = 1
@@ -193,7 +193,7 @@ offset_right = 160.0
 offset_bottom = -928.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("4_3luy0")
+texture = ExtResource("3_2fnly")
 
 [node name="DeckPreviewUnderlay" type="TextureRect" parent="DeckPreviewOverlay/DeckPreview/DeckPreviewFrame/TextureRect"]
 layout_mode = 1
@@ -232,7 +232,8 @@ vertical_alignment = 1
 
 [node name="SortCategories" type="Control" parent="DeckPreviewOverlay/DeckPreview"]
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -46.0
+offset_right = -6.0
 offset_bottom = 40.0
 
 [node name="SortByKarmaButton" type="TextureButton" parent="DeckPreviewOverlay/DeckPreview/SortCategories"]
@@ -242,9 +243,9 @@ offset_left = -619.0
 offset_top = -832.0
 offset_right = -539.0
 offset_bottom = -752.0
-texture_normal = ExtResource("4_55w0m")
-texture_hover = ExtResource("4_086th")
-texture_focused = ExtResource("3_mj5gk")
+texture_normal = ExtResource("5_0lvex")
+texture_hover = ExtResource("6_at3c3")
+texture_focused = ExtResource("7_l4icu")
 
 [node name="SortByAttackButton" type="TextureButton" parent="DeckPreviewOverlay/DeckPreview/SortCategories"]
 layout_mode = 0
@@ -252,9 +253,9 @@ offset_left = -619.0
 offset_top = -736.0
 offset_right = -539.0
 offset_bottom = -656.0
-texture_normal = ExtResource("6_fh7mn")
-texture_hover = ExtResource("7_5sxuq")
-texture_focused = ExtResource("4_8wy74")
+texture_normal = ExtResource("8_mmhbq")
+texture_hover = ExtResource("9_xssl8")
+texture_focused = ExtResource("10_c0sn4")
 
 [node name="SortByHealthButton" type="TextureButton" parent="DeckPreviewOverlay/DeckPreview/SortCategories"]
 layout_mode = 0
@@ -262,9 +263,9 @@ offset_left = -619.0
 offset_top = -640.0
 offset_right = -539.0
 offset_bottom = -560.0
-texture_normal = ExtResource("8_33sfp")
-texture_hover = ExtResource("10_b62fb")
-texture_focused = ExtResource("5_gcki3")
+texture_normal = ExtResource("11_utsbn")
+texture_hover = ExtResource("12_fyjpl")
+texture_focused = ExtResource("13_bnowr")
 
 [node name="PlayerDeck" parent="DeckPreviewOverlay/DeckPreview" instance=ExtResource("12_odq63")]
 unique_name_in_owner = true
@@ -315,9 +316,9 @@ offset_bottom = -112.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 1
-texture_normal = ExtResource("14_iayku")
-texture_pressed = ExtResource("15_hea4m")
-texture_hover = ExtResource("16_y70wc")
+texture_normal = ExtResource("18_4n4xa")
+texture_pressed = ExtResource("19_eo4s1")
+texture_hover = ExtResource("20_puisa")
 
 [node name="Label" type="Label" parent="DeckPreviewOverlay/SelectCardsToBurnShopButton"]
 layout_mode = 1
