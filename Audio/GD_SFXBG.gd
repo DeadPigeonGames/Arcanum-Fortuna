@@ -25,12 +25,12 @@ func _ready():
 
 
 func _on_timer_timeout():
-	
+	pass
 	#_SFX_ThinkMode(true)
 	#_playTrack(MapTypes.SHOP)
 	#_SFX_BG_SetLowPass(true)
-	testHealth -= 10
-	_SFX_HealthToHighPass(testHealth)
+	#testHealth -= 10
+	#_SFX_HealthToHighPass(testHealth)
 	
 
 func _playTrack(mapTypeToChangeTo):
