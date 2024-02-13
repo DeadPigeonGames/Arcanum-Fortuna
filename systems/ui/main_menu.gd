@@ -4,8 +4,10 @@ extends Control
 @export var tutorial_scene : PackedScene
 @export var options_scene : PackedScene
 @export var credits_scene : PackedScene
+@export var seed_popup_data : UIPopupData
 
 var node_map
+var seed_text : String
 var seed := 0
 
 
@@ -13,7 +15,7 @@ func _ready():
 	node_map = node_map_scene.instantiate()
 	randomize()
 	seed = randi()
-	#$SeedInput.text = str(seed)
+	seed_text = str(seed)
 	GlobalLog.set_context(GlobalLog.Context.MENU)
 	GlobalLog.add_entry("Main Menu loaded.")
 
@@ -26,16 +28,22 @@ func _process(delta):
 	# (will be changed)
 
 
+func receive_result(result):
+	if result is String:
+		seed_text = result
+		generate_seed(result)
 
-func _on_seed_input_text_changed(new_text : String):
+
+func generate_seed(text : String):
 	seed = 0
-	for i in range(new_text.length()):
-		seed += new_text.unicode_at(i)
+	for i in range(text.length()):
+		seed += text.unicode_at(i)
 
 
 func _on_start_button_button_up():
-	node_map.init(seed, $SeedInput.text)
-	GlobalLog.add_entry("Seed used: " + $SeedInput.text)
+	print(seed_text)
+	node_map.init(seed, seed_text)
+	GlobalLog.add_entry("Seed used: " + seed_text)
 	Pause.can_pause = true
 	SceneHandler.change_scene(node_map)
 
@@ -53,8 +61,10 @@ func _on_options_button_button_up():
 	SceneHandler.add_ui_element(options)
 
 
-func _on_prepare_button_button_up():
-	print("Nada!")
+func _on_custom_seed_button_button_up():
+	var popup = SceneHandler.add_ui_element(seed_popup_data.ui_popup_line_edit_path) as UILineEditPopup
+	popup.init(0, self)
+	pass
 
 
 func _on_credits_button_button_up():

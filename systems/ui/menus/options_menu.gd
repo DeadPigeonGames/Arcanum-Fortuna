@@ -12,4 +12,3 @@ func _input(event):
 
 func _on_btn_back_button_up():
 	close()
-	print("Test")

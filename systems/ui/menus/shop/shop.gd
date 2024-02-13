@@ -8,6 +8,7 @@ signal shop_closed
 @export var shop_burn_tab : PackedScene
 
 var last_clicked_tab
+var player_data : PlayerData
 
 
 func _process(delta):
@@ -17,11 +18,14 @@ func _process(delta):
 func setup():
 	switch_tab(shop_buy_tab)
 	last_clicked_tab = %BuySectionButton
+	player_data = Player.instance.data
+	player_data.currency = 20
 
 
 func receive_result(result):
 	if current_tab is ShopBuySection:
 		print("BUY: ", result)
+		#process_buy(result)
 	if current_tab is ShopTradeSection:
 		print("TRADE: ", result)
 	if current_tab is ShopBurnSection:
