@@ -80,8 +80,9 @@ func process_trade():
 
 func erase_card_from_player(card_data : CardData):
 	for card in player_data.cardStack:
-		if card.name == card_data.name:
+		if card.name == card_data.name and card.attack == card_data.attack:
 			player_data.cardStack.erase(card)
+			return
 
 
 func get_shop_cards():
