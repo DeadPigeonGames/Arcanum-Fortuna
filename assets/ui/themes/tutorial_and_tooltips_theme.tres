@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cdhvtisluxnhu"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cdhvtisluxnhu"]
 
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="1_dvxjm"]
 [ext_resource type="Texture2D" uid="uid://bc2x3mp3j7q4o" path="res://assets/ui/placeholders/tutorial_popup_next_button_hover_placeholder.png" id="2_45jsr"]
@@ -14,6 +14,11 @@ texture = ExtResource("3_3lqw5")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o8e2"]
 texture = ExtResource("4_7pp33")
 
+[sub_resource type="FontVariation" id="FontVariation_bvfhx"]
+base_font = ExtResource("1_dvxjm")
+variation_embolden = 0.8
+spacing_glyph = 1
+
 [resource]
 Button/font_sizes/font_size = 26
 Button/fonts/font = ExtResource("1_dvxjm")
@@ -22,8 +27,8 @@ Button/styles/normal = SubResource("StyleBoxTexture_dpfds")
 Button/styles/pressed = SubResource("StyleBoxTexture_3o8e2")
 Label/font_sizes/font_size = 26
 Label/fonts/font = ExtResource("1_dvxjm")
-RichTextLabel/constants/line_separation = 4
+RichTextLabel/constants/line_separation = 8
 RichTextLabel/font_sizes/bold_font_size = 26
 RichTextLabel/font_sizes/normal_font_size = 26
-RichTextLabel/fonts/bold_font = ExtResource("1_dvxjm")
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_bvfhx")
 RichTextLabel/fonts/normal_font = ExtResource("1_dvxjm")

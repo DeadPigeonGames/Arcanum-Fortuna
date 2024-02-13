@@ -73,7 +73,7 @@ layout_mode = 2
 theme = ExtResource("4_8f1u2")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "Lorem Ipsum"
+text = "Lorem Ipsum [b]Lorem Ipsum"
 fit_content = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
