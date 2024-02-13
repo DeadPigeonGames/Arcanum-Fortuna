@@ -27,6 +27,7 @@ func get_new_targets(target_offsets, attacker) -> Array[int]:
 		turns_skipped_lookup[attacker] = turns_to_skip + 1 if attack_on_first_turn else 0
 	turns_skipped_lookup[attacker] += 1
 	if turns_skipped_lookup[attacker] <= turns_to_skip:
+		await animate_keyword_particle(attacker)
 		return []
 	turns_skipped_lookup[attacker] = 0
 	return target_offsets
