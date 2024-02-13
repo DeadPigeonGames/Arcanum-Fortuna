@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dl86q0oq58j6q"]
+[gd_scene load_steps=43 format=3 uid="uid://dl86q0oq58j6q"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/card.gd" id="1_04ic4"]
 [ext_resource type="PackedScene" uid="uid://bvc773k7bxpdh" path="res://systems/card_combat/scripts/keyword_icon.tscn" id="2_bo1pm"]
@@ -213,6 +213,42 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_fhgog"]
 resource_name = "buff"
@@ -283,11 +319,51 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_rabnj"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.309]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wrceq"]
 _data = {
 "RESET": SubResource("Animation_xmpfi"),
 "buff": SubResource("Animation_fhgog"),
-"die": SubResource("Animation_hnrs5")
+"die": SubResource("Animation_rabnj"),
+"fade_out_icons": SubResource("Animation_hnrs5")
 }
 
 [sub_resource type="Animation" id="Animation_aytqs"]
@@ -707,7 +783,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_yop51")
 
 [node name="KeywordIcon" parent="KeyWordSlots/KeywordSlot1" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -734,7 +809,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_4vo4j")
 
 [node name="KeywordIcon2" parent="KeyWordSlots/KeywordSlot2" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -759,7 +833,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_40ati")
 
 [node name="KeywordIcon3" parent="KeyWordSlots/KeywordSlot3" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 offset_left = 15.4242
 offset_top = 17.9949
@@ -777,7 +850,6 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_f0j57")
 
 [node name="KeywordIcon4" parent="KeyWordSlots/KeywordSlot4" instance=ExtResource("2_bo1pm")]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
