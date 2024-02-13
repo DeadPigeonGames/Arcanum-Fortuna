@@ -3,12 +3,16 @@ class_name HandCard extends Card
 signal drag_started
 signal drag_ended(card)
 
+
 @export var drag_offset := Vector2(25, 25)
+@export var is_auto_drag_offset := false
 
 static var heldCard : HandCard
 var isPickedUp = false
 var move_around := true
 var base_scale = 1.0
+
+
 
 @onready var show_card_tooltip = %ShowCardTooltip
 
@@ -39,8 +43,8 @@ func _process(delta):
 	if isPickedUp:
 		z_index = 5
 		var target_position = get_global_mouse_position() + drag_offset
-		global_position = global_position.lerp(target_position, 0.5)
 		%SFXCard._SFX_SetLoopProps((global_position - target_position).length(), global_position)
+		global_position = target_position # global_position.lerp(target_position, 0.5)
 		target_scale = base_scale
 	scale = scale.lerp(target_scale, 0.1)
 
@@ -72,6 +76,8 @@ func pickup():
 		heldCard.put(null)
 	heldCard = self
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if is_auto_drag_offset:
+		drag_offset = global_position - get_global_mouse_position()
 	emit_signal("drag_started")
 
 
