@@ -190,6 +190,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	var attack_tween = create_tween()
 	attack_tween.set_trans(Tween.TRANS_SINE)
 	attack_tween.set_ease(Tween.EASE_IN)
+	print("[CombatCard] '%s' started attack tween" % card_name)
 	var wait_mod = 0
 	if not global_position.is_equal_approx(placed_position):
 		attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
@@ -199,6 +200,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
 	attack_tween.play()
 	await attack_tween.finished
+	print("[CombatCard] '%s' finished attack tween" % card_name)
 	
 	var dealt_damage : int = await target.take_damage(attack, self)
 	await trigger_keywords(target, self, 32, null, {"damage_dealt": dealt_damage})

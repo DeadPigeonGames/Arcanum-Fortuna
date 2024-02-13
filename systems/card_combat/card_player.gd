@@ -82,6 +82,7 @@ func heal(amount):
 	
 
 func take_damage(amount, _source = null):
+	SfxOther._SFX_DamageEnemy()
 	animate_take_damage_feedback(amount)
 	
 	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"

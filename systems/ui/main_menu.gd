@@ -12,6 +12,8 @@ var seed := 0
 
 
 func _ready():
+	SfxBg._playTrack(SfxBg.MapTypes.SPRING)
+
 	node_map = node_map_scene.instantiate()
 	randomize()
 	seed = randi()

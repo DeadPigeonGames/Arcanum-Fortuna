@@ -41,6 +41,7 @@ var is_blocked := false :
 
 
 func _ready():
+	SfxBg._playTrack(SfxBg.MapTypes.CITY)
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()

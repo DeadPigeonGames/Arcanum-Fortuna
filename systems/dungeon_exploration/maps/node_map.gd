@@ -5,6 +5,10 @@ var rng: RandomNumberGenerator
 var level := 0.0
 
 
+func _ready():
+	SfxBg._playTrack(SfxBg.MapTypes.WINTER)
+
+
 func init(rng_seed, rng_text):
 	rng = RandomNumberGenerator.new()
 	rng.seed = rng_seed
@@ -23,4 +27,5 @@ func _on_node_activated(node : EventNode):
 
 
 func _on_node_completed(node : EventNode):
+	SfxBg._playTrack(SfxBg.MapTypes.WINTER)
 	level += node.level_gain

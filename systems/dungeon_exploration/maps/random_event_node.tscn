@@ -42,4 +42,5 @@ dashed_width = 3.0
 offset = 2.0
 
 [node name="icon" parent="background" index="0"]
+visible = true
 texture = SubResource("AtlasTexture_kg47n")

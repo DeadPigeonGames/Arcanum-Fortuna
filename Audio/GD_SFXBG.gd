@@ -9,7 +9,7 @@ const ambienceSpring = preload("res://Audio/Ambience/AmbienceSpring.ogg")
 const ambienceWinter = preload("res://Audio/Ambience/AmbienceWinter.ogg")
 
 enum MapTypes { CITY, SPRING, WINTER, SHOP }
-@export var currentMapType:= MapTypes.CITY
+@export var currentMapType:= MapTypes.SPRING
 var mapTypeToChangeTo:= MapTypes.CITY
 
 var isEvenTurn = false
@@ -19,10 +19,6 @@ var musicRandom = RandomNumberGenerator.new()
 
 var testHealth = 100
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	_playTrack(currentMapType)
-
 
 func _on_timer_timeout():
 	pass
@@ -31,12 +27,9 @@ func _on_timer_timeout():
 	#_SFX_BG_SetLowPass(true)
 	#testHealth -= 10
 	#_SFX_HealthToHighPass(testHealth)
-	
+
 
 func _playTrack(mapTypeToChangeTo):
-	
-	randomize()
-	
 	var musicPlayerToChange
 	var ambiencePlayerToChange
 	
@@ -76,6 +69,7 @@ func _playTrack(mapTypeToChangeTo):
 		$AnimationPlayer2.play("FadeAM2", -1, -1, true)
 	
 	isEvenTurn = !isEvenTurn
+
 
 func _SFX_BG_SetLowPass(toState):
 	var lowPassTween = get_tree().create_tween()
