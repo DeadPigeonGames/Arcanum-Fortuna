@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://systems/ui/new_deck_preview/deck_preview_overlay.gd" id="1_mj3a2"]
 [ext_resource type="PackedScene" uid="uid://djimo5osb2i1s" path="res://systems/ui/new_deck_preview/deck_preview_card.tscn" id="2_ilop0"]
-[ext_resource type="Texture2D" uid="uid://bwexgd4isf4pt" path="res://assets/ui/underlays/shop_tab_focused.png" id="4_3luy0"]
+[ext_resource type="Texture2D" uid="uid://bvnruxmnnshsm" path="res://assets/ui/underlays/deck_tab.png" id="3_2fnly"]
 [ext_resource type="Texture2D" uid="uid://863840k0cerb" path="res://assets/ui/underlays/deck_underlay.png" id="4_cswfr"]
 [ext_resource type="Texture2D" uid="uid://ccpoxcmcvxn4u" path="res://assets/ui/buttons/deck_k_normal.png" id="5_0lvex"]
 [ext_resource type="Texture2D" uid="uid://dvna27tlep0o8" path="res://assets/ui/buttons/deck_k_hover.png" id="6_at3c3"]
@@ -193,7 +193,7 @@ offset_right = 160.0
 offset_bottom = -928.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("4_3luy0")
+texture = ExtResource("3_2fnly")
 
 [node name="DeckPreviewUnderlay" type="TextureRect" parent="DeckPreviewOverlay/DeckPreview/DeckPreviewFrame/TextureRect"]
 layout_mode = 1
