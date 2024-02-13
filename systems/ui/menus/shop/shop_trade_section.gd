@@ -62,7 +62,7 @@ func process_trade():
 	for h_card in h_cards:
 		h_card.selected_shader.visible = false
 		await h_card.animate_burn()
-		player_data.cardStack.erase(h_card)
+		erase_card_from_player(h_card.card_data)
 		h_card.queue_free()
 		for s_card in s_cards:
 			var tween : Tween = tree.create_tween()
@@ -72,11 +72,16 @@ func process_trade():
 			s_card.play_cardflip(false)
 			tween.tween_property(s_card, "global_position", deck.global_position, 0.5)
 			await tween.finished
-			player_data.cardStack.append(s_card)
+			player_data.cardStack.append(s_card.card_data)
 			s_card.queue_free()
 	
 	trade_button.disabled = false
 
+
+func erase_card_from_player(card_data : CardData):
+	for card in player_data.cardStack:
+		if card.name == card_data.name:
+			player_data.cardStack.erase(card)
 
 
 func get_shop_cards():

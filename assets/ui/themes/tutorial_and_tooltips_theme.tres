@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cdhvtisluxnhu"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://c2as6vbqpnrve"]
 
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="1_dvxjm"]
 [ext_resource type="Texture2D" uid="uid://bc2x3mp3j7q4o" path="res://assets/ui/placeholders/tutorial_popup_next_button_hover_placeholder.png" id="2_45jsr"]
