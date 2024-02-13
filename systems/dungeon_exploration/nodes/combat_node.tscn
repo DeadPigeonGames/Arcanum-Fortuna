@@ -11,7 +11,6 @@ script = ExtResource("2_itd2s")
 lookahead = 2
 event = ExtResource("11_ent3l")
 level_gain = 0.34
-no_card_overview = true
 disabledColor = Color(0.745098, 0.745098, 0.745098, 1)
 
 [node name="icon" parent="background" index="0"]
