@@ -14,12 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://d32jj70uqug7p" path="res://assets/ui/buttons/deck_hp_hover.png" id="12_fyjpl"]
 [ext_resource type="PackedScene" uid="uid://cecd2obec3kr0" path="res://systems/ui/new_deck_preview/player_deck.tscn" id="12_odq63"]
 [ext_resource type="Texture2D" uid="uid://dgyfujgafmpvi" path="res://assets/ui/buttons/deck_hp_focus.png" id="13_bnowr"]
-[ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="14_iayku"]
 [ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="15_eqh66"]
-[ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="15_hea4m"]
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="16_lrcsa"]
-[ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="16_y70wc"]
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="17_pnl16"]
+[ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="18_4n4xa"]
+[ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="19_eo4s1"]
+[ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="20_puisa"]
 
 [sub_resource type="Animation" id="Animation_7857e"]
 length = 0.001
@@ -316,9 +316,9 @@ offset_bottom = -112.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 1
-texture_normal = ExtResource("14_iayku")
-texture_pressed = ExtResource("15_hea4m")
-texture_hover = ExtResource("16_y70wc")
+texture_normal = ExtResource("18_4n4xa")
+texture_pressed = ExtResource("19_eo4s1")
+texture_hover = ExtResource("20_puisa")
 
 [node name="Label" type="Label" parent="DeckPreviewOverlay/SelectCardsToBurnShopButton"]
 layout_mode = 1
