@@ -197,8 +197,3 @@ grow_vertical = 2
 text = "Journey on"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 960.0
-offset_bottom = 64.0
