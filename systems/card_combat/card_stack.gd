@@ -16,6 +16,7 @@ func init(seed : int):
 	rng = RandomNumberGenerator.new()
 	rng.seed = rng_seed
 
+
 func update_text():
 	%CardCount.text = str(cardStack.size())
 
@@ -37,6 +38,7 @@ func shuffle():
 func put_card_in_stack(card: CardData):
 	cardStack.append(card)
 	update_text()
+
 
 func draw_card(hand: Node):
 	if len(cardStack) <= 0:

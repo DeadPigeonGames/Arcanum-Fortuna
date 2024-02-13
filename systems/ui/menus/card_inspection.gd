@@ -1,5 +1,5 @@
 class_name CardInspection
-extends Control
+extends UIBase
 
 signal inspection_closed
 
@@ -14,10 +14,9 @@ var switch_buff : Buff
 
 var preview_card : Card
 
-
-func init(card_to_display: Card):
+func inspection_init(card_to_display: Card):
 	preview_card = %PreviewCard
-	$SwitchCondition.hide()
+	$CardInspection/SwitchCondition.hide()
 	preview_card.set_base_attack_text(str(card_to_display.card_data.attack))
 	preview_card.set_base_health_text(str(card_to_display.card_data.health))
 	var card_data = card_to_display.card_data
@@ -35,22 +34,23 @@ func init(card_to_display: Card):
 			switch_keyword = keyword
 			switch_buff = Buff.new(switch_keyword.health_difference, \
 					switch_keyword.attack_difference, switch_keyword, card_to_display)
-			$SwitchCondition.show()
-	$CardFlavour/CardFlavourText.text = card_data.description
+			$CardInspection/SwitchCondition.show()
+	$CardInspection/CardFlavour/CardFlavourText.text = card_data.description
 	update_keyword_labels()
 	update_buff_display()
 
+
 func update_keyword_labels():
 	for i in range(4):
-		get_node("KeywordDescriptions/VBoxContainer/Label%d" % (i+1)).text = ""
+		get_node("CardInspection/KeywordDescriptions/VBoxContainer/Label%d" % (i+1)).text = ""
 	
 	var offset := 0
 	for i in range(preview_card.keywords.size()):
-		var keyword_label = get_node("KeywordDescriptions/VBoxContainer/Label%d" % (i+1-offset))
+		var keyword_label = get_node("CardInspection/KeywordDescriptions/VBoxContainer/Label%d" % (i+1-offset))
 		var keyword = preview_card.keywords[i]
 		if preview_card.keywords[i] is SwitchKeyword:
-			$SwitchCondition/Label.text = "[b]%s -[/b] %s"
-			$SwitchCondition/Label.text = $SwitchCondition/Label.text % [keyword.title, keyword.description]
+			$CardInspection/SwitchCondition/Label.text = "[b]%s -[/b] %s"
+			$CardInspection/SwitchCondition/Label.text = $CardInspection/SwitchCondition/Label.text % [keyword.title, keyword.description]
 			keyword_label.text = ""
 			offset += 1
 			continue
@@ -69,12 +69,7 @@ func update_buff_display():
 		%CurrentStatChanges.add_child(new_stat_change)
 
 
-func _on_close_window_button_button_down():
-	inspection_closed.emit()
-	queue_free()
-
-
-func _on_switch_button_button_down():
+func _on_switch_button_button_up():
 	if not switch_keyword:
 		return
 	is_switched = not is_switched
@@ -99,3 +94,8 @@ func _on_switch_button_mouse_entered():
 
 func _on_switch_button_mouse_exited():
 	%SwitchButton.modulate = Color.WHITE
+
+
+func _on_close_window_button_button_up():
+	inspection_closed.emit()
+	close()

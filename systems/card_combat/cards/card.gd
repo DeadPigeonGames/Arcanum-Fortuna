@@ -3,6 +3,7 @@ class_name Card extends Control
 @export var card_data: CardData
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
+@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 
 
 var artwork_texture : Texture2D
@@ -30,6 +31,14 @@ func _ready():
 		load_from_data(card_data)
 	if !was_preloaded:
 		setup()
+
+
+func _input(event: InputEvent):
+	if is_hovered and event.is_action_pressed("open_inspection"):
+		var new_inspection = inspection.instantiate() as CardInspection
+		new_inspection.init(75, self)
+		new_inspection.inspection_init(self)
+		SceneHandler.add_ui_element(new_inspection)
 
 
 func set_attack(value):
@@ -170,7 +179,8 @@ func modify_keywords(keywords_to_remove: Array[Keyword], keywords_to_add: Array[
 
 func set_transformed_visuals(shader_material: ShaderMaterial, keyword_slot_atlas : Texture):
 	%Artwork.material = shader_material
-	%SwitchFrame/Label.text = card_name
+	%SwitchLabel.visible = true
+	%SwitchLabel.text = card_name
 	%SwitchFrame.show()
 	for slot in %KeyWordSlots.get_children():
 		slot.texture.atlas = null
@@ -181,6 +191,7 @@ func set_transformed_visuals(shader_material: ShaderMaterial, keyword_slot_atlas
 
 func set_default_visuals():
 	%SwitchFrame.hide()
+	%SwitchLabel.visible = false
 	%Artwork.material = default_material
 	for i in range(%KeyWordSlots.get_child_count()):
 		%KeyWordSlots.get_child(i).texture.atlas = default_keywordslot_atlas

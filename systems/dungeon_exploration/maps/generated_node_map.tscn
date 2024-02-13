@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bdkhck4lxvdx5"]
+[gd_scene load_steps=21 format=3 uid="uid://bdkhck4lxvdx5"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/map_generator.gd" id="1_03jr0"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="2_5yni0"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://22opo18s7wkj" path="res://data/player/basic_player.tres" id="10_2rstt"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="11_jsff7"]
 [ext_resource type="PackedScene" uid="uid://divw7h5guhbc8" path="res://systems/ui/cards_overview/cards_overlay.tscn" id="13_sj6n6"]
+[ext_resource type="PackedScene" uid="uid://etc28xe2dqhi" path="res://systems/ui/menus/deck_in_menu.tscn" id="14_sf86w"]
 
 [sub_resource type="Resource" id="Resource_2c5hw"]
 script = ExtResource("3_0jkw7")
@@ -125,13 +126,15 @@ grow_horizontal = 1
 grow_vertical = 1
 startNode = NodePath("../StartNode")
 startData = ExtResource("10_2rstt")
-setup_nodes = [NodePath("../CardsOverlay")]
+setup_nodes = [NodePath("../CardsOverlay"), NodePath("../Deck")]
 
 [node name="Generator" type="Node" parent="."]
 script = SubResource("GDScript_e8sv1")
 random_seed = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+visible = false
 
 [node name="SeedLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
@@ -142,7 +145,6 @@ offset_top = 2.0
 offset_right = -10.0
 offset_bottom = 36.0
 grow_horizontal = 0
-mouse_filter = 1
 theme_override_font_sizes/font_size = 24
 text = "Seed: 1337"
 horizontal_alignment = 2
@@ -151,14 +153,7 @@ script = ExtResource("11_jsff7")
 
 [node name="CardsOverlay" parent="." instance=ExtResource("13_sj6n6")]
 
-[node name="TestShop" type="Button" parent="CardsOverlay"]
-offset_left = 1781.0
-offset_top = 1001.0
-offset_right = 1831.0
-offset_bottom = 1055.0
-text = "Test
-Shop"
+[node name="Deck" parent="." instance=ExtResource("14_sf86w")]
 
 [connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]
-[connection signal="button_up" from="CardsOverlay/TestShop" to="." method="_on_test_shop_button_up"]

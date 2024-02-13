@@ -5,7 +5,8 @@ extends UIBase
 func _input(event):
 	super._input(event)
 	if event.is_action_released("ui_cancel"):
-		called_by.close()
+		if called_by.has_method("close"):
+			called_by.close()
 		close()
 
 

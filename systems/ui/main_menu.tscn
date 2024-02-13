@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xd6gb0dp1t4s"]
+[gd_scene load_steps=13 format=3 uid="uid://xd6gb0dp1t4s"]
 
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_ap4ji"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_lt3o0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="4_e66lc"]
 [ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_g2abk"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="6_kuo4c"]
+[ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="6_m01nv"]
 [ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="6_qsfvr"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="7_mp5ns"]
 [ext_resource type="PackedScene" uid="uid://jn77ec80jhq5" path="res://utils/anti_pause_node.tscn" id="7_ynsi7"]
@@ -24,6 +25,7 @@ script = ExtResource("1_ap4ji")
 node_map_scene = ExtResource("3_o36ij")
 tutorial_scene = ExtResource("4_e66lc")
 options_scene = ExtResource("4_g2abk")
+credits_scene = ExtResource("6_m01nv")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -169,15 +171,15 @@ method_to_call = "_SFX_UIButtonPress"
 [node name="AntiPauseNode" parent="." instance=ExtResource("7_ynsi7")]
 
 [connection signal="text_changed" from="SeedInput" to="." method="_on_seed_input_text_changed"]
+[connection signal="button_up" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton/HoverSound" method="execute"]
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton/PressSound" method="execute"]
+[connection signal="button_up" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/TutorialButton" to="VBoxContainer/TutorialButton/HoverSound" method="execute"]
-[connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_button_down"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="VBoxContainer/TutorialButton/PressSound" method="execute"]
+[connection signal="button_up" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton/HoverSound" method="execute"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="VBoxContainer/OptionsButton/PressSound" method="execute"]
+[connection signal="button_up" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton/HoverSound" method="execute"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton/PressSound" method="execute"]

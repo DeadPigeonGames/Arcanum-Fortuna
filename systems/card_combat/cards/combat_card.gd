@@ -6,7 +6,6 @@ signal drag_started
 signal drag_ended(card)
 
 @export var delete_material : ShaderMaterial
-@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
 @export_category("Animation Settings")
 @export var attack_speed = 0.2
 @export var attack_rewind = 0.3
@@ -269,9 +268,10 @@ func _process(delta):
 
 func _input(event: InputEvent):
 	if is_hovered and event.is_action_pressed("open_inspection"):
-		var new_inspection = inspection.instantiate()
-		new_inspection.init(self)
-		SceneHandler.combat.add_child(new_inspection)
+		var new_inspection = inspection.instantiate() as CardInspection
+		new_inspection.init(75, self)
+		new_inspection.inspection_init(self)
+		SceneHandler.add_ui_element(new_inspection)
 	
 	if not is_drag_enabled:
 		return

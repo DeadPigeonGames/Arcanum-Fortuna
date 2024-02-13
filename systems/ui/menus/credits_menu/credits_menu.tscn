@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=3 uid="uid://d101m5rvvp1kq"]
+
+[ext_resource type="Script" path="res://systems/ui/menus/credits_menu/credits_menu.gd" id="1_a05ra"]
+[ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="1_ed5nk"]
+[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="2_3l6i4"]
+
+[sub_resource type="Animation" id="Animation_f6rfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1080)]
+}
+
+[sub_resource type="Animation" id="Animation_vt6pb"]
+resource_name = "credits_rolling"
+length = 25.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 1080), Vector2(960, -1080)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bulqn"]
+_data = {
+"RESET": SubResource("Animation_f6rfj"),
+"credits_rolling": SubResource("Animation_vt6pb")
+}
+
+[node name="CreditsScreen" type="CanvasLayer"]
+script = ExtResource("1_a05ra")
+
+[node name="CreditsMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuTitle" type="Label" parent="CreditsMenu"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 994.0
+offset_bottom = 192.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 93
+text = "CREDITS"
+
+[node name="MenuSubtitle" type="Label" parent="CreditsMenu"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 415.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.564706, 0.564706, 0.564706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 34
+text = "to those who sought and found"
+
+[node name="ReturnButton" type="Button" parent="CreditsMenu"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -144.0
+offset_right = 384.0
+offset_bottom = -64.0
+grow_vertical = 0
+theme = ExtResource("2_3l6i4")
+text = "RETURN"
+alignment = 0
+
+[node name="Credits" type="Control" parent="CreditsMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 960.0
+offset_top = 1080.0
+offset_right = 960.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Logo" type="TextureRect" parent="CreditsMenu/Credits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.5
+offset_right = 248.5
+offset_bottom = 314.0
+grow_horizontal = 2
+texture = ExtResource("1_ed5nk")
+
+[node name="Credits" type="RichTextLabel" parent="CreditsMenu/Credits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.0
+offset_top = 314.0
+offset_right = 454.0
+offset_bottom = 1192.99
+grow_horizontal = 2
+theme = ExtResource("2_3l6i4")
+bbcode_enabled = true
+text = "[center][b]Department[/b]
+Person 1 - Tasks
+Person 2 - Tasks
+
+[center][b]Department[/b]
+Person 1 - Tasks
+Person 2 - Tasks
+
+[center][b]Department[/b]
+Person 1 - Tasks
+Person 2 - Tasks
+
+[center][b]Special Thanks[/b]
+Person 1 - Tasks
+Person 2 - Tasks"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CreditsMenu"]
+libraries = {
+"": SubResource("AnimationLibrary_bulqn")
+}
+autoplay = "credits_rolling"
+
+[connection signal="button_up" from="CreditsMenu/ReturnButton" to="." method="_on_return_button_button_up"]

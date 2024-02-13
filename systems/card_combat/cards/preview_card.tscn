@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jfsadju3ylrq"]
+[gd_scene load_steps=7 format=3 uid="uid://dw6nap050sofb"]
 
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_fh83p"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="2_n644p"]

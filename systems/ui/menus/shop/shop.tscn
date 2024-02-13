@@ -1,22 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://313ltwpa7fyq"]
+[gd_scene load_steps=13 format=3 uid="uid://313ltwpa7fyq"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop.gd" id="1_555t3"]
-[ext_resource type="Texture2D" uid="uid://b5afkfy613wxv" path="res://assets/ui/placeholders/shop_section_button_focused_placeholder.png" id="1_f2i8i"]
-[ext_resource type="Texture2D" uid="uid://duv2of85sje8k" path="res://assets/ui/placeholders/shop_section_button_default_placeholder.png" id="1_i7xu1"]
-[ext_resource type="Texture2D" uid="uid://ciikg3layvgng" path="res://assets/ui/placeholders/upper_shop_underlay.png" id="1_svqgw"]
-[ext_resource type="Texture2D" uid="uid://cg8w46s17rskd" path="res://assets/ui/placeholders/shop_section_button_hover_placeholder.png" id="2_jy8p6"]
 [ext_resource type="PackedScene" uid="uid://cjaecj5rdauy3" path="res://systems/ui/menus/shop/shop_trade_section.tscn" id="4_en8fe"]
 [ext_resource type="PackedScene" uid="uid://4ksadcfwwt52" path="res://systems/ui/menus/shop/shop_buy_section.tscn" id="4_s3t54"]
+[ext_resource type="Texture2D" uid="uid://06r8ajn6dyym" path="res://assets/ui/underlays/shop_underlay.png" id="5_1dbra"]
 [ext_resource type="PackedScene" uid="uid://fa4xb26tm6iu" path="res://systems/ui/menus/shop/shop_burn_section.tscn" id="6_nknc1"]
+[ext_resource type="Texture2D" uid="uid://u0ep6mcp6w3h" path="res://assets/ui/underlays/shop_underlay_2.png" id="6_xgc04"]
+[ext_resource type="Texture2D" uid="uid://c8rdebv3cvpi5" path="res://assets/ui/underlays/shop_tab_normal.png" id="7_xj0gx"]
+[ext_resource type="Texture2D" uid="uid://8384x7lx3nw2" path="res://assets/ui/underlays/shop_tab_hover.png" id="8_kd4rt"]
 [ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="9_lxyr5"]
+[ext_resource type="Texture2D" uid="uid://bwexgd4isf4pt" path="res://assets/ui/underlays/shop_tab_focused.png" id="9_u6va7"]
 [ext_resource type="Texture2D" uid="uid://6y3f15t7pwy3" path="res://assets/ui/placeholders/continue_to_node_map_button_pressed_placeholder.png" id="10_jehay"]
 [ext_resource type="Texture2D" uid="uid://bvfqsylsr2x1u" path="res://assets/ui/placeholders/continue_to_node_map_button_hover_placeholder.png" id="11_uwthw"]
-
-[sub_resource type="Gradient" id="Gradient_mjy55"]
-colors = PackedColorArray(0.351476, 0.22058, 0.107841, 1, 0.352941, 0.219608, 0.105882, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_mscm7"]
-gradient = SubResource("Gradient_mjy55")
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_555t3")
@@ -44,10 +39,10 @@ anchor_bottom = 1.0
 offset_left = -960.0
 offset_top = -1080.0
 offset_right = 960.0
-offset_bottom = -928.0
+offset_bottom = -834.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_svqgw")
+texture = ExtResource("5_1dbra")
 
 [node name="ShopUnderlay" type="TextureRect" parent="Shop"]
 custom_minimum_size = Vector2(1920, 928)
@@ -62,7 +57,7 @@ offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("GradientTexture1D_mscm7")
+texture = ExtResource("6_xgc04")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Shop"]
 layout_mode = 1
@@ -77,28 +72,28 @@ offset_right = 720.0
 offset_bottom = -928.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 240
+theme_override_constants/separation = 160
 
 [node name="BuySectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
-texture_normal = ExtResource("1_i7xu1")
-texture_hover = ExtResource("2_jy8p6")
-texture_focused = ExtResource("1_f2i8i")
+texture_normal = ExtResource("7_xj0gx")
+texture_hover = ExtResource("8_kd4rt")
+texture_focused = ExtResource("9_u6va7")
 
 [node name="TradeSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
-texture_normal = ExtResource("1_i7xu1")
-texture_hover = ExtResource("2_jy8p6")
-texture_focused = ExtResource("1_f2i8i")
+texture_normal = ExtResource("7_xj0gx")
+texture_hover = ExtResource("8_kd4rt")
+texture_focused = ExtResource("9_u6va7")
 
 [node name="BurnSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 2
-texture_normal = ExtResource("1_i7xu1")
-texture_hover = ExtResource("2_jy8p6")
-texture_focused = ExtResource("1_f2i8i")
+texture_normal = ExtResource("7_xj0gx")
+texture_hover = ExtResource("8_kd4rt")
+texture_focused = ExtResource("9_u6va7")
 
 [node name="LeaveShopButton" type="TextureButton" parent="Shop"]
 layout_mode = 1

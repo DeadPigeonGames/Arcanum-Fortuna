@@ -1,22 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=8 format=3 uid="uid://byccv8hmd45ln"]
 
-[sub_resource type="Gradient" id="Gradient_a0r8j"]
-offsets = PackedFloat32Array(0, 0.298329, 1)
-colors = PackedColorArray(0.368686, 0.114148, 0.245366, 1, 0.397178, 0.233198, 0.501939, 1, 0.0980397, 0.255654, 0.220282, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8iqlb"]
-gradient = SubResource("Gradient_a0r8j")
-width = 320
-height = 80
-
-[sub_resource type="Gradient" id="Gradient_e0ngi"]
-offsets = PackedFloat32Array(0, 0.630072, 1)
-colors = PackedColorArray(0.122597, 0.295771, 0.150034, 1, 0.316053, 0.344579, 0.494389, 1, 0.407876, 0.188671, 0.215122, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wtlqw"]
-gradient = SubResource("Gradient_e0ngi")
-width = 320
-height = 80
+[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
+[ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
+[ext_resource type="PackedScene" uid="uid://bdkhck4lxvdx5" path="res://systems/dungeon_exploration/maps/generated_node_map.tscn" id="2_0rqra"]
+[ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="3_c5lml"]
+[ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_h2wo1"]
+[ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="5_cwqwb"]
+[ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="7_w5744"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -27,6 +17,11 @@ offset_top = -540.0
 offset_right = 1920.0
 offset_bottom = 540.0
 grow_vertical = 2
+script = ExtResource("1_pcc4c")
+node_map_scene = ExtResource("2_0rqra")
+tutorial_scene = ExtResource("3_c5lml")
+options_scene = ExtResource("4_h2wo1")
+credits_scene = ExtResource("5_cwqwb")
 
 [node name="MenuTitle" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 128)
@@ -61,95 +56,35 @@ offset_right = 384.0
 offset_bottom = 640.0
 theme_override_constants/separation = 0
 
-[node name="StartButton" type="TextureButton" parent="MainMenuButtons"]
+[node name="StartButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-texture_pressed = SubResource("GradientTexture2D_8iqlb")
-texture_hover = SubResource("GradientTexture2D_wtlqw")
-
-[node name="ButtonLabel" type="Label" parent="MainMenuButtons/StartButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("1_ix3bk")
 text = "PLAY"
-vertical_alignment = 1
+alignment = 0
 
-[node name="PrepareButton" type="TextureButton" parent="MainMenuButtons"]
+[node name="PrepareButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-texture_pressed = SubResource("GradientTexture2D_8iqlb")
-texture_hover = SubResource("GradientTexture2D_wtlqw")
-
-[node name="ButtonLabel" type="Label" parent="MainMenuButtons/PrepareButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("1_ix3bk")
 text = "PREPARE"
-vertical_alignment = 1
+alignment = 0
 
-[node name="OptionsButton" type="TextureButton" parent="MainMenuButtons"]
+[node name="OptionsButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-texture_pressed = SubResource("GradientTexture2D_8iqlb")
-texture_hover = SubResource("GradientTexture2D_wtlqw")
-
-[node name="ButtonLabel" type="Label" parent="MainMenuButtons/OptionsButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("1_ix3bk")
 text = "OPTIONS"
-vertical_alignment = 1
+alignment = 0
 
-[node name="CreditsButton" type="TextureButton" parent="MainMenuButtons"]
+[node name="CreditsButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-texture_pressed = SubResource("GradientTexture2D_8iqlb")
-texture_hover = SubResource("GradientTexture2D_wtlqw")
-
-[node name="ButtonLabel" type="Label" parent="MainMenuButtons/CreditsButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("1_ix3bk")
 text = "CREDITS"
-vertical_alignment = 1
+alignment = 0
 
-[node name="QuitButton" type="TextureButton" parent="."]
+[node name="QuitButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 anchors_preset = 2
@@ -160,21 +95,19 @@ offset_top = -144.0
 offset_right = 384.0
 offset_bottom = -64.0
 grow_vertical = 0
-texture_pressed = SubResource("GradientTexture2D_8iqlb")
-texture_hover = SubResource("GradientTexture2D_wtlqw")
-
-[node name="ButtonLabel" type="Label" parent="QuitButton"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 58
+theme = ExtResource("1_ix3bk")
 text = "QUIT"
-vertical_alignment = 1
+alignment = 0
+
+[node name="Nodemap1" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+z_index = -1
+position = Vector2(671, 539.5)
+scale = Vector2(1, 1.01944)
+texture = ExtResource("7_w5744")
+
+[connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/PrepareButton" to="." method="_on_prepare_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/CreditsButton" to="." method="_on_credits_button_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]

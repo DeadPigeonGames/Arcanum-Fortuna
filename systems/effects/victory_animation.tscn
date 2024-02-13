@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cegqtmafpc7yc"]
+[gd_scene load_steps=10 format=3 uid="uid://cegqtmafpc7yc"]
 
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="1_btvdi"]
 [ext_resource type="Script" path="res://systems/effects/victory_animation.gd" id="1_gnn8w"]
 [ext_resource type="Shader" path="res://shaders/fake_3d.gdshader" id="2_7ldh2"]
 [ext_resource type="Texture2D" uid="uid://celd3g1asnsr7" path="res://assets/sprites/vfx/text_card_victorious.png" id="3_tpy3n"]
+[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="5_73ir2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4wfv"]
 shader = ExtResource("2_7ldh2")
@@ -97,6 +98,30 @@ tracks/6/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/TextureRect/NewVictorious:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/TextureRect/NewVictorious:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_jb7u4"]
 resource_name = "victorious"
@@ -173,7 +198,7 @@ tracks/5/keys = {
 }
 tracks/6/type = "value"
 tracks/6/imported = false
-tracks/6/enabled = true
+tracks/6/enabled = false
 tracks/6/path = NodePath("CanvasLayer/TextureRect/TextureRect2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
@@ -181,7 +206,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 2.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false]
 }
 tracks/7/type = "method"
 tracks/7/imported = false
@@ -196,6 +221,30 @@ tracks/7/keys = {
 "args": [],
 "method": &"complete"
 }]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/TextureRect/NewVictorious:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/TextureRect/NewVictorious:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7r6k4"]
@@ -228,10 +277,28 @@ texture = ExtResource("1_btvdi")
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/TextureRect"]
 visible = false
 use_parent_material = true
-layout_mode = 0
-offset_right = 420.0
-offset_bottom = 660.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_tpy3n")
+
+[node name="NewVictorious" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 1)
+pivot_offset = Vector2(210, 330)
+theme = ExtResource("5_73ir2")
+theme_override_font_sizes/font_size = 84
+text = "Victorious"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
