@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ced2ynscdgy5e"]
+[gd_scene load_steps=23 format=3 uid="uid://ced2ynscdgy5e"]
 
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_ltqqh"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ca7vt6lror7v6" path="res://assets/ui/gameboard/karma.png" id="6_0bdpy"]
 [ext_resource type="Texture2D" uid="uid://by4v5aq6yrqoh" path="res://assets/sprites/vfx/overlays/hurt_overlay.png" id="6_swmyn"]
 [ext_resource type="Script" path="res://systems/card_combat/hurt_overlay.gd" id="7_k4gqe"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="8_mh8am"]
 [ext_resource type="Texture2D" uid="uid://b2oy1bhp7yy1h" path="res://assets/ui/gameboard/hb_2.png" id="8_nlbg8"]
 [ext_resource type="Script" path="res://systems/effects/screenshake_cam.gd" id="8_y2d2q"]
 [ext_resource type="Texture2D" uid="uid://oc76xjyw1lsm" path="res://assets/ui/gameboard/hb_1.png" id="9_nwmk5"]
@@ -211,9 +212,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 9.90002
+offset_right = 4.0
+offset_bottom = 9.90002
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme = ExtResource("8_mh8am")
+theme_override_colors/font_outline_color = Color(0.623529, 0.294118, 0.705882, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -287,12 +295,15 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -53.0
-offset_top = -1.0
+offset_top = -12.0
 offset_right = 53.0
-offset_bottom = 1.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme = ExtResource("8_mh8am")
+theme_override_colors/font_outline_color = Color(0.584314, 0.376471, 0.184314, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
 text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
