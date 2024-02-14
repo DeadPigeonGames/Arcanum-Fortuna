@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://djimo5osb2i1s"]
 
 [ext_resource type="Script" path="res://systems/ui/new_deck_preview/deck_preview_card.gd" id="1_l58gw"]
-[ext_resource type="Texture2D" uid="uid://1o6whlyoc2er" path="res://assets/ui/placeholders/deck_preview_copy_counter_underlay_placeholder.png" id="2_n5bhg"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="2_yibxg"]
+[ext_resource type="Texture2D" uid="uid://c3li1klkehqcx" path="res://assets/ui/gameboard/copy_counter_underlay.png" id="3_bpivl"]
 
 [node name="DeckPreviewCard" type="Control"]
 custom_minimum_size = Vector2(170, 266)
@@ -33,13 +33,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_n5bhg")
+texture = ExtResource("3_bpivl")
+expand_mode = 1
 
 [node name="CopyCounterLabel" type="Label" parent="CopyCounter"]
 unique_name_in_owner = true
