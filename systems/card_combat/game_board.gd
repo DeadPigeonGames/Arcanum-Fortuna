@@ -103,6 +103,22 @@ func lock_friendly_cards(combat):
 		await get_tree().process_frame
 
 
+func place_friendly_card(cardData : CardData, tile_idx) -> bool:
+	var target_tile = player_tiles.get_child(tile_idx)
+	if target_tile.get_child_count() != 0:
+		push_error("Can't place card. Player slot of id ", tile_idx, " is already filled!")
+		return false
+	var new_combat_card = combat_card_prefab.instantiate()
+	new_combat_card.card_data = cardData
+	target_tile.add_child(new_combat_card)
+	new_combat_card.make_enemy()
+	new_combat_card.tile_coordinate = Vector2i(tile_idx, 1)
+	GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
+	[new_combat_card.card_data.name, tile_idx, 1])
+	await get_tree().process_frame
+	return true
+
+
 func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 	var target_tile = enemy_tiles_front.get_child(tile_idx)
 	if target_tile.get_child_count() != 0:
@@ -110,7 +126,6 @@ func place_enemy_card_front(cardData : CardData, tile_idx) -> bool:
 		return false
 	var new_combat_card = combat_card_prefab.instantiate()
 	new_combat_card.card_data = cardData
-	new_combat_card.scale_to_fit(target_tile.get_rect().size)
 	target_tile.add_child(new_combat_card)
 	new_combat_card.make_enemy()
 	new_combat_card.tile_coordinate = Vector2i(tile_idx, 1)

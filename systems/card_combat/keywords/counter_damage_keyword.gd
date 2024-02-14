@@ -13,5 +13,8 @@ func init():
 
 
 func trigger(source, owner, target, icon_to_animate, params={}):
+	if not source is CombatCard:
+		push_error("[CounterDamage]: trigger failed due to invalid source")
+		return
 	await super(source, owner, target, icon_to_animate, params)
 	await source.take_damage(counter_damage)

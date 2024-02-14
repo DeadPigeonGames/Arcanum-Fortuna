@@ -17,8 +17,8 @@
 script = ExtResource("1_h25ob")
 cardStack = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_6esk2"), ExtResource("2_4n5as"), ExtResource("3_v8gde"), ExtResource("4_vf4t5"), ExtResource("5_4rhnx"), ExtResource("2_feynm"), ExtResource("2_pb7uk"), ExtResource("8_r11ow"), ExtResource("9_8xgpv"), ExtResource("10_4000w"), ExtResource("11_eow8d")])
 health = 40.0
-start_hand_size = 6
-draw_amount = 1
+start_hand_size = 0
+draw_amount = 0
 karma = 0
 draw_rng_seed = 1337
 currency = 0
