@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://313ltwpa7fyq"]
+[gd_scene load_steps=16 format=3 uid="uid://313ltwpa7fyq"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop.gd" id="1_555t3"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_npfwa"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="10_e7vgr"]
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="11_y4e46"]
 [ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="12_107yi"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="14_1q6cw"]
 
 [sub_resource type="Resource" id="Resource_ekxm3"]
 script = ExtResource("2_npfwa")
@@ -137,6 +138,8 @@ offset_right = 160.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("14_1q6cw")
+theme_override_font_sizes/font_size = 32
 text = "Proceed"
 horizontal_alignment = 1
 vertical_alignment = 1
