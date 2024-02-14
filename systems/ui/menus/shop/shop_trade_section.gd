@@ -158,7 +158,28 @@ func set_label_gold(amount : int):
 func disable_lost_cards():
 	var missing_one := false
 	for card_data in player_data.cardStack:
-		pass#if card_data.name
+		missing_one = card_data.name != hand_card_1.card_data.name
+		if not missing_one:
+			break
+	var missing_two := false
+	for card_data in player_data.cardStack:
+		missing_two = card_data.name != hand_card_2.card_data.name
+		if not missing_two:
+			break
+	var missing_three := false
+	for card_data in player_data.cardStack:
+		missing_three = card_data.name != hand_card_3.card_data.name
+		if not missing_three:
+			break
+	if missing_one:
+		hand_card_1.selected = false
+		hand_card_1.visible = false
+	if missing_two:
+		hand_card_2.selected = false
+		hand_card_2.visible = false
+	if missing_three:
+		hand_card_3.selected = false
+		hand_card_3.visible = false
 
 
 func _on_shop_card_clicked():
@@ -177,4 +198,7 @@ func _on_trade_button_button_up():
 
 func _on_visibility_changed():
 	if visible:
+		await get_tree().process_frame
 		disable_lost_cards()
+		set_trade_button_enabled()
+		set_label_gold(get_selected_shop_card_count() * card_prize)

@@ -14,11 +14,11 @@ func init(data : TutorialPopupData, combat : CardBattle):
 
 func execute():
 	super.execute()
-	
+
 
 #endregion
 
 func _on_end_button_button_up():
 	highlight_elements(false)
-	SceneHandler.change_scene("res://systems/ui/main_menu.tscn")
+	SceneHandler.change_scene("res://systems/ui/menus/main_menu/main_menu.tscn")
 	completed.emit()
