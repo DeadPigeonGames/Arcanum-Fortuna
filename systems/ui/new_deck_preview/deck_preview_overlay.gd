@@ -25,11 +25,13 @@ func setup():
 
 func get_cards():
 	self.card_data_lookup.clear()
-	for card in player_data.cardStack:
-		if card in card_data_lookup:
-			card_data_lookup[card] += 1
+	for card_data in player_data.cardStack:
+		var filtered_stack = player_data.cardStack.filter(func (x): x.name == card_data.name)
+		
+		if filtered_stack.size() >= 1:
+			card_data_lookup[filtered_stack[0]] += 1
 		else:
-			card_data_lookup[card] = 1
+			card_data_lookup[card_data] = 1
 
 
 func get_deck_preview_cards():
