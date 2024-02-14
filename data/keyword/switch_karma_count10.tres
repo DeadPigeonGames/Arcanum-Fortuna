@@ -41,6 +41,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Awaken: Preparation"
-description = "This card transforms once its controller has %d or more karma."
+description = "This card will awaken once its owner has %d or more karma."
 icon = SubResource("AtlasTexture_tj8qu")
 highlight_duration = 0.5
