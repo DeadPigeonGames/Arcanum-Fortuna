@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=25 format=3 uid="uid://byccv8hmd45ln"]
 
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://can862dqmhwwo" path="res://assets/ui/placeholders/snowflake_test.png" id="9_se7g8"]
 [ext_resource type="Texture2D" uid="uid://2c184n3ld2p3" path="res://assets/ui/placeholders/nodemap_1_background.png" id="11_f5nm2"]
 [ext_resource type="Texture2D" uid="uid://clda7gnqq52gc" path="res://assets/ui/placeholders/nodemap_1_decoration.png" id="12_i1n8b"]
+[ext_resource type="Shader" path="res://shaders/wind.gdshader" id="12_wn2bc"]
 [ext_resource type="Texture2D" uid="uid://cdrck7c31mi66" path="res://assets/ui/underlays/logo_large.png" id="14_3bmnv"]
 [ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="15_xiui0"]
 [ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="16_06j1n"]
@@ -723,6 +724,17 @@ texture = ExtResource("12_i1n8b")
 [sub_resource type="TileSet" id="TileSet_71hff"]
 sources/0 = SubResource("TileSetAtlasSource_jl75e")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ru5t"]
+shader = ExtResource("12_wn2bc")
+shader_parameter/speed = 0.3
+shader_parameter/minStrength = 0.2
+shader_parameter/maxStrength = 0.3
+shader_parameter/strengthScale = 200.0
+shader_parameter/interval = 0.0
+shader_parameter/detail = 5.0
+shader_parameter/distortion = 1.0
+shader_parameter/heightOffset = 0.0
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fl8tn"]
 particle_flag_disable_z = true
 emission_shape = 3
@@ -865,6 +877,7 @@ layer_1/name = "layer 2 (snow)"
 layer_1/tile_data = PackedInt32Array(2424917, 1048576, 14, 2490453, 1048576, 15, 2359382, 1114112, 13, 2424918, 1114112, 14, 2490454, 1114112, 15, 2359383, 1179648, 13, 2424919, 1179648, 14, 2490455, 1179648, 15, 2424920, 1245184, 14, 2490456, 1245184, 15, 2424921, 1310720, 14, 2490457, 1310720, 15, 2424922, 1376256, 14, 2490458, 1376256, 15, 2424923, 1441792, 14, 2490459, 1441792, 15, 2359388, 1507328, 13, 2424924, 1507328, 14, 2490460, 1507328, 15, 2359389, 1572864, 13, 2424925, 1572864, 14, 2490461, 1572864, 15, 2359390, 1638400, 13, 2424926, 1638400, 14, 2490462, 1638400, 15, 2359391, 1703936, 13, 2424927, 1703936, 14, 2490463, 1703936, 15, 2359392, 1769472, 13, 2424928, 1769472, 14, 2490464, 1769472, 15, 2424929, 1835008, 14, 2490465, 1835008, 15, 2490466, 1900544, 15, 3473457, 0, 13, 3538993, 0, 14, 3604529, 0, 15, 3407922, 65536, 12, 3473458, 65536, 13, 3538994, 65536, 14, 3604530, 65536, 15, 3407923, 131072, 12, 3473459, 131072, 13, 3538995, 131072, 14, 3604531, 131072, 15, 3407924, 196608, 12, 3473460, 196608, 13, 3538996, 196608, 14, 3604532, 196608, 15, 3407925, 262144, 12, 3473461, 262144, 13, 3538997, 262144, 14, 3604533, 262144, 15, 3407926, 327680, 12, 3473462, 327680, 13, 3538998, 327680, 14, 3604534, 327680, 15, 3407927, 393216, 12, 3473463, 393216, 13, 3538999, 393216, 14, 3604535, 393216, 15, 3342392, 458752, 11, 3407928, 458752, 12, 3473464, 458752, 13, 3539000, 458752, 14, 3604536, 458752, 15, 3342393, 524288, 11, 3407929, 524288, 12, 3473465, 524288, 13, 3539001, 524288, 14, 3604537, 524288, 15, 3342394, 589824, 11, 3407930, 589824, 12, 3473466, 589824, 13, 3539002, 589824, 14, 3604538, 589824, 15, 3342395, 655360, 11, 3407931, 655360, 12, 3473467, 655360, 13, 3539003, 655360, 14, 3604539, 655360, 15, 3342396, 720896, 11, 3407932, 720896, 12, 3473468, 720896, 13, 3539004, 720896, 14, 3604540, 720896, 15, 3407933, 786432, 12, 3473469, 786432, 13, 3539005, 786432, 14, 3604541, 786432, 15, 3473470, 851968, 13, 3539006, 851968, 14, 3604542, 851968, 15, 3473471, 917504, 13, 3539007, 917504, 14, 3604543, 917504, 15, 3539008, 983040, 14, 3604544, 983040, 15)
 
 [node name="Nodemap1Foreground" type="Sprite2D" parent="Background"]
+material = SubResource("ShaderMaterial_6ru5t")
 position = Vector2(668, 552)
 texture = ExtResource("9_s8mvn")
 
