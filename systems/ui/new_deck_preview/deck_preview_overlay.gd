@@ -130,7 +130,8 @@ func _on_select_cards_to_burn_shop_button_button_up():
 		return
 
 	if called_by.has_method("receive_result"):
-		called_by.receive_result(cards)
+		if cards.size() > 0:
+			called_by.receive_result(cards)
 	close()
 
 

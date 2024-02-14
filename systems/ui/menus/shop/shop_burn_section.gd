@@ -58,10 +58,11 @@ func receive_result(result):
 
 func execute_burn_card():
 	for card in cards_to_burn:
-		burn_card.load_from_data(card)
-		await burn_card.animate_burn()
 		erase_card_from_player(burn_card.card_data)
 		player_data.currency -= card_prize
+	for card in cards_to_burn:
+		burn_card.load_from_data(card)
+		await burn_card.animate_burn()
 	
 	cards_to_burn.clear()
 	burn_card.visible = false
