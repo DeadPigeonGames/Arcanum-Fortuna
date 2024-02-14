@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d233avcta64f" path="res://assets/ui/underlays/options_underlay.png" id="3_iqdc3"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="3_x54wv"]
 [ext_resource type="Texture2D" uid="uid://bvnruxmnnshsm" path="res://assets/ui/underlays/deck_tab.png" id="4_lagsh"]
-[ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="5_xu4n0"]
-[ext_resource type="Texture2D" uid="uid://da83ns8w6wcrx" path="res://assets/ui/placeholders/checkbox_pressed_palceholder.png" id="6_1lfcg"]
-[ext_resource type="Texture2D" uid="uid://ucp5uptgmfr1" path="res://assets/ui/placeholders/chechbox_hover_placeholder.png" id="7_6m8dq"]
+[ext_resource type="Texture2D" uid="uid://dxdqk7nuke6pl" path="res://assets/ui/underlays/checkbox_normal.png" id="5_xw2eo"]
+[ext_resource type="Texture2D" uid="uid://elmcuxrwc3gy" path="res://assets/ui/underlays/checkbox_pressed.png" id="6_o2d4v"]
+[ext_resource type="Texture2D" uid="uid://ktdctvbdmxa4" path="res://assets/ui/underlays/checkbox_hover.png" id="7_ei6wn"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -474,9 +474,9 @@ alignment = 1
 [node name="TextureButton" type="TextureButton" parent="Options/AccessibilityOptions/Options/ResetTutorials/HBoxContainer"]
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
-texture_normal = ExtResource("5_xu4n0")
-texture_pressed = ExtResource("6_1lfcg")
-texture_hover = ExtResource("7_6m8dq")
+texture_normal = ExtResource("5_xw2eo")
+texture_pressed = ExtResource("6_o2d4v")
+texture_hover = ExtResource("7_ei6wn")
 
 [node name="ReturnButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 80)
