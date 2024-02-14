@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://vmliqn78631u"]
+[gd_scene load_steps=43 format=3 uid="uid://vmliqn78631u"]
 
 [ext_resource type="Script" path="res://Audio/GD_SFXOther.gd" id="1_wsfow"]
 [ext_resource type="AudioStream" uid="uid://h78ugsvxhc76" path="res://Audio/Card/CardCardHover1.ogg" id="2_cdbka"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://c8fqtpgfkofub" path="res://Audio/UI/DestroyCard1.ogg" id="30_0hyeq"]
 [ext_resource type="AudioStream" uid="uid://bngb3hm60v3vd" path="res://Audio/UI/DestroyCard2.ogg" id="31_i03t3"]
 [ext_resource type="AudioStream" uid="uid://5m68ioyctp7i" path="res://Audio/UI/DestroyCard3.ogg" id="32_wmq4o"]
+[ext_resource type="AudioStream" uid="uid://ifjp0wj7afpr" path="res://Audio/Card/Effect1.ogg" id="34_xuuen"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sqnrc"]
 random_pitch = 1.25
@@ -230,5 +231,13 @@ bus = &"SFXOther"
 [node name="DestroyCard" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_xckbx")
 bus = &"SFXOther"
+
+[node name="Effect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_xuuen")
+volume_db = -3.0
+bus = &"UI"
+
+[node name="WinLoss" type="AudioStreamPlayer" parent="."]
+bus = &"UI"
 
 [connection signal="timeout" from="TestKnockTimer" to="." method="_on_test_knock_timer_timeout"]

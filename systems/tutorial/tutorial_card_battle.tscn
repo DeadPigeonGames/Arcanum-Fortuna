@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=86 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="2_24vt3"]
@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_data/tutorial_tooltip_data.gd" id="19_2n50h"]
 [ext_resource type="Resource" uid="uid://dxi48twwh3fci" path="res://data/player/tutorial_player.tres" id="20_f584r"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_data/tutorial_end_data.gd" id="21_x08gc"]
-[ext_resource type="Resource" uid="uid://cfo1qaoei72s6" path="res://data/enemy/enemy_basic.tres" id="21_xusau"]
+[ext_resource type="Script" path="res://data/scripts/debug_enemy_data.gd" id="23_wqrtp"]
 
 [sub_resource type="Resource" id="Resource_m5y5j"]
 script = ExtResource("17_g5qtn")
@@ -153,9 +153,9 @@ element = NodePath("EnemyPlayer/ResourceContainer/Health/HealthIcon")
 [sub_resource type="Resource" id="Resource_dni4d"]
 script = ExtResource("4_w40ps")
 title = ""
-text = "Your [b]cards' [color=darkred]attack[/color][/b] just [b]dealt[/b] some [b]damage to your opponent[/b].
+text = "Your [b]cards' [color=#A11B17]attack[/color][/b] just [b]dealt[/b] some [b]damage to your opponent[/b].
 
-You should always [b]keep an eye on how much [color=goldenrod]health[/color] your foe still has; as soon as it reaches 0,[/b] the match ends and [b]you'll win[/b]!"
+You should always [b]keep an eye on how much [color=#D8A452]health[/color] your foe still has; as soon as it reaches 0,[/b] the match ends and [b]you'll win[/b]!"
 highlighted_elements = Array[NodePath]([NodePath("EnemyPlayer/ResourceContainer/Health/HealthIcon")])
 arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_xumnh")])
 offset_type = 1
@@ -182,7 +182,7 @@ element = NodePath("CardPlayer/ResourceContainer/Karma")
 [sub_resource type="Resource" id="Resource_rbjvu"]
 script = ExtResource("4_w40ps")
 title = ""
-text = "Your [b]cards' [color=darkmagenta]karma[/color] value[/b] just [b]got added to your [color=darkmagenta]karma[/color] pool[/b]!
+text = "Your [b]cards' [color=#682180]karma[/color] value[/b] just [b]got added to your [color=#682180]karma[/color] pool[/b]!
 
 This will [b]always happen after your cards are done attacking[/b]!"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Karma"), NodePath("GameBoard/PlayerTiles/Panel3")])
@@ -276,7 +276,7 @@ element = NodePath("CardPlayer/ResourceContainer/Health/HealthIcon")
 [sub_resource type="Resource" id="Resource_lvque"]
 script = ExtResource("4_w40ps")
 title = ""
-text = "So make sure to always [b]keep an eye on your own [color=goldenrod]health[/color][/b]!
+text = "So make sure to always [b]keep an eye on your own [color=#D8A452]health[/color][/b]!
 Because [b]as soon as it reaches 0, you'll lose![/b]"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Health/HealthIcon")])
 arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_4yrbu")])
@@ -376,7 +376,7 @@ script = ExtResource("4_w40ps")
 title = ""
 text = "[b]You just took some damage![/b]
 
-Whenever your [b]total [color=darkmagenta]karma[/color] goes below 0, the remaining cost will be taken from your [color=goldenrod]health[/color][/b].
+Whenever your [b]total [color=#682180]karma[/color] goes below 0, the remaining cost will be taken from your [color=#D8A452]health[/color][/b].
 So make sure to always find a balance so that you can pay fates' price!"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Health/HealthIcon"), NodePath("CardPlayer/ResourceContainer/Karma"), NodePath("GameBoard/PlayerTiles/Panel3")])
 arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_657i2")])
@@ -429,15 +429,16 @@ distance = 0.0
 script = ExtResource("4_ohwqy")
 popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_t8fom")])
 
+[sub_resource type="Resource" id="Resource_ixib7"]
+script = ExtResource("23_wqrtp")
+health = 0.0
+fixed_placement_cards = Array[Resource("res://data/scripts/card_data.gd")]([])
+
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
 phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_8ywms"), SubResource("Resource_v18om"), SubResource("Resource_jsiee"), SubResource("Resource_lebng"), SubResource("Resource_losxt"), SubResource("Resource_d5ek4"), SubResource("Resource_rio7r"), SubResource("Resource_fmibs"), SubResource("Resource_3kiem"), SubResource("Resource_gtqw3")])
 is_tutorial = true
 debug_player_data = ExtResource("20_f584r")
-debug_enemy_data = ExtResource("21_xusau")
-
-[node name="HealthIcon" parent="CardPlayer/ResourceContainer/Health" index="1"]
-offset_top = 403.0
-offset_bottom = 540.0
+debug_enemy_data = SubResource("Resource_ixib7")
 
 [editable path="CardPlayer"]
 [editable path="EnemyPlayer"]
