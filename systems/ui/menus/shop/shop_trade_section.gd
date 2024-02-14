@@ -17,6 +17,9 @@ var original_price_text : String
 
 func setup():
 	trade_button = $TradeButton
+	cost_label = $TradeButton/Label
+	original_price_text = cost_label.text
+	reset_button()
 	player_data = Player.instance.data
 	randomize_shop_cards()
 	randomize_hand_cards()
@@ -24,8 +27,6 @@ func setup():
 	hand_card_2.selected_shader.color = Color.DARK_BLUE
 	hand_card_3.selected_shader.color = Color.DARK_BLUE
 	set_trade_button_enabled()
-	original_price_text = cost_label.text
-	set_label_gold(0)
 
 
 func randomize_shop_cards():
@@ -73,8 +74,7 @@ func process_trade():
 		await h_card.animate_burn()
 		h_card.visible = false
 		h_card.selected = false
-
-	trade_button.disabled = false
+	reset_button()
 
 
 func erase_card_from_player(card_data : CardData):
@@ -112,6 +112,11 @@ func get_hand_cards():
 
 func is_card_count_matched():
 	return get_selected_shop_card_count() == get_selected_hand_card_count()
+
+
+func reset_button():
+	set_label_gold(0)
+	trade_button.disabled = true
 
 
 func get_selected_shop_card_count():

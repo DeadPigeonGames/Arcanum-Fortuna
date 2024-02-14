@@ -14,7 +14,9 @@ var original_price_text : String
 
 func setup():
 	pay_button = %PayButton
-	pay_button.disabled = true
+	cost_label = $PayButton/Label
+	original_price_text = cost_label.text
+	reset_button()
 	player_data = Player.instance.data
 	player_data.currency = 15
 	randomize()
@@ -22,12 +24,6 @@ func setup():
 	shop_card_1.card_data = possible_cards.pick_random()
 	shop_card_2.card_data = possible_cards.pick_random()
 	shop_card_3.card_data = possible_cards.pick_random()
-	original_price_text = cost_label.text
-	set_label_gold(0)
-
-
-func _on_pay_button_button_up():
-	confirm_buy()
 
 
 func confirm_buy():
@@ -57,6 +53,7 @@ func process_buy(cards : Array[ShopPreviewCard]):
 		card.selected = false
 		card.is_selectable = false
 	pay_button.disabled = true
+	reset_button()
 
 
 func _on_shop_card_clicked():
@@ -80,4 +77,14 @@ func _on_shop_card_clicked():
 
 func set_label_gold(amount : int):
 	cost_label.text = original_price_text
+	print(original_price_text)
 	cost_label.text = cost_label.text.replace("[amount]", str(amount))
+
+
+func reset_button():
+	set_label_gold(0)
+	pay_button.disabled = true
+
+
+func _on_pay_button_button_up():
+	confirm_buy()

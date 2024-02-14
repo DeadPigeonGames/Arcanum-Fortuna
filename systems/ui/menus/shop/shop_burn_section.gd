@@ -14,13 +14,14 @@ var burn_button
 var cards_to_burn : Array[CardData]
 var original_price_text : String
 
+
 func setup():
+	burn_button = $BurnButton
+	cost_label = $BurnButton/Label
+	original_price_text = cost_label.text
 	burn_card.visible = false
 	player_data = Player.instance.data
-	burn_button = $BurnButton
-	burn_button.disabled = true
-	original_price_text = cost_label.text
-	set_label_gold(0)
+	reset_button()
 
 
 func select_card():
@@ -66,7 +67,7 @@ func execute_burn_card():
 	
 	cards_to_burn.clear()
 	burn_card.visible = false
-	burn_button.disabled = true
+	reset_button()
 
 
 func erase_card_from_player(card_data : CardData):
@@ -79,6 +80,11 @@ func erase_card_from_player(card_data : CardData):
 func set_label_gold(amount : int):
 	cost_label.text = original_price_text
 	cost_label.text = cost_label.text.replace("[amount]", str(amount))
+
+
+func reset_button():
+	set_label_gold(0)
+	burn_button.disabled = true
 
 
 func _on_burn_button_button_up():

@@ -3,7 +3,6 @@ extends UIBase
 
 signal shop_closed
 
-@export var close_shop_popup : UIPopupData
 @export var close_unfinished_popup : UIPopupData
 @export var shop_buy_tab : PackedScene
 @export var shop_trade_tab : PackedScene
@@ -12,10 +11,8 @@ signal shop_closed
 var buy_tab_instance
 var trade_tab_instance
 var burn_tab_instance
-
 var last_clicked_tab
 var player_data : PlayerData
-
 
 func _process(delta):
 	if is_current_window:
@@ -66,6 +63,29 @@ func card_to_deck_animation(card):
 	await tween.finished
 
 
+func get_all_nodes(node):
+	var array : Array
+	
+	if node.get_child_count() > 0:
+		for found_node in node.get_children():
+			array.append_array(get_all_nodes(found_node))
+			array.append(found_node)
+		return array
+	return array
+
+
+func has_unfinished_trades():
+	var count := 0
+	for node in get_all_nodes(self):
+		if node.has_method("is_selected"):
+			count += 1
+		if node is SelectCard and node.selected:
+			count += 1
+		if node is ShopBurnSection and node.burn_card.visible:
+			count += 1
+	
+	return count > 0
+
 func _on_buy_section_button_button_up():
 	last_clicked_tab = %BuySectionButton
 	super.switch_tab_visible(buy_tab_instance)
@@ -82,6 +102,9 @@ func _on_burn_section_button_button_up():
 
 
 func _on_leave_shop_button_button_up():
-	var popup = SceneHandler.add_ui_element(close_shop_popup.ui_popup_path) as UIPopup
-	popup.init(get_layer(), self)
-	popup.setup_popup(close_shop_popup)
+	if has_unfinished_trades():
+		var popup = SceneHandler.add_ui_element(close_unfinished_popup.ui_popup_path) as UIPopup
+		popup.init(get_layer(), self)
+		popup.setup_popup(close_unfinished_popup)
+	else:
+		close()
