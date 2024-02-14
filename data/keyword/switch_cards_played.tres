@@ -26,7 +26,9 @@ combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/comba
 triggers = 4
 is_animated = true
 scale_speed = 0.6
-title = "Cards Played Switch %d"
+animate_scale = false
+animate_particle = true
+title = "Awaken: Reinforcement"
 description = "This card will transform once %d allied cards 
 were played while it is on the board."
 icon = SubResource("AtlasTexture_tj8qu")
