@@ -51,13 +51,6 @@ func _trigger_event():
 		selected_enemy.level = level
 		selected_enemy.rng_seed = combat_seed
 		player.data.draw_rng_seed = draw_seed
-	elif instance is UIBase:
-		var ui_base = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as UIBase
-		ui_base.init(10, self)
-		ui_base.setup()
-		if ui_base is Shop:
-			await ui_base.shop_closed
-		return
 	elif "seed" in instance:
 		instance.seed = seed
 	if instance.has_method("trigger"):
