@@ -25,7 +25,7 @@ var stored_buffs : Array[Buff]
 
 func init(enemy_data):
 	data = enemy_data
-	if data is OldEnemyData:
+	if not data is EnemyData:
 		health = data.health
 	else:
 		set_health(data.get_random_health())
