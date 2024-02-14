@@ -24,7 +24,7 @@ func setup():
 
 
 func select_card():
-	if player_data.cardStack.size() < 3:
+	if player_data.cardStack.size() < 1:
 		return
 	if player_data.currency < card_prize:
 		burn_button.disabled = true
