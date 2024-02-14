@@ -77,20 +77,22 @@ script = ExtResource("1_h5q58")
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rqkcx")
+volume_db = -80.0
 bus = &"Ambience"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hof6i")
-volume_db = -6.0
+volume_db = -80.0
 bus = &"Music"
 
 [node name="Ambience2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rqkcx")
+volume_db = -80.0
 bus = &"Ambience"
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hof6i")
-volume_db = -6.0
+volume_db = -80.0
 bus = &"Music"
 
 [node name="Timer" type="Timer" parent="."]
