@@ -9,6 +9,17 @@ func _ready():
 	SfxBg._playTrack(SfxBg.MapTypes.WINTER)
 
 
+func _process(delta):
+	if OS.has_feature("no-cheat"):
+		return
+	if Input.is_action_just_pressed("debug_quit"):
+		var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
+		shop.init(0, self)
+		shop.setup()
+		SfxBg._playTrack(SfxBg.MapTypes.SHOP)
+		await shop.shop_closed
+
+
 func init(rng_seed, rng_text):
 	rng = RandomNumberGenerator.new()
 	rng.seed = rng_seed
@@ -18,7 +29,7 @@ func init(rng_seed, rng_text):
 
 func setup_ui():
 	var deck_in_menu = SceneHandler.add_ui_element("res://systems/ui/menus/deck_in_menu.tscn") as DeckInMenu
-	deck_in_menu.init(100, self)
+	deck_in_menu.init(75, self)
 	deck_in_menu.setup()
 
 
