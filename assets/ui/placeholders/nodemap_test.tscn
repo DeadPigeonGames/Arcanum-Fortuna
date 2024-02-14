@@ -131,12 +131,12 @@ scene = ExtResource("14_841d0")
 
 [sub_resource type="Resource" id="Resource_35plh"]
 script = ExtResource("11_fvnbs")
-chance_weight = 1
+chance_weight = 0
 scene = ExtResource("16_hntli")
 
 [sub_resource type="Resource" id="Resource_dbbsm"]
 script = ExtResource("11_fvnbs")
-chance_weight = 1
+chance_weight = 0
 scene = ExtResource("17_oknvn")
 
 [node name="NodemapTest" type="Node2D"]

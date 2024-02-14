@@ -1,33 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://y05vxgjpeday"]
+[gd_scene load_steps=5 format=3 uid="uid://y05vxgjpeday"]
 
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="1_v40sn"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/random_event_node.gd" id="2_o3d57"]
-[ext_resource type="Texture2D" uid="uid://bkkrf2ynprn0h" path="res://assets/sprites/nodemap/new_card.png" id="3_jhdmj"]
-[ext_resource type="PackedScene" uid="uid://bggcv7yipjcm7" path="res://systems/dungeon_events/loot_event.tscn" id="4_l5y1o"]
-[ext_resource type="Script" path="res://utils/random_scene.gd" id="4_o67fw"]
-[ext_resource type="Texture2D" uid="uid://dy7tcnyepo7yq" path="res://assets/sprites/nodemap/combat.png" id="6_qf1q0"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="7_0t1fq"]
-[ext_resource type="PackedScene" uid="uid://bml43x2miuf00" path="res://systems/dungeon_events/battle_event.tscn" id="7_aqkus"]
-[ext_resource type="Texture2D" uid="uid://c4txvwxxbco0f" path="res://assets/sprites/nodemap/combat_challenging.png" id="8_1nl3h"]
-[ext_resource type="PackedScene" uid="uid://cdmbv5kshgi6w" path="res://systems/dungeon_events/challenge_battle_event.tscn" id="9_17jt6"]
-
-[sub_resource type="Resource" id="Resource_27kte"]
-script = ExtResource("4_o67fw")
-chance_weight = 1
-scene = ExtResource("4_l5y1o")
-placeholder_icon_texture = ExtResource("3_jhdmj")
-
-[sub_resource type="Resource" id="Resource_e5c68"]
-script = ExtResource("4_o67fw")
-chance_weight = 3
-scene = ExtResource("7_aqkus")
-placeholder_icon_texture = ExtResource("6_qf1q0")
-
-[sub_resource type="Resource" id="Resource_m1a8u"]
-script = ExtResource("4_o67fw")
-chance_weight = 2
-scene = ExtResource("9_17jt6")
-placeholder_icon_texture = ExtResource("8_1nl3h")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kg47n"]
 atlas = ExtResource("7_0t1fq")
@@ -35,7 +10,7 @@ region = Rect2(66, 198, 66, 66)
 
 [node name="RandomEventNode" instance=ExtResource("1_v40sn")]
 script = ExtResource("2_o3d57")
-potential_events = Array[ExtResource("4_o67fw")]([SubResource("Resource_27kte"), SubResource("Resource_e5c68"), SubResource("Resource_m1a8u")])
+potential_events = Array[Resource("res://utils/random_scene.gd")]([])
 lookahead = 2
 disabledColor = Color(0.745098, 0.745098, 0.745098, 1)
 dashed_width = 3.0
