@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://vmliqn78631u"]
+[gd_scene load_steps=56 format=3 uid="uid://vmliqn78631u"]
 
 [ext_resource type="Script" path="res://Audio/GD_SFXOther.gd" id="1_wsfow"]
 [ext_resource type="AudioStream" uid="uid://h78ugsvxhc76" path="res://Audio/Card/CardCardHover1.ogg" id="2_cdbka"]
@@ -34,6 +34,16 @@
 [ext_resource type="AudioStream" uid="uid://bngb3hm60v3vd" path="res://Audio/UI/DestroyCard2.ogg" id="31_i03t3"]
 [ext_resource type="AudioStream" uid="uid://5m68ioyctp7i" path="res://Audio/UI/DestroyCard3.ogg" id="32_wmq4o"]
 [ext_resource type="AudioStream" uid="uid://ifjp0wj7afpr" path="res://Audio/Card/Effect1.ogg" id="34_xuuen"]
+[ext_resource type="AudioStream" uid="uid://c7kkojjquc75y" path="res://Audio/UI/CoinDing1.ogg" id="35_ks7dr"]
+[ext_resource type="AudioStream" uid="uid://haue4jlcbmaf" path="res://Audio/UI/CoinLand1.ogg" id="36_w1lxe"]
+[ext_resource type="AudioStream" uid="uid://da5ilmrnwmeod" path="res://Audio/UI/CoinLand2.ogg" id="37_4cbh1"]
+[ext_resource type="AudioStream" uid="uid://binp0r3adqcuh" path="res://Audio/UI/CoinLand3.ogg" id="38_6jvth"]
+[ext_resource type="AudioStream" uid="uid://24x4qfoes20u" path="res://Audio/UI/CoinLand4.ogg" id="39_1sj7q"]
+[ext_resource type="AudioStream" uid="uid://bamt6qb0qmpb2" path="res://Audio/UI/CoinLand5.ogg" id="40_7761o"]
+[ext_resource type="AudioStream" uid="uid://dp6qj1wrc3xcf" path="res://Audio/Money1.ogg" id="41_84m4w"]
+[ext_resource type="AudioStream" uid="uid://co3jmyshyars5" path="res://Audio/Money2.ogg" id="42_cmuwg"]
+[ext_resource type="AudioStream" uid="uid://cd3y07ronjkgg" path="res://Audio/Money3.ogg" id="43_yc1xh"]
+[ext_resource type="AudioStream" uid="uid://cci6n316fqa5m" path="res://Audio/Money4.ogg" id="44_mk5kh"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sqnrc"]
 random_pitch = 1.25
@@ -134,6 +144,38 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("32_wmq4o")
 stream_2/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m4ekr"]
+random_pitch = 1.4
+streams_count = 1
+stream_0/stream = ExtResource("35_ks7dr")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_byy0p"]
+random_pitch = 1.2
+streams_count = 5
+stream_0/stream = ExtResource("36_w1lxe")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("37_4cbh1")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("38_6jvth")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("39_1sj7q")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("40_7761o")
+stream_4/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3rl3s"]
+random_pitch = 1.3
+streams_count = 4
+stream_0/stream = ExtResource("41_84m4w")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("42_cmuwg")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("43_yc1xh")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("44_mk5kh")
+stream_3/weight = 1.0
+
 [node name="SFXOther" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -221,7 +263,8 @@ stream = SubResource("AudioStreamRandomizer_ul6u8")
 bus = &"SFXOther"
 
 [node name="TestKnockTimer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 8.0
+one_shot = true
 
 [node name="LevelDenoter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_p53re")
@@ -239,5 +282,16 @@ bus = &"UI"
 
 [node name="WinLoss" type="AudioStreamPlayer" parent="."]
 bus = &"UI"
+
+[node name="CoinDing" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_m4ekr")
+bus = &"UI"
+
+[node name="CoinLand" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_byy0p")
+bus = &"UI"
+
+[node name="Money" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_3rl3s")
 
 [connection signal="timeout" from="TestKnockTimer" to="." method="_on_test_knock_timer_timeout"]

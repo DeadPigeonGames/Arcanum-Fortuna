@@ -4,6 +4,7 @@ extends UIBase
 @export var deck_card_template : PackedScene
 @export var is_selectable = false
 
+var previous_current_window
 var player_data : PlayerData
 var card_data_lookup = {}
 var select_button
@@ -21,6 +22,12 @@ func setup():
 	%SortByKarmaButton.grab_focus()
 	select_button.disabled = !is_selectable
 	select_button.visible = is_selectable
+	for node in SceneHandler.ui_container.get_children():
+		if node is UIBase:
+			if node.get_layer() < get_layer():
+				previous_current_window = node
+				previous_current_window.is_current_window = false
+				is_current_window = true
 
 
 func get_cards():
@@ -80,6 +87,8 @@ func sort_health():
 func close():
 	animation_player.play("close_deck_preview")
 	await animation_player.animation_finished
+	if previous_current_window != null:
+		previous_current_window.is_current_window = false
 	super.close()
 
 

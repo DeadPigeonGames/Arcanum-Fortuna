@@ -446,6 +446,7 @@ mouse_filter = 2
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(962, 507)
+current = true
 
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]

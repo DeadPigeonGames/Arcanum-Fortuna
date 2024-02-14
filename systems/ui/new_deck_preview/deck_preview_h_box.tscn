@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cn02v4mw3oewo" path="res://assets/ui/underlays/deck_slot_overlay.png" id="1_grvtu"]
 
 [node name="DeckPreviewHBox" type="TextureRect"]
+z_index = 5
 offset_right = 978.0
 offset_bottom = 266.0
 texture = ExtResource("1_grvtu")
@@ -11,6 +12,7 @@ script = ExtResource("1_fm6rf")
 
 [node name="DeckPreviewHBox" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(978, 266)
+layout_mode = 0
 offset_right = 978.0
 offset_bottom = 266.0
 theme_override_constants/separation = 32

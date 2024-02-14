@@ -85,7 +85,8 @@ func _SFX_Knock():
 	$Knocks.play()
 
 func _on_test_knock_timer_timeout():
-	_SFX_Knock()
+	#_SFX_Knock()
+	_SFX_Coin()
 
 func _SFX_EnterLevel():
 	$LevelDenoter.play()
@@ -103,3 +104,11 @@ func _SFX_Win():
 func _SFX_Loss():
 	$WinLoss.set_stream(SFX_Loss)
 	$WinLoss.play()
+
+func _SFX_Coin():
+	$UiButtonPress.play()
+	$CoinDing.play()
+	$CoinLand.play()
+
+func _SFX_Money():
+	$Money.play()
