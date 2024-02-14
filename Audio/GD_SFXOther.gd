@@ -109,3 +109,6 @@ func _SFX_Coin():
 	$UiButtonPress.play()
 	$CoinDing.play()
 	$CoinLand.play()
+
+func _SFX_Money():
+	$Money.play()
