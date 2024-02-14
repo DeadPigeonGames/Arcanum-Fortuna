@@ -53,7 +53,7 @@ func _trigger_event():
 		player.data.draw_rng_seed = draw_seed
 	elif instance is UIBase:
 		var ui_base = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as UIBase
-		ui_base.init(0, self)
+		ui_base.init(10, self)
 		ui_base.setup()
 		if ui_base is Shop:
 			await ui_base.shop_closed
