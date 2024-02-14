@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="6_wk5c6"]
 [ext_resource type="PackedScene" uid="uid://y05vxgjpeday" path="res://systems/dungeon_exploration/maps/random_event_node.tscn" id="7_7t6tu"]
 [ext_resource type="Texture2D" uid="uid://b5i3gdceaywkm" path="res://assets/ui/nodemap/encounter_elite.png" id="8_6mxc1"]
+[ext_resource type="PackedScene" uid="uid://4el45oxnhsuo" path="res://systems/dungeon_events/shop_event.tscn" id="9_agycr"]
 [ext_resource type="PackedScene" uid="uid://bggcv7yipjcm7" path="res://systems/dungeon_events/loot_event.tscn" id="9_iwnjr"]
 [ext_resource type="Script" path="res://utils/random_scene.gd" id="10_ttikx"]
 [ext_resource type="Texture2D" uid="uid://cj8fhe2r2vwy8" path="res://assets/ui/nodemap/encounter_standard.png" id="11_jtmpe"]
@@ -16,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cttyhls7u4jgr" path="res://assets/ui/nodemap/encounter_card.png" id="13_bvmhs"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="15_ocwq0"]
 [ext_resource type="Texture2D" uid="uid://cc6matgv77q51" path="res://assets/ui/nodemap/encounter_shop.png" id="15_xwpki"]
-[ext_resource type="PackedScene" uid="uid://313ltwpa7fyq" path="res://systems/ui/menus/shop/shop.tscn" id="16_kxsgf"]
 [ext_resource type="Texture2D" uid="uid://b768ea2oy5aym" path="res://assets/ui/nodemap/encounter_final.png" id="17_useq1"]
 [ext_resource type="Texture2D" uid="uid://clda7gnqq52gc" path="res://assets/ui/placeholders/nodemap_1_decoration.png" id="19_o8yvs"]
 
@@ -89,7 +89,7 @@ placeholder_icon_texture = ExtResource("11_jtmpe")
 [sub_resource type="Resource" id="Resource_vhi8f"]
 script = ExtResource("10_ttikx")
 chance_weight = 1
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_qm0sk"]
@@ -101,7 +101,7 @@ placeholder_icon_texture = ExtResource("13_bvmhs")
 [sub_resource type="Resource" id="Resource_irt6a"]
 script = ExtResource("10_ttikx")
 chance_weight = 4
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_871ui"]
@@ -149,7 +149,7 @@ placeholder_icon_texture = ExtResource("11_jtmpe")
 [sub_resource type="Resource" id="Resource_0iaxx"]
 script = ExtResource("10_ttikx")
 chance_weight = 3
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_nlre3"]
@@ -173,7 +173,7 @@ placeholder_icon_texture = ExtResource("8_6mxc1")
 [sub_resource type="Resource" id="Resource_0iv1d"]
 script = ExtResource("10_ttikx")
 chance_weight = 2
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_wobso"]
@@ -215,7 +215,7 @@ placeholder_icon_texture = ExtResource("13_bvmhs")
 [sub_resource type="Resource" id="Resource_oq3ij"]
 script = ExtResource("10_ttikx")
 chance_weight = 2
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_3vuwi"]
@@ -239,7 +239,7 @@ placeholder_icon_texture = ExtResource("13_bvmhs")
 [sub_resource type="Resource" id="Resource_5cpnx"]
 script = ExtResource("10_ttikx")
 chance_weight = 2
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_427fk"]
@@ -257,7 +257,7 @@ placeholder_icon_texture = ExtResource("13_bvmhs")
 [sub_resource type="Resource" id="Resource_jw64k"]
 script = ExtResource("10_ttikx")
 chance_weight = 6
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_bcoy3"]
@@ -335,7 +335,7 @@ placeholder_icon_texture = ExtResource("11_jtmpe")
 [sub_resource type="Resource" id="Resource_hh0qo"]
 script = ExtResource("10_ttikx")
 chance_weight = 3
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_83ac1"]
@@ -371,7 +371,7 @@ placeholder_icon_texture = ExtResource("8_6mxc1")
 [sub_resource type="Resource" id="Resource_1wms6"]
 script = ExtResource("10_ttikx")
 chance_weight = 2
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_fc5wt"]
@@ -395,12 +395,14 @@ placeholder_icon_texture = ExtResource("8_6mxc1")
 [sub_resource type="Resource" id="Resource_htfq0"]
 script = ExtResource("10_ttikx")
 chance_weight = 5
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
+placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_utxjs"]
 script = ExtResource("10_ttikx")
 chance_weight = 1
 scene = ExtResource("9_iwnjr")
+placeholder_icon_texture = ExtResource("13_bvmhs")
 
 [sub_resource type="Resource" id="Resource_g8qmu"]
 script = ExtResource("10_ttikx")
@@ -447,7 +449,7 @@ placeholder_icon_texture = ExtResource("11_jtmpe")
 [sub_resource type="Resource" id="Resource_mpt0l"]
 script = ExtResource("10_ttikx")
 chance_weight = 2
-scene = ExtResource("16_kxsgf")
+scene = ExtResource("9_agycr")
 placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_3x68j"]
