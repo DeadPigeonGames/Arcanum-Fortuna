@@ -55,6 +55,7 @@ func _on_start_button_button_up():
 
 
 func _on_tutorial_button_button_up():
+	Pause.can_pause = true
 	SceneHandler.change_scene(tutorial_scene)
 	var tutorial : CardBattle = SceneHandler.current_scene
 	SceneHandler.combat = tutorial
@@ -83,3 +84,7 @@ func _on_credits_button_button_up():
 func _on_quit_button_button_up():
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
+
+
+func _on_tutorial_button_button_down():
+	SceneHandler.change_scene(tutorial_scene)

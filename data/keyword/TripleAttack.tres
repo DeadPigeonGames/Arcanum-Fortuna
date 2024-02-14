@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_dn2gv")
 title = "Trinity"
-description = "A card with this keyword will both attack diagonally and straight. "
+description = "This card attacks both diagonally and straight. "
 icon = ExtResource("1_vay6t")
 highlight_duration = 1.0

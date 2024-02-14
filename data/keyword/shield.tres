@@ -9,6 +9,6 @@ damage_reduction = 1.0
 fixed_damage_reduction = 0
 uses = 1
 title = "Protection"
-description = "Prevents the first time this card would take damage."
+description = "The first time this card would take damage, it doesn't."
 icon = ExtResource("1_nadmq")
 highlight_duration = 0.5

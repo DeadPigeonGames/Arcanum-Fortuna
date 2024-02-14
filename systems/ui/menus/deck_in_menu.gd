@@ -5,7 +5,7 @@ extends UIBase
 
 var card_stack_node : CardStack
 var deck_preview : DeckPreviewOverlay
-
+var player_data
 
 func _process(delta):
 	visible = SceneHandler.combat == null
@@ -13,11 +13,16 @@ func _process(delta):
 	# Please do not kill me, I am little good boy,
 	# take care of me, need food
 	# (will be changed)
+	if card_stack_node != null:
+		card_stack_node.update_text()
 
 
 func setup():
 	super.setup()
 	await get_tree().process_frame
+	player_data = Player.instance.data
+	card_stack_node = $Control/Button/CardStack
+	card_stack_node.cardStack = player_data.cardStack
 
 
 func _on_button_button_up():

@@ -37,7 +37,6 @@ var seed = 0
 static var nodes_counter := 0
 
 
-
 func _ready():
 	if get_parent().has_method("_on_node_activated"):
 		activated.connect(get_parent()._on_node_activated)

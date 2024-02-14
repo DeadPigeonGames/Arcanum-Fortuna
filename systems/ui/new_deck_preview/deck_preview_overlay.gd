@@ -38,10 +38,10 @@ func setup():
 func get_cards():
 	self.card_data_lookup.clear()
 	for card_data in player_data.cardStack:
-		var filtered_stack = player_data.cardStack.filter(func (x): x.name == card_data.name)
+		var filtered_keys = card_data_lookup.keys().filter(func (x): return x.name == card_data.name)
 		
-		if filtered_stack.size() >= 1:
-			card_data_lookup[filtered_stack[0]] += 1
+		if filtered_keys.size() >= 1:
+			card_data_lookup[filtered_keys[0]] += 1
 		else:
 			card_data_lookup[card_data] = 1
 

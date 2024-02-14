@@ -29,6 +29,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Awaken: Resilience"
-description = "After this card survives a total of %d damage it will transform."
+description = "This card will awaken after taking %d damage."
 icon = SubResource("AtlasTexture_xuji6")
 highlight_duration = 0.5

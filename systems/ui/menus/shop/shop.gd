@@ -13,6 +13,8 @@ var trade_tab_instance
 var burn_tab_instance
 var last_clicked_tab
 var player_data : PlayerData
+var seed := 1337
+var rng = RandomNumberGenerator.new()
 
 func _process(delta):
 	if is_current_window:
@@ -20,6 +22,7 @@ func _process(delta):
 
 
 func setup():
+	SfxBg._playTrack(SfxBg.MapTypes.SHOP)
 	last_clicked_tab = %BuySectionButton
 	player_data = Player.instance.data
 	buy_tab_instance = instance_tab(shop_buy_tab)
@@ -30,6 +33,11 @@ func setup():
 	burn_tab_instance.visible = false
 	current_tab = buy_tab_instance
 	switch_tab_visible(buy_tab_instance)
+
+
+func set_seed(seed : int):
+	self.seed = seed
+	rng.seed = seed
 
 
 func instance_tab(tab : PackedScene):
@@ -43,8 +51,7 @@ func instance_tab(tab : PackedScene):
 
 func receive_result(result):
 	if result is bool and result == true:
-		shop_closed.emit()
-		close()
+		self.close()
 
 
 func card_to_deck_animation(card):
@@ -86,6 +93,11 @@ func has_unfinished_trades():
 	
 	return count > 0
 
+
+func close():
+	shop_closed.emit()
+	super.close()
+
 func _on_buy_section_button_button_up():
 	last_clicked_tab = %BuySectionButton
 	super.switch_tab_visible(buy_tab_instance)
@@ -107,4 +119,4 @@ func _on_leave_shop_button_button_up():
 		popup.init(get_layer(), self)
 		popup.setup_popup(close_unfinished_popup)
 	else:
-		close()
+		self.close()

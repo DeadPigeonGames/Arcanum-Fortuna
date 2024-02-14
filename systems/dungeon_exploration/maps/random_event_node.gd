@@ -52,6 +52,7 @@ func _trigger_event():
 		selected_enemy.rng_seed = combat_seed
 		player.data.draw_rng_seed = draw_seed
 	elif "seed" in instance:
-		instance.seed = seed
-	instance.trigger(player.data, selected_enemy)
+		instance.seed = combat_seed
+	if instance.has_method("trigger"):
+		instance.trigger(player.data, selected_enemy)
 	await instance.finished

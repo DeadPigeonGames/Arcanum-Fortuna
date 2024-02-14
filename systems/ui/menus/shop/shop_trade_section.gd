@@ -32,22 +32,28 @@ func setup():
 func randomize_shop_cards():
 	randomize()
 	var possible_cards = all_cards_resource.all_cards
-	shop_card_1.card_data = possible_cards.pick_random()
-	shop_card_2.card_data = possible_cards.pick_random()
-	shop_card_3.card_data = possible_cards.pick_random()
+	
+	shop_card_1.card_data = get_random_by_seed(possible_cards, called_by.rng)
+	shop_card_2.card_data = get_random_by_seed(possible_cards, called_by.rng)
+	shop_card_3.card_data = get_random_by_seed(possible_cards, called_by.rng)
 
 
 func randomize_hand_cards():
 	var card_stack = player_data.cardStack.duplicate()
-	var card = card_stack.pick_random()
+	var card = get_random_by_seed(card_stack, called_by.rng)
 	hand_card_1.card_data = card.duplicate()
 	card_stack.erase(card)
-	card = card_stack.pick_random()
+	card = get_random_by_seed(card_stack, called_by.rng)
 	hand_card_2.card_data = card.duplicate()
 	card_stack.erase(card)
-	card = card_stack.pick_random()
+	card = get_random_by_seed(card_stack, called_by.rng)
 	hand_card_3.card_data = card.duplicate()
 	card_stack.erase(card)
+
+
+func get_random_by_seed(array, rng):
+	var random_elem = array[rng.randi() % array.size()]
+	return random_elem
 
 
 func process_trade():
@@ -155,6 +161,33 @@ func set_label_gold(amount : int):
 	cost_label.text = cost_label.text.replace("[amount]", str(amount))
 
 
+func disable_lost_cards():
+	var missing_one := false
+	for card_data in player_data.cardStack:
+		missing_one = card_data.name != hand_card_1.card_data.name
+		if not missing_one:
+			break
+	var missing_two := false
+	for card_data in player_data.cardStack:
+		missing_two = card_data.name != hand_card_2.card_data.name
+		if not missing_two:
+			break
+	var missing_three := false
+	for card_data in player_data.cardStack:
+		missing_three = card_data.name != hand_card_3.card_data.name
+		if not missing_three:
+			break
+	if missing_one:
+		hand_card_1.selected = false
+		hand_card_1.visible = false
+	if missing_two:
+		hand_card_2.selected = false
+		hand_card_2.visible = false
+	if missing_three:
+		hand_card_3.selected = false
+		hand_card_3.visible = false
+
+
 func _on_shop_card_clicked():
 	set_trade_button_enabled()
 	await get_tree().process_frame
@@ -167,3 +200,11 @@ func _on_hand_card_clicked():
 
 func _on_trade_button_button_up():
 	process_trade()
+
+
+func _on_visibility_changed():
+	if visible:
+		await get_tree().process_frame
+		disable_lost_cards()
+		set_trade_button_enabled()
+		set_label_gold(get_selected_shop_card_count() * card_prize)

@@ -28,6 +28,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Awaken: Identity"
-description = "This card will transform once its owner controls %d cards sharing its name."
+description = "This card will awaken once its owner controls %d copies of it."
 icon = SubResource("AtlasTexture_tj8qu")
 highlight_duration = 0.5

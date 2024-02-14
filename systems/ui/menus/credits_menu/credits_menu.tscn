@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 1080), Vector2(960, -1080)]
+"values": [Vector2(960, 1080), Vector2(960, -1250)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bulqn"]
@@ -124,25 +124,65 @@ anchor_right = 0.5
 offset_left = -454.0
 offset_top = 314.0
 offset_right = 454.0
+offset_bottom = 1440.0
+grow_horizontal = 2
+theme = ExtResource("2_3l6i4")
+theme_override_constants/line_separation = 20
+bbcode_enabled = true
+text = "[center][b]Art[/b]
+Merit Faske
+Nina Grußendorf
+
+[center][b]Design[/b]
+Till Braunwald
+Matthias Streicher
+
+[center][b]Engineering[/b]
+Benedikt Mertens
+Karl Nehring
+Lukas Schmidt
+
+[center][b]Production[/b]
+Justin Löbel
+
+[center][b]Special Thanks[/b]
+Nico Chera
+Anni Kostrzewa
+Lucie Scieux"
+
+[node name="Credits2" type="RichTextLabel" parent="CreditsMenu/Credits"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.0
+offset_top = 314.0
+offset_right = 454.0
 offset_bottom = 1192.99
 grow_horizontal = 2
 theme = ExtResource("2_3l6i4")
 bbcode_enabled = true
-text = "[center][b]Department[/b]
-Person 1 - Tasks
-Person 2 - Tasks
+text = "[center][b]Art[/b]
+Merit Faske - Art Lead, Illustration, UI Art
+Nina Grußendorf - Illustration
 
-[center][b]Department[/b]
-Person 1 - Tasks
-Person 2 - Tasks
+[center][b]Design[/b]
+Till Braunwald - Design Lead, UI / UX Design
+Matthias Streicher - Balancing
 
-[center][b]Department[/b]
-Person 1 - Tasks
-Person 2 - Tasks
+[center][b]Engineering[/b]
+Benedikt Mertens - Engineering Lead
+Karl Nehring - Prototyping
+Lukas Schmidt - UI Programming
+
+[center][b]Production[/b]
+Justin Löbel - Production
 
 [center][b]Special Thanks[/b]
-Person 1 - Tasks
-Person 2 - Tasks"
+Nico Chera - Sound & Music
+Anni Kostrzewa
+Lucie Scieux"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CreditsMenu"]
 libraries = {
