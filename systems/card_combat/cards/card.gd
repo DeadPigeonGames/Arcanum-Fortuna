@@ -6,6 +6,7 @@ class_name Card extends Control
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
 @export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
+@export var keyword_particles := preload("res://systems/card_combat/effects/keyword_particles.tscn")
 
 
 var artwork_texture : Texture2D
@@ -250,9 +251,15 @@ func set_shader_value(value: float):
 
 
 func animate_icon(emission_texture):
-	%KeywordParticles.texture = emission_texture
-	%KeywordParticles.emitting = true
-	await %KeywordParticles.finished
+	var new_particle = keyword_particles.instantiate()
+	$CenterAnchor.add_child(new_particle)
+	new_particle.texture = emission_texture
+	new_particle.emitting = true
+	await get_tree().create_timer(new_particle.lifetime).timeout
+	new_particle.queue_free()
+	#%KeywordParticles.texture = emission_texture
+	#%KeywordParticles.emitting = true
+	#await %KeywordParticles.finished
 
 
 func _on_mouse_entered():
