@@ -30,6 +30,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Awaken: Spirit"
-description = "This card will reveal it's true form once it survived %d turns on the board. "
+description = "This card will awaken once it used its keyword %d times. "
 icon = SubResource("AtlasTexture_xuji6")
 highlight_duration = 0.5

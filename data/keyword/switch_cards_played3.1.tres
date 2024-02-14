@@ -29,7 +29,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Awaken: Reinforcement"
-description = "This card will transform once %d allied cards 
-were played while it is on the board."
+description = "This card will awaken once %d allied cards were played while it is on the board."
 icon = SubResource("AtlasTexture_tj8qu")
 highlight_duration = 0.5

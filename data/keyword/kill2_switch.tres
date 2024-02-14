@@ -30,6 +30,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Awaken: Victory"
-description = "This card will reveal it's true form once it killed %d enemy cards. "
+description = "This card will awaken once it has killed %d enemy cards."
 icon = SubResource("AtlasTexture_xuji6")
 highlight_duration = 0.5
