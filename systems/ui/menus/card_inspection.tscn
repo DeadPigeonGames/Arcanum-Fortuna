@@ -180,6 +180,8 @@ offset_right = -460.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
 
 [node name="CurrentStatChanges" type="VBoxContainer" parent="CardInspection/ScrollContainer"]
 unique_name_in_owner = true
