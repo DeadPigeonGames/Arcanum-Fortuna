@@ -800,7 +800,7 @@ alignment = 0
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
-text = " YOUR MAP"
+text = " SEEDED RUN"
 alignment = 0
 
 [node name="OptionsButton" type="Button" parent="MainMenuButtons"]
@@ -839,10 +839,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Nodemap1Foreground" type="Sprite2D" parent="Background"]
-position = Vector2(668, 550)
-texture = ExtResource("9_s8mvn")
-
 [node name="Nodemap1" type="Sprite2D" parent="Background"]
 z_index = -1
 position = Vector2(671, 539.5)
@@ -861,6 +857,10 @@ layer_0/tile_data = PackedInt32Array(3342366, 2, 11, 917589, 1048578, 11, 852048
 layer_1/name = "layer 2 (snow)"
 layer_1/tile_data = PackedInt32Array(2424917, 1048576, 14, 2490453, 1048576, 15, 2359382, 1114112, 13, 2424918, 1114112, 14, 2490454, 1114112, 15, 2359383, 1179648, 13, 2424919, 1179648, 14, 2490455, 1179648, 15, 2424920, 1245184, 14, 2490456, 1245184, 15, 2424921, 1310720, 14, 2490457, 1310720, 15, 2424922, 1376256, 14, 2490458, 1376256, 15, 2424923, 1441792, 14, 2490459, 1441792, 15, 2359388, 1507328, 13, 2424924, 1507328, 14, 2490460, 1507328, 15, 2359389, 1572864, 13, 2424925, 1572864, 14, 2490461, 1572864, 15, 2359390, 1638400, 13, 2424926, 1638400, 14, 2490462, 1638400, 15, 2359391, 1703936, 13, 2424927, 1703936, 14, 2490463, 1703936, 15, 2359392, 1769472, 13, 2424928, 1769472, 14, 2490464, 1769472, 15, 2424929, 1835008, 14, 2490465, 1835008, 15, 2490466, 1900544, 15, 3473457, 0, 13, 3538993, 0, 14, 3604529, 0, 15, 3407922, 65536, 12, 3473458, 65536, 13, 3538994, 65536, 14, 3604530, 65536, 15, 3407923, 131072, 12, 3473459, 131072, 13, 3538995, 131072, 14, 3604531, 131072, 15, 3407924, 196608, 12, 3473460, 196608, 13, 3538996, 196608, 14, 3604532, 196608, 15, 3407925, 262144, 12, 3473461, 262144, 13, 3538997, 262144, 14, 3604533, 262144, 15, 3407926, 327680, 12, 3473462, 327680, 13, 3538998, 327680, 14, 3604534, 327680, 15, 3407927, 393216, 12, 3473463, 393216, 13, 3538999, 393216, 14, 3604535, 393216, 15, 3342392, 458752, 11, 3407928, 458752, 12, 3473464, 458752, 13, 3539000, 458752, 14, 3604536, 458752, 15, 3342393, 524288, 11, 3407929, 524288, 12, 3473465, 524288, 13, 3539001, 524288, 14, 3604537, 524288, 15, 3342394, 589824, 11, 3407930, 589824, 12, 3473466, 589824, 13, 3539002, 589824, 14, 3604538, 589824, 15, 3342395, 655360, 11, 3407931, 655360, 12, 3473467, 655360, 13, 3539003, 655360, 14, 3604539, 655360, 15, 3342396, 720896, 11, 3407932, 720896, 12, 3473468, 720896, 13, 3539004, 720896, 14, 3604540, 720896, 15, 3407933, 786432, 12, 3473469, 786432, 13, 3539005, 786432, 14, 3604541, 786432, 15, 3473470, 851968, 13, 3539006, 851968, 14, 3604542, 851968, 15, 3473471, 917504, 13, 3539007, 917504, 14, 3604543, 917504, 15, 3539008, 983040, 14, 3604544, 983040, 15)
 
+[node name="Nodemap1Foreground" type="Sprite2D" parent="Background"]
+position = Vector2(668, 552)
+texture = ExtResource("9_s8mvn")
+
 [node name="SnowParticles" type="GPUParticles2D" parent="Background"]
 position = Vector2(960, -60)
 amount = 120
@@ -870,6 +870,7 @@ lifetime = 24.0
 preprocess = 24.0
 
 [connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_down" from="MainMenuButtons/TutorialButton" to="." method="_on_tutorial_button_button_down"]
 [connection signal="button_up" from="MainMenuButtons/CustomSeedButton" to="." method="_on_custom_seed_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditsButton" to="." method="_on_credits_button_button_up"]
