@@ -153,9 +153,9 @@ element = NodePath("EnemyPlayer/ResourceContainer/Health/HealthIcon")
 [sub_resource type="Resource" id="Resource_dni4d"]
 script = ExtResource("4_w40ps")
 title = ""
-text = "Your [b]cards' [color=darkred]attack[/color][/b] just [b]dealt[/b] some [b]damage to your opponent[/b].
+text = "Your [b]cards' [color=#A11B17]attack[/color][/b] just [b]dealt[/b] some [b]damage to your opponent[/b].
 
-You should always [b]keep an eye on how much [color=goldenrod]health[/color] your foe still has; as soon as it reaches 0,[/b] the match ends and [b]you'll win[/b]!"
+You should always [b]keep an eye on how much [color=#D8A452]health[/color] your foe still has; as soon as it reaches 0,[/b] the match ends and [b]you'll win[/b]!"
 highlighted_elements = Array[NodePath]([NodePath("EnemyPlayer/ResourceContainer/Health/HealthIcon")])
 arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_xumnh")])
 offset_type = 1
@@ -182,7 +182,7 @@ element = NodePath("CardPlayer/ResourceContainer/Karma")
 [sub_resource type="Resource" id="Resource_rbjvu"]
 script = ExtResource("4_w40ps")
 title = ""
-text = "Your [b]cards' [color=darkmagenta]karma[/color] value[/b] just [b]got added to your [color=darkmagenta]karma[/color] pool[/b]!
+text = "Your [b]cards' [color=#682180]karma[/color] value[/b] just [b]got added to your [color=#682180]karma[/color] pool[/b]!
 
 This will [b]always happen after your cards are done attacking[/b]!"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Karma"), NodePath("GameBoard/PlayerTiles/Panel3")])
@@ -276,7 +276,7 @@ element = NodePath("CardPlayer/ResourceContainer/Health/HealthIcon")
 [sub_resource type="Resource" id="Resource_lvque"]
 script = ExtResource("4_w40ps")
 title = ""
-text = "So make sure to always [b]keep an eye on your own [color=goldenrod]health[/color][/b]!
+text = "So make sure to always [b]keep an eye on your own [color=#D8A452]health[/color][/b]!
 Because [b]as soon as it reaches 0, you'll lose![/b]"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Health/HealthIcon")])
 arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_4yrbu")])
@@ -376,7 +376,7 @@ script = ExtResource("4_w40ps")
 title = ""
 text = "[b]You just took some damage![/b]
 
-Whenever your [b]total [color=darkmagenta]karma[/color] goes below 0, the remaining cost will be taken from your [color=goldenrod]health[/color][/b].
+Whenever your [b]total [color=#682180]karma[/color] goes below 0, the remaining cost will be taken from your [color=#D8A452]health[/color][/b].
 So make sure to always find a balance so that you can pay fates' price!"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/ResourceContainer/Health/HealthIcon"), NodePath("CardPlayer/ResourceContainer/Karma"), NodePath("GameBoard/PlayerTiles/Panel3")])
 arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_657i2")])
