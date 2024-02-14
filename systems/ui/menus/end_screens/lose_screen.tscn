@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddpmd4cji8uva"]
+[gd_scene load_steps=7 format=3 uid="uid://ddpmd4cji8uva"]
 
 [ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="1_agx8l"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_b05bo"]
+[ext_resource type="Texture2D" uid="uid://uf36g406dvlv" path="res://assets/ui/underlays/tooltip_underlay.png" id="1_dyhkt"]
 [ext_resource type="Texture2D" uid="uid://cm4an8xwmhk2d" path="res://assets/ui/placeholders/shop_pay_button_pressed_placeholder.png" id="2_addci"]
 [ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="3_1semy"]
 [ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="4_xvk7s"]
@@ -13,6 +14,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dyhkt")
 
 [node name="MenuTitle" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 128)
