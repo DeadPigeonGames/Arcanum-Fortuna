@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
-[ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_r5jdh"]
+[ext_resource type="Texture2D" uid="uid://wur6pg5xwpvh" path="res://assets/ui/underlays/nine_patch_rect.png" id="2_2ooxv"]
 [ext_resource type="Texture2D" uid="uid://b3j5y2qsvio5b" path="res://assets/ui/underlays/tutorial_underlay.png" id="3_uawms"]
 [ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="4_w223y"]
 
@@ -30,12 +30,13 @@ theme_override_constants/margin_bottom = -1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-texture = ExtResource("2_r5jdh")
+texture = ExtResource("2_2ooxv")
 draw_center = false
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+region_rect = Rect2(0, 0, 500, 500)
+patch_margin_left = 50
+patch_margin_top = 51
+patch_margin_right = 50
+patch_margin_bottom = 51
 
 [node name="Background" type="Sprite2D" parent="MarginContainer/NinePatchRect"]
 unique_name_in_owner = true
