@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8xs6q5trxx58"]
+[gd_scene load_steps=8 format=3 uid="uid://b8xs6q5trxx58"]
 
 [ext_resource type="Texture2D" uid="uid://b24ss0es2wjxk" path="res://assets/ui/placeholders/options_underlay_placeholder.png" id="1_45ycb"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_yx2ik"]
 [ext_resource type="Texture2D" uid="uid://cs0rxs0yhh3qy" path="res://assets/ui/placeholders/options_title_underlay_placeholder.png" id="2_4iaqa"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="3_x54wv"]
+[ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="5_xu4n0"]
+[ext_resource type="Texture2D" uid="uid://da83ns8w6wcrx" path="res://assets/ui/placeholders/checkbox_pressed_palceholder.png" id="6_1lfcg"]
+[ext_resource type="Texture2D" uid="uid://ucp5uptgmfr1" path="res://assets/ui/placeholders/chechbox_hover_placeholder.png" id="7_6m8dq"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -85,6 +88,7 @@ grow_vertical = 2
 texture = ExtResource("1_45ycb")
 
 [node name="AudioOptions" type="Control" parent="Options"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -383,7 +387,6 @@ popup/item_3/text = "hella slay so gay"
 popup/item_3/id = 3
 
 [node name="AccessibilityOptions" type="Control" parent="Options"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -452,6 +455,31 @@ alignment = 1
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
+
+[node name="ResetTutorials" type="HBoxContainer" parent="Options/AccessibilityOptions/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/AccessibilityOptions/Options/ResetTutorials"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "RESET TUTORIALS"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/AccessibilityOptions/Options/ResetTutorials"]
+custom_minimum_size = Vector2(296, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Options/AccessibilityOptions/Options/ResetTutorials/HBoxContainer"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+texture_normal = ExtResource("5_xu4n0")
+texture_pressed = ExtResource("6_1lfcg")
+texture_hover = ExtResource("7_6m8dq")
 
 [node name="ReturnButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 80)
