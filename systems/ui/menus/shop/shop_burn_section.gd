@@ -5,6 +5,7 @@ extends UITabBase
 @export var cost_label : Label
 @export var burn_card : ShopPreviewCard
 @export var deck_preview_overlay : PackedScene
+@export var popup : UIPopupData
 @export var card_prize := 4
 
 var deck_preview : DeckPreviewOverlay
@@ -80,7 +81,9 @@ func set_label_gold(amount : int):
 
 
 func _on_burn_button_button_up():
-	execute_burn_card()
+	var popup_instance = SceneHandler.add_ui_element(popup.ui_popup_path) as UIPopup
+	popup_instance.init(20, self)
+	popup_instance.setup_popup(popup)
 
 
 func _on_texture_button_button_up():
