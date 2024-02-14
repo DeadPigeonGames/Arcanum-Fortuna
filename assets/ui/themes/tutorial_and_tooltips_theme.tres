@@ -1,18 +1,18 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://c2as6vbqpnrve"]
 
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="1_dvxjm"]
-[ext_resource type="Texture2D" uid="uid://bc2x3mp3j7q4o" path="res://assets/ui/placeholders/tutorial_popup_next_button_hover_placeholder.png" id="2_45jsr"]
-[ext_resource type="Texture2D" uid="uid://4noi1qdru2wp" path="res://assets/ui/placeholders/tutorial_popup_next_button_default_placeholder.png" id="3_3lqw5"]
-[ext_resource type="Texture2D" uid="uid://cij4e3qijecka" path="res://assets/ui/placeholders/tutorial_popup_next_button_pressed_placeholder.png" id="4_7pp33"]
+[ext_resource type="Texture2D" uid="uid://c2afwlwhg0cbh" path="res://assets/ui/underlays/tutorial_next_button_hover.png" id="2_8fpiv"]
+[ext_resource type="Texture2D" uid="uid://4vvxp0rt66a0" path="res://assets/ui/underlays/tutorial_next_button.png" id="3_83yqt"]
+[ext_resource type="Texture2D" uid="uid://brwth1cudv55l" path="res://assets/ui/underlays/tutorial_next_button_pressed.png" id="4_dc65w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mi2jn"]
-texture = ExtResource("2_45jsr")
+texture = ExtResource("2_8fpiv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpfds"]
-texture = ExtResource("3_3lqw5")
+texture = ExtResource("3_83yqt")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o8e2"]
-texture = ExtResource("4_7pp33")
+texture = ExtResource("4_dc65w")
 
 [sub_resource type="FontVariation" id="FontVariation_bvfhx"]
 base_font = ExtResource("1_dvxjm")
