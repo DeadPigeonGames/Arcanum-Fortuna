@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://313ltwpa7fyq"]
+[gd_scene load_steps=15 format=3 uid="uid://313ltwpa7fyq"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop.gd" id="1_555t3"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="2_npfwa"]
@@ -14,13 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="11_y4e46"]
 [ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="12_107yi"]
 
-[sub_resource type="Resource" id="Resource_k0e42"]
-script = ExtResource("2_npfwa")
-title_text = "really exit"
-content_text = "really exit?"
-confirm_label_text = "yes"
-decline_label_text = "no"
-
 [sub_resource type="Resource" id="Resource_ekxm3"]
 script = ExtResource("2_npfwa")
 title_text = "unfinished business"
@@ -30,7 +23,6 @@ decline_label_text = "no"
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_555t3")
-close_shop_popup = SubResource("Resource_k0e42")
 close_unfinished_popup = SubResource("Resource_ekxm3")
 shop_buy_tab = ExtResource("4_s3t54")
 shop_trade_tab = ExtResource("4_en8fe")
