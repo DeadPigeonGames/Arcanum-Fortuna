@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=23 format=3 uid="uid://byccv8hmd45ln"]
 
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
@@ -13,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://can862dqmhwwo" path="res://assets/ui/placeholders/snowflake_test.png" id="9_se7g8"]
 [ext_resource type="Texture2D" uid="uid://2c184n3ld2p3" path="res://assets/ui/placeholders/nodemap_1_background.png" id="11_f5nm2"]
 [ext_resource type="Texture2D" uid="uid://clda7gnqq52gc" path="res://assets/ui/placeholders/nodemap_1_decoration.png" id="12_i1n8b"]
+[ext_resource type="Texture2D" uid="uid://cdrck7c31mi66" path="res://assets/ui/underlays/logo_large.png" id="14_3bmnv"]
+[ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="15_xiui0"]
+[ext_resource type="Texture2D" uid="uid://bjug7af7np3ak" path="res://assets/sprites/vfx/sparkle_particle_1.png" id="16_06j1n"]
+[ext_resource type="Texture2D" uid="uid://cqgd8kv6l6uen" path="res://assets/sprites/dialogue/dg_dog.png" id="17_j5ig3"]
+[ext_resource type="Texture2D" uid="uid://4g6j222ehm2w" path="res://assets/sprites/dialogue/fool_default_nodog.png" id="18_n3puc"]
 
 [sub_resource type="Resource" id="Resource_qq38u"]
 script = ExtResource("6_hn0r2")
@@ -748,6 +753,7 @@ credits_scene = ExtResource("5_cwqwb")
 seed_popup_data = SubResource("Resource_qq38u")
 
 [node name="MenuTitle" type="RichTextLabel" parent="."]
+visible = false
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 0
 offset_left = 64.0
@@ -761,6 +767,7 @@ bbcode_enabled = true
 text = "[b]ARCANUM FORTUNA"
 
 [node name="MenuSubtitle" type="RichTextLabel" parent="."]
+visible = false
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 0
 offset_left = 64.0
@@ -868,6 +875,40 @@ process_material = SubResource("ParticleProcessMaterial_fl8tn")
 texture = ExtResource("9_se7g8")
 lifetime = 24.0
 preprocess = 24.0
+
+[node name="LogoLarge" type="Sprite2D" parent="."]
+position = Vector2(235, 185)
+scale = Vector2(0.4738, 0.4738)
+texture = ExtResource("14_3bmnv")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="LogoLarge"]
+position = Vector2(-234.276, -48.5437)
+amount = 2
+process_material = ExtResource("15_xiui0")
+texture = ExtResource("16_06j1n")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="LogoLarge"]
+position = Vector2(25.3272, -48.5437)
+amount = 2
+process_material = ExtResource("15_xiui0")
+texture = ExtResource("16_06j1n")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="LogoLarge"]
+position = Vector2(280.709, -67.539)
+amount = 2
+process_material = ExtResource("15_xiui0")
+texture = ExtResource("16_06j1n")
+
+[node name="DgDog" type="Sprite2D" parent="."]
+position = Vector2(1094, 622)
+scale = Vector2(0.558095, 0.558095)
+texture = ExtResource("17_j5ig3")
+
+[node name="FoolDefault" type="Sprite2D" parent="."]
+position = Vector2(1604.5, 586.5)
+scale = Vector2(0.602857, 0.602857)
+texture = ExtResource("18_n3puc")
+flip_h = true
 
 [connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_down" from="MainMenuButtons/TutorialButton" to="." method="_on_tutorial_button_button_down"]
