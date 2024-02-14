@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=51 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
@@ -24,26 +24,20 @@
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="17_37lf3"]
 [ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="18_avl72"]
 [ext_resource type="Resource" uid="uid://cjas1prwh50gk" path="res://data/cards/the_hanged_man.tres" id="19_cdqgj"]
-[ext_resource type="Resource" uid="uid://cngbvoyvbgogi" path="res://data/cards/the_tower.tres" id="20_18p1g"]
 [ext_resource type="Resource" uid="uid://q3wogyvkudaf" path="res://data/cards/king_of_flags.tres" id="21_mpwgk"]
 [ext_resource type="Resource" uid="uid://csr1pvebvy0ae" path="res://data/cards/king_of_herbs.tres" id="22_eqva3"]
 [ext_resource type="Resource" uid="uid://nr5du58leen5" path="res://data/cards/king_of_thorns.tres" id="23_gsrsm"]
 [ext_resource type="Resource" uid="uid://d4guw6tm3pttg" path="res://data/cards/king_of_daggers.tres" id="24_pevg5"]
-[ext_resource type="Resource" uid="uid://deonq2pnkifc2" path="res://data/cards/the_devil.tres" id="25_f4raq"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="26_pregp"]
-[ext_resource type="Resource" uid="uid://buthwniwc7tav" path="res://data/cards/temperance.tres" id="26_vkjks"]
-[ext_resource type="Resource" uid="uid://bk8j8nba8r18d" path="res://data/cards/wheel_of_fortune.tres" id="27_yj73i"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="28_bgh43"]
 [ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="29_2priw"]
 [ext_resource type="Resource" uid="uid://dpspidmqwqebx" path="res://data/cards/the_world.tres" id="30_subjn"]
 [ext_resource type="Resource" uid="uid://bjlneh5al3d8x" path="res://data/cards/queen_of_daggers.tres" id="31_l3eet"]
-[ext_resource type="Resource" uid="uid://co84mncwqr573" path="res://data/cards/queen_of_flags.tres" id="32_sfotu"]
 [ext_resource type="Resource" uid="uid://d2b7yscmtse2l" path="res://data/cards/queen_of_herbs.tres" id="33_odtm4"]
 [ext_resource type="Resource" uid="uid://ciai4bipoidj6" path="res://data/cards/queen_of_thorns.tres" id="34_1d4eq"]
 [ext_resource type="Resource" uid="uid://s2luhru0dtce" path="res://data/cards/knight_of_daggers.tres" id="35_8nhqe"]
 [ext_resource type="Resource" uid="uid://ncfdsv56qat7" path="res://data/cards/knight_of_flags.tres" id="36_2bd23"]
 [ext_resource type="Resource" uid="uid://b05drmja6ckug" path="res://data/cards/knight_of_herbs.tres" id="37_tmwwf"]
-[ext_resource type="Resource" uid="uid://vtxg3gn2kpbu" path="res://data/cards/knight_of_thorns.tres" id="38_w4o6x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oroll"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.87451)
@@ -295,7 +289,7 @@ _data = {
 
 [node name="LootEvent" type="Node"]
 script = ExtResource("1_dmmsx")
-possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov"), ExtResource("13_i20vq"), ExtResource("14_yblq6"), ExtResource("15_pfa0e"), ExtResource("16_qho8o"), ExtResource("17_0fg6u"), ExtResource("18_avl72"), ExtResource("19_cdqgj"), ExtResource("20_18p1g"), ExtResource("21_mpwgk"), ExtResource("22_eqva3"), ExtResource("23_gsrsm"), ExtResource("24_pevg5"), ExtResource("25_f4raq"), ExtResource("26_vkjks"), ExtResource("27_yj73i"), ExtResource("28_bgh43"), ExtResource("29_2priw"), ExtResource("30_subjn"), ExtResource("31_l3eet"), ExtResource("32_sfotu"), ExtResource("33_odtm4"), ExtResource("34_1d4eq"), ExtResource("35_8nhqe"), ExtResource("36_2bd23"), ExtResource("37_tmwwf"), ExtResource("38_w4o6x")])
+possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov"), ExtResource("13_i20vq"), ExtResource("14_yblq6"), ExtResource("15_pfa0e"), ExtResource("16_qho8o"), ExtResource("17_0fg6u"), ExtResource("18_avl72"), ExtResource("19_cdqgj"), ExtResource("21_mpwgk"), ExtResource("22_eqva3"), ExtResource("23_gsrsm"), ExtResource("24_pevg5"), ExtResource("28_bgh43"), ExtResource("29_2priw"), ExtResource("30_subjn"), ExtResource("31_l3eet"), ExtResource("33_odtm4"), ExtResource("34_1d4eq"), ExtResource("35_8nhqe"), ExtResource("36_2bd23"), ExtResource("37_tmwwf")])
 cardTemplate = ExtResource("1_panx4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
