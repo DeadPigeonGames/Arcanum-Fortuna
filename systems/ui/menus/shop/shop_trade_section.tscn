@@ -184,6 +184,7 @@ delete_material = null
 layout_mode = 2
 delete_material = null
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard1" to="." method="_on_shop_card_clicked"]
 [connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard2" to="." method="_on_shop_card_clicked"]
 [connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard3" to="." method="_on_shop_card_clicked"]

@@ -167,3 +167,8 @@ func _on_hand_card_clicked():
 
 func _on_trade_button_button_up():
 	process_trade()
+
+
+func _on_visibility_changed():
+	if visible:
+		pass
