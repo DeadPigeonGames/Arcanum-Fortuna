@@ -99,3 +99,8 @@ func _on_switch_button_mouse_exited():
 func _on_close_window_button_button_up():
 	inspection_closed.emit()
 	close()
+
+
+func _on_color_rect_gui_input(event):
+	if event.is_action_released("pickUpCard") or event.is_action_released("open_inspection"):
+		close()
