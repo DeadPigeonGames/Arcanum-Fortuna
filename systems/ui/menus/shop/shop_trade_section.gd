@@ -155,6 +155,12 @@ func set_label_gold(amount : int):
 	cost_label.text = cost_label.text.replace("[amount]", str(amount))
 
 
+func disable_lost_cards():
+	var missing_one := false
+	for card_data in player_data.cardStack:
+		pass#if card_data.name
+
+
 func _on_shop_card_clicked():
 	set_trade_button_enabled()
 	await get_tree().process_frame
@@ -171,4 +177,4 @@ func _on_trade_button_button_up():
 
 func _on_visibility_changed():
 	if visible:
-		pass
+		disable_lost_cards()

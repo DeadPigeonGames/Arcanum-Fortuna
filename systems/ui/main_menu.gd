@@ -55,6 +55,7 @@ func _on_start_button_button_up():
 
 
 func _on_tutorial_button_button_up():
+	Pause.can_pause = true
 	SceneHandler.change_scene(tutorial_scene)
 	var tutorial : CardBattle = SceneHandler.current_scene
 	SceneHandler.combat = tutorial

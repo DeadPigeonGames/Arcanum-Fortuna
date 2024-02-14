@@ -14,7 +14,7 @@ func _process(delta):
 		return
 	if Input.is_action_just_pressed("debug_quit"):
 		var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
-		shop.init(0, self)
+		shop.init(10, self)
 		shop.setup()
 		SfxBg._playTrack(SfxBg.MapTypes.SHOP)
 		await shop.shop_closed
