@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cy7r8u5ck052l"]
+[gd_scene load_steps=29 format=3 uid="uid://cy7r8u5ck052l"]
 
 [ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="1_4wcvd"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/level.gd" id="1_44yos"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bbhypmndv2m7q" path="res://systems/dungeon_exploration/maps/node_map_loader.tscn" id="12_c42ig"]
 [ext_resource type="PackedScene" uid="uid://n6x1mb4dktgr" path="res://systems/dungeon_exploration/maps/layouts/node_map_test_2.tscn" id="12_iuld8"]
 [ext_resource type="PackedScene" uid="uid://c8wrkx1o0ism" path="res://systems/dungeon_exploration/maps/node_maps_winter/node_map_winter_1.tscn" id="14_841d0"]
+[ext_resource type="PackedScene" uid="uid://coyiok3kl5ln7" path="res://systems/dungeon_exploration/maps/node_maps_winter/node_map_winter_2.tscn" id="16_hntli"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ru5t"]
 shader = ExtResource("3_fnpom")
@@ -114,18 +115,23 @@ scale_max = 0.8
 
 [sub_resource type="Resource" id="Resource_gijmu"]
 script = ExtResource("11_fvnbs")
-chance_weight = 1
+chance_weight = 0
 scene = ExtResource("10_3mqxt")
 
 [sub_resource type="Resource" id="Resource_ntgcp"]
 script = ExtResource("11_fvnbs")
-chance_weight = 1
+chance_weight = 0
 scene = ExtResource("12_iuld8")
 
 [sub_resource type="Resource" id="Resource_wlrje"]
 script = ExtResource("11_fvnbs")
-chance_weight = 98
+chance_weight = 1
 scene = ExtResource("14_841d0")
+
+[sub_resource type="Resource" id="Resource_35plh"]
+script = ExtResource("11_fvnbs")
+chance_weight = 1
+scene = ExtResource("16_hntli")
 
 [node name="NodemapTest" type="Node2D"]
 script = ExtResource("1_44yos")
@@ -134,7 +140,7 @@ node_map_path = NodePath("NodeMapLoader")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, -180)
 transform = Transform2D(1, 0, 0, 1, 0, -180)
-scroll_offset = Vector2(-1487.44, -81.9713)
+scroll_offset = Vector2(-1726.93, -89.8281)
 
 [node name="BaseLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(2760, 0)
@@ -190,7 +196,7 @@ offset_bottom = 545.0
 mouse_filter = 2
 
 [node name="SnowParticles" type="GPUParticles2D" parent="LimitedCamera"]
-position = Vector2(480, -600)
+position = Vector2(480, -630)
 amount = 160
 process_material = SubResource("ParticleProcessMaterial_op1x3")
 texture = ExtResource("10_v8li0")
@@ -203,4 +209,4 @@ offset_top = 696.0
 offset_right = 153.0
 offset_bottom = 696.0
 mouse_filter = 1
-potential_node_maps = Array[ExtResource("11_fvnbs")]([SubResource("Resource_gijmu"), SubResource("Resource_ntgcp"), SubResource("Resource_wlrje")])
+potential_node_maps = Array[ExtResource("11_fvnbs")]([SubResource("Resource_gijmu"), SubResource("Resource_ntgcp"), SubResource("Resource_wlrje"), SubResource("Resource_35plh")])
