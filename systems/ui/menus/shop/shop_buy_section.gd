@@ -18,7 +18,6 @@ func setup():
 	original_price_text = cost_label.text
 	reset_button()
 	player_data = Player.instance.data
-	player_data.currency = 15
 	randomize()
 	var possible_cards = all_cards_resource.all_cards
 	shop_card_1.card_data = possible_cards.pick_random()

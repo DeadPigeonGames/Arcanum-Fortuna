@@ -31,6 +31,9 @@ func setup_ui():
 	var deck_in_menu = SceneHandler.add_ui_element("res://systems/ui/menus/deck_in_menu.tscn") as DeckInMenu
 	deck_in_menu.init(75, self)
 	deck_in_menu.setup()
+	var player_resources = SceneHandler.add_ui_element("res://systems/ui/menus/utils/player_resource_ui.tscn")
+	player_resources.init(70, self)
+	player_resources.setup()
 
 
 func _on_node_activated(node : EventNode):

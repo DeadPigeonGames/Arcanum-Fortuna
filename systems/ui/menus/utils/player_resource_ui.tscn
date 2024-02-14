@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://u50shm5kgno7"]
+
+[ext_resource type="Script" path="res://systems/ui/menus/utils/player_resource_ui.gd" id="1_58gwm"]
+
+[node name="PlayerResources" type="CanvasLayer"]
+script = ExtResource("1_58gwm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="DeleteMe" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Gold: "
+
+[node name="GoldLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+
+[node name="DeleteMe2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Health: "
+
+[node name="HealthLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
