@@ -151,6 +151,16 @@ _data = {
 script = ExtResource("1_mj3a2")
 deck_card_template = ExtResource("2_ilop0")
 
+[node name="Background" type="ColorRect" parent="."]
+z_index = -5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.509804)
+
 [node name="DeckPreviewOverlay" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 7
@@ -303,6 +313,7 @@ libraries = {
 }
 
 [node name="SelectCardsToBurnShopButton" type="TextureButton" parent="DeckPreviewOverlay"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -341,3 +352,4 @@ vertical_alignment = 1
 [connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByAttackButton" to="." method="_on_sort_by_attack_button_button_up"]
 [connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByHealthButton" to="." method="_on_sort_by_health_button_button_up"]
 [connection signal="button_up" from="DeckPreviewOverlay/CloseWindowButton" to="." method="_on_close_window_button_button_up"]
+[connection signal="button_up" from="DeckPreviewOverlay/SelectCardsToBurnShopButton" to="." method="_on_select_cards_to_burn_shop_button_button_up"]

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="7_y4382"]
 [ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="8_f1wal"]
 
-[node name="ShopBuySection" type="Control" node_paths=PackedStringArray("shop_card_1", "shop_card_2", "shop_card_3")]
+[node name="ShopBuySection" type="Control" node_paths=PackedStringArray("cost_label", "shop_card_1", "shop_card_2", "shop_card_3")]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_nlq55")
 all_cards_resource = ExtResource("2_i7f4d")
+cost_label = NodePath("PayButton/Label")
 shop_card_1 = NodePath("AvailableOffer/HBoxContainer/ShopCard1")
 shop_card_2 = NodePath("AvailableOffer/HBoxContainer/ShopCard2")
 shop_card_3 = NodePath("AvailableOffer/HBoxContainer/ShopCard3")
@@ -107,6 +108,7 @@ layout_mode = 2
 delete_material = null
 
 [node name="PayButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -137,8 +139,11 @@ offset_right = 200.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Buy for X Gold"
+text = "Buy for [amount] Gold"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard1" to="." method="_on_shop_card_clicked"]
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard2" to="." method="_on_shop_card_clicked"]
+[connection signal="clicked" from="AvailableOffer/HBoxContainer/ShopCard3" to="." method="_on_shop_card_clicked"]
 [connection signal="button_up" from="PayButton" to="." method="_on_pay_button_button_up"]

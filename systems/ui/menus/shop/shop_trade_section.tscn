@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="7_rt4em"]
 [ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="8_cotqf"]
 
-[node name="ShopTradeSection" type="Control" node_paths=PackedStringArray("shop_card_1", "shop_card_2", "shop_card_3", "hand_card_1", "hand_card_2", "hand_card_3")]
+[node name="ShopTradeSection" type="Control" node_paths=PackedStringArray("cost_label", "shop_card_1", "shop_card_2", "shop_card_3", "hand_card_1", "hand_card_2", "hand_card_3")]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_li3lg")
 all_cards_resource = ExtResource("3_fyg27")
+cost_label = NodePath("TradeButton/Label")
 shop_card_1 = NodePath("AvailableOffer/HBoxContainer/ShopCard1")
 shop_card_2 = NodePath("AvailableOffer/HBoxContainer/ShopCard2")
 shop_card_3 = NodePath("AvailableOffer/HBoxContainer/ShopCard3")
@@ -141,7 +142,7 @@ offset_right = 200.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Trade for X Gold"
+text = "Trade for [amount] Gold"
 horizontal_alignment = 1
 vertical_alignment = 1
 

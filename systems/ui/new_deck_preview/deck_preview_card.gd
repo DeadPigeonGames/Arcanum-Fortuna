@@ -3,12 +3,17 @@ extends Control
 
 var counter : Control
 var label : Label
-var card : Card
+var select_card : SelectCard
 
-func setup(card_data, amount):
+func setup(card_data, amount, is_selectable):
 	label = %CopyCounterLabel
-	card = %Card
+	select_card = %SelectCard
 	counter = %CopyCounter
 	counter.visible = amount != 1
 	label.text = str(amount)
-	card.card_data = card_data
+	select_card.card_data = card_data
+	select_card.is_selectable = is_selectable
+
+
+func is_selected():
+	return select_card.selected

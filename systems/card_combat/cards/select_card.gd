@@ -6,6 +6,7 @@ signal clicked
 @export var selected_shader : ColorRect
 
 var selected := false
+var is_selectable = true
 
 @onready var base_scale = scale
 
@@ -17,7 +18,7 @@ func _input(event):
 		new_inspection.inspection_init(self)
 		SceneHandler.add_ui_element(new_inspection)
 	
-	if is_hovered and event.is_action_pressed("pickUpCard"):
+	if is_selectable and is_hovered and event.is_action_pressed("pickUpCard"):
 		clicked.emit(self)
 		self.selected = not selected
 		self.selected_shader.visible = selected

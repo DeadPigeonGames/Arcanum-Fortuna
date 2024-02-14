@@ -1,18 +1,19 @@
 class_name ShopTradeSection
 extends UITabBase
 
-@export var card_prize := 3
 @export var all_cards_resource : AllCards
+@export var cost_label : Label
 @export var shop_card_1 : ShopPreviewCard
 @export var shop_card_2 : ShopPreviewCard
 @export var shop_card_3 : ShopPreviewCard
 @export var hand_card_1 : ShopPreviewCard
 @export var hand_card_2 : ShopPreviewCard
 @export var hand_card_3 : ShopPreviewCard
+@export var card_prize := 3
 
 var player_data : PlayerData
 var trade_button
-
+var original_price_text : String
 
 func setup():
 	trade_button = $TradeButton
@@ -23,7 +24,8 @@ func setup():
 	hand_card_2.selected_shader.color = Color.DARK_BLUE
 	hand_card_3.selected_shader.color = Color.DARK_BLUE
 	set_trade_button_enabled()
-	
+	original_price_text = cost_label.text
+	set_label_gold(0)
 
 
 func randomize_shop_cards():
@@ -32,7 +34,6 @@ func randomize_shop_cards():
 	shop_card_1.card_data = possible_cards.pick_random()
 	shop_card_2.card_data = possible_cards.pick_random()
 	shop_card_3.card_data = possible_cards.pick_random()
-	
 
 
 func randomize_hand_cards():
@@ -145,8 +146,15 @@ func set_trade_button_enabled():
 	trade_button.disabled = false
 
 
+func set_label_gold(amount : int):
+	cost_label.text = original_price_text
+	cost_label.text = cost_label.text.replace("[amount]", str(amount))
+
+
 func _on_shop_card_clicked():
 	set_trade_button_enabled()
+	await get_tree().process_frame
+	set_label_gold(get_selected_shop_card_count() * card_prize)
 
 
 func _on_hand_card_clicked():

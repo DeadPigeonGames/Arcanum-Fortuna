@@ -3,7 +3,6 @@ extends UIBase
 
 @export var deck_preview_overlay : PackedScene
 
-var player_data : PlayerData
 var card_stack_node : CardStack
 var deck_preview : DeckPreviewOverlay
 
@@ -19,15 +18,13 @@ func _process(delta):
 func setup():
 	super.setup()
 	await get_tree().process_frame
-	player_data = Player.instance.data
 
 
 func _on_button_button_up():
 	if not deck_preview:
 		deck_preview = SceneHandler.add_ui_element(deck_preview_overlay) as DeckPreviewOverlay
-		deck_preview.init(get_layer(), self)
+		deck_preview.init(get_layer() + 1, self)
 		deck_preview.setup()
-		deck_preview.setup_player_data(player_data)
 	else:
 		await deck_preview.close()
 		deck_preview = null

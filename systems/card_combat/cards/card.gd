@@ -29,6 +29,7 @@ var default_keywordslot_atlas : Texture
 
 
 func _ready():
+	delete_material = load("res://shaders/card_burn.tres")
 	if card_data != null and !was_preloaded:
 		load_from_data(card_data)
 	if !was_preloaded:
@@ -38,7 +39,7 @@ func _ready():
 func _input(event: InputEvent):
 	if is_hovered and event.is_action_pressed("open_inspection"):
 		var new_inspection = inspection.instantiate() as CardInspection
-		new_inspection.init(75, self)
+		new_inspection.init(110, self)
 		new_inspection.inspection_init(self)
 		SceneHandler.add_ui_element(new_inspection)
 
@@ -226,7 +227,6 @@ func play_cardflip(forward : bool):
 
 func animate_burn():
 	var artwork = %Artwork
-	delete_material = load("res://shaders/card_burn.tres")
 	artwork.material = self.delete_material
 	await get_tree().process_frame
 	%Cardback.visible = false
@@ -244,6 +244,8 @@ func animate_burn():
 
 func set_shader_value(value: float):
 	var artwork = %Artwork
+	if artwork.material == null:
+		return
 	artwork.material.set_shader_parameter("progress", value);
 
 

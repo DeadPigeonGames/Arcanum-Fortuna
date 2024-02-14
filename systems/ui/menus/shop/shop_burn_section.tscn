@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://fa4xb26tm6iu"]
+[gd_scene load_steps=12 format=3 uid="uid://fa4xb26tm6iu"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_burn_section.gd" id="1_21rt2"]
 [ext_resource type="PackedScene" uid="uid://ba7hqrlkxau6b" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5tl8o"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="2_8dnxu"]
 [ext_resource type="Resource" uid="uid://du4544pn8giog" path="res://utils/all_cards_resource.tres" id="2_22o7m"]
+[ext_resource type="PackedScene" uid="uid://cbsn1r2h288lq" path="res://systems/ui/new_deck_preview/deck_preview_overlay.tscn" id="3_6sr1i"]
 [ext_resource type="Texture2D" uid="uid://dars7yhkvi48j" path="res://assets/ui/underlays/shop_burn.png" id="4_s18qy"]
 [ext_resource type="Texture2D" uid="uid://mg2c1qenfgr0" path="res://assets/ui/underlays/shop_burn_hover.png" id="5_bikae"]
 [ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="6_7o87m"]
@@ -11,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="8_yxhup"]
 [ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="9_oaws2"]
 
-[node name="ShopBurnSection" type="Control" node_paths=PackedStringArray("burn_card_1")]
+[node name="ShopBurnSection" type="Control" node_paths=PackedStringArray("cost_label", "burn_card")]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -22,7 +23,9 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_21rt2")
 all_cards_resource = ExtResource("2_22o7m")
-burn_card_1 = NodePath("AvailableOffer/ShopCard")
+cost_label = NodePath("BurnButton/Label")
+burn_card = NodePath("AvailableOffer/ShopCard")
+deck_preview_overlay = ExtResource("3_6sr1i")
 
 [node name="SectionExplanation" type="Control" parent="."]
 custom_minimum_size = Vector2(480, 120)
@@ -142,6 +145,9 @@ offset_right = 200.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Burn for X Gold"
+text = "Burn for [amount] Gold"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_up" from="AvailableOffer/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="BurnButton" to="." method="_on_burn_button_button_up"]
