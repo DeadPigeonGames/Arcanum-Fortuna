@@ -51,7 +51,7 @@ TWO LINES!"
 autowrap_mode = 3
 
 [node name="separator" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_gpfac")
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
-color = Color(0, 0, 0, 1)
