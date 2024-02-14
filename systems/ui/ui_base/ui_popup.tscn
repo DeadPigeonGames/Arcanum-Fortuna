@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq1c3cgx11dk8"]
+[gd_scene load_steps=13 format=3 uid="uid://dq1c3cgx11dk8"]
 
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup.gd" id="1_uc4qs"]
 [ext_resource type="Texture2D" uid="uid://wur6pg5xwpvh" path="res://assets/ui/underlays/nine_patch_rect.png" id="2_byvas"]
 [ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="3_3xiu2"]
 [ext_resource type="Texture2D" uid="uid://ra1cxkpi3adh" path="res://assets/ui/underlays/pop_up.png" id="3_whnro"]
+[ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="4_bnnff"]
 [ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="4_gv58y"]
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="5_2hte8"]
 [ext_resource type="Texture2D" uid="uid://df2r4ns72cbex" path="res://assets/ui/buttons/default_button_disabled.png" id="6_y41qu"]
@@ -55,15 +56,14 @@ patch_margin_top = 50
 patch_margin_right = 50
 patch_margin_bottom = 48
 
-[node name="Background" type="Sprite2D" parent="CardTooltip/MarginContainer/NinePatchRect"]
-z_index = -10
-position = Vector2(384, 220)
+[node name="Background" type="TextureRect" parent="CardTooltip/MarginContainer"]
+layout_mode = 2
 texture = ExtResource("3_whnro")
 
 [node name="MarginContainer" type="MarginContainer" parent="CardTooltip/MarginContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 18
 
@@ -72,8 +72,9 @@ layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme = ExtResource("4_bnnff")
 bbcode_enabled = true
 text = "[center]Title[/center]"
 fit_content = true
@@ -82,7 +83,7 @@ fit_content = true
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme = ExtResource("4_bnnff")
 bbcode_enabled = true
 text = "[center]Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 fit_content = true
@@ -120,6 +121,7 @@ offset_right = 160.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_bnnff")
 text = "Confirm"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -147,6 +149,7 @@ offset_right = 160.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_bnnff")
 text = "Decline"
 horizontal_alignment = 1
 vertical_alignment = 1
