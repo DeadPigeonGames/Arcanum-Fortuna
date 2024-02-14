@@ -26,7 +26,7 @@ func setup():
 func get_cards():
 	self.card_data_lookup.clear()
 	for card in player_data.cardStack:
-		if card_data_lookup.keys().has(card):
+		if card in card_data_lookup:
 			card_data_lookup[card] += 1
 		else:
 			card_data_lookup[card] = 1
