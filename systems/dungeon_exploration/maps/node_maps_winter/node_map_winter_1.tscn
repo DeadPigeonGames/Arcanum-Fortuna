@@ -149,11 +149,13 @@ placeholder_icon_texture = ExtResource("11_jtmpe")
 script = ExtResource("10_ttikx")
 chance_weight = 3
 scene = ExtResource("16_kxsgf")
+placeholder_icon_texture = ExtResource("15_xwpki")
 
 [sub_resource type="Resource" id="Resource_nlre3"]
 script = ExtResource("10_ttikx")
 chance_weight = 1
 scene = ExtResource("9_iwnjr")
+placeholder_icon_texture = ExtResource("13_bvmhs")
 
 [sub_resource type="Resource" id="Resource_kldf1"]
 script = ExtResource("10_ttikx")
