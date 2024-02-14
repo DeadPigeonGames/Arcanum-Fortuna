@@ -170,6 +170,7 @@ process_material = SubResource("ParticleProcessMaterial_op1x3")
 texture = ExtResource("10_v8li0")
 lifetime = 12.0
 preprocess = 10.0
+interpolate = false
 
 [node name="NodeMapLoader" parent="." instance=ExtResource("12_c42ig")]
 offset_left = 153.0
