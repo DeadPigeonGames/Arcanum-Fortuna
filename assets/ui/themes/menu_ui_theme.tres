@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://c7p1723d7vwmm" path="res://assets/ui/placeholders/slider_underlay_placeholder.png" id="6_gytlh"]
 [ext_resource type="Texture2D" uid="uid://dxdqk7nuke6pl" path="res://assets/ui/underlays/checkbox_normal.png" id="8_2uqr7"]
 [ext_resource type="Texture2D" uid="uid://elmcuxrwc3gy" path="res://assets/ui/underlays/checkbox_pressed.png" id="9_g6w5p"]
-[ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="11_ujdwx"]
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="12_jpktw"]
 [ext_resource type="Texture2D" uid="uid://cxus1gwafldoq" path="res://assets/ui/underlays/arrow_rotate.png" id="12_js0ve"]
 [ext_resource type="Texture2D" uid="uid://ekybiptenoks" path="res://assets/ui/underlays/dropdown_hover.png" id="13_8w43k"]
 [ext_resource type="Texture2D" uid="uid://cb8qb2e1h7j15" path="res://assets/ui/underlays/dropdown_normal.png" id="14_suvl3"]
 [ext_resource type="Texture2D" uid="uid://druqflvaf6u3u" path="res://assets/ui/underlays/dropdown_pressed.png" id="15_vyktn"]
+[ext_resource type="Texture2D" uid="uid://d233avcta64f" path="res://assets/ui/underlays/options_underlay.png" id="16_pdg3v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exx6k"]
 texture = ExtResource("1_nhmbk")
@@ -75,10 +75,10 @@ texture = ExtResource("14_suvl3")
 texture = ExtResource("15_vyktn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xvo6"]
-texture = ExtResource("5_cof3b")
+texture = ExtResource("3_13teg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_obkvj"]
-texture = ExtResource("11_ujdwx")
+texture = ExtResource("16_pdg3v")
 
 [sub_resource type="FontVariation" id="FontVariation_bruvd"]
 base_font = ExtResource("12_jpktw")
