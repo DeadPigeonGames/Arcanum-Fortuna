@@ -9,14 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://c1qm6wtdsqwjc" path="res://assets/ui/placeholders/slider_fill_placeholder.png" id="5_cof3b"]
 [ext_resource type="Texture2D" uid="uid://ktdctvbdmxa4" path="res://assets/ui/underlays/checkbox_hover.png" id="6_0q5eb"]
 [ext_resource type="Texture2D" uid="uid://c7p1723d7vwmm" path="res://assets/ui/placeholders/slider_underlay_placeholder.png" id="6_gytlh"]
-[ext_resource type="Texture2D" uid="uid://dusq10w67u3oy" path="res://assets/ui/placeholders/dropdown_arrow_placeholder.png" id="7_overk"]
 [ext_resource type="Texture2D" uid="uid://dxdqk7nuke6pl" path="res://assets/ui/underlays/checkbox_normal.png" id="8_2uqr7"]
-[ext_resource type="Texture2D" uid="uid://dy6nbud4hpk3c" path="res://assets/ui/placeholders/dropdown_hover_placeholder.png" id="8_rbxx6"]
 [ext_resource type="Texture2D" uid="uid://elmcuxrwc3gy" path="res://assets/ui/underlays/checkbox_pressed.png" id="9_g6w5p"]
-[ext_resource type="Texture2D" uid="uid://dydu3iy8wtmru" path="res://assets/ui/placeholders/dropdown_default_placeholder.png" id="9_jqeaf"]
-[ext_resource type="Texture2D" uid="uid://cyebfbvn468de" path="res://assets/ui/placeholders/dropdown_pressed_placeholder.png" id="10_t4fst"]
 [ext_resource type="Texture2D" uid="uid://bttan1qcmqgpq" path="res://assets/ui/placeholders/sort_by_attack_button_focused_placeholder.png" id="11_ujdwx"]
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="12_jpktw"]
+[ext_resource type="Texture2D" uid="uid://cxus1gwafldoq" path="res://assets/ui/underlays/arrow_rotate.png" id="12_js0ve"]
+[ext_resource type="Texture2D" uid="uid://ekybiptenoks" path="res://assets/ui/underlays/dropdown_hover.png" id="13_8w43k"]
+[ext_resource type="Texture2D" uid="uid://cb8qb2e1h7j15" path="res://assets/ui/underlays/dropdown_normal.png" id="14_suvl3"]
+[ext_resource type="Texture2D" uid="uid://druqflvaf6u3u" path="res://assets/ui/underlays/dropdown_pressed.png" id="15_vyktn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exx6k"]
 texture = ExtResource("1_nhmbk")
@@ -63,16 +63,16 @@ texture = ExtResource("6_gytlh")
 texture_margin_top = 16.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h467q"]
-texture = ExtResource("8_rbxx6")
+texture = ExtResource("13_8w43k")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kml1y"]
-texture = ExtResource("8_rbxx6")
+texture = ExtResource("13_8w43k")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awlsg"]
-texture = ExtResource("9_jqeaf")
+texture = ExtResource("14_suvl3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7fqw"]
-texture = ExtResource("10_t4fst")
+texture = ExtResource("15_vyktn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xvo6"]
 texture = ExtResource("5_cof3b")
@@ -108,7 +108,7 @@ HSlider/styles/grabber_area = SubResource("StyleBoxTexture_efcj6")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_ro8bn")
 HSlider/styles/slider = SubResource("StyleBoxTexture_lgg8s")
 OptionButton/constants/arrow_margin = 16
-OptionButton/icons/arrow = ExtResource("7_overk")
+OptionButton/icons/arrow = ExtResource("12_js0ve")
 OptionButton/styles/focus = SubResource("StyleBoxTexture_h467q")
 OptionButton/styles/hover = SubResource("StyleBoxTexture_kml1y")
 OptionButton/styles/normal = SubResource("StyleBoxTexture_awlsg")

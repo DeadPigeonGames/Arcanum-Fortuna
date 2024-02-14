@@ -290,7 +290,6 @@ popup/item_1/text = "Spring"
 popup/item_1/id = 1
 
 [node name="VideoOptions" type="Control" parent="Options"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -385,6 +384,7 @@ popup/item_3/text = "hella slay so gay"
 popup/item_3/id = 3
 
 [node name="AccessibilityOptions" type="Control" parent="Options"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
