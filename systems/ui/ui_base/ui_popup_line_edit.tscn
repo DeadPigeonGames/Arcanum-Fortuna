@@ -1,7 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cegqty5ihavkg"]
+[gd_scene load_steps=8 format=3 uid="uid://cegqty5ihavkg"]
 
 [ext_resource type="PackedScene" uid="uid://dq1c3cgx11dk8" path="res://systems/ui/ui_base/ui_popup.tscn" id="1_705p1"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_line_edit.gd" id="2_gf1vo"]
+[ext_resource type="Texture2D" uid="uid://bf8f2tk4yfxxr" path="res://assets/ui/underlays/line_edit.png" id="3_dnmrs"]
+[ext_resource type="Texture2D" uid="uid://brdl4q77p0yxs" path="res://assets/ui/underlays/line_edit_focus.png" id="4_4rad5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25d1g"]
+texture = ExtResource("3_dnmrs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bq6d"]
+texture = ExtResource("4_4rad5")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4rei"]
 
@@ -19,6 +27,8 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_25d1g")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0bq6d")
 
 [node name="HSeparatorButton2" type="HSeparator" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer" index="4"]
 layout_mode = 2
