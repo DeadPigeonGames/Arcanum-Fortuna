@@ -158,7 +158,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 color = Color(0, 0, 0, 0.509804)
 
 [node name="DeckPreviewOverlay" type="Control" parent="."]
@@ -348,6 +347,7 @@ text = "Select"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]
 [connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByKarmaButton" to="." method="_on_sort_by_karma_button_button_up"]
 [connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByAttackButton" to="." method="_on_sort_by_attack_button_button_up"]
 [connection signal="button_up" from="DeckPreviewOverlay/DeckPreview/SortCategories/SortByHealthButton" to="." method="_on_sort_by_health_button_button_up"]

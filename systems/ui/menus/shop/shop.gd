@@ -3,6 +3,8 @@ extends UIBase
 
 signal shop_closed
 
+@export var close_shop_popup : UIPopupData
+@export var close_unfinished_popup : UIPopupData
 @export var shop_buy_tab : PackedScene
 @export var shop_trade_tab : PackedScene
 @export var shop_burn_tab : PackedScene
@@ -43,13 +45,25 @@ func instance_tab(tab : PackedScene):
 
 
 func receive_result(result):
-	if current_tab is ShopBuySection:
-		print("BUY: ", result)
-		#process_buy(result)
-	if current_tab is ShopTradeSection:
-		print("TRADE: ", result)
-	if current_tab is ShopBurnSection:
-		print("BURN: ", result)
+	if result is bool and result == true:
+		shop_closed.emit()
+		close()
+
+
+func card_to_deck_animation(card):
+	var tree = SceneHandler.current_scene.get_tree()
+	var deck
+	for node in SceneHandler.ui_container.get_children():
+		if node is DeckInMenu:
+			deck = node.get_child(0).get_child(0)
+	
+	var tween : Tween = tree.create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	card.selected_shader.visible = false
+	card.play_cardflip(false)
+	tween.tween_property(card, "global_position", deck.global_position, 0.5)
+	await tween.finished
 
 
 func _on_buy_section_button_button_up():
@@ -68,5 +82,6 @@ func _on_burn_section_button_button_up():
 
 
 func _on_leave_shop_button_button_up():
-	shop_closed.emit()
-	close()
+	var popup = SceneHandler.add_ui_element(close_shop_popup.ui_popup_path) as UIPopup
+	popup.init(get_layer(), self)
+	popup.setup_popup(close_shop_popup)

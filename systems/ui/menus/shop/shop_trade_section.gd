@@ -59,22 +59,21 @@ func process_trade():
 	for node in SceneHandler.ui_container.get_children():
 		if node is DeckInMenu:
 			deck = node.get_child(0).get_child(0)
+	
+	for s_card in s_cards:
+		player_data.cardStack.append(s_card.card_data)
+	for s_card in s_cards:
+		await called_by.card_to_deck_animation(s_card)
+		s_card.visible = false
+		s_card.selected = false
+	for h_card in h_cards:
+		erase_card_from_player(h_card.card_data)
 	for h_card in h_cards:
 		h_card.selected_shader.visible = false
 		await h_card.animate_burn()
-		erase_card_from_player(h_card.card_data)
-		h_card.queue_free()
-		for s_card in s_cards:
-			var tween : Tween = tree.create_tween()
-			tween.set_trans(Tween.TRANS_CUBIC)
-			tween.set_ease(Tween.EASE_IN_OUT)
-			s_card.selected_shader.visible = false
-			s_card.play_cardflip(false)
-			tween.tween_property(s_card, "global_position", deck.global_position, 0.5)
-			await tween.finished
-			player_data.cardStack.append(s_card.card_data)
-			s_card.queue_free()
-	
+		h_card.visible = false
+		h_card.selected = false
+
 	trade_button.disabled = false
 
 

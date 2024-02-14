@@ -132,3 +132,8 @@ func _on_select_cards_to_burn_shop_button_button_up():
 	if called_by.has_method("receive_result"):
 		called_by.receive_result(cards)
 	close()
+
+
+func _on_background_gui_input(event : InputEvent):
+	if event.is_action_released("pickUpCard") or event.is_action_released("open_inspection"):
+		close()

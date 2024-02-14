@@ -170,6 +170,7 @@ offset_bottom = 266.0
 grow_horizontal = 2
 mouse_filter = 0
 theme_override_constants/separation = 50
+alignment = 1
 
 [node name="HandCard1" parent="HandCards/HBoxContainer" instance=ExtResource("2_5sgb4")]
 layout_mode = 2

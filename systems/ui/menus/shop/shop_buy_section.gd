@@ -34,10 +34,13 @@ func confirm_buy():
 	var cards : Array[ShopPreviewCard]
 	if shop_card_1.selected:
 		cards.append(shop_card_1)
+		await called_by.card_to_deck_animation(shop_card_1)
 	if shop_card_2.selected:
 		cards.append(shop_card_2)
+		await called_by.card_to_deck_animation(shop_card_2)
 	if shop_card_3.selected:
 		cards.append(shop_card_3)
+		await called_by.card_to_deck_animation(shop_card_3)
 	
 	super.send_result(cards)
 	process_buy(cards)
