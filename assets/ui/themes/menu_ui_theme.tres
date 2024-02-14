@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=34 format=3 uid="uid://l2whpxkwhcdn"]
+[gd_resource type="Theme" load_steps=35 format=3 uid="uid://l2whpxkwhcdn"]
 
 [ext_resource type="Texture2D" uid="uid://diuotxd43kep6" path="res://assets/ui/placeholders/empty.png" id="1_nhmbk"]
 [ext_resource type="Texture2D" uid="uid://b40dk0amujmgc" path="res://assets/ui/underlays/menu_highlight.png" id="2_jlku6"]
@@ -77,6 +77,10 @@ texture = ExtResource("5_cof3b")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_obkvj"]
 texture = ExtResource("11_ujdwx")
 
+[sub_resource type="FontVariation" id="FontVariation_bruvd"]
+base_font = ExtResource("12_jpktw")
+variation_embolden = 0.3
+
 [resource]
 default_font = ExtResource("12_jpktw")
 default_font_size = 25
@@ -112,3 +116,4 @@ PopupMenu/styles/panel = SubResource("StyleBoxTexture_obkvj")
 RichTextLabel/constants/line_separation = 12
 RichTextLabel/font_sizes/bold_font_size = 50
 RichTextLabel/font_sizes/normal_font_size = 35
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_bruvd")
