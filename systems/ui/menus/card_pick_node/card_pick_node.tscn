@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dodfhimio8w5g"]
+[gd_scene load_steps=11 format=3 uid="uid://dodfhimio8w5g"]
 
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_5avjp"]
+[ext_resource type="Texture2D" uid="uid://uf36g406dvlv" path="res://assets/ui/underlays/tooltip_underlay.png" id="1_cpbro"]
 [ext_resource type="Texture2D" uid="uid://bmkljvdymeqv0" path="res://assets/ui/placeholders/major_arcana_choice_placeholder.png" id="1_e7a7s"]
 [ext_resource type="Texture2D" uid="uid://ctkenbleufikb" path="res://assets/ui/placeholders/continue_to_node_map_button_default_placeholder.png" id="2_57xyr"]
 [ext_resource type="Texture2D" uid="uid://d2jir55uumin5" path="res://assets/ui/placeholders/minor_arcana_choice_placeholder.png" id="2_fw1hn"]
@@ -21,6 +22,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cpbro")
 
 [node name="PreChoice" type="Control" parent="."]
 visible = false
