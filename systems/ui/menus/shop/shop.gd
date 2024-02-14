@@ -16,7 +16,8 @@ var player_data : PlayerData
 
 
 func _process(delta):
-	last_clicked_tab.grab_focus()
+	if is_current_window:
+		last_clicked_tab.grab_focus()
 
 
 func setup():
