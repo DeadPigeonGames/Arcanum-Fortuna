@@ -32,22 +32,28 @@ func setup():
 func randomize_shop_cards():
 	randomize()
 	var possible_cards = all_cards_resource.all_cards
-	shop_card_1.card_data = possible_cards.pick_random()
-	shop_card_2.card_data = possible_cards.pick_random()
-	shop_card_3.card_data = possible_cards.pick_random()
+	
+	shop_card_1.card_data = get_random_by_seed(possible_cards, called_by.rng)
+	shop_card_2.card_data = get_random_by_seed(possible_cards, called_by.rng)
+	shop_card_3.card_data = get_random_by_seed(possible_cards, called_by.rng)
 
 
 func randomize_hand_cards():
 	var card_stack = player_data.cardStack.duplicate()
-	var card = card_stack.pick_random()
+	var card = get_random_by_seed(card_stack, called_by.rng)
 	hand_card_1.card_data = card.duplicate()
 	card_stack.erase(card)
-	card = card_stack.pick_random()
+	card = get_random_by_seed(card_stack, called_by.rng)
 	hand_card_2.card_data = card.duplicate()
 	card_stack.erase(card)
-	card = card_stack.pick_random()
+	card = get_random_by_seed(card_stack, called_by.rng)
 	hand_card_3.card_data = card.duplicate()
 	card_stack.erase(card)
+
+
+func get_random_by_seed(array, rng):
+	var random_elem = array[rng.randi() % array.size()]
+	return random_elem
 
 
 func process_trade():

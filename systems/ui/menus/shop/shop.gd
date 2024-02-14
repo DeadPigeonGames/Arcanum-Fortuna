@@ -13,6 +13,8 @@ var trade_tab_instance
 var burn_tab_instance
 var last_clicked_tab
 var player_data : PlayerData
+var seed := 1337
+var rng = RandomNumberGenerator.new()
 
 func _process(delta):
 	if is_current_window:
@@ -31,6 +33,11 @@ func setup():
 	burn_tab_instance.visible = false
 	current_tab = buy_tab_instance
 	switch_tab_visible(buy_tab_instance)
+
+
+func set_seed(seed : int):
+	self.seed = seed
+	rng.seed = seed
 
 
 func instance_tab(tab : PackedScene):
