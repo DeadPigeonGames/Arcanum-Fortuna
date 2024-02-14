@@ -50,6 +50,15 @@ func get_enemy_tile_pos(y, x):
 	return $EnemyTiles.get_child(y).get_child(x).global_position
 
 
+func is_front_tile_empty(tile_idx : int, is_friendly : bool):
+	return player_tiles.get_child(tile_idx).get_child_count() == 0 if is_friendly else \
+			enemy_tiles_front.get_child(tile_idx).get_child_count() == 0
+
+
+func is_back_tile_empty(tile_idx : int):
+	return enemy_tiles_back.get_child(tile_idx).get_child_count() == 0
+
+
 func _on_card_dragged():
 	for tile in player_tiles.get_children():
 		if tile.get_child_count() > 0:

@@ -17,11 +17,11 @@ var player_data : PlayerData
 
 @export_category("Debug")
 @export var show_current_phase_text := true
-#@export var is_debug : bool
+@export var is_debug : bool
 @export var is_tutorial : bool #sorry....
 @export var tutorial_health := 7
 @export var debug_player_data : PlayerData
-@export var debug_enemy_data : EnemyData
+@export var debug_enemy_data : DebugEnemyData
 
 @onready var game_board : GameBoard = $GameBoard
 @onready var player : CardPlayer = $CardPlayer
@@ -45,10 +45,10 @@ func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
-	#if is_debug:
-		#await get_tree().process_frame # game_board needs to be ready first lol
-		#init(debug_player_data, debug_enemy_data)
-		#start_combat()
+	if is_debug:
+		await get_tree().process_frame # game_board needs to be ready first lol
+		init(debug_player_data, debug_enemy_data)
+		start_combat()
 	if is_tutorial:
 		await get_tree().process_frame # game_board needs to be ready first lol
 		init(debug_player_data.duplicate(), debug_enemy_data.duplicate())
@@ -64,7 +64,7 @@ func _exit_tree():
 func init(player_data, enemy_data):
 	self.player_data = player_data
 	player.init(player_data)
-	if not enemy_data is OldEnemyData: 
+	if  enemy_data is EnemyData: 
 		enemy_data.init()
 		enemy_data.setup_brain(enemy, self)
 	enemy.init(enemy_data)

@@ -11,6 +11,17 @@ func get_corresponding_trigger():
 
 
 func process_effect() -> ExitState:
+	if combat.is_debug:
+		var column_idx = -1
+		for card in combat.debug_enemy_data.fixed_placement_cards:
+			column_idx += 1
+			if column_idx >= GameBoard.width:
+				return ExitState.DEFAULT
+			if card == null or not combat.game_board.is_back_tile_empty(column_idx):
+				continue
+			combat.game_board.place_enemy_card_back(card, column_idx)
+		return ExitState.DEFAULT
+	
 	var card_placements = combat.enemy.calc_card_placements()
 	
 	for placement in card_placements:
