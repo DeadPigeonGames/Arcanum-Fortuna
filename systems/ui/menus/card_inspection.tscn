@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://pe6tqla32quk" path="res://systems/ui/menus/menu_elements/stat_change.tscn" id="3_d8e8f"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="3_rc3s5"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="4_pj6c4"]
+[ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="7_11nlv"]
 [ext_resource type="Texture2D" uid="uid://duu0kqe7ybgs1" path="res://assets/ui/underlays/overlay_darken.png" id="7_vmtqk"]
 [ext_resource type="Texture2D" uid="uid://b16p52hwm0lh1" path="res://assets/ui/underlays/banner.png" id="8_61u2l"]
 [ext_resource type="Texture2D" uid="uid://8sv1i5fu41gv" path="res://assets/ui/underlays/keyword_underlay.png" id="8_tt6j0"]
@@ -17,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="12_tp7it"]
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="13_6mpdr"]
 [ext_resource type="Texture2D" uid="uid://brmabqhg6pwau" path="res://assets/ui/underlays/awaken_overlay.png" id="13_oiaxd"]
-[ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="14_s103n"]
 [ext_resource type="Texture2D" uid="uid://bc2u3mwwf3ibl" path="res://assets/ui/underlays/awaken_overlay_2.png" id="16_r327o"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
 
@@ -108,6 +108,7 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("7_11nlv")
 bbcode_enabled = true
 text = "[b]%s -[/b] %s"
 
@@ -115,6 +116,7 @@ text = "[b]%s -[/b] %s"
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("7_11nlv")
 bbcode_enabled = true
 text = "[b]%s -[/b] %s"
 
@@ -122,6 +124,7 @@ text = "[b]%s -[/b] %s"
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("7_11nlv")
 bbcode_enabled = true
 text = "[b]%s -[/b] %s"
 
@@ -129,6 +132,7 @@ text = "[b]%s -[/b] %s"
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("7_11nlv")
 bbcode_enabled = true
 text = "[b]%s -[/b] %s"
 
@@ -176,6 +180,8 @@ offset_right = -460.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
 
 [node name="CurrentStatChanges" type="VBoxContainer" parent="CardInspection/ScrollContainer"]
 unique_name_in_owner = true
@@ -291,12 +297,12 @@ texture_pressed = ExtResource("18_4f2ee")
 [node name="Label" type="RichTextLabel" parent="CardInspection/SwitchCondition"]
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 0
-offset_left = 37.0
-offset_top = 213.0
-offset_right = 685.0
-offset_bottom = 305.0
+offset_left = 28.0
+offset_top = 203.0
+offset_right = 676.0
+offset_bottom = 295.0
 size_flags_horizontal = 4
-theme = ExtResource("14_s103n")
+theme = ExtResource("7_11nlv")
 bbcode_enabled = true
 text = "[b]%s -[/b] %s"
 
