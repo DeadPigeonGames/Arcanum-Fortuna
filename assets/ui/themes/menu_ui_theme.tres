@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=36 format=3 uid="uid://l2whpxkwhcdn"]
+[gd_resource type="Theme" load_steps=34 format=3 uid="uid://l2whpxkwhcdn"]
 
 [ext_resource type="Texture2D" uid="uid://diuotxd43kep6" path="res://assets/ui/placeholders/empty.png" id="1_nhmbk"]
+[ext_resource type="Texture2D" uid="uid://b40dk0amujmgc" path="res://assets/ui/underlays/menu_highlight.png" id="2_jlku6"]
 [ext_resource type="Texture2D" uid="uid://bk4awi081narj" path="res://assets/ui/placeholders/checkbox_check_placeholder.png" id="2_tlh4s"]
 [ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="3_5an84"]
+[ext_resource type="Texture2D" uid="uid://7w77k8lowu8" path="res://assets/ui/underlays/menu_highlight_pressed.png" id="3_13teg"]
 [ext_resource type="Texture2D" uid="uid://ucp5uptgmfr1" path="res://assets/ui/placeholders/chechbox_hover_placeholder.png" id="4_4yns2"]
 [ext_resource type="Texture2D" uid="uid://c1qm6wtdsqwjc" path="res://assets/ui/placeholders/slider_fill_placeholder.png" id="5_cof3b"]
 [ext_resource type="Texture2D" uid="uid://c7p1723d7vwmm" path="res://assets/ui/placeholders/slider_underlay_placeholder.png" id="6_gytlh"]
@@ -19,28 +21,14 @@ texture = ExtResource("1_nhmbk")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kkpcq"]
 texture = ExtResource("1_nhmbk")
 
-[sub_resource type="Gradient" id="Gradient_k0kyb"]
-offsets = PackedFloat32Array(0, 0.660853, 1)
-colors = PackedColorArray(0.445017, 0.157709, 0.160385, 1, 0.139411, 0.256646, 0.588802, 1, 0.135266, 0.362181, 0.396884, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_01mv3"]
-gradient = SubResource("Gradient_k0kyb")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgai2"]
-texture = SubResource("GradientTexture2D_01mv3")
+texture = ExtResource("2_jlku6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s818a"]
 texture = ExtResource("1_nhmbk")
 
-[sub_resource type="Gradient" id="Gradient_287h5"]
-offsets = PackedFloat32Array(0, 0.651163, 1)
-colors = PackedColorArray(0.391473, 0.120103, 0.039411, 1, 0.375189, 0.301763, 0.0883211, 1, 0.367864, 0.183887, 0.447801, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wjgu7"]
-gradient = SubResource("Gradient_287h5")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3s28"]
-texture = SubResource("GradientTexture2D_wjgu7")
+texture = ExtResource("3_13teg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jihiw"]
 texture = ExtResource("3_5an84")

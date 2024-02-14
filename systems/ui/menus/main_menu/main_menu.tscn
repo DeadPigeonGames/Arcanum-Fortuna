@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_h2wo1"]
 [ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="5_cwqwb"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="6_hn0r2"]
-[ext_resource type="Theme" path="res://assets/ui/themes/menu_title_theme.tres" id="6_uytas"]
+[ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="6_uytas"]
 [ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="7_w5744"]
 
 [sub_resource type="Resource" id="Resource_qq38u"]
@@ -62,9 +62,9 @@ text = "per aspera ad arcana"
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 44.0
 offset_top = 320.0
-offset_right = 384.0
+offset_right = 487.0
 offset_bottom = 640.0
 theme_override_constants/separation = 0
 
@@ -72,28 +72,28 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
-text = "PLAY"
+text = " PLAY"
 alignment = 0
 
 [node name="CustomSeedButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
-text = "YOUR MAP"
+text = " YOUR MAP"
 alignment = 0
 
 [node name="OptionsButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
-text = "OPTIONS"
+text = " OPTIONS"
 alignment = 0
 
 [node name="CreditsButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
-text = "CREDITS"
+text = " CREDITS"
 alignment = 0
 
 [node name="QuitButton" type="Button" parent="."]
@@ -102,13 +102,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
+offset_left = 44.0
 offset_top = -144.0
-offset_right = 384.0
+offset_right = 364.0
 offset_bottom = -64.0
 grow_vertical = 0
 theme = ExtResource("1_ix3bk")
-text = "QUIT"
+text = " QUIT"
 alignment = 0
 
 [node name="Nodemap1" type="Sprite2D" parent="."]
