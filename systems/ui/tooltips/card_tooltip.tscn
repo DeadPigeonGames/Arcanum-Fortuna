@@ -56,7 +56,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme = ExtResource("4_w223y")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Name"
 
 [node name="Sigils" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
