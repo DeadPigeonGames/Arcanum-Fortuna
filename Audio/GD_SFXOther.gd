@@ -7,6 +7,9 @@ const SFX_VFXKarmaBlipHi = preload("res://Audio/Karma/VFXKarmaBlipHi.ogg")
 const SFX_DamagePlayer = preload("res://Audio/Card/PlayerDamage.ogg")
 const SFX_DamageEnemy = preload("res://Audio/Card/DamageEnemy.tres")
 
+const SFX_Win = preload("res://Audio/LevelStuff/Win1.ogg")
+const SFX_Loss = preload("res://Audio/LevelStuff/Win1.ogg")
+
 var dropletScaler = 0.0
 var waitingOnKarma = false
 
@@ -89,3 +92,14 @@ func _SFX_EnterLevel():
 
 func _SFX_DestroyCard():
 	$DestroyCard.play()
+
+func _SFX_Effect():
+	$Effect.play()
+
+func _SFX_Win():
+	$WinLoss.set_stream(SFX_Win)
+	$WinLoss.play()
+
+func _SFX_Loss():
+	$WinLoss.set_stream(SFX_Loss)
+	$WinLoss.play()
