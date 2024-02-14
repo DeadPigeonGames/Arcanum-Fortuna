@@ -28,6 +28,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Companionship: Protection"
-description = "While this card is alive adjacent cards take 1 less damage."
+description = "While this card is alive, neighboring cards take 1 less damage."
 icon = ExtResource("1_fxc1c")
 highlight_duration = 0.5
