@@ -8,6 +8,7 @@ var previous_current_window
 var player_data : PlayerData
 var card_data_lookup = {}
 var select_button
+var selected_cards_amount := 0
 
 @onready var animation_player = %AnimationPlayer
 @onready var player_deck : PlayerDeckPreview = %PlayerDeck
@@ -28,6 +29,10 @@ func setup():
 				previous_current_window = node
 				previous_current_window.is_current_window = false
 				is_current_window = true
+	select_button.disabled = true
+	for card in get_all_nodes(self):
+		if card is DeckPreviewCard:
+			card.select_card.clicked.connect(on_card_clicked)
 
 
 func get_cards():
@@ -101,6 +106,11 @@ func get_all_nodes(node):
 			array.append(found_node)
 		return array
 	return array
+
+
+func on_card_clicked(select_card : SelectCard):
+	selected_cards_amount += 1 if select_card.selected else -1
+	select_button.disabled = selected_cards_amount == 0
 
 
 func _on_close_window_button_button_up():

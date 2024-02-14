@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cbsn1r2h288lq"]
+[gd_scene load_steps=26 format=3 uid="uid://cbsn1r2h288lq"]
 
 [ext_resource type="Script" path="res://systems/ui/new_deck_preview/deck_preview_overlay.gd" id="1_mj3a2"]
 [ext_resource type="PackedScene" uid="uid://djimo5osb2i1s" path="res://systems/ui/new_deck_preview/deck_preview_card.tscn" id="2_ilop0"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="18_4n4xa"]
 [ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="19_eo4s1"]
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="20_puisa"]
+[ext_resource type="Texture2D" uid="uid://df2r4ns72cbex" path="res://assets/ui/buttons/default_button_disabled.png" id="21_7xi0r"]
 
 [sub_resource type="Animation" id="Animation_7857e"]
 length = 0.001
@@ -329,6 +330,7 @@ mouse_filter = 1
 texture_normal = ExtResource("18_4n4xa")
 texture_pressed = ExtResource("19_eo4s1")
 texture_hover = ExtResource("20_puisa")
+texture_disabled = ExtResource("21_7xi0r")
 
 [node name="Label" type="Label" parent="DeckPreviewOverlay/SelectCardsToBurnShopButton"]
 layout_mode = 1
