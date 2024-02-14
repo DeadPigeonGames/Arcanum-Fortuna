@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8wrkx1o0ism"]
+[gd_scene load_steps=25 format=3 uid="uid://c8wrkx1o0ism"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_lar4p"]
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="2_jx6qu"]
@@ -7,32 +7,35 @@
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="5_psswj"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="6_wk5c6"]
 [ext_resource type="PackedScene" uid="uid://y05vxgjpeday" path="res://systems/dungeon_exploration/maps/random_event_node.tscn" id="7_7t6tu"]
+[ext_resource type="Texture2D" uid="uid://b5i3gdceaywkm" path="res://assets/ui/nodemap/encounter_elite.png" id="8_6mxc1"]
 [ext_resource type="Texture2D" uid="uid://bkkrf2ynprn0h" path="res://assets/sprites/nodemap/new_card.png" id="8_g3o2k"]
 [ext_resource type="Texture2D" uid="uid://c4txvwxxbco0f" path="res://assets/sprites/nodemap/combat_challenging.png" id="8_lrw74"]
 [ext_resource type="PackedScene" uid="uid://bggcv7yipjcm7" path="res://systems/dungeon_events/loot_event.tscn" id="9_iwnjr"]
 [ext_resource type="Script" path="res://utils/random_scene.gd" id="10_ttikx"]
+[ext_resource type="Texture2D" uid="uid://cj8fhe2r2vwy8" path="res://assets/ui/nodemap/encounter_standard.png" id="11_jtmpe"]
 [ext_resource type="PackedScene" uid="uid://bml43x2miuf00" path="res://systems/dungeon_events/battle_event.tscn" id="11_oxxj3"]
 [ext_resource type="Texture2D" uid="uid://dy7tcnyepo7yq" path="res://assets/sprites/nodemap/combat.png" id="11_yn5jy"]
 [ext_resource type="PackedScene" uid="uid://cdmbv5kshgi6w" path="res://systems/dungeon_events/challenge_battle_event.tscn" id="12_vamcr"]
+[ext_resource type="Texture2D" uid="uid://cttyhls7u4jgr" path="res://assets/ui/nodemap/encounter_card.png" id="13_bvmhs"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="15_ocwq0"]
 
 [sub_resource type="Resource" id="Resource_ig0b3"]
 script = ExtResource("10_ttikx")
 chance_weight = 1
 scene = ExtResource("12_vamcr")
-placeholder_icon_texture = ExtResource("8_lrw74")
+placeholder_icon_texture = ExtResource("8_6mxc1")
 
 [sub_resource type="Resource" id="Resource_i25gk"]
 script = ExtResource("10_ttikx")
 chance_weight = 4
 scene = ExtResource("11_oxxj3")
-placeholder_icon_texture = ExtResource("11_yn5jy")
+placeholder_icon_texture = ExtResource("11_jtmpe")
 
 [sub_resource type="Resource" id="Resource_w5a6b"]
 script = ExtResource("10_ttikx")
 chance_weight = 1
 scene = ExtResource("9_iwnjr")
-placeholder_icon_texture = ExtResource("8_g3o2k")
+placeholder_icon_texture = ExtResource("13_bvmhs")
 
 [sub_resource type="Resource" id="Resource_27kte"]
 script = ExtResource("10_ttikx")
