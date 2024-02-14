@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8xs6q5trxx58"]
 
-[ext_resource type="Texture2D" uid="uid://b24ss0es2wjxk" path="res://assets/ui/placeholders/options_underlay_placeholder.png" id="1_45ycb"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_yx2ik"]
-[ext_resource type="Texture2D" uid="uid://cs0rxs0yhh3qy" path="res://assets/ui/placeholders/options_title_underlay_placeholder.png" id="2_4iaqa"]
+[ext_resource type="Texture2D" uid="uid://d233avcta64f" path="res://assets/ui/underlays/options_underlay.png" id="3_iqdc3"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="3_x54wv"]
+[ext_resource type="Texture2D" uid="uid://bvnruxmnnshsm" path="res://assets/ui/underlays/deck_tab.png" id="4_lagsh"]
 [ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="5_xu4n0"]
 [ext_resource type="Texture2D" uid="uid://da83ns8w6wcrx" path="res://assets/ui/placeholders/checkbox_pressed_palceholder.png" id="6_1lfcg"]
 [ext_resource type="Texture2D" uid="uid://ucp5uptgmfr1" path="res://assets/ui/placeholders/chechbox_hover_placeholder.png" id="7_6m8dq"]
@@ -85,7 +85,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_45ycb")
+texture = ExtResource("3_iqdc3")
 
 [node name="AudioOptions" type="Control" parent="Options"]
 visible = false
@@ -102,13 +102,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -72.0
-offset_right = 160.0
-offset_bottom = 8.0
+offset_left = -196.0
+offset_top = -135.0
+offset_right = 197.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_4iaqa")
+texture = ExtResource("4_lagsh")
 
 [node name="OptionsTitle" type="Label" parent="Options/AudioOptions/OptionsTitleUnderlay"]
 layout_mode = 1
@@ -305,13 +304,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -72.0
-offset_right = 160.0
-offset_bottom = 8.0
+offset_left = -196.0
+offset_top = -135.0
+offset_right = 197.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_4iaqa")
+texture = ExtResource("4_lagsh")
 
 [node name="OptionsTitle" type="Label" parent="Options/VideoOptions/OptionsTitleUnderlay"]
 layout_mode = 1
@@ -400,13 +398,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -72.0
-offset_right = 160.0
-offset_bottom = 8.0
+offset_left = -196.5
+offset_top = -135.0
+offset_right = 196.5
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_4iaqa")
+texture = ExtResource("4_lagsh")
 
 [node name="OptionsTitle" type="Label" parent="Options/AccessibilityOptions/OptionsTitleUnderlay"]
 layout_mode = 1
