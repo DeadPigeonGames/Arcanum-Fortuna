@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://dq1c3cgx11dk8"]
 
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup.gd" id="1_uc4qs"]
-[ext_resource type="Texture2D" uid="uid://c3t2jkdwocmnr" path="res://assets/ui/placeholders/tutorial_popup_underlay_placeholder.png" id="2_kwsuy"]
+[ext_resource type="Texture2D" uid="uid://wur6pg5xwpvh" path="res://assets/ui/underlays/nine_patch_rect.png" id="2_byvas"]
 [ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="3_3xiu2"]
-[ext_resource type="Texture2D" uid="uid://b3j5y2qsvio5b" path="res://assets/ui/underlays/tutorial_underlay.png" id="3_wf5rj"]
+[ext_resource type="Texture2D" uid="uid://ra1cxkpi3adh" path="res://assets/ui/underlays/pop_up.png" id="3_whnro"]
 [ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="4_gv58y"]
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="5_2hte8"]
 [ext_resource type="Texture2D" uid="uid://df2r4ns72cbex" path="res://assets/ui/buttons/default_button_disabled.png" id="6_y41qu"]
@@ -47,18 +47,18 @@ unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(768, 440)
 layout_mode = 2
-texture = ExtResource("2_kwsuy")
+texture = ExtResource("2_byvas")
 draw_center = false
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+region_rect = Rect2(0, 0, 500, 500)
+patch_margin_left = 51
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 48
 
 [node name="Background" type="Sprite2D" parent="CardTooltip/MarginContainer/NinePatchRect"]
-unique_name_in_owner = true
 z_index = -10
 position = Vector2(384, 220)
-texture = ExtResource("3_wf5rj")
+texture = ExtResource("3_whnro")
 
 [node name="MarginContainer" type="MarginContainer" parent="CardTooltip/MarginContainer"]
 layout_mode = 2
