@@ -265,7 +265,6 @@ bus = &"SFXOther"
 [node name="TestKnockTimer" type="Timer" parent="."]
 wait_time = 8.0
 one_shot = true
-autostart = true
 
 [node name="LevelDenoter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_p53re")
