@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddpmd4cji8uva"]
+[gd_scene load_steps=8 format=3 uid="uid://ddpmd4cji8uva"]
 
+[ext_resource type="Script" path="res://systems/ui/menus/end_screens/run_end_screen.gd" id="1_6ec74"]
 [ext_resource type="Texture2D" uid="uid://cqlmpqc30nlo0" path="res://assets/ui/placeholders/shop_pay_button_default_placeholder.png" id="1_agx8l"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_b05bo"]
 [ext_resource type="Texture2D" uid="uid://uf36g406dvlv" path="res://assets/ui/underlays/tooltip_underlay.png" id="1_dyhkt"]
@@ -7,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cxt6ijr3xip2o" path="res://assets/ui/placeholders/shop_pay_button_hover_placeholder.png" id="3_1semy"]
 [ext_resource type="Texture2D" uid="uid://dq2exmxh6ljgt" path="res://assets/ui/placeholders/shop_pay_button_disabled_placehollder.png" id="4_xvk7s"]
 
-[node name="LoseScreen" type="Control"]
+[node name="LoseScreen" type="CanvasLayer"]
+script = ExtResource("1_6ec74")
+
+[node name="LoseScreen" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="LoseScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_dyhkt")
 
-[node name="MenuTitle" type="RichTextLabel" parent="."]
+[node name="MenuTitle" type="RichTextLabel" parent="LoseScreen"]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 1
 anchors_preset = 5
@@ -41,7 +45,7 @@ theme_override_constants/outline_size = 8
 bbcode_enabled = true
 text = "[center][b]NOT AN END, ONLY A DETOUR"
 
-[node name="MenuSubtitle" type="RichTextLabel" parent="."]
+[node name="MenuSubtitle" type="RichTextLabel" parent="LoseScreen"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 1
 anchors_preset = 5
@@ -59,7 +63,7 @@ theme_override_constants/outline_size = 5
 bbcode_enabled = true
 text = "[center]will you persist?"
 
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="LoseScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 60
 
-[node name="RetryButton" type="TextureButton" parent="HBoxContainer"]
+[node name="RetryButton" type="TextureButton" parent="LoseScreen/HBoxContainer"]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_agx8l")
@@ -82,7 +86,7 @@ texture_pressed = ExtResource("2_addci")
 texture_hover = ExtResource("3_1semy")
 texture_disabled = ExtResource("4_xvk7s")
 
-[node name="Label" type="Label" parent="HBoxContainer/RetryButton"]
+[node name="Label" type="Label" parent="LoseScreen/HBoxContainer/RetryButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -99,7 +103,7 @@ text = "Retry"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MainMenuButton" type="TextureButton" parent="HBoxContainer"]
+[node name="MainMenuButton" type="TextureButton" parent="LoseScreen/HBoxContainer"]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_agx8l")
@@ -107,7 +111,7 @@ texture_pressed = ExtResource("2_addci")
 texture_hover = ExtResource("3_1semy")
 texture_disabled = ExtResource("4_xvk7s")
 
-[node name="Label" type="Label" parent="HBoxContainer/MainMenuButton"]
+[node name="Label" type="Label" parent="LoseScreen/HBoxContainer/MainMenuButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -123,3 +127,6 @@ grow_vertical = 2
 text = "Take a rest"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_up" from="LoseScreen/HBoxContainer/RetryButton" to="LoseScreen" method="_on_retry_button_button_up"]
+[connection signal="button_up" from="LoseScreen/HBoxContainer/MainMenuButton" to="LoseScreen" method="_on_main_menu_button_button_up"]

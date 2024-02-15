@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
 [ext_resource type="PackedScene" uid="uid://cy7r8u5ck052l" path="res://assets/ui/placeholders/nodemap_test.tscn" id="2_wwav1"]
 [ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="3_c5lml"]
-[ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_h2wo1"]
+[ext_resource type="PackedScene" uid="uid://b8xs6q5trxx58" path="res://systems/ui/menus/options_menu/options_menu.tscn" id="4_d6ror"]
 [ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="5_cwqwb"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="6_hn0r2"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="6_uytas"]
@@ -760,7 +760,7 @@ grow_vertical = 2
 script = ExtResource("1_pcc4c")
 node_map_scene = ExtResource("2_wwav1")
 tutorial_scene = ExtResource("3_c5lml")
-options_scene = ExtResource("4_h2wo1")
+options_scene = ExtResource("4_d6ror")
 credits_scene = ExtResource("5_cwqwb")
 seed_popup_data = SubResource("Resource_qq38u")
 

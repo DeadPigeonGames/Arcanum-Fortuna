@@ -22,7 +22,7 @@ func set_disabled(is_disabled: bool):
 	else:
 		modulate = Color.WHITE
 	AudioServer.set_bus_mute(bus_idx, disabled)
-	get_parent().get_node("enabled").button_pressed = not is_disabled
+	get_parent().get_node("CheckBox").button_pressed = not is_disabled
 
 func _on_value_changed(value_changed):
 	if not value_changed:

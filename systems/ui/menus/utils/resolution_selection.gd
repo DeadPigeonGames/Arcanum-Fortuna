@@ -20,8 +20,3 @@ func _on_item_selected(index):
 	get_window().move_to_center()
 	Settings.save_config()
 
-
-func _process(delta):
-	var window_mode = DisplayServer.window_get_mode()
-	disabled = window_mode != DisplayServer.WINDOW_MODE_WINDOWED
-	
