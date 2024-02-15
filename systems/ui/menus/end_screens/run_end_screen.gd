@@ -11,7 +11,9 @@ func _on_retry_button_button_up():
 		if node == self:
 			continue
 		node.queue_free()
-	SceneHandler.change_scene("res://assets/ui/placeholders/nodemap_test.tscn")
+	SceneHandler.change_scene("res://systems/ui/menus/main_menu/main_menu.tscn")
+	SceneHandler.current_scene.start_game()
+	await get_tree().process_frame
 	close()
 
 

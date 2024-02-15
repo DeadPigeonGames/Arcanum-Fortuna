@@ -9,5 +9,4 @@ event = ExtResource("2_aa5ll")
 is_scene_switch = true
 
 [node name="icon" parent="background" index="0"]
-visible = true
 texture = ExtResource("3_rour2")

@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func setup():
-	await get_tree().process_frame
+	await get_tree().create_timer(0.1).timeout
 	player_data = Player.instance.data
 	gold_label = %GoldLabel
 	health_label = %HealthLabel
