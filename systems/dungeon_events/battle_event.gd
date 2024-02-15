@@ -24,17 +24,17 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	var won = remainingLife > 0
 	
 	player_data.health = remainingLife
-
-	var event = winEvent if won else loseEvent
 	
-	if event is RunEndScreen:
-		var instance = SceneHandler.add_ui_element(loseEvent)
-		instance.init(110, self)
-		instance.setup()
-		return
+	var event = winEvent if won else loseEvent
 	
 	if event:
 		var instance = event.instantiate()
+		if instance is RunEndScreen:
+			instance.queue_free()
+			instance = SceneHandler.add_ui_element(loseEvent)
+			instance.init(110, self)
+			instance.setup()
+			return
 		if "seed" in instance:
 			instance.seed = seed
 		add_child(instance)
