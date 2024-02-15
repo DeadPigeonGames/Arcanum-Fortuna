@@ -19,9 +19,19 @@ func _input(event):
 		SceneHandler.add_ui_element(new_inspection)
 	
 	if is_selectable and is_hovered and event.is_action_pressed("pickUpCard"):
-		clicked.emit(self)
 		self.selected = not selected
 		self.selected_shader.visible = selected
+		clicked.emit(self)
+
+
+func select():
+	self.selected = true
+	self.selected_shader.visible = true
+
+
+func deselect():
+	self.selected = false
+	self.selected_shader.visible = false
 
 
 func _process(delta):

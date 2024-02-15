@@ -47,6 +47,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 			visualCard.card_data = c
 			visualCard.load_from_data(c)
 			visualCard.setup()
+			visualCard.deselect()
 			$CanvasLayer/Control/Cards.add_child(visualCard)
 			visualCard.clicked.connect(card_clicked)
 			SfxOther._SFX_Draw()
@@ -65,14 +66,14 @@ func card_clicked(card: Card):
 	if card in selected_cards:
 		var idx = selected_cards.find(card)
 		if idx > -1:
-			card.selected = false
+			card.deselect()
 			selected_cards.remove_at(idx)
 	else:
-		card.selected = true
+		# card.select()
 		selected_cards.push_back(card)
 
 	while len(selected_cards) > cardsToReward:
-		selected_cards[0].selected = false
+		selected_cards[0].deselect()
 		selected_cards.pop_front()
 	if len(selected_cards) == cardsToReward:
 		$CanvasLayer/Control/ConfirmButton.show()
