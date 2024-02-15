@@ -9,6 +9,7 @@ extends ActivatedKeyword
 @export var tranform_delay := 1.0
 @export var transformed_artwork_shader : ShaderMaterial = preload("res://shaders/gradient_shader.tres")
 @export var transformed_keyword_slot_atlas : Texture = preload("res://assets/ui/icons/keyword_slots_reversed.png")
+@export var chromatic_scene := preload("res://systems/card_combat/effects/chromatic_aberration.tscn")
 
 @export_category("Animation")
 @export var rotation_duration = 0.8
@@ -65,7 +66,9 @@ func animate_transform(target, icon_to_animate):
 	tween.tween_property(card, "scale", Vector2.ONE, rotation_duration / 2.0)
 	tween.finished.connect(func(): icon_to_animate.is_animating = false)
 	tween.play()
+	var chromatic = chromatic_scene.instantiate()
+	SceneHandler.combat.add_child(chromatic)
 	await card.get_tree().create_timer(rotation_duration / 2).timeout
 	target.set_transformed_visuals(transformed_artwork_shader, transformed_keyword_slot_atlas)
-	#target.reverse()
 	await card.get_tree().create_timer(rotation_duration / 2).timeout
+	chromatic.queue_free()
