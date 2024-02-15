@@ -38,10 +38,11 @@ func _ready():
 
 
 func _input(event: InputEvent):
-	if is_hovered and event.is_action_pressed("open_inspection"):
+	if is_hovered and event.is_action_released("open_inspection"):
 		var new_inspection = inspection.instantiate() as CardInspection
 		new_inspection.init(110, self)
 		new_inspection.inspection_init(self)
+		await get_tree().create_timer(0.1).timeout
 		SceneHandler.add_ui_element(new_inspection)
 
 

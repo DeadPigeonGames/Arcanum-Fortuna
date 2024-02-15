@@ -50,7 +50,7 @@ func _process(delta):
 
 
 func _input(event: InputEvent):
-	if is_hovered and event.is_action_pressed("open_inspection"):
+	if is_hovered and event.is_action_released("open_inspection"):
 		var new_inspection = inspection.instantiate() as CardInspection
 		new_inspection.init(75, self)
 		new_inspection.inspection_init(self)
