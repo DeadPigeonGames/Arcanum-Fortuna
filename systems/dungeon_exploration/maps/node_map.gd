@@ -37,9 +37,11 @@ func setup_ui():
 
 
 func _on_node_activated(node : EventNode):
+	$CanvasLayer/SeedLabel.hide()
 	node.init(level, rng)
 
 
 func _on_node_completed(node : EventNode):
 	SfxBg._playTrack(SfxBg.MapTypes.WINTER)
 	level += node.level_gain
+	$CanvasLayer/SeedLabel.show()

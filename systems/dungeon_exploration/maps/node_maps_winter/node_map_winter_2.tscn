@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://coyiok3kl5ln7"]
+[gd_scene load_steps=9 format=3 uid="uid://coyiok3kl5ln7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_ahtnc"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_q3fxw"]
@@ -8,165 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="6_bs82n"]
 [ext_resource type="PackedScene" uid="uid://y05vxgjpeday" path="res://systems/dungeon_exploration/maps/random_event_node.tscn" id="7_ypt0p"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="8_qhebt"]
-[ext_resource type="Texture2D" uid="uid://cj8fhe2r2vwy8" path="res://assets/ui/nodemap/encounter_standard.png" id="8_uukdk"]
-[ext_resource type="PackedScene" uid="uid://bml43x2miuf00" path="res://systems/dungeon_events/battle_event.tscn" id="9_b3x4g"]
-[ext_resource type="Script" path="res://utils/random_scene.gd" id="10_3n3qm"]
-[ext_resource type="Texture2D" uid="uid://b5i3gdceaywkm" path="res://assets/ui/nodemap/encounter_elite.png" id="11_iq6ts"]
-[ext_resource type="PackedScene" uid="uid://cdmbv5kshgi6w" path="res://systems/dungeon_events/challenge_battle_event.tscn" id="12_bbdvf"]
-[ext_resource type="Texture2D" uid="uid://cttyhls7u4jgr" path="res://assets/ui/nodemap/encounter_card.png" id="13_r3px0"]
-[ext_resource type="PackedScene" uid="uid://bggcv7yipjcm7" path="res://systems/dungeon_events/loot_event.tscn" id="14_xbquj"]
-[ext_resource type="Texture2D" uid="uid://cc6matgv77q51" path="res://assets/ui/nodemap/encounter_shop.png" id="15_jrj31"]
-[ext_resource type="PackedScene" path="res://systems/dungeon_events/shop_event.tscn" id="16_6xxdp"]
-
-[sub_resource type="Resource" id="Resource_g4q2i"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_l2apd"]
-script = ExtResource("10_3n3qm")
-chance_weight = 4
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_aoefu"]
-script = ExtResource("10_3n3qm")
-chance_weight = 2
-scene = ExtResource("14_xbquj")
-placeholder_icon_texture = ExtResource("13_r3px0")
-
-[sub_resource type="Resource" id="Resource_15u8d"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("12_bbdvf")
-placeholder_icon_texture = ExtResource("11_iq6ts")
-
-[sub_resource type="Resource" id="Resource_5hh27"]
-script = ExtResource("10_3n3qm")
-chance_weight = 4
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_oaoxd"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("12_bbdvf")
-placeholder_icon_texture = ExtResource("11_iq6ts")
-
-[sub_resource type="Resource" id="Resource_1xldp"]
-script = ExtResource("10_3n3qm")
-chance_weight = 3
-scene = ExtResource("14_xbquj")
-placeholder_icon_texture = ExtResource("13_r3px0")
-
-[sub_resource type="Resource" id="Resource_a443w"]
-script = ExtResource("10_3n3qm")
-chance_weight = 5
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_k7kt6"]
-script = ExtResource("10_3n3qm")
-chance_weight = 4
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_ge5gv"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("12_bbdvf")
-placeholder_icon_texture = ExtResource("11_iq6ts")
-
-[sub_resource type="Resource" id="Resource_mxddl"]
-script = ExtResource("10_3n3qm")
-chance_weight = 5
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_yjeri"]
-script = ExtResource("10_3n3qm")
-chance_weight = 4
-scene = ExtResource("14_xbquj")
-placeholder_icon_texture = ExtResource("13_r3px0")
-
-[sub_resource type="Resource" id="Resource_oy2o3"]
-script = ExtResource("10_3n3qm")
-chance_weight = 3
-scene = ExtResource("12_bbdvf")
-placeholder_icon_texture = ExtResource("11_iq6ts")
-
-[sub_resource type="Resource" id="Resource_h8il0"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_xgd5m"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("16_6xxdp")
-placeholder_icon_texture = ExtResource("15_jrj31")
-
-[sub_resource type="Resource" id="Resource_3yrgj"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("14_xbquj")
-placeholder_icon_texture = ExtResource("13_r3px0")
-
-[sub_resource type="Resource" id="Resource_7yydw"]
-script = ExtResource("10_3n3qm")
-chance_weight = 2
-scene = ExtResource("14_xbquj")
-placeholder_icon_texture = ExtResource("13_r3px0")
-
-[sub_resource type="Resource" id="Resource_i33fd"]
-script = ExtResource("10_3n3qm")
-chance_weight = 2
-scene = ExtResource("12_bbdvf")
-placeholder_icon_texture = ExtResource("11_iq6ts")
-
-[sub_resource type="Resource" id="Resource_22aum"]
-script = ExtResource("10_3n3qm")
-chance_weight = 5
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_2510p"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("14_xbquj")
-placeholder_icon_texture = ExtResource("13_r3px0")
-
-[sub_resource type="Resource" id="Resource_8c3wn"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_miw57"]
-script = ExtResource("10_3n3qm")
-chance_weight = 3
-scene = ExtResource("14_xbquj")
-placeholder_icon_texture = ExtResource("13_r3px0")
-
-[sub_resource type="Resource" id="Resource_xvyik"]
-script = ExtResource("10_3n3qm")
-chance_weight = 2
-scene = ExtResource("16_6xxdp")
-placeholder_icon_texture = ExtResource("15_jrj31")
-
-[sub_resource type="Resource" id="Resource_b84oe"]
-script = ExtResource("10_3n3qm")
-chance_weight = 2
-scene = ExtResource("9_b3x4g")
-placeholder_icon_texture = ExtResource("8_uukdk")
-
-[sub_resource type="Resource" id="Resource_154r8"]
-script = ExtResource("10_3n3qm")
-chance_weight = 1
-scene = ExtResource("12_bbdvf")
-placeholder_icon_texture = ExtResource("11_iq6ts")
 
 [node name="NodeMap" type="Control"]
 layout_mode = 3
@@ -193,24 +34,6 @@ grow_vertical = 1
 startNode = NodePath("../StartNode")
 startData = ExtResource("3_k3uh1")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="SeedLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -435.0
-offset_top = 15.0
-offset_right = -15.0
-offset_bottom = 34.0
-grow_horizontal = 0
-theme = ExtResource("4_27jwb")
-theme_override_font_sizes/font_size = 24
-text = "Seed: 1337"
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("5_nef5j")
-
 [node name="StartNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("6_bs82n")]
 layout_mode = 1
 offset_left = -807.0
@@ -226,7 +49,6 @@ offset_left = -452.0
 offset_top = -2.0
 offset_right = -452.0
 offset_bottom = -2.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_g4q2i")])
 connectsTo = [NodePath("../RandomEventNode2"), NodePath("../RandomEventNode3")]
 dashed_width = 12.0
 offset = 45.0
@@ -237,7 +59,6 @@ offset_left = -119.0
 offset_top = 103.0
 offset_right = -119.0
 offset_bottom = 103.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_l2apd"), SubResource("Resource_aoefu"), SubResource("Resource_15u8d")])
 connectsTo = [NodePath("../RandomEventNode5")]
 dashed_width = 12.0
 offset = 45.0
@@ -248,7 +69,6 @@ offset_left = -185.0
 offset_top = -296.0
 offset_right = -185.0
 offset_bottom = -296.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_5hh27"), SubResource("Resource_oaoxd")])
 connectsTo = [NodePath("../RandomEventNode4")]
 dashed_width = 12.0
 offset = 45.0
@@ -259,7 +79,6 @@ offset_left = 206.0
 offset_top = -423.0
 offset_right = 206.0
 offset_bottom = -423.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_1xldp"), SubResource("Resource_a443w")])
 connectsTo = [NodePath("../RandomEventNode6"), NodePath("../RandomEventNode7")]
 dashed_width = 12.0
 offset = 45.0
@@ -270,7 +89,6 @@ offset_left = 194.0
 offset_top = 75.0
 offset_right = 194.0
 offset_bottom = 75.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_k7kt6"), SubResource("Resource_ge5gv")])
 connectsTo = [NodePath("../RandomEventNode6")]
 dashed_width = 12.0
 offset = 45.0
@@ -281,7 +99,6 @@ offset_left = 526.0
 offset_top = -65.0
 offset_right = 526.0
 offset_bottom = -65.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_mxddl"), SubResource("Resource_yjeri")])
 connectsTo = [NodePath("../RandomEventNode9"), NodePath("../RandomEventNode10")]
 dashed_width = 12.0
 offset = 45.0
@@ -292,7 +109,6 @@ offset_left = 516.0
 offset_top = -397.0
 offset_right = 516.0
 offset_bottom = -397.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_oy2o3"), SubResource("Resource_h8il0")])
 connectsTo = [NodePath("../RandomEventNode9"), NodePath("../RandomEventNode8")]
 dashed_width = 12.0
 offset = 45.0
@@ -303,7 +119,6 @@ offset_left = 838.0
 offset_top = -421.0
 offset_right = 838.0
 offset_bottom = -421.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_xgd5m"), SubResource("Resource_3yrgj")])
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
@@ -314,7 +129,6 @@ offset_left = 789.0
 offset_top = -174.0
 offset_right = 789.0
 offset_bottom = -174.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_7yydw"), SubResource("Resource_i33fd"), SubResource("Resource_22aum")])
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
@@ -325,7 +139,6 @@ offset_left = 882.0
 offset_top = 157.0
 offset_right = 882.0
 offset_bottom = 157.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_2510p"), SubResource("Resource_8c3wn")])
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
@@ -336,7 +149,6 @@ offset_left = 1134.0
 offset_top = -95.0
 offset_right = 1134.0
 offset_bottom = -95.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_miw57"), SubResource("Resource_xvyik"), SubResource("Resource_b84oe")])
 connectsTo = [NodePath("../RandomEventNode12"), NodePath("../RandomEventNode13")]
 dashed_width = 12.0
 offset = 45.0
@@ -597,7 +409,6 @@ offset_left = 4961.0
 offset_top = -115.0
 offset_right = 4961.0
 offset_bottom = -115.0
-potential_events = Array[ExtResource("10_3n3qm")]([SubResource("Resource_154r8")])
 connectsTo = [NodePath("../FinalNode")]
 dashed_width = 12.0
 offset = 45.0
@@ -608,3 +419,26 @@ offset_left = 5309.0
 offset_top = -184.0
 offset_right = 5309.0
 offset_bottom = -184.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SeedLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -435.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 34.0
+grow_horizontal = 0
+theme = ExtResource("4_27jwb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Seed: 1337"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_nef5j")
+
+[connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]

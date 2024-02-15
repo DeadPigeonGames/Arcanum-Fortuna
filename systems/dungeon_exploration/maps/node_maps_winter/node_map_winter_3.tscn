@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://y05vxgjpeday" path="res://systems/dungeon_exploration/maps/random_event_node.tscn" id="7_p82m5"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="8_2ke8x"]
 
-[node name="NodeMap" type="Control"]
+[node name="NodeMap2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +20,7 @@ script = ExtResource("1_xe3d7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
 offset_top = -24.0
 offset_right = 1920.0
 offset_bottom = 840.0
@@ -175,6 +176,7 @@ offset_bottom = 864.0
 color = Color(0.886275, 0.780392, 0.898039, 1)
 
 [node name="Player" parent="." node_paths=PackedStringArray("startNode") instance=ExtResource("2_2s1nl")]
+layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -602,3 +604,26 @@ offset_left = 5285.0
 offset_top = -131.0
 offset_right = 5285.0
 offset_bottom = -131.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="SeedLabel" type="Label" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -435.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 34.0
+grow_horizontal = 0
+theme = ExtResource("4_cui5s")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Seed: 1337"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_xvm7w")
+
+[connection signal="mouse_entered" from="CanvasLayer2/SeedLabel" to="CanvasLayer2/SeedLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/SeedLabel" to="CanvasLayer2/SeedLabel" method="_on_mouse_exited"]
