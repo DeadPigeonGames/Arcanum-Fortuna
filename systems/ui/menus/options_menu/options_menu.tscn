@@ -99,6 +99,7 @@ texture = ExtResource("3_iqdc3")
 
 [node name="AudioOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -366,6 +367,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
+alignment = 1
 item_count = 2
 popup/item_0/text = "Winter"
 popup/item_0/id = 0
@@ -374,7 +376,6 @@ popup/item_1/id = 1
 
 [node name="VideoOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -437,6 +438,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
+alignment = 1
 script = ExtResource("8_8p61a")
 resolutions = Array[Vector2i]([Vector2i(1024, 768), Vector2i(1280, 720), Vector2i(1366, 768), Vector2i(1920, 1080)])
 
@@ -464,6 +466,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
+alignment = 1
 script = ExtResource("9_v38kh")
 
 [node name="hoverSound" parent="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" instance=ExtResource("6_4sw4x")]
