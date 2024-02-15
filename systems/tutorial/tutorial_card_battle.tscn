@@ -93,7 +93,7 @@ element = NodePath("CardPlayer/Hand")
 [sub_resource type="Resource" id="Resource_rivlh"]
 script = ExtResource("8_tck03")
 title = ""
-text = "Feel free to [b]take a closer look at it[/b]! (RMB or double click to inspect)"
+text = "Feel free to [b]take a closer look at it[/b]! (Right Mouse Button)"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer/Hand")])
 arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_u5f26")])
 offset_type = 0
