@@ -4,12 +4,17 @@ class_name CardStack extends Control
 @export var target: Node
 @export var deckCardTemplate: PackedScene
 @export var rng_seed := 1337
+
+@export var fill_textures : Array[Texture]
+
 var rng : RandomNumberGenerator
 
 var cardStack := []
 
 func _ready() -> void:
 	update_text()
+	if cardStack.size() != 0 and cardStack.size() <= fill_textures.size():
+		%DeckTexture.texture = fill_textures[cardStack.size() - 1]
 	
 func init(seed : int):
 	rng_seed = seed
@@ -51,6 +56,10 @@ func draw_card(hand: Node):
 	card.visible = false
 	card.global_position = get_child(0).global_position
 	await get_tree().process_frame
+	if cardStack.size() == 0:
+		hide()
+	elif cardStack.size() <= fill_textures.size():
+		%DeckTexture.texture = fill_textures[cardStack.size() - 1]
 	card.visible = true
 	var tween = create_tween()
 	card.play_cardflip(true)

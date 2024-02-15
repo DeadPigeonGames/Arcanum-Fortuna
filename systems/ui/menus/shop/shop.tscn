@@ -18,9 +18,10 @@
 [sub_resource type="Resource" id="Resource_ekxm3"]
 script = ExtResource("2_npfwa")
 title_text = "unfinished business"
-content_text = "still unfinished trades"
-confirm_label_text = "yes"
-decline_label_text = "no"
+content_text = "[center]You still have unfinished trades.
+Are you sure that you want to leave anyways?"
+confirm_label_text = "Confirm"
+decline_label_text = "Cancel"
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_555t3")
