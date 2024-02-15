@@ -71,7 +71,7 @@ texture = ExtResource("3_whnro")
 [node name="MarginContainer" type="MarginContainer" parent="CardTooltip/MarginContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 30
+theme_override_constants/margin_top = 70
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 18
 
@@ -92,8 +92,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_bnnff")
+theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+text = "[center]Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
 fit_content = true
 
 [node name="HSeparatorButton" type="HSeparator" parent="CardTooltip/MarginContainer/MarginContainer/VBoxContainer"]
