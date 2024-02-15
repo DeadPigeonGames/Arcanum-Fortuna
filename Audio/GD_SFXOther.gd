@@ -16,17 +16,21 @@ var waitingOnKarma = false
 func _SFX_Draw():
 	$Draw.play()
 
+
 func _SFX_HandOpen():
 	$HandOpen.play()
-	
+
+
 func _SFX_HandClose():
 	$HandClose.play()
+
 
 func _SFX_HandCardHover():
 	$HandCardHover.play()
 
+
 func _SFX_Damage():
-	print_debug("Pls update function to call _SFX_DamagePlayer() or _SFX_DamageEnemy()")
+	return
 
 
 func _SFX_DamagePlayer():
