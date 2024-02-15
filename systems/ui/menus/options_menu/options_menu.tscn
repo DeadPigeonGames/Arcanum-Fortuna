@@ -88,7 +88,6 @@ grow_vertical = 2
 texture = ExtResource("3_iqdc3")
 
 [node name="AudioOptions" type="Control" parent="Options"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -290,6 +289,7 @@ popup/item_1/text = "Spring"
 popup/item_1/id = 1
 
 [node name="VideoOptions" type="Control" parent="Options"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
