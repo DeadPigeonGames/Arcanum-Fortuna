@@ -13,6 +13,7 @@ signal drag_ended(card)
 @export var attack_delay = 0.1
 @export var karma_delay = 1.0
 @export var attacked_color : Color
+@export var death_color := Color.DARK_RED
 @export var highlight_color : Color
 @export var active_color : Color
 @export var move_speed = 0.5
@@ -125,6 +126,7 @@ func restore_default_color():
 
 func process_death() -> bool:
 	if health <= 0:
+		modulate = death_color
 		SfxOther._SFX_DestroyCard()
 		await get_tree().process_frame
 		play_animation("die")
@@ -211,6 +213,7 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 		get_parent().add_child(effect)
 		effect.global_position = target_position + half_card
 	
+	#target.restore_default_color()
 	z_index -= 1
 	
 	var was_lethal = target.health <= 0

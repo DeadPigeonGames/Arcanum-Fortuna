@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="TakeDamageSwitch" load_steps=7 format=3 uid="uid://bwsexctmht4nb"]
+[gd_resource type="Resource" script_class="TakeDamageSwitch" load_steps=8 format=3 uid="uid://bwsexctmht4nb"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_25jj6"]
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_o4etk"]
 [ext_resource type="Resource" uid="uid://cpyd5jcb4kdm" path="res://data/keyword/DeathrattleSacrifice3.tres" id="2_462s8"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/take_damage_switch.gd" id="3_smoj4"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="4_qe1r2"]
@@ -21,6 +22,7 @@ keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("4_qe1r2")
 transformed_keyword_slot_atlas = ExtResource("5_6wie6")
+chromatic_scene = ExtResource("1_o4etk")
 rotation_duration = 0.8
 icon_rotation = 1.0
 combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])

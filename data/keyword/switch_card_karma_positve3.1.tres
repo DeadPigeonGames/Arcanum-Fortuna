@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=7 format=3 uid="uid://b527b6i1v5jsj"]
+[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=8 format=3 uid="uid://b527b6i1v5jsj"]
 
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_ekk8n"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_qgfuq"]
 [ext_resource type="Resource" uid="uid://c4uyl7eso8d1k" path="res://data/keyword/companionship_ATK1.tres" id="2_ymwhw"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/cards_karma_switch.gd" id="3_0kdcg"]
@@ -21,6 +22,7 @@ keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("4_weqx1")
 transformed_keyword_slot_atlas = ExtResource("5_sqtbq")
+chromatic_scene = ExtResource("1_ekk8n")
 rotation_duration = 0.8
 icon_rotation = 1.0
 combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])

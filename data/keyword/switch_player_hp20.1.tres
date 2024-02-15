@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="PlayerHpSwitch" load_steps=12 format=3 uid="uid://pvnh1xtfx3ou"]
+[gd_resource type="Resource" script_class="PlayerHpSwitch" load_steps=13 format=3 uid="uid://pvnh1xtfx3ou"]
 
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_rh21p"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_uss02"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_fbqir"]
 [ext_resource type="Resource" uid="uid://cpxcddsxlgqw6" path="res://data/keyword/DrainATK1.tres" id="3_a4dqp"]
@@ -41,6 +42,7 @@ keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("5_w60ec")
 transformed_keyword_slot_atlas = ExtResource("6_hsn0b")
+chromatic_scene = ExtResource("1_rh21p")
 rotation_duration = 0.8
 icon_rotation = 1.0
 combat_phase_triggers = Array[ExtResource("1_uss02")]([SubResource("Resource_44ybw"), SubResource("Resource_fxglf"), SubResource("Resource_tyul1"), SubResource("Resource_f4asu")])
