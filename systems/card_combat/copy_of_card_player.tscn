@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ca7vt6lror7v6" path="res://assets/ui/gameboard/karma.png" id="6_0bdpy"]
 [ext_resource type="Texture2D" uid="uid://by4v5aq6yrqoh" path="res://assets/sprites/vfx/overlays/hurt_overlay.png" id="6_swmyn"]
 [ext_resource type="Script" path="res://systems/card_combat/hurt_overlay.gd" id="7_k4gqe"]
-[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="8_mh8am"]
+[ext_resource type="Theme" path="res://assets/ui/themes/font_theme.tres" id="8_mh8am"]
 [ext_resource type="Texture2D" uid="uid://b2oy1bhp7yy1h" path="res://assets/ui/gameboard/hb_2.png" id="8_nlbg8"]
 [ext_resource type="Script" path="res://systems/effects/screenshake_cam.gd" id="8_y2d2q"]
 [ext_resource type="Texture2D" uid="uid://oc76xjyw1lsm" path="res://assets/ui/gameboard/hb_1.png" id="9_nwmk5"]
@@ -283,8 +283,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 116.0
-offset_top = -137.0
+offset_top = 403.0
 offset_right = 271.0
+offset_bottom = 540.0
 grow_vertical = 0
 texture = ExtResource("10_x5mo0")
 
