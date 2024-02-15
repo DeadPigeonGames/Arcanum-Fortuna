@@ -1,11 +1,9 @@
-[gd_resource type="Theme" load_steps=40 format=3 uid="uid://l2whpxkwhcdn"]
+[gd_resource type="Theme" load_steps=38 format=3 uid="uid://l2whpxkwhcdn"]
 
 [ext_resource type="Texture2D" uid="uid://diuotxd43kep6" path="res://assets/ui/placeholders/empty.png" id="1_nhmbk"]
 [ext_resource type="Texture2D" uid="uid://b40dk0amujmgc" path="res://assets/ui/underlays/menu_highlight.png" id="2_jlku6"]
-[ext_resource type="Texture2D" uid="uid://bk4awi081narj" path="res://assets/ui/placeholders/checkbox_check_placeholder.png" id="2_tlh4s"]
-[ext_resource type="Texture2D" uid="uid://cl6augjte4phr" path="res://assets/ui/placeholders/checkbox_default_placeholder.png" id="3_5an84"]
 [ext_resource type="Texture2D" uid="uid://7w77k8lowu8" path="res://assets/ui/underlays/menu_highlight_pressed.png" id="3_13teg"]
-[ext_resource type="Texture2D" uid="uid://ucp5uptgmfr1" path="res://assets/ui/placeholders/chechbox_hover_placeholder.png" id="4_4yns2"]
+[ext_resource type="Texture2D" uid="uid://djt1lqp7xolba" path="res://assets/ui/underlays/checkbox_x.png" id="4_gqejg"]
 [ext_resource type="Texture2D" uid="uid://ktdctvbdmxa4" path="res://assets/ui/underlays/checkbox_hover.png" id="6_0q5eb"]
 [ext_resource type="Texture2D" uid="uid://dxdqk7nuke6pl" path="res://assets/ui/underlays/checkbox_normal.png" id="8_2uqr7"]
 [ext_resource type="Texture2D" uid="uid://elmcuxrwc3gy" path="res://assets/ui/underlays/checkbox_pressed.png" id="9_g6w5p"]
@@ -36,13 +34,13 @@ texture = ExtResource("1_nhmbk")
 texture = ExtResource("3_13teg")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jihiw"]
-texture = ExtResource("3_5an84")
+texture = ExtResource("9_g6w5p")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3bmuj"]
 texture = ExtResource("6_0q5eb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3x4j4"]
-texture = ExtResource("4_4yns2")
+texture = ExtResource("6_0q5eb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81h4m"]
 texture = ExtResource("8_2uqr7")
@@ -97,7 +95,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_s818a")
 Button/styles/pressed = SubResource("StyleBoxTexture_m3s28")
 CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 40
-CheckBox/icons/checked = ExtResource("2_tlh4s")
+CheckBox/icons/checked = ExtResource("4_gqejg")
 CheckBox/icons/checked_disabled = null
 CheckBox/icons/unchecked = ExtResource("1_nhmbk")
 CheckBox/icons/unchecked_disabled = null
@@ -118,7 +116,7 @@ OptionButton/styles/focus = SubResource("StyleBoxTexture_h467q")
 OptionButton/styles/hover = SubResource("StyleBoxTexture_kml1y")
 OptionButton/styles/normal = SubResource("StyleBoxTexture_awlsg")
 OptionButton/styles/pressed = SubResource("StyleBoxTexture_q7fqw")
-PopupMenu/icons/radio_checked = ExtResource("2_tlh4s")
+PopupMenu/icons/radio_checked = ExtResource("4_gqejg")
 PopupMenu/styles/hover = SubResource("StyleBoxTexture_1xvo6")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_obkvj")
 RichTextLabel/constants/line_separation = 12
