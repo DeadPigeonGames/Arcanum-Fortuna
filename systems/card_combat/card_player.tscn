@@ -19,7 +19,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+border_color = Color(0.486275, 0.145098, 0.0784314, 1)
 script = ExtResource("1_ifl70")
+attacked_color = Color(0.486275, 0.145098, 0.0784314, 1)
+positive_effect_color = Color(0.372549, 0.560784, 0.247059, 1)
 
 [node name="Hand" parent="." instance=ExtResource("1_cbbcf")]
 unique_name_in_owner = true
