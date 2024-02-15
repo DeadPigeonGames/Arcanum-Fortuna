@@ -14,18 +14,16 @@ script = ExtResource("2_nvahl")
 [node name="SwitchFrame" parent="Artwork" index="0"]
 offset_left = -11.0
 
-[node name="Label" parent="Artwork/SwitchFrame" index="0"]
-offset_left = 70.0
-offset_top = 228.5
-offset_right = 140.0
-offset_bottom = 243.5
-
 [node name="Cost" parent="." index="2"]
 offset_left = 17.2
 offset_top = -48.0
 offset_right = 57.2
 offset_bottom = -8.0
 texture = ExtResource("3_1wpwd")
+
+[node name="KarmaCost" parent="Cost" index="0"]
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 
 [node name="Health" parent="." index="3"]
 texture = ExtResource("4_yuw8o")
@@ -52,6 +50,10 @@ text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HealthCost" parent="Health" index="1"]
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+
 [node name="Attack" parent="." index="4"]
 texture = ExtResource("6_fax5g")
 
@@ -76,6 +78,10 @@ theme_override_font_sizes/font_size = 15
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AttackCost" parent="Attack" index="1"]
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 
 [node name="ShowCardTooltip" parent="." index="14"]
 visible = false

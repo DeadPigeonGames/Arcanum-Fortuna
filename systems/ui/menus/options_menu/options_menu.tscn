@@ -63,14 +63,14 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = "AUDIO"
+text = " AUDIO"
 alignment = 0
 
 [node name="VideoButton" type="Button" parent="OptionsMenu/OptionsMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = "VIDEO"
+text = " VIDEO"
 alignment = 0
 
 [node name="AccessibilityButton" type="Button" parent="OptionsMenu/OptionsMenuButtons"]
@@ -78,7 +78,7 @@ visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = "ACCESSIBILITY"
+text = " ACCESSIBILITY"
 alignment = 0
 
 [node name="Options" type="Control" parent="OptionsMenu"]
@@ -124,6 +124,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 48.0
+offset_right = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_x54wv")
@@ -349,6 +352,7 @@ script = ExtResource("7_rihke")
 target_bus = "UI"
 
 [node name="SoundTrack" type="HBoxContainer" parent="OptionsMenu/Options/AudioOptions/Options"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/Options/AudioOptions/Options/SoundTrack"]
@@ -396,6 +400,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 49.0
+offset_right = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_x54wv")
@@ -496,6 +503,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 48.0
+offset_right = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_x54wv")
@@ -576,7 +586,7 @@ offset_right = 384.0
 offset_bottom = -64.0
 grow_vertical = 0
 theme = ExtResource("3_x54wv")
-text = "RETURN"
+text = " RETURN"
 alignment = 0
 
 [connection signal="button_up" from="OptionsMenu/OptionsMenuButtons/AudioButton" to="." method="_on_audio_button_button_up"]
