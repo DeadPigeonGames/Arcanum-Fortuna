@@ -122,6 +122,12 @@ func click():
 
 
 func _trigger_event():
+	var test_instance = event.instantiate()
+	if test_instance is RunEndScreen:
+		var end_screen = SceneHandler.add_ui_element(event) as RunEndScreen
+		end_screen.init(120, self)
+		end_screen.setup()
+		return
 	if not event:
 		return
 	if is_scene_switch:
