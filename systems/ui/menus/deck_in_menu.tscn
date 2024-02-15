@@ -67,4 +67,10 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="ShowTooltip" parent="Control/Button/CardStack/DeckTexture" index="1"]
+text = "Contains all cards you collected this run.
+Click on it to view your collection."
+
 [connection signal="button_up" from="Control/Button" to="." method="_on_button_button_up"]
+
+[editable path="Control/Button/CardStack"]
