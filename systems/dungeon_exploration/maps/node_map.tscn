@@ -51,8 +51,13 @@ offset_right = -15.0
 offset_bottom = 34.0
 grow_horizontal = 0
 theme = ExtResource("3_he6bg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 24
 text = "Seed: 1337"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("3_k4v05")
+
+[connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]

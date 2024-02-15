@@ -32,8 +32,8 @@ func inspection_init(card_to_display: Card):
 	for keyword in preview_card.keywords:
 		if keyword is SwitchKeyword:
 			switch_keyword = keyword
-			switch_buff = Buff.new(switch_keyword.health_difference, \
-					switch_keyword.attack_difference, switch_keyword, card_to_display)
+			switch_buff = Buff.new(switch_keyword.attack_difference, switch_keyword.health_difference, \
+					 switch_keyword, card_to_display)
 			$CardInspection/SwitchCondition.show()
 	$CardInspection/CardFlavour/CardFlavourText.text = card_data.description
 	update_keyword_labels()
