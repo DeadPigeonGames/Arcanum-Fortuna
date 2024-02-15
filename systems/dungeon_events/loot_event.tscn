@@ -288,6 +288,8 @@ _data = {
 script = ExtResource("1_dmmsx")
 possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov"), ExtResource("13_i20vq"), ExtResource("14_yblq6"), ExtResource("15_pfa0e"), ExtResource("16_qho8o"), ExtResource("17_0fg6u"), ExtResource("18_avl72"), ExtResource("19_cdqgj"), ExtResource("21_mpwgk"), ExtResource("22_eqva3"), ExtResource("23_gsrsm"), ExtResource("24_pevg5"), ExtResource("28_bgh43"), ExtResource("30_subjn"), ExtResource("31_l3eet"), ExtResource("33_odtm4"), ExtResource("34_1d4eq"), ExtResource("35_8nhqe")])
 cardTemplate = ExtResource("1_panx4")
+min_coins = 3
+max_coins = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
