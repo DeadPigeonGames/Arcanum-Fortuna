@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjaecj5rdauy3"]
+[gd_scene load_steps=11 format=3 uid="uid://cjaecj5rdauy3"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_trade_section.gd" id="1_li3lg"]
 [ext_resource type="PackedScene" uid="uid://ba7hqrlkxau6b" path="res://systems/ui/menus/shop/shop_card.tscn" id="2_5sgb4"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="6_x6y62"]
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="7_rt4em"]
 [ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="8_cotqf"]
-[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="9_xxihm"]
+[ext_resource type="Theme" path="res://assets/ui/themes/font_theme.tres" id="9_xxihm"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="10_kh4yl"]
 
 [node name="ShopTradeSection" type="Control" node_paths=PackedStringArray("cost_label", "shop_card_1", "shop_card_2", "shop_card_3", "hand_card_1", "hand_card_2", "hand_card_3")]
 layout_mode = 3
@@ -161,6 +162,16 @@ theme_override_font_sizes/font_size = 26
 text = "Trade for [amount] Gold"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HoverSound" parent="TradeButton" instance=ExtResource("10_kh4yl")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="TradeButton" instance=ExtResource("10_kh4yl")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [node name="HandCards" type="Control" parent="."]
 layout_mode = 1
