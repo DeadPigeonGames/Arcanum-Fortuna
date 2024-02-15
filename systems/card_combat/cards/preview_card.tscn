@@ -10,6 +10,8 @@
 [node name="PreviewCard" instance=ExtResource("1_fh83p")]
 mouse_filter = 2
 script = ExtResource("2_nvahl")
+buff_color = Color(0.372549, 0.560784, 0.247059, 1)
+debuff_color = Color(0.486275, 0.145098, 0.0784314, 1)
 
 [node name="SwitchFrame" parent="Artwork" index="0"]
 offset_left = -11.0
