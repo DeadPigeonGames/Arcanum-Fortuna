@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpxb0myux3sm3"]
+[gd_scene load_steps=8 format=3 uid="uid://cpxb0myux3sm3"]
 
 [ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="1_7rffy"]
 [ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="2_42d11"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://n67jhv3xv2db" path="res://assets/vfx/materials/karma_particle.tres" id="4_kxvtw"]
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="5_eqhbq"]
 [ext_resource type="Material" uid="uid://bvhyxtr0b6ktj" path="res://assets/vfx/materials/trail.tres" id="6_552m7"]
+[ext_resource type="Material" uid="uid://x5u303jd0gal" path="res://assets/vfx/materials/big_blob.tres" id="7_mr6pg"]
 
 [node name="VfxToLoad" type="Node2D"]
 
@@ -26,3 +27,6 @@ process_material = ExtResource("5_eqhbq")
 
 [node name="GPUParticles2D6" type="GPUParticles2D" parent="."]
 process_material = ExtResource("6_552m7")
+
+[node name="GPUParticles2D7" type="GPUParticles2D" parent="."]
+process_material = ExtResource("7_mr6pg")

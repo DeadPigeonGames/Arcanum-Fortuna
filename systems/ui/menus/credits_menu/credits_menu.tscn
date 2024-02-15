@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d101m5rvvp1kq"]
+[gd_scene load_steps=9 format=3 uid="uid://d101m5rvvp1kq"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/credits_menu/credits_menu.gd" id="1_a05ra"]
 [ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="1_ed5nk"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="2_3l6i4"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="2_vjscp"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="4_y3lcj"]
 
 [sub_resource type="Animation" id="Animation_f6rfj"]
 length = 0.001
@@ -95,6 +96,16 @@ theme = ExtResource("2_3l6i4")
 text = "RETURN"
 alignment = 0
 
+[node name="HoverSound" parent="CreditsMenu/ReturnButton" instance=ExtResource("4_y3lcj")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="CreditsMenu/ReturnButton" instance=ExtResource("4_y3lcj")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
 [node name="Credits" type="Control" parent="CreditsMenu"]
 layout_mode = 1
 anchors_preset = 7
@@ -138,7 +149,7 @@ Till Braunwald
 Matthias Streicher
 
 [center][b]Engineering[/b]
-Benedikt Mertens
+Benedikt Mertes
 Karl Nehring
 Lukas Schmidt
 
@@ -172,7 +183,7 @@ Till Braunwald - Design Lead, UI / UX Design
 Matthias Streicher - Balancing
 
 [center][b]Engineering[/b]
-Benedikt Mertens - Engineering Lead
+Benedikt Mertes - Engineering Lead
 Karl Nehring - Prototyping
 Lukas Schmidt - UI Programming
 

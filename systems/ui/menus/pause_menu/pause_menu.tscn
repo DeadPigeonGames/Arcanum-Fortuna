@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cglhkt704cl5u"]
+[gd_scene load_steps=10 format=3 uid="uid://cglhkt704cl5u"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/pause_menu.gd" id="1_8pmj7"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_ejo7b"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_nbw54"]
 [ext_resource type="PackedScene" uid="uid://b8xs6q5trxx58" path="res://systems/ui/menus/options_menu/options_menu.tscn" id="2_xaeyw"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="5_behqx"]
 
 [sub_resource type="Animation" id="Animation_fhxqc"]
 length = 0.001
@@ -59,7 +60,7 @@ _data = {
 "open_pause_menu": SubResource("Animation_574ap")
 }
 
-[node name="PauseMenu" type="CanvasLayer"]
+[node name="PauseMenu2" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_8pmj7")
 options_scene = ExtResource("2_xaeyw")
@@ -112,12 +113,32 @@ theme = ExtResource("1_nbw54")
 text = "CONTINUE"
 alignment = 0
 
+[node name="HoverSound" parent="PauseMenu/PauseMenuButtons/ContinueButton" instance=ExtResource("5_behqx")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="PauseMenu/PauseMenuButtons/ContinueButton" instance=ExtResource("5_behqx")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
 [node name="OptionsButton" type="Button" parent="PauseMenu/PauseMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_nbw54")
 text = "OPTIONS"
 alignment = 0
+
+[node name="HoverSound" parent="PauseMenu/PauseMenuButtons/OptionsButton" instance=ExtResource("5_behqx")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="PauseMenu/PauseMenuButtons/OptionsButton" instance=ExtResource("5_behqx")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [node name="MainMenuButton" type="Button" parent="PauseMenu"]
 custom_minimum_size = Vector2(0, 80)
@@ -134,11 +155,20 @@ theme = ExtResource("1_nbw54")
 text = "ABANDON"
 alignment = 0
 
+[node name="HoverSound" parent="PauseMenu/MainMenuButton" instance=ExtResource("5_behqx")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="PauseMenu/MainMenuButton" instance=ExtResource("5_behqx")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu"]
 libraries = {
 "": SubResource("AnimationLibrary_sl42d")
 }
-autoplay = "open_pause_menu"
 
 [connection signal="button_up" from="PauseMenu/PauseMenuButtons/ContinueButton" to="." method="_on_continue_button_button_up"]
 [connection signal="button_up" from="PauseMenu/PauseMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]

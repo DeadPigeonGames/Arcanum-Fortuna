@@ -63,23 +63,53 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = " AUDIO"
+text = "AUDIO"
 alignment = 0
+
+[node name="HoverSound" parent="OptionsMenu/OptionsMenuButtons/AudioButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="OptionsMenu/OptionsMenuButtons/AudioButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [node name="VideoButton" type="Button" parent="OptionsMenu/OptionsMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = " VIDEO"
+text = "VIDEO"
 alignment = 0
+
+[node name="HoverSound" parent="OptionsMenu/OptionsMenuButtons/VideoButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="OptionsMenu/OptionsMenuButtons/VideoButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [node name="AccessibilityButton" type="Button" parent="OptionsMenu/OptionsMenuButtons"]
 visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = " ACCESSIBILITY"
+text = "ACCESSIBILITY"
 alignment = 0
+
+[node name="HoverSound" parent="OptionsMenu/OptionsMenuButtons/AccessibilityButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="OptionsMenu/OptionsMenuButtons/AccessibilityButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [node name="Options" type="Control" parent="OptionsMenu"]
 anchors_preset = 0
@@ -99,7 +129,6 @@ texture = ExtResource("3_iqdc3")
 
 [node name="AudioOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -125,9 +154,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 43.0
-offset_top = 48.0
-offset_right = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_x54wv")
@@ -353,7 +379,6 @@ script = ExtResource("7_rihke")
 target_bus = "UI"
 
 [node name="SoundTrack" type="HBoxContainer" parent="OptionsMenu/Options/AudioOptions/Options"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/Options/AudioOptions/Options/SoundTrack"]
@@ -367,7 +392,6 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-alignment = 1
 item_count = 2
 popup/item_0/text = "Winter"
 popup/item_0/id = 0
@@ -376,6 +400,7 @@ popup/item_1/id = 1
 
 [node name="VideoOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -401,9 +426,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 43.0
-offset_top = 49.0
-offset_right = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_x54wv")
@@ -438,7 +460,6 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-alignment = 1
 script = ExtResource("8_8p61a")
 resolutions = Array[Vector2i]([Vector2i(1024, 768), Vector2i(1280, 720), Vector2i(1366, 768), Vector2i(1920, 1080)])
 
@@ -466,7 +487,6 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-alignment = 1
 script = ExtResource("9_v38kh")
 
 [node name="hoverSound" parent="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" instance=ExtResource("6_4sw4x")]
@@ -506,9 +526,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 43.0
-offset_top = 48.0
-offset_right = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_x54wv")
@@ -589,8 +606,18 @@ offset_right = 384.0
 offset_bottom = -64.0
 grow_vertical = 0
 theme = ExtResource("3_x54wv")
-text = " RETURN"
+text = "RETURN"
 alignment = 0
+
+[node name="HoverSound" parent="OptionsMenu/ReturnButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="OptionsMenu/ReturnButton" instance=ExtResource("6_4sw4x")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [connection signal="button_up" from="OptionsMenu/OptionsMenuButtons/AudioButton" to="." method="_on_audio_button_button_up"]
 [connection signal="button_up" from="OptionsMenu/OptionsMenuButtons/VideoButton" to="." method="_on_video_button_button_up"]

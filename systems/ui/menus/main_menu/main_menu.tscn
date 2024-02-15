@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=27 format=3 uid="uid://byccv8hmd45ln"]
 
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="6_hn0r2"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="6_uytas"]
 [ext_resource type="Texture2D" uid="uid://pi5ofdcm7ro1" path="res://assets/ui/placeholders/nodemap1.png" id="7_w5744"]
+[ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="9_870rf"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="9_lricu"]
 [ext_resource type="Texture2D" uid="uid://g623lf2fjfvj" path="res://assets/ui/placeholders/nodemap_1_foreground.png" id="9_s8mvn"]
 [ext_resource type="Texture2D" uid="uid://can862dqmhwwo" path="res://assets/ui/placeholders/snowflake_test.png" id="9_se7g8"]
 [ext_resource type="Texture2D" uid="uid://2c184n3ld2p3" path="res://assets/ui/placeholders/nodemap_1_background.png" id="11_f5nm2"]
@@ -808,12 +810,32 @@ theme = ExtResource("1_ix3bk")
 text = " PLAY"
 alignment = 0
 
+[node name="HoverSound" parent="MainMenuButtons/StartButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="MainMenuButtons/StartButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
 [node name="TutorialButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
 text = " TUTORIAL"
 alignment = 0
+
+[node name="HoverSound" parent="MainMenuButtons/TutorialButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="MainMenuButtons/TutorialButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [node name="CustomSeedButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
@@ -822,6 +844,16 @@ theme = ExtResource("1_ix3bk")
 text = " SEED"
 alignment = 0
 
+[node name="HoverSound" parent="MainMenuButtons/CustomSeedButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="MainMenuButtons/CustomSeedButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
 [node name="OptionsButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -829,12 +861,32 @@ theme = ExtResource("1_ix3bk")
 text = " OPTIONS"
 alignment = 0
 
+[node name="HoverSound" parent="MainMenuButtons/OptionsButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="MainMenuButtons/OptionsButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
 [node name="CreditsButton" type="Button" parent="MainMenuButtons"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_ix3bk")
 text = " CREDITS"
 alignment = 0
+
+[node name="HoverSound" parent="MainMenuButtons/CreditsButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="MainMenuButtons/CreditsButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
 
 [node name="QuitButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 80)
@@ -850,6 +902,19 @@ grow_vertical = 0
 theme = ExtResource("1_ix3bk")
 text = " QUIT"
 alignment = 0
+
+[node name="HiddenInBrowser" type="Node" parent="QuitButton"]
+script = ExtResource("9_870rf")
+show_or_hide = 0
+
+[node name="HoverSound" parent="QuitButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="QuitButton" instance=ExtResource("9_lricu")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
 
 [node name="Background" type="Control" parent="."]
 modulate = Color(0.462745, 0.462745, 0.462745, 1)
