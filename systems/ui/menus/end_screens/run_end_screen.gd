@@ -1,8 +1,11 @@
 class_name RunEndScreen
 extends UIBase
 
-
 func setup():
+	if name == "WinScreen":
+		SfxOther._SFX_Win()
+	else:
+		SfxOther._SFX_Loss()
 	Pause.can_pause = false
 
 
