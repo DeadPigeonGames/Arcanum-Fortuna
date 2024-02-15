@@ -8,8 +8,6 @@ signal game_continued
 @export var can_pause = false
 @export var pause_scene : PackedScene
 
-var pre_paused = false
-
 func _input(event):
 	if not can_pause:
 		return
@@ -21,7 +19,7 @@ func _input(event):
 
 
 func continue_game():
-	get_tree().paused = pre_paused
+	get_tree().paused = false
 	game_continued.emit()
 
 
@@ -31,7 +29,6 @@ func pause_game():
 	var pause = SceneHandler.add_ui_element(pause_scene) as PauseMenu
 	pause.init(150, self)
 	pause.setup()
-	pre_paused = get_tree().paused
 	get_tree().paused = true
 	game_paused.emit()
 

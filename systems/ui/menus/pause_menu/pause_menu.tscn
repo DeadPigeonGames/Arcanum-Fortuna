@@ -138,6 +138,7 @@ alignment = 0
 libraries = {
 "": SubResource("AnimationLibrary_sl42d")
 }
+autoplay = "open_pause_menu"
 
 [connection signal="button_up" from="PauseMenu/PauseMenuButtons/ContinueButton" to="." method="_on_continue_button_button_up"]
 [connection signal="button_up" from="PauseMenu/PauseMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
