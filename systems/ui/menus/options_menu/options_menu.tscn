@@ -352,6 +352,7 @@ script = ExtResource("7_rihke")
 target_bus = "UI"
 
 [node name="SoundTrack" type="HBoxContainer" parent="OptionsMenu/Options/AudioOptions/Options"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/Options/AudioOptions/Options/SoundTrack"]
