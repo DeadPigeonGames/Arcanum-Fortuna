@@ -7,6 +7,7 @@ extends Control
 #@export var setup_nodes : Array[Node]
 
 @export var enable_camera_control := false
+@export var position_offset := Vector2(5, -55)
 
 @export_category("Debug")
 @export var is_debug := false
@@ -42,7 +43,7 @@ func _process(delta):
 	
 	if targetNode:
 		var target = targetNode.position
-		position = position.lerp(target - get_rect().size / 2, 0.1)
+		position = position.lerp(target - get_rect().size / 2 + position_offset, 0.1)
 	
 	if enable_camera_control:
 		$Camera2D.position = $Camera2D.position.lerp(get_viewport().get_mouse_position() * mouse_track, 0.05)
