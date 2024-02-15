@@ -34,6 +34,9 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 			instance = SceneHandler.add_ui_element(loseEvent)
 			instance.init(110, self)
 			instance.setup()
+			field.queue_free()
+			finished.emit()
+			queue_free()
 			return
 		if "seed" in instance:
 			instance.seed = seed
