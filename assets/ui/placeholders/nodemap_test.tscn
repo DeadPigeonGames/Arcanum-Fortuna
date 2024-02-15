@@ -164,7 +164,7 @@ mouse_filter = 2
 
 [node name="SnowParticles" type="GPUParticles2D" parent="LimitedCamera"]
 z_index = 2
-position = Vector2(480, -630)
+position = Vector2(474, -525)
 amount = 160
 process_material = SubResource("ParticleProcessMaterial_op1x3")
 texture = ExtResource("10_v8li0")

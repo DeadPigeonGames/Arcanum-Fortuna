@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=88 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="2_24vt3"]
@@ -353,9 +353,26 @@ arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_jaopx")])
 offset_type = 3
 distance = 400.0
 
+[sub_resource type="Resource" id="Resource_kdt7s"]
+script = ExtResource("7_ey2by")
+offset_type = 2
+distance = 90.0
+element = NodePath("GameBoard/PlayerTiles/Panel3")
+
+[sub_resource type="Resource" id="Resource_ctasb"]
+script = ExtResource("4_w40ps")
+title = ""
+text = "And because it is a major arcana with a [b][color=#CB9D47]golden frame[/color][/b], it may [b]awaken[/b].
+
+Meaning that the card [b]grows in strength[/b] when it [b]fulfills its unique condition[/b]."
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles/Panel3")])
+arrows = Array[ExtResource("7_ey2by")]([SubResource("Resource_kdt7s")])
+offset_type = 2
+distance = 400.0
+
 [sub_resource type="Resource" id="Resource_v18om"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_62jb1")])
+popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_62jb1"), SubResource("Resource_ctasb")])
 
 [sub_resource type="Resource" id="Resource_jsiee"]
 script = ExtResource("8_q2rpp")
@@ -433,6 +450,7 @@ popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_dat
 script = ExtResource("23_wqrtp")
 health = 0.0
 fixed_placement_cards = Array[Resource("res://data/scripts/card_data.gd")]([])
+fixed_friendly_placement_cards = Array[Resource("res://data/scripts/card_data.gd")]([])
 
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
 phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_8ywms"), SubResource("Resource_v18om"), SubResource("Resource_jsiee"), SubResource("Resource_lebng"), SubResource("Resource_losxt"), SubResource("Resource_d5ek4"), SubResource("Resource_rio7r"), SubResource("Resource_fmibs"), SubResource("Resource_3kiem"), SubResource("Resource_gtqw3")])
