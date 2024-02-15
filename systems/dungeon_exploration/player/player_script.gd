@@ -18,7 +18,7 @@ var targetNode: EventNode
 static var instance : Player
 
 func _ready():
-	if not instance:
+	if instance == null:
 		instance = self
 	if not enable_camera_control:
 		$Camera2D.queue_free()
