@@ -1,7 +1,6 @@
 class_name OptionsMenu
 extends UIBase
 
-
 var audio_box
 var video_box
 
@@ -16,9 +15,9 @@ func setup():
 func _input(event):
 	super._input(event)
 	if event.is_action_released("ui_cancel"):
-		if called_by.has_method("close"):
-			called_by.close()
-		close()
+		if called_by.has_method("close_with_result"):
+			close_with_result(true)
+		self.close()
 
 
 func _on_audio_button_button_up():
@@ -32,4 +31,8 @@ func _on_video_button_button_up():
 
 
 func _on_return_button_button_up():
-	close()
+	if called_by.has_method("close_with_result"):
+		close_with_result(true)
+	else:
+		close()
+

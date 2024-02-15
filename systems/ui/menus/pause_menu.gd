@@ -19,7 +19,7 @@ func close_pause_menu():
 
 
 func receive_result(result):
-	if result != null:
+	if result is bool and result == true:
 		visible = true
 
 
