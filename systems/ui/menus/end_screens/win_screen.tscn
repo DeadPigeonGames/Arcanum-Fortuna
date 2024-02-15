@@ -128,5 +128,5 @@ text = "Take a rest"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="button_up" from="WinScreen/HBoxContainer/RetryButton" to="WinScreen" method="_on_retry_button_button_up"]
-[connection signal="button_up" from="WinScreen/HBoxContainer/MainMenuButton" to="WinScreen" method="_on_main_menu_button_button_up"]
+[connection signal="button_up" from="WinScreen/HBoxContainer/RetryButton" to="." method="_on_retry_button_button_up"]
+[connection signal="button_up" from="WinScreen/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
