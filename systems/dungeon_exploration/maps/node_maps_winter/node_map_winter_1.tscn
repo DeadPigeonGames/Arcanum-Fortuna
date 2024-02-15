@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://c8wrkx1o0ism"]
+[gd_scene load_steps=95 format=3 uid="uid://c8wrkx1o0ism"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_lar4p"]
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="2_jx6qu"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cttyhls7u4jgr" path="res://assets/ui/nodemap/encounter_card.png" id="13_bvmhs"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="15_ocwq0"]
 [ext_resource type="Texture2D" uid="uid://cc6matgv77q51" path="res://assets/ui/nodemap/encounter_shop.png" id="15_xwpki"]
-[ext_resource type="Texture2D" uid="uid://b768ea2oy5aym" path="res://assets/ui/nodemap/encounter_final.png" id="17_useq1"]
 [ext_resource type="Texture2D" uid="uid://clda7gnqq52gc" path="res://assets/ui/placeholders/nodemap_1_decoration.png" id="19_o8yvs"]
 
 [sub_resource type="Resource" id="Resource_i25gk"]
@@ -463,12 +462,6 @@ script = ExtResource("10_ttikx")
 chance_weight = 1
 scene = ExtResource("12_vamcr")
 placeholder_icon_texture = ExtResource("8_6mxc1")
-
-[sub_resource type="Resource" id="Resource_o16yg"]
-script = ExtResource("10_ttikx")
-chance_weight = 1
-scene = ExtResource("15_ocwq0")
-placeholder_icon_texture = ExtResource("17_useq1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fjdya"]
 resource_name = "help"
@@ -955,19 +948,16 @@ offset_top = -128.0
 offset_right = 5031.0
 offset_bottom = -128.0
 potential_events = Array[ExtResource("10_ttikx")]([SubResource("Resource_iid5s")])
-connectsTo = [NodePath("../RandomEventNode36")]
+connectsTo = [NodePath("../FinalNode")]
 dashed_width = 12.0
 offset = 45.0
 
-[node name="RandomEventNode36" parent="." instance=ExtResource("7_7t6tu")]
+[node name="FinalNode" parent="." instance=ExtResource("15_ocwq0")]
 layout_mode = 1
-offset_left = 5274.0
-offset_top = -174.0
-offset_right = 5274.0
-offset_bottom = -174.0
-potential_events = Array[ExtResource("10_ttikx")]([SubResource("Resource_o16yg")])
-dashed_width = 12.0
-offset = 45.0
+offset_left = 5241.0
+offset_top = -170.0
+offset_right = 5241.0
+offset_bottom = -170.0
 
 [node name="LevelDecorations" type="Control" parent="."]
 anchors_preset = 0
