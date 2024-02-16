@@ -1,17 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpxb0myux3sm3"]
+[gd_scene load_steps=7 format=3 uid="uid://cpxb0myux3sm3"]
 
-[ext_resource type="Material" uid="uid://g5bch5a3t0aj" path="res://assets/materials/distort_rect.tres" id="1_7rffy"]
 [ext_resource type="Material" uid="uid://g7xmtp2ti8fv" path="res://assets/materials/invert.tres" id="2_42d11"]
 [ext_resource type="Material" uid="uid://dwqpq14caf8hu" path="res://assets/vfx/materials/damage_effect.tres" id="3_y1f0w"]
-[ext_resource type="Material" uid="uid://n67jhv3xv2db" path="res://assets/vfx/materials/karma_particle.tres" id="4_kxvtw"]
 [ext_resource type="Material" uid="uid://7sj2hjrf2mv4" path="res://assets/vfx/materials/keyword_icon.tres" id="5_eqhbq"]
+[ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="5_jvxhj"]
 [ext_resource type="Material" uid="uid://bvhyxtr0b6ktj" path="res://assets/vfx/materials/trail.tres" id="6_552m7"]
-[ext_resource type="Material" uid="uid://x5u303jd0gal" path="res://assets/vfx/materials/big_blob.tres" id="7_mr6pg"]
+[ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="6_scqhg"]
 
 [node name="VfxToLoad" type="Node2D"]
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-process_material = ExtResource("1_7rffy")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
 process_material = ExtResource("2_42d11")
@@ -19,14 +15,12 @@ process_material = ExtResource("2_42d11")
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
 process_material = ExtResource("3_y1f0w")
 
-[node name="GPUParticles2D4" type="GPUParticles2D" parent="."]
-process_material = ExtResource("4_kxvtw")
-
 [node name="GPUParticles2D5" type="GPUParticles2D" parent="."]
 process_material = ExtResource("5_eqhbq")
 
 [node name="GPUParticles2D6" type="GPUParticles2D" parent="."]
 process_material = ExtResource("6_552m7")
 
-[node name="GPUParticles2D7" type="GPUParticles2D" parent="."]
-process_material = ExtResource("7_mr6pg")
+[node name="BigBlob" parent="." instance=ExtResource("5_jvxhj")]
+
+[node name="KarmaParticle" parent="." instance=ExtResource("6_scqhg")]
