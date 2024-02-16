@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvnruxmnnshsm" path="res://assets/ui/underlays/deck_tab.png" id="3_2fnly"]
 [ext_resource type="Texture2D" uid="uid://863840k0cerb" path="res://assets/ui/underlays/deck_underlay.png" id="4_cswfr"]
 [ext_resource type="Texture2D" uid="uid://ccpoxcmcvxn4u" path="res://assets/ui/buttons/deck_k_normal.png" id="5_0lvex"]
-[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="5_1v447"]
+[ext_resource type="Theme" path="res://assets/ui/themes/font_theme.tres" id="5_1v447"]
 [ext_resource type="Texture2D" uid="uid://dvna27tlep0o8" path="res://assets/ui/buttons/deck_k_hover.png" id="6_at3c3"]
 [ext_resource type="Texture2D" uid="uid://b28mteee5836h" path="res://assets/ui/buttons/deck_k_focus.png" id="7_l4icu"]
 [ext_resource type="Texture2D" uid="uid://ih5nm4ivt1ok" path="res://assets/ui/buttons/deck_atk_normal.png" id="8_mmhbq"]

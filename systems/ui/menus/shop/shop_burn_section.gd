@@ -45,6 +45,7 @@ func receive_result(result):
 	if result is bool and result == false:
 		return
 	if result is bool and result == true:
+		SfxOther._SFX_Money()
 		execute_burn_card()
 	if result is Array[CardData]:
 		burn_card.visible = true

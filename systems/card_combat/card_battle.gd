@@ -42,6 +42,7 @@ var is_blocked := false :
 
 func _ready():
 	SfxBg._playTrack(SfxBg.MapTypes.CITY)
+	SfxOther._SFX_EnterLevel()
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
@@ -147,6 +148,7 @@ func unlock_player_actions():
 
 
 func _on_end_turn_button_pressed():
+	SfxOther._SFX_Coin()
 	player_turn_ended.emit()
 	%EndTurnAnimation.play()
 
@@ -211,3 +213,7 @@ func handle_friendly_attacks():
 		if is_battle_over:
 			return
 
+
+
+func _on_end_turn_button_mouse_entered():
+	SfxOther._SFX_UIButtonHover()

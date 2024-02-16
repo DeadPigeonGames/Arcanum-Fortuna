@@ -14,7 +14,7 @@ config/name="ARCANUM FORTUNA"
 config/tags=PackedStringArray("s4g")
 run/main_scene="res://utils/entry_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/sprites/keywords/kw_switch_1.png"
 
 [autoload]
 

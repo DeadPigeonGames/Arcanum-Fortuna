@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bxifydx1hdpwf"]
+[gd_scene load_steps=48 format=3 uid="uid://bxifydx1hdpwf"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_lco5q"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/tutorial.gd" id="2_xmauc"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/actions/ta_enemy_play_card.gd" id="18_mtdgx"]
 [ext_resource type="Texture2D" uid="uid://da686q86v5n60" path="res://assets/sprites/cards/spell.png" id="19_ymsqq"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="20_yi4lx"]
+[ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="21_oad6i"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/actions/ta_play_out_turn.gd" id="22_o7xjc"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="23_mj0yg"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/actions/ta_change_process_mode.gd" id="23_s0rud"]
@@ -49,7 +50,8 @@ currency = 0
 [sub_resource type="Resource" id="Resource_6hp1s"]
 script = ExtResource("6_lxqc0")
 health = 0.0
-rows = Array[Array]([])
+fixed_placement_cards = Array[ExtResource("20_yi4lx")]([])
+fixed_friendly_placement_cards = Array[ExtResource("20_yi4lx")]([])
 
 [sub_resource type="Resource" id="Resource_3wse5"]
 script = ExtResource("13_y6t7h")
@@ -66,6 +68,7 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
+keyword_slot_texture = ExtResource("21_oad6i")
 
 [sub_resource type="Resource" id="Resource_67liv"]
 script = ExtResource("23_mj0yg")
@@ -107,6 +110,7 @@ keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
+keyword_slot_texture = ExtResource("21_oad6i")
 
 [node name="Tutorial" node_paths=PackedStringArray("tutorial_steps") instance=ExtResource("1_lco5q")]
 script = ExtResource("2_xmauc")
@@ -115,30 +119,6 @@ tutorial_steps = NodePath("Steps")
 next_scene = "res://systems/ui/main_menu.tscn"
 debug_player_data = SubResource("Resource_wj3g8")
 debug_enemy_data = SubResource("Resource_6hp1s")
-
-[node name="Panel" parent="GameBoard/EnemyTiles/Row1" index="0"]
-visible = false
-
-[node name="Panel2" parent="GameBoard/EnemyTiles/Row1" index="1"]
-visible = false
-
-[node name="Panel4" parent="GameBoard/EnemyTiles/Row1" index="3"]
-visible = false
-
-[node name="Panel5" parent="GameBoard/EnemyTiles/Row1" index="4"]
-visible = false
-
-[node name="Panel" parent="GameBoard/EnemyTiles/Row2" index="0"]
-visible = false
-
-[node name="Panel2" parent="GameBoard/EnemyTiles/Row2" index="1"]
-visible = false
-
-[node name="Panel4" parent="GameBoard/EnemyTiles/Row2" index="3"]
-visible = false
-
-[node name="Panel5" parent="GameBoard/EnemyTiles/Row2" index="4"]
-visible = false
 
 [node name="Panel" parent="GameBoard/PlayerTiles" index="0"]
 visible = false
@@ -152,7 +132,7 @@ visible = false
 [node name="Panel5" parent="GameBoard/PlayerTiles" index="4"]
 visible = false
 
-[node name="BonusDrawButton" parent="CardPlayer" index="2"]
+[node name="BonusDrawButton" parent="CardPlayer" index="3"]
 visible = false
 offset_left = 0.0
 offset_top = 0.0
@@ -166,9 +146,6 @@ offset_top = 21.0
 offset_right = 172.0
 offset_bottom = 89.0
 text = "Skip Tutorial"
-
-[node name="CardDeletionButton" parent="." index="4"]
-visible = false
 
 [node name="ShowTooltip" parent="EndTurnButton" index="0"]
 process_mode = 4
@@ -463,7 +440,7 @@ tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 
 [node name="ShowLanes" type="Node" parent="Steps/TutorialStep19_5" index="1" node_paths=PackedStringArray("nodes")]
 script = ExtResource("8_r3c85")
-nodes = [NodePath("../../../GameBoard/EnemyTiles/Row1/Panel"), NodePath("../../../GameBoard/EnemyTiles/Row1/Panel2"), NodePath("../../../GameBoard/EnemyTiles/Row1/Panel4"), NodePath("../../../GameBoard/EnemyTiles/Row1/Panel5"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel2"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel4"), NodePath("../../../GameBoard/EnemyTiles/Row2/Panel5"), NodePath("../../../GameBoard/PlayerTiles/Panel"), NodePath("../../../GameBoard/PlayerTiles/Panel2"), NodePath("../../../GameBoard/PlayerTiles/Panel4"), NodePath("../../../GameBoard/PlayerTiles/Panel5")]
+nodes = [null, null, null, null, null, null, null, null, NodePath("../../../GameBoard/PlayerTiles/Panel"), NodePath("../../../GameBoard/PlayerTiles/Panel2"), NodePath("../../../GameBoard/PlayerTiles/Panel4"), NodePath("../../../GameBoard/PlayerTiles/Panel5")]
 
 [node name="IfActionPressed" type="Node" parent="Steps/TutorialStep19_5" index="2" node_paths=PackedStringArray("button")]
 script = ExtResource("8_ubcot")

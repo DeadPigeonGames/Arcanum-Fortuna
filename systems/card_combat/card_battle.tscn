@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=46 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="9_j03le"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="10_5pdmy"]
 [ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_dvcfv"]
+[ext_resource type="Script" path="res://systems/card_combat/background.gd" id="15_7ge46"]
 [ext_resource type="PackedScene" uid="uid://ced2ynscdgy5e" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
 [ext_resource type="Texture2D" uid="uid://4hupbd7iry1x" path="res://assets/ui/gameboard/card_burner.png" id="18_i7pqs"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
@@ -177,6 +178,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_dvcfv")
+script = ExtResource("15_7ge46")
 
 [node name="GameBoard" type="VBoxContainer" parent="." node_paths=PackedStringArray("enemy_player", "player")]
 layout_mode = 1
@@ -438,6 +440,8 @@ mouse_filter = 2
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(962, 507)
 
+[connection signal="mouse_entered" from="Background" to="Background" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background" to="Background" method="_on_mouse_exited"]
 [connection signal="card_drag_ended" from="CardPlayer" to="GameBoard" method="_on_card_relased"]
 [connection signal="card_drag_started" from="CardPlayer" to="GameBoard" method="_on_card_dragged"]
 [connection signal="mouse_entered" from="CardDeletion" to="CardDeletion" method="_on_mouse_entered"]
@@ -445,5 +449,6 @@ position = Vector2(962, 507)
 [connection signal="mouse_entered" from="CardDeletion/ShowTooltip" to="CardDeletion/ShowTooltip" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CardDeletion/ShowTooltip" to="CardDeletion/ShowTooltip" method="_on_mouse_exited"]
 [connection signal="button_down" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[connection signal="mouse_entered" from="EndTurnButton" to="." method="_on_end_turn_button_mouse_entered"]
 [connection signal="mouse_entered" from="EndTurnButton/ShowTooltip" to="EndTurnButton/ShowTooltip" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="EndTurnButton/ShowTooltip" to="EndTurnButton/ShowTooltip" method="_on_mouse_exited"]

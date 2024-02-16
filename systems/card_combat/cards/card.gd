@@ -252,6 +252,7 @@ func set_shader_value(value: float):
 
 
 func animate_icon(emission_texture):
+	SfxOther._SFX_Effect()
 	var new_particle = keyword_particles.instantiate()
 	$CenterAnchor.add_child(new_particle)
 	new_particle.texture = emission_texture

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://systems/effects/victory_animation.gd" id="1_gnn8w"]
 [ext_resource type="Shader" path="res://shaders/fake_3d.gdshader" id="2_7ldh2"]
 [ext_resource type="Texture2D" uid="uid://celd3g1asnsr7" path="res://assets/sprites/vfx/text_card_victorious.png" id="3_tpy3n"]
-[ext_resource type="Theme" uid="uid://gdg11k5bmpte" path="res://assets/ui/themes/menu_ui_theme.tres" id="5_73ir2"]
+[ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="5_73ir2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4wfv"]
 shader = ExtResource("2_7ldh2")

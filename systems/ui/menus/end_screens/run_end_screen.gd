@@ -8,6 +8,9 @@ func setup():
 		SfxOther._SFX_Loss()
 	Pause.can_pause = false
 
+func _ready():
+	SfxOther._SFX_Loss()
+
 
 func _on_retry_button_button_up():
 	for node in SceneHandler.ui_container.get_children():

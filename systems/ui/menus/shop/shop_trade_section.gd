@@ -58,6 +58,7 @@ func get_random_by_seed(array, rng):
 
 func process_trade():
 	trade_button.disabled = true
+	SfxOther._SFX_Money()
 	
 	var s_cards : Array[ShopPreviewCard] = get_shop_cards()
 	var h_cards : Array[ShopPreviewCard] = get_hand_cards()
