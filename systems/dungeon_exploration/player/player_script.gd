@@ -14,6 +14,7 @@ extends Control
 
 var data: PlayerData
 var targetNode: EventNode
+var lerp_weight := 0.1
 
 static var instance : Player
 
@@ -43,7 +44,7 @@ func _process(delta):
 	
 	if targetNode:
 		var target = targetNode.position
-		position = position.lerp(target - get_rect().size / 2 + position_offset, 0.1)
+		position = position.lerp(target - get_rect().size / 2 + position_offset, lerp_weight)
 	
 	if enable_camera_control:
 		$Camera2D.position = $Camera2D.position.lerp(get_viewport().get_mouse_position() * mouse_track, 0.05)
@@ -52,6 +53,7 @@ func _process(delta):
 var debug_movement_on := false
 var debug_position := Vector2()
 var debug_speed := 1.0
+
 
 func debug_movement():
 	if not is_debug:

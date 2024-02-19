@@ -43,6 +43,10 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 		add_child(instance)
 		instance.trigger(player_data, enemy_data)
 		await instance.finished
+		#battle_ends
+		ScreenFade.fade_out(1.0)
+		await ScreenFade.fade_out_complete
+		ScreenFade.fade_in(1.0)
 	
 	field.queue_free()
 	finished.emit()

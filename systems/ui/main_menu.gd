@@ -19,6 +19,7 @@ func _ready():
 	seed_text = str(seed)
 	GlobalLog.set_context(GlobalLog.Context.MENU)
 	GlobalLog.add_entry("Main Menu loaded.")
+	ScreenFade.fade_in(1.0, false)
 
 
 func _process(delta):
@@ -50,7 +51,8 @@ func start_game():
 
 
 func _on_start_button_button_up():
-	start_game()
+	ScreenFade.fade_out(1.0, true, true)
+	ScreenFade.fade_out_complete.connect(start_game)
 
 
 func _on_tutorial_button_button_up():

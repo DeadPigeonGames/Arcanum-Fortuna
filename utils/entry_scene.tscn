@@ -22,8 +22,6 @@ func _ready():
 	
 	if not main_scene.is_empty():
 		SceneHandler.change_scene(main_scene)
-	
-	ScreenFade.fade_in(2.0)
 
 
 func load_audio_config():

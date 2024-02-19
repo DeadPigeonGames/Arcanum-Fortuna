@@ -43,6 +43,7 @@ var is_blocked := false :
 func _ready():
 	SfxBg._playTrack(SfxBg.MapTypes.CITY)
 	SfxOther._SFX_EnterLevel()
+	ScreenFade.fade_in(1.0)
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()

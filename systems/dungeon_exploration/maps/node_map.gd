@@ -7,6 +7,7 @@ var level := 0.0
 
 func _ready():
 	SfxBg._playTrack(SfxBg.MapTypes.WINTER)
+	ScreenFade.fade_in(1.0)
 
 
 func _process(delta):
