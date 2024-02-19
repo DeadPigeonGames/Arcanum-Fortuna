@@ -989,7 +989,7 @@ texture = ExtResource("18_n3puc")
 flip_h = true
 
 [connection signal="button_up" from="MainMenuButtons/StartButton" to="." method="_on_start_button_button_up"]
-[connection signal="button_down" from="MainMenuButtons/TutorialButton" to="." method="_on_tutorial_button_button_down"]
+[connection signal="button_up" from="MainMenuButtons/TutorialButton" to="." method="_on_tutorial_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CustomSeedButton" to="." method="_on_custom_seed_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/OptionsButton" to="." method="_on_options_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditsButton" to="." method="_on_credits_button_button_up"]
