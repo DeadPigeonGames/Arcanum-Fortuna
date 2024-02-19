@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dars7yhkvi48j" path="res://assets/ui/underlays/shop_burn.png" id="4_s18qy"]
 [ext_resource type="Script" path="res://systems/ui/ui_base/ui_popup_data.gd" id="4_w3bxg"]
 [ext_resource type="Texture2D" uid="uid://mg2c1qenfgr0" path="res://assets/ui/underlays/shop_burn_hover.png" id="5_bikae"]
-[ext_resource type="Theme" path="res://assets/ui/themes/font_theme.tres" id="6_1we2u"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="6_1we2u"]
 [ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="6_7o87m"]
 [ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="7_rcu5e"]
 [ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="8_yxhup"]

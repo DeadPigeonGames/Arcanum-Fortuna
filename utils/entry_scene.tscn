@@ -6,7 +6,7 @@ script/source = "extends Node
 @export_file(\"*.tscn\") var main_scene = \"\"
 @export_file(\"*.tscn\") var web_load_scene = \"\"
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	randomize()
 	await get_parent().ready
@@ -22,6 +22,9 @@ func _ready():
 	
 	if not main_scene.is_empty():
 		SceneHandler.change_scene(main_scene)
+	
+	ScreenFade.fade_in(2.0)
+
 
 func load_audio_config():
 	var dict = Settings.get_loaded_audiosettings()
