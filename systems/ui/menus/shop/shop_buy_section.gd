@@ -79,7 +79,6 @@ func _on_shop_card_clicked():
 
 func set_label_gold(amount : int):
 	cost_label.text = original_price_text
-	print(original_price_text)
 	cost_label.text = cost_label.text.replace("[amount]", str(amount))
 
 

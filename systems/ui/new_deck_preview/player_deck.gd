@@ -12,7 +12,6 @@ func populate_with_cards(deck_cards):
 	populate_hbox(hbox_amount)
 	var i := 0
 	for card in deck_cards:
-		print(hboxes[i])
 		if not hboxes[i].try_add_card(card):
 			i += 1
 			hboxes[i].try_add_card(card)
