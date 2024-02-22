@@ -40,6 +40,9 @@ func _process(delta):
 	else:
 		z_index = 3
 	
+	mouse_filter = Control.MOUSE_FILTER_IGNORE if isPickedUp else Control.MOUSE_FILTER_PASS
+	$ShowCardTooltip.mouse_filter = mouse_filter
+	
 	if isPickedUp:
 		z_index = 5
 		var target_position = get_global_mouse_position() + drag_offset
