@@ -23,6 +23,9 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	var remainingLife = await field.finished
 	var won = remainingLife > 0
 	
+	if won:
+		SteamService.try_unlock_achievement("Better than Noyan")
+	
 	player_data.health = remainingLife
 	
 	var event = winEvent if won else loseEvent

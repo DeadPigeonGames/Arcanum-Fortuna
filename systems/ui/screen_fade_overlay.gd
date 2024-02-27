@@ -110,19 +110,16 @@ func reset_tint(duration : float):
 
 func emit_tint_complete_internal():
 	tint_complete.emit()
-	print("tint_complete")
 	reset_screenfade_internal()
 
 
 func emit_fade_out_complete_internal():
 	fade_out_complete.emit()
-	print("fade_out_complete")
 	reset_screenfade_internal()
 
 
 func emit_fade_in_complete_internal():
 	fade_in_complete.emit()
-	print("fade_in_complete")
 	reset_screenfade_internal()
 
 
