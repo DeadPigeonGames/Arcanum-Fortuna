@@ -36,6 +36,10 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 	await animate_transform(owner, icon_to_animate)
 	owner.modify_keywords(keywords_to_remove, keywords_to_gain)
 	owner.try_add_buff(Buff.new(attack_difference, health_difference, self, owner))
+	
+	if not owner.is_enemy:
+		SteamService.try_unlock_achievement("Awake " + owner.card_name)
+	
 	await owner.get_tree().create_timer(1.0).timeout
 	await owner.trigger_keywords(owner, owner, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, combat_ref)
 	
