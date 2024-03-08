@@ -1,20 +1,20 @@
 ResourceName,Name,Cost,Attack,Health,Keywords
-the_magician,The Magician,-4,3,2,companionship_ATK1;alive2_switch
-the_high_priestess,The High Priestess,-4,2,3,companionship_shield;alive2.1_switch
+the_magician,The Magician,-4,3,2,companionship_ATK1;alive3_switch
+the_high_priestess,The High Priestess,-4,2,3,companionship_shield;alive3.1_switch
 the_empress,The Empress,-3,1,4,DrainATK1;attack_damage_switch7
 the_emperor,The Emperor,-2,4,5,slow;kill2_switch
 the_hierophant,The Hierophant,-2,1,2,deathrattle_sacrifice;flip;keyword_switch2
 the_lovers,The Lovers,-5,2,3,SplitAttack;switch_cards_played3
-the_chariot,The Chariot,-6,2,2,TripleAttack;switch_karma_count10.1
+the_chariot,The Chariot,-6,2,2,TripleAttack;switch_karma_count15
 death,Death,-7,3,3,ConsumeATK1HP1;switch_player_hp20
 page_of_daggers,Page of Daggers,3,1,1,deathrattle_ATK1
 page_of_thorns,Page of Thorns,4,0,1,deathrattle_damage2
 page_of_herbs,Page of Herbs,1,1,3,deathrattle_HP1
 page_of_flags,Page of Flags,5,0,1,companionship_HP1
-the_hermit,The Hermit,-3,1,4,atk_nerf1;switch_take_damage2
+the_hermit,The Hermit,-3,1,4,atk_nerf1;switch_take_damage4
 the_moon,The Moon,-3,4,4,damage_controller2;flip;switch_card_karma_negative3
 the_sun,The Sun,-4,2,4,heal_controller2;switch_card_karma_positive3
-strength,Strength,-6,1,5,self_buff1;attack_damage_switch7.1
+strength,Strength,-6,1,5,self_buff1;attack_damage_switch10
 the_star,The Star,-3,1,3,shield;switch_card_copy2
 the_hanged_man,The Hanged Man,-4,1,5,position_summon;switch_cards_played3.1
 the_tower,The Tower,-5,2,4,body_guard;atk_nerf_in_front1;switch_card_copy2.1
@@ -22,11 +22,11 @@ king_of_daggers,King of Daggers,2,1,2,deathrattle_ATK1
 king_of_thorns,King of Thorns,3,1,1,deathrattle_damage2
 king_of_herbs,King of Herbs,4,0,1,deathrattle_HP1
 king_of_flags,King of Flags,3,0,2,companionship_HP1
-the_devil,The Devil,-8,1,5,lifesteal_keyword;switch_attack_stronger_card
+the_devil,The Devil,-8,1,5,lifesteal_keyword;switch_player_damage7
 temperance,Temperance,-4,1,4,companionship_shield;switch_card_karma_positive3.1
-wheel_of_fortune,Wheel of Fortune,-4,2,3,companionship_ATK1
-justice,Justice,-3,0,6,atk_nerf1;switch_take_damage_amount4
-judgement,Judgement,-3,3,1,position_summon;atk_nerf_in_front1
+wheel_of_fortune,Wheel of Fortune,-4,2,3,companionship_ATK1;switch_player_hp25
+justice,Justice,-3,0,6,atk_nerf1;switch_take_damage_amount8
+judgement,Judgement,-3,3,1,position_summon;atk_nerf_in_front1;switch_take_damage4.1
 the_world,The World,-7,3,3,multi_attack;switch_card_karma_negative3.1
 queen_of_daggers,Queen of Daggers,4,0,2,buff_next_card_attack
 queen_of_thorns,Queen of Thorns,1,1,3,counter_damage

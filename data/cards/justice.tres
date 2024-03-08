@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_fwtl7"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_gk1bb"]
 [ext_resource type="Resource" uid="uid://cla7wpd2pd8cb" path="res://data/keyword/atk_nerf1.tres" id="3_ss65f"]
-[ext_resource type="Resource" uid="uid://d31srswsakyk8" path="res://data/keyword/switch_take_damage_amount4.tres" id="5_raaom"]
+[ext_resource type="Resource" uid="uid://dd1n7v7hubcyc" path="res://data/keyword/switch_take_damage_amount8.tres" id="4_f7fb2"]
 [ext_resource type="AudioStream" uid="uid://b2m6qfa85ckgx" path="res://Audio/Signatures/SignatureJustice.ogg" id="7_rt200"]
 
 [resource]
@@ -15,7 +15,7 @@ artwork = ExtResource("1_aecmw")
 cost = -3
 attack = 0
 health = 6
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_ss65f"), ExtResource("5_raaom")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_ss65f"), ExtResource("4_f7fb2")])
 spawn_frequency = 10
 shop_cost = 5
 trade_override = 0

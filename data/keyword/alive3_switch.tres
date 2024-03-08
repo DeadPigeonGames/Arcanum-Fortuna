@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=10 format=3 uid="uid://cnom160f3jm5u"]
+
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_653uv"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_uytew"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="3_h3k6a"]
+[ext_resource type="Resource" uid="uid://s0ldta5qu4fp" path="res://data/keyword/atk_nerf_in_front1.tres" id="4_sy3xn"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="5_37w4e"]
+[ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="6_lhkhh"]
+[ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="7_2djyf"]
+
+[sub_resource type="Resource" id="Resource_yutjw"]
+script = ExtResource("2_uytew")
+source_phase = 9
+timing = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
+atlas = ExtResource("3_h3k6a")
+region = Rect2(0, 264, 66, 66)
+
+[resource]
+script = ExtResource("5_37w4e")
+required_trigger_count = 3
+dynamic_tooltip_unit_name = "turns"
+attack_difference = 0
+health_difference = 2
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("4_sy3xn")])
+keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+tranform_delay = 1.0
+transformed_artwork_shader = ExtResource("6_lhkhh")
+transformed_keyword_slot_atlas = ExtResource("7_2djyf")
+chromatic_scene = ExtResource("1_653uv")
+rotation_duration = 0.8
+icon_rotation = 1.0
+combat_phase_triggers = Array[ExtResource("2_uytew")]([SubResource("Resource_yutjw")])
+triggers = 0
+is_animated = true
+scale_speed = 0.6
+animate_scale = false
+animate_particle = true
+title = "Awaken: Time"
+description = "This card will awaken once it survived for %d turns. "
+icon = SubResource("AtlasTexture_xuji6")
+highlight_duration = 0.5

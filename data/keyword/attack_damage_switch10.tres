@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DamageSwitch" load_steps=8 format=3 uid="uid://dbqesatk2fbx7"]
+
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_q7i5w"]
+[ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_oyskq"]
+[ext_resource type="Resource" uid="uid://bad0llajg2pb5" path="res://data/keyword/ConsumeATK1HP1.tres" id="3_g6muc"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/switch/damage_switch.gd" id="3_k5y2h"]
+[ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="4_15vrg"]
+[ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="5_epilk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
+atlas = ExtResource("2_oyskq")
+region = Rect2(0, 264, 66, 66)
+
+[resource]
+script = ExtResource("3_k5y2h")
+required_damage = 10
+damage_to_track = 2
+attack_difference = 0
+health_difference = 0
+keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_g6muc")])
+keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+tranform_delay = 1.0
+transformed_artwork_shader = ExtResource("4_15vrg")
+transformed_keyword_slot_atlas = ExtResource("5_epilk")
+chromatic_scene = ExtResource("1_q7i5w")
+rotation_duration = 0.8
+icon_rotation = 1.0
+combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+triggers = 32
+is_animated = true
+scale_speed = 0.6
+animate_scale = false
+animate_particle = true
+title = "Awaken: Service"
+description = "This card will awaken once it dealt a total of %d damage."
+icon = SubResource("AtlasTexture_xuji6")
+highlight_duration = 0.5

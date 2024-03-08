@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_h65kg"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_hwcbd"]
 [ext_resource type="Resource" uid="uid://dvt6vrtfufa0t" path="res://data/keyword/TripleAttack.tres" id="2_tbtlt"]
-[ext_resource type="Resource" uid="uid://wkcaq5b37xro" path="res://data/keyword/switch_karma_count10.1.tres" id="4_siau2"]
+[ext_resource type="Resource" uid="uid://ceiu4mt5kpfha" path="res://data/keyword/switch_karma_count15.tres" id="4_tmlda"]
 [ext_resource type="AudioStream" uid="uid://booehr8b62ukj" path="res://Audio/Signatures/SignatureChariot.ogg" id="6_844g1"]
 
 [resource]
@@ -15,7 +15,7 @@ artwork = ExtResource("1_p6ovo")
 cost = -6
 attack = 2
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_tbtlt"), ExtResource("4_siau2")])
+keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_tbtlt"), ExtResource("4_tmlda")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
