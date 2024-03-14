@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://cmqipk5xlafjc"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=14 format=3 uid="uid://cmqipk5xlafjc"]
 
 [ext_resource type="Resource" uid="uid://vtxg3gn2kpbu" path="res://data/cards/knight_of_thorns.tres" id="2_bajrg"]
 [ext_resource type="Resource" uid="uid://b05drmja6ckug" path="res://data/cards/knight_of_herbs.tres" id="3_3dtar"]
@@ -12,10 +12,9 @@
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="9_j7ee6"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="10_jkvtn"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="11_2fhtc"]
-[ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="12_ks2bi"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="12_qp2xj"]
 
 [resource]
 script = ExtResource("11_2fhtc")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("3_ftvfg"), ExtResource("2_bajrg"), ExtResource("3_3dtar"), ExtResource("4_pmri8"), ExtResource("4_tn0y2"), ExtResource("5_q0108"), ExtResource("8_mt25q"), ExtResource("7_ay436"), ExtResource("8_vd473"), ExtResource("9_j7ee6"), ExtResource("10_jkvtn"), ExtResource("12_ks2bi")])
+available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("3_ftvfg"), ExtResource("2_bajrg"), ExtResource("3_3dtar"), ExtResource("4_pmri8"), ExtResource("4_tn0y2"), ExtResource("5_q0108"), ExtResource("8_mt25q"), ExtResource("7_ay436"), ExtResource("8_vd473"), ExtResource("9_j7ee6"), ExtResource("10_jkvtn")])
 strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_qp2xj")])
