@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://uf36g406dvlv" path="res://assets/ui/underlays/tooltip_underlay.png" id="3_gtp4j"]
 [ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="5_511dl"]
 
-[node name="TooltipBase" type="Control"]
+[node name="TooltipBasic" type="Control"]
 z_index = 1
 layout_mode = 3
 anchors_preset = 0

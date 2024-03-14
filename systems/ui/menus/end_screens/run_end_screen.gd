@@ -8,6 +8,7 @@ func setup():
 		SfxOther._SFX_Loss()
 	Pause.can_pause = false
 
+
 func _ready():
 	SfxOther._SFX_Loss()
 

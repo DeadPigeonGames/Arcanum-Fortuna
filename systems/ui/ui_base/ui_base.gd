@@ -17,10 +17,6 @@ func init(layer : int, caller):
 	is_current_window = true
 
 
-func setup():
-	push_error("ERROR: no setup implementation in UIBase!")
-
-
 func close_with_result(result):
 	if called_by is UIBase:
 		called_by.is_current_window = true

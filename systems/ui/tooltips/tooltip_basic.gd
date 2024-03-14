@@ -10,5 +10,5 @@ func setup(title: String, texture: Texture2D, text: String):
 	visible = false
 	%Name.text = title
 	%Text.text = text
-	await SceneHandler.shelf.get_tree().create_timer(0.1).timeout
+	await SceneHandler.inactive_scenes.get_tree().create_timer(0.1).timeout
 	visible = true

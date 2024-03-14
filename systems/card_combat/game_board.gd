@@ -28,16 +28,16 @@ func _ready():
 	for tile in player_tiles.get_children():
 		tile.self_modulate = tile_disabled_color
 		tile.mouse_entered.connect(
-			func (): 
+			func ():
 				if not accept_card:
 					return
 				tile.self_modulate = tile_hovered_color
 				hovered_tile = tile
 		)
 		tile.mouse_exited.connect(
-			func (): 
+			func ():
 				tile.self_modulate = tile_interactible_color if accept_card else tile_disabled_color
-				if hovered_tile == tile: 
+				if hovered_tile == tile:
 					hovered_tile = null
 		)
 
@@ -52,7 +52,7 @@ func get_enemy_tile_pos(y, x):
 
 func is_front_tile_empty(tile_idx : int, is_friendly : bool):
 	return player_tiles.get_child(tile_idx).get_child_count() == 0 if is_friendly else \
-			enemy_tiles_front.get_child(tile_idx).get_child_count() == 0
+		enemy_tiles_front.get_child(tile_idx).get_child_count() == 0
 
 
 func is_back_tile_empty(tile_idx : int):
@@ -96,7 +96,7 @@ func lock_friendly_cards(combat):
 		combat.player.transfer_stored_buffs(new_combat_card)
 		GlobalLog.add_entry("Card '%s' was placed on board at position %d-%d." % \
 		[new_combat_card.card_data.name, i, 0])
-		card.reparent(SceneHandler.shelf)
+		card.reparent(SceneHandler.inactive_scenes)
 		card.queue_free()
 		await get_tree().process_frame
 		await combat._on_card_played(new_combat_card)
@@ -249,6 +249,11 @@ func get_active_cards() -> Array[CombatCard]:
 
 func get_tile(idx, friendly = false):
 	return (player_tiles if not friendly else $EnemyTiles/Frontrow).get_child(idx)
+
+
+func get_card(idx, friendly = false):
+	var tile = get_tile(idx, friendly)
+	return tile.get_child(0) if tile.get_child_count() > 0 else null
 
 
 func highlight_tile(idx, friendly = false):

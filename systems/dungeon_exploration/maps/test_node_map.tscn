@@ -37,8 +37,6 @@ offset_top = -821.0
 offset_right = -972.0
 offset_bottom = -821.0
 connectsTo = [NodePath("../CombatNode3")]
-level_gain = 0.0
-is_scene_switch = false
 offset = 50.0
 
 [node name="CombatNode3" parent="right_ risky, advanced" index="1" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
@@ -106,8 +104,6 @@ offset_top = -1307.0
 offset_right = -1559.0
 offset_bottom = -1307.0
 connectsTo = [NodePath("../CombatNode3"), NodePath("../../left goes right_ riskier/CombatNode5")]
-level_gain = 0.0
-is_scene_switch = false
 offset = 50.0
 
 [node name="CombatNode3" parent="left_ safe, beginner" index="3" node_paths=PackedStringArray("connectsTo") instance=ExtResource("2_v5jx1")]
@@ -140,8 +136,6 @@ offset_top = -2113.0
 offset_right = -1373.0
 offset_bottom = -2113.0
 connectsTo = [NodePath("../../Enboss")]
-level_gain = 0.0
-is_scene_switch = false
 offset = 50.0
 
 [node name="left goes right_ riskier" type="Node" parent="." index="7"]
@@ -159,6 +153,4 @@ offset_top = -1708.0
 offset_right = -1225.0
 offset_bottom = -1708.0
 connectsTo = [NodePath("../../Enboss")]
-level_gain = 0.0
-is_scene_switch = false
 offset = 50.0

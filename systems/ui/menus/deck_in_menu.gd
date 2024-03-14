@@ -18,7 +18,6 @@ func _process(delta):
 
 
 func setup():
-	super.setup()
 	await get_tree().create_timer(0.1).timeout
 	player_data = Player.instance.data
 	card_stack_node = $Control/Button/CardStack

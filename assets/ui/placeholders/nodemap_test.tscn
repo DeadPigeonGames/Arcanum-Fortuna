@@ -151,15 +151,15 @@ offset_bottom = 1080.0
 mouse_filter = 1
 
 [node name="LimitedCamera" type="Camera2D" parent="."]
-position = Vector2(19, 534)
+position = Vector2(19, 535)
 offset = Vector2(480, 0)
 script = ExtResource("12_3m17x")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="LimitedCamera"]
 offset_left = -2901.0
-offset_top = -537.0
+offset_top = -535.0
 offset_right = 5620.0
-offset_bottom = 545.0
+offset_bottom = 547.0
 mouse_filter = 2
 
 [node name="SnowParticles" type="GPUParticles2D" parent="LimitedCamera"]

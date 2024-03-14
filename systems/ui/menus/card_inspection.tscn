@@ -45,6 +45,7 @@ shader_parameter/heightOffset = 1.5
 
 [node name="CardInspection" type="CanvasLayer"]
 script = ExtResource("1_373cu")
+hover_color = null
 stat_change_scene = ExtResource("3_d8e8f")
 switch_artwork_shader = ExtResource("3_rc3s5")
 switch_keyword_slots = ExtResource("4_pj6c4")

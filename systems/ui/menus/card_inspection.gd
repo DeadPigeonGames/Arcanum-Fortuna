@@ -14,7 +14,7 @@ var switch_buff : Buff
 
 var preview_card : Card
 
-func inspection_init(card_to_display: Card):
+func setup(card_to_display: Card):
 	preview_card = %PreviewCard
 	$CardInspection/SwitchCondition.hide()
 	preview_card.set_base_attack_text(str(card_to_display.card_data.attack))

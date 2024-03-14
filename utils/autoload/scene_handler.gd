@@ -2,9 +2,10 @@ extends Node
 
 var current_scene
 @onready var scene_container = $CurrentScene
-@onready var shelf = $Shelf
+@onready var inactive_scenes = $inactive_scenes
 @onready var ui_container = $UIContainer
 var combat : CardBattle
+
 
 func _ready():
 	await get_tree().root.ready
@@ -16,7 +17,7 @@ func change_scene(new_scene):
 	for child in scene_container.get_children():
 		child.queue_free()
 	
-	for child in shelf.get_children():
+	for child in inactive_scenes.get_children():
 		child.queue_free()
 	
 	for child in ui_container.get_children():
@@ -27,9 +28,9 @@ func change_scene(new_scene):
 	scene_container.add_child(current_scene)
 
 
-func add_shelf_element(element):
+func add_inactive_scenes_element(element):
 	var element_to_add = get_instantiated_scene(element)
-	shelf.add_child(element_to_add)
+	inactive_scenes.add_child(element_to_add)
 
 
 func add_ui_element(element):

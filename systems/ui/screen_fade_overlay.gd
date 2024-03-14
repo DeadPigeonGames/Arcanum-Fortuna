@@ -16,6 +16,7 @@ var fade_out_color = Color.BLACK
 var color_rect : ColorRect
 var is_tween_running := false
 
+
 func _ready():
 	tween = get_tree().create_tween()
 	color_rect = $ColorRect

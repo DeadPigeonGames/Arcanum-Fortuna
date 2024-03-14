@@ -15,7 +15,7 @@ func _input(event):
 	if is_hovered and event.is_action_pressed("open_inspection"):
 		var new_inspection = inspection.instantiate() as CardInspection
 		new_inspection.init(80, self)
-		new_inspection.inspection_init(self)
+		new_inspection.setup(self)
 		SceneHandler.add_ui_element(new_inspection)
 	
 	if is_selectable and is_hovered and event.is_action_pressed("pickUpCard"):
