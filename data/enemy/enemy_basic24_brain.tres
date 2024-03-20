@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://bdqn6in1ahq7b"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=13 format=3 uid="uid://bdqn6in1ahq7b"]
 
-[ext_resource type="Resource" uid="uid://vtxg3gn2kpbu" path="res://data/cards/knight_of_thorns.tres" id="2_tbtlj"]
-[ext_resource type="Resource" uid="uid://b05drmja6ckug" path="res://data/cards/knight_of_herbs.tres" id="3_2lasy"]
-[ext_resource type="Resource" uid="uid://s2luhru0dtce" path="res://data/cards/knight_of_daggers.tres" id="3_dwqxj"]
-[ext_resource type="Resource" uid="uid://ncfdsv56qat7" path="res://data/cards/knight_of_flags.tres" id="4_4k4xg"]
+[ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_herbs.tres" id="1_scbo8"]
+[ext_resource type="Resource" uid="uid://b5ytokrx5why5" path="res://data/cards/page_of_flags.tres" id="2_rcu2c"]
 [ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="4_v0ews"]
 [ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="5_c1ue5"]
 [ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="7_mhk4t"]
@@ -17,5 +15,5 @@
 
 [resource]
 script = ExtResource("11_pbncd")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("3_dwqxj"), ExtResource("2_tbtlj"), ExtResource("3_2lasy"), ExtResource("4_4k4xg"), ExtResource("4_v0ews"), ExtResource("5_c1ue5"), ExtResource("10_xkbsx"), ExtResource("7_mhk4t"), ExtResource("8_hgw3w"), ExtResource("9_7u2me"), ExtResource("10_1e2r1"), ExtResource("11_4hxh5")])
+available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_scbo8"), ExtResource("2_rcu2c"), ExtResource("4_v0ews"), ExtResource("5_c1ue5"), ExtResource("10_xkbsx"), ExtResource("7_mhk4t"), ExtResource("8_hgw3w"), ExtResource("9_7u2me"), ExtResource("10_1e2r1"), ExtResource("11_4hxh5")])
 strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_6ggp7")])
