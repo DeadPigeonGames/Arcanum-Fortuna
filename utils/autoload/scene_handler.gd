@@ -2,7 +2,7 @@ extends Node
 
 var current_scene
 @onready var scene_container = $CurrentScene
-@onready var inactive_scenes = $inactive_scenes
+@onready var inactive_scenes = $InactiveScenes
 @onready var ui_container = $UIContainer
 var combat : CardBattle
 

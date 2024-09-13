@@ -1,6 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://ul6vq1b44cxh"]
+[gd_scene load_steps=13 format=3 uid="uid://6l8tt80kd2b2"]
 
-[ext_resource type="Script" path="res://systems/dungeon_events/reward_gold_event.gd" id="1_huadp"]
+[sub_resource type="GDScript" id="GDScript_f44qr"]
+script/source = "extends EventBase
+
+@export var base_gold_to_reward := 0
+
+
+func trigger(player_data: PlayerData, enemy_data: EnemyData):
+	super(player_data, enemy_data)
+	player_data.currency += base_gold_to_reward + enemy_data.gold_reward
+	$AnimationPlayer.animation_finished.connect(func(_w): finished.emit())
+	$AnimationPlayer.play(\"present\")
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_ittjo"]
 line_spacing = 0.0
@@ -160,7 +171,7 @@ _data = {
 
 [node name="RewardGoldEvent" type="CanvasLayer"]
 layer = 10
-script = ExtResource("1_huadp")
+script = SubResource("GDScript_f44qr")
 
 [node name="reward_text" type="Label" parent="."]
 self_modulate = Color(1, 1, 1, 0)

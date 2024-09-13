@@ -8,6 +8,6 @@ script = ExtResource("1_5ea16")
 
 [node name="CurrentScene" type="Node" parent="."]
 
-[node name="InactiveScene" type="Node" parent="."]
+[node name="InactiveScenes" type="Node" parent="."]
 
 [node name="UIContainer" type="Node" parent="."]
