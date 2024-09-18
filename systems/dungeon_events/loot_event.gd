@@ -13,6 +13,7 @@ extends EventBase
 @export var alternative_reward_string := "You gained {placeholder} coins instead!"
 @export var min_coins = 1
 @export var max_coins = 10
+var reward : int
 
 var rng := RandomNumberGenerator.new()
 
@@ -25,10 +26,17 @@ var selected_cards = []
 func _ready():
 	rng.seed = seed
 	$CanvasLayer/Control/ConfirmButton.visible = false
+	%SkipRewardLabel.hide()
+	reward = rng.randi_range(min_coins, max_coins)
+	%SkipButton.text %= reward
 
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	super(player_data, enemy_data)
+	if (enemy_data != null):
+		$CanvasLayer/Control/GoldLabel.text %= enemy_data.gold_reward
+	else:
+		$CanvasLayer/Control/GoldLabel.hide()
 	#prev_mode = CardsOverlay.is_available()
 	#CardsOverlay.toggle(true)
 	if cardsToChooseFrom < cardsToReward:
@@ -119,11 +127,11 @@ func _on_confirm_button_pressed():
 	queue_free()
 
 
-func calculate_alternative_reward():
-	for i in range(rng.randi_range(min_coins, max_coins)):
-		$CanvasLayer/BigBlob.update_number(1)
-		$CanvasLayer/BigBlob.global_position += Vector2(randf() - 0.5, randf() - 0.5) * randf_range(100, 200)
-		await get_tree().create_timer(0.5).timeout
+# func calculate_alternative_reward():
+	#for i in range(rng.randi_range(min_coins, max_coins)):
+	#	$CanvasLayer/BigBlob.update_number(1)
+	#	$CanvasLayer/BigBlob.global_position += Vector2(randf() - 0.5, randf() - 0.5) * randf_range(100, 200)
+	#	await get_tree().create_timer(0.5).timeout
 
 
 func get_reward_text(value):
@@ -140,20 +148,10 @@ func get_reward_text(value):
 
 
 func _on_skip_button_pressed():
-	#CardsOverlay.toggle(prev_mode)
-	
-	%AnimationPlayer.play("skipped")
-	await %AnimationPlayer.animation_finished
-	
-	await calculate_alternative_reward()
-	var reward = $CanvasLayer/BigBlob.count
-	$CanvasLayer/skip_reward.text = get_reward_text(0)
-	%AnimationPlayer.play("show_reward")
-	await %AnimationPlayer.animation_finished
-	$CanvasLayer/BigBlob.original_position = $CanvasLayer/skip_reward/big_blob_target.global_position
-	await get_tree().create_timer(2).timeout
-	$CanvasLayer/BigBlob.delete()
-	$CanvasLayer/skip_reward.text = get_reward_text(reward)
+	#CardsOverlay.toggle(prev_mode)	
+	%SkipButton.hide()
+	%SkipRewardLabel.text %= reward 
+	%SkipRewardLabel.show()
 	player_data_ref.currency += reward
 	await get_tree().create_timer(2).timeout
 	

@@ -1,4 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://6l8tt80kd2b2"]
+[gd_scene load_steps=14 format=3 uid="uid://6l8tt80kd2b2"]
+
+[ext_resource type="FontFile" uid="uid://doyk5n1gf64lr" path="res://assets/ui/fonts/RomanAntique_bold_one.ttf" id="1_2w4an"]
 
 [sub_resource type="GDScript" id="GDScript_f44qr"]
 script/source = "extends EventBase
@@ -15,6 +17,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 
 [sub_resource type="LabelSettings" id="LabelSettings_ittjo"]
 line_spacing = 0.0
+font = ExtResource("1_2w4an")
 font_size = 66
 font_color = Color(1, 1, 0.137255, 1)
 
@@ -188,7 +191,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(301, 45)
-text = "you gained 4 coins!"
+text = "you gained %d coins!"
 label_settings = SubResource("LabelSettings_ittjo")
 horizontal_alignment = 1
 vertical_alignment = 1
