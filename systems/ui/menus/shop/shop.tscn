@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="11_1p6hx"]
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="11_y4e46"]
 [ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="12_107yi"]
-[ext_resource type="Theme" path="res://assets/ui/themes/font_theme.tres" id="14_1q6cw"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="14_1q6cw"]
 
 [sub_resource type="Resource" id="Resource_ekxm3"]
 script = ExtResource("2_npfwa")
@@ -104,6 +104,26 @@ singleton = 1
 method_to_call = "_SFX_UIButtonPress"
 connect_signal = "button_up"
 
+[node name="SectionTitle" type="Label" parent="Shop/HBoxContainer/BuySectionButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.5
+offset_top = -88.0
+offset_right = 154.5
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("14_1q6cw")
+theme_override_colors/font_color = Color(0.686275, 0.686275, 0.686275, 1)
+theme_override_font_sizes/font_size = 55
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TradeSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 80)
@@ -122,6 +142,26 @@ singleton = 1
 method_to_call = "_SFX_UIButtonPress"
 connect_signal = "button_up"
 
+[node name="SectionTitle" type="Label" parent="Shop/HBoxContainer/TradeSectionButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.5
+offset_top = -88.0
+offset_right = 154.5
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("14_1q6cw")
+theme_override_colors/font_color = Color(0.686275, 0.686275, 0.686275, 1)
+theme_override_font_sizes/font_size = 55
+text = "Trade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BurnSectionButton" type="TextureButton" parent="Shop/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 80)
@@ -139,6 +179,26 @@ connect_signal = "mouse_entered"
 singleton = 1
 method_to_call = "_SFX_UIButtonPress"
 connect_signal = "button_up"
+
+[node name="SectionTitle" type="Label" parent="Shop/HBoxContainer/BurnSectionButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.5
+offset_top = -88.0
+offset_right = 154.5
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("14_1q6cw")
+theme_override_colors/font_color = Color(0.686275, 0.686275, 0.686275, 1)
+theme_override_font_sizes/font_size = 55
+text = "Burn"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LeaveShopButton" type="TextureButton" parent="Shop"]
 layout_mode = 1

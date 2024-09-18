@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://systems/ui/menus/shop/shop_buy_section.gd" id="1_nlq55"]
 [ext_resource type="Resource" uid="uid://du4544pn8giog" path="res://utils/all_cards_resource.tres" id="2_i7f4d"]
 [ext_resource type="Texture2D" uid="uid://dmdpoee7un5qv" path="res://assets/ui/underlays/shop_tray.png" id="3_dc1wl"]
-[ext_resource type="Theme" path="res://assets/ui/themes/font_theme.tres" id="4_qsot7"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="4_qsot7"]
 [ext_resource type="PackedScene" uid="uid://ba7hqrlkxau6b" path="res://systems/ui/menus/shop/shop_card.tscn" id="5_gtqyr"]
 [ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="5_mrvvq"]
 [ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="6_orp16"]
