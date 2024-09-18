@@ -10,7 +10,6 @@ var resize_steps = 1
 func auto_size():
 	await scene_tree.process_frame
 	if get_line_count() > get_visible_line_count():
-		print("success")
 		var font_size = get(prop_path)
 		set(prop_path, font_size - resize_steps)
 		auto_size()

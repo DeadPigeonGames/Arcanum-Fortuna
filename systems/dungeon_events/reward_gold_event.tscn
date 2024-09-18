@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://6l8tt80kd2b2"]
 
-[ext_resource type="FontFile" uid="uid://doyk5n1gf64lr" path="res://assets/ui/fonts/RomanAntique_bold_one.ttf" id="1_2w4an"]
+[ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="1_0rdwo"]
 
 [sub_resource type="GDScript" id="GDScript_f44qr"]
 script/source = "extends EventBase
@@ -10,16 +10,17 @@ script/source = "extends EventBase
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	super(player_data, enemy_data)
+	var full_reward = base_gold_to_reward + enemy_data.gold_reward
 	player_data.currency += base_gold_to_reward + enemy_data.gold_reward
+	%reward_text.text %= full_reward
 	$AnimationPlayer.animation_finished.connect(func(_w): finished.emit())
 	$AnimationPlayer.play(\"present\")
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_ittjo"]
 line_spacing = 0.0
-font = ExtResource("1_2w4an")
+font = ExtResource("1_0rdwo")
 font_size = 66
-font_color = Color(1, 1, 0.137255, 1)
 
 [sub_resource type="Gradient" id="Gradient_g1hmy"]
 
@@ -177,21 +178,21 @@ layer = 10
 script = SubResource("GDScript_f44qr")
 
 [node name="reward_text" type="Label" parent="."]
-self_modulate = Color(1, 1, 1, 0)
+unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 658.5
-offset_top = 494.5
-offset_right = 1261.5
-offset_bottom = 585.5
+offset_left = -301.5
+offset_top = -45.5
+offset_right = 638.5
+offset_bottom = 45.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(301, 45)
-text = "you gained %d coins!"
+text = " The enemy dropped %d gold!"
 label_settings = SubResource("LabelSettings_ittjo")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -199,7 +200,6 @@ vertical_alignment = 1
 [node name="GPUParticles2D" type="GPUParticles2D" parent="reward_text"]
 show_behind_parent = true
 position = Vector2(295.5, 57.5)
-emitting = false
 process_material = SubResource("ParticleProcessMaterial_m5uue")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -14,12 +14,11 @@ func _process(delta):
 	if OS.has_feature("no-cheat"):
 		return
 	if Input.is_action_just_pressed("debug_quit"):
-		pass
-		#var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
-		#shop.init(10, self)
-		#shop.setup()
-		#SfxBg._playTrack(SfxBg.MapTypes.SHOP)
-		#await shop.shop_closed
+		var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
+		shop.init(10, self)
+		shop.setup()
+		SfxBg._playTrack(SfxBg.MapTypes.SHOP)
+		await shop.shop_closed
 
 
 func init(rng_seed, rng_text):
