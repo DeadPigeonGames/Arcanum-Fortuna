@@ -83,7 +83,6 @@ func _on_custom_seed_button_button_up():
 func _on_credits_button_button_up():
 	var credits = credits_scene.instantiate() as CreditsScreen
 	credits.init(1, self)
-	credits.setup()
 	SceneHandler.add_ui_element(credits)
 
 

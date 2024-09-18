@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bncdhusoiqqcj"]
+[gd_scene load_steps=24 format=3 uid="uid://bncdhusoiqqcj"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/card_inspection.gd" id="1_373cu"]
 [ext_resource type="Texture2D" uid="uid://cof5lb3kf7g0w" path="res://assets/sprites/keywords/kw_switch_2.png" id="2_unu64"]
@@ -18,14 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="12_tp7it"]
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="13_6mpdr"]
 [ext_resource type="Texture2D" uid="uid://brmabqhg6pwau" path="res://assets/ui/underlays/awaken_overlay.png" id="13_oiaxd"]
+[ext_resource type="Script" path="res://utils/auto_size_label.gd" id="14_hcl4g"]
 [ext_resource type="Texture2D" uid="uid://bc2u3mwwf3ibl" path="res://assets/ui/underlays/awaken_overlay_2.png" id="16_r327o"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="18_4f2ee"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_muo8s"]
 shader = ExtResource("10_a8mqj")
 shader_parameter/speed = 0.5
-shader_parameter/minStrength = 0.4
-shader_parameter/maxStrength = 1.0
+shader_parameter/delta = null
+shader_parameter/minStrength = 0.3
+shader_parameter/maxStrength = 3.0
 shader_parameter/strengthScale = 15.0
 shader_parameter/interval = 0.0
 shader_parameter/detail = 1.0
@@ -35,20 +37,22 @@ shader_parameter/heightOffset = 1.5
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n1gww"]
 shader = ExtResource("10_a8mqj")
 shader_parameter/speed = 0.5
+shader_parameter/delta = 0.016
 shader_parameter/minStrength = 0.4
-shader_parameter/maxStrength = 1.0
+shader_parameter/maxStrength = 10.0
 shader_parameter/strengthScale = 50.0
 shader_parameter/interval = 0.0
 shader_parameter/detail = 1.0
 shader_parameter/distortion = null
 shader_parameter/heightOffset = 1.5
 
-[node name="CardInspection" type="CanvasLayer"]
+[node name="CardInspection" type="CanvasLayer" node_paths=PackedStringArray("shader_delta", "stat_change_elements")]
 script = ExtResource("1_373cu")
-hover_color = null
 stat_change_scene = ExtResource("3_d8e8f")
 switch_artwork_shader = ExtResource("3_rc3s5")
 switch_keyword_slots = ExtResource("4_pj6c4")
+shader_delta = [NodePath("CardInspection/StatChangeUnderlay2"), NodePath("CardInspection/SwitchCondition/SwitchConditionUnderlay2")]
+stat_change_elements = [NodePath("CardInspection/StatChangeUnderlay"), NodePath("CardInspection/StatChangeUnderlay2"), NodePath("CardInspection/ScrollContainer")]
 
 [node name="CardInspection" type="Control" parent="."]
 z_index = 4096
@@ -236,6 +240,8 @@ offset_bottom = 541.0
 texture = ExtResource("8_61u2l")
 
 [node name="CardFlavourText" type="Label" parent="CardInspection/CardFlavour"]
+unique_name_in_owner = true
+clip_contents = true
 layout_mode = 0
 offset_left = -478.0
 offset_top = 386.0
@@ -251,6 +257,9 @@ Card Flavour"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+clip_text = true
+max_lines_visible = 2
+script = ExtResource("14_hcl4g")
 
 [node name="SwitchCondition" type="Control" parent="CardInspection"]
 z_index = 2

@@ -7,14 +7,24 @@ signal inspection_closed
 @export var stat_change_scene : PackedScene
 @export var switch_artwork_shader : Material
 @export var switch_keyword_slots : Texture
+@export var shader_delta : Array[Control]
+@export var stat_change_elements : Array[Control]
 
 var is_switched := false
 var switch_keyword : SwitchKeyword
 var switch_buff : Buff
+var scene_tree : SceneTree
 
 var preview_card : Card
 
+func _process(delta):
+	for node in shader_delta:
+		var material : ShaderMaterial = (node as CanvasItem).get_material()
+		material.set_shader_parameter("delta", delta)
+
+
 func setup(card_to_display: Card):
+	scene_tree = called_by.get_tree()
 	preview_card = %PreviewCard
 	$CardInspection/SwitchCondition.hide()
 	preview_card.set_base_attack_text(str(card_to_display.card_data.attack))
@@ -22,6 +32,7 @@ func setup(card_to_display: Card):
 	var card_data = card_to_display.card_data
 	preview_card.load_from_data(card_to_display.card_data)
 	preview_card.scale = Vector2(2.56, 2.56)
+	show_stat_change_elements_visible(false)
 	
 	for buff : Buff in card_to_display.buffs:
 		preview_card.try_add_buff(buff)
@@ -35,7 +46,7 @@ func setup(card_to_display: Card):
 			switch_buff = Buff.new(switch_keyword.attack_difference, switch_keyword.health_difference, \
 					 switch_keyword, card_to_display)
 			$CardInspection/SwitchCondition.show()
-	$CardInspection/CardFlavour/CardFlavourText.text = card_data.description
+	$CardInspection/CardFlavour/CardFlavourText.set_text_auto_size(card_data.description, scene_tree)
 	update_keyword_labels()
 	update_buff_display()
 
@@ -67,6 +78,13 @@ func update_buff_display():
 		var new_stat_change = stat_change_scene.instantiate()
 		new_stat_change.setup(buff)
 		%CurrentStatChanges.add_child(new_stat_change)
+		var value = %CurrentStatChanges.get_child_count() > 0
+		show_stat_change_elements_visible(value)
+
+
+func show_stat_change_elements_visible(value : bool):
+	for control in stat_change_elements:
+		control.set_visible(value)
 
 
 func _on_switch_button_button_up():

@@ -3,7 +3,7 @@ extends OptionButton
 
 var options = {
 	DisplayServer.WINDOW_MODE_WINDOWED: "Windowed",
-	DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN: "Fullscreen"
+	DisplayServer.WINDOW_MODE_FULLSCREEN: "Fullscreen"
 }
 
 

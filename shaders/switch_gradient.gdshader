@@ -39,7 +39,6 @@ void fragment() {
 	// Read the colormap and use the greyscale value to map in the new colors for each palette.
 	
 	vec4 colorP0 = textureLod(pal0, vec2(grey_value, 0.0), 0.0);
-	
 	vec4 colorP1 = textureLod(pal1, vec2(grey_value, 0.0), 0.0);
 	
 	// Blend between your two color maps and...   Profit.
