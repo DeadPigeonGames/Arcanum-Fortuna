@@ -371,6 +371,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ConfirmButton" type="Button" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 7
