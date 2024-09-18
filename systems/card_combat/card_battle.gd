@@ -76,8 +76,7 @@ func init(player_data, enemy_data):
 
 func _input(event):
 	if not OS.has_feature("no-cheat") && event.is_action_pressed("debug_quit"):
-		pass
-		#finished.emit(player.health)
+		finished.emit(player.health)
 
 
 func _on_active_cards_changed(source, block = true):

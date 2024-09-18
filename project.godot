@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ARCANUM FORTUNA"
+config/name="Arcanum Fortuna"
 config/tags=PackedStringArray("s4g")
 run/main_scene="res://utils/entry_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
