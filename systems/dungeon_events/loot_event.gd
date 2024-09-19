@@ -35,6 +35,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	super(player_data, enemy_data)
 	if (enemy_data != null):
 		$CanvasLayer/Control/GoldLabel.text %= enemy_data.gold_reward
+		player_data.currency += enemy_data.gold_reward
 	else:
 		$CanvasLayer/Control/GoldLabel.hide()
 	#prev_mode = CardsOverlay.is_available()
