@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bbhypmndv2m7q" path="res://systems/dungeon_exploration/maps/node_map_loader.tscn" id="12_c42ig"]
 [ext_resource type="PackedScene" uid="uid://n6x1mb4dktgr" path="res://systems/dungeon_exploration/maps/layouts/node_map_test_2.tscn" id="12_iuld8"]
 [ext_resource type="PackedScene" uid="uid://c8wrkx1o0ism" path="res://systems/dungeon_exploration/maps/node_maps_winter/node_map_winter_1.tscn" id="14_841d0"]
+[ext_resource type="PackedScene" uid="uid://c768mjmse0k56" path="res://systems/dungeon_exploration/maps/node_maps_winter/node_map_winter_demo.tscn" id="16_et7fx"]
 [ext_resource type="PackedScene" uid="uid://coyiok3kl5ln7" path="res://systems/dungeon_exploration/maps/node_maps_winter/node_map_winter_2.tscn" id="16_hntli"]
-[ext_resource type="PackedScene" uid="uid://bttxeghweiv65" path="res://systems/dungeon_exploration/maps/node_maps_winter/node_map_winter_3.tscn" id="17_oknvn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ru5t"]
 shader = ExtResource("3_fnpom")
@@ -86,7 +86,7 @@ scene = ExtResource("12_iuld8")
 
 [sub_resource type="Resource" id="Resource_wlrje"]
 script = ExtResource("11_fvnbs")
-chance_weight = 1
+chance_weight = 0
 scene = ExtResource("14_841d0")
 
 [sub_resource type="Resource" id="Resource_35plh"]
@@ -96,8 +96,8 @@ scene = ExtResource("16_hntli")
 
 [sub_resource type="Resource" id="Resource_dbbsm"]
 script = ExtResource("11_fvnbs")
-chance_weight = 0
-scene = ExtResource("17_oknvn")
+chance_weight = 1
+scene = ExtResource("16_et7fx")
 
 [node name="NodemapTest" type="Node2D"]
 script = ExtResource("1_44yos")
@@ -106,7 +106,7 @@ node_map_path = NodePath("NodeMapLoader")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, -180)
 transform = Transform2D(1, 0, 0, 1, 0, -180)
-scroll_offset = Vector2(-1029.74, -458.903)
+scroll_offset = Vector2(-1039.66, -313.59)
 
 [node name="BaseLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(2760, 0)
@@ -178,4 +178,4 @@ offset_top = 696.0
 offset_right = 153.0
 offset_bottom = 696.0
 mouse_filter = 1
-potential_node_maps = Array[ExtResource("11_fvnbs")]([SubResource("Resource_gijmu"), SubResource("Resource_ntgcp"), SubResource("Resource_wlrje"), SubResource("Resource_35plh"), SubResource("Resource_dbbsm")])
+potential_node_maps = Array[ExtResource("11_fvnbs")]([SubResource("Resource_gijmu"), SubResource("Resource_ntgcp"), SubResource("Resource_wlrje"), SubResource("Resource_35plh"), SubResource("Resource_dbbsm"), null])
