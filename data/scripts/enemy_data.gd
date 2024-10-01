@@ -14,6 +14,9 @@ extends Resource
 ## The enemy will stop appearing once this level is reached, -1 removes the limit
 @export var max_level := -1
 
+## REMOVE AFTER DEMO!
+@export var demo_start_karma := 0
+
 @export_category("Debug")
 @export var level = 0
 
@@ -41,3 +44,6 @@ func increase_level():
 		push_warning("Level Up has no effect: Enemy is already at max level.")
 		return
 	level += 1
+
+func get_demo_start_karma() -> int :
+	return demo_start_karma

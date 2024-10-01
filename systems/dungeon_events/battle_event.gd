@@ -13,11 +13,14 @@ var seed := 0
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	super(player_data, enemy_data)
 	
-	var field = battleField.instantiate()
+	var field : CardBattle = battleField.instantiate()
 	$CanvasLayer.add_child(field)
 	SceneHandler.combat = field
 	#field.is_debug = false
 	field.init(player_data.duplicate(true), enemy_data.duplicate(true))
+	
+	## REMOVE AFTER DEMO!
+	field.enemy.set_karma(enemy_data.demo_start_karma)
 	field.start_combat()
 	
 	var remainingLife = await field.finished

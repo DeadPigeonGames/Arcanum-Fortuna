@@ -10,5 +10,4 @@ script = ExtResource("1_77k18")
 event = ExtResource("3_10enx")
 
 [node name="icon" parent="background" index="0"]
-visible = true
 texture = ExtResource("4_om52u")

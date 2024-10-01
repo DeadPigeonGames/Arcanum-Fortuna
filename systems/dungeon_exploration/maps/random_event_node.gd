@@ -3,6 +3,9 @@ extends EventNode
 
 @export var potential_events : Array[RandomScene]
 
+## REMOVE AFTER DEMO!
+@export var demo_enemy_data : EnemyData
+
 var level := 0
 
 var index
@@ -45,9 +48,12 @@ func _trigger_event():
 	var instance = event.instantiate()
 	if instance is BattleEvent:
 		instance.seed = combat_seed
-		var enemy_pool = instance.potential_enemies.filter(func(enemy): 
-			return (enemy.max_level < 0 or level <= enemy.max_level) and level >= enemy.min_level)
-		selected_enemy = enemy_pool[rng.randi_range(0, len(enemy_pool) - 1)]
+		if demo_enemy_data != null:
+			selected_enemy = demo_enemy_data
+		else:
+			var enemy_pool = instance.potential_enemies.filter(func(enemy): 
+				return (enemy.max_level < 0 or level <= enemy.max_level) and level >= enemy.min_level)
+			selected_enemy = enemy_pool[rng.randi_range(0, len(enemy_pool) - 1)]
 		selected_enemy.level = level
 		selected_enemy.rng_seed = combat_seed
 		player.data.draw_rng_seed = draw_seed

@@ -133,9 +133,9 @@ func reset_screenfade_internal():
 
 
 func setup_tween_internal():
-	if not tween_trans or not tween_ease:
-		push_error("ERROR! tween_trans: ", tween_trans, " tween_ease: ", tween_ease, " one of them is null!")
-		return
+	#if not tween_trans or not tween_ease:
+	#	push_error("ERROR! tween_trans: ", tween_trans, " tween_ease: ", tween_ease, " one of them is null!")
+	#	return
 	tween.set_trans(tween_trans)
 	tween.set_ease(tween_ease)
 
