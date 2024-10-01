@@ -88,8 +88,8 @@ placeholder_icon_texture = ExtResource("6_61y5u")
 [sub_resource type="Resource" id="Resource_6dcrm"]
 script = ExtResource("8_aegmn")
 chance_weight = 1
-scene = ExtResource("10_rer6x")
-placeholder_icon_texture = ExtResource("9_3nhk1")
+scene = ExtResource("7_wod2b")
+placeholder_icon_texture = ExtResource("6_61y5u")
 
 [sub_resource type="Resource" id="Resource_aea7h"]
 script = ExtResource("8_aegmn")
@@ -100,8 +100,8 @@ placeholder_icon_texture = ExtResource("6_61y5u")
 [sub_resource type="Resource" id="Resource_grv1j"]
 script = ExtResource("8_aegmn")
 chance_weight = 1
-scene = ExtResource("7_wod2b")
-placeholder_icon_texture = ExtResource("6_61y5u")
+scene = ExtResource("10_rer6x")
+placeholder_icon_texture = ExtResource("9_3nhk1")
 
 [sub_resource type="Resource" id="Resource_0iv1d"]
 script = ExtResource("8_aegmn")
