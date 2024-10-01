@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=16 format=3 uid="uid://cswfk3e2wmij5"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=18 format=3 uid="uid://cswfk3e2wmij5"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_drf4a"]
 [ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="1_l850y"]
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="2_xjgfo"]
 [ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_herbs.tres" id="3_5su1s"]
@@ -15,8 +16,9 @@
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="12_cnmda"]
 [ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="12_r6cju"]
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="13_3verb"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="16_0xhl4"]
 
 [resource]
 script = ExtResource("11_eutfv")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_l850y"), ExtResource("2_xjgfo"), ExtResource("3_5su1s"), ExtResource("4_tporc"), ExtResource("5_sip00"), ExtResource("6_2kwx4"), ExtResource("7_s6lm5"), ExtResource("8_u8s6k"), ExtResource("9_ana7x"), ExtResource("10_q4ai8"), ExtResource("11_uq3q1"), ExtResource("12_r6cju"), ExtResource("13_3verb")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_cnmda")])
+available_cards = Array[ExtResource("1_drf4a")]([ExtResource("1_l850y"), ExtResource("2_xjgfo"), ExtResource("3_5su1s"), ExtResource("4_tporc"), ExtResource("5_sip00"), ExtResource("6_2kwx4"), ExtResource("7_s6lm5"), ExtResource("8_u8s6k"), ExtResource("9_ana7x"), ExtResource("10_q4ai8"), ExtResource("11_uq3q1"), ExtResource("12_r6cju"), ExtResource("13_3verb")])
+strategy_modules = Array[ExtResource("16_0xhl4")]([ExtResource("12_cnmda")])

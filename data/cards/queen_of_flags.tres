@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://co84mncwqr573"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://co84mncwqr573"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_0fc1k"]
 [ext_resource type="Texture2D" uid="uid://chikjibyqo17p" path="res://assets/sprites/cards/queen_of_flags.png" id="1_74kki"]
 [ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_fpmnh"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_8yfwc"]
 [ext_resource type="Resource" uid="uid://buyei5ntmvrx3" path="res://data/keyword/buff_next_card_hp.tres" id="3_km1cd"]
 
 [resource]
@@ -13,7 +14,7 @@ artwork = ExtResource("1_74kki")
 cost = 4
 attack = 0
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_km1cd")])
+keywords = Array[ExtResource("3_8yfwc")]([ExtResource("3_km1cd")])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://deonq2pnkifc2"]
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://deonq2pnkifc2"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_3tngf"]
 [ext_resource type="Texture2D" uid="uid://cgyw6frftprrb" path="res://assets/sprites/cards/devil.png" id="1_a7en0"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_ksyey"]
 [ext_resource type="Resource" uid="uid://dgbj2m033s16y" path="res://data/keyword/lifesteal_keyword.tres" id="3_724pb"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_b1vl5"]
 [ext_resource type="Resource" uid="uid://ce8l07usvwwju" path="res://data/keyword/switch_player_damage7.tres" id="4_31b6i"]
 [ext_resource type="AudioStream" uid="uid://d3bcjbcrqbcls" path="res://assets/sounds/cards/voices/the_devil.ogg" id="5_kcctt"]
 
@@ -15,7 +16,7 @@ artwork = ExtResource("1_a7en0")
 cost = -8
 attack = 1
 health = 5
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_724pb"), ExtResource("4_31b6i")])
+keywords = Array[ExtResource("3_b1vl5")]([ExtResource("3_724pb"), ExtResource("4_31b6i")])
 spawn_frequency = 66
 shop_cost = 5
 trade_override = 0

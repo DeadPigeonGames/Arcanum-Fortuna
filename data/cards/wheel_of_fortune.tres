@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://bk8j8nba8r18d"]
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://bk8j8nba8r18d"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_nop2x"]
 [ext_resource type="Texture2D" uid="uid://kmb5fym80vkf" path="res://assets/sprites/cards/wheel_of_fortune.png" id="1_qotfe"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_nkhx5"]
 [ext_resource type="Resource" uid="uid://c4uyl7eso8d1k" path="res://data/keyword/companionship_ATK1.tres" id="3_jodhl"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_okw8u"]
 [ext_resource type="AudioStream" uid="uid://c0062ljdlyp8u" path="res://assets/sounds/cards/voices/wheel_of_fortune.ogg" id="4_m2lxr"]
 [ext_resource type="Resource" uid="uid://bklw5yj0u1785" path="res://data/keyword/switch_player_hp25.tres" id="4_o244a"]
 
@@ -15,7 +16,7 @@ artwork = ExtResource("1_qotfe")
 cost = -4
 attack = 2
 health = 3
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_jodhl"), ExtResource("4_o244a")])
+keywords = Array[ExtResource("3_okw8u")]([ExtResource("3_jodhl"), ExtResource("4_o244a")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

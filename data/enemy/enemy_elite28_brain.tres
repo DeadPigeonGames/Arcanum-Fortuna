@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=14 format=3 uid="uid://dl0ddlmmmwcos"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=16 format=3 uid="uid://dl0ddlmmmwcos"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_pg61u"]
 [ext_resource type="Resource" uid="uid://nr5du58leen5" path="res://data/cards/king_of_thorns.tres" id="1_xqrwi"]
 [ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_herbs.tres" id="2_hx2fp"]
 [ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="4_bo7km"]
@@ -13,8 +14,9 @@
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="13_l7tfw"]
 [ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="13_mn7q4"]
 [ext_resource type="Resource" uid="uid://yh1e2xgkqn0b" path="res://data/enemy/StrategyModules/enemy_elite_karma_module.tres" id="14_36e8d"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="14_mowb6"]
 
 [resource]
 script = ExtResource("13_l7tfw")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_xqrwi"), ExtResource("2_hx2fp"), ExtResource("4_bo7km"), ExtResource("5_dcmcy"), ExtResource("8_krmy4"), ExtResource("10_sfw82"), ExtResource("8_bnsyh"), ExtResource("9_fy50e"), ExtResource("10_ly4p5"), ExtResource("11_egsoy"), ExtResource("13_mn7q4")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("14_36e8d")])
+available_cards = Array[ExtResource("1_pg61u")]([ExtResource("1_xqrwi"), ExtResource("2_hx2fp"), ExtResource("4_bo7km"), ExtResource("5_dcmcy"), ExtResource("8_krmy4"), ExtResource("10_sfw82"), ExtResource("8_bnsyh"), ExtResource("9_fy50e"), ExtResource("10_ly4p5"), ExtResource("11_egsoy"), ExtResource("13_mn7q4")])
+strategy_modules = Array[ExtResource("14_mowb6")]([ExtResource("14_36e8d")])

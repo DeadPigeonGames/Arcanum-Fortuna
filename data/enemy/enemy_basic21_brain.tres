@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://suouh44mva67"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=17 format=3 uid="uid://suouh44mva67"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_6yevv"]
 [ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="1_uwuoy"]
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="2_svrhf"]
 [ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_herbs.tres" id="3_0r6uw"]
@@ -14,8 +15,9 @@
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="11_uw7fv"]
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="12_53rh1"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="12_bky5y"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="15_k1qwq"]
 
 [resource]
 script = ExtResource("11_uw7fv")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_uwuoy"), ExtResource("2_svrhf"), ExtResource("3_0r6uw"), ExtResource("4_np16a"), ExtResource("5_0owbv"), ExtResource("6_jw2gg"), ExtResource("10_ers14"), ExtResource("8_kggpd"), ExtResource("9_vs5t5"), ExtResource("10_u8g6r"), ExtResource("11_jj50n"), ExtResource("12_53rh1")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_bky5y")])
+available_cards = Array[ExtResource("1_6yevv")]([ExtResource("1_uwuoy"), ExtResource("2_svrhf"), ExtResource("3_0r6uw"), ExtResource("4_np16a"), ExtResource("5_0owbv"), ExtResource("6_jw2gg"), ExtResource("10_ers14"), ExtResource("8_kggpd"), ExtResource("9_vs5t5"), ExtResource("10_u8g6r"), ExtResource("11_jj50n"), ExtResource("12_53rh1")])
+strategy_modules = Array[ExtResource("15_k1qwq")]([ExtResource("12_bky5y")])

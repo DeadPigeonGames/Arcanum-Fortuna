@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=13 format=3 uid="uid://dtt382ranv2g5"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://dtt382ranv2g5"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_7rr4m"]
 [ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="1_l0acb"]
 [ext_resource type="Resource" uid="uid://b5ytokrx5why5" path="res://data/cards/page_of_flags.tres" id="2_3ttuv"]
 [ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="4_ct7yi"]
@@ -12,8 +13,9 @@
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="11_70r7j"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="11_f5hdp"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="12_l8j5b"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="13_b8dsa"]
 
 [resource]
 script = ExtResource("11_f5hdp")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_l0acb"), ExtResource("2_3ttuv"), ExtResource("4_ct7yi"), ExtResource("5_k5ugs"), ExtResource("10_jyyxh"), ExtResource("7_7xlnm"), ExtResource("8_os5sa"), ExtResource("9_mhot7"), ExtResource("10_v5qf2"), ExtResource("11_70r7j")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_l8j5b")])
+available_cards = Array[ExtResource("1_7rr4m")]([ExtResource("1_l0acb"), ExtResource("2_3ttuv"), ExtResource("4_ct7yi"), ExtResource("5_k5ugs"), ExtResource("10_jyyxh"), ExtResource("7_7xlnm"), ExtResource("8_os5sa"), ExtResource("9_mhot7"), ExtResource("10_v5qf2"), ExtResource("11_70r7j")])
+strategy_modules = Array[ExtResource("13_b8dsa")]([ExtResource("12_l8j5b")])

@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="TakeDamageSwitch" load_steps=8 format=3 uid="uid://c5jf6j7argkj4"]
+[gd_resource type="Resource" script_class="TakeDamageSwitch" load_steps=10 format=3 uid="uid://c5jf6j7argkj4"]
 
 [ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_cvuoj"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_snx26"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="2_umunh"]
 [ext_resource type="Resource" uid="uid://cpyd5jcb4kdm" path="res://data/keyword/DeathrattleSacrifice3.tres" id="3_37prp"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_bds24"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/take_damage_switch.gd" id="4_x4hkl"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="5_kbiha"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_8chv5"]
@@ -17,15 +19,15 @@ required_damage = 4
 ignore_damage_amount = true
 attack_difference = 0
 health_difference = 1
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_37prp")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_bds24")]([ExtResource("3_37prp")])
+keywords_to_remove = Array[ExtResource("4_bds24")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("5_kbiha")
 transformed_keyword_slot_atlas = ExtResource("6_8chv5")
 chromatic_scene = ExtResource("1_cvuoj")
 rotation_duration = 0.8
 icon_rotation = 1.0
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+combat_phase_triggers = Array[ExtResource("2_snx26")]([])
 triggers = 64
 is_animated = true
 scale_speed = 0.6

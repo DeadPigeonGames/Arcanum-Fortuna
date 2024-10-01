@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=8 format=3 uid="uid://dfps01cnfrdye"]
+[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=10 format=3 uid="uid://dfps01cnfrdye"]
 
 [ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_ur32r"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_x732l"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_he6f2"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/cards_karma_switch.gd" id="3_1rthr"]
 [ext_resource type="Resource" uid="uid://ues1kduox2nf" path="res://data/keyword/SplitAttack.tres" id="3_u6s5h"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="4_eiva0"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_jo8n5"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="5_pjlvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj8qu"]
@@ -17,15 +19,15 @@ required_card_count = 3
 required_karma_type = 1
 attack_difference = 0
 health_difference = 0
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_u6s5h")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_jo8n5")]([ExtResource("3_u6s5h")])
+keywords_to_remove = Array[ExtResource("4_jo8n5")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("4_eiva0")
 transformed_keyword_slot_atlas = ExtResource("5_pjlvq")
 chromatic_scene = ExtResource("1_ur32r")
 rotation_duration = 0.8
 icon_rotation = 1.0
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+combat_phase_triggers = Array[ExtResource("2_he6f2")]([])
 triggers = 4
 is_animated = true
 scale_speed = 0.6

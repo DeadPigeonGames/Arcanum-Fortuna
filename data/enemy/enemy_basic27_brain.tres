@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=12 format=3 uid="uid://g8vvshf5aiya"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=14 format=3 uid="uid://g8vvshf5aiya"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_0gmas"]
 [ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="1_svfci"]
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="2_gvam6"]
 [ext_resource type="Resource" uid="uid://ccymn0mj5bdvy" path="res://data/cards/the_sun.tres" id="4_81j1x"]
@@ -10,9 +11,10 @@
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="9_5fh2k"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="10_cs53u"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="11_kurr5"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="12_6ro3u"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="12_nkjtp"]
 
 [resource]
 script = ExtResource("11_kurr5")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_svfci"), ExtResource("2_gvam6"), ExtResource("4_81j1x"), ExtResource("5_d1gto"), ExtResource("8_op6jj"), ExtResource("7_c3wtu"), ExtResource("8_o8p50"), ExtResource("9_5fh2k"), ExtResource("10_cs53u")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_nkjtp")])
+available_cards = Array[ExtResource("1_0gmas")]([ExtResource("1_svfci"), ExtResource("2_gvam6"), ExtResource("4_81j1x"), ExtResource("5_d1gto"), ExtResource("8_op6jj"), ExtResource("7_c3wtu"), ExtResource("8_o8p50"), ExtResource("9_5fh2k"), ExtResource("10_cs53u")])
+strategy_modules = Array[ExtResource("12_6ro3u")]([ExtResource("12_nkjtp")])

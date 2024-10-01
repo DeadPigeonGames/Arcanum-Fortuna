@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=9 format=3 uid="uid://bnkalfapdugdc"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=10 format=3 uid="uid://bnkalfapdugdc"]
 
 [ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_lnnq0"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_vj3j2"]
 [ext_resource type="Texture2D" uid="uid://clmmgf2fayjpw" path="res://assets/sprites/keywords/kw_switch_1.png" id="3_8jllh"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_0vtm0"]
 [ext_resource type="Resource" uid="uid://cla7wpd2pd8cb" path="res://data/keyword/atk_nerf1.tres" id="4_qhj4k"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="5_h3v71"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="6_m2g7a"]
@@ -19,8 +20,8 @@ required_trigger_count = 3
 dynamic_tooltip_unit_name = "turns"
 attack_difference = 0
 health_difference = 2
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("4_qhj4k")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_0vtm0")]([ExtResource("4_qhj4k")])
+keywords_to_remove = Array[ExtResource("4_0vtm0")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("6_m2g7a")
 transformed_keyword_slot_atlas = ExtResource("7_13kay")

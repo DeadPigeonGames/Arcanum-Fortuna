@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="GrantKeywordsKeyword" load_steps=6 format=3 uid="uid://cvcxsb0int18p"]
+[gd_resource type="Resource" script_class="GrantKeywordsKeyword" load_steps=8 format=3 uid="uid://cvcxsb0int18p"]
 
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_by0tl"]
 [ext_resource type="Texture2D" uid="uid://cun3wcvpa18uq" path="res://assets/sprites/keywords/kw_comp_protection.png" id="1_fxc1c"]
 [ext_resource type="Texture2D" uid="uid://d0ynpjxgwyb2c" path="res://assets/sprites/keywords/kw_fortified.png" id="2_6oh0l"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/shield.gd" id="2_8y4tx"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/grant_keywords_keyword.gd" id="3_d5xaw"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_ssmaf"]
 
 [sub_resource type="Resource" id="Resource_13x28"]
 script = ExtResource("2_8y4tx")
@@ -18,10 +20,10 @@ highlight_duration = 0.5
 
 [resource]
 script = ExtResource("3_d5xaw")
-keywords_to_grant = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([SubResource("Resource_13x28")])
+keywords_to_grant = Array[ExtResource("3_ssmaf")]([SubResource("Resource_13x28")])
 range = 1
 remove_keywords_on_death = true
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+combat_phase_triggers = Array[ExtResource("1_by0tl")]([])
 triggers = 4
 is_animated = false
 scale_speed = 0.6

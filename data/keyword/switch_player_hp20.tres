@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerHpSwitch" load_steps=13 format=3 uid="uid://clej2ss56ddog"]
+[gd_resource type="Resource" script_class="PlayerHpSwitch" load_steps=14 format=3 uid="uid://clej2ss56ddog"]
 
 [ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_1xrpc"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="1_l38sj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/player_hp_switch.gd" id="3_ao3xf"]
 [ext_resource type="Resource" uid="uid://chpr5uue01ill" path="res://data/keyword/shield.tres" id="3_f1nyt"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="4_26g6y"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_ok5df"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="5_7s81a"]
 
 [sub_resource type="Resource" id="Resource_44ybw"]
@@ -37,8 +38,8 @@ script = ExtResource("3_ao3xf")
 min_hp = 20
 attack_difference = 0
 health_difference = 0
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_f1nyt")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_ok5df")]([ExtResource("3_f1nyt")])
+keywords_to_remove = Array[ExtResource("4_ok5df")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("4_26g6y")
 transformed_keyword_slot_atlas = ExtResource("5_7s81a")

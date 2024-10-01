@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://clbklsr1u3gn5"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://clbklsr1u3gn5"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_2hdh4"]
 [ext_resource type="Texture2D" uid="uid://5gdt1gdtvuea" path="res://assets/sprites/cards/page_of_daggers.png" id="1_q5dbj"]
 [ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_63jjv"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_64a35"]
 [ext_resource type="Resource" uid="uid://c0jp8yp2mu58y" path="res://data/keyword/deathrattle_ATK1.tres" id="3_sd5yd"]
 
 [resource]
@@ -13,7 +14,7 @@ artwork = ExtResource("1_q5dbj")
 cost = 3
 attack = 1
 health = 1
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_sd5yd")])
+keywords = Array[ExtResource("3_64a35")]([ExtResource("3_sd5yd")])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=7 format=3 uid="uid://c0p160e6m2l0t"]
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://c0p160e6m2l0t"]
 
 [ext_resource type="Texture2D" uid="uid://dkqjfttreclq5" path="res://assets/sprites/cards/magician.png" id="1_sfssk"]
 [ext_resource type="Resource" uid="uid://c4uyl7eso8d1k" path="res://data/keyword/companionship_ATK1.tres" id="2_evsjd"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_u3n2c"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_yvdhu"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_y2vrt"]
 [ext_resource type="Resource" uid="uid://cnom160f3jm5u" path="res://data/keyword/alive3_switch.tres" id="4_d6fjt"]
 [ext_resource type="AudioStream" uid="uid://c2h2cko1rwobc" path="res://Audio/Signatures/SignatureMagician.ogg" id="6_i21hy"]
 
@@ -15,7 +16,7 @@ artwork = ExtResource("1_sfssk")
 cost = -4
 attack = 3
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_evsjd"), ExtResource("4_d6fjt")])
+keywords = Array[ExtResource("3_y2vrt")]([ExtResource("2_evsjd"), ExtResource("4_d6fjt")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

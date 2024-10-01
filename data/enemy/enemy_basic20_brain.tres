@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=13 format=3 uid="uid://bnrla8311d15p"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://bnrla8311d15p"]
 
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="1_i8wvu"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_ju6f3"]
 [ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_herbs.tres" id="2_xfil2"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="4_eln3v"]
 [ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="6_7eutb"]
@@ -12,8 +13,9 @@
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="11_b5qey"]
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="12_4wxdb"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="12_ia040"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="13_dcfif"]
 
 [resource]
 script = ExtResource("11_b5qey")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_i8wvu"), ExtResource("2_xfil2"), ExtResource("4_eln3v"), ExtResource("6_7eutb"), ExtResource("7_wi8hi"), ExtResource("8_hg3mf"), ExtResource("9_f214k"), ExtResource("10_eejxq"), ExtResource("11_8v72o"), ExtResource("12_4wxdb")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_ia040")])
+available_cards = Array[ExtResource("1_ju6f3")]([ExtResource("1_i8wvu"), ExtResource("2_xfil2"), ExtResource("4_eln3v"), ExtResource("6_7eutb"), ExtResource("7_wi8hi"), ExtResource("8_hg3mf"), ExtResource("9_f214k"), ExtResource("10_eejxq"), ExtResource("11_8v72o"), ExtResource("12_4wxdb")])
+strategy_modules = Array[ExtResource("13_dcfif")]([ExtResource("12_ia040")])

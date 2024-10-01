@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://d2b7yscmtse2l"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://d2b7yscmtse2l"]
 
 [ext_resource type="Texture2D" uid="uid://b6j2kiuxxwhbk" path="res://assets/sprites/cards/queen_of_herbs.png" id="1_6bgbb"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_rnlue"]
 [ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_hwnrn"]
 [ext_resource type="Resource" uid="uid://48wwq8uiodfc" path="res://data/keyword/play_heal.tres" id="3_8wxvo"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_imxf0"]
 
 [resource]
 script = ExtResource("1_rnlue")
@@ -13,7 +14,7 @@ artwork = ExtResource("1_6bgbb")
 cost = 3
 attack = 1
 health = 1
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_8wxvo")])
+keywords = Array[ExtResource("3_imxf0")]([ExtResource("3_8wxvo")])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0

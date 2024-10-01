@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://buthwniwc7tav"]
+[gd_resource type="Resource" script_class="CardData" load_steps=8 format=3 uid="uid://buthwniwc7tav"]
 
 [ext_resource type="Texture2D" uid="uid://1rl1qodf353s" path="res://assets/sprites/cards/temperance.png" id="1_x5mgk"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_t0sn8"]
 [ext_resource type="Texture2D" uid="uid://ck5apkflkodr0" path="res://assets/ui/icons/keyword_slots.png" id="2_wi2w6"]
 [ext_resource type="Resource" uid="uid://cvcxsb0int18p" path="res://data/keyword/companionship_shield.tres" id="3_b2pko"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_fmurq"]
+[ext_resource type="Resource" uid="uid://b527b6i1v5jsj" path="res://data/keyword/switch_card_karma_positive3.1.tres" id="5_owynl"]
 [ext_resource type="AudioStream" uid="uid://jgcr5h0ft4dp" path="res://assets/sounds/cards/voices/temperance.ogg" id="5_q26of"]
 
 [resource]
@@ -14,7 +16,7 @@ artwork = ExtResource("1_x5mgk")
 cost = -4
 attack = 1
 health = 4
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("3_b2pko")])
+keywords = Array[ExtResource("3_fmurq")]([ExtResource("3_b2pko"), ExtResource("5_owynl")])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0

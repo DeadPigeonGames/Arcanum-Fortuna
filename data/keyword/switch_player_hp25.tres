@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="PlayerHpSwitch" load_steps=13 format=3 uid="uid://bklw5yj0u1785"]
+[gd_resource type="Resource" script_class="PlayerHpSwitch" load_steps=14 format=3 uid="uid://bklw5yj0u1785"]
 
 [ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_ki66e"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_hvxi1"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="3_holcy"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_1q5f2"]
 [ext_resource type="Resource" uid="uid://cvcxsb0int18p" path="res://data/keyword/companionship_shield.tres" id="4_6a3gl"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/player_hp_switch.gd" id="5_qlqwf"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="6_wvgwy"]
@@ -37,8 +38,8 @@ script = ExtResource("5_qlqwf")
 min_hp = 25
 attack_difference = 0
 health_difference = 1
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("4_6a3gl")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_1q5f2")]([ExtResource("4_6a3gl")])
+keywords_to_remove = Array[ExtResource("4_1q5f2")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("6_wvgwy")
 transformed_keyword_slot_atlas = ExtResource("7_jb46f")

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://dcn0mphx2qg0v"]
+[gd_resource type="Resource" script_class="CardData" load_steps=6 format=3 uid="uid://dcn0mphx2qg0v"]
 
 [ext_resource type="Texture2D" uid="uid://dmpj07u16csye" path="res://assets/sprites/cards/page_of_herbs.png" id="1_bauew"]
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_id6c3"]
 [ext_resource type="Resource" uid="uid://dv0ag3x7lmh2b" path="res://data/keyword/deathrattle_HP1.tres" id="2_2wnpk"]
 [ext_resource type="Texture2D" uid="uid://capdswqckmedk" path="res://assets/ui/icons/keyword_slots_minor.png" id="2_7fkng"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="3_1t8yw"]
 
 [resource]
 script = ExtResource("1_id6c3")
@@ -13,7 +14,7 @@ artwork = ExtResource("1_bauew")
 cost = 1
 attack = 1
 health = 3
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_2wnpk")])
+keywords = Array[ExtResource("3_1t8yw")]([ExtResource("2_2wnpk")])
 spawn_frequency = 0
 shop_cost = 5
 trade_override = 0

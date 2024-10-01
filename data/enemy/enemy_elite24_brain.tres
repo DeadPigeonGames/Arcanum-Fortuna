@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://d3xtkhewe2coi"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=17 format=3 uid="uid://d3xtkhewe2coi"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_ctwkm"]
 [ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_herbs.tres" id="1_esdcr"]
 [ext_resource type="Resource" uid="uid://b5ytokrx5why5" path="res://data/cards/page_of_flags.tres" id="2_ak2jx"]
 [ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="4_06hcb"]
@@ -14,8 +15,9 @@
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="13_08uvq"]
 [ext_resource type="Resource" uid="uid://cjas1prwh50gk" path="res://data/cards/the_hanged_man.tres" id="13_f4mo7"]
 [ext_resource type="Resource" uid="uid://yh1e2xgkqn0b" path="res://data/enemy/StrategyModules/enemy_elite_karma_module.tres" id="14_c227b"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="15_b8qpf"]
 
 [resource]
 script = ExtResource("13_08uvq")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_esdcr"), ExtResource("2_ak2jx"), ExtResource("4_06hcb"), ExtResource("5_1cjny"), ExtResource("11_vmgis"), ExtResource("10_yjbu1"), ExtResource("8_0mctp"), ExtResource("9_c8nlc"), ExtResource("10_ntmra"), ExtResource("11_3rikf"), ExtResource("12_c2jrw"), ExtResource("13_f4mo7")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("14_c227b")])
+available_cards = Array[ExtResource("1_ctwkm")]([ExtResource("1_esdcr"), ExtResource("2_ak2jx"), ExtResource("4_06hcb"), ExtResource("5_1cjny"), ExtResource("11_vmgis"), ExtResource("10_yjbu1"), ExtResource("8_0mctp"), ExtResource("9_c8nlc"), ExtResource("10_ntmra"), ExtResource("11_3rikf"), ExtResource("12_c2jrw"), ExtResource("13_f4mo7")])
+strategy_modules = Array[ExtResource("15_b8qpf")]([ExtResource("14_c227b")])

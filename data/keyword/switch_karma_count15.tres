@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="KarmaCountSwitch" load_steps=10 format=3 uid="uid://ceiu4mt5kpfha"]
+[gd_resource type="Resource" script_class="KarmaCountSwitch" load_steps=11 format=3 uid="uid://ceiu4mt5kpfha"]
 
 [ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_ntja3"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_8u5gt"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="3_yk432"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_t27fd"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/karma_count_switch.gd" id="5_u45ih"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="6_1ni5a"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="7_83kxe"]
@@ -27,8 +28,8 @@ target_karma_count = 15
 comparison_type = 2
 attack_difference = 1
 health_difference = 1
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_t27fd")]([])
+keywords_to_remove = Array[ExtResource("4_t27fd")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("6_1ni5a")
 transformed_keyword_slot_atlas = ExtResource("7_83kxe")

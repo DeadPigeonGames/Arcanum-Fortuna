@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=16 format=3 uid="uid://cm0pjot4ryk4a"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=18 format=3 uid="uid://cm0pjot4ryk4a"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_h1kuk"]
 [ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="1_tbtab"]
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="2_ilaso"]
 [ext_resource type="Resource" uid="uid://dcn0mphx2qg0v" path="res://data/cards/page_of_herbs.tres" id="3_tk75v"]
@@ -15,8 +16,9 @@
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="13_xgx3d"]
 [ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="14_d81gp"]
 [ext_resource type="Resource" uid="uid://yh1e2xgkqn0b" path="res://data/enemy/StrategyModules/enemy_elite_karma_module.tres" id="14_ho5ot"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="16_53juv"]
 
 [resource]
 script = ExtResource("13_xgx3d")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_tbtab"), ExtResource("2_ilaso"), ExtResource("3_tk75v"), ExtResource("4_h6oqa"), ExtResource("5_itroi"), ExtResource("6_b6i2x"), ExtResource("8_r0355"), ExtResource("10_av6kv"), ExtResource("9_ndjj8"), ExtResource("10_ocrp8"), ExtResource("11_84ctd"), ExtResource("12_hnkec"), ExtResource("14_d81gp")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("14_ho5ot")])
+available_cards = Array[ExtResource("1_h1kuk")]([ExtResource("1_tbtab"), ExtResource("2_ilaso"), ExtResource("3_tk75v"), ExtResource("4_h6oqa"), ExtResource("5_itroi"), ExtResource("6_b6i2x"), ExtResource("8_r0355"), ExtResource("10_av6kv"), ExtResource("9_ndjj8"), ExtResource("10_ocrp8"), ExtResource("11_84ctd"), ExtResource("12_hnkec"), ExtResource("14_d81gp")])
+strategy_modules = Array[ExtResource("16_53juv")]([ExtResource("14_ho5ot")])

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=13 format=3 uid="uid://mq6ab7oa81cn"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://mq6ab7oa81cn"]
 
 [ext_resource type="Resource" uid="uid://nr5du58leen5" path="res://data/cards/king_of_thorns.tres" id="1_rgnho"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_xkg8h"]
 [ext_resource type="Resource" uid="uid://q3wogyvkudaf" path="res://data/cards/king_of_flags.tres" id="2_3mg3p"]
 [ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="4_2kd84"]
 [ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="6_7ejj8"]
@@ -12,8 +13,9 @@
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="11_48f51"]
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="12_kblk1"]
 [ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="12_nxuio"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="13_kyumj"]
 
 [resource]
 script = ExtResource("11_48f51")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_rgnho"), ExtResource("2_3mg3p"), ExtResource("4_2kd84"), ExtResource("6_7ejj8"), ExtResource("7_4aqai"), ExtResource("8_jqpca"), ExtResource("9_4m0jh"), ExtResource("10_oef0c"), ExtResource("11_7iyoi"), ExtResource("12_kblk1")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("12_nxuio")])
+available_cards = Array[ExtResource("1_xkg8h")]([ExtResource("1_rgnho"), ExtResource("2_3mg3p"), ExtResource("4_2kd84"), ExtResource("6_7ejj8"), ExtResource("7_4aqai"), ExtResource("8_jqpca"), ExtResource("9_4m0jh"), ExtResource("10_oef0c"), ExtResource("11_7iyoi"), ExtResource("12_kblk1")])
+strategy_modules = Array[ExtResource("13_kyumj")]([ExtResource("12_nxuio")])

@@ -1,15 +1,18 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=9 format=3 uid="uid://mg1cu2uo8ivp"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=12 format=3 uid="uid://mg1cu2uo8ivp"]
 
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_6lqnt"]
 [ext_resource type="Resource" uid="uid://cdyp516wjxron" path="res://data/cards/page_of_thorns.tres" id="2_jskaa"]
-[ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="4_eewii"]
+[ext_resource type="Resource" uid="uid://ciai4bipoidj6" path="res://data/cards/queen_of_thorns.tres" id="4_jughw"]
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="4_kseib"]
 [ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="7_0csxf"]
-[ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="8_e8mf4"]
+[ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="8_th8qj"]
+[ext_resource type="Resource" uid="uid://cyu186axhjfax" path="res://data/cards/justice.tres" id="9_6a5rf"]
 [ext_resource type="Resource" uid="uid://nr5du58leen5" path="res://data/cards/king_of_thorns.tres" id="9_th6i4"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="12_e0k0k"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="13_88d57"]
 [ext_resource type="Resource" uid="uid://yh1e2xgkqn0b" path="res://data/enemy/StrategyModules/enemy_elite_karma_module.tres" id="14_wqceb"]
 
 [resource]
 script = ExtResource("13_88d57")
-available_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("2_jskaa"), ExtResource("9_th6i4"), ExtResource("4_eewii"), ExtResource("4_kseib"), ExtResource("7_0csxf"), ExtResource("8_e8mf4")])
-strategy_modules = Array[Resource("res://systems/card_combat/enemy/enemy_brain_strategy_module.gd")]([ExtResource("14_wqceb")])
+available_cards = Array[ExtResource("1_6lqnt")]([ExtResource("2_jskaa"), ExtResource("9_th6i4"), ExtResource("4_jughw"), ExtResource("7_0csxf"), ExtResource("4_kseib"), ExtResource("8_th8qj"), ExtResource("9_6a5rf")])
+strategy_modules = Array[ExtResource("12_e0k0k")]([ExtResource("14_wqceb")])
