@@ -505,6 +505,33 @@ singleton = 1
 method_to_call = "_SFX_UIButtonPress"
 connect_signal = "pressed"
 
+[node name="AnimationSpeed" type="HBoxContainer" parent="OptionsMenu/Options/VideoOptions/Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/Options/VideoOptions/Options/AnimationSpeed"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+text = "ANIMATION SPEED"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/Options/VideoOptions/Options/AnimationSpeed"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/Options/VideoOptions/Options/AnimationSpeed/HBoxContainer"]
+custom_minimum_size = Vector2(246, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_x54wv")
+max_value = 2.0
+step = 0.25
+value = 1.0
+
+[node name="Label" type="Label" parent="OptionsMenu/Options/VideoOptions/Options/AnimationSpeed/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+vertical_alignment = 1
+
 [node name="WarningLabel" type="Label" parent="OptionsMenu/Options/VideoOptions/Options"]
 custom_minimum_size = Vector2(296, 46)
 layout_mode = 2
@@ -683,5 +710,6 @@ connect_signal = "button_up"
 [connection signal="value_changed" from="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/HSlider" to="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/HSlider" method="_on_value_changed"]
 [connection signal="visibility_changed" from="OptionsMenu/Options/VideoOptions" to="OptionsMenu/Options/VideoOptions" method="_on_visibility_changed"]
 [connection signal="item_selected" from="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" to="OptionsMenu/Options/VideoOptions" method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="OptionsMenu/Options/VideoOptions/Options/AnimationSpeed/HBoxContainer/HSlider" to="OptionsMenu/Options/VideoOptions" method="_on_h_slider_value_changed"]
 [connection signal="button_up" from="OptionsMenu/Options/VideoOptions/Options/Apply/Apply" to="OptionsMenu/Options/VideoOptions" method="_on_apply_button_up"]
 [connection signal="button_up" from="OptionsMenu/ReturnButton" to="." method="_on_return_button_button_up"]

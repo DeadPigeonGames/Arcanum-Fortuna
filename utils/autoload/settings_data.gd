@@ -5,6 +5,7 @@ extends Node
 ## For animation players, this will increase the 
 var animation_time := 1.0
 
+
 var settings_dict : Dictionary:
 	set(value):
 		push_error("ERROR: Tried accessing SettingsData dict, not allowed!")
@@ -17,6 +18,7 @@ var savePath = "user://config" + fileExtension
 func _ready():
 	if load_config() == false:
 		save_config()
+	animation_time = get_anim_speed()
 
 
 func _notification(what):
@@ -58,6 +60,7 @@ func get_current_video_dict():
 func save_config():
 	settings_dict["Audio"] = get_current_audio_dict()
 	settings_dict["Video"] = get_current_video_dict()
+	set_anim_speed(Settings.animation_time)
 	
 	var file = FileAccess.open(savePath, FileAccess.WRITE)
 	
@@ -177,6 +180,17 @@ func set_audio_slider(bus_name, value):
 
 func get_audio_slider(bus_name):
 	return settings_dict["Audio"][bus_name] as float
+
+
+func set_anim_speed(value):
+	settings_dict["animation_time"] = value
+
+
+func get_anim_speed() -> float:
+	if settings_dict.has("animation_time"):
+		return settings_dict["animation_time"] as float
+	else:
+		return animation_time
 
 
 func apply_player_anim_speed(anim_player : AnimationPlayer):

@@ -8,8 +8,8 @@ var anim_player : AnimationPlayer
 func _input(event):
 	if anim_player.is_playing():
 		return
-	if event.is_action_released("ui_cancel"):
-		_on_continue_button_button_up()
+	if event.is_action_released("pause"):
+		close_pause_menu()
 
 
 func setup():

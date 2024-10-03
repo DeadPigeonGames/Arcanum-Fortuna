@@ -147,5 +147,5 @@ func _on_select_cards_to_burn_shop_button_button_up():
 
 
 func _on_background_gui_input(event : InputEvent):
-	if event.is_action_released("pickUpCard") or event.is_action_released("open_inspection"):
+	if event.is_action_released("pick_up_card") or event.is_action_released("open_inspection"):
 		close()

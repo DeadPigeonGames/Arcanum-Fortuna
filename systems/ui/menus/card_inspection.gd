@@ -120,6 +120,6 @@ func _on_close_window_button_button_up():
 
 
 func _on_color_rect_gui_input(event):
-	if event.is_action_released("pickUpCard") or event.is_action_released("open_inspection"):
+	if event.is_action_released("pick_up_card") or event.is_action_released("open_inspection"):
 		inspection_closed.emit()
 		close()

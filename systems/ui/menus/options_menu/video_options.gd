@@ -17,19 +17,20 @@ var options = {
 	"Fullscreen": DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
 }
 
-@onready var window_mode_box : OptionButton = $Options/WindowMode/OptionButton
-@onready var resolution_box : OptionButton = $Options/Resolution/OptionButton
-
-
+var window_mode_box : OptionButton 
+var resolution_box : OptionButton
 var os_resolution
 
 
 func _ready():
-	setup_window_mode_box()
-	select_current_window_mode()
-	add_resolutions()
-	setup_supported_resolutions()
-	select_current_resolution()
+	pass
+	#window_mode_box = $Options/WindowMode/OptionButton
+	#resolution_box = $Options/Resolution/OptionButton
+	#setup_window_mode_box()
+	#select_current_window_mode()
+	#add_resolutions()
+	#setup_supported_resolutions()
+	#select_current_resolution()
 
 
 func setup_window_mode_box():
@@ -59,6 +60,8 @@ func select_current_resolution():
 	for i in range(len(resolutions)):
 		if current_size == resolutions[i]:
 			resolution_box.selected = i
+		elif current_size > resolutions[i]:
+			resolution_box.selected = resolutions.size() - 1
 
 
 func setup_supported_resolutions():
@@ -93,13 +96,31 @@ func add_resolutions():
 			resolution_box.add_item(key, i)
 
 
+func setup_animation_speed_slider():
+	var value = (2.0 - Settings.animation_time)
+	set_animation_speed_label(value)
+
+
+func set_animation_speed_label(value):
+	var percent = 100 * value
+	var text = str(percent) + " %"
+	text = text.replace("-", "")
+	$Options/AnimationSpeed/HBoxContainer/Label.text = text
+	$Options/AnimationSpeed/HBoxContainer/HSlider.value = value
+
+
 func _on_apply_button_up():
 	apply_window_mode()
 	apply_resolution()
+	var value = $Options/AnimationSpeed/HBoxContainer/HSlider.value
+	Settings.animation_time = 2.0 - value
 
 
 func _on_visibility_changed():
 	if visible:
+		window_mode_box = $Options/WindowMode/OptionButton
+		resolution_box = $Options/Resolution/OptionButton
+		setup_animation_speed_slider()
 		setup_window_mode_box()
 		select_current_window_mode()
 		add_resolutions()
@@ -113,3 +134,7 @@ func _on_option_button_item_selected(index: int) -> void:
 		$Options/WarningLabel.text =\
 		"[Borderless] and [Fullscreen] will use your device resolution instead. "\
 		 + str(DisplayServer.screen_get_size())
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	set_animation_speed_label(value)

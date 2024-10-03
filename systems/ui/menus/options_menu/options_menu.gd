@@ -14,7 +14,7 @@ func setup():
 
 func _input(event):
 	super._input(event)
-	if event.is_action_released("ui_cancel"):
+	if event.is_action_released("pause"):
 		if called_by.has_method("close_with_result"):
 			close_with_result(true)
 		self.close()

@@ -59,11 +59,11 @@ func _input(event: InputEvent):
 		new_inspection.setup(self)
 		SceneHandler.add_ui_element(new_inspection)
 	
-	if event.is_action_pressed("pickUpCard") and not isPickedUp:
+	if event.is_action_pressed("pick_up_card") and not isPickedUp:
 		if is_hovered:
 			pickup()
 	
-	if event.is_action_released("pickUpCard") and isPickedUp:
+	if event.is_action_released("pick_up_card") and isPickedUp:
 		put(null)
 		emit_signal("drag_ended", self)
 

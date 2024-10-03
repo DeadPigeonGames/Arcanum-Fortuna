@@ -9,7 +9,7 @@ func _input(event):
 		new_inspection.setup(self)
 		SceneHandler.add_ui_element(new_inspection)
 	
-	if is_hovered and event.is_action_pressed("pickUpCard"):
+	if is_hovered and event.is_action_pressed("pick_up_card"):
 		clicked.emit()
 		self.selected = not selected
 		self.selected_shader.visible = selected

@@ -11,7 +11,7 @@ signal game_continued
 func _input(event):
 	if not can_pause:
 		return
-	if event.is_action_released("ui_cancel"):
+	if event.is_action_released("pause"):
 		await get_tree().process_frame
 		if get_tree().paused:
 			return

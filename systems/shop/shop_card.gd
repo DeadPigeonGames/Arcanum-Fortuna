@@ -44,5 +44,5 @@ func _gui_input(event):
 		SceneHandler.add_ui_element(new_inspection)
 		get_parent().get_parent().get_parent().get_parent().get_parent().add_child(new_inspection)
 		
-	if event.is_action("pickUpCard"):
+	if event.is_action("pick_up_card"):
 		clicked.emit(self)

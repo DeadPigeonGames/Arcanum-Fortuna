@@ -93,7 +93,7 @@ func _process(delta):
 func _input(event: InputEvent):
 	if (
 			is_hovered
-			and event.is_action_pressed("pickUpCard")
+			and event.is_action_pressed("pick_up_card")
 			and selectable
 		):
 		click()
