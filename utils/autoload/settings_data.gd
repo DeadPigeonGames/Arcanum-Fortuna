@@ -1,6 +1,8 @@
 class_name SettingsData
 extends Node
 
+var animation_speed := 1.0
+
 var settings_dict : Dictionary:
 	set(value):
 		push_error("ERROR: Tried accessing SettingsData dict, not allowed!")
@@ -173,3 +175,7 @@ func set_audio_slider(bus_name, value):
 
 func get_audio_slider(bus_name):
 	return settings_dict["Audio"][bus_name] as float
+
+
+func apply_player_anim_speed(anim_player : AnimationPlayer):
+	anim_player.speed_scale *= animation_speed

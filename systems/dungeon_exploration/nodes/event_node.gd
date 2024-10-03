@@ -38,11 +38,12 @@ static var nodes_counter := 0
 
 
 func _ready():
+	if Engine.is_editor_hint():
+		return
 	if get_parent().has_method("_on_node_activated"):
 		activated.connect(get_parent()._on_node_activated)
 	if get_parent().has_method("_on_node_completed"):
 		completed.connect(get_parent()._on_node_completed)
-	if not Engine.is_editor_hint():
 		nodes_counter += 1
 		name += "+" + str(nodes_counter)
 	$background/icon.visible = false

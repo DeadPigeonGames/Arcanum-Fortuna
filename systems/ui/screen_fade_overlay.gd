@@ -125,17 +125,17 @@ func emit_fade_in_complete_internal():
 
 
 func reset_screenfade_internal():
-	tween.finished.disconnect(emit_tint_complete_internal)
-	tween.finished.disconnect(emit_fade_out_complete_internal)
-	tween.finished.disconnect(emit_fade_in_complete_internal)
+	if tween.finished.is_connected(emit_tint_complete_internal):
+		tween.finished.disconnect(emit_tint_complete_internal)
+	if tween.finished.is_connected(emit_fade_out_complete_internal):
+		tween.finished.disconnect(emit_fade_out_complete_internal)
+	if tween.finished.is_connected(emit_fade_in_complete_internal):
+		tween.finished.disconnect(emit_fade_in_complete_internal)
 	is_tween_running = false
 	set_is_mouse_blocked(false)
 
 
 func setup_tween_internal():
-	#if not tween_trans or not tween_ease:
-	#	push_error("ERROR! tween_trans: ", tween_trans, " tween_ease: ", tween_ease, " one of them is null!")
-	#	return
 	tween.set_trans(tween_trans)
 	tween.set_ease(tween_ease)
 

@@ -67,5 +67,3 @@ func _trigger_event():
 	if instance.has_method("trigger"):
 		instance.trigger(player.data, selected_enemy)
 	await instance.finished
-
-
