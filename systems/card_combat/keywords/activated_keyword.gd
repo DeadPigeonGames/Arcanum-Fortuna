@@ -36,20 +36,21 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 
 
 func animate(source, owner: CombatCard, icon_to_animate, params):
+	var duration = scale_speed * Settings.animation_time
 	if icon_to_animate and animate_scale:
 		var tween = icon_to_animate.create_tween()
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.set_ease(Tween.EASE_IN)
 		tween.set_parallel(true)
-		tween.tween_property(icon_to_animate, "scale", Vector2.ONE * 5.0, scale_speed)
-		tween.tween_property(icon_to_animate, "position", Vector2(14, -85), scale_speed)
+		tween.tween_property(icon_to_animate, "scale", Vector2.ONE * 5.0, duration * Settings.animation_time)
+		tween.tween_property(icon_to_animate, "position", Vector2(14, -85), duration * Settings.animation_time)
 		tween.set_ease(Tween.EASE_OUT)
 		tween.set_parallel(false)
-		tween.tween_property(icon_to_animate, "scale", Vector2.ONE, scale_speed)
+		tween.tween_property(icon_to_animate, "scale", Vector2.ONE, duration)
 		tween.set_parallel(true)
-		tween.tween_property(icon_to_animate, "position", icon_to_animate.origin_position, scale_speed)
+		tween.tween_property(icon_to_animate, "position", icon_to_animate.origin_position, duration * Settings.animation_time)
 		tween.finished.connect(func(): icon_to_animate.is_animating = false)
 		tween.play()
-		await icon_to_animate.get_tree().create_timer(scale_speed).timeout
+		await icon_to_animate.get_tree().create_timer(duration).timeout
 	if animate_particle:
 		await owner.animate_icon(icon)

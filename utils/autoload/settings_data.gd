@@ -1,7 +1,9 @@
 class_name SettingsData
 extends Node
 
-var animation_speed := 1.0
+## 1.0 is 100 %, 0.5 is 150% speed and 2.0 is 50% speed.
+## For animation players, this will increase the 
+var animation_time := 1.0
 
 var settings_dict : Dictionary:
 	set(value):
@@ -178,4 +180,5 @@ func get_audio_slider(bus_name):
 
 
 func apply_player_anim_speed(anim_player : AnimationPlayer):
-	anim_player.speed_scale *= animation_speed
+	var new_scale = anim_player.speed_scale * animation_time
+	anim_player.speed_scale += new_scale

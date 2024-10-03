@@ -24,6 +24,7 @@ var selected_cards = []
 #var prev_mode: bool = true
 
 func _ready():
+	Settings.apply_player_anim_speed(%AnimationPlayer)
 	rng.seed = seed
 	$CanvasLayer/Control/ConfirmButton.visible = false
 	%SkipRewardLabel.hide()
@@ -108,7 +109,7 @@ func _on_confirm_button_pressed():
 		var tween = create_tween()
 		tween.set_ease(Tween.EASE_IN)
 		tween.set_trans(card_interpolation_option)
-		tween.tween_property(c, "global_position", %VisualDeck.global_position, card_animation_speed)
+		tween.tween_property(c, "global_position", %VisualDeck.global_position, card_animation_speed * Settings.animation_time)
 		tween.finished.connect(func(): c.queue_free())
 		tween.play()
 		await get_tree().create_timer(card_animation_speed).timeout
@@ -118,7 +119,7 @@ func _on_confirm_button_pressed():
 	all_tween.set_ease(Tween.EASE_IN)
 	all_tween.set_trans(Tween.TRANS_CUBIC)
 	for c : Card in $CanvasLayer/Control/Cards.get_children():
-		all_tween.tween_property(c, "global_position", c.global_position + Vector2.UP * 600, card_animation_speed)
+		all_tween.tween_property(c, "global_position", c.global_position + Vector2.UP * 600, card_animation_speed * Settings.animation_time)
 		all_tween.finished.connect(func(): if c: c.queue_free())
 	all_tween.play()
 	

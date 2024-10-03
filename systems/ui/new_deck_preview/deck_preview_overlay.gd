@@ -10,13 +10,14 @@ var card_data_lookup = {}
 var select_button
 var selected_cards_amount := 0
 
-@onready var animation_player = %AnimationPlayer
+@onready var anim_player = %AnimationPlayer
 @onready var player_deck : PlayerDeckPreview = %PlayerDeck
 
 
 func setup():
 	select_button = %SelectCardsToBurnShopButton
-	animation_player.play("open_deck_preview")
+	Settings.apply_player_anim_speed(anim_player)
+	anim_player.play("open_deck_preview")
 	player_data = Player.instance.data
 	get_cards()
 	sort_karma()
@@ -90,8 +91,8 @@ func sort_health():
 
 
 func close():
-	animation_player.play("close_deck_preview")
-	await animation_player.animation_finished
+	anim_player.play("close_deck_preview")
+	await anim_player.animation_finished
 	if previous_current_window != null:
 		previous_current_window.is_current_window = false
 	super.close()

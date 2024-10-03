@@ -66,7 +66,7 @@ func draw_card(hand: Node):
 	var hand_center =  hand.get_global_rect().get_center()
 	tween.set_trans(tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(card, "global_position", hand_center, 0.5).from_current()
+	tween.tween_property(card, "global_position", hand_center, 0.5 * Settings.animation_time).from_current()
 	await tween.finished
 	card.reparent(hand)
 

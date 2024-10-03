@@ -68,7 +68,7 @@ func animate_karma(relevant_cards, target):
 		tween.set_ease(Tween.EASE_IN)
 		tween.set_trans(Tween.TRANS_EXPO)
 		
-		tween.tween_property(small_pearl, "global_position", blob.original_position, karma_delay)
+		tween.tween_property(small_pearl, "global_position", blob.original_position, karma_delay * Settings.animation_time)
 		
 		tween.finished.connect(func():
 			blob.update_number(card.cost)
@@ -97,8 +97,8 @@ func animate_karma(relevant_cards, target):
 	t.set_ease(Tween.EASE_IN)
 	t.set_trans(Tween.TRANS_EXPO)
 	
-	t.tween_property(blob, "global_position", target.get_node("%Karma").global_position + Vector2.DOWN * 30, karma_delay)
-	t.tween_property(blob, "scale", Vector2.ZERO, karma_delay)
+	t.tween_property(blob, "global_position", target.get_node("%Karma").global_position + Vector2.DOWN * 30, karma_delay * Settings.animation_time)
+	t.tween_property(blob, "scale", Vector2.ZERO, karma_delay * Settings.animation_time)
 	
 	t.play()
 	await combat.get_tree().create_timer(karma_delay).timeout

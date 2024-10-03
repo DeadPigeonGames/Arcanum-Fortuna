@@ -37,7 +37,7 @@ var health : int :
 		%HealthBar.value = health
 		if !max_health or max_health <= 0:
 			return
-		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 0.5 / (float(health) / float(max_health))
+		set_healthicon_anim_speed()
 		SfxBg._SFX_HealthToHighPass(health, max_health)
 
 
@@ -53,6 +53,7 @@ func init(data: PlayerData):
 
 
 func _ready():
+	Settings.apply_player_anim_speed(%HealthIcon/AnimationPlayer)
 	if is_debug:
 		init(debug_data)
 
@@ -188,3 +189,7 @@ func _on_friendly_card_deleted(card : CombatCard):
 	await get_tree().create_timer(animation_delay).timeout
 	await process_karma_overflow()
 	restore_default_color()
+
+func set_healthicon_anim_speed():
+	%HealthIcon/AnimationPlayer.speed_scale = 0.5 / (float(health) / float(max_health))
+	Settings.apply_player_anim_speed(%HealthIcon/AnimationPlayer)

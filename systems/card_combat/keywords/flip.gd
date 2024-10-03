@@ -1,9 +1,9 @@
 class_name Flip
 extends ActivatedKeyword
 
-@export_category("Animation")
-@export var rotation_duration = 0.8
-@export var icon_rotation = 1.0
+@export_category("Animation Duration")
+@export var rotation_time = 0.8
+@export var icon_rotation_time = 1.0
 
 var buff_lookup := {}
 
@@ -27,7 +27,7 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	buff_lookup[owner].health_gain = health_target - owner.health
 	owner.try_add_buff(buff_lookup[owner])
 	
-	await owner.get_tree().create_timer(rotation_duration / 2).timeout
+	await owner.get_tree().create_timer(rotation_time / 2).timeout
 
 func animate(source, target, icon_to_animate, params={}):
 	if not target is Card:
@@ -40,17 +40,18 @@ func animate(source, target, icon_to_animate, params={}):
 		var icon_tween = icon_to_animate.create_tween() as Tween
 		icon_tween.set_ease(Tween.EASE_IN_OUT)
 		icon_tween.set_trans(Tween.TRANS_BACK)
-		icon_tween.tween_property(icon_to_animate, "rotation", deg_to_rad(360), icon_rotation)
+		icon_tween.tween_property(icon_to_animate, "rotation", deg_to_rad(360), icon_rotation_time * Settings.animation_time)
 		icon_tween.play()
 	
 	var tween = card.create_tween()
 	target.get_node("%SFXCard")._SFX_Flip()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)
-	tween.tween_property(card, "scale", Vector2.DOWN, rotation_duration / 2.0)
+	var half_rotation_time = rotation_time / 2.0
+	tween.tween_property(card, "scale", Vector2.DOWN, half_rotation_time * Settings.animation_time)
 	tween.set_parallel(false)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(card, "scale", Vector2.ONE, rotation_duration / 2.0)
+	tween.tween_property(card, "scale", Vector2.ONE, half_rotation_time * Settings.animation_time)
 	tween.finished.connect(func(): icon_to_animate.is_animating = false)
 	tween.play()
-	await card.get_tree().create_timer(rotation_duration / 2).timeout
+	await card.get_tree().create_timer(half_rotation_time * Settings.animation_time).timeout

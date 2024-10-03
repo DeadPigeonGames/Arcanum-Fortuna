@@ -14,6 +14,7 @@ func _input(event):
 
 func setup():
 	anim_player = $PauseMenu/AnimationPlayer
+	Settings.apply_player_anim_speed(anim_player)
 
 
 func close_pause_menu():

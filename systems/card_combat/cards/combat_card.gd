@@ -112,8 +112,8 @@ func animate_damage(amount):
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
-	tween.tween_property(self, "rotation", rotation + deg_to_rad(-5), 0.2)
-	tween.tween_property(self, "rotation", rotation, 0.1)
+	tween.tween_property(self, "rotation", rotation + deg_to_rad(-5), 0.2 * Settings.animation_time)
+	tween.tween_property(self, "rotation", rotation, 0.1 * Settings.animation_time)
 	tween.play()
 
 
@@ -195,11 +195,11 @@ func animate_attack(target, tile_idx, tile: Control) -> bool:
 	print("[CombatCard] '%s' started attack tween" % card_name)
 	var wait_mod = 0
 	if not global_position.is_equal_approx(placed_position):
-		attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
+		attack_tween.tween_property(self, "global_position", placed_position, attack_rewind * Settings.animation_time)
 		wait_mod += attack_rewind
-	attack_tween.tween_property(self, "global_position", target_position, attack_speed)
+	attack_tween.tween_property(self, "global_position", target_position, attack_speed * Settings.animation_time)
 	attack_tween.set_ease(Tween.EASE_OUT)
-	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind)
+	attack_tween.tween_property(self, "global_position", placed_position, attack_rewind * Settings.animation_time)
 	attack_tween.play()
 	await attack_tween.finished
 	print("[CombatCard] '%s' finished attack tween" % card_name)
@@ -240,7 +240,7 @@ func animate_move(target_pos):
 	placed_position = target_pos
 	modulate = active_color
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", target_pos, move_speed)
+	tween.tween_property(self, "global_position", target_pos, move_speed * Settings.animation_time)
 	tween.play()
 	await get_tree().create_timer(move_speed).timeout
 	GlobalLog.add_entry("'%s' at position %d-%d moved to positon %d-%d." % 

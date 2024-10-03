@@ -16,11 +16,14 @@ var health := 20 :
 		%HealthBar.value = health
 		if !max_health or max_health <= 0:
 			return
-		$ResourceContainer/Health/HealthIcon/AnimationPlayer.speed_scale = 0.5 / (float(health) / float(max_health))
+		set_healthicon_anim_speed()
 var max_health
 var karma = 0
 
 var stored_buffs : Array[Buff]
+
+func _ready():
+	Settings.apply_player_anim_speed(%HealthIcon/AnimationPlayer)
 
 
 func init(enemy_data):
@@ -121,3 +124,8 @@ func set_karma(value):
 	karma = value
 	%KarmaLabel.text = str(karma)
 #endregion
+
+
+func set_healthicon_anim_speed():
+	%HealthIcon/AnimationPlayer.speed_scale = 0.5 / (float(health) / float(max_health))
+	Settings.apply_player_anim_speed(%HealthIcon/AnimationPlayer)

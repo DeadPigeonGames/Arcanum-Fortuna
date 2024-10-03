@@ -11,9 +11,9 @@ extends ActivatedKeyword
 @export var transformed_keyword_slot_atlas : Texture = preload("res://assets/ui/icons/keyword_slots_reversed.png")
 @export var chromatic_scene := preload("res://systems/card_combat/effects/chromatic_aberration.tscn")
 
-@export_category("Animation")
-@export var rotation_duration = 0.8
-@export var icon_rotation = 1.0
+@export_category("Animation Durations")
+@export var rotation_time = 0.8
+@export var icon_rotation_time = 1.0
 
 var combat_ref : CardBattle
 
@@ -57,22 +57,23 @@ func animate_transform(target, icon_to_animate):
 		var icon_tween = icon_to_animate.create_tween() as Tween
 		icon_tween.set_ease(Tween.EASE_IN_OUT)
 		icon_tween.set_trans(Tween.TRANS_BACK)
-		icon_tween.tween_property(icon_to_animate, "rotation", deg_to_rad(360), icon_rotation)
+		icon_tween.tween_property(icon_to_animate, "rotation", deg_to_rad(360), icon_rotation_time * Settings.animation_time)
 		icon_tween.play()
 	
 	var tween = card.create_tween()
 	target.get_node("%SFXCard")._SFX_Flip()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)
-	tween.tween_property(card, "scale", Vector2.RIGHT, rotation_duration / 2.0)
+	var half_rotation_time = rotation_time / 2.0
+	tween.tween_property(card, "scale", Vector2.RIGHT, half_rotation_time * Settings.animation_time)
 	tween.set_parallel(false)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(card, "scale", Vector2.ONE, rotation_duration / 2.0)
+	tween.tween_property(card, "scale", Vector2.ONE, half_rotation_time * Settings.animation_time)
 	tween.finished.connect(func(): icon_to_animate.is_animating = false)
 	tween.play()
 	var chromatic = chromatic_scene.instantiate()
 	SceneHandler.combat.add_child(chromatic)
-	await card.get_tree().create_timer(rotation_duration / 2).timeout
+	await card.get_tree().create_timer(half_rotation_time).timeout
 	target.set_transformed_visuals(transformed_artwork_shader, transformed_keyword_slot_atlas)
-	await card.get_tree().create_timer(rotation_duration / 2).timeout
+	await card.get_tree().create_timer(half_rotation_time).timeout
 	chromatic.queue_free()

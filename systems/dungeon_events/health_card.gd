@@ -27,7 +27,7 @@ func _process(delta):
 
 func reveal():
 	var tween = create_tween()
-	tween.tween_property(self, "size", Vector2(0, 1), 1)
+	tween.tween_property(self, "size", Vector2(0, 1), 1.0 * Settings.animation_time)
 	tween.play()
 	await tween.finished
 	$value.text = str(value)
@@ -37,7 +37,7 @@ func reveal():
 	tween = null
 	tween = create_tween()
 	tween.play()
-	tween.tween_property(self, "size", Vector2(-1, 1) * -1, 1)
+	tween.tween_property(self, "size", Vector2(-1, 1) * -1, 1.0 * Settings.animation_time)
 	await tween.finished
 
 

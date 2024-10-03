@@ -66,7 +66,7 @@ func card_to_deck_animation(card):
 	tween.set_ease(Tween.EASE_IN_OUT)
 	card.selected_shader.visible = false
 	card.play_cardflip(false)
-	tween.tween_property(card, "global_position", deck.global_position, 0.5)
+	tween.tween_property(card, "global_position", deck.global_position, 0.5 * Settings.animation_time)
 	await tween.finished
 
 
