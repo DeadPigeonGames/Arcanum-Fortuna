@@ -23,10 +23,13 @@ signal card_drag_ended(card)
 @export var is_debug = false 
 @export var debug_data : PlayerData 
 
+@export var deck_preview_overlay : PackedScene
+
 var max_health : int
 var karma : int
 var stored_buffs : Array[Buff]
 
+var deck_preview : DeckPreviewOverlay
 
 var health : int : 
 	get:
@@ -166,6 +169,7 @@ func draw_card():
 func set_active(value):
 	set_process(value)
 	%Hand.enabled = value
+	$Deck/Button.disabled = !value
 	$BonusDrawButton.disabled = !value
 	if value:
 		$BonusDrawButton.disabled = %CardStack.cardStack.size() <= 0
@@ -190,6 +194,16 @@ func _on_friendly_card_deleted(card : CombatCard):
 	await process_karma_overflow()
 	restore_default_color()
 
+
 func set_healthicon_anim_speed():
 	%HealthIcon/AnimationPlayer.speed_scale = 0.5 / (float(health) / float(max_health))
 	Settings.apply_player_anim_speed(%HealthIcon/AnimationPlayer)
+
+
+func _on_button_button_up() -> void:
+	if card_stack.cardStack.size() == 0:
+		return
+	deck_preview = SceneHandler.add_ui_element(deck_preview_overlay)
+	deck_preview.card_stack = card_stack.cardStack
+	deck_preview.init(75, self)
+	deck_preview.setup()

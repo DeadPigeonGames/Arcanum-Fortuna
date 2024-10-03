@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://vnsgfexxjwpl"]
+[gd_scene load_steps=10 format=3 uid="uid://vnsgfexxjwpl"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_stack.gd" id="1_axc8c"]
+[ext_resource type="PackedScene" uid="uid://cbsn1r2h288lq" path="res://systems/ui/new_deck_preview/deck_preview_overlay.tscn" id="2_jyfhy"]
 [ext_resource type="Texture2D" uid="uid://ddugqwyt5cfxl" path="res://assets/ui/gameboard/card_stack/card_stack_1.png" id="2_m4m3c"]
 [ext_resource type="Texture2D" uid="uid://b6ad0ibdr0h18" path="res://assets/ui/gameboard/card_stack/card_stack_full.png" id="2_ybovi"]
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="3_0vdgp"]
@@ -15,6 +16,7 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_axc8c")
+deckCardTemplate = ExtResource("2_jyfhy")
 fill_textures = Array[Texture]([ExtResource("2_m4m3c"), ExtResource("3_c5wyr"), ExtResource("4_50r54")])
 
 [node name="DeckTexture" type="TextureRect" parent="."]

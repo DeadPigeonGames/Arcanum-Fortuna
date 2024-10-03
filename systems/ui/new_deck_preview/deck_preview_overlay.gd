@@ -6,6 +6,7 @@ extends UIBase
 
 var previous_current_window
 var player_data : PlayerData
+var card_stack : Array[CardData]
 var card_data_lookup = {}
 var select_button
 var selected_cards_amount := 0
@@ -38,7 +39,10 @@ func setup():
 
 func get_cards():
 	self.card_data_lookup.clear()
-	for card_data in player_data.cardStack:
+	if not card_stack:
+		card_stack = player_data.cardStack
+	print(card_stack)
+	for card_data in card_stack:
 		var filtered_keys = card_data_lookup.keys().filter(func (x): return x.name == card_data.name)
 		
 		if filtered_keys.size() >= 1:

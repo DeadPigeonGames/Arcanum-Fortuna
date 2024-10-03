@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ced2ynscdgy5e"]
+[gd_scene load_steps=28 format=3 uid="uid://ced2ynscdgy5e"]
 
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="1_ltqqh"]
 [ext_resource type="Script" path="res://systems/card_combat/card_player.gd" id="1_y0ggj"]
@@ -18,6 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://r2557aassu7" path="res://assets/ui/icons/broken_karma.png" id="12_6spwy"]
 [ext_resource type="Texture2D" uid="uid://tj5tpqbagegc" path="res://assets/ui/icons/broken_karma_3.png" id="13_sqdsb"]
 [ext_resource type="Texture2D" uid="uid://dwgvjd2verccg" path="res://assets/ui/icons/broken_karma_2.png" id="14_ubj71"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avfpk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p84w4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8aun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ew0t6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ygkl"]
 
 [sub_resource type="Animation" id="Animation_n2ktt"]
 length = 0.001
@@ -159,6 +169,27 @@ offset_right = 126.0
 offset_bottom = 326.0
 target = NodePath("../../Hand")
 deckCardTemplate = ExtResource("4_j51k8")
+
+[node name="Button" type="Button" parent="Deck"]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -604.0
+offset_right = -28.0
+offset_bottom = -345.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_avfpk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p84w4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b8aun")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ew0t6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ygkl")
 
 [node name="ResourceContainer" type="Control" parent="."]
 layout_mode = 1
@@ -393,6 +424,7 @@ script = ExtResource("8_y2d2q")
 noise = SubResource("FastNoiseLite_fq2da")
 intensity = 10.0
 
+[connection signal="button_up" from="Deck/Button" to="." method="_on_button_button_up"]
 [connection signal="mouse_entered" from="ResourceContainer/Karma/ShowTooltip" to="ResourceContainer/Karma/ShowTooltip" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ResourceContainer/Karma/ShowTooltip" to="ResourceContainer/Karma/ShowTooltip" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="ResourceContainer/Health/HealthIcon/ShowTooltip" to="ResourceContainer/Health/HealthIcon/ShowTooltip" method="_on_mouse_entered"]

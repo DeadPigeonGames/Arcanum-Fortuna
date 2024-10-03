@@ -15,7 +15,8 @@ func _ready() -> void:
 	update_text()
 	if cardStack.size() != 0 and cardStack.size() <= fill_textures.size():
 		%DeckTexture.texture = fill_textures[cardStack.size() - 1]
-	
+
+
 func init(seed : int):
 	rng_seed = seed
 	rng = RandomNumberGenerator.new()
