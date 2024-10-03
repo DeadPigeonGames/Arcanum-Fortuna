@@ -8,7 +8,9 @@ var is_hovered := false
 
 
 func _ready():
+	Settings.apply_player_anim_speed($AnimationPlayer)
 	default_color = modulate
+
 
 func _on_card_drag_started():
 	set_active()
@@ -24,7 +26,7 @@ func _on_card_drag_ended(dragged_card: CombatCard):
 		target_position.y -= self_rect.size.y / 2
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(dragged_card, "global_position", target_position, 0.2)
+		tween.tween_property(dragged_card, "global_position", target_position, 0.2 * Settings.animation_time)
 		await tween.finished
 		dragged_card.reparent(self)
 		dragged_card.delete()

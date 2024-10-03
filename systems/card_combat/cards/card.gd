@@ -30,6 +30,8 @@ var default_keywordslot_atlas : Texture
 
 
 func _ready():
+	Settings.apply_player_anim_speed($AnimationPlayer)
+	Settings.apply_player_anim_speed(card_flip_animation)
 	delete_material = load("res://shaders/card_burn.tres")
 	if card_data != null and !was_preloaded:
 		load_from_data(card_data)
@@ -240,7 +242,7 @@ func animate_burn():
 	artwork.material.set_shader_parameter("noise", shader_noise)
 	play_animation("fade_out_icons")
 	var tween = create_tween()
-	tween.tween_method(set_shader_value, -1.0, 2.0, death_delay)
+	tween.tween_method(set_shader_value, -1.0, 2.0, death_delay * Settings.animation_time)
 	await tween.finished
 
 
