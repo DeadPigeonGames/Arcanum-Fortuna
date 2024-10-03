@@ -35,4 +35,3 @@ func _on_return_button_button_up():
 		close_with_result(true)
 	else:
 		close()
-

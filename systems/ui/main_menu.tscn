@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cy7r8u5ck052l" path="res://assets/ui/placeholders/nodemap_test.tscn" id="3_o36ij"]
 [ext_resource type="Texture2D" uid="uid://h0448sn65e2l" path="res://assets/sprites/cards/death.png" id="3_prrvv"]
 [ext_resource type="PackedScene" uid="uid://bookhsqnu44x5" path="res://systems/tutorial/tutorial_card_battle.tscn" id="4_e66lc"]
-[ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu.tscn" id="4_g2abk"]
+[ext_resource type="PackedScene" uid="uid://biy5pjrvhi2le" path="res://systems/ui/menus/options_menu_old.tscn" id="4_g2abk"]
 [ext_resource type="Script" path="res://systems/ui/visible_for_feature.gd" id="6_kuo4c"]
 [ext_resource type="PackedScene" uid="uid://d101m5rvvp1kq" path="res://systems/ui/menus/credits_menu/credits_menu.tscn" id="6_m01nv"]
 [ext_resource type="Texture2D" uid="uid://cg3tvcqu5s5ai" path="res://assets/ui/placeholders/logo_wip.png" id="6_qsfvr"]

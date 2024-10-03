@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8xs6q5trxx58"]
+[gd_scene load_steps=17 format=3 uid="uid://b8xs6q5trxx58"]
 
-[ext_resource type="Script" path="res://systems/ui/menus/options_menu.gd" id="1_j4gvh"]
+[ext_resource type="Script" path="res://systems/ui/menus/options_menu/options_menu.gd" id="1_j4gvh"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_yx2ik"]
 [ext_resource type="Texture2D" uid="uid://d233avcta64f" path="res://assets/ui/underlays/options_underlay.png" id="3_iqdc3"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="3_x54wv"]
@@ -10,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://elmcuxrwc3gy" path="res://assets/ui/underlays/checkbox_pressed.png" id="6_o2d4v"]
 [ext_resource type="Texture2D" uid="uid://ktdctvbdmxa4" path="res://assets/ui/underlays/checkbox_hover.png" id="7_ei6wn"]
 [ext_resource type="Script" path="res://systems/ui/menus/utils/bus_slider.gd" id="7_rihke"]
-[ext_resource type="Script" path="res://systems/ui/menus/utils/resolution_selection.gd" id="8_8p61a"]
-[ext_resource type="Script" path="res://systems/ui/menus/utils/fullscreen_selection.gd" id="9_v38kh"]
+[ext_resource type="Script" path="res://systems/ui/menus/options_menu/video_options.gd" id="8_intva"]
+[ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="10_kqsne"]
+[ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="11_acbfr"]
+[ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="12_1lkd7"]
+[ext_resource type="Texture2D" uid="uid://df2r4ns72cbex" path="res://assets/ui/buttons/default_button_disabled.png" id="13_8yfdg"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="14_brwgc"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 process_mode = 3
@@ -129,6 +133,7 @@ texture = ExtResource("3_iqdc3")
 
 [node name="AudioOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -381,6 +386,7 @@ script = ExtResource("7_rihke")
 target_bus = "UI"
 
 [node name="SoundTrack" type="HBoxContainer" parent="OptionsMenu/Options/AudioOptions/Options"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/Options/AudioOptions/Options/SoundTrack"]
@@ -396,18 +402,17 @@ layout_mode = 2
 theme = ExtResource("3_x54wv")
 item_count = 2
 popup/item_0/text = "Winter"
-popup/item_0/id = 0
 popup/item_1/text = "Spring"
 popup/item_1/id = 1
 
 [node name="VideoOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
+script = ExtResource("8_intva")
 
 [node name="OptionsTitleUnderlay" type="TextureRect" parent="OptionsMenu/Options/VideoOptions"]
 layout_mode = 1
@@ -464,8 +469,6 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-script = ExtResource("8_8p61a")
-resolutions = Array[Vector2i]([Vector2i(1024, 768), Vector2i(1280, 720), Vector2i(1366, 768), Vector2i(1920, 1080)])
 
 [node name="hoverSound" parent="OptionsMenu/Options/VideoOptions/Options/Resolution/OptionButton" instance=ExtResource("6_4sw4x")]
 singleton = 1
@@ -491,7 +494,6 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-script = ExtResource("9_v38kh")
 
 [node name="hoverSound" parent="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" instance=ExtResource("6_4sw4x")]
 singleton = 1
@@ -502,6 +504,45 @@ connect_signal = "mouse_entered"
 singleton = 1
 method_to_call = "_SFX_UIButtonPress"
 connect_signal = "pressed"
+
+[node name="WarningLabel" type="Label" parent="OptionsMenu/Options/VideoOptions/Options"]
+custom_minimum_size = Vector2(296, 46)
+layout_mode = 2
+theme = ExtResource("3_x54wv")
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
+
+[node name="Apply" type="HBoxContainer" parent="OptionsMenu/Options/VideoOptions/Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Apply" type="TextureButton" parent="OptionsMenu/Options/VideoOptions/Options/Apply"]
+z_index = 11
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("10_kqsne")
+texture_pressed = ExtResource("11_acbfr")
+texture_hover = ExtResource("12_1lkd7")
+texture_disabled = ExtResource("13_8yfdg")
+
+[node name="Label" type="Label" parent="OptionsMenu/Options/VideoOptions/Options/Apply/Apply"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_brwgc")
+theme_override_font_sizes/font_size = 32
+text = "Apply"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AccessibilityOptions" type="Control" parent="OptionsMenu/Options"]
 visible = false
@@ -640,6 +681,7 @@ connect_signal = "button_up"
 [connection signal="toggled" from="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/CheckBox" to="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/HSlider" method="_on_check_box_toggled"]
 [connection signal="drag_started" from="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/HSlider" to="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/HSlider" method="_on_drag_started"]
 [connection signal="value_changed" from="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/HSlider" to="OptionsMenu/Options/AudioOptions/Options/UIVolume/HBoxContainer/HSlider" method="_on_value_changed"]
-[connection signal="item_selected" from="OptionsMenu/Options/VideoOptions/Options/Resolution/OptionButton" to="OptionsMenu/Options/VideoOptions/Options/Resolution/OptionButton" method="_on_item_selected"]
-[connection signal="item_selected" from="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" to="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" method="_on_item_selected"]
+[connection signal="visibility_changed" from="OptionsMenu/Options/VideoOptions" to="OptionsMenu/Options/VideoOptions" method="_on_visibility_changed"]
+[connection signal="item_selected" from="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" to="OptionsMenu/Options/VideoOptions" method="_on_option_button_item_selected"]
+[connection signal="button_up" from="OptionsMenu/Options/VideoOptions/Options/Apply/Apply" to="OptionsMenu/Options/VideoOptions" method="_on_apply_button_up"]
 [connection signal="button_up" from="OptionsMenu/ReturnButton" to="." method="_on_return_button_button_up"]
