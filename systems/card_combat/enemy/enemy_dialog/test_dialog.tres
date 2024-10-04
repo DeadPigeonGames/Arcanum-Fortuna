@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyDialog" load_steps=2 format=3 uid="uid://bcuj4f7qyk7dv"]
+
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="1_3pget"]
+
+[resource]
+script = ExtResource("1_3pget")
+dialogue_lines = Array[String]([])
+trigger_type = 20

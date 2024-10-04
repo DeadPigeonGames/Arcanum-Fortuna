@@ -217,4 +217,3 @@ func _apply_export_overrides():
 	%DialogicNode_TypeSounds.pitch_variance = typing_sounds_pitch_variance
 	%DialogicNode_TypeSounds.volume_variance = typing_sounds_volume_variance
 	%DialogicNode_TypeSounds.ignore_characters = typing_sounds_ignore_characters
-

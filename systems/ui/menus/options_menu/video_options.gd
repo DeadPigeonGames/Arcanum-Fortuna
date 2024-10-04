@@ -22,15 +22,15 @@ var resolution_box : OptionButton
 var os_resolution
 
 
-func _ready():
-	pass
-	#window_mode_box = $Options/WindowMode/OptionButton
-	#resolution_box = $Options/Resolution/OptionButton
-	#setup_window_mode_box()
-	#select_current_window_mode()
-	#add_resolutions()
-	#setup_supported_resolutions()
-	#select_current_resolution()
+func setup():
+	window_mode_box = $Options/WindowMode/OptionButton
+	resolution_box = $Options/Resolution/OptionButton
+	setup_animation_speed_slider()
+	setup_window_mode_box()
+	select_current_window_mode()
+	add_resolutions()
+	setup_supported_resolutions()
+	select_current_resolution()
 
 
 func setup_window_mode_box():
@@ -118,14 +118,7 @@ func _on_apply_button_up():
 
 func _on_visibility_changed():
 	if visible:
-		window_mode_box = $Options/WindowMode/OptionButton
-		resolution_box = $Options/Resolution/OptionButton
-		setup_animation_speed_slider()
-		setup_window_mode_box()
-		select_current_window_mode()
-		add_resolutions()
-		setup_supported_resolutions()
-		select_current_resolution()
+		setup()
 
 
 func _on_option_button_item_selected(index: int) -> void:
