@@ -40,9 +40,10 @@ func _ready():
 
 
 func _trigger_event():
-	var scene = Dialogic.start(demo_dialogic_begin)
-	await Dialogic.timeline_ended
+	await trigger_dialog(demo_dialogic_begin)
+	
 	var selected_enemy = null
+	var was_battle_event = false
 	
 	if not event:
 		return
@@ -51,6 +52,7 @@ func _trigger_event():
 		return
 	var instance = event.instantiate()
 	if instance is BattleEvent:
+		was_battle_event = true
 		instance.seed = combat_seed
 		if demo_enemy_data != null:
 			selected_enemy = demo_enemy_data
@@ -61,15 +63,31 @@ func _trigger_event():
 		selected_enemy.level = level
 		selected_enemy.rng_seed = combat_seed
 		player.data.draw_rng_seed = draw_seed
-		player.lerp_weight = 0.01
+		
 		ScreenFade.fade_out(1.0, true, true)
+		get_parent().combat_started.emit()
 		await ScreenFade.fade_out_complete
-		player.lerp_weight = 0.1
 		
 	elif "seed" in instance:
 		instance.seed = combat_seed
 	if instance.has_method("trigger"):
 		instance.trigger(player.data, selected_enemy)
 	await instance.finished
-	scene = Dialogic.start(demo_dialogic_end)
+	if was_battle_event:
+		get_parent().combat_ended.emit()
+	await trigger_dialog(demo_dialogic_end)
+
+
+func trigger_dialog(dialog : DialogicTimeline):
+	if not dialog:
+		return
+	SceneHandler.set_visibility_ui_container(false)
+	ScreenFade.tint_screen(Color.BLACK, 0.8, 1.0)
+	var layer = ScreenFade.get_layer()
+	ScreenFade.set_layer(50)
+	Dialogic.start(dialog).set_layer(128)
 	await Dialogic.timeline_ended
+	ScreenFade.reset_tint(0.2)
+	await ScreenFade.tint_complete
+	ScreenFade.set_layer(layer)
+	SceneHandler.set_visibility_ui_container(true)

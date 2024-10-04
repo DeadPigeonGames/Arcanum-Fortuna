@@ -8,7 +8,7 @@ var animation_time := 1.0
 
 var settings_dict : Dictionary:
 	set(value):
-		push_error("ERROR: Tried accessing SettingsData dict, not allowed!")
+		push_error("[SettingsData] ERROR: Tried accessing SettingsData dict, not allowed!")
 
 
 var fileExtension = ".json"
@@ -37,7 +37,7 @@ func get_current_audio_dict():
 	for bus in audio_busses:
 		var bus_idx = AudioServer.get_bus_index(bus)
 		if bus_idx == -1:
-			push_error("BUS %s NOT FOUND!!!" % bus)
+			push_error("[SettingsData] BUS %s NOT FOUND!!!" % bus)
 			continue
 		if not dict.has(bus_idx):
 			dict[bus] = AudioServer.get_bus_volume_db(bus_idx)
@@ -71,7 +71,7 @@ func save_config():
 
 func load_config():
 	if not FileAccess.file_exists(savePath):
-		print("No config save file found, creating a new one")
+		print("[SettingsData] No config save file found, creating a new one")
 		return false
 	
 	var file = FileAccess.open(savePath, FileAccess.READ)
@@ -80,7 +80,7 @@ func load_config():
 	var json_string = file.get_as_text()
 	var parse_result = json.parse(json_string)
 	if not parse_result == OK:
-		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		print("[SettingsData] JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 	var data = json.get_data()
 	settings_dict.merge(data, true)
 	file.close()
@@ -99,7 +99,7 @@ func set_video_resolution(resolution):
 	if resolution is Vector2i:
 		settings_dict["Video"]["resolution"] = resolution
 	else:
-		push_error("ERROR: resolution not Vector2i")
+		push_error("[SettingsData] ERROR: resolution not Vector2i")
 
 
 func get_video_resolution():
@@ -124,7 +124,7 @@ func set_window_mode(mode):
 	if mode is DisplayServer.WindowMode:
 		settings_dict["Video"]["window_mode"] = mode
 	else:
-		push_error("ERROR: mode not DisplayServer.WindowMode")
+		push_error("[SettingsData] ERROR: mode not DisplayServer.WindowMode")
 
 
 func get_window_mode():
@@ -139,7 +139,7 @@ func set_window_position(position):
 	if position is Vector2i:
 		settings_dict["Video"]["window_pos"] = position
 	else:
-		push_error("ERROR: position not Vector2i")
+		push_error("[SettingsData] ERROR: position not Vector2i")
 
 
 func get_window_position():
@@ -164,7 +164,7 @@ func set_screen_index(index):
 	if index is int:
 		settings_dict["Video"]["screen_index"] = index
 	else:
-		push_error("ERROR: screen_index not int")
+		push_error("[SettingsData] ERROR: screen_index not int")
 
 
 func get_screen_index():

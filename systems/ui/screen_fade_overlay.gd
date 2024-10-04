@@ -92,6 +92,7 @@ func tint_screen(tint_color : Color, opacity : float, duration : float):
 	tint_color.a = opacity
 	setup_tween_internal()
 	tween.tween_property(color_rect, "color", tint_color, duration).from_current()
+	tween.finished.connect(emit_tint_complete_internal)
 	is_tween_running = true
 	fail_save_timer = get_tree().create_timer(duration + 5.0)
 	fail_save_timer.timeout.connect(fail_save)
@@ -104,6 +105,7 @@ func reset_tint(duration : float):
 	var color = BLACK_TRANSPARENT
 	setup_tween_internal()
 	tween.tween_property(color_rect, "color", color, duration).from_current()
+	tween.finished.connect(emit_tint_complete_internal)
 	is_tween_running = true
 	fail_save_timer = get_tree().create_timer(duration + 5.0)
 	fail_save_timer.timeout.connect(fail_save)

@@ -39,6 +39,14 @@ func add_ui_element(element):
 	return element_to_add
 
 
+func set_visibility_ui_container(value : bool):
+	for canvas_layer in ui_container.get_children():
+		if value:
+			canvas_layer.show()
+		else:
+			canvas_layer.hide()
+
+
 func get_instantiated_scene(element):
 	var element_to_add
 	if element is PackedScene:

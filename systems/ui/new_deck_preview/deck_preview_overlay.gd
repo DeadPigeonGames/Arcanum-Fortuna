@@ -41,7 +41,6 @@ func get_cards():
 	self.card_data_lookup.clear()
 	if not card_stack:
 		card_stack = player_data.cardStack
-	print(card_stack)
 	for card_data in card_stack:
 		var filtered_keys = card_data_lookup.keys().filter(func (x): return x.name == card_data.name)
 		

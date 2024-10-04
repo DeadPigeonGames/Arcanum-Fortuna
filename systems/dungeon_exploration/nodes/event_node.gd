@@ -113,6 +113,7 @@ func click():
 	GlobalLog.set_context(GlobalLog.Context.NODEMAP)
 	GlobalLog.add_entry("went to " + name)
 	player.update_target(self)
+	await player.nodemap_move_to(self)
 	for c in connectedFrom:
 		c.passed = true
 	

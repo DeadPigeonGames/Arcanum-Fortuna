@@ -7,12 +7,8 @@ var card_stack_node : CardStack
 var deck_preview : DeckPreviewOverlay
 var player_data
 
+
 func _process(delta):
-	visible = SceneHandler.combat == null
-	# I know this is bad, but Week 10
-	# Please do not kill me, I am little good boy,
-	# take care of me, need food
-	# (will be changed)
 	if card_stack_node != null:
 		card_stack_node.update_text()
 

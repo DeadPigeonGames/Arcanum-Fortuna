@@ -3,18 +3,15 @@ extends Control
 
 @export var startNode: EventNode
 @export var startData: PlayerData
-@export var mouse_track := 0.2
-#@export var setup_nodes : Array[Node]
+@export var setup_nodes : Array[Node]
 
 @export var enable_camera_control := false
-@export var position_offset := Vector2(5, -55)
 
 @export_category("Debug")
 @export var is_debug := false
 
 var data: PlayerData
 var targetNode: EventNode
-var lerp_weight := 0.1
 
 static var instance : Player
 
@@ -23,7 +20,8 @@ func _ready():
 		instance = self
 	if not enable_camera_control:
 		$Camera2D.queue_free()
-	global_position = startNode.global_position
+	global_position = startNode.get_global_rect().get_center()
+	global_position -= get_rect().size / 2.0
 	data = startData.duplicate(true)
 	update_target(startNode)
 	#for node in setup_nodes:
@@ -40,15 +38,14 @@ func update_target(new_target: EventNode):
 	targetNode.player = self
 
 
-func _process(delta):
-	
-	if targetNode:
-		var target = targetNode.position
-		position = position.lerp(target - get_rect().size / 2 + position_offset, lerp_weight)
-	
-	if enable_camera_control:
-		$Camera2D.position = $Camera2D.position.lerp(get_viewport().get_mouse_position() * mouse_track, 0.05)
-	debug_movement()
+func nodemap_move_to(target):
+	var tween = get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	var calc_pos = target.position - get_rect().size / 2.0
+	tween.tween_property(self, "position", calc_pos, 1.0).from_current()
+	return await tween.finished
+
 
 var debug_movement_on := false
 var debug_position := Vector2()

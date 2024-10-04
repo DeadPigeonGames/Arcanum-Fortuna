@@ -28,8 +28,6 @@ shader_parameter/detail = 5.0
 shader_parameter/distortion = 1.0
 shader_parameter/heightOffset = 0.0
 
-[sub_resource type="TileSet" id="TileSet_mue5v"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v7s72"]
 shader = ExtResource("5_f5b0f")
 shader_parameter/rain_amount = 200.0
@@ -73,6 +71,8 @@ initial_velocity_max = 175.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.2
 scale_max = 0.8
+
+[sub_resource type="TileSet" id="TileSet_mue5v"]
 
 [sub_resource type="Resource" id="Resource_gijmu"]
 script = ExtResource("11_fvnbs")
@@ -128,15 +128,13 @@ material = SubResource("ShaderMaterial_6ru5t")
 position = Vector2(0, 720)
 texture = ExtResource("3_7jy3d")
 
-[node name="TileMap" type="TileMap" parent="."]
-visible = false
-tile_set = SubResource("TileSet_mue5v")
-format = 2
-layer_0/tile_data = PackedInt32Array(3342366, 2, 11, 917589, 1048578, 11, 852048, 2621442, 9, 589911, 2162690, 18, 131092, 1114114, 20, 3932163, 589826, 6, 3538963, 589826, 6, 589855, 589826, 6, 1769475, 589826, 6, 1376365, 65538, 6, 655393, 65538, 6, 458755, 65538, 6, 1179646, 65538, 6, 3211331, 65538, 6, 2949202, 65538, 6, 3473446, 2162690, 6, 917570, 2162690, 6, 1703941, 2686978, 4, 3997736, 2686978, 4, 3997806, 2686978, 4, 4063320, 2162690, 11, 4194314, 2162690, 11, 2949148, 3211266, 19, 2490485, 65538, 22, 196718, 131074, 40, 2097211, 1703938, 39)
+[node name="EffectParallax" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
 
-[node name="Effects" type="Node" parent="."]
+[node name="EffectLayer" type="ParallaxLayer" parent="EffectParallax"]
+motion_mirroring = Vector2(1920, 0)
 
-[node name="Snow" type="ColorRect" parent="Effects"]
+[node name="Snow" type="ColorRect" parent="EffectParallax/EffectLayer"]
 visible = false
 material = SubResource("ShaderMaterial_v7s72")
 offset_right = 1920.0
@@ -144,11 +142,27 @@ offset_bottom = 1080.0
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
-[node name="Fog" type="ColorRect" parent="Effects"]
+[node name="Fog" type="ColorRect" parent="EffectParallax/EffectLayer"]
 material = SubResource("ShaderMaterial_n8aog")
-offset_right = 1920.0
+offset_left = -960.0
+offset_right = 960.0
 offset_bottom = 1080.0
 mouse_filter = 1
+
+[node name="SnowParticles" type="GPUParticles2D" parent="EffectParallax/EffectLayer/Fog"]
+z_index = 2
+amount = 160
+process_material = SubResource("ParticleProcessMaterial_op1x3")
+texture = ExtResource("10_v8li0")
+lifetime = 12.0
+preprocess = 10.0
+interpolate = false
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource("TileSet_mue5v")
+format = 2
+layer_0/tile_data = PackedInt32Array(3342366, 2, 11, 917589, 1048578, 11, 852048, 2621442, 9, 589911, 2162690, 18, 131092, 1114114, 20, 3932163, 589826, 6, 3538963, 589826, 6, 589855, 589826, 6, 1769475, 589826, 6, 1376365, 65538, 6, 655393, 65538, 6, 458755, 65538, 6, 1179646, 65538, 6, 3211331, 65538, 6, 2949202, 65538, 6, 3473446, 2162690, 6, 917570, 2162690, 6, 1703941, 2686978, 4, 3997736, 2686978, 4, 3997806, 2686978, 4, 4063320, 2162690, 11, 4194314, 2162690, 11, 2949148, 3211266, 19, 2490485, 65538, 22, 196718, 131074, 40, 2097211, 1703938, 39)
 
 [node name="LimitedCamera" type="Camera2D" parent="."]
 position = Vector2(19, 535)
@@ -161,16 +175,6 @@ offset_top = -535.0
 offset_right = 5620.0
 offset_bottom = 547.0
 mouse_filter = 2
-
-[node name="SnowParticles" type="GPUParticles2D" parent="LimitedCamera"]
-z_index = 2
-position = Vector2(472, -496)
-amount = 160
-process_material = SubResource("ParticleProcessMaterial_op1x3")
-texture = ExtResource("10_v8li0")
-lifetime = 12.0
-preprocess = 10.0
-interpolate = false
 
 [node name="NodeMapLoader" parent="." instance=ExtResource("12_c42ig")]
 offset_left = 153.0
