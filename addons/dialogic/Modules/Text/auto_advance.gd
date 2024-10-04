@@ -1,5 +1,5 @@
-extends RefCounted
 class_name DialogicAutoAdvance
+extends RefCounted
 ## This class holds the settings for the Auto-Advance feature.
 ## Changing the variables will alter the behaviour of Auto-Advance.
 ##
@@ -68,8 +68,9 @@ var enabled_until_user_input := false :
 		enabled_until_user_input = enabled
 		_try_emit_toggled()
 
+
 func _init() -> void:
-	DialogicUtil.autoload().Input.add_child(autoadvance_timer)
+	DialogicUtil.autoload().Inputs.add_child(autoadvance_timer)
 	autoadvance_timer.one_shot = true
 	autoadvance_timer.timeout.connect(_on_autoadvance_timer_timeout)
 	toggled.connect(_on_toggled)
@@ -90,10 +91,10 @@ func start() -> void:
 	var parsed_text: String = DialogicUtil.autoload().current_state_info['text_parsed']
 	var delay := _calculate_autoadvance_delay(parsed_text)
 
+	await DialogicUtil.autoload().get_tree().process_frame
 	if delay == 0:
 		_on_autoadvance_timer_timeout()
 	else:
-		await DialogicUtil.autoload().get_tree().process_frame
 		autoadvance_timer.start(delay)
 
 
@@ -160,19 +161,19 @@ func _on_autoadvance_timer_timeout() -> void:
 	autoadvance_timer.stop()
 
 
-## Switches the auto-advance mode on or off based on [param is_enabled].
-func _on_toggled(is_enabled: bool) -> void:
+## Switches the auto-advance mode on or off based on [param enabled].
+func _on_toggled(enabled: bool) -> void:
 	# If auto-advance is enabled and we are not auto-advancing yet,
 	# we will initiate the auto-advance mode.
-	if (is_enabled and !is_advancing()
+	if (enabled and !is_advancing()
 	and DialogicUtil.autoload().current_state == DialogicGameHandler.States.IDLE
 	and not DialogicUtil.autoload().current_state_info.get('text', '').is_empty()):
 		start()
 
 	# If auto-advance is disabled and we are auto-advancing,
 	# we want to cancel the auto-advance mode.
-	elif !is_enabled and is_advancing():
-		DialogicUtil.autoload().Input.stop()
+	elif !enabled and is_advancing():
+		DialogicUtil.autoload().Inputs.stop_timers()
 #endregion
 
 #region AUTOADVANCE HELPERS

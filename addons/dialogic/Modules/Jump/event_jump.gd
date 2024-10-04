@@ -8,23 +8,24 @@ extends DialogicEvent
 ### Settings
 
 ## The timeline to jump to, if null then it's the current one. This setting should be a dialogic timeline resource.
-var timeline :DialogicTimeline = null:
-	get:
-		if timeline == null:
-			if !_timeline_file.is_empty():
-				if _timeline_file.contains("res://"):
-					return load(_timeline_file)
-				else:
-					return DialogicResourceUtil.get_timeline_resource(_timeline_file)
-		return timeline
+var timeline: DialogicTimeline
 ## If not empty, the event will try to find a Label event with this set as name. Empty by default..
-var label_name : String = ""
+var label_name := ""
 
 
 ### Helpers
 
-## Path to the timeline. Mainly used by the editor.
-var _timeline_file: String = ""
+## Used to set the timeline resource from the unique name identifier and vice versa
+var timeline_identifier := "":
+	get:
+		if timeline:
+			var identifier := DialogicResourceUtil.get_unique_identifier(timeline.resource_path)
+			if not identifier.is_empty():
+				return identifier
+		return timeline_identifier
+	set(value):
+		timeline_identifier = value
+		timeline = DialogicResourceUtil.get_timeline_resource(value)
 
 
 ################################################################################
@@ -64,8 +65,8 @@ func _get_icon() -> Resource:
 ################################################################################
 func to_text() -> String:
 	var result := "jump "
-	if _timeline_file:
-		result += _timeline_file+'/'
+	if timeline_identifier:
+		result += timeline_identifier+'/'
 		if label_name:
 			result += label_name
 	elif label_name:
@@ -74,9 +75,9 @@ func to_text() -> String:
 
 
 func from_text(string:String) -> void:
-	var result := RegEx.create_from_string('jump (?<timeline>.*\\/)?(?<label>.*)?').search(string.strip_edges())
+	var result := RegEx.create_from_string(r"jump (?<timeline>.*\/)?(?<label>.*)?").search(string.strip_edges())
 	if result:
-		_timeline_file = result.get_string('timeline').trim_suffix('/')
+		timeline_identifier = result.get_string('timeline').trim_suffix('/')
 		label_name = result.get_string('label')
 
 
@@ -89,7 +90,7 @@ func is_valid_event(string:String) -> bool:
 func get_shortcode_parameters() -> Dictionary:
 	return {
 		#param_name 	: property_info
-		"timeline"		: {"property": "_timeline_file", 	"default": null,
+		"timeline"		: {"property": "timeline_identifier", 	"default": null,
 							"suggestions": get_timeline_suggestions},
 		"label"			: {"property": "label_name", 		"default": ""},
 	}
@@ -99,21 +100,22 @@ func get_shortcode_parameters() -> Dictionary:
 ## 						EDITOR REPRESENTATION
 ################################################################################
 
-func build_event_editor():
-	add_header_edit('_timeline_file', ValueType.COMPLEX_PICKER, {'left_text':'Jump to',
+func build_event_editor() -> void:
+	add_header_edit('timeline_identifier', ValueType.DYNAMIC_OPTIONS, {'left_text':'Jump to',
 		'file_extension': '.dtl',
+		'mode'			: 2,
 		'suggestions_func': get_timeline_suggestions,
-		'editor_icon': ["TripleBar", "EditorIcons"],
-		'empty_text': '(this timeline)',
-		'autofocus':true
-	})
-	add_header_edit("label_name", ValueType.COMPLEX_PICKER, {'left_text':"at",
+		'editor_icon'	: ["TripleBar", "EditorIcons"],
+		'empty_text'	: '(this timeline)',
+		'autofocus'		: true,
+		})
+	add_header_edit("label_name", ValueType.DYNAMIC_OPTIONS, {'left_text':"at",
 		'empty_text':'the beginning',
 		'suggestions_func':get_label_suggestions,
 		'editor_icon':["ArrowRight", "EditorIcons"]})
 
 
-func get_timeline_suggestions(filter:String= "") -> Dictionary:
+func get_timeline_suggestions(_filter:String= "") -> Dictionary:
 	var suggestions := {}
 
 	suggestions['(this timeline)'] = {'value':'', 'editor_icon':['GuiRadioUnchecked', 'EditorIcons']}
@@ -122,11 +124,11 @@ func get_timeline_suggestions(filter:String= "") -> Dictionary:
 	return suggestions
 
 
-func get_label_suggestions(filter:String="") -> Dictionary:
+func get_label_suggestions(_filter:String="") -> Dictionary:
 	var suggestions := {}
 	suggestions['at the beginning'] = {'value':'', 'editor_icon':['GuiRadioUnchecked', 'EditorIcons']}
-	if _timeline_file in DialogicResourceUtil.get_label_cache().keys():
-		for label in DialogicResourceUtil.get_label_cache()[_timeline_file]:
+	if timeline_identifier in DialogicResourceUtil.get_label_cache().keys():
+		for label in DialogicResourceUtil.get_label_cache()[timeline_identifier]:
 			suggestions[label] = {'value': label, 'tooltip':label, 'editor_icon': ["ArrowRight", "EditorIcons"]}
 	return suggestions
 
@@ -134,7 +136,7 @@ func get_label_suggestions(filter:String="") -> Dictionary:
 ####################### CODE COMPLETION ########################################
 ################################################################################
 
-func _get_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit, line:String, word:String, symbol:String) -> void:
+func _get_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit, line:String, _word:String, symbol:String) -> void:
 	if symbol == ' ' and line.count(' ') == 1:
 		CodeCompletionHelper.suggest_labels(TextNode, '', '\n', event_color.lerp(TextNode.syntax_highlighter.normal_color, 0.6))
 		CodeCompletionHelper.suggest_timelines(TextNode, CodeEdit.KIND_MEMBER, event_color.lerp(TextNode.syntax_highlighter.normal_color, 0.6))
@@ -142,7 +144,7 @@ func _get_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit, line:Str
 		CodeCompletionHelper.suggest_labels(TextNode, line.strip_edges().trim_prefix('jump ').trim_suffix('/'+String.chr(0xFFFF)).strip_edges(), '\n', event_color.lerp(TextNode.syntax_highlighter.normal_color, 0.6))
 
 
-func _get_start_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit) -> void:
+func _get_start_code_completion(_CodeCompletionHelper:Node, TextNode:TextEdit) -> void:
 	TextNode.add_code_completion_option(CodeEdit.KIND_PLAIN_TEXT, 'jump', 'jump ', event_color.lerp(TextNode.syntax_highlighter.normal_color, 0.3))
 
 

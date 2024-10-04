@@ -1,22 +1,22 @@
 @tool
+## Event that can change the currently playing background music.
+## This event won't play new music if it's already playing.
 class_name DialogicMusicEvent
 extends DialogicEvent
-
-## Event that can change the currently playing background music.
 
 
 ### Settings
 
 ## The file to play. If empty, the previous music will be faded out.
-var file_path: String = ""
+var file_path := ""
 ## The length of the fade. If 0 (by default) it's an instant change.
 var fade_length: float = 0
 ## The volume the music will be played at.
 var volume: float = 0
 ## The audio bus the music will be played at.
-var audio_bus: String = "Master"
+var audio_bus := ""
 ## If true, the audio will loop, otherwise only play once.
-var loop: bool = true
+var loop := true
 
 
 ################################################################################
@@ -24,9 +24,10 @@ var loop: bool = true
 ################################################################################
 
 func _execute() -> void:
-	dialogic.Audio.update_music(file_path, volume, audio_bus, fade_length, loop)
-	finish()
+	if not dialogic.Audio.is_music_playing_resource(file_path):
+		dialogic.Audio.update_music(file_path, volume, audio_bus, fade_length, loop)
 
+	finish()
 
 ################################################################################
 ## 						INITIALIZE
@@ -56,7 +57,7 @@ func get_shortcode_parameters() -> Dictionary:
 		"path"		: {"property": "file_path", 	"default": ""},
 		"fade"		: {"property": "fade_length", 	"default": 0},
 		"volume"	: {"property": "volume", 		"default": 0},
-		"bus"		: {"property": "audio_bus", 	"default": "Master",
+		"bus"		: {"property": "audio_bus", 	"default": "",
 						"suggestions": get_bus_suggestions},
 		"loop"		: {"property": "loop", 			"default": true},
 	}
@@ -66,14 +67,14 @@ func get_shortcode_parameters() -> Dictionary:
 ## 						EDITOR REPRESENTATION
 ################################################################################
 
-func build_event_editor():
+func build_event_editor() -> void:
 	add_header_edit('file_path', ValueType.FILE, {
 			'left_text'		: 'Play',
 			'file_filter' 	: "*.mp3, *.ogg, *.wav; Supported Audio Files",
 			'placeholder' 	: "No music",
 			'editor_icon' 	: ["AudioStreamPlayer", "EditorIcons"]})
-	add_body_edit('fade_length', ValueType.FLOAT, {'left_text':'Fade Time:'})
-	add_body_edit('volume', ValueType.DECIBEL, {'left_text':'Volume:'}, '!file_path.is_empty()')
+	add_body_edit('fade_length', ValueType.NUMBER, {'left_text':'Fade Time:'})
+	add_body_edit('volume', ValueType.NUMBER, {'left_text':'Volume:', 'mode':2}, '!file_path.is_empty()')
 	add_body_edit('audio_bus', ValueType.SINGLELINE_TEXT, {'left_text':'Audio Bus:'}, '!file_path.is_empty()')
 	add_body_edit('loop', ValueType.BOOL, {'left_text':'Loop:'}, '!file_path.is_empty() and not file_path.to_lower().ends_with(".wav")')
 

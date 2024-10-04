@@ -8,7 +8,7 @@
 
 [sub_resource type="AudioStream" id="AudioStream_pe27w"]
 
-[node name="VN_Choice_Layer" type="Control"]
+[node name="VN_ChoiceLayer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -86.5
-offset_top = -103.0
-offset_right = 86.5
-offset_bottom = 103.0
+offset_left = -41.0
+offset_top = -47.0
+offset_right = 42.0
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

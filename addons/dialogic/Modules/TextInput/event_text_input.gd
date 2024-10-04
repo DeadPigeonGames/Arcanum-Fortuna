@@ -8,15 +8,15 @@ extends DialogicEvent
 ### Settings
 
 ## The promt to be shown.
-var text: String = "Please enter some text:"
+var text := "Please enter some text:"
 ## The name/path of the variable to set.
-var variable: String = ""
+var variable := ""
 ## The placeholder text to show in the line edit.
-var placeholder: String = ""
+var placeholder := ""
 ## The value that should be in the line edit by default.
-var default: String = ""
+var default := ""
 ## If true, the player can continue if nothing is entered.
-var allow_empty : bool = false
+var allow_empty := false
 
 
 ################################################################################
@@ -24,7 +24,7 @@ var allow_empty : bool = false
 ################################################################################
 
 func _execute() -> void:
-	dialogic.Input.auto_skip.enabled = false
+	dialogic.Inputs.auto_skip.enabled = false
 	dialogic.current_state = DialogicGameHandler.States.WAITING
 	dialogic.TextInput.show_text_input(text, default, placeholder, allow_empty)
 	dialogic.TextInput.input_confirmed.connect(_on_DialogicTextInput_input_confirmed, CONNECT_ONE_SHOT)
@@ -76,7 +76,7 @@ func get_shortcode_parameters() -> Dictionary:
 
 func build_event_editor() -> void:
 	add_header_label('Show an input and store it in')
-	add_header_edit('variable', ValueType.COMPLEX_PICKER,
+	add_header_edit('variable', ValueType.DYNAMIC_OPTIONS,
 			{'suggestions_func'	: get_var_suggestions,
 			'icon'		 : load("res://addons/dialogic/Editor/Images/Pieces/variable.svg"),
 			'placeholder':'Select Variable'})
@@ -92,7 +92,7 @@ func get_var_suggestions(filter:String="") -> Dictionary:
 		suggestions[filter] = {
 			'value'			: filter,
 			'editor_icon'	: ["GuiScrollArrowRight", "EditorIcons"]}
-	var vars :Dictionary = ProjectSettings.get_setting('dialogic/variables', {})
-	for var_path in DialogicUtil.list_variables(vars):
+	var vars: Dictionary = ProjectSettings.get_setting('dialogic/variables', {})
+	for var_path in DialogicUtil.list_variables(vars, "", DialogicUtil.VarTypes.STRING):
 		suggestions[var_path] = {'value':var_path, 'icon':load("res://addons/dialogic/Editor/Images/Pieces/variable.svg")}
 	return suggestions

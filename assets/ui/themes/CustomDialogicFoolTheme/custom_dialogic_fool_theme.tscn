@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqpb3ie51rwl5"]
+[gd_scene load_steps=16 format=3 uid="uid://cqpb3ie51rwl5"]
 
 [ext_resource type="Script" path="res://assets/ui/themes/CustomDialogicFoolTheme/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_418yt"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5afkfy613wxv" path="res://assets/ui/placeholders/shop_section_button_focused_placeholder.png" id="5_fv088"]
 [ext_resource type="Texture2D" uid="uid://8cguh5h1crom" path="res://assets/ui/placeholders/awaken_icon_placeholder.png" id="5_w0elu"]
 [ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_nthki"]
-[ext_resource type="Texture2D" uid="uid://d253xrxv604q5" path="res://assets/ui/placeholders/card_flavour_underlay.png" id="6_ywjv3"]
+[ext_resource type="Texture2D" uid="uid://dxdqk7nuke6pl" path="res://assets/ui/underlays/checkbox_normal.png" id="7_5ig4y"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="8_wfcga"]
 [ext_resource type="Texture2D" uid="uid://b30s5oxcmbpfp" path="res://assets/ui/placeholders/dialog_choice_button_default_placeholder.png" id="10_byad5"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_x302a"]
@@ -14,12 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_au8lx"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_vvbym"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16h0e"]
-texture = ExtResource("6_ywjv3")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvj1c"]
-
-[sub_resource type="FontVariation" id="FontVariation_o0pga"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqq5n"]
+texture = ExtResource("7_5ig4y")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_drqir"]
 texture = ExtResource("10_byad5")
@@ -27,6 +23,35 @@ texture = ExtResource("10_byad5")
 [node name="Custom" type="CanvasLayer"]
 script = ExtResource("1_ifsho")
 global_bg_color = Color(1, 1, 1, 0)
+
+[node name="VN_Textbox_Layer_DialogicTextAnchor_DialogTextAnimationParent_Sizer_DialogTextPanel_NameLabelHolder#TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(400, 80)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -624.0
+offset_top = -286.0
+offset_right = -224.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_fv088")
+
+[node name="VN_Textbox_Layer_DialogicTextAnchor_DialogTextAnimationParent_Sizer#TextureRect" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -206.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_w0elu")
 
 [node name="BackgroundLayer" parent="." instance=ExtResource("2_418yt")]
 apply_overrides_on_ready = true
@@ -53,63 +78,8 @@ name_label_box_offset = Vector2(32, -38)
 next_indicator_enabled = false
 apply_overrides_on_ready = true
 
-[node name="Sizer" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent" index="0"]
-offset_left = -640.0
-offset_top = -238.0
-offset_right = 640.0
-offset_bottom = -32.0
-
-[node name="TextureRect" type="TextureRect" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer" index="0"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = -206.0
-offset_right = 640.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("5_w0elu")
-
-[node name="DialogTextPanel" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer" index="1"]
-self_modulate = Color(1, 1, 1, 1)
-theme_override_styles/panel = SubResource("StyleBoxTexture_16h0e")
-
-[node name="DialogicNode_DialogText" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer/DialogTextPanel" index="0"]
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer/DialogTextPanel/NameLabelHolder" index="0"]
-custom_minimum_size = Vector2(400, 80)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -624.0
-offset_top = -286.0
-offset_right = -224.0
-offset_bottom = -206.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("5_fv088")
-
-[node name="NameLabelPanel" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer/DialogTextPanel/NameLabelHolder" index="1"]
-self_modulate = Color(0, 0, 0, 0)
-offset_left = 16.0
-offset_top = -96.0
-offset_right = 416.0
-offset_bottom = -16.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_yvj1c")
-
-[node name="DialogicNode_NameLabel" parent="VN_Textbox_Layer/DialogicTextAnchor/DialogTextAnimationParent/Sizer/DialogTextPanel/NameLabelHolder/NameLabelPanel" index="0"]
-theme_override_fonts/font = SubResource("FontVariation_o0pga")
-text = "You"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="DialogTextPanel" parent="VN_Textbox_Layer/Anchor/AnimationParent/Sizer" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxTexture_pqq5n")
 
 [node name="FullAdvanceInputLayer" parent="." instance=ExtResource("8_wfcga")]
 apply_overrides_on_ready = true
