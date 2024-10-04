@@ -1,8 +1,9 @@
-[gd_scene load_steps=50 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=51 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
 [ext_resource type="Script" path="res://systems/card_combat/card_foldout.gd" id="1_wtojk"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="2_8c2us"]
 [ext_resource type="AudioStream" uid="uid://cjkm5388mov46" path="res://assets/sounds/card_hover.ogg" id="5_dpvki"]
 [ext_resource type="Resource" uid="uid://3t5jry37we2f" path="res://data/cards/the_chariot.tres" id="7_3menk"]
 [ext_resource type="Resource" uid="uid://biih8ndy7cwuu" path="res://data/cards/death.tres" id="9_5boo4"]
@@ -48,14 +49,14 @@ font_size = 96
 [sub_resource type="LabelSettings" id="LabelSettings_dkqdp"]
 font_size = 72
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld1hp"]
-bg_color = Color(0.2, 0.176471, 0.243137, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7o83"]
 bg_color = Color(0.588235, 0.560784, 0.729412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56bhs"]
 bg_color = Color(0.545098, 0.388235, 0.658824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld1hp"]
+bg_color = Color(0.2, 0.176471, 0.243137, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wbjb7"]
 font_size = 100
@@ -292,7 +293,7 @@ _data = {
 
 [node name="LootEvent" type="Node"]
 script = ExtResource("1_dmmsx")
-possibleCards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov"), ExtResource("13_i20vq"), ExtResource("14_yblq6"), ExtResource("15_pfa0e"), ExtResource("16_qho8o"), ExtResource("17_0fg6u"), ExtResource("18_avl72"), ExtResource("19_cdqgj"), ExtResource("21_mpwgk"), ExtResource("22_eqva3"), ExtResource("23_gsrsm"), ExtResource("24_pevg5"), ExtResource("28_bgh43"), ExtResource("30_subjn"), ExtResource("31_l3eet"), ExtResource("33_odtm4"), ExtResource("34_1d4eq"), ExtResource("35_8nhqe")])
+possibleCards = Array[ExtResource("2_8c2us")]([ExtResource("17_37lf3"), ExtResource("15_5fchr"), ExtResource("10_jbfgc"), ExtResource("9_mciwm"), ExtResource("14_n23su"), ExtResource("16_mhl86"), ExtResource("7_3menk"), ExtResource("9_5boo4"), ExtResource("10_byhqk"), ExtResource("11_rt6qa"), ExtResource("12_5h8ov"), ExtResource("13_i20vq"), ExtResource("14_yblq6"), ExtResource("15_pfa0e"), ExtResource("16_qho8o"), ExtResource("17_0fg6u"), ExtResource("18_avl72"), ExtResource("19_cdqgj"), ExtResource("21_mpwgk"), ExtResource("22_eqva3"), ExtResource("23_gsrsm"), ExtResource("24_pevg5"), ExtResource("28_bgh43"), ExtResource("30_subjn"), ExtResource("31_l3eet"), ExtResource("33_odtm4"), ExtResource("34_1d4eq"), ExtResource("35_8nhqe")])
 cardTemplate = ExtResource("1_panx4")
 min_coins = 3
 max_coins = 5
@@ -386,9 +387,9 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
 text = "confirm"
 
 [node name="SkipButton" type="Button" parent="CanvasLayer/Control"]
@@ -407,9 +408,9 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f7o83")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_56bhs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld1hp")
 text = " skip card for %d gold "
 
 [node name="VisualDeck" type="TextureRect" parent="CanvasLayer"]

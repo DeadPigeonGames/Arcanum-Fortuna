@@ -119,6 +119,9 @@ func process_next_phase():
 			return
 		_:
 			pass
+	print("TRIGGER")
+	#var enemy_data : EnemyData = enemy.data
+	# TRIGGER
 	_on_phase_completed()
 
 

@@ -11,8 +11,8 @@ timing = 0
 
 [resource]
 script = ExtResource("1_ekhnk")
-rotation_duration = 0.8
-icon_rotation = 1.0
+rotation_time = 0.8
+icon_rotation_time = 1.0
 combat_phase_triggers = Array[ExtResource("1_nhvvg")]([SubResource("Resource_74j2r")])
 triggers = 0
 is_animated = true

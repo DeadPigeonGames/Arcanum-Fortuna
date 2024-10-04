@@ -20,7 +20,6 @@ config/icon="res://assets/sprites/keywords/kw_switch_1.png"
 [autoload]
 
 GlobalLog="*res://utils/autoload/global_log.tscn"
-Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 SfxBg="*res://Audio/sfx_bg.tscn"
 SfxOther="*res://Audio/sfx_other.tscn"
 SceneHandler="*res://utils/autoload/scene_handler.tscn"
@@ -28,6 +27,7 @@ Settings="*res://utils/autoload/settings_data.tscn"
 Pause="*res://systems/ui/menus/pause_node.tscn"
 ScreenFade="*res://systems/ui/screen_fade_overlay.tscn"
 SteamService="*res://utils/steam/steam_service.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [debug]
 
@@ -64,11 +64,6 @@ variables={
 layout/style_list=["res://assets/ui/themes/DialogicFoolTheme.tres"]
 layout/default_style="res://assets/ui/themes/DialogicFoolTheme.tres"
 glossary/default_case_sensitive=true
-text/letter_speed=0.01
-text/initial_text_reveal_skippable=true
-text/text_reveal_skip_delay=0.1
-text/autoadvance_per_character_delay=0.1
-text/autoadvance_ignored_characters_enabled=true
 animations/join_default_length=0.5
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
@@ -79,6 +74,17 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
+text/split_at_new_lines=false
+text/split_at_new_lines_as=0
+text/autoadvance_enabled=false
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/cross_fade_default_length=0.5
 text/autopauses={}
 
 [display]

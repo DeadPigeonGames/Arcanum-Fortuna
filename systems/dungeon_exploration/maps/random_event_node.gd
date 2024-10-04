@@ -5,6 +5,8 @@ extends EventNode
 
 ## REMOVE AFTER DEMO!
 @export var demo_enemy_data : EnemyData
+@export var demo_dialogic_begin : DialogicTimeline
+@export var demo_dialogic_end : DialogicTimeline
 
 var level := 0
 
@@ -38,6 +40,8 @@ func _ready():
 
 
 func _trigger_event():
+	var scene = Dialogic.start(demo_dialogic_begin)
+	await Dialogic.timeline_ended
 	var selected_enemy = null
 	
 	if not event:
@@ -67,3 +71,5 @@ func _trigger_event():
 	if instance.has_method("trigger"):
 		instance.trigger(player.data, selected_enemy)
 	await instance.finished
+	scene = Dialogic.start(demo_dialogic_end)
+	await Dialogic.timeline_ended

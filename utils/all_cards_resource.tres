@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AllCards" load_steps=30 format=3 uid="uid://du4544pn8giog"]
+[gd_resource type="Resource" script_class="AllCards" load_steps=31 format=3 uid="uid://du4544pn8giog"]
 
 [ext_resource type="Script" path="res://utils/all_cards.gd" id="1_es1nr"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_oyiv0"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="1_ug56k"]
 [ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="2_fokvv"]
 [ext_resource type="Resource" uid="uid://5p8a1flrgkh" path="res://data/cards/the_empress.tres" id="3_djtm1"]
@@ -32,4 +33,4 @@
 
 [resource]
 script = ExtResource("1_es1nr")
-all_cards = Array[Resource("res://data/scripts/card_data.gd")]([ExtResource("1_ug56k"), ExtResource("2_fokvv"), ExtResource("3_djtm1"), ExtResource("4_egaav"), ExtResource("5_jwhx3"), ExtResource("6_bhxj0"), ExtResource("7_qmyoe"), ExtResource("8_f3hvi"), ExtResource("9_60on4"), ExtResource("10_kn2hi"), ExtResource("11_gs3lr"), ExtResource("12_1qc12"), ExtResource("13_166qy"), ExtResource("14_rjd24"), ExtResource("15_eegpr"), ExtResource("16_xxytj"), ExtResource("17_rq21p"), ExtResource("18_tv5ft"), ExtResource("19_07ump"), ExtResource("20_vfadh"), ExtResource("21_gla3l"), ExtResource("22_dokly"), ExtResource("23_r1bug"), ExtResource("25_22awy"), ExtResource("26_edxj4"), ExtResource("27_kaw53"), ExtResource("28_ohm5a"), ExtResource("29_quf46")])
+all_cards = Array[ExtResource("1_oyiv0")]([ExtResource("1_ug56k"), ExtResource("2_fokvv"), ExtResource("3_djtm1"), ExtResource("4_egaav"), ExtResource("5_jwhx3"), ExtResource("6_bhxj0"), ExtResource("7_qmyoe"), ExtResource("8_f3hvi"), ExtResource("9_60on4"), ExtResource("10_kn2hi"), ExtResource("11_gs3lr"), ExtResource("12_1qc12"), ExtResource("13_166qy"), ExtResource("14_rjd24"), ExtResource("15_eegpr"), ExtResource("16_xxytj"), ExtResource("17_rq21p"), ExtResource("18_tv5ft"), ExtResource("19_07ump"), ExtResource("20_vfadh"), ExtResource("21_gla3l"), ExtResource("22_dokly"), ExtResource("23_r1bug"), ExtResource("25_22awy"), ExtResource("26_edxj4"), ExtResource("27_kaw53"), ExtResource("28_ohm5a"), ExtResource("29_quf46")])

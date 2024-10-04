@@ -1,8 +1,9 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=48 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_2m38c"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/combat_phase.gd" id="2_8jj7t"]
 [ext_resource type="Resource" uid="uid://bey7oy462yo2s" path="res://data/player/debug_player.tres" id="2_42xvr"]
 [ext_resource type="PackedScene" uid="uid://dgdblxt0g8doq" path="res://systems/card_combat/cards/combat_card.tscn" id="3_1hhbj"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="3_mws33"]
@@ -22,9 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://4hupbd7iry1x" path="res://assets/ui/gameboard/card_burner.png" id="18_i7pqs"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
+[ext_resource type="PackedScene" uid="uid://cbsn1r2h288lq" path="res://systems/ui/new_deck_preview/deck_preview_overlay.tscn" id="20_sorkg"]
 [ext_resource type="SpriteFrames" uid="uid://c1n1fu0qqediq" path="res://assets/ui/gameboard/coin_sprite_sheet.tres" id="22_8s5et"]
 [ext_resource type="Shader" path="res://assets/sprites/vfx/coin_shine.gdshader" id="22_wv27h"]
-[ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="25_q4n6c"]
+[ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/enemy_player.tscn" id="25_q4n6c"]
 [ext_resource type="Material" uid="uid://ygwq26b11i74" path="res://assets/sprites/vfx/overlays/dust_particles.tres" id="26_o5euh"]
 [ext_resource type="Texture2D" uid="uid://bhbdcokx6wolh" path="res://assets/sprites/vfx/dust_particle_2.png" id="27_mwe0t"]
 [ext_resource type="Material" uid="uid://bwq3k1eyt803b" path="res://assets/sprites/vfx/overlays/sparkle_1.tres" id="28_ntl47"]
@@ -166,7 +168,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_7dv5d")
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy")])
+phases = Array[ExtResource("2_8jj7t")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy")])
 phase_end_delay = 0.2
 debug_player_data = ExtResource("2_42xvr")
 
@@ -311,6 +313,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rikmg")
 
 [node name="CardPlayer" parent="." instance=ExtResource("17_we7n7")]
 layout_mode = 1
+deck_preview_overlay = ExtResource("20_sorkg")
 
 [node name="CardDeletion" type="TextureRect" parent="."]
 layout_mode = 0

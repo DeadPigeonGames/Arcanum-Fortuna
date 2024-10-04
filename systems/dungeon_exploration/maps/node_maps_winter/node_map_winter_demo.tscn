@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c768mjmse0k56"]
+[gd_scene load_steps=38 format=3 uid="uid://c768mjmse0k56"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_3pv47"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_q42u0"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bml43x2miuf00" path="res://systems/dungeon_events/battle_event.tscn" id="7_wod2b"]
 [ext_resource type="Script" path="res://utils/random_scene.gd" id="8_aegmn"]
 [ext_resource type="Texture2D" uid="uid://cttyhls7u4jgr" path="res://assets/ui/nodemap/encounter_card.png" id="9_3nhk1"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/dg_test.dtl" id="9_h5o20"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/introductory/int_magician.dtl" id="10_e8skd"]
 [ext_resource type="PackedScene" uid="uid://bggcv7yipjcm7" path="res://systems/dungeon_events/loot_event.tscn" id="10_rer6x"]
 [ext_resource type="Texture2D" uid="uid://b5i3gdceaywkm" path="res://assets/ui/nodemap/encounter_elite.png" id="11_8ia8k"]
 [ext_resource type="PackedScene" uid="uid://cdmbv5kshgi6w" path="res://systems/dungeon_events/challenge_battle_event.tscn" id="12_s832v"]
@@ -186,11 +188,14 @@ offset = 45.0
 
 [node name="RandomNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = -449.0
+offset_left = -451.0
 offset_top = -151.0
 offset_right = -449.0
 offset_bottom = -151.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_i25gk")])
+demo_enemy_data = null
+demo_dialogic_begin = ExtResource("9_h5o20")
+demo_dialogic_end = ExtResource("10_e8skd")
 connectsTo = [NodePath("../RandomEventNode"), NodePath("../RandomEventNode2")]
 dashed_width = 12.0
 offset = 45.0
@@ -202,6 +207,9 @@ offset_top = -324.0
 offset_right = -80.0
 offset_bottom = -324.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_drgec")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode3")]
 dashed_width = 12.0
 offset = 45.0
@@ -213,6 +221,9 @@ offset_top = -3.0
 offset_right = -207.0
 offset_bottom = -3.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_br2uv")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode12")]
 dashed_width = 12.0
 offset = 45.0
@@ -224,6 +235,9 @@ offset_top = -289.38
 offset_right = 190.0
 offset_bottom = -289.38
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_c2svj")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode4"), NodePath("../RandomEventNode5")]
 dashed_width = 12.0
 offset = 45.0
@@ -235,6 +249,9 @@ offset_top = 114.045
 offset_right = 116.075
 offset_bottom = 114.045
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_c4cr7")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode6")]
 dashed_width = 12.0
 offset = 45.0
@@ -246,6 +263,9 @@ offset_top = -479.0
 offset_right = 438.0
 offset_bottom = -479.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_fhjay")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode13")]
 dashed_width = 12.0
 offset = 45.0
@@ -257,6 +277,9 @@ offset_top = -236.0
 offset_right = 566.0
 offset_bottom = -236.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_wv2us")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode7"), NodePath("../RandomEventNode13")]
 dashed_width = 12.0
 offset = 45.0
@@ -268,6 +291,9 @@ offset_top = 62.05
 offset_right = 415.0
 offset_bottom = 62.05
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_irt6a")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode8"), NodePath("../RandomEventNode7")]
 dashed_width = 12.0
 offset = 45.0
@@ -279,6 +305,9 @@ offset_top = -99.645
 offset_right = 858.0
 offset_bottom = -99.645
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_ne4dc")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode14")]
 dashed_width = 12.0
 offset = 45.0
@@ -290,6 +319,9 @@ offset_top = -421.535
 offset_right = 782.44
 offset_bottom = -421.535
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_o5544")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode10")]
 dashed_width = 12.0
 offset = 45.0
@@ -301,6 +333,9 @@ offset_top = 141.15
 offset_right = 733.155
 offset_bottom = 141.15
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_8q8wj")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode9")]
 dashed_width = 12.0
 offset = 45.0
@@ -312,6 +347,9 @@ offset_top = 85.0
 offset_right = 1064.0
 offset_bottom = 85.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_6dcrm")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
@@ -323,6 +361,9 @@ offset_top = -493.0
 offset_right = 1184.0
 offset_bottom = -493.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_aea7h")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
@@ -334,6 +375,9 @@ offset_top = -189.39
 offset_right = 1092.84
 offset_bottom = -189.39
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_grv1j")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
@@ -345,6 +389,9 @@ offset_top = -151.0
 offset_right = 1480.0
 offset_bottom = -151.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_0iv1d")])
+demo_enemy_data = null
+demo_dialogic_begin = null
+demo_dialogic_end = null
 connectsTo = [NodePath("../FinalNode")]
 dashed_width = 12.0
 offset = 45.0

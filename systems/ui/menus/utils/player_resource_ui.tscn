@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://systems/ui/menus/utils/player_resource_ui.gd" id="1_58gwm"]
 [ext_resource type="Texture2D" uid="uid://bswn34v2pfccv" path="res://assets/ui/nodemap/nm_money.png" id="2_icgcd"]
-[ext_resource type="Theme" path="res://assets/ui/themes/font_theme.tres" id="2_n3v3x"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="2_n3v3x"]
 [ext_resource type="Texture2D" uid="uid://d8cj3cxcf8dk" path="res://assets/ui/nodemap/nm_health_empty.png" id="3_fdxgv"]
 [ext_resource type="Texture2D" uid="uid://cudwdilymp3id" path="res://assets/ui/nodemap/nm_health_fill.png" id="4_748aj"]
 

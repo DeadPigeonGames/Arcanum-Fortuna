@@ -17,4 +17,5 @@ stats_per_level = Array[ExtResource("3_gujk3")]([ExtResource("3_rg3yb"), ExtReso
 gold_reward = 4
 min_level = 2
 max_level = 4
+demo_start_karma = 0
 level = 0
