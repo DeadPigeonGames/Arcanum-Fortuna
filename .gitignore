@@ -17,3 +17,4 @@ mono_crash.*.json
 # Lock-Error Based temp files
 *.tmp
 addons/dialogic/Characters/the_empress.dch
+addons/godotsteam/win64/~godotsteam.debug.x86_64.dll
