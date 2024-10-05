@@ -12,10 +12,8 @@ class_name Hand extends Control
 	set(value):
 		enabled = value
 		for child in get_children():
-			child.set_process_input(value)
+			manually_show_cards()
 
-#@export var show_rect : Rect2
-#@export var hide_rect : Rect2
 
 @export_category("DEBUG")
 @export var is_debug := false
@@ -40,28 +38,13 @@ var show_cards : bool :
 		__show_cards = new_value
 
 
-#func _ready():
-	#__show_rect = show_rect
-	#__hide_rect = hide_rect
-	#__show_rect.position *= get_rect().size
-	#__show_rect.size *= get_rect().size
-	#__hide_rect.position *= get_rect().size
-	#__hide_rect.size *= get_rect().size
-
-
 func _process(delta):
+	if Engine.is_editor_hint():
+		return
+	
 	adjust_positions()
 	
-	#if OS.has_feature("editor"):
-		#if render_rects or Engine.is_editor_hint():
-		#	queue_redraw()
-	#	if Engine.is_editor_hint():
-	#		return
-	
 	var count = get_child_count()
-	
-	if !enabled or is_card_dragged:
-		show_cards = false
 	
 	if card && is_debug:
 		if Input.is_action_just_pressed("ui_up"):
@@ -103,19 +86,6 @@ func adjust_positions():
 		lerp_factor = 0.1
 
 
-#func _draw():
-	#__show_rect = show_rect
-	#__hide_rect = hide_rect
-	#__show_rect.position *= get_rect().size
-	#__show_rect.size *= get_rect().size
-	#__hide_rect.position *= get_rect().size
-	#__hide_rect.size *= get_rect().size
-	
-	#if OS.has_feature("editor") and Engine.is_editor_hint():
-	#	draw_rect(__show_rect, Color.hex(0x00ff0002))
-	#	draw_rect(__hide_rect, Color.hex(0xff000002))
-
-
 func _on_card_drag_started():
 	is_card_dragged = true
 
@@ -124,8 +94,7 @@ func _on_card_drag_ended(card):
 	if not card in get_children():
 		card.reparent(self)
 	is_card_dragged = false
-	if get_rect().has_point(get_global_mouse_position()):
-		show_cards = true
+	manually_show_cards()
 
 
 func _on_card_added(card : HandCard):
@@ -143,6 +112,10 @@ func derivative(x):
 	return -2 * x * (card_arc * 0.001)
 
 
+func manually_show_cards():
+	show_cards = get_rect().has_point(get_global_mouse_position())
+
+
 func _on_mouse_entered() -> void:
 	var count = get_child_count()
 	if enabled and not is_card_dragged and count > 0:
@@ -151,5 +124,4 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	var count = get_child_count()
-	if enabled and not is_card_dragged and count > 0:
-		show_cards = false
+	show_cards = false
