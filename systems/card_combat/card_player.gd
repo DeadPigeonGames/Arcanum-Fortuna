@@ -86,6 +86,8 @@ func heal(amount):
 	
 
 func take_damage(amount, _source = null):
+	if health - amount <= 0:
+		SceneHandler.combat.trigger_death_dialog(self)
 	SfxOther._SFX_DamagePlayer()
 	animate_take_damage_feedback(amount)
 	
@@ -94,6 +96,7 @@ func take_damage(amount, _source = null):
 	%Health.modulate = attacked_color
 	GlobalLog.add_entry("You took %d damage." % amount)
 	return amount
+
 
 func animate_take_damage_feedback(amount):
 	SfxOther._SFX_Damage()
@@ -108,7 +111,10 @@ func restore_default_color():
 
 
 func process_death() -> bool:
-	if health < 0:
+	if health <= 0:
+		var combat = SceneHandler.combat
+		await combat.trigger_death_dialog(self)
+		combat.finished.emit(health)
 		GlobalLog.add_entry("You died! Rip.")
 	return health <= 0
 
@@ -136,7 +142,7 @@ func process_karma_overflow() -> bool:
 		$ScreenshakeCamera2D.add_trauma(0.1)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
-	var is_lethal = process_death()
+	var is_lethal = await process_death()
 	%KarmaLabel.text = str(karma)
 	restore_default_color()
 	return is_lethal

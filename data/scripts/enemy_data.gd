@@ -17,7 +17,7 @@ extends Resource
 ## REMOVE AFTER DEMO!
 @export var demo_start_karma := 0
 
-@export var dialog_data : EnemyDialog
+@export var dialog_data : Array[EnemyDialog]
 
 @export_category("Debug")
 @export var level = 0
@@ -52,5 +52,5 @@ func get_demo_start_karma() -> int :
 	return demo_start_karma
 
 
-func get_dialog_data() -> EnemyDialog:
+func get_dialog_data() -> Array[EnemyDialog]:
 	return dialog_data

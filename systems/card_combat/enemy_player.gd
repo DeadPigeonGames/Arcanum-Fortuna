@@ -76,6 +76,8 @@ func heal(amount):
 
 
 func take_damage(amount, _source = null):
+	if health - amount <= 0:
+		SceneHandler.combat.trigger_death_dialog(self)
 	SfxOther._SFX_DamageEnemy()
 	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"
 	health -= amount
@@ -89,11 +91,14 @@ func restore_default_color():
 	%Health.modulate = Color.WHITE
 	%Karma.modulate = Color.WHITE
 
+
 func process_death() -> bool:
-	if health < 0:
+	if health <= 0:
 		GlobalLog.add_entry("The enemy died!")
+		await SceneHandler.combat.trigger_death_dialog(self)
 	return health <= 0
 #endregion
+
 
 #region karma
 func modify_karma(amount):
@@ -107,6 +112,7 @@ func modify_karma(amount):
 		" (" + ("+" if amount >= 0 else "") + str(amount) + ")"
 	karma += amount
 
+
 func process_karma_overflow() -> bool:
 	%KarmaLabel.text = str(karma)
 	if karma < 0:
@@ -114,7 +120,7 @@ func process_karma_overflow() -> bool:
 		take_damage(-karma, self)
 		await get_tree().create_timer(animation_delay).timeout
 		karma = 0
-	var was_lethal = process_death()
+	var was_lethal = await process_death()
 	%KarmaLabel.text = str(karma)
 	restore_default_color()
 	return was_lethal

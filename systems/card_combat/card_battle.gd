@@ -119,9 +119,6 @@ func process_next_phase():
 			return
 		_:
 			pass
-	print("TRIGGER")
-	#var enemy_data : EnemyData = enemy.data
-	# TRIGGER
 	_on_phase_completed()
 
 
@@ -176,6 +173,9 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	
 	var target = game_board.get_target(column_idx, friendly)
 	var was_target_player = target is CardPlayer or target is EnemyPlayer
+	if was_target_player:
+		if target.health - attacker.attack <= 0:
+			await trigger_death_dialog(target)
 	var was_lethal = await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly))
 	if was_lethal:
 		if was_target_player:
@@ -217,6 +217,20 @@ func handle_friendly_attacks():
 		if is_battle_over:
 			return
 
+
+func trigger_death_dialog(target):
+	for dialog : EnemyDialog in enemy.data.dialog_data:
+		var is_player = target is CardPlayer or target is EnemyPlayer
+		var condition =\
+		dialog.get_trigger_type() == EnemyDialog.TriggerType.PLAYER_DEATH or\
+		dialog.get_trigger_type() == EnemyDialog.TriggerType.ENEMY_DEATH
+		if is_player and condition:
+			var screen = SceneHandler.add_ui_element(BattleDialog.file_path) as BattleDialog
+			screen.init(0, self)
+			screen.setup(dialog.dialogue_lines, dialog.character_image)
+			await screen.dialog_finished
+			enemy.data.dialog_data.clear()
+			break
 
 
 func _on_end_turn_button_mouse_entered():

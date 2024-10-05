@@ -23,6 +23,7 @@ func _on_karma_decreased(source):
 				await card.keywords[i].trigger(source, card, card.keywords[i].get_target(source, card, combat), \
 						card.get_node("KeyWordSlots").get_child(i).get_child(0))
 
+
 func get_relevant_cards():
 	return combat.game_board.get_friendly_cards().filter(
 			func(card: Card):

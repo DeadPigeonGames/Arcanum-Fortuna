@@ -150,7 +150,6 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	print("Exited")
 	var count = get_child_count()
 	if enabled and not is_card_dragged and count > 0:
 		show_cards = false

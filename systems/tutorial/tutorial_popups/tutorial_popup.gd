@@ -53,7 +53,6 @@ func highlight_elements(value : bool):
 		node.set_z_index(100 if value else 0)
 
 
-
 func get_offset_type_rotation(offset_type : TutorialPopupData.OffsetType):
 	var rotation
 	
