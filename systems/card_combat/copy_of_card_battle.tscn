@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://bdh0uj6nl62hc"]
+[gd_scene load_steps=38 format=3 uid="uid://bdh0uj6nl62hc"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_djypq"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/combat_phase.gd" id="2_k40n7"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_ocjat"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="3_esh25"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="4_s44tr"]
@@ -21,7 +22,7 @@
 [ext_resource type="Script" path="res://systems/ui/tooltips/show_tooltip.gd" id="19_oiaej"]
 [ext_resource type="Texture2D" uid="uid://cv8prfdwvesvd" path="res://assets/ui/gameboard/card_destruction_drawer_placeholder.png" id="19_qcvgh"]
 [ext_resource type="Texture2D" uid="uid://du43fo187hof7" path="res://assets/ui/gameboard/end_turn_element_pressed_placeholder.png" id="20_dl3h4"]
-[ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/copy_of_enemy_player.tscn" id="20_pee6j"]
+[ext_resource type="PackedScene" uid="uid://ew0hxbsaa2qn" path="res://systems/card_combat/enemy_player.tscn" id="20_pee6j"]
 [ext_resource type="Texture2D" uid="uid://b6dg520w7c6di" path="res://assets/ui/gameboard/end_turn_element_inactive_placeholder.png" id="20_txuo2"]
 [ext_resource type="Texture2D" uid="uid://coh0elmgffc2b" path="res://assets/ui/gameboard/end_turn_element_hovered_placeholder.png" id="20_wekok"]
 [ext_resource type="PackedScene" uid="uid://d4mlm5draiaf7" path="res://systems/card_combat/battle_log.tscn" id="21_fakbl"]
@@ -78,7 +79,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_djypq")
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy")])
+phases = Array[ExtResource("2_k40n7")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy")])
 phase_end_delay = 0.2
 debug_player_data = ExtResource("13_l7o3a")
 

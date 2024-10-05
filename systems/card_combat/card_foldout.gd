@@ -60,12 +60,6 @@ func _process(delta):
 	
 	var count = get_child_count()
 	
-	if enabled and not is_card_dragged and count > 0:
-		if __show_rect.has_point(get_local_mouse_position()):
-			show_cards = true
-		if not __hide_rect.has_point(get_local_mouse_position()):
-			show_cards = false
-	
 	if !enabled or is_card_dragged:
 		show_cards = false
 	
@@ -110,12 +104,12 @@ func adjust_positions():
 
 
 func _draw():
-	__show_rect = show_rect
-	__hide_rect = hide_rect
-	__show_rect.position *= get_rect().size
-	__show_rect.size *= get_rect().size
-	__hide_rect.position *= get_rect().size
-	__hide_rect.size *= get_rect().size
+	#__show_rect = show_rect
+	#__hide_rect = hide_rect
+	#__show_rect.position *= get_rect().size
+	#__show_rect.size *= get_rect().size
+	#__hide_rect.position *= get_rect().size
+	#__hide_rect.size *= get_rect().size
 	
 	if OS.has_feature("editor") and Engine.is_editor_hint():
 		draw_rect(__show_rect, Color.hex(0x00ff0002))
@@ -125,10 +119,14 @@ func _draw():
 func _on_card_drag_started():
 	is_card_dragged = true
 
+
 func _on_card_drag_ended(card):
 	if not card in get_children():
 		card.reparent(self)
 	is_card_dragged = false
+	if get_rect().has_point(get_global_mouse_position()):
+		show_cards = true
+
 
 func _on_card_added(card : HandCard):
 	if card.drag_started.is_connected(_on_card_drag_started):
@@ -143,3 +141,15 @@ func curve(x):
 
 func derivative(x):
 	return -2 * x * (card_arc * 0.001)
+
+
+func _on_mouse_entered() -> void:
+	var count = get_child_count()
+	if enabled and not is_card_dragged and count > 0:
+		show_cards = true
+
+
+func _on_mouse_exited() -> void:
+	var count = get_child_count()
+	if enabled and not is_card_dragged and count > 0:
+		show_cards = false

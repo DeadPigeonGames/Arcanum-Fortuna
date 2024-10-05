@@ -138,7 +138,6 @@ anchor_right = 0.5
 offset_left = -521.0
 offset_top = -278.0
 offset_right = 521.0
-mouse_filter = 2
 card_hidden_height = 150
 show_rect = Rect2(0, 0.6, 1, 0.4)
 render_rects = false
@@ -314,8 +313,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 116.0
 offset_top = -137.0
-offset_right = 155.0
+offset_right = 271.0
 grow_vertical = 0
 texture = ExtResource("10_x5mo0")
 
@@ -424,6 +424,8 @@ script = ExtResource("8_y2d2q")
 noise = SubResource("FastNoiseLite_fq2da")
 intensity = 10.0
 
+[connection signal="mouse_entered" from="Hand" to="Hand" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Hand" to="Hand" method="_on_mouse_exited"]
 [connection signal="button_up" from="Deck/Button" to="." method="_on_button_button_up"]
 [connection signal="mouse_entered" from="ResourceContainer/Karma/ShowTooltip" to="ResourceContainer/Karma/ShowTooltip" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ResourceContainer/Karma/ShowTooltip" to="ResourceContainer/Karma/ShowTooltip" method="_on_mouse_exited"]

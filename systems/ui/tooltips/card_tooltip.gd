@@ -22,7 +22,7 @@ func setup(data : CardData):
 				keyword.description + keyword.get_dynamic_description(data.owner), keyword.icon)
 			sigils.add_child(keyword_tooltip)
 			added_keywords.append(keyword.get_script())
-	await SceneHandler.inactive_scenes.get_tree().create_timer(0.1).timeout
+	await SceneHandler.inactive_scenes.get_tree().create_timer(0.2).timeout
 	visible = true
 
 

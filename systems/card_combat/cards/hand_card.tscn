@@ -127,4 +127,7 @@ mouse_filter = 2
 [node name="Cardback" parent="." index="16"]
 mouse_filter = 2
 
+[node name="ShowCardTooltip" parent="." index="17"]
+mouse_filter = 2
+
 [editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
