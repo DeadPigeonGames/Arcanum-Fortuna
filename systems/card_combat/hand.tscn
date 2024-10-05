@@ -17,7 +17,4 @@ pivot_offset = Vector2(960, 0)
 mouse_filter = 1
 script = ExtResource("1_n4utx")
 card_spacing = 0.5
-show_rect = Rect2(0, 0.75, 1, 0.25)
-hide_rect = Rect2(0, 0, 1, 1)
-render_rects = true
 card = ExtResource("2_jowjm")

@@ -139,8 +139,6 @@ offset_left = -521.0
 offset_top = -278.0
 offset_right = 521.0
 card_hidden_height = 150
-show_rect = Rect2(0, 0.6, 1, 0.4)
-render_rects = false
 
 [node name="Deck" type="ReferenceRect" parent="."]
 unique_name_in_owner = true

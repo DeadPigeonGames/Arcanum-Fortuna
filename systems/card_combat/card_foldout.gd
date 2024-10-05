@@ -14,16 +14,16 @@ class_name Hand extends Control
 		for child in get_children():
 			child.set_process_input(value)
 
-@export var show_rect : Rect2
-@export var hide_rect : Rect2
+#@export var show_rect : Rect2
+#@export var hide_rect : Rect2
 
 @export_category("DEBUG")
 @export var is_debug := false
-@export var render_rects := false
+#@export var render_rects := false
 @export var card : PackedScene
 
-var __show_rect
-var __hide_rect
+#var __show_rect
+#var __hide_rect
 
 var __show_cards = false
 var is_card_dragged = false
@@ -40,23 +40,23 @@ var show_cards : bool :
 		__show_cards = new_value
 
 
-func _ready():
-	__show_rect = show_rect
-	__hide_rect = hide_rect
-	__show_rect.position *= get_rect().size
-	__show_rect.size *= get_rect().size
-	__hide_rect.position *= get_rect().size
-	__hide_rect.size *= get_rect().size
+#func _ready():
+	#__show_rect = show_rect
+	#__hide_rect = hide_rect
+	#__show_rect.position *= get_rect().size
+	#__show_rect.size *= get_rect().size
+	#__hide_rect.position *= get_rect().size
+	#__hide_rect.size *= get_rect().size
 
 
 func _process(delta):
 	adjust_positions()
 	
-	if OS.has_feature("editor"):
-		if render_rects or Engine.is_editor_hint():
-			queue_redraw()
-		if Engine.is_editor_hint():
-			return
+	#if OS.has_feature("editor"):
+		#if render_rects or Engine.is_editor_hint():
+		#	queue_redraw()
+	#	if Engine.is_editor_hint():
+	#		return
 	
 	var count = get_child_count()
 	
@@ -103,7 +103,7 @@ func adjust_positions():
 		lerp_factor = 0.1
 
 
-func _draw():
+#func _draw():
 	#__show_rect = show_rect
 	#__hide_rect = hide_rect
 	#__show_rect.position *= get_rect().size
@@ -111,9 +111,9 @@ func _draw():
 	#__hide_rect.position *= get_rect().size
 	#__hide_rect.size *= get_rect().size
 	
-	if OS.has_feature("editor") and Engine.is_editor_hint():
-		draw_rect(__show_rect, Color.hex(0x00ff0002))
-		draw_rect(__hide_rect, Color.hex(0xff000002))
+	#if OS.has_feature("editor") and Engine.is_editor_hint():
+	#	draw_rect(__show_rect, Color.hex(0x00ff0002))
+	#	draw_rect(__hide_rect, Color.hex(0xff000002))
 
 
 func _on_card_drag_started():
@@ -150,6 +150,7 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
+	print("Exited")
 	var count = get_child_count()
 	if enabled and not is_card_dragged and count > 0:
 		show_cards = false
