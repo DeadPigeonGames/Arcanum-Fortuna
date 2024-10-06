@@ -132,6 +132,6 @@ func _on_close_window_button_button_up():
 
 
 func _on_color_rect_gui_input(event):
-	if event.is_action_released("ui_rmb"):
-		inspection_closed.emit()
-		close()
+	if event.is_action_released("ui_rmb") or\
+	event.is_action_released("ui_lmb"):
+		close_inspection()
