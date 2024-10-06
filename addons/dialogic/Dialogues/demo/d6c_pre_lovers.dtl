@@ -6,6 +6,7 @@ the_dog: Oh dear. \
 Maybe we should take a different route, buddy.
 leave the_dog
 join the_fool (default_w_dog) leftmost
+[sound path="res://Audio/Signatures/SignatureLovers.ogg" volume="0.0"]
 join the_lovers rightmost
 the_lovers: Ew, where in the world did you come from?\
 — You reek of sadness and pining.

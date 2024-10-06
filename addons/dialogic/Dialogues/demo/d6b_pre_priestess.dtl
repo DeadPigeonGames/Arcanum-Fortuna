@@ -23,6 +23,7 @@ You look down and see that you’ve stepped into a circle of mushrooms. \\
 In the middle, a large pillar juts out, and from the silence the flapping of a pair of massive wings erupts.
 A birdlike woman stands tall before you, her face veiled by the star-dotted night sky. \\
 She speaks, and her voice reverberates in an uncanny chant.
+[sound path="res://Audio/Signatures/SignatureHighPriestess.ogg" volume="0.0"]
 join the_high_priestess rightmost
 join the_fool (default_w_dog) leftmost
 the_high_priestess: You, you seek aid and have found me for it. But I know you seek more than that, than that. Speak. Speak.

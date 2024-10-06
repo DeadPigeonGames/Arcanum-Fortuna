@@ -3,11 +3,12 @@ join the_fool (default) leftmost
 the_dog: Odd. There’s few stars tonight.
 leave the_dog
 join the_moon rightmost
+[sound path="res://Audio/Signatures/SignatureMoon.ogg" volume="0.0"]
 update the_fool (default_w_dog)
 the_moon: Is my light not enough?
 the_moon: Oh.
 I see she got to you first. \
-That unmistakable radiance - to think I used to bask in it, when now it seems unbearable. 
+That unmistakable radiance - to think I used to bask in it, when now it seems unbearable.
 the_moon: No matter, you seem lost.\
 As though the only path you can be sure of is the one that returns you to whence you came.
 the_moon: Have you a destination at all?
