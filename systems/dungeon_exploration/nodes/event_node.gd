@@ -93,7 +93,7 @@ func _process(delta):
 func _input(event: InputEvent):
 	if (
 			is_hovered
-			and event.is_action_pressed("pick_up_card")
+			and event.is_action_pressed("ui_lmb")
 			and selectable
 		):
 		click()
@@ -127,7 +127,7 @@ func _trigger_event():
 	var test_instance = event.instantiate()
 	if test_instance is RunEndScreen:
 		var end_screen = SceneHandler.add_ui_element(event) as RunEndScreen
-		end_screen.init(120, self)
+		end_screen.init(UIBase.UICLayerIndex.HIGH_PRIORITY, self)
 		end_screen.setup()
 		return
 	if not event:

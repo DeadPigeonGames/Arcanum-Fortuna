@@ -13,7 +13,7 @@ func _process(delta):
 func _input(event):
 	if is_current_window == false:
 		return
-	if event.is_action_released("ui_accept") or event.is_action_pressed("pick_up_card"):
+	if event.is_action_released("ui_accept") or event.is_action_pressed("ui_lmb"):
 		ScreenFade.reset_tint(0.3)
 		await ScreenFade.tint_complete
 		dialog_finished.emit()

@@ -19,7 +19,7 @@ func _process(delta):
 		return
 	if Input.is_action_just_pressed("debug_quit"):
 		var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
-		shop.init(10, self)
+		shop.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 		shop.setup()
 		SfxBg._playTrack(SfxBg.MapTypes.SHOP)
 		await shop.shop_closed
@@ -34,12 +34,12 @@ func init(rng_seed, rng_text):
 
 func setup_ui():
 	var deck_in_menu = SceneHandler.add_ui_element("res://systems/ui/menus/deck_in_menu.tscn") as DeckInMenu
-	deck_in_menu.init(75, self)
+	deck_in_menu.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	deck_in_menu.setup()
 	combat_started.connect(deck_in_menu.hide)
 	combat_ended.connect(deck_in_menu.show)
 	var player_resources = SceneHandler.add_ui_element("res://systems/ui/menus/utils/player_resource_ui.tscn")
-	player_resources.init(70, self)
+	player_resources.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	player_resources.setup()
 	combat_started.connect(player_resources.hide)
 	combat_ended.connect(player_resources.show)

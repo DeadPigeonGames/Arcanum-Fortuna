@@ -27,5 +27,5 @@ func _process(delta):
 
 
 func _gui_input(event: InputEvent):
-	if event.is_action("pick_up_card"):
+	if event.is_action("ui_lmb"):
 		clicked.emit(self)

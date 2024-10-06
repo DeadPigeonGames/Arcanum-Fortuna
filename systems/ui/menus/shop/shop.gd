@@ -115,8 +115,8 @@ func _on_burn_section_button_button_up():
 
 func _on_leave_shop_button_button_up():
 	if has_unfinished_trades():
-		var popup = SceneHandler.add_ui_element(close_unfinished_popup.ui_popup_path) as UIPopup
-		popup.init(get_layer(), self)
-		popup.setup_popup(close_unfinished_popup)
+		var popup_instance = SceneHandler.add_ui_element(close_unfinished_popup.ui_popup_path) as UIPopup
+		popup_instance.init(get_layer(), self)
+		popup_instance.setup_popup(close_unfinished_popup)
 	else:
 		self.close()

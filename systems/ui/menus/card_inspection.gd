@@ -17,6 +17,14 @@ var scene_tree : SceneTree
 
 var preview_card : Card
 
+
+func _input(event: InputEvent) -> void:
+	if is_current_window == false:
+		return
+	if event.is_action_released("ui_rmb"):
+		close_inspection()
+
+
 func _process(delta):
 	for node in shader_delta:
 		var material : ShaderMaterial = (node as CanvasItem).get_material()
@@ -87,6 +95,11 @@ func show_stat_change_elements_visible(value : bool):
 		control.set_visible(value)
 
 
+func close_inspection():
+	inspection_closed.emit()
+	close()
+
+
 func _on_switch_button_button_up():
 	if not switch_keyword:
 		return
@@ -115,11 +128,10 @@ func _on_switch_button_mouse_exited():
 
 
 func _on_close_window_button_button_up():
-	inspection_closed.emit()
-	close()
+	close_inspection()
 
 
 func _on_color_rect_gui_input(event):
-	if event.is_action_released("pick_up_card") or event.is_action_released("open_inspection"):
+	if event.is_action_released("ui_rmb"):
 		inspection_closed.emit()
 		close()

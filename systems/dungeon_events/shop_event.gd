@@ -7,7 +7,7 @@ var player_data_ref: PlayerData
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
-	shop.init(10, self)
+	shop.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	shop.set_seed(seed)
 	shop.setup()
 	SfxBg._playTrack(SfxBg.MapTypes.SHOP)

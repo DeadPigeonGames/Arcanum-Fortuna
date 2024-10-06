@@ -19,6 +19,7 @@ var is_tween_running := false
 
 func _ready():
 	tween = get_tree().create_tween()
+	set_layer(UIBase.UICLayerIndex.SCREENFADE)
 	color_rect = $ColorRect
 
 

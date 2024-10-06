@@ -47,7 +47,7 @@ func show_tooltip():
 	if not tooltip_container:
 		tooltip_container = CanvasLayer.new()
 		tooltip_container.name = "tooltip_container"
-		tooltip_container.layer = 120
+		tooltip_container.layer = UIBase.UICLayerIndex.TOOLTIP
 		SceneHandler.add_ui_element(tooltip_container)
 	
 	if not instance:

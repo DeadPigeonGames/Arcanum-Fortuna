@@ -4,7 +4,7 @@ var is_hovered = false
 
 
 func _input(event):
-	if is_hovered and event.is_action_pressed("pick_up_card"):
+	if is_hovered and event.is_action_pressed("ui_lmb"):
 		SfxOther._SFX_Knock()
 
 func _on_mouse_entered():

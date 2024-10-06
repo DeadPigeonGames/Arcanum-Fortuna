@@ -1,6 +1,8 @@
 @tool
 class_name Hand extends Control
 
+signal hand_hovered(value : bool)
+
 @export var lerp_factor := 0.3
 @export var card_spacing := 0.0
 @export var card_height = 0
@@ -11,17 +13,12 @@ class_name Hand extends Control
 		return enabled
 	set(value):
 		enabled = value
-		for child in get_children():
-			manually_show_cards()
 
 
 @export_category("DEBUG")
 @export var is_debug := false
-#@export var render_rects := false
 @export var card : PackedScene
 
-#var __show_rect
-#var __hide_rect
 
 var __show_cards = false
 var is_card_dragged = false
@@ -32,8 +29,10 @@ var show_cards : bool :
 	set(new_value):
 		if __show_cards != new_value:
 			if new_value:
+				hand_hovered.emit(true)
 				SfxOther._SFX_HandOpen()
 			else:
+				hand_hovered.emit(false)
 				SfxOther._SFX_HandClose()
 		__show_cards = new_value
 
@@ -45,6 +44,7 @@ func _process(delta):
 	adjust_positions()
 	
 	var count = get_child_count()
+	check_show_cards(count)
 	
 	if card && is_debug:
 		if Input.is_action_just_pressed("ui_up"):
@@ -69,7 +69,7 @@ func adjust_positions():
 		var card = child as Card
 		if not card:
 			continue
-		if "isPickedUp" in card and card.isPickedUp:
+		if "is_picked_up" in card and card.is_picked_up:
 			continue
 		
 		var width = card.get_rect().size.x + card_spacing
@@ -88,16 +88,18 @@ func adjust_positions():
 
 func _on_card_drag_started():
 	is_card_dragged = true
+	show_cards = false
 
 
 func _on_card_drag_ended(card):
 	if not card in get_children():
 		card.reparent(self)
 	is_card_dragged = false
-	manually_show_cards()
+	show_cards = true
 
 
 func _on_card_added(card : HandCard):
+	card.set_hand(self)
 	if card.drag_started.is_connected(_on_card_drag_started):
 		return
 	card.drag_started.connect(_on_card_drag_started)
@@ -112,16 +114,6 @@ func derivative(x):
 	return -2 * x * (card_arc * 0.001)
 
 
-func manually_show_cards():
-	show_cards = get_rect().has_point(get_global_mouse_position())
-
-
-func _on_mouse_entered() -> void:
-	var count = get_child_count()
+func check_show_cards(count):
 	if enabled and not is_card_dragged and count > 0:
-		show_cards = true
-
-
-func _on_mouse_exited() -> void:
-	var count = get_child_count()
-	show_cards = false
+		show_cards = get_rect().has_point(get_global_mouse_position())

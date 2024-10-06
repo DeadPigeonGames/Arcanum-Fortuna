@@ -1,6 +1,23 @@
 class_name UIBase
 extends CanvasLayer
 
+
+enum UICLayerIndex
+{
+	NONE = 0,
+	MAIN_MENU = 10,
+	BATTLE = 20,
+	GAME_ELEMENT = 40,
+	TOOLTIP = 70,
+	SCREENFADE = 80,
+	BATTLE_DIALOG = 90,
+	DIALOGIC = 100,
+	PAUSE = 115,
+	HIGH_PRIORITY = 120,
+	MAX = 128
+}
+
+
 var called_by
 var is_current_window := false
 var current_tab : UITabBase

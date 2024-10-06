@@ -278,20 +278,20 @@ func _process(delta):
 
 
 func _input(event: InputEvent):
-	if is_hovered and event.is_action_released("open_inspection"):
+	if is_hovered and event.is_action_released("ui_rmb"):
 		var new_inspection = inspection.instantiate() as CardInspection
-		new_inspection.init(75, self)
+		new_inspection.init(UIBase.UICLayerIndex.GAME_ELEMENT + 5, self)
 		new_inspection.setup(self)
 		SceneHandler.add_ui_element(new_inspection)
 	
 	if not is_drag_enabled:
 		return
 	
-	if event.is_action_pressed("pick_up_card") and not is_picked_up:
+	if event.is_action_pressed("ui_lmb") and not is_picked_up:
 		if is_hovered:
 			pickup()
 	
-	if event.is_action_released("pick_up_card") and is_picked_up:
+	if event.is_action_released("ui_lmb") and is_picked_up:
 		put(null)
 		emit_signal("drag_ended", self)
 

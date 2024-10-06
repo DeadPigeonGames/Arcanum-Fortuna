@@ -37,12 +37,12 @@ func _process(delta):
 
 
 func _gui_input(event):
-	if is_hovered and event.is_action_pressed("open_inspection"):
+	if is_hovered and event.is_action_pressed("ui_rmb"):
 		var new_inspection = inspection.instantiate() as CardInspection
-		new_inspection.init(110, self)
+		new_inspection.init(UIBase.UICLayerIndex.GAME_ELEMENT + 5, self)
 		new_inspection.setup(self)
 		SceneHandler.add_ui_element(new_inspection)
 		get_parent().get_parent().get_parent().get_parent().get_parent().add_child(new_inspection)
 		
-	if event.is_action("pick_up_card"):
+	if event.is_action("ui_lmb"):
 		clicked.emit(self)

@@ -252,5 +252,5 @@ func get_next_node() -> NodeGenerationsOptions:
 
 func _on_test_shop_button_up():
 	var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
-	shop.init(0, self)
+	shop.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	shop.setup()

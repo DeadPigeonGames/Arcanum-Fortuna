@@ -33,7 +33,7 @@ func select_card():
 	
 	if not deck_preview:
 		deck_preview = SceneHandler.add_ui_element(deck_preview_overlay) as DeckPreviewOverlay
-		deck_preview.init(75, self)
+		deck_preview.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 		deck_preview.is_selectable = true
 		deck_preview.setup()
 	else:
@@ -90,7 +90,7 @@ func reset_button():
 
 func _on_burn_button_button_up():
 	var popup_instance = SceneHandler.add_ui_element(popup.ui_popup_path) as UIPopup
-	popup_instance.init(20, self)
+	popup_instance.init(called_by.get_layer(), self)
 	popup_instance.setup_popup(popup)
 
 

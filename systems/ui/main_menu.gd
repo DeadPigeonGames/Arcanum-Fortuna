@@ -69,20 +69,20 @@ func _on_tutorial_button_button_up():
 
 func _on_options_button_button_up():
 	var options = options_scene.instantiate() as OptionsMenu
-	options.init(1, self)
+	options.init(UIBase.UICLayerIndex.MAIN_MENU, self)
 	options.setup()
 	SceneHandler.add_ui_element(options)
 
 
 func _on_custom_seed_button_button_up():
 	var popup = SceneHandler.add_ui_element(seed_popup_data.ui_popup_line_edit_path) as UILineEditPopup
-	popup.init(0, self)
+	popup.init(UIBase.UICLayerIndex.MAIN_MENU, self)
 	pass
 
 
 func _on_credits_button_button_up():
 	var credits = credits_scene.instantiate() as CreditsScreen
-	credits.init(1, self)
+	credits.init(UIBase.UICLayerIndex.MAIN_MENU, self)
 	SceneHandler.add_ui_element(credits)
 
 

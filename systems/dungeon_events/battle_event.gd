@@ -38,7 +38,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 		if instance is RunEndScreen:
 			instance.queue_free()
 			instance = SceneHandler.add_ui_element(loseEvent)
-			instance.init(110, self)
+			instance.init(UIBase.UICLayerIndex.HIGH_PRIORITY, self)
 			instance.setup()
 			field.queue_free()
 			finished.emit()

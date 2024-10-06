@@ -54,6 +54,6 @@ func mouse_exited_event():
 
 
 func _input(event):
-	if isHovered and event.is_action_pressed("pick_up_card"):
+	if isHovered and event.is_action_pressed("ui_lmb"):
 		$ClickSound.play()
 		clicked.emit(self)

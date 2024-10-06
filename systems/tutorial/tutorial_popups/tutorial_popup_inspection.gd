@@ -4,7 +4,7 @@ extends TutorialPopup
 var card_inspection
 
 func _input(event):
-	if Input.is_action_just_released("open_inspection"):
+	if Input.is_action_just_released("ui_rmb"):
 		await get_tree().process_frame
 		for node in SceneHandler.ui_container.get_children():
 			if node is CardInspection:

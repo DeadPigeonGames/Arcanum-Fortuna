@@ -87,7 +87,7 @@ func heal(amount):
 
 func take_damage(amount, _source = null):
 	if health - amount <= 0:
-		SceneHandler.combat.trigger_death_dialog(self)
+		await EnemyDialog.trigger_death_dialog(SceneHandler.combat, self, self)
 	SfxOther._SFX_DamagePlayer()
 	animate_take_damage_feedback(amount)
 	
@@ -113,7 +113,7 @@ func restore_default_color():
 func process_death() -> bool:
 	if health <= 0:
 		var combat = SceneHandler.combat
-		await combat.trigger_death_dialog(self)
+		await EnemyDialog.trigger_death_dialog(combat, self, self)
 		combat.finished.emit(health)
 		GlobalLog.add_entry("You died! Rip.")
 	return health <= 0
@@ -211,5 +211,5 @@ func _on_button_button_up() -> void:
 		return
 	deck_preview = SceneHandler.add_ui_element(deck_preview_overlay)
 	deck_preview.card_stack = card_stack.cardStack
-	deck_preview.init(75, self)
+	deck_preview.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	deck_preview.setup()

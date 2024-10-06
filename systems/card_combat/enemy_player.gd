@@ -77,7 +77,7 @@ func heal(amount):
 
 func take_damage(amount, _source = null):
 	if health - amount <= 0:
-		SceneHandler.combat.trigger_death_dialog(self)
+		await EnemyDialog.trigger_death_dialog(SceneHandler.combat, self, self)
 	SfxOther._SFX_DamageEnemy()
 	%HealthLabel.text = str(health) + " (" + str(-amount) + ")"
 	health -= amount
