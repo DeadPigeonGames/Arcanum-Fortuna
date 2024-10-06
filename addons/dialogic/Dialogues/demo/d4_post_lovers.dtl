@@ -1,0 +1,45 @@
+join the_lovers rightmost
+join the_fool (default_w_dog) leftmost
+the_lovers: Wait, we lost? \
+— With you, the only place I could ever get lost is in your eyes, darling. \
+— Oh, dearest, I was hardly able to concentrate on the game with you next to me.
+They share a passionate kiss and your four-legged companion whines as if in pain.\
+- CLEAR YOUR THROAT
+	the_lovers: Huh, what?\
+— Darling, why stop? I miss you already.
+	The second for which you had grabbed their attention again passes by and they return to being engrossed in one another.
+	leave the_lovers
+	update the_fool (default)
+	join the_dog rightmost
+	the_dog: Come on, let’s leave them to their business.
+- MAKE A RUDE GESTURE AND HOPE THEY DON’T NOTICE
+	They are too engrossed in one another’s presence, that they seem to have already forgotten you entirely.
+	You are pretty sure you could break out in dance or song and would still be ignored.
+	leave the_lovers
+	update the_fool (default)
+	join the_dog rightmost
+	the_dog: Come on, let’s get out of here before the rest of my fur also turns white.
+- LEAVE WHILE THEY’RE DISTRACTED
+	They are too engrossed in one another’s presence, that they seem to have already forgotten you entirely.
+	You see it for the opportunity it is, and move to slip past them.
+	leave the_lovers
+	update the_fool (default)
+	join the_dog rightmost
+	the_dog: Come on, let’s get out of here before my breakfast comes back up to say hello.
+leave the_lovers
+leave the_dog
+update the_fool (default_w_dog)
+join the_lovers rightmost
+the_lovers: Hey, where’s your partner anyways? Have you got someone in the city? \
+— Darling! Why do you ask, aren’t I enough for you anymore?
+the_lovers: No of course you are, dearest. I was merely curious. \
+— You lie! I saw you ogling!\
+— Dearest, I would never! I only have eyes for you.
+They bicker on, repeatedly trying to raise their voice over the other’s, the altercation threatening to turn physical at any moment.\
+You take it as your cue to slip away unnoticed.
+leave the_lovers
+update the_fool (default)
+join the_dog rightmost
+the_dog: Volatile, color me surprised. One  moment they’re all lovey-dovey, the next they’re at each other’s throats. \
+Blergh.
+the_fool (default): They mentioned a city, it can’t be far. Let’s go.
