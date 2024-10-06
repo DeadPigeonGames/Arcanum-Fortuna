@@ -34,10 +34,10 @@ func execute():
 		highlighted_elements.append(combat.get_node(node_path))
 	for node in highlighted_elements:
 		clickable_rects.append((node as Control).get_global_rect())
-	var position = get_viewport_rect().get_center()
+	var new_position = get_viewport_rect().get_center()
 	if highlighted_elements.size() > 0:
-		position = highlighted_elements[0].get_global_rect().get_center()
-	setup_window_position(position)
+		new_position = highlighted_elements[0].get_global_rect().get_center()
+	setup_window_position(new_position)
 	if data.arrows.size() > 0:
 		setup_arrow_positions()
 	highlight_elements(true)
@@ -54,23 +54,23 @@ func highlight_elements(value : bool):
 
 
 func get_offset_type_rotation(offset_type : TutorialPopupData.OffsetType):
-	var rotation
+	var rotation_deg
 	
 	match offset_type:
 		TutorialPopupData.OffsetType.UP:
-			rotation = 90
+			rotation_deg = 90
 		TutorialPopupData.OffsetType.DOWN:
-			rotation = 270
+			rotation_deg = 270
 		TutorialPopupData.OffsetType.LEFT:
-			rotation = 0
+			rotation_deg = 0
 		TutorialPopupData.OffsetType.RIGHT:
-			rotation = 180
+			rotation_deg = 180
 		TutorialPopupData.OffsetType.UP_LEFT:
-			rotation = 45
+			rotation_deg = 45
 		TutorialPopupData.OffsetType.UP_RIGHT:
-			rotation = 135
+			rotation_deg = 135
 		TutorialPopupData.OffsetType.DOWN_LEFT:
-			rotation = 315
+			rotation_deg = 315
 		TutorialPopupData.OffsetType.DOWN_RIGHT:
 			rotation = 225
 	
