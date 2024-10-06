@@ -24,8 +24,10 @@ func init():
 	if not self in keywords_to_remove:
 		keywords_to_remove.append(self)
 
+
 func get_target(source, owner, combat = null):
 	combat_ref = combat
+
 
 func _on_completed(owner : CombatCard, icon_to_animate = null):
 	if not self in owner.keywords:
@@ -37,13 +39,13 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 	owner.modify_keywords(keywords_to_remove, keywords_to_gain)
 	owner.try_add_buff(Buff.new(attack_difference, health_difference, self, owner))
 	
+	SceneHandler.combat.card_awakened.emit(owner)
+	
 	if not owner.is_enemy:
 		SteamService.try_unlock_achievement("Awake " + owner.card_name)
 	
 	await owner.get_tree().create_timer(1.0  * Settings.animation_time).timeout
 	await owner.trigger_keywords(owner, owner, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, combat_ref)
-	
-	
 
 
 func animate_transform(target, icon_to_animate):

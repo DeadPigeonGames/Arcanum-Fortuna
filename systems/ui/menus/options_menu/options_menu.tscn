@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8xs6q5trxx58"]
+[gd_scene load_steps=18 format=3 uid="uid://b8xs6q5trxx58"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/options_menu/options_menu.gd" id="1_j4gvh"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="1_yx2ik"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="12_1lkd7"]
 [ext_resource type="Texture2D" uid="uid://df2r4ns72cbex" path="res://assets/ui/buttons/default_button_disabled.png" id="13_8yfdg"]
 [ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="14_brwgc"]
+[ext_resource type="Script" path="res://systems/ui/menus/options_menu/accessibility_options.gd" id="14_qba5u"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 process_mode = 3
@@ -98,7 +99,6 @@ method_to_call = "_SFX_UIButtonPress"
 connect_signal = "button_up"
 
 [node name="AccessibilityButton" type="Button" parent="OptionsMenu/OptionsMenuButtons"]
-visible = false
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
@@ -573,12 +573,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AccessibilityOptions" type="Control" parent="OptionsMenu/Options"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
+script = ExtResource("14_qba5u")
 
 [node name="OptionsTitleUnderlay" type="TextureRect" parent="OptionsMenu/Options/AccessibilityOptions"]
 layout_mode = 1
@@ -587,9 +589,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -196.5
+offset_left = -196.0
 offset_top = -135.0
-offset_right = 196.5
+offset_right = 197.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("4_lagsh")
@@ -599,6 +601,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 27.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_x54wv")
@@ -620,6 +624,7 @@ grow_horizontal = 2
 theme_override_constants/separation = 23
 
 [node name="DyslexiaFont" type="HBoxContainer" parent="OptionsMenu/Options/AccessibilityOptions/Options"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
@@ -694,6 +699,7 @@ connect_signal = "button_up"
 
 [connection signal="button_up" from="OptionsMenu/OptionsMenuButtons/AudioButton" to="." method="_on_audio_button_button_up"]
 [connection signal="button_up" from="OptionsMenu/OptionsMenuButtons/VideoButton" to="." method="_on_video_button_button_up"]
+[connection signal="button_up" from="OptionsMenu/OptionsMenuButtons/AccessibilityButton" to="." method="_on_accessibility_button_button_up"]
 [connection signal="toggled" from="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer/CheckBox" to="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer/HSlider" method="_on_check_box_toggled"]
 [connection signal="drag_started" from="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer/HSlider" to="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer/HSlider" method="_on_drag_started"]
 [connection signal="value_changed" from="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer/HSlider" to="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer/HSlider" method="_on_value_changed"]
@@ -713,4 +719,5 @@ connect_signal = "button_up"
 [connection signal="item_selected" from="OptionsMenu/Options/VideoOptions/Options/WindowMode/OptionButton" to="OptionsMenu/Options/VideoOptions" method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="OptionsMenu/Options/VideoOptions/Options/AnimationSpeed/HBoxContainer/HSlider" to="OptionsMenu/Options/VideoOptions" method="_on_h_slider_value_changed"]
 [connection signal="button_up" from="OptionsMenu/Options/VideoOptions/Options/Apply/Apply" to="OptionsMenu/Options/VideoOptions" method="_on_apply_button_up"]
+[connection signal="button_up" from="OptionsMenu/Options/AccessibilityOptions/Options/ResetTutorials/HBoxContainer/TextureButton" to="OptionsMenu/Options/AccessibilityOptions" method="_on_texture_button_button_up"]
 [connection signal="button_up" from="OptionsMenu/ReturnButton" to="." method="_on_return_button_button_up"]

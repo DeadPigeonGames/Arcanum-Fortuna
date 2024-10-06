@@ -279,7 +279,7 @@ func _process(delta):
 
 func _input(event: InputEvent):
 	if is_hovered and event.is_action_released("ui_rmb"):
-		var new_inspection = inspection.instantiate() as CardInspection
+		var new_inspection = load(inspection).instantiate() as CardInspection
 		new_inspection.init(UIBase.UICLayerIndex.GAME_ELEMENT + 5, self)
 		new_inspection.setup(self)
 		SceneHandler.add_ui_element(new_inspection)

@@ -4,12 +4,14 @@ extends Control
 signal player_turn_ended
 signal block_lifted
 signal finished(remaining_health : int)
+signal card_awakened(card : CombatCard)
 
 var player_data : PlayerData
 
 
 ## Each turn consits of the phases in the order they appear here
 @export var phases : Array[CombatPhase] = []
+@export var trigger_tutorials : Array[TriggerTutorial]
 
 ## Will be used as the intital phase
 @export var phase_idx = 0
@@ -131,7 +133,18 @@ func _on_phase_completed():
 		turn += 1
 		phase_idx = 0
 		%EndTurnAnimation.play_backwards()
+	await process_trigger_tutorials()
 	process_next_phase()
+
+
+func process_trigger_tutorials():
+	if not is_tutorial:
+		for tutorial in trigger_tutorials:
+			if tutorial.check_trigger_condition(self):
+				trigger_tutorials.erase(tutorial)
+				await tutorial.completed
+				break
+	return await get_tree().process_frame
 
 
 func lock_player_actions():

@@ -72,9 +72,9 @@ func get_offset_type_rotation(offset_type : TutorialPopupData.OffsetType):
 		TutorialPopupData.OffsetType.DOWN_LEFT:
 			rotation_deg = 315
 		TutorialPopupData.OffsetType.DOWN_RIGHT:
-			rotation = 225
+			rotation_deg = 225
 	
-	return rotation
+	return rotation_deg
 
 
 func get_offset_type_position(offset_type : TutorialPopupData.OffsetType, distance : float):
@@ -127,6 +127,7 @@ func setup_arrow_positions():
 		arrow.rotation_degrees = get_offset_type_rotation(arrow_data.offset_type)
 		var direction = arrow.global_position.direction_to(element_center)
 		tween_arrow(arrow, direction)
+
 
 func tween_arrow(arrow, direction):
 	var tween = self.create_tween()

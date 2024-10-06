@@ -1,12 +1,13 @@
-class_name Card extends Control
+class_name Card
+extends Control
 
 @export var delete_material : ShaderMaterial
 @export var death_delay = 1.25
-@export var card_data: CardData
+@export var card_data : CardData
 @export var buff_color := Color.GREEN
 @export var debuff_color := Color.RED
-@export var inspection := preload("res://systems/ui/menus/card_inspection.tscn")
-@export var keyword_particles := preload("res://systems/card_combat/effects/keyword_particles.tscn")
+@export var inspection := "res://systems/ui/menus/card_inspection.tscn"
+@export var keyword_particles := "res://systems/card_combat/effects/keyword_particles.tscn"
 
 
 var artwork_texture : Texture2D
@@ -43,7 +44,7 @@ func _ready():
 
 func _input(event: InputEvent):
 	if event.is_action_released("ui_rmb"):
-		var new_inspection = inspection.instantiate() as CardInspection
+		var new_inspection = load(inspection).instantiate() as CardInspection
 		new_inspection.init(UIBase.UICLayerIndex.GAME_ELEMENT + 5, self)
 		new_inspection.setup(self)
 		await get_tree().create_timer(0.1).timeout
@@ -258,13 +259,13 @@ func set_shader_value(value: float):
 
 func animate_icon(emission_texture):
 	SfxOther._SFX_Effect()
-	var new_particle = keyword_particles.instantiate()
+	var new_particle = load(keyword_particles).instantiate()
 	$CenterAnchor.add_child(new_particle)
 	new_particle.texture = emission_texture
 	new_particle.emitting = true
 	new_particle.lifetime *= Settings.animation_time
 	new_particle.lifetime = clampf(new_particle.lifetime, 0.01, new_particle.lifetime)
-	await get_tree().create_timer(new_particle.lifetime * Settings.animation_time).timeout
+	await get_tree().create_timer(new_particle.lifetime).timeout
 	new_particle.queue_free()
 	#%KeywordParticles.texture = emission_texture
 	#%KeywordParticles.emitting = true

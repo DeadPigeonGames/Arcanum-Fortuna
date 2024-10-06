@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://d4iqgb0rfjcx8"]
 
 [ext_resource type="Script" path="res://systems/ui/battle_dialog.gd" id="1_7ryki"]
-[ext_resource type="Texture2D" uid="uid://b0lin3yp6dsob" path="res://assets/sprites/dialogue/dg_emperor_3.png" id="2_1i3ln"]
 [ext_resource type="Texture2D" uid="uid://d3ycca34uh1nm" path="res://assets/ui/underlays/nine_patch_rect_3.png" id="2_dvlgv"]
 [ext_resource type="Texture2D" uid="uid://byjyf63eau3ba" path="res://assets/ui/underlays/nine_patch_rect_2.png" id="3_t5300"]
 [ext_resource type="Texture2D" uid="uid://uf36g406dvlv" path="res://assets/ui/underlays/tooltip_underlay.png" id="4_sbnso"]
 [ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="5_ox150"]
 [ext_resource type="FontFile" uid="uid://iwhf5740jgca" path="res://assets/ui/fonts/RomanAntique-Italic.ttf" id="6_mfoxc"]
 [ext_resource type="FontFile" uid="uid://doyk5n1gf64lr" path="res://assets/ui/fonts/RomanAntique_bold_one.ttf" id="7_7ecj3"]
+[ext_resource type="Texture2D" uid="uid://bkja5ep5ufy2w" path="res://assets/sprites/dialogue/dg_hanged_man.png" id="7_sqrsb"]
 [ext_resource type="FontFile" uid="uid://dmv3eflqqpvum" path="res://assets/ui/fonts/RomanAntique_bold_two.ttf" id="8_fwufn"]
 
 [node name="BattleDialog" type="CanvasLayer"]
@@ -15,17 +15,13 @@ layer = 128
 script = ExtResource("1_7ryki")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = -181.0
-offset_right = 258.0
-offset_bottom = 181.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -620.0
+offset_right = -104.0
+offset_bottom = 362.0
+grow_horizontal = 0
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -85,7 +81,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_1i3ln")
+texture = ExtResource("7_sqrsb")
 expand_mode = 2
 stretch_mode = 5
 

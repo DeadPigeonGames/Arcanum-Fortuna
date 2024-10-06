@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=62 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -17,12 +17,19 @@
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/end_phase.gd" id="8_qbqvo"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_placement_phase.gd" id="9_j03le"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_karma_phase.gd" id="10_5pdmy"]
+[ext_resource type="Script" path="res://systems/tutorial/trigger_tutorials/trigger_tutorial.gd" id="14_4hcba"]
 [ext_resource type="Texture2D" uid="uid://delvygdf16ya4" path="res://assets/ui/gameboard/background_placeholder.png" id="14_dvcfv"]
 [ext_resource type="Script" path="res://systems/card_combat/background.gd" id="15_7ge46"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_data/tutorial_popup_data.gd" id="15_uww5a"]
+[ext_resource type="Script" path="res://systems/tutorial/arrow_data.gd" id="16_0alj3"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_data/tutorial_click_data.gd" id="17_r3b0a"]
 [ext_resource type="PackedScene" uid="uid://ced2ynscdgy5e" path="res://systems/card_combat/copy_of_card_player.tscn" id="17_we7n7"]
 [ext_resource type="Texture2D" uid="uid://4hupbd7iry1x" path="res://assets/ui/gameboard/card_burner.png" id="18_i7pqs"]
+[ext_resource type="Script" path="res://systems/tutorial/trigger_tutorials/board_full.gd" id="18_idmfb"]
+[ext_resource type="Script" path="res://systems/tutorial/trigger_tutorials/player_karma.gd" id="19_q1aea"]
 [ext_resource type="Script" path="res://systems/card_combat/CardDeletion.gd" id="19_xq5yv"]
 [ext_resource type="PackedScene" uid="uid://cbbtdvgdt63fh" path="res://systems/ui/tooltips/show_tooltip.tscn" id="20_7e8s5"]
+[ext_resource type="Script" path="res://systems/tutorial/trigger_tutorials/switch_condition.gd" id="20_qdb56"]
 [ext_resource type="PackedScene" uid="uid://cbsn1r2h288lq" path="res://systems/ui/new_deck_preview/deck_preview_overlay.tscn" id="20_sorkg"]
 [ext_resource type="SpriteFrames" uid="uid://c1n1fu0qqediq" path="res://assets/ui/gameboard/coin_sprite_sheet.tres" id="22_8s5et"]
 [ext_resource type="Shader" path="res://assets/sprites/vfx/coin_shine.gdshader" id="22_wv27h"]
@@ -70,6 +77,53 @@ script = ExtResource("9_j03le")
 
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("8_qbqvo")
+
+[sub_resource type="Resource" id="Resource_6fbhe"]
+script = ExtResource("16_0alj3")
+offset_type = 0
+distance = 0.0
+element = NodePath("GameBoard")
+
+[sub_resource type="Resource" id="Resource_uyfm1"]
+script = ExtResource("17_r3b0a")
+title = "Bogus!"
+text = "Bla keks"
+highlighted_elements = Array[NodePath]([NodePath("GameBoard")])
+arrows = Array[ExtResource("16_0alj3")]([SubResource("Resource_6fbhe")])
+offset_type = 0
+distance = 10.0
+
+[sub_resource type="Resource" id="Resource_6w4tl"]
+script = ExtResource("18_idmfb")
+popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_uyfm1")])
+
+[sub_resource type="Resource" id="Resource_y4a4t"]
+script = ExtResource("17_r3b0a")
+title = "Karma krass"
+text = "5 erreicht
+"
+highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("16_0alj3")]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_ocq7p"]
+script = ExtResource("19_q1aea")
+required_karma = 5
+popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_y4a4t")])
+
+[sub_resource type="Resource" id="Resource_oupgr"]
+script = ExtResource("17_r3b0a")
+title = "OMG"
+text = "LINKS AWAKENING"
+highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("16_0alj3")]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_f1rga"]
+script = ExtResource("20_qdb56")
+popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_oupgr")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rikmg"]
 bg_color = Color(1, 1, 1, 1)
@@ -169,6 +223,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_7dv5d")
 phases = Array[ExtResource("2_8jj7t")]([SubResource("Resource_26qbp"), SubResource("Resource_7owng"), SubResource("Resource_4waph"), SubResource("Resource_611yk"), SubResource("Resource_d62ed"), SubResource("Resource_4sdqi"), SubResource("Resource_5dgv3"), SubResource("Resource_n6smt"), SubResource("Resource_3vjfy")])
+trigger_tutorials = Array[ExtResource("14_4hcba")]([SubResource("Resource_6w4tl"), SubResource("Resource_ocq7p"), SubResource("Resource_f1rga")])
 phase_end_delay = 0.2
 debug_player_data = ExtResource("2_42xvr")
 

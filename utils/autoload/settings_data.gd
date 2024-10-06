@@ -193,6 +193,17 @@ func get_anim_speed() -> float:
 		return animation_time
 
 
+func get_trigger_tutorial(class_name_string : String) -> bool:
+	if settings_dict.has(class_name_string):
+		return settings_dict[class_name_string]
+	return false
+
+
+func set_trigger_tutorial(class_name_string : String, value : bool):
+	if settings_dict.has(class_name_string):
+		settings_dict[class_name_string] = value
+
+
 func apply_player_anim_speed(anim_player : AnimationPlayer):
 	var new_scale = anim_player.speed_scale * animation_time
 	anim_player.speed_scale += new_scale
