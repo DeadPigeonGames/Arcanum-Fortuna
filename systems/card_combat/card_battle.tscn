@@ -184,6 +184,9 @@ script = ExtResource("15_7ge46")
 
 [node name="CardPlayer" parent="." instance=ExtResource("17_we7n7")]
 layout_mode = 1
+border_color = Color(0.458824, 0.129412, 0.105882, 1)
+attacked_color = Color(0.458824, 0.129412, 0.105882, 1)
+positive_effect_color = Color(0.333333, 0.360784, 0.133333, 1)
 deck_preview_overlay = ExtResource("20_sorkg")
 
 [node name="GameBoard" type="VBoxContainer" parent="." node_paths=PackedStringArray("enemy_player", "player")]
@@ -382,6 +385,9 @@ speed_scale = 0.65
 [node name="EnemyPlayer" parent="." instance=ExtResource("25_q4n6c")]
 z_index = 2
 layout_mode = 0
+border_color = Color(0.458824, 0.129412, 0.105882, 1)
+attacked_color = Color(0.46, 0.129413, 0.1058, 1)
+positive_effect_color = Color(0.33354, 0.36, 0.1332, 1)
 
 [node name="CurrentPhaseLabel" type="Label" parent="."]
 visible = false
