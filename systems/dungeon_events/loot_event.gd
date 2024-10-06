@@ -52,7 +52,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 		await tree_entered
 	var grabbag = possibleCards.duplicate()
 	for i in range(cardsToChooseFrom):
-		await get_tree().create_timer(.5).timeout
+		await get_tree().create_timer(0.5 * Settings.animation_time).timeout
 		var c = grabbag.pop_at(rng.randi_range(0, len(grabbag) - 1))
 		if c:
 			var visualCard = cardTemplate.instantiate() as Card
@@ -114,7 +114,7 @@ func _on_confirm_button_pressed():
 		tween.tween_property(c, "global_position", %VisualDeck.global_position, card_animation_speed * Settings.animation_time)
 		tween.finished.connect(func(): c.queue_free())
 		tween.play()
-		await get_tree().create_timer(card_animation_speed).timeout
+		await get_tree().create_timer(card_animation_speed * Settings.animation_time).timeout
 	
 	var all_tween = create_tween()
 	all_tween.set_parallel(true)

@@ -40,7 +40,7 @@ func _on_completed(owner : CombatCard, icon_to_animate = null):
 	if not owner.is_enemy:
 		SteamService.try_unlock_achievement("Awake " + owner.card_name)
 	
-	await owner.get_tree().create_timer(1.0).timeout
+	await owner.get_tree().create_timer(1.0  * Settings.animation_time).timeout
 	await owner.trigger_keywords(owner, owner, ActivatedKeyword.Triggers.ON_ACTIVE_CARDS_CHANGED, combat_ref)
 	
 	
@@ -73,7 +73,7 @@ func animate_transform(target, icon_to_animate):
 	tween.play()
 	var chromatic = chromatic_scene.instantiate()
 	SceneHandler.combat.add_child(chromatic)
-	await card.get_tree().create_timer(half_rotation_time).timeout
+	await card.get_tree().create_timer(half_rotation_time * Settings.animation_time).timeout
 	target.set_transformed_visuals(transformed_artwork_shader, transformed_keyword_slot_atlas)
-	await card.get_tree().create_timer(half_rotation_time).timeout
+	await card.get_tree().create_timer(half_rotation_time * Settings.animation_time).timeout
 	chromatic.queue_free()

@@ -63,7 +63,7 @@ func animate_karma(relevant_cards, target):
 		combat.game_board.add_child(small_pearl)
 		small_pearl.global_position = health_slot.get_global_rect().get_center()
 		
-		await combat.get_tree().create_timer(karma_delay).timeout
+		await combat.get_tree().create_timer(karma_delay * Settings.animation_time).timeout
 		var tween = combat.create_tween()
 		
 		tween.set_ease(Tween.EASE_IN)
@@ -90,7 +90,7 @@ func animate_karma(relevant_cards, target):
 			
 			total_wait_count += karma_duration - duration
 	
-	await combat.get_tree().create_timer(karma_delay).timeout
+	await combat.get_tree().create_timer(karma_delay * Settings.animation_time).timeout
 	
 	# Put Blob into player.
 	var t = blob.create_tween()
@@ -102,7 +102,7 @@ func animate_karma(relevant_cards, target):
 	t.tween_property(blob, "scale", Vector2.ZERO, karma_delay * Settings.animation_time)
 	
 	t.play()
-	await combat.get_tree().create_timer(karma_delay).timeout
+	await combat.get_tree().create_timer(karma_delay * Settings.animation_time).timeout
 	target.modify_karma(blob.count)
 	SfxOther._SFX_Blip(blob.count)
 	blob.delete()

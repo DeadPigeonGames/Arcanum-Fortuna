@@ -11,6 +11,12 @@ var target
 var original_position = Vector2(1920 / 2, 1080 / 2)
 
 func _ready():
+	lifetime *= Settings.animation_time
+	lifetime = clampf(lifetime, 0.01, lifetime)
+	for particle in get_children():
+		if particle.has_method("set_lifetime"):
+			particle.lifetime *= Settings.animation_time
+			particle.lifetime = clampf(particle.lifetime, 0.01, particle.lifetime)
 	target = bad_modulate.lerp(good_modulate, float(clamp(count, worse_digit, best_digit) + 10) / 20)
 
 
@@ -36,5 +42,5 @@ func delete():
 	emitting = false
 	$trail.emitting = false
 	$Count.visible = false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2 * Settings.animation_time).timeout
 	queue_free()

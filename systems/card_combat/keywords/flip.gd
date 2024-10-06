@@ -26,8 +26,8 @@ func trigger(source, owner, target, icon_to_animate, params={}):
 	buff_lookup[owner].attack_gain = attack_target - owner.attack
 	buff_lookup[owner].health_gain = health_target - owner.health
 	owner.try_add_buff(buff_lookup[owner])
-	
-	await owner.get_tree().create_timer(rotation_time / 2).timeout
+
+	await owner.get_tree().create_timer((rotation_time / 2)  * Settings.animation_time).timeout
 
 func animate(source, target, icon_to_animate, params={}):
 	if not target is Card:

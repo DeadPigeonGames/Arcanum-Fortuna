@@ -130,7 +130,7 @@ func process_death() -> bool:
 		SfxOther._SFX_DestroyCard()
 		await get_tree().process_frame
 		play_animation("die")
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1 * Settings.animation_time).timeout
 		print("Card '", card_name, "' died!")
 		GlobalLog.add_entry("'%s' at position %d-%d died!" % [card_data.name, tile_coordinate.x, tile_coordinate.y])
 		queue_free()
@@ -242,7 +242,7 @@ func animate_move(target_pos):
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", target_pos, move_speed * Settings.animation_time)
 	tween.play()
-	await get_tree().create_timer(move_speed).timeout
+	await get_tree().create_timer(move_speed * Settings.animation_time).timeout
 	GlobalLog.add_entry("'%s' at position %d-%d moved to positon %d-%d." % 
 			[card_data.name,
 			tile_coordinate.x,

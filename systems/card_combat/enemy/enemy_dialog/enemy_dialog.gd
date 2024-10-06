@@ -54,13 +54,18 @@ static func trigger_card_place_dialog(combat : CardBattle, card : CardData, owne
 				enemy_data.dialog_data.erase(dialog)
 
 
-static func trigger_keycard_attack_dialog(combat : CardBattle, attacking_card : CombatCard, owner):
+static func trigger_keycard_attack_dialog(combat : CardBattle, attacking_card, owner):
 	if combat.is_tutorial:
 		return
 	var enemy_data : EnemyData = combat.enemy.data
 	for dialog : EnemyDialog in enemy_data.dialog_data:
 		if dialog.get_trigger_type() == EnemyDialog.TriggerType.KEYCARD_ATTACK:
-			if dialog.card_data.name == attacking_card.card_data.name:
+			var attack_card_data
+			if attacking_card is CombatCard:
+				attack_card_data = attacking_card.card_data
+			if attacking_card is CardData:
+				attack_card_data = attacking_card
+			if dialog.card_data.name == attack_card_data.name:
 				var screen = SceneHandler.add_ui_element(BattleDialog.file_path) as BattleDialog
 				screen.init(UIBase.UICLayerIndex.BATTLE_DIALOG, owner)
 				screen.setup(dialog.dialogue_lines, dialog.character_image)

@@ -121,5 +121,3 @@ func _SFX_ThinkMode(toState):
 	amplifierTween.tween_property(amplifierMusic, "volume_db", desiredVolume, 0.5)
 	amplifierTween.tween_property(amplifierAmbience, "volume_db", desiredVolume, 0.5)
 	
-
-

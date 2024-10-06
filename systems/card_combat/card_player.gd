@@ -140,7 +140,7 @@ func process_karma_overflow() -> bool:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
 		take_damage(-karma, self)
 		$ScreenshakeCamera2D.add_trauma(0.1)
-		await get_tree().create_timer(animation_delay).timeout
+		await get_tree().create_timer(animation_delay * Settings.animation_time).timeout
 		karma = 0
 	var is_lethal = await process_death()
 	%KarmaLabel.text = str(karma)
@@ -167,7 +167,7 @@ func draw_card():
 	if drawn_card != null:
 		drawn_card.drag_started.connect(_on_card_dragged)
 		drawn_card.drag_ended.connect(_on_card_released)
-		await get_tree().create_timer(draw_delay).timeout
+		await get_tree().create_timer(draw_delay * Settings.animation_time).timeout
 	if card_stack.cardStack.size() == 0:
 		$BonusDrawButton.hide()
 
@@ -186,7 +186,7 @@ func _on_bonus_draw_button_button_down():
 	bonus_draw_cost *= bonus_draw_cost_scale
 	%Value.text = "-%d" % bonus_draw_cost
 	$BonusDrawButton.disabled = true
-	await get_tree().create_timer(animation_delay).timeout
+	await get_tree().create_timer(animation_delay * Settings.animation_time).timeout
 	await process_karma_overflow()
 	restore_default_color()
 	await draw_card()
@@ -196,7 +196,7 @@ func _on_bonus_draw_button_button_down():
 
 func _on_friendly_card_deleted(card : CombatCard):
 	modify_karma(card.cost)
-	await get_tree().create_timer(animation_delay).timeout
+	await get_tree().create_timer(animation_delay * Settings.animation_time).timeout
 	await process_karma_overflow()
 	restore_default_color()
 

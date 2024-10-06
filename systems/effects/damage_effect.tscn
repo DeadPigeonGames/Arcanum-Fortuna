@@ -195,6 +195,7 @@ texture = ExtResource("2_2i63e")
 
 [node name="blood_splatter" type="GPUParticles2D" parent="."]
 self_modulate = Color(0.745098, 0, 0, 1)
+emitting = false
 amount = 2
 process_material = SubResource("ParticleProcessMaterial_nl2l6")
 texture = ExtResource("3_kvaaq")

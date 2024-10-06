@@ -23,7 +23,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	
 	for i in range(len(opts)):
 		print(rng.state)
-		await get_tree().create_timer(.5).timeout
+		await get_tree().create_timer(0.5 * Settings.animation_time).timeout
 		var opt = opts.pop_at(rng.randi_range(0, len(opts) - 1))
 		
 		var card = templateCard.instantiate()
@@ -49,7 +49,7 @@ func card_clicked(card: Card):
 	
 	await card.reveal()
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2 * Settings.animation_time).timeout
 	player_data_ref.health += card.value
 	finished.emit()
 	queue_free()

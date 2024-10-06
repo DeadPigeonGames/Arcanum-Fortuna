@@ -125,7 +125,7 @@ func process_next_phase():
 func _on_phase_completed():
 	if is_blocked:
 		await block_lifted
-	await get_tree().create_timer(phase_end_delay).timeout
+	await get_tree().create_timer(phase_end_delay * Settings.animation_time).timeout
 	phase_idx += 1
 	if phase_idx >= phases.size():
 		turn += 1

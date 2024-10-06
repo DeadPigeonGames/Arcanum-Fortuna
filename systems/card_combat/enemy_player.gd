@@ -95,7 +95,7 @@ func restore_default_color():
 func process_death() -> bool:
 	if health <= 0:
 		GlobalLog.add_entry("The enemy died!")
-		await SceneHandler.combat.trigger_death_dialog(self)
+		await EnemyDialog.trigger_death_dialog(SceneHandler.combat, self, self)
 	return health <= 0
 #endregion
 
@@ -118,7 +118,7 @@ func process_karma_overflow() -> bool:
 	if karma < 0:
 		GlobalLog.add_entry("Applying karma overflow of %d." % -karma)
 		take_damage(-karma, self)
-		await get_tree().create_timer(animation_delay).timeout
+		await get_tree().create_timer(animation_delay * Settings.animation_time).timeout
 		karma = 0
 	var was_lethal = await process_death()
 	%KarmaLabel.text = str(karma)
