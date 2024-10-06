@@ -1,0 +1,37 @@
+join the_dog rightmost
+the_dog: Damn birds. You’d think they’d be quieter at night. Instead, there’s this ruckus.
+join the_fool (default) leftmost
+[wait_input]
+- SOUNDS LIKE SOMEONE’S SCARED.
+	the_dog: Scared!? Buddy, infuriated is more it. \\
+If not at night, when can I expect myself some damn peace and quiet?
+	the_fool: You’re not exactly quiet yourself, grouching around as you are.
+	the_dog: Hmph. Are you saying I’m not the most terrific companion?
+	[wait_input]
+	- OF COURSE YOU ARE.
+	- NO, BUT YOU ARE A GOOD BOY.
+- MUST BE NICE TO HAVE WINGS…
+	the_dog: I rather like my paws, buddy, please and thank you.
+	the_dog: Besides, where would you fly? And just think of how brittle you would be...
+- I DON’T SEE YOU TRYING TO SLEEP, SO WHY COMPLAIN?
+	the_dog: No need to get personal, buddy. \\
+I’m merely saying, birdsong would at least be preferable to this capricious screeching.
+leave the_dog
+leave the_fool
+Enraptured by your banter, you approach a clearing and the cawing gets even louder, before falling to a deafening silence the moment you take another step forward.
+You look down and see that you’ve stepped into a circle of mushrooms. \\
+In the middle, a large pillar juts out, and from the silence the flapping of a pair of massive wings erupts.
+A birdlike woman stands tall before you, her face veiled by the star-dotted night sky. \\
+She speaks, and her voice reverberates in an uncanny chant.
+join the_high_priestess rightmost
+join the_fool (default_w_dog) leftmost
+the_high_priestess: You, you seek aid and have found me for it. But I know you seek more than that, than that. Speak. Speak.
+[wait_input]
+- SK HER ABOUT THE PAIN YOU’RE IN
+	the_high_priestess: A sensible request, request.
+- SK HER FOR GUIDANCE
+	the_high_priestess: And what of, what of your pain? Very well, you shall have your answers.
+- ASK HER ABOUT THE WAY FORWARD
+	the_high_priestess: And what of, what of your pain? Very well, you shall have your answers.
+the_high_priestess: But everything comes at a price, a price. A game, a game should suffice, and I will know you, you.
+The day turns to night again, and the nocturnal animals paint their scenery of sound that both puts you at ease and runs a chill up your spine in equal measure.
