@@ -18,6 +18,7 @@ the_lovers: Hey, you might entertain us yet, stranger. \
 — A game, against us.
 the_lovers: We might not share our love, but...\
 — This way at least you'll get to experience it second-hand, stranger.
+[wait_input hide_text="false"]
 - TWO AGAINST ONE, HOW IS THAT FAIR?
 	the_lovers: Are you not two as well? You and your… mongrel.\
 — But that is hardly on par with our quintessental bond, darling.
