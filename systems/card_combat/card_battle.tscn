@@ -239,6 +239,9 @@ script = ExtResource("15_7ge46")
 
 [node name="CardPlayer" parent="." instance=ExtResource("17_we7n7")]
 layout_mode = 1
+border_color = Color(0.458824, 0.129412, 0.105882, 1)
+attacked_color = Color(0.458824, 0.129412, 0.105882, 1)
+positive_effect_color = Color(0.333333, 0.360784, 0.133333, 1)
 deck_preview_overlay = ExtResource("20_sorkg")
 
 [node name="GameBoard" type="VBoxContainer" parent="." node_paths=PackedStringArray("enemy_player", "player")]
@@ -258,8 +261,8 @@ combat_card_prefab = ExtResource("3_1hhbj")
 enemy_player = NodePath("../EnemyPlayer")
 player = NodePath("../CardPlayer")
 tile_disabled_color = Color(0.231373, 0.196078, 0.184314, 0)
-tile_interactible_color = Color(0.341176, 0.294118, 0.278431, 1)
-tile_hovered_color = Color(0.537255, 0.47451, 0.454902, 1)
+tile_interactible_color = Color(0.121569, 0.0431373, 0.0352941, 0.580392)
+tile_hovered_color = Color(0.588235, 0.490196, 0.270588, 0.0392157)
 
 [node name="EnemyTiles" type="VBoxContainer" parent="GameBoard"]
 layout_mode = 2
@@ -437,6 +440,9 @@ speed_scale = 0.65
 [node name="EnemyPlayer" parent="." instance=ExtResource("25_q4n6c")]
 z_index = 2
 layout_mode = 0
+border_color = Color(0.458824, 0.129412, 0.105882, 1)
+attacked_color = Color(0.46, 0.129413, 0.1058, 1)
+positive_effect_color = Color(0.33354, 0.36, 0.1332, 1)
 
 [node name="CurrentPhaseLabel" type="Label" parent="."]
 visible = false

@@ -3,11 +3,12 @@ join the_fool (default_w_dog) leftmost
 the_lovers: Wait, we lost? \
 — With you, the only place I could ever get lost is in your eyes, darling. \
 — Oh, dearest, I was hardly able to concentrate on the game with you next to me.
-They share a passionate kiss and your four-legged companion whines as if in pain.\
+They share a passionate kiss and your four-legged companion whines as if in pain.
+[wait_input hide_text="false"]
 - CLEAR YOUR THROAT
-	the_lovers: Huh, what?\
+	the_lovers: Huh, what? \
 — Darling, why stop? I miss you already.
-	The second for which you had grabbed their attention again passes by and they return to being engrossed in one another.
+	The second for which you had grabbed their attention again passes by and they return to being engrossed in one another. 
 	leave the_lovers
 	update the_fool (default)
 	join the_dog rightmost

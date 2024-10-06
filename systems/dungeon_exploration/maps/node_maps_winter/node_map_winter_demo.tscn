@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c768mjmse0k56"]
+[gd_scene load_steps=51 format=3 uid="uid://c768mjmse0k56"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_3pv47"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_q42u0"]
@@ -26,6 +26,13 @@
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="18_htd4y"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d4_pre_lovers.dtl" id="21_3o7lv"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d4_post_lovers.dtl" id="22_s0ird"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d6b_pre_priestess.dtl" id="23_8tvv6"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d4b_pre_sun.dtl" id="23_xydty"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d6b_post_priestess.dtl" id="24_6nelk"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d4b_post_sun.dtl" id="24_kn7ep"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d5c_pre_moon.dtl" id="27_l3ku2"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d5c_post_moon.dtl" id="28_xykix"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d6c_pre_lovers.dtl" id="29_cobu1"]
 
 [sub_resource type="Resource" id="Resource_i25gk"]
 script = ExtResource("8_aegmn")
@@ -284,8 +291,8 @@ offset_right = 566.0
 offset_bottom = -236.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_wv2us")])
 demo_enemy_data = null
-demo_dialogic_begin = null
-demo_dialogic_end = null
+demo_dialogic_begin = ExtResource("23_xydty")
+demo_dialogic_end = ExtResource("24_kn7ep")
 connectsTo = [NodePath("../RandomEventNode7"), NodePath("../RandomEventNode13")]
 dashed_width = 12.0
 offset = 45.0
@@ -312,8 +319,8 @@ offset_right = 858.0
 offset_bottom = -99.645
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_ne4dc")])
 demo_enemy_data = null
-demo_dialogic_begin = null
-demo_dialogic_end = null
+demo_dialogic_begin = ExtResource("23_8tvv6")
+demo_dialogic_end = ExtResource("24_6nelk")
 connectsTo = [NodePath("../RandomEventNode14")]
 dashed_width = 12.0
 offset = 45.0
@@ -340,8 +347,8 @@ offset_right = 733.155
 offset_bottom = 141.15
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_8q8wj")])
 demo_enemy_data = null
-demo_dialogic_begin = null
-demo_dialogic_end = null
+demo_dialogic_begin = ExtResource("27_l3ku2")
+demo_dialogic_end = ExtResource("28_xykix")
 connectsTo = [NodePath("../RandomEventNode9")]
 dashed_width = 12.0
 offset = 45.0
@@ -354,8 +361,8 @@ offset_right = 1064.0
 offset_bottom = 85.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_6dcrm")])
 demo_enemy_data = null
-demo_dialogic_begin = null
-demo_dialogic_end = null
+demo_dialogic_begin = ExtResource("29_cobu1")
+demo_dialogic_end = ExtResource("22_s0ird")
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
@@ -368,8 +375,8 @@ offset_right = 1184.0
 offset_bottom = -493.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_aea7h")])
 demo_enemy_data = null
-demo_dialogic_begin = null
-demo_dialogic_end = null
+demo_dialogic_begin = ExtResource("23_8tvv6")
+demo_dialogic_end = ExtResource("24_6nelk")
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0

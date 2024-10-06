@@ -1,0 +1,26 @@
+It feels almost as though the rays are guiding your path onward.
+join the_sun rightmost
+the_sun: Oh! You startled me.
+the_sun: She laughs, and it is an airy chime, unlike anything you’ve heard before.\\
+It is contagious in its glee, and you feel lighter at once, as though a burden was lifted.
+the_sun: Look at you!
+join the_fool (default_w_dog) leftmost
+the_sun: All yellow and dull — for now.\\
+I am positive in time you could be radiant, my joy.
+So abruptly you almost miss it, her smile falters, before she restores it in twice its glory.
+the_sun: Oh, but I can see her sorrow shimmering under your skin. You’ve met her, then? 
+[wait_input]
+- WHO?
+	the_sun: The Moon. We used to scour the earth together, as one, a long time ago. \
+I have made my peace with our now better than she has. 
+- THE MOON?
+	the_sun: Yes. We used to scour the earth together, as one. \
+But that was a long time ago — I have made my peace with our now better than she has.
+- BUT I DON’T FEEL SAD.
+	Neither do I! \
+I find no sense in woe. \
+Who will determine the brightness of your future, if not yourself?
+the_sun: But that’s all in the past, and I’m not one to dwell on it.
+the_sun: Now that you are here, how about a game? \\
+I suspect you would make an excellent opponent.
+Trudging on, the sun beats down on you, and you feel almost unbearably warm in your thin rags, despite the blindingly bright snow defying to melt all around you.

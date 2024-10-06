@@ -12,15 +12,15 @@ attack_speed = 0.2
 attack_rewind = 0.3
 attack_delay = 0.5
 karma_delay = 0.3
-attacked_color = Color(0.639216, 0, 0.00392157, 1)
-death_color = Color(0.231373, 0, 0, 1)
+attacked_color = Color(0.458824, 0.129412, 0.105882, 1)
+death_color = Color(0.1896, 0.176, 0.2, 1)
 highlight_color = Color(0.623529, 0.721569, 0.894118, 1)
 active_color = Color(0.713726, 0.764706, 0.870588, 1)
 move_speed = 0.2
 damage_dealt = ExtResource("5_dk6p8")
 death_delay = 1.0
-buff_color = Color(0.160784, 0.858824, 0.517647, 1)
-debuff_color = Color(0.541176, 0, 0, 1)
+buff_color = Color(0.333333, 0.360784, 0.133333, 1)
+debuff_color = Color(0.458824, 0.129412, 0.105882, 1)
 
 [node name="KarmaCost" parent="Cost" index="0"]
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
