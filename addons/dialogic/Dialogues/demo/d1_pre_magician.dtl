@@ -1,0 +1,21 @@
+the_dog: Keep up!
+the_fool: Where are we headed?
+the_dog: Does it matter?
+He dashes ahead, expecting you to follow, as you always have.
+[wait_input]
+You arrive at a cliffside path, winter glistening quietly but for the whistling wind. \
+Beyond the long drop down and the hollow woods you believe to glimpse the smog of a bustling city.
+A single white flower beckons you towards the edge, rising above equally undisturbed snow.
+- PICK IT UP
+	As you reach to touch it, each petal of the flower parts from the stem in a soft, lazy curl, reaching out towards the world.
+- LEAVE IT
+	You set out to leave the flower upon its lonely throne, overlooking the world.
+	join the_dog rightmost
+	the_dog: Hey, look what I found!
+	He presses the rose into your hands, eager about his findings, before taking off again, white fur merging with the landscape as if vanishing.
+	leave the_dog
+You carry on, the rose providing an odd, faintly familiar comfort. 
+[wait_input]
+Swift steps, that possess a confidence yours so distinctly lack, pull you from your thoughts.
+join the_magician rightmost
+the_magician: Here you are, as predicted. No matter, I cannot let you roam unchallenged - come, then, show me what you are capable of.
