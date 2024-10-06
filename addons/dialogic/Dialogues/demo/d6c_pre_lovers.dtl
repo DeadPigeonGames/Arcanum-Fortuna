@@ -1,0 +1,36 @@
+the_lovers: Shh, shh, someone’s approaching.  \\
+—  So? Since when did that stop us?
+You hear incessant giggling up ahead.
+join the_dog rightmost
+the_dog: Oh dear. \
+Maybe we should take a different route, buddy.
+leave the_dog
+join the_fool (default_w_dog) leftmost
+join the_lovers rightmost
+the_lovers: Ew, where in the world did you come from?\
+— You reek of sadness and pining.
+If they weren’t addressing you directly, you’d think the two elves in front of you hadn’t noticed you at all, so enraptured are they in each others gaze and touch.
+Every word they speak to you sounds accusatory to your ears.
+the_fool: Well, I met the Sun. The moon too, they seem to have-
+the_lovers: Are you thinking what I’m thinking? \
+— Always, darling.
+the_lovers: Hey, you might entertain us yet, stranger. \
+— A game, against us.
+the_lovers: We might not share our love, but...\
+— This way at least you'll get to experience it second-hand, stranger.
+[wait_input hide_text="false"]
+- TWO AGAINST ONE, HOW IS THAT FAIR?
+	the_lovers: Are you not two as well? You and your… mongrel.\
+— But that is hardly on par with our quintessental bond, darling.
+	the_lovers: You’re right, dearest. Of course you are. \
+— But all is fair in love and war, is it not?
+	update the_fool (default)
+	join the_dog rightmost
+	the_dog: Ugh, let’s get this over with.
+- LET’S GO.
+	update the_fool (default)
+	join the_dog rightmost
+	the_dog: Ugh. Please win this one quickly, buddy. \
+For my sanity, if anything.
+the_lovers: Shh, shh, someone’s approaching.  \
+—  So? Since when did that stop us?
