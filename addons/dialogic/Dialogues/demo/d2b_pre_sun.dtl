@@ -1,0 +1,12 @@
+Trudging on, the sun beats down on you, and you feel almost unbearably warm in your thin rags, despite the blindingly bright snow defying to melt all around you. 
+It feels almost as though the rays are guiding your path onward.
+join the_sun rightmost
+the_sun: Oh! You startled me.
+the_sun: She laughs, and it is an airy chime, unlike anything you’ve heard before.\
+It is contagious in its glee, and you feel lighter at once, as though a burden was lifted.
+the_sun: Look at you!
+join the_fool (default_w_dog) leftmost
+the_sun: All yellow and dull — for now.\
+ I am positive in time you could be radiant, my joy.
+the_sun: Now that you are here, how about a game? \
+I suspect you would make an excellent opponent.

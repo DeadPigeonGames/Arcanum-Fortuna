@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c768mjmse0k56"]
+[gd_scene load_steps=42 format=3 uid="uid://c768mjmse0k56"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_3pv47"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_q42u0"]
@@ -18,7 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://cdmbv5kshgi6w" path="res://systems/dungeon_events/challenge_battle_event.tscn" id="12_s832v"]
 [ext_resource type="Texture2D" uid="uid://cc6matgv77q51" path="res://assets/ui/nodemap/encounter_shop.png" id="13_o03i4"]
 [ext_resource type="PackedScene" uid="uid://4el45oxnhsuo" path="res://systems/dungeon_events/shop_event.tscn" id="14_ux6kj"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_pre_sun.dtl" id="15_12pfo"]
 [ext_resource type="PackedScene" uid="uid://rd4s1jnxga1w" path="res://systems/dungeon_exploration/nodes/final_node.tscn" id="15_unaqv"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_post_sun.dtl" id="16_atgsd"]
 [ext_resource type="Texture2D" uid="uid://clda7gnqq52gc" path="res://assets/ui/placeholders/nodemap_1_decoration.png" id="16_lu2ge"]
 [ext_resource type="Theme" uid="uid://d12enup0x00h8" path="res://assets/ui/fonts/placeholder_theme.tres" id="17_ktuxg"]
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/seed_text.gd" id="18_htd4y"]
@@ -224,8 +226,8 @@ offset_right = -207.0
 offset_bottom = -3.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_br2uv")])
 demo_enemy_data = null
-demo_dialogic_begin = null
-demo_dialogic_end = null
+demo_dialogic_begin = ExtResource("15_12pfo")
+demo_dialogic_end = ExtResource("16_atgsd")
 connectsTo = [NodePath("../RandomEventNode12")]
 dashed_width = 12.0
 offset = 45.0

@@ -1,0 +1,23 @@
+join the_sun rightmost
+join the_fool (default_w_dog) leftmost
+the_sun: Rejoice! What gladness you’ve brought me.\
+How can I have lost when seeing you basking in blazing victory feels like a prize?
+the_sun: You are on the right track for many more victories to follow, I’m sure of it.
+[wait time="0.6"]
+the_sun: How time flies! Alas, I have to be on my way again.\
+But do not fret, we shall meet again someday.
+the_sun: Shine on, my joy!
+leave the_sun
+You watch as rises above, steps as light as air. Glowing brighter, and brighter yet.
+Your eyes begin to sting, tears rolling down your cheeks.
+leave the_fool
+Eyelids twitching, you grab frantically at your hat, pulling it down and back over your throbbing eyes, desperate to block out the unbearable light.
+Even as you close your eyes, lights continue dancing in your vision.
+join the_dog rightmost
+the_dog: Hey. Hey, c’mon. Get back up.
+You slowly come to again, the searing pain dulling your senses and overwriting any joy you experienced just moments prior. 
+join the_fool (default) leftmost
+the_dog: You okay, buddy? Good thing the sun is setting.
+the_dog: Maybe we can find someone to help you with your pain.
+He gives you a friendly nudge and sits expectedly by your side.
+the_dog: Whenever you’re ready.
