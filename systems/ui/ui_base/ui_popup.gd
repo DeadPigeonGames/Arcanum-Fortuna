@@ -24,4 +24,3 @@ func _on_decline_button_up():
 
 func close_with_result(value):
 	super.close_with_result(value)
-

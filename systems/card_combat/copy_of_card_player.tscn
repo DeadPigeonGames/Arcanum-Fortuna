@@ -138,7 +138,6 @@ anchor_right = 0.5
 offset_left = -521.0
 offset_top = -278.0
 offset_right = 521.0
-card_hidden_height = 150
 
 [node name="Deck" type="ReferenceRect" parent="."]
 unique_name_in_owner = true

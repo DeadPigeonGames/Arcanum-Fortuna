@@ -18,6 +18,8 @@ var attack : int : set = set_attack, get = get_attack
 var health: int : set = set_health, get = get_health
 var keywords : Array[Keyword] = []
 var is_hovered := false
+var is_hoverable := true
+var hand : Hand
 
 var was_preloaded := false
 var was_switched := false
@@ -40,7 +42,7 @@ func _ready():
 
 
 func _input(event: InputEvent):
-	if is_hovered and event.is_action_released("ui_rmb"):
+	if event.is_action_released("ui_rmb"):
 		var new_inspection = inspection.instantiate() as CardInspection
 		new_inspection.init(UIBase.UICLayerIndex.GAME_ELEMENT + 5, self)
 		new_inspection.setup(self)
@@ -80,7 +82,7 @@ func get_health():
 
 func copy(card : Card):
 	card_data = card.card_data.duplicate()
-	init(card.artwork_texture, card.card_name, card.cost, card.attack, card.health, card.keywords)
+	init(card.artwork_texture, card.card_name, card.cost, card.attack, card.health, card.keywords, card.hand)
 
 
 func load_from_data(data: CardData):
@@ -91,13 +93,14 @@ func load_from_data(data: CardData):
 	was_preloaded = true
 
 
-func init(artwork_texture, name, cost, attack, health, keywords):
+func init(artwork_texture, name, cost, attack, health, keywords, hand = null):
 	self.artwork_texture = artwork_texture
 	self.card_name = name
 	self.cost = cost
 	self.attack = attack
 	self.health = health
 	self.keywords = keywords.duplicate(true)
+	set_hand(hand)
 	if card_data == null:
 		card_data = CardData.new()
 		card_data.artwork_texture = artwork_texture
@@ -259,6 +262,7 @@ func animate_icon(emission_texture):
 	$CenterAnchor.add_child(new_particle)
 	new_particle.texture = emission_texture
 	new_particle.emitting = true
+	new_particle.lifetime *= Settings.animation_time
 	await get_tree().create_timer(new_particle.lifetime).timeout
 	new_particle.queue_free()
 	#%KeywordParticles.texture = emission_texture
@@ -266,8 +270,25 @@ func animate_icon(emission_texture):
 	#await %KeywordParticles.finished
 
 
+func set_hand(hand : Hand):
+	if not hand:
+		return
+	self.hand = hand
+	if not hand.hand_hovered.is_connected(set_hoverable):
+		hand.hand_hovered.connect(set_hoverable)
+
+
+func set_hoverable(value : bool):
+	is_hoverable = !value
+	if is_hoverable:
+		is_hovered = get_global_rect().has_point(get_global_mouse_position())
+	else:
+		is_hovered = false
+
+
 func _on_mouse_entered():
-	is_hovered = true
+	if is_hoverable:
+		is_hovered = true
 
 
 func _on_mouse_exited():

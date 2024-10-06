@@ -6,7 +6,7 @@ signal hand_hovered(value : bool)
 @export var lerp_factor := 0.3
 @export var card_spacing := 0.0
 @export var card_height = 0
-@export var card_hidden_height = 250
+@export var card_hidden_height = 150
 @export var card_arc = 0.05
 @export var enabled := true : 
 	get:
@@ -115,5 +115,18 @@ func derivative(x):
 
 
 func check_show_cards(count):
+	if SceneHandler.current_ui_window:
+		show_cards = false
+		return
+	
 	if enabled and not is_card_dragged and count > 0:
-		show_cards = get_rect().has_point(get_global_mouse_position())
+		var global_mouse_pos = get_global_mouse_position()
+		var result := false
+		for node in get_children():
+			var card_rect : Rect2 = node.get_global_rect()
+			var size = card_rect.size * 0.15
+			card_rect = card_rect.grow_individual(size.x, size.y, size.x, size.y)
+			result = card_rect.has_point(global_mouse_pos)
+			if result:
+				break
+		show_cards = result

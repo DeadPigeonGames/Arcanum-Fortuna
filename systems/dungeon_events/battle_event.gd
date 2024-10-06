@@ -14,6 +14,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	super(player_data, enemy_data)
 	
 	var field : CardBattle = battleField.instantiate()
+	$CanvasLayer.set_layer(UIBase.UICLayerIndex.BATTLE)
 	$CanvasLayer.add_child(field)
 	SceneHandler.combat = field
 	#field.is_debug = false

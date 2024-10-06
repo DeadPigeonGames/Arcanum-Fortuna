@@ -9,9 +9,7 @@ signal drag_ended(card)
 
 static var held_card : HandCard
 var is_picked_up = false
-var is_hoverable := true
 var base_scale = 1.0
-var hand : Hand
 
 
 @onready var show_card_tooltip = %ShowCardTooltip
@@ -56,6 +54,9 @@ func _process(delta):
 
 
 func _input(event: InputEvent):
+	if SceneHandler.current_ui_window:
+		return
+	
 	if is_hovered and event.is_action_released("ui_rmb"):
 		var new_inspection = inspection.instantiate() as CardInspection
 		new_inspection.init(UIBase.UICLayerIndex.GAME_ELEMENT + 5, self)
@@ -72,9 +73,18 @@ func _input(event: InputEvent):
 
 
 func check_hand_is_hovered():
+	if SceneHandler.current_ui_window:
+		is_hovered = false
+		return
+	
 	if is_hoverable:
 		var mouse_pos = get_global_mouse_position()
 		is_hovered = get_global_rect().has_point(mouse_pos)
+	else:
+		is_hovered = false
+	
+	if hand and not (get_parent() == hand) and hand.is_card_dragged:
+		is_hoverable = false
 
 
 func pickup():
@@ -100,22 +110,8 @@ func put(dropNode):
 	held_card = null
 
 
-func set_hand(hand : Hand):
-	self.hand = hand
-	if not hand.hand_hovered.is_connected(set_hand_card_hovered):
-		hand.hand_hovered.connect(set_hand_card_hovered)
-
-
-func set_hand_card_hovered(value : bool):
-	if get_parent() != hand: # Is on board
-		if value:
-			is_hovered = false
+func set_hoverable(value : bool):
+	if get_parent() == hand:
+		is_hoverable = value
+	else:
 		is_hoverable = !value
-
-
-func _on_mouse_entered():
-	return # Deny base behavior
-
-
-func _on_mouse_exited():
-	return # Deny base behavior

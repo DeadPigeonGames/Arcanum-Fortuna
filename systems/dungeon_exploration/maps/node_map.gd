@@ -36,13 +36,13 @@ func setup_ui():
 	var deck_in_menu = SceneHandler.add_ui_element("res://systems/ui/menus/deck_in_menu.tscn") as DeckInMenu
 	deck_in_menu.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	deck_in_menu.setup()
-	combat_started.connect(deck_in_menu.hide)
-	combat_ended.connect(deck_in_menu.show)
+	combat_started.connect(deck_in_menu.hide_ui)
+	combat_ended.connect(deck_in_menu.show_ui)
 	var player_resources = SceneHandler.add_ui_element("res://systems/ui/menus/utils/player_resource_ui.tscn")
 	player_resources.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	player_resources.setup()
-	combat_started.connect(player_resources.hide)
-	combat_ended.connect(player_resources.show)
+	combat_started.connect(player_resources.hide_ui)
+	combat_ended.connect(player_resources.show_ui)
 
 
 func _on_node_activated(node : EventNode):

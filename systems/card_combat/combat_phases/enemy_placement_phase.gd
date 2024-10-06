@@ -42,7 +42,8 @@ func process_effect() -> ExitState:
 	var card_placements = combat.enemy.calc_card_placements()
 	
 	for placement in card_placements:
-		await EnemyDialog.trigger_card_place_dialog(combat, placement.card, self)
+		if combat.turn > 0:
+			await EnemyDialog.trigger_card_place_dialog(combat, placement.card, self)
 		combat.game_board.place_enemy_card_back(placement.card, placement.target_column)
 	
 	return ExitState.DEFAULT

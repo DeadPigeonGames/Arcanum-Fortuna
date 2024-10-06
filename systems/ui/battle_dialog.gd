@@ -23,7 +23,7 @@ func _input(event):
 func init(layer : int, caller):
 	self.set_layer(128)
 	called_by = caller
-	is_current_window = true
+	set_is_current_window(true)
 
 
 func setup(display_text : String, image : Texture2D):

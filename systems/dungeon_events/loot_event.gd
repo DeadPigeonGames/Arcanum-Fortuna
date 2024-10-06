@@ -34,6 +34,8 @@ func _ready():
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	super(player_data, enemy_data)
+	$CanvasLayer.set_layer(UIBase.UICLayerIndex.GAME_ELEMENT)
+	SceneHandler.current_ui_window = self
 	if (enemy_data != null):
 		$CanvasLayer/Control/GoldLabel.text %= enemy_data.gold_reward
 		player_data.currency += enemy_data.gold_reward
@@ -126,7 +128,9 @@ func _on_confirm_button_pressed():
 	%AnimationPlayer.play("hide_deck")
 	await %AnimationPlayer.animation_finished
 	finished.emit()
+	SceneHandler.current_ui_window = null
 	queue_free()
+	
 
 
 # func calculate_alternative_reward():
@@ -159,4 +163,5 @@ func _on_skip_button_pressed():
 	await get_tree().create_timer(2).timeout
 	
 	finished.emit()
+	SceneHandler.current_ui_window = null
 	queue_free()

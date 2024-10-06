@@ -5,8 +5,8 @@ extends CanvasLayer
 enum UICLayerIndex
 {
 	NONE = 0,
+	BATTLE = 1,
 	MAIN_MENU = 10,
-	BATTLE = 20,
 	GAME_ELEMENT = 40,
 	TOOLTIP = 70,
 	SCREENFADE = 80,
@@ -31,12 +31,13 @@ func _input(event):
 func init(layer : int, caller):
 	self.set_layer(layer + 1)
 	called_by = caller
-	is_current_window = true
+	set_is_current_window(true)
 
 
 func close_with_result(result):
+	set_is_current_window(false)
 	if called_by is UIBase:
-		called_by.is_current_window = true
+		called_by.set_is_current_window(true)
 		called_by.receive_result(result)
 	if called_by.has_method("receive_result"):
 		called_by.receive_result(result)
@@ -44,8 +45,9 @@ func close_with_result(result):
 
 
 func close():
+	set_is_current_window(false)
 	if called_by != null and called_by is UIBase:
-		called_by.is_current_window = true
+		called_by.set_is_current_window(true)
 	queue_free()
 
 
@@ -86,3 +88,21 @@ func switch_tab_visible(tab):
 	current_tab.visible = false
 	tab.visible = true
 	current_tab = tab
+
+
+func set_is_current_window(value : bool):
+	is_current_window = value
+	if value:
+		SceneHandler.current_ui_window = self
+	else:
+		SceneHandler.current_ui_window = null
+
+
+func show_ui():
+	set_is_current_window(true)
+	super.show()
+
+
+func hide_ui():
+	set_is_current_window(false)
+	super.hide()

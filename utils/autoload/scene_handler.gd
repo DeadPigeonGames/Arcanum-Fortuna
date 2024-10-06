@@ -5,6 +5,7 @@ var current_scene
 @onready var inactive_scenes = $InactiveScenes
 @onready var ui_container = $UIContainer
 var combat : CardBattle
+var current_ui_window
 
 
 func _ready():
