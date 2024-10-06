@@ -1,10 +1,9 @@
-join the_sun rightmost
 join the_fool (default_w_dog) leftmost
-the_sun: Rejoice! What gladness you’ve brought me.\
+the_sun: Rejoice! What gladness you’ve brought me.\\
 How can I have lost when seeing you basking in blazing victory feels like a prize?
 the_sun: You are on the right track for many more victories to follow, I’m sure of it.
 [wait time="0.6"]
-the_sun: How time flies! Alas, I have to be on my way again.\
+the_sun: How time flies! Alas, I have to be on my way again.\\
 But do not fret, we shall meet again someday.
 the_sun: Shine on, my joy!
 leave the_sun
@@ -21,3 +20,4 @@ the_dog: You okay, buddy? Good thing the sun is setting.
 the_dog: Maybe we can find someone to help you with your pain.
 He gives you a friendly nudge and sits expectedly by your side.
 the_dog: Whenever you’re ready.
+join the_sun rightmost

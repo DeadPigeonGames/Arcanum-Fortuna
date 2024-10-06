@@ -1,0 +1,21 @@
+join the_moon rightmost
+the_moon: I see. I should have known that the cards and your journey were inexorably linked.
+[wait_input hide_text="false"]
+- IT WAS AN HONOR.
+	the_moon: The honor is all mine. It seems I was overzealous once again.
+- I EXPECTED MORE.
+	the_moon: And I expect I would say the very same to you, were the roles reversed. \\
+But what are expectations, if not honesty?
+- WHAT HAPPENS NEXT?
+	the_moon: And thus, indecision still persists.
+	the_moon: Were you not able to fend for yourself until this very moment already? \\
+Is it the future you fear?
+the_moon: Regardless, I fear I must depart soon, for I can feel her approach.
+the_moon: If you see her again, please make no mention of me.
+the_moon: Farewell.
+leave the_moon
+She departs with a final glow, and leaves you feeling suddenly tired and empty, swathed in dark.
+update the_fool (default)
+update the_dog (default) rightmost
+the_dog: Come on, we’ve lingered long enough.
+join the_fool (default_w_dog) leftmost
