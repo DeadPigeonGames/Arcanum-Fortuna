@@ -42,19 +42,7 @@ func process_effect() -> ExitState:
 	var card_placements = combat.enemy.calc_card_placements()
 	
 	for placement in card_placements:
-		await trigger_card_place_dialog(placement.card)
+		await EnemyDialog.trigger_card_place_dialog(combat, placement.card, self)
 		combat.game_board.place_enemy_card_back(placement.card, placement.target_column)
 	
 	return ExitState.DEFAULT
-
-
-func trigger_card_place_dialog(card : CardData):
-	var enemy_data : EnemyData = combat.enemy.data
-	for dialog : EnemyDialog in enemy_data.dialog_data:
-		if dialog.get_trigger_type() == EnemyDialog.TriggerType.ENEMY_CARD:
-			if dialog.card_data.name == card.name:
-				var screen = SceneHandler.add_ui_element(BattleDialog.file_path) as BattleDialog
-				screen.init(0, self)
-				screen.setup(dialog.dialogue_lines, dialog.character_image)
-				await screen.dialog_finished
-				enemy_data.dialog_data.erase(dialog)
