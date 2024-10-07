@@ -1,0 +1,175 @@
+[gd_scene load_steps=15 format=3 uid="uid://dvm3jgdr8h4bs"]
+
+[ext_resource type="Script" path="res://systems/ui/menus/end_screens/run_end_screen.gd" id="1_37aly"]
+[ext_resource type="Texture2D" uid="uid://dhatoux8wooe0" path="res://assets/ui/underlays/demo_end_screen.png" id="2_eaggb"]
+[ext_resource type="Texture2D" uid="uid://dwer7hq8eur8w" path="res://assets/ui/buttons/regular_button_normal.png" id="4_chvng"]
+[ext_resource type="Texture2D" uid="uid://7o3muws1gqo6" path="res://assets/ui/buttons/regular_button_pressed.png" id="5_i6wrp"]
+[ext_resource type="Texture2D" uid="uid://bsevcaoypxrrw" path="res://assets/ui/buttons/regular_button_hover.png" id="6_a3rnm"]
+[ext_resource type="Texture2D" uid="uid://bfgcr5ueque8m" path="res://assets/ui/buttons/regular_button_disabled.png" id="7_5aqyq"]
+[ext_resource type="Theme" uid="uid://db7d7nr3s1th5" path="res://assets/ui/themes/font_theme.tres" id="8_nbcje"]
+[ext_resource type="Texture2D" uid="uid://b16jfdfiacscf" path="res://assets/ui/icons/close_window.png" id="9_0xhus"]
+[ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="9_3dwj3"]
+[ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="10_l05xu"]
+[ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="11_2n8hv"]
+[ext_resource type="Texture2D" uid="uid://2wm4y8pt722u" path="res://assets/ui/placeholders/wishlist_button.png" id="12_0fkjh"]
+[ext_resource type="Texture2D" uid="uid://c0ouk8jpx75ha" path="res://assets/ui/placeholders/wishlist_button_hover.png" id="13_h4feq"]
+[ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="14_qmi6r"]
+
+[node name="DemoEndScreen" type="CanvasLayer"]
+script = ExtResource("1_37aly")
+
+[node name="WinScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eaggb")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -142.0
+offset_right = 219.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="RetryButton" type="TextureButton" parent="WinScreen/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+texture_normal = ExtResource("4_chvng")
+texture_pressed = ExtResource("5_i6wrp")
+texture_hover = ExtResource("6_a3rnm")
+texture_disabled = ExtResource("7_5aqyq")
+
+[node name="Label" type="Label" parent="WinScreen/HBoxContainer/RetryButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = 12.0
+offset_right = -50.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_nbcje")
+theme_override_font_sizes/font_size = 26
+text = "Begin anew"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoverSound" parent="WinScreen/HBoxContainer/RetryButton" instance=ExtResource("9_3dwj3")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="WinScreen/HBoxContainer/RetryButton" instance=ExtResource("9_3dwj3")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
+[node name="MainMenuButton" type="TextureButton" parent="WinScreen/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+texture_normal = ExtResource("4_chvng")
+texture_pressed = ExtResource("5_i6wrp")
+texture_hover = ExtResource("6_a3rnm")
+texture_disabled = ExtResource("7_5aqyq")
+
+[node name="Label" type="Label" parent="WinScreen/HBoxContainer/MainMenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = 12.0
+offset_right = -50.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_nbcje")
+theme_override_font_sizes/font_size = 32
+text = "Take a rest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoverSound" parent="WinScreen/HBoxContainer/MainMenuButton" instance=ExtResource("9_3dwj3")]
+singleton = 1
+method_to_call = "_SFX_UIButtonHover"
+connect_signal = "mouse_entered"
+
+[node name="PressSound" parent="WinScreen/HBoxContainer/MainMenuButton" instance=ExtResource("9_3dwj3")]
+singleton = 1
+method_to_call = "_SFX_UIButtonPress"
+connect_signal = "button_up"
+
+[node name="CloseWindowButton" type="TextureButton" parent="WinScreen"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_bottom = 87.0
+grow_horizontal = 0
+texture_normal = ExtResource("9_0xhus")
+texture_pressed = ExtResource("10_l05xu")
+texture_hover = ExtResource("11_2n8hv")
+
+[node name="WishlistButton" type="TextureButton" parent="."]
+offset_left = 827.0
+offset_top = 681.0
+offset_right = 1335.0
+offset_bottom = 875.0
+texture_normal = ExtResource("12_0fkjh")
+texture_hover = ExtResource("13_h4feq")
+
+[node name="URLLabel" type="RichTextLabel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -408.0
+offset_top = -212.0
+offset_right = 408.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("14_qmi6r")
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center]Any suggestions, wishes, or feedback?
+We would love to hear from you via our  [b][url]playtest form[/url][/b]!
+[/center]"
+fit_content = true
+scroll_active = false
+
+[connection signal="button_up" from="WinScreen/HBoxContainer/RetryButton" to="." method="_on_retry_button_button_up"]
+[connection signal="button_up" from="WinScreen/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
+[connection signal="button_up" from="WinScreen/CloseWindowButton" to="." method="_on_main_menu_button_button_up"]
+[connection signal="button_up" from="WishlistButton" to="." method="_on_wishlist_button_button_up"]
+[connection signal="meta_clicked" from="URLLabel" to="." method="_on_url_label_meta_clicked"]

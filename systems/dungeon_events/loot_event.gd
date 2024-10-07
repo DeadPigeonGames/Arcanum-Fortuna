@@ -165,3 +165,7 @@ func _on_skip_button_pressed():
 	finished.emit()
 	SceneHandler.current_ui_window = null
 	queue_free()
+
+
+func play_coin_purse_sfx():
+	SfxOther._SFX_LootCoins()
