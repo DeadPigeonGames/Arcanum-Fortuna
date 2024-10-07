@@ -1,10 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://cegqtmafpc7yc"]
+[gd_scene load_steps=27 format=3 uid="uid://cegqtmafpc7yc"]
 
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="1_btvdi"]
 [ext_resource type="Script" path="res://systems/effects/victory_animation.gd" id="1_gnn8w"]
 [ext_resource type="Shader" path="res://shaders/fake_3d.gdshader" id="2_7ldh2"]
 [ext_resource type="Texture2D" uid="uid://celd3g1asnsr7" path="res://assets/sprites/vfx/text_card_victorious.png" id="3_tpy3n"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="5_73ir2"]
+[ext_resource type="Texture2D" uid="uid://bqr88uucid0dh" path="res://assets/ui/victory/victorious_underlay3.png" id="6_0a7xh"]
+[ext_resource type="Texture2D" uid="uid://cbk4uvvtkda7e" path="res://assets/ui/victory/victorious.png" id="6_gvuxy"]
+[ext_resource type="Texture2D" uid="uid://coffvu1reuvdr" path="res://assets/ui/victory/victorious_underlay2.png" id="7_ltq65"]
+[ext_resource type="Texture2D" uid="uid://c4l1ij4f04xm4" path="res://assets/ui/victory/victorious_underlay.png" id="8_57k4i"]
+[ext_resource type="Texture2D" uid="uid://bfwexv8yqir7x" path="res://assets/ui/victory/coin_spritesheet.png" id="10_dnl6x"]
+[ext_resource type="Shader" path="res://assets/sprites/vfx/coin_shine.gdshader" id="10_h7ivs"]
+[ext_resource type="Texture2D" uid="uid://bfngpy5qc1ayi" path="res://assets/ui/victory/victorious_particle.png" id="12_pogu0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4wfv"]
 shader = ExtResource("2_7ldh2")
@@ -13,6 +20,75 @@ shader_parameter/cull_back = false
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wdd38"]
+shader = ExtResource("10_h7ivs")
+shader_parameter/shine_color = Color(0.98, 0.80066, 0.3822, 0.615686)
+shader_parameter/shine_speed = 5.0
+shader_parameter/shine_size = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjylo"]
+shader = ExtResource("10_h7ivs")
+shader_parameter/shine_color = Color(0.93, 0.692385, 0.2511, 0.337255)
+shader_parameter/shine_speed = 2.0
+shader_parameter/shine_size = 0.01
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckxeu"]
+atlas = ExtResource("10_dnl6x")
+region = Rect2(0, 0, 495, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f87a"]
+atlas = ExtResource("10_dnl6x")
+region = Rect2(495, 0, 495, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdcbn"]
+atlas = ExtResource("10_dnl6x")
+region = Rect2(990, 0, 495, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w2nw"]
+atlas = ExtResource("10_dnl6x")
+region = Rect2(1485, 0, 495, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ftd"]
+atlas = ExtResource("10_dnl6x")
+region = Rect2(1980, 0, 495, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj08l"]
+atlas = ExtResource("10_dnl6x")
+region = Rect2(2475, 0, 495, 742)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw6d3"]
+atlas = ExtResource("10_dnl6x")
+region = Rect2(2970, 0, 495, 742)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxce5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckxeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f87a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdcbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w2nw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5ftd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj08l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw6d3")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_027lh"]
 length = 0.001
@@ -101,31 +177,201 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("CanvasLayer/TextureRect/NewVictorious:visible")
+tracks/7/path = NodePath("CanvasLayer/TextureRect/VictoriousText:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer/TextureRect/NewVictorious:scale")
+tracks/8/path = NodePath("CanvasLayer/TextureRect/Underlay2:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.2, 1)]
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/TextureRect/Underlay3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/TextureRect/Underlay1:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/TextureRect/Underlay2:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6.28319, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/TextureRect/Underlay3:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-6.28319, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:r")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:g")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:b")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:a")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CanvasLayer/TextureRect/Sprite2D:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CanvasLayer/TextureRect/VictoriousText:scale:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("CanvasLayer/TextureRect/VictoriousText:scale:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CanvasLayer/TextureRect/VictoriousText:position:x")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/21/type = "bezier"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("CanvasLayer/TextureRect/VictoriousText:position:y")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-60, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("CanvasLayer/CPUParticles2D2:emitting")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("CanvasLayer/CPUParticles2D:emitting")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_jb7u4"]
 resource_name = "victorious"
-length = 6.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -145,10 +391,10 @@ tracks/1/path = NodePath("CanvasLayer/TextureRect:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 2.47, 3.67, 4.62, 5.79, 6.87, 7.93),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-1.5708, -0.139626, -0.139626, 0.0]
+"values": [-1.5708, -0.139626, -0.139626, 0.0, 0.0, 0.0523599, -0.0523599, 0.0523599, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -215,7 +461,7 @@ tracks/7/path = NodePath(".")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(6),
+"times": PackedFloat32Array(8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -225,11 +471,11 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer/TextureRect/NewVictorious:visible")
+tracks/8/path = NodePath("CanvasLayer/TextureRect/VictoriousText:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 2.2),
+"times": PackedFloat32Array(0, 3.53333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -237,14 +483,184 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer/TextureRect/NewVictorious:scale")
+tracks/9/path = NodePath("CanvasLayer/TextureRect/Underlay2:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(2.2, 2.5),
+"times": PackedFloat32Array(0, 2.46667),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.2, 1), Vector2(1, 1)]
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/TextureRect/Underlay3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/TextureRect/Underlay1:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/TextureRect/Underlay2:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 6.28319, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.46667, 8)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/TextureRect/Underlay3:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -6.28319, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.46667, 8)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:r")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.46667, 5.13333, 8)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:g")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.46667, 5.13333, 8)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:b")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.46667, 5.13333, 8)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CanvasLayer/TextureRect/Underlay1:modulate:a")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.46667, 5.13333, 8)
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CanvasLayer/TextureRect/Sprite2D:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 2.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("CanvasLayer/TextureRect/VictoriousText:scale:x")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(3.2, 3.86667, 4.46667)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CanvasLayer/TextureRect/VictoriousText:scale:y")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(3.2, 3.86667, 4.46667)
+}
+tracks/21/type = "bezier"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("CanvasLayer/TextureRect/VictoriousText:position:x")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(4, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.56667, 4.1)
+}
+tracks/22/type = "bezier"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("CanvasLayer/TextureRect/VictoriousText:position:y")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-60, -0.25, 0, 0.25, 0, -40, -0.25, 0, 0.25, 0, -60, -0.25, 0, 0.25, 0, -40, -0.25, 0, 0.25, 0, -60, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.56667, 3.83333, 5.16667, 6.56667, 7.9)
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("CanvasLayer/CPUParticles2D:emitting")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 3.52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("CanvasLayer/CPUParticles2D2:emitting")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 3.52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7r6k4"]
@@ -286,10 +702,12 @@ grow_vertical = 2
 texture = ExtResource("3_tpy3n")
 
 [node name="NewVictorious" type="Label" parent="CanvasLayer/TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 572.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 1)
@@ -300,9 +718,101 @@ text = "Victorious"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Underlay1" type="TextureRect" parent="CanvasLayer/TextureRect"]
+offset_top = -16.0
+offset_right = 417.0
+offset_bottom = 401.0
+texture = ExtResource("6_0a7xh")
+expand_mode = 1
+
+[node name="Underlay3" type="TextureRect" parent="CanvasLayer/TextureRect"]
+offset_left = -37.0
+offset_top = -51.0
+offset_right = 461.0
+offset_bottom = 447.0
+rotation = -6.28319
+pivot_offset = Vector2(250, 240)
+texture = ExtResource("7_ltq65")
+expand_mode = 1
+
+[node name="Underlay2" type="TextureRect" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -333.0
+offset_right = 210.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 6.28319
+pivot_offset = Vector2(210, 208)
+texture = ExtResource("8_57k4i")
+expand_mode = 1
+
+[node name="VictoriousText" type="TextureRect" parent="CanvasLayer/TextureRect"]
+visible = false
+material = SubResource("ShaderMaterial_wdd38")
+offset_left = 4.0
+offset_top = -60.0
+offset_right = 415.0
+offset_bottom = 202.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(205, 130)
+texture = ExtResource("6_gvuxy")
+expand_mode = 1
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CanvasLayer/TextureRect"]
+material = SubResource("ShaderMaterial_kjylo")
+position = Vector2(209.534, 197.912)
+scale = Vector2(0.49338, 0.49338)
+sprite_frames = SubResource("SpriteFrames_cxce5")
+animation = &"spin"
+frame_progress = 0.213261
+speed_scale = 2.5
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_7r6k4")
 }
 autoplay = "victorious"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(1800, 1080)
+amount = 16
+explosiveness = 0.6
+randomness = 0.5
+local_coords = true
+texture = ExtResource("12_pogu0")
+direction = Vector2(0, -1)
+gravity = Vector2(0, 50)
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+angular_velocity_min = 200.0
+angular_velocity_max = 200.0
+linear_accel_min = 50.0
+linear_accel_max = 100.0
+angle_max = 720.0
+scale_amount_min = 0.3
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(120, 1080)
+amount = 16
+explosiveness = 0.6
+randomness = 0.5
+local_coords = true
+texture = ExtResource("12_pogu0")
+direction = Vector2(0, -1)
+gravity = Vector2(0, 50)
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+angular_velocity_min = 200.0
+angular_velocity_max = 200.0
+linear_accel_min = 50.0
+linear_accel_max = 100.0
+angle_max = 720.0
+scale_amount_min = 0.3
