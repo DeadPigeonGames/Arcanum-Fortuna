@@ -201,7 +201,7 @@ Nico Chera
 Anni Kostrzewa
 Lucie Scieux"
 
-[node name="TextureRect" type="TextureRect" parent="CreditsMenu/Credits"]
+[node name="LogoDPG" type="TextureRect" parent="CreditsMenu/Credits"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
