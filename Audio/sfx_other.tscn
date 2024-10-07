@@ -264,4 +264,8 @@ stream = SubResource("AudioStream_mkl0i")
 volume_db = -6.0
 bus = &"Signature"
 
+[node name="LootCoins" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_mk5kh")
+bus = &"SFX"
+
 [connection signal="timeout" from="TestKnockTimer" to="." method="_on_test_knock_timer_timeout"]
