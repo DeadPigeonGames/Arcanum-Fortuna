@@ -64,21 +64,20 @@ func animate_karma(relevant_cards, target):
 		small_pearl.global_position = health_slot.get_global_rect().get_center()
 		
 		await combat.get_tree().create_timer(karma_delay * Settings.animation_time).timeout
-		var tween = combat.create_tween()
 		
-		tween.set_ease(Tween.EASE_IN)
-		tween.set_trans(Tween.TRANS_EXPO)
-		
-		tween.tween_property(small_pearl, "global_position", blob.original_position, karma_delay * Settings.animation_time)
-		
-		tween.finished.connect(func():
-			blob.update_number(card.cost)
-			small_pearl.emitting = false
-			small_pearl.queue_free()
-			blob.global_position += health_slot.global_position.direction_to(blob.original_position) * blob_move * abs(card.cost)
-		)
-		
-		tween.play()
+		if combat: # if is still valid
+			var tween = combat.create_tween()
+			tween.set_ease(Tween.EASE_IN)
+			tween.set_trans(Tween.TRANS_EXPO)
+			tween.tween_property(small_pearl, "global_position", blob.original_position, karma_delay * Settings.animation_time)
+			tween.finished.connect(func():
+				blob.update_number(card.cost)
+				small_pearl.emitting = false
+				small_pearl.queue_free()
+				blob.global_position += health_slot.global_position.direction_to(blob.original_position) * blob_move * abs(card.cost)
+			)
+			
+			tween.play()
 		
 		if card.cost < 0:
 			var start_time = Time.get_unix_time_from_system()

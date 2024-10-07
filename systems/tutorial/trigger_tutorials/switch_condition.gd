@@ -18,5 +18,5 @@ func set_has_awakened(card : CombatCard):
 	has_awakened = true
 
 
-func get_class_name():
+static func get_class_name():
 	return "SwitchConditionTriggerTutorial"

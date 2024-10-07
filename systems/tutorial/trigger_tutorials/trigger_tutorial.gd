@@ -43,5 +43,5 @@ func create_popup(popup_path : String, tutorial_overlay):
 	return instance
 
 
-func get_class_name():
+static func get_class_name():
 	return "TriggerTutorial"

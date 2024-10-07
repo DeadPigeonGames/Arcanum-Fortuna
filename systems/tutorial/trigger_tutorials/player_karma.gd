@@ -12,5 +12,5 @@ func check_trigger_condition(combat : CardBattle) -> bool:
 	return false
 
 
-func get_class_name():
+static func get_class_name():
 	return "PlayerKarmaTriggerTutorial"
