@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=72 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
@@ -37,6 +37,7 @@
 [ext_resource type="Resource" uid="uid://d2b7yscmtse2l" path="res://data/cards/queen_of_herbs.tres" id="33_odtm4"]
 [ext_resource type="Resource" uid="uid://ciai4bipoidj6" path="res://data/cards/queen_of_thorns.tres" id="34_1d4eq"]
 [ext_resource type="Texture2D" uid="uid://bjm1q37flpaxq" path="res://assets/ui/buttons/default_button_normal.png" id="34_658er"]
+[ext_resource type="Shader" path="res://assets/sprites/vfx/coin_shine.gdshader" id="35_0dxam"]
 [ext_resource type="Texture2D" uid="uid://ih2700jnklo8" path="res://assets/ui/buttons/default_button_pressed.png" id="35_2cws8"]
 [ext_resource type="Resource" uid="uid://s2luhru0dtce" path="res://data/cards/knight_of_daggers.tres" id="35_8nhqe"]
 [ext_resource type="Texture2D" uid="uid://bavfmynt0nuxn" path="res://assets/ui/buttons/default_button_hover.png" id="36_qxg4y"]
@@ -57,6 +58,12 @@ font_size = 96
 
 [sub_resource type="LabelSettings" id="LabelSettings_dkqdp"]
 font_size = 72
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmleu"]
+shader = ExtResource("35_0dxam")
+shader_parameter/shine_color = Color(1, 1, 1, 0.0431373)
+shader_parameter/shine_speed = 6.0
+shader_parameter/shine_size = 0.01
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g41n5"]
 texture = ExtResource("41_01nxp")
@@ -350,6 +357,30 @@ _data = {
 "money_bag": SubResource("Animation_j8twj")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bfa27"]
+shader = ExtResource("35_0dxam")
+shader_parameter/shine_color = Color(0.95, 0.832675, 0.5795, 0.0509804)
+shader_parameter/shine_speed = 5.0
+shader_parameter/shine_size = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swwr3"]
+shader = ExtResource("35_0dxam")
+shader_parameter/shine_color = Color(0.82, 0.617733, 0.2132, 0.14902)
+shader_parameter/shine_speed = 5.0
+shader_parameter/shine_size = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gkfh"]
+shader = ExtResource("35_0dxam")
+shader_parameter/shine_color = Color(0.98, 0.80164, 0.5684, 0.141176)
+shader_parameter/shine_speed = 5.0
+shader_parameter/shine_size = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_87p3x"]
+shader = ExtResource("35_0dxam")
+shader_parameter/shine_color = Color(0.97, 0.667683, 0.1455, 0.101961)
+shader_parameter/shine_speed = 5.0
+shader_parameter/shine_size = 0.01
+
 [sub_resource type="Animation" id="Animation_l3jsp"]
 length = 0.001
 tracks/0/type = "value"
@@ -626,6 +657,7 @@ vertical_alignment = 1
 
 [node name="ConfirmButton" type="TextureButton" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_nmleu")
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -756,6 +788,7 @@ libraries = {
 script = ExtResource("45_juwu1")
 
 [node name="Coin1" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_bfa27")
 offset_left = 473.0
 offset_top = 737.0
 offset_right = 562.0
@@ -763,6 +796,7 @@ offset_bottom = 825.0
 texture = ExtResource("45_0byj7")
 
 [node name="Coin2" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_swwr3")
 offset_left = 443.0
 offset_top = 535.0
 offset_right = 532.0
@@ -770,6 +804,7 @@ offset_bottom = 623.0
 texture = ExtResource("45_0byj7")
 
 [node name="Coin3" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_1gkfh")
 offset_left = 609.0
 offset_top = 718.0
 offset_right = 698.0
@@ -777,6 +812,7 @@ offset_bottom = 806.0
 texture = ExtResource("45_0byj7")
 
 [node name="Coin4" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_87p3x")
 offset_left = 533.0
 offset_top = 830.0
 offset_right = 622.0
