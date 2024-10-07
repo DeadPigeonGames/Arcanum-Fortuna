@@ -8,6 +8,8 @@
 script = ExtResource("1_7ktt8")
 name = "DialogicFoolTheme"
 base_scene = ExtResource("1_tmw60")
-base_overrides = {}
+base_overrides = {
+"canvas_layer": "100.0"
+}
 layers = Array[ExtResource("2_2r1r3")]([])
 metadata/_latest_layer = -1

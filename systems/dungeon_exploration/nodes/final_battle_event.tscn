@@ -1,0 +1,29 @@
+[gd_scene load_steps=12 format=3 uid="uid://ckbykj1g1edod"]
+
+[ext_resource type="Script" path="res://systems/dungeon_events/final_battle_event.gd" id="2_divep"]
+[ext_resource type="Resource" path="res://data/enemy/2x1_moon.tres" id="3_cofi0"]
+[ext_resource type="Resource" uid="uid://do7sg8ti66d83" path="res://data/enemy/2x2_sun.tres" id="4_qhatd"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d1_post_magician.dtl" id="5_sl7fl"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d1_pre_magician.dtl" id="6_gfm8e"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2a_post_moon.dtl" id="7_58vcd"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2a_pre_moon.dtl" id="8_rq453"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_post_sun.dtl" id="9_vq0ve"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_pre_sun.dtl" id="10_e4xsh"]
+[ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="12_eqf1x"]
+[ext_resource type="PackedScene" uid="uid://dx6fby17l2h4g" path="res://systems/ui/menus/end_screens/win_screen.tscn" id="13_4gtrh"]
+
+[node name="FinalBattleEvent" type="Node"]
+script = ExtResource("2_divep")
+best_battle_two = ExtResource("3_cofi0")
+best_battle_three = ExtResource("4_qhatd")
+battle_1_win_dia = ExtResource("5_sl7fl")
+battle_1_lose_dia = ExtResource("6_gfm8e")
+battle_2_win_dia = ExtResource("7_58vcd")
+battle_2_lose_dia = ExtResource("8_rq453")
+match_won = ExtResource("9_vq0ve")
+match_lose = ExtResource("10_e4xsh")
+battleField = ExtResource("12_eqf1x")
+winEvent = ExtResource("13_4gtrh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true

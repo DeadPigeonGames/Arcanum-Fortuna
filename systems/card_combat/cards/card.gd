@@ -267,6 +267,7 @@ func animate_icon(emission_texture):
 	new_particle.lifetime = clampf(new_particle.lifetime, 0.01, new_particle.lifetime)
 	await get_tree().create_timer(new_particle.lifetime).timeout
 	new_particle.queue_free()
+	await get_tree().process_frame
 	#%KeywordParticles.texture = emission_texture
 	#%KeywordParticles.emitting = true
 	#await %KeywordParticles.finished

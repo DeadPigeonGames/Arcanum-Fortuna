@@ -10,6 +10,12 @@ var connectedFrom: Array[EventNode] = []
 @export_range(0, 10) var lookahead := 2
 var currentLookahead = 0
 
+## REMOVE AFTER DEMO!
+@export var demo_enemy_data : EnemyData
+@export var demo_dialogic_begin : DialogicTimeline
+@export var demo_dialogic_end : DialogicTimeline
+
+
 @export_category("Gameplay Options")
 @export var event: PackedScene
 ## How much the enemy level should increase after the event completed
@@ -49,6 +55,7 @@ func _ready():
 	$background/icon.visible = false
 	for n in connectsTo:
 		n.connectedFrom.append(self)
+
 
 func init(_level: int, _rng: RandomNumberGenerator):
 	return
@@ -112,6 +119,7 @@ func click():
 	activated.emit(self)
 	GlobalLog.set_context(GlobalLog.Context.NODEMAP)
 	GlobalLog.add_entry("went to " + name)
+	selectable = false
 	player.update_target(self)
 	await player.nodemap_move_to(self)
 	for c in connectedFrom:
@@ -124,6 +132,8 @@ func click():
 
 
 func _trigger_event():
+	await trigger_dialog(demo_dialogic_begin)
+	
 	var test_instance = event.instantiate()
 	if test_instance is RunEndScreen:
 		var end_screen = SceneHandler.add_ui_element(event) as RunEndScreen
@@ -135,10 +145,20 @@ func _trigger_event():
 	if is_scene_switch:
 		SceneHandler.change_scene(event)
 		return
+	
+	var was_battle_event
 	var instance = event.instantiate()
+	if instance is FinalBattleEvent:
+		was_battle_event = true
+		demo_enemy_data.rng_seed = seed
+		player.data.draw_rng_seed = seed
+		
+		ScreenFade.fade_out(1.0, true, true)
+		get_parent().combat_started.emit()
+		await ScreenFade.fade_out_complete
 	if "seed" in instance:
 		instance.seed = seed
-	instance.trigger(player.data, null)
+	instance.trigger(player.data, demo_enemy_data)
 	await instance.finished
 
 
@@ -149,3 +169,16 @@ func _draw():
 		var target = node.position + (node.get_rect().size * Vector2(1, -1)) / 2 - position
 		var direction = target.normalized()
 		draw_dashed_line(direction * offset, target - direction * offset, node.get_required_color(), node.width, node.dashed_width, true)
+
+
+func trigger_dialog(dialog : DialogicTimeline):
+	if not dialog:
+		return
+	SceneHandler.set_visibility_ui_container(false)
+	ScreenFade.tint_screen(Color.BLACK, 0.8, 1.0)
+	SceneHandler.current_ui_window =\
+	Dialogic.start(dialog)
+	await Dialogic.timeline_ended
+	ScreenFade.reset_tint(0.2)
+	await ScreenFade.tint_complete
+	SceneHandler.set_visibility_ui_container(true)

@@ -3,10 +3,6 @@ extends EventNode
 
 @export var potential_events : Array[RandomScene]
 
-## REMOVE AFTER DEMO!
-@export var demo_enemy_data : EnemyData
-@export var demo_dialogic_begin : DialogicTimeline
-@export var demo_dialogic_end : DialogicTimeline
 
 var level := 0
 
@@ -76,18 +72,3 @@ func _trigger_event():
 	if was_battle_event:
 		get_parent().combat_ended.emit()
 	await trigger_dialog(demo_dialogic_end)
-
-
-func trigger_dialog(dialog : DialogicTimeline):
-	if not dialog:
-		return
-	SceneHandler.set_visibility_ui_container(false)
-	ScreenFade.tint_screen(Color.BLACK, 0.8, 1.0)
-	var layer = ScreenFade.get_layer()
-	ScreenFade.set_layer(50)
-	Dialogic.start(dialog).set_layer(128)
-	await Dialogic.timeline_ended
-	ScreenFade.reset_tint(0.2)
-	await ScreenFade.tint_complete
-	ScreenFade.set_layer(layer)
-	SceneHandler.set_visibility_ui_container(true)

@@ -15,6 +15,12 @@ func process_effect() -> ExitState:
 		if combat.game_board.enemy_tiles_front.get_child(i).get_child_count() == 0:
 			continue
 		var attacking_card = combat.game_board.enemy_tiles_front.get_child(i).get_child(0)
+		if not attacking_card is Card:
+			attacking_card = null
+			for child in combat.game_board.enemy_tiles_front.get_child(i).get_children():
+				if child is Card:
+					attacking_card = child
+					break
 		await EnemyDialog.trigger_keycard_attack_dialog(combat, attacking_card, self)
 		await combat.handle_attacks(attacking_card, i, false)
 		await EnemyDialog.trigger_player_hp_dialog(combat, self)
