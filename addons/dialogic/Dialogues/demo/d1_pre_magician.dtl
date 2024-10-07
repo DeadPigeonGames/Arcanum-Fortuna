@@ -2,7 +2,7 @@ the_dog: Keep up!
 the_fool: Where are we headed?
 the_dog: Does it matter?
 He dashes ahead, expecting you to follow, as you always have.
-[wait_input]
+[wait_input hide_text="false"]
 You arrive at a cliffside path, winter glistening quietly but for the whistling wind. \
 Beyond the long drop down and the hollow woods you believe to glimpse the smog of a bustling city.
 A single white flower beckons you towards the edge, rising above equally undisturbed snow.
@@ -16,7 +16,7 @@ A single white flower beckons you towards the edge, rising above equally undistu
 	He presses the rose into your hands, eager about his findings, before taking off again, white fur merging with the landscape as if vanishing.
 	leave the_dog
 You carry on, the rose providing an odd, faintly familiar comfort.
-[wait_input]
+[wait_input hide_text="false"]
 Swift steps, that possess a confidence yours so distinctly lack, pull you from your thoughts.
 [sound path="res://Audio/Signatures/SignatureMagician.ogg" volume="0.0"]
 join the_magician rightmost
