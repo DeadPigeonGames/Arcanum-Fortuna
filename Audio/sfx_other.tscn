@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://vmliqn78631u"]
+[gd_scene load_steps=57 format=3 uid="uid://vmliqn78631u"]
 
 [ext_resource type="Script" path="res://Audio/GD_SFXOther.gd" id="1_wsfow"]
 [ext_resource type="AudioStream" uid="uid://h78ugsvxhc76" path="res://Audio/Card/CardCardHover1.ogg" id="2_cdbka"]
@@ -139,6 +139,8 @@ stream_1/stream = ExtResource("42_cmuwg")
 stream_2/stream = ExtResource("43_yc1xh")
 stream_3/stream = ExtResource("44_mk5kh")
 
+[sub_resource type="AudioStream" id="AudioStream_mkl0i"]
+
 [node name="SFXOther" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -256,5 +258,10 @@ bus = &"UI"
 
 [node name="Money" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_3rl3s")
+
+[node name="Signature" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStream_mkl0i")
+volume_db = -6.0
+bus = &"Signature"
 
 [connection signal="timeout" from="TestKnockTimer" to="." method="_on_test_knock_timer_timeout"]
