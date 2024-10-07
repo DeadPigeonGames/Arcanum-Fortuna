@@ -1,20 +1,16 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=10 format=3 uid="uid://b1n6yj0ap2yy4"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://b1n6yj0ap2yy4"]
 
 [ext_resource type="Resource" uid="uid://nmmt237llngi" path="res://data/enemy/4x2_sun_brain.tres" id="1_i2kl3"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_3jjff"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_2gtql"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_y64pe"]
-[ext_resource type="Resource" uid="uid://dqu25ohu65ud8" path="res://data/enemy/enemy_basic_brain_stats1.tres" id="5_g13m6"]
-[ext_resource type="Resource" uid="uid://cfiqtgldipt1n" path="res://data/enemy/enemy_basic_brain_stats2.tres" id="6_ir36i"]
 [ext_resource type="Resource" uid="uid://cwjcmx0yjc8yb" path="res://data/enemy/enemy_basic_brain_stats3.tres" id="7_6cdxf"]
-[ext_resource type="Resource" uid="uid://clikgbpfsryhc" path="res://data/enemy/enemy_basic_brain_stats4.tres" id="8_0reff"]
-[ext_resource type="Resource" uid="uid://cndjpbnxujjjl" path="res://data/enemy/enemy_basic_brain_stats5.tres" id="9_odpas"]
 
 [resource]
 script = ExtResource("3_2gtql")
 title = "The Sun"
 brain = ExtResource("1_i2kl3")
-stats_per_level = Array[ExtResource("4_y64pe")]([ExtResource("5_g13m6"), ExtResource("6_ir36i"), ExtResource("7_6cdxf"), ExtResource("8_0reff"), ExtResource("9_odpas")])
+stats_per_level = Array[ExtResource("4_y64pe")]([ExtResource("7_6cdxf")])
 gold_reward = 4
 min_level = 0
 max_level = 2
