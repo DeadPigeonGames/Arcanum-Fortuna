@@ -1,20 +1,16 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=10 format=3 uid="uid://cl5iiccpygcrn"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://cl5iiccpygcrn"]
 
 [ext_resource type="Resource" uid="uid://nq2p6bgqb421" path="res://data/enemy/6x1_high_priestess_brain.tres" id="1_tlmw5"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_mta6i"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_poawx"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_04gp1"]
-[ext_resource type="Resource" uid="uid://dqu25ohu65ud8" path="res://data/enemy/enemy_basic_brain_stats1.tres" id="5_ydg6a"]
-[ext_resource type="Resource" uid="uid://cfiqtgldipt1n" path="res://data/enemy/enemy_basic_brain_stats2.tres" id="6_c072i"]
-[ext_resource type="Resource" uid="uid://cwjcmx0yjc8yb" path="res://data/enemy/enemy_basic_brain_stats3.tres" id="7_sleik"]
-[ext_resource type="Resource" uid="uid://clikgbpfsryhc" path="res://data/enemy/enemy_basic_brain_stats4.tres" id="8_fcy06"]
 [ext_resource type="Resource" uid="uid://cndjpbnxujjjl" path="res://data/enemy/enemy_basic_brain_stats5.tres" id="9_jhyut"]
 
 [resource]
 script = ExtResource("3_poawx")
 title = "The High Priestess"
 brain = ExtResource("1_tlmw5")
-stats_per_level = Array[ExtResource("4_04gp1")]([ExtResource("5_ydg6a"), ExtResource("6_c072i"), ExtResource("7_sleik"), ExtResource("8_fcy06"), ExtResource("9_jhyut")])
+stats_per_level = Array[ExtResource("4_04gp1")]([ExtResource("9_jhyut")])
 gold_reward = 4
 min_level = 0
 max_level = 2
