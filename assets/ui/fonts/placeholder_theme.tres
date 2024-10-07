@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://d12enup0x00h8"]
 
-[ext_resource type="FontFile" uid="uid://ds6fkaks0twky" path="res://assets/ui/fonts/RomanAntique.ttf" id="1_vvrut"]
+[ext_resource type="FontFile" uid="uid://dllh36u2fct2k" path="res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Bold.otf" id="1_l5clp"]
 
 [resource]
-default_font = ExtResource("1_vvrut")
+default_font = ExtResource("1_l5clp")
 default_font_size = 20
