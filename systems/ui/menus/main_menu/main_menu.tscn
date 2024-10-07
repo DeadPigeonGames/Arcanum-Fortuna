@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://byccv8hmd45ln"]
+[gd_scene load_steps=40 format=3 uid="uid://byccv8hmd45ln"]
 
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="1_ix3bk"]
 [ext_resource type="Script" path="res://systems/ui/main_menu.gd" id="1_pcc4c"]
@@ -751,6 +751,10 @@ gravity = Vector3(0, 0, 0)
 scale_min = 0.2
 scale_max = 0.8
 
+[sub_resource type="Gradient" id="Gradient_b2ts0"]
+offsets = PackedFloat32Array(0, 0.852368, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y78y3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vugka"]
@@ -1016,21 +1020,27 @@ flip_h = true
 position = Vector2(-80.4502, -382.346)
 emitting = false
 amount = 16
+lifetime = 3.0
 one_shot = true
 explosiveness = 0.6
 randomness = 0.5
+lifetime_randomness = 0.5
 local_coords = true
 texture = ExtResource("22_xc5g1")
+emission_shape = 1
+emission_sphere_radius = 64.0
 direction = Vector2(0, -1)
-gravity = Vector2(0, 50)
+spread = 25.0
+gravity = Vector2(0, 750)
 initial_velocity_min = 300.0
-initial_velocity_max = 600.0
+initial_velocity_max = 750.0
 angular_velocity_min = 200.0
 angular_velocity_max = 200.0
 linear_accel_min = 50.0
 linear_accel_max = 100.0
 angle_max = 720.0
 scale_amount_min = 0.3
+color_ramp = SubResource("Gradient_b2ts0")
 
 [node name="FoolioButton" type="Button" parent="FoolDefault"]
 anchors_preset = 15
