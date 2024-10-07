@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=15 format=3 uid="uid://mg5kbcsl0i3c"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_brryh"]
+[ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="2_5kyk2"]
+[ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="2_pa16k"]
+[ext_resource type="Resource" uid="uid://b4tc66w5jk5ii" path="res://data/cards/the_star.tres" id="3_4dqpv"]
+[ext_resource type="Resource" uid="uid://bjlneh5al3d8x" path="res://data/cards/queen_of_daggers.tres" id="4_poejv"]
+[ext_resource type="Resource" uid="uid://s2luhru0dtce" path="res://data/cards/knight_of_daggers.tres" id="5_fyg1t"]
+[ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="5_yovoq"]
+[ext_resource type="Resource" uid="uid://bdbn32r8x8g4v" path="res://data/cards/the_high_priestess.tres" id="6_4j13d"]
+[ext_resource type="Resource" uid="uid://cyiqtt8grlnlq" path="res://data/cards/the_lovers.tres" id="7_5aqqt"]
+[ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="7_rh786"]
+[ext_resource type="Resource" uid="uid://lvxtgh2yl8" path="res://data/cards/strength.tres" id="8_ayjvk"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="8_hw6fq"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="9_qk2ic"]
+[ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="10_oxajp"]
+
+[resource]
+script = ExtResource("8_hw6fq")
+available_cards = Array[ExtResource("1_brryh")]([ExtResource("2_pa16k"), ExtResource("3_4dqpv"), ExtResource("7_rh786"), ExtResource("5_yovoq"), ExtResource("6_4j13d"), ExtResource("7_5aqqt"), ExtResource("8_ayjvk"), ExtResource("2_5kyk2"), ExtResource("4_poejv"), ExtResource("4_poejv"), ExtResource("5_fyg1t")])
+strategy_modules = Array[ExtResource("9_qk2ic")]([ExtResource("10_oxajp")])
