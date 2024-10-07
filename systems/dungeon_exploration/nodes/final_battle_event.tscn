@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=3 uid="uid://gm88hj83koee"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/final_battle_event.gd" id="2_divep"]
-[ext_resource type="Resource" uid="uid://dsyn6u3okj0np" path="res://data/enemy/7_boss_star2.tres" id="2_q738s"]
-[ext_resource type="Resource" path="res://data/enemy/7_boss_star3.tres" id="3_nrw27"]
+[ext_resource type="Resource" uid="uid://dhnbs5c6xal8c" path="res://data/enemy/7_boss_star2.tres" id="2_q738s"]
+[ext_resource type="Resource" uid="uid://2pkidvfuo5cw" path="res://data/enemy/7_boss_star3.tres" id="3_nrw27"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d1_post_magician.dtl" id="5_sl7fl"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d6b_pre_priestess.dtl" id="5_ywevw"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2a_post_moon.dtl" id="7_58vcd"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2a_pre_moon.dtl" id="8_rq453"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_post_sun.dtl" id="9_vq0ve"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_pre_sun.dtl" id="10_e4xsh"]
+[ext_resource type="PackedScene" uid="uid://dvm3jgdr8h4bs" path="res://systems/ui/menus/end_screens/demo_end_screen.tscn" id="11_yqdb4"]
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="12_eqf1x"]
-[ext_resource type="PackedScene" uid="uid://dx6fby17l2h4g" path="res://systems/ui/menus/end_screens/win_screen.tscn" id="13_4gtrh"]
 
 [node name="FinalBattleEvent" type="Node"]
 script = ExtResource("2_divep")
@@ -23,7 +23,8 @@ battle_2_lose_dia = ExtResource("8_rq453")
 match_won = ExtResource("9_vq0ve")
 match_lose = ExtResource("10_e4xsh")
 battleField = ExtResource("12_eqf1x")
-winEvent = ExtResource("13_4gtrh")
+winEvent = ExtResource("11_yqdb4")
+loseEvent = ExtResource("11_yqdb4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

@@ -1,24 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://bml43x2miuf00"]
+[gd_scene load_steps=11 format=3 uid="uid://bml43x2miuf00"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/battle_event.gd" id="1_wmokr"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="2_6v8j4"]
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="2_lypsq"]
 [ext_resource type="Resource" uid="uid://dsnuml0koyymo" path="res://data/enemy/enemy_basic2.tres" id="3_5cs1e"]
-[ext_resource type="PackedScene" uid="uid://cn0otoe0nvpis" path="res://systems/dungeon_events/battle_over_reward.tscn" id="3_ukc1v"]
 [ext_resource type="Resource" uid="uid://bbauyln5wkjpt" path="res://data/enemy/enemy_basic1.tres" id="3_yr20d"]
 [ext_resource type="Resource" uid="uid://dxl1hxrirkmwg" path="res://data/enemy/enemy_basic3.tres" id="4_whs7y"]
 [ext_resource type="Resource" uid="uid://bofquw5kvq26v" path="res://data/enemy/enemy_basic4.tres" id="5_7xyn1"]
 [ext_resource type="Resource" uid="uid://csg83e4kph6xm" path="res://data/enemy/enemy_basic5.tres" id="6_58mr7"]
 [ext_resource type="Resource" uid="uid://donbjfyb40dw5" path="res://data/enemy/enemy_basic6.tres" id="7_upvdn"]
-[ext_resource type="PackedScene" uid="uid://ddpmd4cji8uva" path="res://systems/ui/menus/end_screens/lose_screen.tscn" id="32_61t8p"]
+[ext_resource type="PackedScene" uid="uid://dvm3jgdr8h4bs" path="res://systems/ui/menus/end_screens/demo_end_screen.tscn" id="10_elxm4"]
 
 [node name="BattleEvent" type="Node"]
 process_mode = 1
 script = ExtResource("1_wmokr")
 potential_enemies = Array[ExtResource("2_6v8j4")]([ExtResource("3_yr20d"), ExtResource("3_5cs1e"), ExtResource("4_whs7y"), ExtResource("5_7xyn1"), ExtResource("6_58mr7"), ExtResource("7_upvdn")])
 battleField = ExtResource("2_lypsq")
-winEvent = ExtResource("3_ukc1v")
-loseEvent = ExtResource("32_61t8p")
+winEvent = ExtResource("10_elxm4")
+loseEvent = ExtResource("10_elxm4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
