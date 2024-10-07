@@ -116,3 +116,7 @@ func _SFX_Coin():
 
 func _SFX_Money():
 	$Money.play()
+
+func _SFX_Signature(audio_stream):
+	$Signature.set_stream(audio_stream)
+	$Signature.play()
