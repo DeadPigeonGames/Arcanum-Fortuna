@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cegqtmafpc7yc"]
+[gd_scene load_steps=28 format=3 uid="uid://cegqtmafpc7yc"]
 
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="1_btvdi"]
 [ext_resource type="Script" path="res://systems/effects/victory_animation.gd" id="1_gnn8w"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bfwexv8yqir7x" path="res://assets/ui/victory/coin_spritesheet.png" id="10_dnl6x"]
 [ext_resource type="Shader" path="res://assets/sprites/vfx/coin_shine.gdshader" id="10_h7ivs"]
 [ext_resource type="Texture2D" uid="uid://bfngpy5qc1ayi" path="res://assets/ui/victory/victorious_particle.png" id="12_pogu0"]
+[ext_resource type="Script" path="res://systems/effects/sprite_2d.gd" id="12_ssdnf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4wfv"]
 shader = ExtResource("2_7ldh2")
@@ -719,6 +720,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Underlay1" type="TextureRect" parent="CanvasLayer/TextureRect"]
+layout_mode = 0
 offset_top = -16.0
 offset_right = 417.0
 offset_bottom = 401.0
@@ -726,6 +728,7 @@ texture = ExtResource("6_0a7xh")
 expand_mode = 1
 
 [node name="Underlay3" type="TextureRect" parent="CanvasLayer/TextureRect"]
+layout_mode = 0
 offset_left = -37.0
 offset_top = -51.0
 offset_right = 461.0
@@ -756,6 +759,7 @@ expand_mode = 1
 [node name="VictoriousText" type="TextureRect" parent="CanvasLayer/TextureRect"]
 visible = false
 material = SubResource("ShaderMaterial_wdd38")
+layout_mode = 0
 offset_left = 4.0
 offset_top = -60.0
 offset_right = 415.0
@@ -773,6 +777,7 @@ sprite_frames = SubResource("SpriteFrames_cxce5")
 animation = &"spin"
 frame_progress = 0.213261
 speed_scale = 2.5
+script = ExtResource("12_ssdnf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
