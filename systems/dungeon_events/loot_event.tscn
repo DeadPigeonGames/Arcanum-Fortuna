@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=66 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
@@ -51,9 +51,6 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8kmdt"]
 texture = ExtResource("33_jtbte")
-
-[sub_resource type="LabelSettings" id="LabelSettings_wl2yu"]
-font_size = 151
 
 [sub_resource type="LabelSettings" id="LabelSettings_y4wuy"]
 font_size = 96
@@ -394,46 +391,34 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/Control/Label:visible")
+tracks/3/path = NodePath("CanvasLayer/BigBlob:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayer/BigBlob:visible")
+tracks/4/path = NodePath("CanvasLayer/skip_reward:offset_top")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [-512]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasLayer/skip_reward:offset_top")
+tracks/5/path = NodePath("CanvasLayer/skip_reward:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-512]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/skip_reward:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -552,22 +537,10 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Control/Label:visible")
+tracks/2/path = NodePath("CanvasLayer/BigBlob:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/BigBlob:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -616,20 +589,6 @@ card_spacing = 30.0
 card_hidden_height = 0
 card_arc = 0.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -392.0
-offset_right = 392.0
-offset_bottom = 210.0
-grow_horizontal = 2
-text = "Pick a card"
-label_settings = SubResource("LabelSettings_wl2yu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="GoldLabel" type="Label" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -649,17 +608,18 @@ vertical_alignment = 1
 
 [node name="SkipRewardLabel" type="Label" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
-visible = false
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -618.0
-offset_top = 867.0
+offset_top = 708.235
 offset_right = 640.0
-offset_bottom = 1011.0
+offset_bottom = 852.235
 grow_horizontal = 2
-text = "- %d Gold granted for skipping the card -"
+text = "%d Gold granted 
+for skipping the card"
 label_settings = SubResource("LabelSettings_dkqdp")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -799,29 +759,29 @@ script = ExtResource("45_juwu1")
 [node name="Coin1" type="TextureRect" parent="CanvasLayer"]
 offset_left = 473.0
 offset_top = 737.0
-offset_right = 553.0
-offset_bottom = 817.0
+offset_right = 562.0
+offset_bottom = 825.0
 texture = ExtResource("45_0byj7")
 
 [node name="Coin2" type="TextureRect" parent="CanvasLayer"]
 offset_left = 443.0
 offset_top = 535.0
-offset_right = 523.0
-offset_bottom = 615.0
+offset_right = 532.0
+offset_bottom = 623.0
 texture = ExtResource("45_0byj7")
 
 [node name="Coin3" type="TextureRect" parent="CanvasLayer"]
 offset_left = 609.0
 offset_top = 718.0
-offset_right = 689.0
-offset_bottom = 798.0
+offset_right = 698.0
+offset_bottom = 806.0
 texture = ExtResource("45_0byj7")
 
 [node name="Coin4" type="TextureRect" parent="CanvasLayer"]
 offset_left = 533.0
 offset_top = 830.0
-offset_right = 613.0
-offset_bottom = 910.0
+offset_right = 622.0
+offset_bottom = 918.0
 texture = ExtResource("45_0byj7")
 
 [node name="MoneyBag" type="Sprite2D" parent="CanvasLayer"]
