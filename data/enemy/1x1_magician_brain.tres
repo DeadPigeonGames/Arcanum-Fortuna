@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=10 format=3 uid="uid://jjtikj8jwpeh"]
+
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_2gis5"]
+[ext_resource type="Resource" uid="uid://clbklsr1u3gn5" path="res://data/cards/page_of_daggers.tres" id="2_fpp3g"]
+[ext_resource type="Resource" uid="uid://bjlneh5al3d8x" path="res://data/cards/queen_of_daggers.tres" id="4_jvc7c"]
+[ext_resource type="Resource" uid="uid://s2luhru0dtce" path="res://data/cards/knight_of_daggers.tres" id="5_qco6x"]
+[ext_resource type="Resource" uid="uid://wx2v5wr88lof" path="res://data/cards/the_hierophant.tres" id="6_fb6as"]
+[ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="7_ahwxn"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain.gd" id="8_jhfjh"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_strategy_module.gd" id="9_niqd6"]
+[ext_resource type="Resource" uid="uid://1udixxkqvcyb" path="res://data/enemy/StrategyModules/enemy_basic_karma_module.tres" id="10_8wpak"]
+
+[resource]
+script = ExtResource("8_jhfjh")
+available_cards = Array[ExtResource("1_2gis5")]([ExtResource("7_ahwxn"), ExtResource("6_fb6as"), ExtResource("2_fpp3g"), ExtResource("4_jvc7c"), ExtResource("4_jvc7c"), ExtResource("5_qco6x")])
+strategy_modules = Array[ExtResource("9_niqd6")]([ExtResource("10_8wpak")])

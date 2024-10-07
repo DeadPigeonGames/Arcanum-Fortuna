@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=10 format=3 uid="uid://cbluig538popf"]
+
+[ext_resource type="Resource" uid="uid://bgl8jt11g7kr8" path="res://data/enemy/2x1_moon_brain.tres" id="1_pfmqv"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_5yx8q"]
+[ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_hgkei"]
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_bpmwd"]
+[ext_resource type="Resource" uid="uid://dqu25ohu65ud8" path="res://data/enemy/enemy_basic_brain_stats1.tres" id="5_gwmh3"]
+[ext_resource type="Resource" uid="uid://cfiqtgldipt1n" path="res://data/enemy/enemy_basic_brain_stats2.tres" id="6_pf2h5"]
+[ext_resource type="Resource" uid="uid://cwjcmx0yjc8yb" path="res://data/enemy/enemy_basic_brain_stats3.tres" id="7_o8n6b"]
+[ext_resource type="Resource" uid="uid://clikgbpfsryhc" path="res://data/enemy/enemy_basic_brain_stats4.tres" id="8_iw28d"]
+[ext_resource type="Resource" uid="uid://cndjpbnxujjjl" path="res://data/enemy/enemy_basic_brain_stats5.tres" id="9_xia41"]
+
+[resource]
+script = ExtResource("3_hgkei")
+title = "The Moon"
+brain = ExtResource("1_pfmqv")
+stats_per_level = Array[ExtResource("4_bpmwd")]([ExtResource("5_gwmh3"), ExtResource("6_pf2h5"), ExtResource("7_o8n6b"), ExtResource("8_iw28d"), ExtResource("9_xia41")])
+gold_reward = 4
+min_level = 0
+max_level = 2
+demo_start_karma = 0
+dialog_data = Array[ExtResource("2_5yx8q")]([])
+level = 0
