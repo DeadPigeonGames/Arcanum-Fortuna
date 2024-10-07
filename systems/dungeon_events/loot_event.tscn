@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bggcv7yipjcm7"]
+[gd_scene load_steps=73 format=3 uid="uid://bggcv7yipjcm7"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/loot_event.gd" id="1_dmmsx"]
 [ext_resource type="PackedScene" uid="uid://dxphpuocbhbrg" path="res://systems/card_combat/cards/select_card.tscn" id="1_panx4"]
@@ -64,6 +64,9 @@ shader = ExtResource("35_0dxam")
 shader_parameter/shine_color = Color(1, 1, 1, 0.0431373)
 shader_parameter/shine_speed = 6.0
 shader_parameter/shine_size = 0.01
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qj40"]
+texture = ExtResource("40_wqm2k")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g41n5"]
 texture = ExtResource("41_01nxp")
@@ -710,7 +713,6 @@ text = "Confirm
 
 [node name="SkipButton" type="Button" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -724,6 +726,7 @@ offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxTexture_0qj40")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_g41n5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vwna8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bfqs3")
