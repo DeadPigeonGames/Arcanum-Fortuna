@@ -89,3 +89,11 @@ func _on_credits_button_button_up():
 func _on_quit_button_button_up():
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
+
+
+func _on_foolio_button_button_up() -> void:
+	var sfx = load("res://Audio/Signatures/SignatureFool.ogg")
+	var vfx : CPUParticles2D = %FoolDefault.get_child(0)
+	if vfx.has_method("restart"):
+		vfx.restart()
+	SfxOther._SFX_Signature(sfx)
