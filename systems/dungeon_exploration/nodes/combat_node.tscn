@@ -14,7 +14,6 @@ level_gain = 0.34
 disabledColor = Color(0.745098, 0.745098, 0.745098, 1)
 
 [node name="icon" parent="background" index="0"]
-visible = true
 texture = ExtResource("3_b4kjy")
 
 [node name="ShowTooltip" type="Control" parent="." index="1"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyDialog" load_steps=3 format=3 uid="uid://dfg1dgqmgi2tx"]
+
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="1_e7ywu"]
+[ext_resource type="Texture2D" uid="uid://ch8v0pwdsbak0" path="res://assets/sprites/dialogue/dg_empress.png" id="2_dp2ri"]
+
+[resource]
+script = ExtResource("1_e7ywu")
+dialogue_lines = "This is my Keycard!"
+character_image = ExtResource("2_dp2ri")
+trigger_type = 70

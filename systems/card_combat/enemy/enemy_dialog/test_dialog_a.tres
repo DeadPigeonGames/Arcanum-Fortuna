@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyDialog" load_steps=5 format=3 uid="uid://bcuj4f7qyk7dv"]
+
+[ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="1_ml0uc"]
+[ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="1_r6cmh"]
+[ext_resource type="Texture2D" uid="uid://ptcvve2g0k1b" path="res://assets/sprites/dialogue/dg_magician.png" id="2_2e688"]
+[ext_resource type="AudioStream" uid="uid://c2h2cko1rwobc" path="res://Audio/Signatures/SignatureMagician.ogg" id="4_n3uw4"]
+
+[resource]
+script = ExtResource("1_ml0uc")
+dialogue_lines = "Hello sexy stud!"
+character_image = ExtResource("2_2e688")
+sound_effect = ExtResource("4_n3uw4")
+trigger_type = 50
+card_data = ExtResource("1_r6cmh")
