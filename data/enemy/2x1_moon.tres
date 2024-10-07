@@ -12,7 +12,7 @@
 
 [resource]
 script = ExtResource("3_hgkei")
-title = "The bad guy"
+title = "The Moon"
 brain = ExtResource("1_pfmqv")
 stats_per_level = Array[ExtResource("4_bpmwd")]([ExtResource("5_gwmh3"), ExtResource("6_pf2h5"), ExtResource("7_o8n6b"), ExtResource("8_iw28d"), ExtResource("9_xia41")])
 gold_reward = 4

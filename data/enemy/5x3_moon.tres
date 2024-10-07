@@ -12,12 +12,12 @@
 
 [resource]
 script = ExtResource("3_seq0t")
-title = "The bad guy"
+title = "The Moon"
 brain = ExtResource("1_vswdv")
 stats_per_level = Array[ExtResource("4_u6qyx")]([ExtResource("5_mh6bb"), ExtResource("6_a6jvm"), ExtResource("7_h8bd4"), ExtResource("8_ymtw7"), ExtResource("9_fk7ft")])
 gold_reward = 4
 min_level = 0
 max_level = 2
-demo_start_karma = 0
+demo_start_karma = 1
 dialog_data = Array[ExtResource("2_165kb")]([])
 level = 0

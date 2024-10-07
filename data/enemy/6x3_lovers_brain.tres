@@ -17,5 +17,5 @@
 
 [resource]
 script = ExtResource("8_hw6fq")
-available_cards = Array[ExtResource("1_brryh")]([ExtResource("2_pa16k"), ExtResource("3_4dqpv"), ExtResource("7_rh786"), ExtResource("5_yovoq"), ExtResource("6_4j13d"), ExtResource("7_5aqqt"), ExtResource("8_ayjvk"), ExtResource("2_5kyk2"), ExtResource("4_poejv"), ExtResource("4_poejv"), ExtResource("5_fyg1t")])
+available_cards = Array[ExtResource("1_brryh")]([ExtResource("2_pa16k"), ExtResource("3_4dqpv"), ExtResource("7_rh786"), ExtResource("5_yovoq"), ExtResource("6_4j13d"), ExtResource("7_5aqqt"), ExtResource("8_ayjvk"), ExtResource("2_5kyk2"), ExtResource("4_poejv"), ExtResource("4_poejv"), ExtResource("5_fyg1t"), ExtResource("7_5aqqt")])
 strategy_modules = Array[ExtResource("9_qk2ic")]([ExtResource("10_oxajp")])
