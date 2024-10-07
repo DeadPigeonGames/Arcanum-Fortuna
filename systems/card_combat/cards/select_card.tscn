@@ -44,6 +44,15 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.968627, 0.509804, 0, 1)
 
+[node name="KarmaCost" parent="Cost" index="0"]
+theme_override_constants/outline_size = 8
+
+[node name="HealthCost" parent="Health" index="0"]
+theme_override_constants/outline_size = 8
+
+[node name="AttackCost" parent="Attack" index="0"]
+theme_override_constants/outline_size = 8
+
 [node name="SingletonInteractor2" parent="." index="9" instance=ExtResource("4_0aol1")]
 singleton = 1
 method_to_call = "_SFX_HandCardHover"
