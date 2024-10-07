@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://bgnfygppug76"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://dx6sp4jrqr6b4"]
 
-[ext_resource type="Resource" uid="uid://dmopfxv0u8pde" path="res://data/enemy/7_boss_star3_brain.tres" id="1_ygxam"]
+[ext_resource type="Resource" path="res://data/enemy/7_boss_star3_brain.tres" id="1_ygxam"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_cetlh"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_ief06"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_m2kl7"]
-[ext_resource type="Resource" uid="uid://troibo7axc8p" path="res://data/enemy/enemy_basic_brain_stats6.tres" id="5_wgicy"]
+[ext_resource type="Resource" uid="uid://cytxds0tvmhrb" path="res://data/enemy/enemy_basic_brain_stats6.tres" id="5_wgicy"]
 
 [resource]
 script = ExtResource("3_ief06")

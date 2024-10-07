@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c2as6vbqpnrve"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c2as6vbqpnrve"]
 
 [ext_resource type="Texture2D" uid="uid://c2afwlwhg0cbh" path="res://assets/ui/underlays/tutorial_next_button_hover.png" id="2_8fpiv"]
 [ext_resource type="Texture2D" uid="uid://4vvxp0rt66a0" path="res://assets/ui/underlays/tutorial_next_button.png" id="3_83yqt"]
 [ext_resource type="Texture2D" uid="uid://brwth1cudv55l" path="res://assets/ui/underlays/tutorial_next_button_pressed.png" id="4_dc65w"]
 [ext_resource type="FontFile" uid="uid://blayaykyjq32c" path="res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf" id="5_pxeiv"]
 [ext_resource type="FontFile" uid="uid://dllh36u2fct2k" path="res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Bold.otf" id="6_rdoiv"]
+[ext_resource type="FontFile" uid="uid://gidsgmeqtl64" path="res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Italic.otf" id="6_ybuo5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4feve"]
 
@@ -33,4 +34,5 @@ RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/font_sizes/bold_font_size = 26
 RichTextLabel/font_sizes/normal_font_size = 26
 RichTextLabel/fonts/bold_font = ExtResource("6_rdoiv")
+RichTextLabel/fonts/italics_font = ExtResource("6_ybuo5")
 RichTextLabel/fonts/normal_font = ExtResource("5_pxeiv")
