@@ -7,6 +7,7 @@ signal drag_ended(card)
 
 @export var drag_offset := Vector2(25, 25)
 @export var is_auto_drag_offset := false
+@export var max_offset_shadow := 50.0
 
 static var held_card : HandCard
 var is_picked_up = false
@@ -35,6 +36,8 @@ func _process(delta):
 	if mouse_filter == MOUSE_FILTER_PASS:
 		check_hand_is_hovered()
 	
+	%CardShadow.visible = is_picked_up
+	
 	var target_scale = base_scale
 	if is_hovered:
 		target_scale = base_scale * 1.1
@@ -52,10 +55,13 @@ func _process(delta):
 		global_position = target_position # global_position.lerp(target_position, 0.5)
 		target_scale = base_scale
 	scale = scale.lerp(target_scale, 0.1)
+	
+	move_shadow()
 
 
 func _input(event: InputEvent):
-	if SceneHandler.current_ui_window:
+	if SceneHandler.get_current_ui_window() or\
+	SceneHandler.get_current_dialogic():
 		return
 	
 	if is_hovered and event.is_action_released("ui_rmb"):
@@ -74,7 +80,8 @@ func _input(event: InputEvent):
 
 
 func check_hand_is_hovered():
-	if SceneHandler.current_ui_window:
+	if SceneHandler.get_current_ui_window() or\
+	SceneHandler.get_current_dialogic():
 		is_hovered = false
 		return
 	
@@ -86,6 +93,14 @@ func check_hand_is_hovered():
 	
 	if hand and not (get_parent() == hand) and hand.is_card_dragged:
 		is_hoverable = false
+
+
+func move_shadow():
+	var screen_center: Vector2 = get_viewport_rect().get_center()
+	var distance: float = global_position.x - screen_center.x
+	
+	%CardShadow.position.x = lerp(0.0, -sign(distance) * max_offset_shadow, abs(distance/(screen_center.x)))
+	%CardShadow.position.y = max_offset_shadow / 2.0
 
 
 func pickup():

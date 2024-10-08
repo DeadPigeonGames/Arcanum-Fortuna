@@ -115,7 +115,8 @@ func derivative(x):
 
 
 func check_show_cards(count):
-	if SceneHandler.current_ui_window:
+	if SceneHandler.get_current_ui_window() or\
+	SceneHandler.get_current_dialogic():
 		show_cards = false
 		return
 	

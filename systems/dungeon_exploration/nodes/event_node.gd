@@ -132,7 +132,7 @@ func click():
 
 
 func _trigger_event():
-	await trigger_dialog(demo_dialogic_begin)
+	await SceneHandler.trigger_dialog(demo_dialogic_begin)
 	
 	var test_instance = event.instantiate()
 	if test_instance is RunEndScreen:
@@ -169,16 +169,3 @@ func _draw():
 		var target = node.position + (node.get_rect().size * Vector2(1, -1)) / 2 - position
 		var direction = target.normalized()
 		draw_dashed_line(direction * offset, target - direction * offset, node.get_required_color(), node.width, node.dashed_width, true)
-
-
-func trigger_dialog(dialog : DialogicTimeline):
-	if not dialog:
-		return
-	SceneHandler.set_visibility_ui_container(false)
-	ScreenFade.tint_screen(Color.BLACK, 0.8, 1.0)
-	SceneHandler.current_ui_window =\
-	Dialogic.start(dialog)
-	await Dialogic.timeline_ended
-	ScreenFade.reset_tint(0.2)
-	await ScreenFade.tint_complete
-	SceneHandler.set_visibility_ui_container(true)

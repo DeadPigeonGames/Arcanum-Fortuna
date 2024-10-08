@@ -93,9 +93,9 @@ func switch_tab_visible(tab):
 func set_is_current_window(value : bool):
 	is_current_window = value
 	if value:
-		SceneHandler.current_ui_window = self
+		SceneHandler.set_current_ui_window(self)
 	else:
-		SceneHandler.current_ui_window = null
+		SceneHandler.set_current_ui_window(null)
 
 
 func show_ui():

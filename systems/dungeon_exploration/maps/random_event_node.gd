@@ -36,7 +36,7 @@ func _ready():
 
 
 func _trigger_event():
-	await trigger_dialog(demo_dialogic_begin)
+	await SceneHandler.trigger_dialog(demo_dialogic_begin)
 	
 	var selected_enemy = null
 	var was_battle_event = false
@@ -71,4 +71,4 @@ func _trigger_event():
 	await instance.finished
 	if was_battle_event:
 		get_parent().combat_ended.emit()
-	await trigger_dialog(demo_dialogic_end)
+	await SceneHandler.trigger_dialog(demo_dialogic_end)

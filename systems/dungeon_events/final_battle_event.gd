@@ -34,10 +34,10 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	
 	if battle_won_1:
 		player_data.health = remaining_life
-		await trigger_dialog(battle_1_win_dia)
+		await SceneHandler.trigger_dialog(battle_1_win_dia)
 	else:
 		player_data.health = reset_hp
-		await trigger_dialog(battle_1_lose_dia)
+		await SceneHandler.trigger_dialog(battle_1_lose_dia)
 	
 	await reset_battle(field)
 	
@@ -50,19 +50,19 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	if battle_won_2 == true:
 		player_data.health = remaining_life
 		if battle_won_1:
-			await trigger_dialog(match_won)
+			await SceneHandler.trigger_dialog(match_won)
 			await trigger_end(field, player_data, enemy_data)
 			return # end
 		else:
-			await trigger_dialog(battle_2_win_dia)
+			await SceneHandler.trigger_dialog(battle_2_win_dia)
 			is_match_3 = true # Trigger 3
 	else: # == false
 		if battle_won_1 == false:
-			await trigger_dialog(match_lose)
+			await SceneHandler.trigger_dialog(match_lose)
 			await trigger_end(field, player_data, enemy_data)
 			return
 			# end
-		await trigger_dialog(battle_2_lose_dia)
+		await SceneHandler.trigger_dialog(battle_2_lose_dia)
 		is_match_3 = true # Trigger 3
 		player_data.health = reset_hp
 	
@@ -76,10 +76,10 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	battle_won_3 = remaining_life > 0
 	
 	if battle_won_3:
-		await trigger_dialog(match_won)
+		await SceneHandler.trigger_dialog(match_won)
 		await trigger_end(field, player_data, enemy_data)
 	else:
-		await trigger_dialog(match_lose)
+		await SceneHandler.trigger_dialog(match_lose)
 		await trigger_end(field, player_data, enemy_data)
 	
 	finished.emit()
@@ -114,19 +114,6 @@ func start_battle(field, player_data : PlayerData, enemy_data : EnemyData) -> in
 	
 	var remainingLife = await field.finished
 	return remainingLife
-
-
-func trigger_dialog(dialog : DialogicTimeline):
-	if not dialog:
-		return
-	SceneHandler.set_visibility_ui_container(false)
-	ScreenFade.tint_screen(Color.BLACK, 0.8, 1.0)
-	SceneHandler.current_ui_window =\
-	Dialogic.start(dialog)
-	await Dialogic.timeline_ended
-	ScreenFade.reset_tint(0.2)
-	await ScreenFade.tint_complete
-	SceneHandler.set_visibility_ui_container(true)
 
 
 func reset_battle(field):

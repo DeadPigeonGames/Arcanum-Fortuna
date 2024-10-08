@@ -6,6 +6,7 @@ var current_scene
 @onready var ui_container = $UIContainer
 var combat : CardBattle
 var current_ui_window
+var current_dialogic : DialogicLayoutBase
 
 
 func _ready():
@@ -58,3 +59,33 @@ func get_instantiated_scene(element):
 		element_to_add = load(element).instantiate()
 	
 	return element_to_add
+
+
+static func trigger_dialog(dialog : DialogicTimeline):
+	if not dialog:
+		return
+	SceneHandler.set_visibility_ui_container(false)
+	ScreenFade.tint_screen(Color.BLACK, 0.8, 1.0)
+	var scene = Dialogic.start(dialog)
+	SceneHandler.set_current_dialogic(scene)
+	await Dialogic.timeline_ended
+	ScreenFade.reset_tint(0.2)
+	await ScreenFade.tint_complete
+	SceneHandler.set_visibility_ui_container(true)
+	SceneHandler.set_current_dialogic(null)
+
+
+func get_current_ui_window():
+	return current_ui_window
+
+
+func set_current_ui_window(ui_window : UIBase):
+	current_ui_window = ui_window
+
+
+func get_current_dialogic():
+	return current_dialogic
+
+
+func set_current_dialogic(dialogic_scene : DialogicLayoutBase):
+	current_dialogic = dialogic_scene

@@ -9,6 +9,7 @@ mouse_filter = 2
 script = ExtResource("1_85cwi")
 drag_offset = Vector2(25, 25)
 is_auto_drag_offset = true
+max_offset_shadow = 50.0
 
 [node name="Artwork" parent="." index="0"]
 mouse_filter = 2
@@ -129,5 +130,16 @@ mouse_filter = 2
 
 [node name="ShowCardTooltip" parent="." index="17"]
 mouse_filter = 2
+
+[node name="CardShadow" type="ColorRect" parent="." index="18"]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0687983, 0.0687983, 0.0687983, 0.882353)
 
 [editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
