@@ -90,13 +90,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
+offset_left = 44.0
 offset_top = -144.0
-offset_right = 384.0
+offset_right = 409.0
 offset_bottom = -64.0
 grow_vertical = 0
 theme = ExtResource("2_3l6i4")
-text = "RETURN"
+text = " RETURN"
 alignment = 0
 
 [node name="HoverSound" parent="CreditsMenu/ReturnButton" instance=ExtResource("4_y3lcj")]

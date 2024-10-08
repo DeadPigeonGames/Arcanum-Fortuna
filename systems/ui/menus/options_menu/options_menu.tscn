@@ -58,9 +58,9 @@ text = "or the illusion of them"
 
 [node name="OptionsMenuButtons" type="VBoxContainer" parent="OptionsMenu"]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 44.0
 offset_top = 320.0
-offset_right = 384.0
+offset_right = 590.0
 offset_bottom = 560.0
 theme_override_constants/separation = 0
 
@@ -68,7 +68,7 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = "AUDIO"
+text = " AUDIO"
 alignment = 0
 
 [node name="HoverSound" parent="OptionsMenu/OptionsMenuButtons/AudioButton" instance=ExtResource("6_4sw4x")]
@@ -85,7 +85,7 @@ connect_signal = "button_up"
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = "VIDEO"
+text = " VIDEO"
 alignment = 0
 
 [node name="HoverSound" parent="OptionsMenu/OptionsMenuButtons/VideoButton" instance=ExtResource("6_4sw4x")]
@@ -102,7 +102,7 @@ connect_signal = "button_up"
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
-text = "ACCESSIBILITY"
+text = " ACCESSIBILITY"
 alignment = 0
 
 [node name="HoverSound" parent="OptionsMenu/OptionsMenuButtons/AccessibilityButton" instance=ExtResource("6_4sw4x")]
@@ -678,13 +678,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
+offset_left = 44.0
 offset_top = -144.0
-offset_right = 384.0
+offset_right = 380.0
 offset_bottom = -64.0
 grow_vertical = 0
 theme = ExtResource("3_x54wv")
-text = "RETURN"
+text = " RETURN"
 alignment = 0
 
 [node name="HoverSound" parent="OptionsMenu/ReturnButton" instance=ExtResource("6_4sw4x")]
