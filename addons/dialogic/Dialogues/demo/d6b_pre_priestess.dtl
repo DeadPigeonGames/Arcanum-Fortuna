@@ -2,7 +2,7 @@
 join the_dog rightmost
 the_dog: Damn birds. You’d think they’d be quieter at night. Instead, there’s this ruckus.
 join the_fool (default) leftmost
-[wait_input]
+[wait_input hide_text="false"]
 - SOUNDS LIKE SOMEONE’S SCARED.
 	the_dog: Scared!? Buddy, infuriated is more it. \\
 If not at night, when can I expect myself some damn peace and quiet?
@@ -22,15 +22,15 @@ I’m merely saying, birdsong would at least be preferable to this capricious sc
 leave the_dog
 leave the_fool
 Enraptured by your banter, you approach a clearing and the cawing gets even louder, before falling to a deafening silence the moment you take another step forward.
-You look down and see that you’ve stepped into a circle of mushrooms. \\
+You look down and see that you’ve stepped into a circle of mushrooms. \
 In the middle, a large pillar juts out, and from the silence the flapping of a pair of massive wings erupts.
-A birdlike woman stands tall before you, her face veiled by the star-dotted night sky. \\
+A birdlike woman stands tall before you, her face veiled by the star-dotted night sky. \
 She speaks, and her voice reverberates in an uncanny chant.
 [sound path="res://Audio/Signatures/SignatureHighPriestess.ogg" volume="0.0"]
 join the_high_priestess rightmost
 join the_fool (default_w_dog) leftmost
 the_high_priestess: You, you seek aid and have found me for it. But I know you seek more than that, than that. Speak. Speak.
-[wait_input]
+[wait_input hide_text="false"]
 - ASK HER ABOUT THE PAIN YOU’RE IN
 	the_high_priestess: A sensible request, request.
 - ASK HER FOR GUIDANCE
