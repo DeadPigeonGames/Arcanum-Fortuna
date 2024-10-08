@@ -112,8 +112,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("2_myi76")
 title = "[b]Your Foes' Karma"
-text = "Cards on their side of the boards will add their
-combined cost to their [img=35]res://assets/ui/icons/karma_icon_small.png[/img] karma total each turn.
+text = "Cards on their side of the boards will add their combined cost to their [img=35]res://assets/ui/icons/karma_icon_small.png[/img] karma total each turn.
 Whenever their [img=35]res://assets/ui/icons/karma_icon_small.png[/img] karma would go below zero the excess amount is substracted from their [img=35]res://assets/ui/icons/hp_icon_small.png[/img] health instead."
 hover_min_duration = 0.2
 
