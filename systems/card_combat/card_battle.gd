@@ -78,6 +78,7 @@ func init(player_data, enemy_data):
 
 func _input(event):
 	if not OS.has_feature("no-cheat") && event.is_action_pressed("debug_quit"):
+		SfxBg._SFX_HealthToHighPass(0, 0)
 		finished.emit(player.health)
 
 
@@ -192,6 +193,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	var was_lethal = await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly))
 	if was_lethal:
 		if was_target_player:
+			SfxBg._SFX_HealthToHighPass(0, 0)
 			finished.emit(player.health)
 			if not is_tutorial:
 				is_battle_over = true
