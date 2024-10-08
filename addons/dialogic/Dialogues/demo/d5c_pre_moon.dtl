@@ -1,6 +1,6 @@
+[style name="StyleOtherSpeaker"]
 join the_dog rightmost
 join the_fool (default) leftmost
-[style name="StyleOtherSpeaker"]
 the_dog: Odd. There’s few stars tonight.
 leave the_dog
 join the_moon rightmost

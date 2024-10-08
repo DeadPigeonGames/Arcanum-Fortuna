@@ -1,3 +1,4 @@
+[style name="StyleOtherSpeaker"]
 As you continue on along your journey, the air in front of you starts to warp, so subtle you almost pass it off as a trick of the eye, or merely the cold biting at your bones.
 .
 - Step back
@@ -7,7 +8,6 @@ As you continue on along your journey, the air in front of you starts to warp, s
 \[wave]It begins to shimmer and sparkle, growing in intensity...[/wave]
 \[shake rate=10.0]Until it bursts in a furious flash of light that leaves you seeing stars.[/shake]
 join the_star 4
-[style name="StyleOtherSpeaker"]
 the_star: [wave]Well met![/wave]
 join the_fool 1
 [style name="arcanum_fortuna_style_ba

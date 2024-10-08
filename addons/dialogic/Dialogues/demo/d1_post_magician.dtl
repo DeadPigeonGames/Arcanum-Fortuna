@@ -1,6 +1,6 @@
+[style name="StyleOtherSpeaker"]
 join the_magician rightmost
 join the_fool (default_w_dog) leftmost
-[style name="StyleOtherSpeaker"]
 
 the_magician: A fine pupil! You’ll go far.
 [wait_input hide_text="false"]

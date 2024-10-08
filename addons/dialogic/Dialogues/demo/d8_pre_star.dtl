@@ -1,3 +1,4 @@
+[style name="StyleOtherSpeaker"]
 At long last, you arrive at a yawning precipice, the soft glow of the city stretched out below, just out of reach. \
 The smattering of lights from within the buildings hide the stars, artificially outshining them.
 You suddenly feel dizzy, as though the horizon were flipped.
@@ -28,7 +29,7 @@ In your daze you call out to your companion, but only silence answers you.
 	join the_star rightmost
 	[style name="StyleOtherSpeaker"]
 	the_star: I get that one a lot.
-A figure floats before you, their uncanny eyes perfectly level with yours.
+A figure floats before you, their uncanny eyes perfectly level with yours. 
 the_star: You must have come a long way, to find me. \
 I am, after all, not easily found.
 leave the_star
@@ -38,13 +39,13 @@ the_star: Love the hat, by the way. Where’s your dog?
 leave the_star
 the_fool: He’s not my dog. He’s more of a friend. Mind of his own.\
 Who are you?
-join the_star (default) right
-the_star: Oh, you, me. We aren’t all that different. You’ll find out.
+join the_star right
+the_star: Oh, you, me. We aren’t all that different. You’ll find out. 
 the_star: Say, how about a match of cards?
 the_star: Beware though, that this one will be different to the ones you’ve played so far.
 leave the_star
 the_star: I mean, besides all the risk of real bodily injury from a poor defense, or an imbalanced karma. \
-That’s all part of the fun, as you must know.
-join the_star (var_1) center
-the_star: What I’m saying is this\: I won’t give in so easily.
-the_star (var_2): Because I know you won’t, either.
+That’s all part of the fun, as you must know. 
+join the_star center
+the_star: What I’m saying is this\: I won’t give in so easily. 
+the_star: Because I know you won’t, either.

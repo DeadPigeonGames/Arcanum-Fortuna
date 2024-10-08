@@ -1,7 +1,7 @@
+[style name="StyleOtherSpeaker"]
 It feels almost as though the rays are guiding your path onward.
 [sound path="res://Audio/Signatures/SignatureSun.ogg" volume="0.0"]
 join the_sun rightmost
-[style name="StyleOtherSpeaker"]
 the_sun: Oh! You startled me.
 the_sun: She laughs, and it is an airy chime, unlike anything you’ve heard before.\\
 It is contagious in its glee, and you feel lighter at once, as though a burden was lifted.

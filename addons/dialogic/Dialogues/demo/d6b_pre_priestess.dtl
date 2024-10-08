@@ -1,5 +1,5 @@
-join the_dog rightmost
 [style name="StyleOtherSpeaker"]
+join the_dog rightmost
 the_dog: Damn birds. You’d think they’d be quieter at night. Instead, there’s this ruckus.
 join the_fool (default) leftmost
 [wait_input]

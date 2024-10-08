@@ -1,7 +1,7 @@
+[style name="StyleOtherSpeaker"]
 join the_fool (default_w_dog) 0
 Sure, steady footsteps approach you.
 join the_magician 4
-[style name="StyleOtherSpeaker"]
 the_magician: Young one!
 the_magician: Forgive me for overhearing your conversation, but I've been looking to test my mastery of the game for some time.
 the_magician: Would you care to play?

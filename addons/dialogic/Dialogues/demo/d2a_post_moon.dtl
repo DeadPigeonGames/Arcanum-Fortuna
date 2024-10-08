@@ -1,6 +1,6 @@
+[style name="StyleOtherSpeaker"]
 join the_fool (default_w_dog) leftmost
 join the_moon rightmost
-[style name="StyleOtherSpeaker"]
 the_moon: I see. I should have known that the cards and your journey were inexorably linked.
 [wait_input hide_text="false"]
 - IT WAS AN HONOR.
