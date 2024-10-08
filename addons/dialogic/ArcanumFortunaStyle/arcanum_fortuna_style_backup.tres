@@ -40,7 +40,7 @@ overrides = {
 "box_size": "Vector2(1417, 267)",
 "italics_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Italic.otf\"",
 "name_label_box_modulate": "Color(1, 1, 1, 1)",
-"name_label_box_offset": "Vector2(80, -40)",
+"name_label_box_offset": "Vector2(80, -50)",
 "name_label_box_panel": "\"res://addons/dialogic/ArcanumFortunaStyle/name_underlay_active.tres\"",
 "name_label_box_use_global_color": "false",
 "name_label_custom_font_size": "50.0",
