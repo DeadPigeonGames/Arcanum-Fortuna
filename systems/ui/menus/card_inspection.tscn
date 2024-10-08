@@ -216,6 +216,8 @@ offset_left = 628.0
 offset_top = 362.0
 offset_right = 798.0
 offset_bottom = 628.0
+buff_color = Color(0.52549, 0.654902, 0.282353, 1)
+debuff_color = Color(0.666667, 0.105882, 0.211765, 1)
 
 [node name="CardFlavour" type="Control" parent="CardInspection"]
 layout_mode = 1

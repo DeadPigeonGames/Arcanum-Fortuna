@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cbqvu0uo5eaku"]
+[gd_scene load_steps=69 format=3 uid="uid://cbqvu0uo5eaku"]
 
 [ext_resource type="Script" path="res://systems/card_combat/card_battle.gd" id="1_7dv5d"]
 [ext_resource type="Script" path="res://systems/card_combat/game_board.gd" id="2_2jjg6"]
@@ -78,44 +78,106 @@ script = ExtResource("9_j03le")
 [sub_resource type="Resource" id="Resource_3vjfy"]
 script = ExtResource("8_qbqvo")
 
-[sub_resource type="Resource" id="Resource_6fbhe"]
-script = ExtResource("16_0alj3")
-offset_type = 0
-distance = 0.0
-element = NodePath("GameBoard")
-
 [sub_resource type="Resource" id="Resource_uyfm1"]
 script = ExtResource("17_r3b0a")
-title = "Bogus!"
-text = "Bla keks"
-highlighted_elements = Array[NodePath]([NodePath("GameBoard")])
-arrows = Array[ExtResource("16_0alj3")]([SubResource("Resource_6fbhe")])
+title = ""
+text = "Impressive, you've [b]filled your board[/b]!"
+highlighted_elements = Array[NodePath]([NodePath("GameBoard/PlayerTiles")])
+arrows = Array[ExtResource("16_0alj3")]([])
 offset_type = 0
-distance = 10.0
+distance = 300.0
+
+[sub_resource type="Resource" id="Resource_jgwi7"]
+script = ExtResource("16_0alj3")
+offset_type = 3
+distance = 100.0
+element = NodePath("CardDeletion")
+
+[sub_resource type="Resource" id="Resource_2maxg"]
+script = ExtResource("17_r3b0a")
+title = ""
+text = "Should you ever want to free up some space, you can always [b]burn some of your cards[/b]."
+highlighted_elements = Array[NodePath]([NodePath("CardDeletion")])
+arrows = Array[ExtResource("16_0alj3")]([SubResource("Resource_jgwi7")])
+offset_type = 5
+distance = 350.0
+
+[sub_resource type="Resource" id="Resource_1ombf"]
+script = ExtResource("17_r3b0a")
+title = ""
+text = "A burnt card will [b]give you its [color=#682180]karma[/color] value[/b] one last time before making room for your next card!"
+highlighted_elements = Array[NodePath]([NodePath("CardDeletion")])
+arrows = Array[ExtResource("16_0alj3")]([])
+offset_type = 5
+distance = 350.0
 
 [sub_resource type="Resource" id="Resource_6w4tl"]
 script = ExtResource("18_idmfb")
-popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_uyfm1")])
+popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_uyfm1"), SubResource("Resource_2maxg"), SubResource("Resource_1ombf")])
 
 [sub_resource type="Resource" id="Resource_y4a4t"]
 script = ExtResource("17_r3b0a")
-title = "Karma krass"
-text = "5 erreicht
-"
-highlighted_elements = Array[NodePath]([])
+title = ""
+text = "Look, you've collected a stash of [color=#682180]karma[/color]!"
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer")])
+arrows = Array[ExtResource("16_0alj3")]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_u2pnk"]
+script = ExtResource("16_0alj3")
+offset_type = 5
+distance = -100.0
+element = NodePath("CardPlayer")
+
+[sub_resource type="Resource" id="Resource_ttbn2"]
+script = ExtResource("17_r3b0a")
+title = ""
+text = "Should you ever have more [color=#682180]karma[/color] stored than you need, consider using it to [b]draw additional cards[/b]."
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer")])
+arrows = Array[ExtResource("16_0alj3")]([SubResource("Resource_u2pnk")])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_b82re"]
+script = ExtResource("17_r3b0a")
+title = ""
+text = "Be careful though, everytime you draw the [b]next card costs you extra[/b]."
+highlighted_elements = Array[NodePath]([NodePath("CardPlayer")])
 arrows = Array[ExtResource("16_0alj3")]([])
 offset_type = 0
 distance = 0.0
 
 [sub_resource type="Resource" id="Resource_ocq7p"]
 script = ExtResource("19_q1aea")
-required_karma = 5
-popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_y4a4t")])
+required_karma = 12
+popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_y4a4t"), SubResource("Resource_ttbn2"), SubResource("Resource_b82re")])
 
 [sub_resource type="Resource" id="Resource_oupgr"]
 script = ExtResource("17_r3b0a")
-title = "OMG"
-text = "LINKS AWAKENING"
+title = ""
+text = "Did you see what just happened to that card?
+I think it [b]awakened[/b]!"
+highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("16_0alj3")]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_kluhe"]
+script = ExtResource("17_r3b0a")
+title = ""
+text = "A card awakens when it's [b]unique condition is fulfilled[/b]!
+You can view this condition by [b]inspecting that card[/b]."
+highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("16_0alj3")]([])
+offset_type = 0
+distance = 0.0
+
+[sub_resource type="Resource" id="Resource_yb7sd"]
+script = ExtResource("17_r3b0a")
+title = ""
+text = "I should tell you that [b]only major arcana[/b] can awaken though.
+You can identify them by their [color=#D5863A]golden[/color] frame."
 highlighted_elements = Array[NodePath]([])
 arrows = Array[ExtResource("16_0alj3")]([])
 offset_type = 0
@@ -123,7 +185,7 @@ distance = 0.0
 
 [sub_resource type="Resource" id="Resource_f1rga"]
 script = ExtResource("20_qdb56")
-popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_oupgr")])
+popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_oupgr"), SubResource("Resource_kluhe"), SubResource("Resource_yb7sd")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rikmg"]
 bg_color = Color(1, 1, 1, 1)
