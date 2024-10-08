@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cegqtmafpc7yc"]
+[gd_scene load_steps=27 format=3 uid="uid://cegqtmafpc7yc"]
 
 [ext_resource type="Texture2D" uid="uid://dk8yqb3in1e4g" path="res://assets/sprites/cards/card_back.png" id="1_btvdi"]
 [ext_resource type="Script" path="res://systems/effects/victory_animation.gd" id="1_gnn8w"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bfwexv8yqir7x" path="res://assets/ui/victory/coin_spritesheet.png" id="10_dnl6x"]
 [ext_resource type="Shader" path="res://assets/sprites/vfx/coin_shine.gdshader" id="10_h7ivs"]
 [ext_resource type="Texture2D" uid="uid://bfngpy5qc1ayi" path="res://assets/ui/victory/victorious_particle.png" id="12_pogu0"]
-[ext_resource type="Script" path="res://systems/effects/sprite_2d.gd" id="12_ssdnf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v4wfv"]
 shader = ExtResource("2_7ldh2")
@@ -775,9 +774,9 @@ position = Vector2(209.534, 197.912)
 scale = Vector2(0.49338, 0.49338)
 sprite_frames = SubResource("SpriteFrames_cxce5")
 animation = &"spin"
+autoplay = "spin"
 frame_progress = 0.213261
 speed_scale = 2.5
-script = ExtResource("12_ssdnf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
