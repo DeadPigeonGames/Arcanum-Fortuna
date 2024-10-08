@@ -56,6 +56,9 @@ func _process(delta):
 		target_scale = base_scale
 	scale = scale.lerp(target_scale, 0.1)
 	
+	if is_picked_up:
+		SceneHandler.combat.game_board.check_hovered_tiles()
+	
 	move_shadow()
 
 
