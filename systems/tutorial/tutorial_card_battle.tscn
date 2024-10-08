@@ -1,11 +1,14 @@
-[gd_scene load_steps=88 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=91 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="2_24vt3"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/combat_phase.gd" id="2_60m5e"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/start_phase.gd" id="2_d1qe7"]
+[ext_resource type="Script" path="res://data/scripts/card_data.gd" id="3_a3nq0"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/tutorial_phase.gd" id="4_ohwqy"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_data/tutorial_click_data.gd" id="4_w40ps"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="5_68w08"]
+[ext_resource type="Script" path="res://systems/tutorial/tutorial_data/tutorial_popup_data.gd" id="6_s3sef"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_attack_phase.gd" id="6_tnbwt"]
 [ext_resource type="Script" path="res://systems/tutorial/arrow_data.gd" id="7_ey2by"]
 [ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="7_vagmv"]
@@ -26,7 +29,7 @@
 
 [sub_resource type="Resource" id="Resource_m5y5j"]
 script = ExtResource("17_g5qtn")
-card_data = Array[Resource("res://data/scripts/card_data.gd")]([null, null, ExtResource("2_24vt3"), null, null])
+card_data = Array[ExtResource("3_a3nq0")]([null, null, ExtResource("2_24vt3"), null, null])
 
 [sub_resource type="Resource" id="Resource_qb4ck"]
 script = ExtResource("4_w40ps")
@@ -60,7 +63,7 @@ distance = 100.0
 
 [sub_resource type="Resource" id="Resource_p71t0"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_qb4ck"), SubResource("Resource_w2dui"), SubResource("Resource_2kh7w")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_qb4ck"), SubResource("Resource_w2dui"), SubResource("Resource_2kh7w")])
 
 [sub_resource type="Resource" id="Resource_26qbp"]
 script = ExtResource("2_d1qe7")
@@ -101,7 +104,7 @@ distance = 300.0
 
 [sub_resource type="Resource" id="Resource_dglp0"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_mvog4"), SubResource("Resource_rivlh")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_mvog4"), SubResource("Resource_rivlh")])
 
 [sub_resource type="Resource" id="Resource_eqfa0"]
 script = ExtResource("7_ey2by")
@@ -139,7 +142,7 @@ distance = 350.0
 
 [sub_resource type="Resource" id="Resource_xbsee"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_l3816"), SubResource("Resource_fvkap")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_l3816"), SubResource("Resource_fvkap")])
 
 [sub_resource type="Resource" id="Resource_4waph"]
 script = ExtResource("6_tnbwt")
@@ -163,7 +166,7 @@ distance = 300.0
 
 [sub_resource type="Resource" id="Resource_nu3nw"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_dni4d")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_dni4d")])
 
 [sub_resource type="Resource" id="Resource_611yk"]
 script = ExtResource("8_q2rpp")
@@ -207,7 +210,7 @@ distance = 400.0
 
 [sub_resource type="Resource" id="Resource_1w3pg"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_rbjvu"), SubResource("Resource_r1rcr")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_rbjvu"), SubResource("Resource_r1rcr")])
 
 [sub_resource type="Resource" id="Resource_d62ed"]
 script = ExtResource("10_rvppj")
@@ -244,7 +247,7 @@ distance = 300.0
 
 [sub_resource type="Resource" id="Resource_be3np"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_xv1ch"), SubResource("Resource_o5mkq")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_xv1ch"), SubResource("Resource_o5mkq")])
 
 [sub_resource type="Resource" id="Resource_4sdqi"]
 script = ExtResource("11_xi7kw")
@@ -285,7 +288,7 @@ distance = 280.0
 
 [sub_resource type="Resource" id="Resource_gsqia"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_lfmsq"), SubResource("Resource_lvque")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_lfmsq"), SubResource("Resource_lvque")])
 
 [sub_resource type="Resource" id="Resource_5dgv3"]
 script = ExtResource("12_dnuuf")
@@ -329,7 +332,7 @@ distance = 500.0
 
 [sub_resource type="Resource" id="Resource_aryj6"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_fa1yi"), SubResource("Resource_atoe6")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_fa1yi"), SubResource("Resource_atoe6")])
 
 [sub_resource type="Resource" id="Resource_8ywms"]
 script = ExtResource("6_tnbwt")
@@ -372,7 +375,7 @@ distance = 400.0
 
 [sub_resource type="Resource" id="Resource_v18om"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_62jb1"), SubResource("Resource_ctasb")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_62jb1"), SubResource("Resource_ctasb")])
 
 [sub_resource type="Resource" id="Resource_jsiee"]
 script = ExtResource("8_q2rpp")
@@ -402,7 +405,7 @@ distance = 250.0
 
 [sub_resource type="Resource" id="Resource_lebng"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_lbpna")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_lbpna")])
 
 [sub_resource type="Resource" id="Resource_losxt"]
 script = ExtResource("14_rddjs")
@@ -422,7 +425,7 @@ distance = 100.0
 
 [sub_resource type="Resource" id="Resource_rio7r"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_5de0l")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_5de0l")])
 
 [sub_resource type="Resource" id="Resource_fmibs"]
 script = ExtResource("5_68w08")
@@ -444,16 +447,16 @@ distance = 0.0
 
 [sub_resource type="Resource" id="Resource_gtqw3"]
 script = ExtResource("4_ohwqy")
-popups = Array[Resource("res://systems/tutorial/tutorial_data/tutorial_popup_data.gd")]([SubResource("Resource_t8fom")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_t8fom")])
 
 [sub_resource type="Resource" id="Resource_ixib7"]
 script = ExtResource("23_wqrtp")
 health = 0.0
-fixed_placement_cards = Array[Resource("res://data/scripts/card_data.gd")]([])
-fixed_friendly_placement_cards = Array[Resource("res://data/scripts/card_data.gd")]([])
+fixed_placement_cards = Array[ExtResource("3_a3nq0")]([])
+fixed_friendly_placement_cards = Array[ExtResource("3_a3nq0")]([])
 
 [node name="TutorialCardBattle" instance=ExtResource("1_l4q46")]
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_8ywms"), SubResource("Resource_v18om"), SubResource("Resource_jsiee"), SubResource("Resource_lebng"), SubResource("Resource_losxt"), SubResource("Resource_d5ek4"), SubResource("Resource_rio7r"), SubResource("Resource_fmibs"), SubResource("Resource_3kiem"), SubResource("Resource_gtqw3")])
+phases = Array[ExtResource("2_60m5e")]([SubResource("Resource_m5y5j"), SubResource("Resource_p71t0"), SubResource("Resource_26qbp"), SubResource("Resource_dglp0"), SubResource("Resource_xbsee"), SubResource("Resource_4waph"), SubResource("Resource_nu3nw"), SubResource("Resource_611yk"), SubResource("Resource_1w3pg"), SubResource("Resource_d62ed"), SubResource("Resource_be3np"), SubResource("Resource_4sdqi"), SubResource("Resource_gsqia"), SubResource("Resource_5dgv3"), SubResource("Resource_3vjfy"), SubResource("Resource_fsrai"), SubResource("Resource_aryj6"), SubResource("Resource_8ywms"), SubResource("Resource_v18om"), SubResource("Resource_jsiee"), SubResource("Resource_lebng"), SubResource("Resource_losxt"), SubResource("Resource_d5ek4"), SubResource("Resource_rio7r"), SubResource("Resource_fmibs"), SubResource("Resource_3kiem"), SubResource("Resource_gtqw3")])
 is_tutorial = true
 debug_player_data = ExtResource("20_f584r")
 debug_enemy_data = SubResource("Resource_ixib7")

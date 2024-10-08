@@ -35,20 +35,25 @@ unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("AtlasTexture_dvw8w")
 
-[node name="title" type="Label" parent="header"]
+[node name="title" type="RichTextLabel" parent="header"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 theme = ExtResource("3_s5n8y")
+bbcode_enabled = true
 text = "Longest Possible Name"
-vertical_alignment = 1
+fit_content = true
 
-[node name="description" type="Label" parent="."]
+[node name="description" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_s5n8y")
+bbcode_enabled = true
 text = "Lorem Ipsum dolor sit amet...
 TWO LINES!"
-autowrap_mode = 3
+fit_content = true
 
 [node name="separator" type="ColorRect" parent="."]
 visible = false

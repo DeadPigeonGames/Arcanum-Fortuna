@@ -59,6 +59,7 @@ visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_w223y")
+bbcode_enabled = true
 text = "Name"
 
 [node name="Sigils" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
