@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://c768mjmse0k56"]
+[gd_scene load_steps=63 format=3 uid="uid://c768mjmse0k56"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_3pv47"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_q42u0"]
@@ -44,6 +44,7 @@
 [ext_resource type="Resource" uid="uid://coxrarqfij1k5" path="res://data/enemy/5x3_moon.tres" id="33_v8wsu"]
 [ext_resource type="Resource" uid="uid://bum84w2i8vt1a" path="res://data/enemy/6x3_lovers.tres" id="36_58s7p"]
 [ext_resource type="Resource" uid="uid://cl5iiccpygcrn" path="res://data/enemy/6x1_high_priestess.tres" id="37_3wirn"]
+[ext_resource type="Texture2D" uid="uid://burxt0c5ne8vo" path="res://assets/ui/placeholders/demo_watermark.png" id="45_s574c"]
 
 [sub_resource type="Resource" id="Resource_i25gk"]
 script = ExtResource("8_aegmn")
@@ -333,10 +334,10 @@ offset = 45.0
 
 [node name="RandomEventNode13" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 746.44
-offset_top = -554.535
-offset_right = 746.44
-offset_bottom = -554.535
+offset_left = 746.0
+offset_top = -555.0
+offset_right = 746.0
+offset_bottom = -555.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_o5544")])
 connectsTo = [NodePath("../RandomEventNode10")]
 dashed_width = 12.0
@@ -452,6 +453,19 @@ text = "Seed: 1337"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("18_htd4y")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0.784314)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -278.0
+offset_top = 20.0
+offset_right = 44.0
+offset_bottom = 99.0
+grow_horizontal = 0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("45_s574c")
 
 [connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]
