@@ -40,8 +40,8 @@ var health : int :
 		%HealthBar.value = health
 		if !max_health or max_health <= 0:
 			return
-		set_healthicon_anim_speed()
 		SfxBg._SFX_HealthToHighPass(health, max_health)
+		set_healthicon_anim_speed()
 
 
 func init(data: PlayerData):
@@ -213,3 +213,7 @@ func _on_button_button_up() -> void:
 	deck_preview.card_stack = card_stack.cardStack
 	deck_preview.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	deck_preview.setup()
+
+
+func _exit_tree():
+	SfxBg._SFX_HealthToHighPass(0, 0)

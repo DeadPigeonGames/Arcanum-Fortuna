@@ -91,10 +91,12 @@ func _SFX_HealthToHighPass(health, max_health):
 	_SFX_BG_SetHighPass(highPassStrength)
 	
 	#print_debug(heartSpeed)
+	if health <= 0 or float(health) / float(max_health) > 0.2:
+		return
 	$Heart.set_pitch_scale(heartPitch)
 	$Heart.set_volume_db(heartVolume)
 	$Heart/HeartTimer.set_wait_time(heartSpeed)
-	#$Heart/HeartTimer.start()
+	$Heart/HeartTimer.start()
 
 
 func _on_heart_timer_timeout():
