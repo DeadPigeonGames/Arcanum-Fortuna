@@ -1,5 +1,6 @@
 join the_dog rightmost
 join the_fool (default) leftmost
+[style name="StyleOtherSpeaker"]
 the_dog: Odd. There’s few stars tonight.
 leave the_dog
 join the_moon rightmost
@@ -12,7 +13,9 @@ That unmistakable radiance - to think I used to bask in it, when now it seems un
 the_moon: No matter, you seem lost.\
 As though the only path you can be sure of is the one that returns you to whence you came.
 the_moon: Have you a destination at all?
+[style name="arcanum_fortuna_style_backup"]
 the_fool: Can aimless wandering itself be a goal?
+[style name="StyleOtherSpeaker"]
 the_moon: A dubitable one at best.\
 An uncertainty that will surely bring about eventual madness.
 [wait time="0.3"]

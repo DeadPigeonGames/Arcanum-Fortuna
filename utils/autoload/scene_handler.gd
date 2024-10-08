@@ -1,18 +1,20 @@
 extends Node
 
-var current_scene
 @onready var scene_container = $CurrentScene
 @onready var inactive_scenes = $InactiveScenes
 @onready var ui_container = $UIContainer
+
+var current_scene
 var combat : CardBattle
 var current_ui_window
 var current_dialogic : DialogicLayoutBase
-
 
 func _ready():
 	await get_tree().root.ready
 	get_tree().current_scene.reparent(scene_container)
 	current_scene = get_tree().current_scene
+
+	#Dialogic.Text.about_to_show_text.connect(SceneHandler.on_upcoming_text)
 
 
 func change_scene(new_scene):
@@ -75,6 +77,15 @@ static func trigger_dialog(dialog : DialogicTimeline):
 	await ScreenFade.tint_complete
 	SceneHandler.set_visibility_ui_container(true)
 	SceneHandler.set_current_dialogic(null)
+
+
+static func on_upcoming_text(info: Dictionary):
+	if (info["character"].display_name == "You"):
+		Dialogic.get_subsystem("Styles").change_style("arcanum_fortuna_style_backup")
+	else:
+		Dialogic.get_subsystem("Styles").change_style("StyleOtherSpeaker")
+	Dialogic.get_subsystem("Styles").reload_current_info_into_new_style()
+	Dialogic.paused = false 
 
 
 func get_current_ui_window():

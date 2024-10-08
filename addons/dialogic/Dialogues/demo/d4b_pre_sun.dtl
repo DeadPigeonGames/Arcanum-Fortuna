@@ -1,12 +1,13 @@
 It feels almost as though the rays are guiding your path onward.
 [sound path="res://Audio/Signatures/SignatureSun.ogg" volume="0.0"]
 join the_sun rightmost
+[style name="StyleOtherSpeaker"]
 the_sun: Oh! You startled me.
-the_sun: She laughs, and it is an airy chime, unlike anything you’ve heard before.\\
+the_sun: She laughs, and it is an airy chime, unlike anything you’ve heard before.\\
 It is contagious in its glee, and you feel lighter at once, as though a burden was lifted.
 the_sun: Look at you!
 join the_fool (default_w_dog) leftmost
-the_sun: All yellow and dull — for now.\\
+the_sun: All yellow and dull — for now.\\
 I am positive in time you could be radiant, my joy.
 So abruptly you almost miss it, her smile falters, before she restores it in twice its glory.
 the_sun: Oh, but I can see her sorrow shimmering under your skin. You’ve met her, then?
@@ -22,6 +23,6 @@ But that was a long time ago — I have made my peace with our now better than s
 I find no sense in woe. \
 Who will determine the brightness of your future, if not yourself?
 the_sun: But that’s all in the past, and I’m not one to dwell on it.
-the_sun: Now that you are here, how about a game? \\
+the_sun: Now that you are here, how about a game? \\
 I suspect you would make an excellent opponent.
 Trudging on, the sun beats down on you, and you feel almost unbearably warm in your thin rags, despite the blindingly bright snow defying to melt all around you.

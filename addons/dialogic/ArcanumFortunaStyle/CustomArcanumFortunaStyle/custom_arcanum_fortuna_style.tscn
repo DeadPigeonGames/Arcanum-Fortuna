@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/dialogic/ArcanumFortunaStyle/CustomArcanumFortunaStyle/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_pxafg"]
 [ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_k4y72"]
-[ext_resource type="Script" path="res://addons/dialogic/ArcanumFortunaStyle/scripts/arcanum_textbox_layer.gd" id="5_yxmue"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="5_e6vt4"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="6_3pitw"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="6_gsr4a"]
 [ext_resource type="StyleBox" uid="uid://8nxfwv1nmmly" path="res://addons/dialogic/ArcanumFortunaStyle/dialog_underlay.tres" id="7_m7lw8"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="11_c2q7f"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_4vnya"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="12_a27ac"]
+[ext_resource type="StyleBox" path="res://addons/dialogic/ArcanumFortunaStyle/name_underlay_active.tres" id="13_74vk6"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_0tiyh"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="14_5lxnt"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_mouye"]
@@ -211,8 +212,6 @@ _data = {
 
 [sub_resource type="FontVariation" id="FontVariation_v8y64"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hde45"]
-
 [node name="Custom" type="CanvasLayer"]
 script = ExtResource("1_ifsho")
 
@@ -234,31 +233,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("5_yxmue")
-text_alignment = 1
-text_use_global_size = false
-text_size = 32
-text_use_global_color = false
-text_use_global_font = false
-normal_font = "res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf"
-bold_font = "res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Bold.otf"
-italics_font = "res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Italic.otf"
-bold_italics_font = "res://assets/ui/fonts/test fonts/AurelisADFNo2Std-BoldItalic.otf"
-box_color_use_global = false
-box_color_custom = Color(1, 1, 1, 1)
-box_size = Vector2(1280, 206)
-box_margin_bottom = 32
-name_label_use_global_color = false
-name_label_use_global_font = false
-name_label_font = "res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf"
-name_label_use_global_font_size = false
-name_label_custom_font_size = 32
-name_label_box_use_global_color = false
-next_indicator_texture = "res://assets/ui/underlays/arrow.png"
-next_indicator_size = Vector2(64, 64)
-autoadvance_progressbar = false
-typing_sounds_mode = 1
-apply_overrides_on_ready = true
+script = ExtResource("5_e6vt4")
+box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres"
+name_label_box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres"
+name_label_box_modulate = Color(0, 0, 0, 1)
 
 [node name="Animations" type="AnimationPlayer" parent="VN_TextboxLayer"]
 unique_name_in_owner = true
@@ -269,6 +247,7 @@ autoplay = "RESET"
 script = ExtResource("6_gsr4a")
 
 [node name="Anchor" type="Control" parent="VN_TextboxLayer"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -366,21 +345,12 @@ script = ExtResource("12_a27ac")
 layout_mode = 2
 mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -45.0
-offset_bottom = -33.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="NameLabelPanel_Left" type="PanelContainer" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/HBoxContainer"]
+[node name="NameLabelPanel" type="PanelContainer" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder"]
+unique_name_in_owner = true
 self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
 layout_mode = 2
+offset_top = -30.0
+offset_bottom = -30.0
 size_flags_horizontal = 2
 size_flags_vertical = 4
 mouse_filter = 2
@@ -389,39 +359,18 @@ metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = true
 metadata/_edit_group_ = true
 
-[node name="DialogicNode_NameLabel" type="Label" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/HBoxContainer/NameLabelPanel_Left" node_paths=PackedStringArray("name_label_root")]
+[node name="DialogicNode_NameLabel" type="Label" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/NameLabelPanel"]
+unique_name_in_owner = true
+z_index = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_v8y64")
 theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = ExtResource("13_74vk6")
 text = "Wheel of Fortune"
 horizontal_alignment = 1
 visible_characters = 16
 script = ExtResource("14_5lxnt")
-name_label_root = NodePath("../../NameLabelPanel_Right")
-
-[node name="NameLabelPanel_Right" type="PanelContainer" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/HBoxContainer"]
-self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_hde45")
-metadata/_edit_layout_mode = 1
-metadata/_edit_use_custom_anchors = true
-metadata/_edit_group_ = true
-
-[node name="DialogicNode_NameLabel" type="Label" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/HBoxContainer/NameLabelPanel_Right" node_paths=PackedStringArray("name_label_root")]
-z_index = -1
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_v8y64")
-theme_override_font_sizes/font_size = 15
-text = "Wheel of Fortune"
-horizontal_alignment = 1
-visible_characters = 16
-script = ExtResource("14_5lxnt")
-name_label_root = NodePath("../../NameLabelPanel_Left")
 
 [node name="Glossary" parent="." instance=ExtResource("10_cwll5")]
 apply_overrides_on_ready = true

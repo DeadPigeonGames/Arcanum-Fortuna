@@ -1,3 +1,4 @@
+[style name="StyleOtherSpeaker"]
 join the_star rightmost
 the_star: You… you’re not ready yet.
 join the_fool (default) leftmost
@@ -8,4 +9,4 @@ leave the_star
 the_star: Wake up, go back, wake up. Leave, try again.
 the_star: Try again. You’ve failed. I’ve failed. Go back.
 leave the_fool
-Where you were hovering steadily just moments ago, you now find yourself in free fall, their flurry of words growing into a cacophony that you can barely hear anymore, as you finally pass out. 
+Where you were hovering steadily just moments ago, you now find yourself in free fall, their flurry of words growing into a cacophony that you can barely hear anymore, as you finally pass out.

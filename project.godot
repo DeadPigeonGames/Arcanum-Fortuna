@@ -87,7 +87,7 @@ variables={
 "has_died": false,
 "player_name": ""
 }
-layout/style_list=["res://addons/dialogic/ArcanumFortunaStyle/arcanum_fortuna_style.tres", "res://addons/dialogic/ArcanumFortunaStyle/arcanum_fortuna_style_backup.tres"]
+layout/style_list=["res://addons/dialogic/ArcanumFortunaStyle/arcanum_fortuna_style.tres", "res://addons/dialogic/ArcanumFortunaStyle/arcanum_fortuna_style_backup.tres", "res://addons/dialogic/ArcanumFortunaStyle/StyleOtherSpeaker.tres"]
 layout/default_style="res://addons/dialogic/ArcanumFortunaStyle/arcanum_fortuna_style.tres"
 glossary/default_case_sensitive=true
 animations/join_default_length=0.5

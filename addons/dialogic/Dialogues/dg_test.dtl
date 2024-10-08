@@ -1,17 +1,21 @@
+[style name="arcanum_fortuna_style_backup"]
 join the_fool 0
 the_fool: bene please go to sleep
 the_fool (rose1): hmm.
 [wait time="0.3"]
 join death 4
+[style name="StyleOtherSpeaker"]
 the_dog: .
 - yeah
 	the_dog: we can change that
 - nah
 	the_dog: ok F
+[style name="arcanum_fortuna_style_backup"]
 the_fool (rose1): crigne
-the_fool (rose2): ...
+...
 leave the_dog
 the_fool (awoken): e
 join the_emperor (default_2) 4
+[style name="StyleOtherSpeaker"]
 the_emperor (default_2): bingus
 [end_timeline]

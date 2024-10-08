@@ -10,6 +10,7 @@ You strain with the effort to even lift it.
 	What you fail to spot, however, is the familiar sight of white fur by your side. \
 A vast loneliness overcomes you all at once.
 	join the_fool (default) leftmost
+	[style name="arcanum_fortuna_style_backup"]
 	the_fool: Am I dreaming?
 	A giggle.
 	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="-25.0"]
@@ -25,6 +26,7 @@ In your daze you call out to your companion, but only silence answers you.
 	A giggle.
 	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="-25.0"]
 	join the_star rightmost
+	[style name="StyleOtherSpeaker"]
 	the_star: I get that one a lot.
 A figure floats before you, their uncanny eyes perfectly level with yours. 
 the_star: You must have come a long way, to find me. \
