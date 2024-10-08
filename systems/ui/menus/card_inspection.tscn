@@ -104,9 +104,9 @@ texture = ExtResource("8_tt6j0")
 [node name="VBoxContainer" type="VBoxContainer" parent="CardInspection/KeywordDescriptions"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 23.0
+offset_top = 11.0
 offset_right = 729.0
-offset_bottom = 391.0
+offset_bottom = 379.0
 theme_override_constants/separation = 0
 
 [node name="Label1" type="RichTextLabel" parent="CardInspection/KeywordDescriptions/VBoxContainer"]
@@ -310,9 +310,9 @@ texture_pressed = ExtResource("18_4f2ee")
 custom_minimum_size = Vector2(640, 92)
 layout_mode = 0
 offset_left = 28.0
-offset_top = 210.0
+offset_top = 193.0
 offset_right = 676.0
-offset_bottom = 302.0
+offset_bottom = 285.0
 size_flags_horizontal = 4
 theme = ExtResource("7_11nlv")
 bbcode_enabled = true
