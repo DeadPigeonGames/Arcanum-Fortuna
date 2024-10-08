@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="DamageSwitch" load_steps=7 format=3 uid="uid://b0k33hdemfl27"]
+[gd_resource type="Resource" script_class="DamageSwitch" load_steps=10 format=3 uid="uid://b0k33hdemfl27"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/damage_switch.gd" id="1_2pdxi"]
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_850tv"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_s5j2u"]
 [ext_resource type="Resource" uid="uid://d4iohlqflx6ik" path="res://data/keyword/companionship_HP1.tres" id="2_g4ykh"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_u5x14"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_fx71r"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="4_rqpx5"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="5_t6dul"]
 
@@ -16,14 +19,15 @@ required_damage = 4
 damage_to_track = 2
 attack_difference = -1
 health_difference = 2
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_g4ykh")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_fx71r")]([ExtResource("2_g4ykh")])
+keywords_to_remove = Array[ExtResource("4_fx71r")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("4_rqpx5")
 transformed_keyword_slot_atlas = ExtResource("5_t6dul")
-rotation_duration = 0.8
-icon_rotation = 1.0
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+chromatic_scene = ExtResource("1_850tv")
+rotation_time = 0.8
+icon_rotation_time = 1.0
+combat_phase_triggers = Array[ExtResource("2_u5x14")]([])
 triggers = 32
 is_animated = true
 scale_speed = 0.6

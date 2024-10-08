@@ -20,6 +20,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Flexibility"
-description = "This card swaps its current attack and health at the end of every turn."
+description = "This card swaps its current [img=35]res://assets/ui/icons/atk_icon_small.png[/img] attack and [img=35]res://assets/ui/icons/hp_icon_small.png[/img] health at the end of every turn."
 icon = ExtResource("3_ndylx")
 highlight_duration = 1.0
