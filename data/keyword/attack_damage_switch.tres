@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="DamageSwitch" load_steps=6 format=3 uid="uid://cf2a8mlhoc2q2"]
+[gd_resource type="Resource" script_class="DamageSwitch" load_steps=9 format=3 uid="uid://cf2a8mlhoc2q2"]
 
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/damage_switch.gd" id="1_dpfjl"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_o2i7o"]
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_ut4b6"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_cmxtn"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="3_g20gp"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_h6jur"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="5_knfn2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
@@ -15,14 +18,15 @@ required_damage = 5
 damage_to_track = 2
 attack_difference = 5
 health_difference = 5
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_h6jur")]([])
+keywords_to_remove = Array[ExtResource("4_h6jur")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("3_g20gp")
 transformed_keyword_slot_atlas = ExtResource("5_knfn2")
-rotation_duration = 0.8
-icon_rotation = 1.0
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+chromatic_scene = ExtResource("1_ut4b6")
+rotation_time = 0.8
+icon_rotation_time = 1.0
+combat_phase_triggers = Array[ExtResource("2_cmxtn")]([])
 triggers = 32
 is_animated = true
 scale_speed = 0.6

@@ -1,3 +1,4 @@
+[style name="StyleOtherSpeaker"]
 You only realize the length of your journey when night begins to fall, the moon’s soft shimmer replacing the blinding glow of the sun on the scenery of snow and ice.
 join the_dog rightmost
 join the_fool (default) leftmost
@@ -10,7 +11,9 @@ the_moon: Is my light not enough?
 the_moon: No matter, you seem lost.\
 As though the only path you can be sure of is the one that returns you to whence you came.
 the_moon: Have you a destination at all?
+[style name="arcanum_fortuna_style_backup"]
 the_fool: Can aimless wandering itself be a goal?
+[style name="arcanum_fortuna_style_backup"]
 the_moon: A dubitable one at best.\
 An uncertainty that will surely bring about eventual madness.
 [wait time="0.3"]

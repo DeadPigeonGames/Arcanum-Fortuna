@@ -1,3 +1,4 @@
+[style name="StyleOtherSpeaker"]
 join the_lovers rightmost
 join the_fool (default_w_dog) leftmost
 the_lovers: Wait, we lost? \
@@ -43,4 +44,5 @@ update the_fool (default)
 join the_dog rightmost
 the_dog: Volatile, color me surprised. One  moment they’re all lovey-dovey, the next they’re at each other’s throats. \
 Blergh.
+[style name="arcanum_fortuna_style_backup"]
 the_fool (default): They mentioned a city, it can’t be far. Let’s go.

@@ -1,11 +1,14 @@
+[style name="StyleOtherSpeaker"]
 join the_dog rightmost
 the_dog: Damn birds. You’d think they’d be quieter at night. Instead, there’s this ruckus.
 join the_fool (default) leftmost
 [wait_input]
 - SOUNDS LIKE SOMEONE’S SCARED.
-	the_dog: Scared!? Buddy, infuriated is more it. \\
+	the_dog: Scared!? Buddy, infuriated is more it. \\
 If not at night, when can I expect myself some damn peace and quiet?
+	[style name="arcanum_fortuna_style_backup"]
 	the_fool: You’re not exactly quiet yourself, grouching around as you are.
+	[style name="StyleOtherSpeaker"]
 	the_dog: Hmph. Are you saying I’m not the most terrific companion?
 	[wait_input]
 	- OF COURSE YOU ARE.
@@ -14,14 +17,14 @@ If not at night, when can I expect myself some damn peace and quiet?
 	the_dog: I rather like my paws, buddy, please and thank you.
 	the_dog: Besides, where would you fly? And just think of how brittle you would be...
 - I DON’T SEE YOU TRYING TO SLEEP, SO WHY COMPLAIN?
-	the_dog: No need to get personal, buddy. \\
+	the_dog: No need to get personal, buddy. \\
 I’m merely saying, birdsong would at least be preferable to this capricious screeching.
 leave the_dog
 leave the_fool
 Enraptured by your banter, you approach a clearing and the cawing gets even louder, before falling to a deafening silence the moment you take another step forward.
-You look down and see that you’ve stepped into a circle of mushrooms. \\
+You look down and see that you’ve stepped into a circle of mushrooms. \\
 In the middle, a large pillar juts out, and from the silence the flapping of a pair of massive wings erupts.
-A birdlike woman stands tall before you, her face veiled by the star-dotted night sky. \\
+A birdlike woman stands tall before you, her face veiled by the star-dotted night sky. \\
 She speaks, and her voice reverberates in an uncanny chant.
 [sound path="res://Audio/Signatures/SignatureHighPriestess.ogg" volume="0.0"]
 join the_high_priestess rightmost

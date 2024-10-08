@@ -20,6 +20,7 @@ func _ready() -> void:
 	name_plate_active = load(ACTIVE_PATH)
 	name_plate_inactive = load(INACTIVE_PATH)
 	find_labels(self)
+	return
 	set_label_active(left_label_panel.get_child(0), true)
 	set_label_active(right_label_panel.get_child(0), true)
 	set_label_visible(right_label_panel.get_child(0), false)
@@ -27,6 +28,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	return
 	if not left_label_panel:
 		return
 	var left_label = left_label_panel.get_child(0)

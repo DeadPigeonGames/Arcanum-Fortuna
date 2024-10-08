@@ -1,8 +1,11 @@
+[style name="StyleOtherSpeaker"]
 set {has_died} = Settings.has_died_prev_run()
 if {has_died} == true:
 	You startle awake.
 the_dog: Keep up!
+[style name="arcanum_fortuna_style_backup"]
 the_fool: Where are we headed?
+[style name="StyleOtherSpeaker"]
 the_dog: Does it matter?
 He dashes ahead, expecting you to follow, as you always have.
 [wait_input hide_text="false"]

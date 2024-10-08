@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d101m5rvvp1kq"]
+[gd_scene load_steps=12 format=3 uid="uid://d101m5rvvp1kq"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/credits_menu/credits_menu.gd" id="1_a05ra"]
 [ext_resource type="Theme" uid="uid://l2whpxkwhcdn" path="res://assets/ui/themes/menu_ui_theme.tres" id="2_3l6i4"]
 [ext_resource type="Theme" uid="uid://by7y30d2dbxb2" path="res://assets/ui/themes/menu_title_theme.tres" id="2_vjscp"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="4_y3lcj"]
 [ext_resource type="Texture2D" uid="uid://cdrck7c31mi66" path="res://assets/ui/underlays/logo_large.png" id="5_c4ns7"]
+[ext_resource type="FontFile" uid="uid://blayaykyjq32c" path="res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf" id="6_4yrur"]
 [ext_resource type="Texture2D" uid="uid://e11xll2cd73b" path="res://assets/sprites/dpg_logo.png" id="6_16jd0"]
+[ext_resource type="FontFile" uid="uid://dllh36u2fct2k" path="res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Bold.otf" id="7_bx66m"]
 
 [sub_resource type="Animation" id="Animation_f6rfj"]
 length = 0.001
@@ -140,43 +142,9 @@ offset_right = 454.0
 offset_bottom = 1440.0
 grow_horizontal = 2
 theme = ExtResource("2_3l6i4")
-theme_override_constants/line_separation = 20
-bbcode_enabled = true
-text = "[center][b]Art[/b]
-Merit Faske
-Nina Grußendorf
-
-[center][b]Design[/b]
-Till Braunwald
-Matthias Streicher
-
-[center][b]Engineering[/b]
-Benedikt Mertes
-Karl Nehring
-Lukas Schmidt
-
-[center][b]Production[/b]
-Justin Löbel
-
-[center][b]SFX and Music[/b]
-Nico Chera
-
-[center][b]Special Thanks[/b]
-Anni Kostrzewa
-Lucie Scieux"
-
-[node name="Credits2" type="RichTextLabel" parent="CreditsMenu/Credits"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -454.0
-offset_top = 314.0
-offset_right = 454.0
-offset_bottom = 1192.99
-grow_horizontal = 2
-theme = ExtResource("2_3l6i4")
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("6_4yrur")
+theme_override_fonts/bold_font = ExtResource("7_bx66m")
 bbcode_enabled = true
 text = "[center][b]Art[/b]
 Merit Faske

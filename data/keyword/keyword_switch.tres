@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=7 format=3 uid="uid://dfcbdoa13thhv"]
+[gd_resource type="Resource" script_class="TriggerSwitch" load_steps=10 format=3 uid="uid://dfcbdoa13thhv"]
 
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_3nsjq"]
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_f5kby"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_3f1n8"]
 [ext_resource type="Resource" uid="uid://fvab8xjppdba" path="res://data/keyword/multi_attack.tres" id="2_v3d4s"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/trigger_switch.gd" id="3_jxni1"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="4_7hkqx"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_ik7k1"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="6_y2fsc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuji6"]
@@ -16,14 +19,15 @@ required_trigger_count = 1
 dynamic_tooltip_unit_name = "times"
 attack_difference = 1
 health_difference = 3
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_v3d4s")])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_ik7k1")]([ExtResource("2_v3d4s")])
+keywords_to_remove = Array[ExtResource("4_ik7k1")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("4_7hkqx")
 transformed_keyword_slot_atlas = ExtResource("6_y2fsc")
-rotation_duration = 0.8
-icon_rotation = 1.0
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+chromatic_scene = ExtResource("1_f5kby")
+rotation_time = 0.8
+icon_rotation_time = 1.0
+combat_phase_triggers = Array[ExtResource("2_3f1n8")]([])
 triggers = 0
 is_animated = true
 scale_speed = 0.6

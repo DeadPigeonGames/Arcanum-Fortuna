@@ -16,6 +16,6 @@ scale_speed = 0.6
 animate_scale = false
 animate_particle = true
 title = "Idol"
-description = "This card gains %d attack for each ally card with a positve karma value."
+description = "This card gains %d [img=35]res://assets/ui/icons/atk_icon_small.png[/img] attack for each ally card with a positve [img=35]res://assets/ui/icons/karma_icon_small.png[/img] karma value."
 icon = ExtResource("1_y213y")
 highlight_duration = 0.5

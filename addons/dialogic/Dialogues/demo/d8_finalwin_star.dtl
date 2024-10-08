@@ -1,3 +1,4 @@
+[style name="StyleOtherSpeaker"]
 join the_star rightmost
 the_star: I yield!
 join the_fool (default) leftmost

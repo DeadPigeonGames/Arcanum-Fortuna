@@ -1,5 +1,7 @@
+[style name="StyleOtherSpeaker"]
 join the_magician rightmost
 join the_fool (default_w_dog) leftmost
+
 the_magician: A fine pupil! You’ll go far.
 [wait_input hide_text="false"]
 - GO WHERE?
@@ -8,8 +10,11 @@ the_magician: A fine pupil! You’ll go far.
 	the_magician: Purpose is essential in one’s life! What else ought there be?
 the_magician: You have a keen eye, and a great mind - I am sure of it. A waste to not nurture both to their full potential, don’t you think?
 leave the_magician
-The Magician leaves, so sure of the path to take you wonder if he has wandered it before. 
+The Magician leaves, so sure of the path to take you wonder if he has wandered it before.
+[style name="arcanum_fortuna_style_backup"]
 update the_fool (default)
 join the_dog rightmost
+[style name="StyleOtherSpeaker"]
 the_dog: Don’t let that one get to your head, buddy.
+[style name="arcanum_fortuna_style_backup"]
 the_fool: But what if… No, nevermind.

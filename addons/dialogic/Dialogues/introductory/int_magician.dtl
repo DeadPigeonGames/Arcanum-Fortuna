@@ -1,3 +1,4 @@
+[style name="StyleOtherSpeaker"]
 join the_fool (default_w_dog) 0
 Sure, steady footsteps approach you.
 join the_magician 4
@@ -16,5 +17,6 @@ leave the_magician
 update the_fool (default)
 join the_dog 1
 the_dog (default): I wouldn't listen to that braggart. 
+[style name="arcanum_fortuna_style_backup"]
 the_fool (default): But what if...
 the_fool (default): No, nevermind.
