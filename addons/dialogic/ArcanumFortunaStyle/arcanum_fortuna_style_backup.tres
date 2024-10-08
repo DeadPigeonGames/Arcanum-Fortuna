@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_q0d8a"]
 [ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_agkuq"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_vhr8l"]
-[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_dr8cb"]
+[ext_resource type="PackedScene" uid="uid://dpbpx0sumg2o" path="res://addons/dialogic/ArcanumFortunaStyle/CustomArcanumFortunaStyle/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="5_bh5e8"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_cl5a6"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_alsky"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_pqhmj"]
@@ -28,7 +28,7 @@ overrides = {}
 
 [sub_resource type="Resource" id="Resource_e35h0"]
 script = ExtResource("1_1f56j")
-scene = ExtResource("5_dr8cb")
+scene = ExtResource("5_bh5e8")
 overrides = {
 "autoadvance_progressbar": "false",
 "bold_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Bold.otf\"",
@@ -102,4 +102,4 @@ base_overrides = {
 "global_font_size": "32.0"
 }
 layers = Array[ExtResource("1_1f56j")]([SubResource("Resource_7q1cx"), SubResource("Resource_kgc6p"), SubResource("Resource_yb6ug"), SubResource("Resource_e35h0"), SubResource("Resource_jplp5"), SubResource("Resource_ha4x8"), SubResource("Resource_ehl6d"), SubResource("Resource_opn82")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 3
