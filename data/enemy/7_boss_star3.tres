@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://dx6sp4jrqr6b4"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://bgnfygppug76"]
 
-[ext_resource type="Resource" path="res://data/enemy/7_boss_star3_brain.tres" id="1_ygxam"]
+[ext_resource type="Resource" uid="uid://dmopfxv0u8pde" path="res://data/enemy/7_boss_star3_brain.tres" id="1_ygxam"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_cetlh"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_ief06"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_m2kl7"]
@@ -14,6 +14,6 @@ stats_per_level = Array[ExtResource("4_m2kl7")]([ExtResource("5_wgicy")])
 gold_reward = 4
 min_level = 0
 max_level = 2
-demo_start_karma = 0
+demo_start_karma = 5
 dialog_data = Array[ExtResource("2_cetlh")]([])
 level = 0

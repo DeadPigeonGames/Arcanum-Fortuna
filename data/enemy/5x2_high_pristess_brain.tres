@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=17 format=3 uid="uid://dggl3ubyko73g"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=17 format=3 uid="uid://cru2yrrsfhaxs"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_5irty"]
 [ext_resource type="Resource" uid="uid://c4j8576fmlh7q" path="res://data/cards/the_hermit.tres" id="2_oucq7"]

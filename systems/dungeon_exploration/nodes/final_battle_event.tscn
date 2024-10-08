@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://gm88hj83koee"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/final_battle_event.gd" id="2_divep"]
-[ext_resource type="Resource" uid="uid://dsyn6u3okj0np" path="res://data/enemy/7_boss_star2.tres" id="2_q738s"]
-[ext_resource type="Resource" uid="uid://dx6sp4jrqr6b4" path="res://data/enemy/7_boss_star3.tres" id="3_nrw27"]
+[ext_resource type="Resource" uid="uid://dglg8wed7b01o" path="res://data/enemy/7_boss_star2.tres" id="2_q738s"]
+[ext_resource type="Resource" uid="uid://bgnfygppug76" path="res://data/enemy/7_boss_star3.tres" id="3_nrw27"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_winfirst_star.dtl" id="4_ht81y"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_losefirst_star.dtl" id="5_k7ktp"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_winsecond_star.dtl" id="6_5mfb0"]

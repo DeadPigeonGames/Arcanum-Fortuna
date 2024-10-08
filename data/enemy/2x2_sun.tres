@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://c2gyqlw7md8kj"]
 
-[ext_resource type="Resource" uid="uid://d3royq0kuc0ft" path="res://data/enemy/2x2_sun_brain.tres" id="1_7ep7f"]
+[ext_resource type="Resource" uid="uid://dq8ubmtsyo5i7" path="res://data/enemy/2x2_sun_brain.tres" id="1_7ep7f"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_roqgq"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_n1ueu"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_0sup0"]
@@ -11,7 +11,7 @@ script = ExtResource("3_n1ueu")
 title = "The Sun"
 brain = ExtResource("1_7ep7f")
 stats_per_level = Array[ExtResource("4_0sup0")]([ExtResource("6_1f82t")])
-gold_reward = 4
+gold_reward = 6
 min_level = 0
 max_level = 2
 demo_start_karma = 0

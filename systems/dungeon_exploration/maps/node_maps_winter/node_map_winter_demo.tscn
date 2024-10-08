@@ -1,9 +1,10 @@
-[gd_scene load_steps=64 format=3 uid="uid://c768mjmse0k56"]
+[gd_scene load_steps=66 format=3 uid="uid://c768mjmse0k56"]
 
 [ext_resource type="Script" path="res://systems/dungeon_exploration/maps/node_map.gd" id="1_3pv47"]
 [ext_resource type="PackedScene" uid="uid://b2vx0edf3t6u3" path="res://systems/dungeon_exploration/player/player.tscn" id="2_q42u0"]
 [ext_resource type="Resource" uid="uid://22opo18s7wkj" path="res://data/player/basic_player.tres" id="3_umopx"]
 [ext_resource type="PackedScene" uid="uid://buogrgbwrud4m" path="res://systems/dungeon_exploration/nodes/empty_node.tscn" id="4_m1nsi"]
+[ext_resource type="Texture2D" uid="uid://bnko06yvfaeco" path="res://assets/ui/nodemap/underlay_visited.png" id="5_1vyts"]
 [ext_resource type="PackedScene" uid="uid://y05vxgjpeday" path="res://systems/dungeon_exploration/maps/random_event_node.tscn" id="5_635g1"]
 [ext_resource type="Texture2D" uid="uid://cj8fhe2r2vwy8" path="res://assets/ui/nodemap/encounter_standard.png" id="6_61y5u"]
 [ext_resource type="PackedScene" uid="uid://bml43x2miuf00" path="res://systems/dungeon_events/battle_event.tscn" id="7_wod2b"]
@@ -34,12 +35,13 @@
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d6b_post_priestess.dtl" id="24_6nelk"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d4b_post_sun.dtl" id="24_kn7ep"]
 [ext_resource type="Resource" uid="uid://xa8byd1pwjex" path="res://data/enemy/4x1_lovers.tres" id="24_s0m1i"]
+[ext_resource type="Texture2D" uid="uid://bku4bculsmq2y" path="res://assets/ui/nodemap/underlay_unavailable.png" id="25_3vit0"]
 [ext_resource type="Resource" uid="uid://b1n6yj0ap2yy4" path="res://data/enemy/4x2_sun.tres" id="27_auqy8"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d5c_pre_moon.dtl" id="27_l3ku2"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d5c_post_moon.dtl" id="28_xykix"]
 [ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d6c_pre_lovers.dtl" id="29_cobu1"]
 [ext_resource type="Resource" uid="uid://d0n4hl6ghpupf" path="res://data/enemy/5x2_high_pristess.tres" id="30_nfmij"]
-[ext_resource type="Resource" uid="uid://c0rbxwgp50ijm" path="res://data/enemy/7_boss_star1.tres" id="31_73eos"]
+[ext_resource type="Resource" uid="uid://b1bs2ivdjiwgr" path="res://data/enemy/7_boss_star1.tres" id="31_73eos"]
 [ext_resource type="PackedScene" uid="uid://gm88hj83koee" path="res://systems/dungeon_exploration/nodes/final_battle_event.tscn" id="32_m6nsc"]
 [ext_resource type="Resource" uid="uid://coxrarqfij1k5" path="res://data/enemy/5x3_moon.tres" id="33_v8wsu"]
 [ext_resource type="Resource" uid="uid://bum84w2i8vt1a" path="res://data/enemy/6x3_lovers.tres" id="36_58s7p"]
@@ -216,6 +218,9 @@ offset_bottom = -261.0
 connectsTo = [NodePath("../RandomNode")]
 offset = 45.0
 
+[node name="background" parent="StartNode" index="0"]
+texture = ExtResource("5_1vyts")
+
 [node name="RandomNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
 offset_left = -487.0
@@ -269,6 +274,9 @@ connectsTo = [NodePath("../RandomEventNode4"), NodePath("../RandomEventNode5")]
 dashed_width = 12.0
 offset = 45.0
 
+[node name="background" parent="RandomEventNode3" index="0"]
+texture = ExtResource("5_1vyts")
+
 [node name="RandomEventNode12" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
 offset_left = 80.075
@@ -279,6 +287,9 @@ potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_c4cr7")]
 connectsTo = [NodePath("../RandomEventNode6")]
 dashed_width = 12.0
 offset = 45.0
+
+[node name="background" parent="RandomEventNode12" index="0"]
+texture = ExtResource("25_3vit0")
 
 [node name="RandomEventNode4" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
@@ -319,6 +330,9 @@ connectsTo = [NodePath("../RandomEventNode8"), NodePath("../RandomEventNode7")]
 dashed_width = 12.0
 offset = 45.0
 
+[node name="background" parent="RandomEventNode6" index="0"]
+texture = ExtResource("5_1vyts")
+
 [node name="RandomEventNode7" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
 offset_left = 822.0
@@ -343,6 +357,9 @@ potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_o5544")]
 connectsTo = [NodePath("../RandomEventNode10")]
 dashed_width = 12.0
 offset = 45.0
+
+[node name="background" parent="RandomEventNode13" index="0"]
+texture = ExtResource("25_3vit0")
 
 [node name="RandomEventNode8" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
@@ -397,6 +414,9 @@ connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
 offset = 45.0
 
+[node name="background" parent="RandomEventNode14" index="0"]
+texture = ExtResource("25_3vit0")
+
 [node name="RandomEventNode11" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
 offset_left = 1444.0
@@ -407,6 +427,9 @@ potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_0iv1d")]
 connectsTo = [NodePath("../FinalNode")]
 dashed_width = 12.0
 offset = 45.0
+
+[node name="background" parent="RandomEventNode11" index="0"]
+texture = ExtResource("5_1vyts")
 
 [node name="FinalNode" parent="." instance=ExtResource("15_unaqv")]
 layout_mode = 1
@@ -470,3 +493,11 @@ texture = ExtResource("45_s574c")
 
 [connection signal="mouse_entered" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/SeedLabel" to="CanvasLayer/SeedLabel" method="_on_mouse_exited"]
+
+[editable path="StartNode"]
+[editable path="RandomEventNode3"]
+[editable path="RandomEventNode12"]
+[editable path="RandomEventNode6"]
+[editable path="RandomEventNode13"]
+[editable path="RandomEventNode14"]
+[editable path="RandomEventNode11"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://bum84w2i8vt1a"]
 
-[ext_resource type="Resource" uid="uid://mg5kbcsl0i3c" path="res://data/enemy/6x3_lovers_brain.tres" id="1_0rkur"]
+[ext_resource type="Resource" path="res://data/enemy/6x3_lovers_brain.tres" id="1_0rkur"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_cstg2"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_al61q"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_n0qxd"]

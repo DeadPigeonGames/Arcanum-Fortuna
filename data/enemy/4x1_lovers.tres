@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://xa8byd1pwjex"]
 
-[ext_resource type="Resource" uid="uid://d3rxuao3pts26" path="res://data/enemy/4x1_lovers_brain.tres" id="1_4pwj2"]
+[ext_resource type="Resource" uid="uid://cakfdatk5rfjt" path="res://data/enemy/4x1_lovers_brain.tres" id="1_4pwj2"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_cuvop"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_7vjbx"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_o1cp7"]
@@ -11,7 +11,7 @@ script = ExtResource("3_7vjbx")
 title = "The Lovers"
 brain = ExtResource("1_4pwj2")
 stats_per_level = Array[ExtResource("4_o1cp7")]([ExtResource("7_m7puo")])
-gold_reward = 4
+gold_reward = 6
 min_level = 0
 max_level = 2
 demo_start_karma = 1

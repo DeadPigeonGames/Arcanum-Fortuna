@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=6 format=3 uid="uid://d0n4hl6ghpupf"]
 
-[ext_resource type="Resource" uid="uid://dggl3ubyko73g" path="res://data/enemy/5x2_high_pristess_brain.tres" id="1_xrre3"]
+[ext_resource type="Resource" uid="uid://cru2yrrsfhaxs" path="res://data/enemy/5x2_high_pristess_brain.tres" id="1_xrre3"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_dialog/enemy_dialog.gd" id="2_qfyn8"]
 [ext_resource type="Script" path="res://data/scripts/enemy_data.gd" id="3_x3ld7"]
 [ext_resource type="Script" path="res://systems/card_combat/enemy/enemy_brain_stats.gd" id="4_2moxr"]
@@ -11,7 +11,7 @@ script = ExtResource("3_x3ld7")
 title = "The High Priestess"
 brain = ExtResource("1_xrre3")
 stats_per_level = Array[ExtResource("4_2moxr")]([ExtResource("8_h8s6d")])
-gold_reward = 4
+gold_reward = 6
 min_level = 0
 max_level = 2
 demo_start_karma = 2
