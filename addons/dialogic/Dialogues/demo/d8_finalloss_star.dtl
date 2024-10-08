@@ -1,11 +1,11 @@
-join the_star rightmost
+join the_star (var_2) rightmost
 the_star: You… you’re not ready yet.
 join the_fool (default) leftmost
-the_star: How?
-the_star: I can’t let you pass like this, not yet, too soon. 
+the_star (var_3): How?
+the_star: I can’t let you pass like this, not yet, too soon.
 the_star: You must go back. You must try again. Are you not well?
 leave the_star
 the_star: Wake up, go back, wake up. Leave, try again.
 the_star: Try again. You’ve failed. I’ve failed. Go back.
 leave the_fool
-Where you were hovering steadily just moments ago, you now find yourself in free fall, their flurry of words growing into a cacophony that you can barely hear anymore, as you finally pass out. 
+Where you were hovering steadily just moments ago, you now find yourself in free fall, their flurry of words growing into a cacophony that you can barely hear anymore, as you finally pass out.
