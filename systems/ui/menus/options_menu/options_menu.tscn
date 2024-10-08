@@ -198,6 +198,7 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="CheckBox" type="CheckBox" parent="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
 theme = ExtResource("3_x54wv")

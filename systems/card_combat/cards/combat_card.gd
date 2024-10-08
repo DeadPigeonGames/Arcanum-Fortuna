@@ -297,6 +297,7 @@ func _input(event: InputEvent):
 
 
 func pickup():
+	await get_tree().process_frame
 	%ShowCardTooltip.hide_tooltip()
 	%ShowCardTooltip.set_process(false)
 	
