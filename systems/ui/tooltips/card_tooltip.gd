@@ -7,7 +7,10 @@ var sigils : Node
 
 @onready var background : Sprite2D = %Background
 
+var card_data : CardData
+
 func setup(data : CardData):
+	card_data = data
 	sigils = %Sigils
 	visible = false
 	if data == null:

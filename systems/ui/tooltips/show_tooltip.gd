@@ -15,7 +15,7 @@ var is_hovered := false
 var instance: TooltipBase = null:
 	set(value): instance = create_instance(value)
 
-static var tooltip_container = null
+static var tooltip_container : CanvasLayer = null
 
 @onready var cooldown := hover_min_duration
 
