@@ -303,11 +303,18 @@ unique_name_in_owner = true
 script = ExtResource("4_ma5mw")
 play_every_character = 0
 
-[node name="NextIndicator" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
-unique_name_in_owner = true
+[node name="MarginContainer2" type="MarginContainer" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 45
+
+[node name="NextIndicator" type="Control" parent="Anchor/AnimationParent/Sizer/DialogTextPanel/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 mouse_filter = 2
 script = ExtResource("5_40a50")
 show_on_questions = true

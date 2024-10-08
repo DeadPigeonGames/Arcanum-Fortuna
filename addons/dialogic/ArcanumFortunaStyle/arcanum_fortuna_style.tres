@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DialogicStyle" load_steps=4 format=3 uid="uid://vj4vxt855y76"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_1rbx5"]
-[ext_resource type="PackedScene" uid="uid://blicp0bdqs3o6" path="res://addons/dialogic/ArcanumFortunaStyle/CustomArcanumFortunaStyle/custom_arcanum_fortuna_style.tscn" id="1_jyurp"]
+[ext_resource type="PackedScene" uid="uid://c357v71o0tdbx" path="res://addons/dialogic/ArcanumFortunaStyle/CustomArcanumFortunaStyle/custom_arcanum_fortuna_style.tscn" id="1_jyurp"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_gbfk8"]
 
 [resource]
