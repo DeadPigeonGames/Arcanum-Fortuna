@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://blifmtx3ipelv"]
+[gd_scene load_steps=5 format=3 uid="uid://blifmtx3ipelv"]
 
 [ext_resource type="Script" path="res://systems/card_combat/cards/hand_card.gd" id="1_85cwi"]
 [ext_resource type="PackedScene" uid="uid://dl86q0oq58j6q" path="res://systems/card_combat/cards/card_base.tscn" id="1_g1h4l"]
 [ext_resource type="PackedScene" uid="uid://bucg0txabpsyp" path="res://utils/sounds/singleton_interactor.tscn" id="3_msu6w"]
+[ext_resource type="Texture2D" uid="uid://dnsy7weymgsyo" path="res://assets/ui/placeholders/shadow_underlay.png" id="4_j75y3"]
 
 [node name="HandCard" instance=ExtResource("1_g1h4l")]
 mouse_filter = 2
@@ -131,8 +132,9 @@ mouse_filter = 2
 [node name="ShowCardTooltip" parent="." index="17"]
 mouse_filter = 2
 
-[node name="CardShadow" type="ColorRect" parent="." index="18"]
+[node name="CardShadow" type="TextureRect" parent="." index="18"]
 unique_name_in_owner = true
+self_modulate = Color(0.03, 0.010965, 0.0057, 0.745098)
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -140,6 +142,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0687983, 0.0687983, 0.0687983, 0.882353)
+texture = ExtResource("4_j75y3")
+expand_mode = 1
 
 [editable path="KeyWordSlots/KeywordSlot1/KeywordIcon"]
