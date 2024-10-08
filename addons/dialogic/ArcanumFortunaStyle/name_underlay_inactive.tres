@@ -1,6 +1,10 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://c0gvhbb81sbqm"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cyewkuologgsi"]
 
 [ext_resource type="Texture2D" uid="uid://bain8458nf3r7" path="res://assets/ui/underlays/nameplate_inactive.png" id="1_7scaf"]
 
 [resource]
+content_margin_left = 221.0
+content_margin_top = 74.0
+content_margin_right = 221.0
+content_margin_bottom = 74.0
 texture = ExtResource("1_7scaf")

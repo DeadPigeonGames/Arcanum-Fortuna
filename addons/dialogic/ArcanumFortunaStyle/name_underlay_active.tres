@@ -1,10 +1,10 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b6dk2jrmf33bn"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dy61qvwqtto8c"]
 
 [ext_resource type="Texture2D" uid="uid://b5heujq6hiwhf" path="res://assets/ui/underlays/nameplate_active.png" id="1_lrssi"]
 
 [resource]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
+content_margin_left = 221.0
+content_margin_top = 74.0
+content_margin_right = 221.0
+content_margin_bottom = 74.0
 texture = ExtResource("1_lrssi")
