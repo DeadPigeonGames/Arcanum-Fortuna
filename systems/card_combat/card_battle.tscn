@@ -389,7 +389,7 @@ libraries = {
 
 [node name="ShowTooltip" parent="CardDeletion" instance=ExtResource("20_7e8s5")]
 layout_mode = 1
-title = "Card Deletion"
+title = "[b]Card Deletion"
 text = "Drag your previously placed cards here to
 get rid of them once and for all. 
 
@@ -421,7 +421,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("6_o6asy")
-title = "End Turn Button"
+title = "[b]End Turn Button"
 text = "Once you press this the following will happen:
 1. Your cards attack from left to right.
 2. The combined karma value of your cards is added to your karma.
