@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvm3jgdr8h4bs"]
+[gd_scene load_steps=16 format=3 uid="uid://dvm3jgdr8h4bs"]
 
 [ext_resource type="Script" path="res://systems/ui/menus/end_screens/run_end_screen.gd" id="1_37aly"]
 [ext_resource type="Texture2D" uid="uid://dhatoux8wooe0" path="res://assets/ui/underlays/demo_end_screen.png" id="2_eaggb"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bbayxaoe15g4b" path="res://assets/ui/icons/close_window_pressed.png" id="10_l05xu"]
 [ext_resource type="Texture2D" uid="uid://p772nvy8b7b4" path="res://assets/ui/icons/close_window_hover.png" id="11_2n8hv"]
 [ext_resource type="Texture2D" uid="uid://2wm4y8pt722u" path="res://assets/ui/placeholders/wishlist_button.png" id="12_0fkjh"]
+[ext_resource type="Script" path="res://systems/ui/menus/end_screens/demo_links.gd" id="12_gr68r"]
 [ext_resource type="Texture2D" uid="uid://c0ouk8jpx75ha" path="res://assets/ui/placeholders/wishlist_button_hover.png" id="13_h4feq"]
 [ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="14_qmi6r"]
 
@@ -135,7 +136,16 @@ texture_normal = ExtResource("9_0xhus")
 texture_pressed = ExtResource("10_l05xu")
 texture_hover = ExtResource("11_2n8hv")
 
-[node name="WishlistButton" type="TextureButton" parent="."]
+[node name="Links" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_gr68r")
+
+[node name="WishlistButton" type="TextureButton" parent="Links"]
 offset_left = 827.0
 offset_top = 681.0
 offset_right = 1335.0
@@ -143,7 +153,8 @@ offset_bottom = 875.0
 texture_normal = ExtResource("12_0fkjh")
 texture_hover = ExtResource("13_h4feq")
 
-[node name="URLLabel" type="RichTextLabel" parent="."]
+[node name="URLLabel" type="RichTextLabel" parent="Links"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -171,5 +182,5 @@ scroll_active = false
 [connection signal="button_up" from="WinScreen/HBoxContainer/RetryButton" to="." method="_on_retry_button_button_up"]
 [connection signal="button_up" from="WinScreen/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
 [connection signal="button_up" from="WinScreen/CloseWindowButton" to="." method="_on_main_menu_button_button_up"]
-[connection signal="button_up" from="WishlistButton" to="." method="_on_wishlist_button_button_up"]
-[connection signal="meta_clicked" from="URLLabel" to="." method="_on_url_label_meta_clicked"]
+[connection signal="button_up" from="Links/WishlistButton" to="Links" method="_on_wishlist_button_button_up"]
+[connection signal="meta_clicked" from="Links/URLLabel" to="Links" method="_on_url_label_meta_clicked"]
