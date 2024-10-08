@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://blicp0bdqs3o6"]
+[gd_scene load_steps=26 format=3 uid="uid://c357v71o0tdbx"]
 
 [ext_resource type="Script" path="res://addons/dialogic/ArcanumFortunaStyle/CustomArcanumFortunaStyle/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_pxafg"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="11_c2q7f"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_4vnya"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="12_a27ac"]
-[ext_resource type="StyleBox" path="res://addons/dialogic/ArcanumFortunaStyle/name_underlay_active.tres" id="13_74vk6"]
+[ext_resource type="StyleBox" uid="uid://dy61qvwqtto8c" path="res://addons/dialogic/ArcanumFortunaStyle/name_underlay_active.tres" id="13_74vk6"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_0tiyh"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="14_5lxnt"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_mouye"]
@@ -350,7 +350,8 @@ unique_name_in_owner = true
 self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
 layout_mode = 2
 offset_top = -30.0
-offset_bottom = -30.0
+offset_right = 135.0
+offset_bottom = 2.0
 size_flags_horizontal = 2
 size_flags_vertical = 4
 mouse_filter = 2
