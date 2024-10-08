@@ -213,3 +213,7 @@ func _on_button_button_up() -> void:
 	deck_preview.card_stack = card_stack.cardStack
 	deck_preview.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 	deck_preview.setup()
+
+
+func _exit_tree():
+	SfxBg._SFX_HealthToHighPass(100, 100)

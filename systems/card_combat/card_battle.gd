@@ -193,7 +193,7 @@ func try_attack(attacker, column_idx, friendly = false) -> bool:
 	var was_lethal = await attacker.animate_attack(target, column_idx, game_board.get_tile(column_idx, friendly))
 	if was_lethal:
 		if was_target_player:
-			SfxBg._SFX_HealthToHighPass(0, 0)
+			SfxBg._SFX_HealthToHighPass(100, 100)
 			finished.emit(player.health)
 			if not is_tutorial:
 				is_battle_over = true
