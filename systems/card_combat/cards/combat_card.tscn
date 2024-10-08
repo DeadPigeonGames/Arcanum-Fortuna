@@ -19,8 +19,8 @@ active_color = Color(0.713726, 0.764706, 0.870588, 1)
 move_speed = 0.2
 damage_dealt = ExtResource("5_dk6p8")
 death_delay = 1.0
-buff_color = Color(0.333333, 0.360784, 0.133333, 1)
-debuff_color = Color(0.458824, 0.129412, 0.105882, 1)
+buff_color = Color(0.5265, 0.656036, 0.281749, 1)
+debuff_color = Color(0.666688, 0.107391, 0.210022, 1)
 
 [node name="KarmaCost" parent="Cost" index="0"]
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
