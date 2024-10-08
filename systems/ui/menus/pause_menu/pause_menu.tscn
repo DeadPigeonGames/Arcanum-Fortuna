@@ -100,9 +100,9 @@ text = "but not over"
 
 [node name="PauseMenuButtons" type="VBoxContainer" parent="PauseMenu"]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 44.0
 offset_top = 320.0
-offset_right = 384.0
+offset_right = 477.0
 offset_bottom = 480.0
 theme_override_constants/separation = 0
 
@@ -110,7 +110,7 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_nbw54")
-text = "CONTINUE"
+text = " CONTINUE"
 alignment = 0
 
 [node name="HoverSound" parent="PauseMenu/PauseMenuButtons/ContinueButton" instance=ExtResource("5_behqx")]
@@ -127,7 +127,7 @@ connect_signal = "button_up"
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("1_nbw54")
-text = "OPTIONS"
+text = " OPTIONS"
 alignment = 0
 
 [node name="HoverSound" parent="PauseMenu/PauseMenuButtons/OptionsButton" instance=ExtResource("5_behqx")]
@@ -146,13 +146,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
+offset_left = 44.0
 offset_top = -144.0
-offset_right = 384.0
+offset_right = 454.0
 offset_bottom = -64.0
 grow_vertical = 0
 theme = ExtResource("1_nbw54")
-text = "ABANDON"
+text = " ABANDON"
 alignment = 0
 
 [node name="HoverSound" parent="PauseMenu/MainMenuButton" instance=ExtResource("5_behqx")]
