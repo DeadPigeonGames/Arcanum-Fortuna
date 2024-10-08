@@ -28,9 +28,9 @@ join the_high_priestess rightmost
 join the_fool (default_w_dog) leftmost
 the_high_priestess: You, you seek aid and have found me for it. But I know you seek more than that, than that. Speak. Speak.
 [wait_input]
-- SK HER ABOUT THE PAIN YOU’RE IN
+- ASK HER ABOUT THE PAIN YOU’RE IN
 	the_high_priestess: A sensible request, request.
-- SK HER FOR GUIDANCE
+- ASK HER FOR GUIDANCE
 	the_high_priestess: And what of, what of your pain? Very well, you shall have your answers.
 - ASK HER ABOUT THE WAY FORWARD
 	the_high_priestess: And what of, what of your pain? Very well, you shall have your answers.

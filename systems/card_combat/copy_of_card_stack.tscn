@@ -87,7 +87,7 @@ rotation = 0.785398
 pivot_offset = Vector2(37, 37)
 mouse_filter = 1
 script = ExtResource("3_0vdgp")
-title = "Your Deck"
+title = "[b]Your Deck"
 text = "Shows the amount of cards in your deck."
 
 [node name="ShowTooltip" type="Control" parent="DeckTexture"]
@@ -99,7 +99,7 @@ offset_right = 460.0
 offset_bottom = 649.0
 mouse_filter = 1
 script = ExtResource("3_0vdgp")
-title = "Your Deck"
+title = "[b]Your Deck"
 text = "Contains all cards you collected this run.
 You'll draw 4 cards on your first turn
 and 1 card at the start of every turn after that."

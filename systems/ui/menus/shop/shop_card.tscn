@@ -29,6 +29,15 @@ script = ExtResource("2_seet4")
 selected_shader = NodePath("SelectedShader")
 card_data = ExtResource("3_3mhlc")
 
+[node name="KarmaCost" parent="Cost" index="0"]
+theme_override_constants/outline_size = 8
+
+[node name="HealthCost" parent="Health" index="0"]
+theme_override_constants/outline_size = 8
+
+[node name="AttackCost" parent="Attack" index="0"]
+theme_override_constants/outline_size = 8
+
 [node name="SelectedShader" type="ColorRect" parent="." index="15"]
 visible = false
 z_index = -2

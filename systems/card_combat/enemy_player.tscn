@@ -111,7 +111,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("2_myi76")
-title = "Your Foes' Karma"
+title = "[b]Your Foes' Karma"
 text = "Cards on their side of the boards will add their
 combined cost to their karma total each turn.
 Whenever their karma would go below zero the excess
@@ -180,7 +180,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("2_myi76")
-title = "Your Foes' Health"
+title = "[b]Your Foes' Health"
 text = "Is lowered whenever one of your cards attacks an empty tile.
 If it drops to zero you'll win!"
 hover_min_duration = 0.2
