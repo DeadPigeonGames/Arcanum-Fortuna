@@ -1,6 +1,6 @@
 set {has_died} = Settings.has_died_prev_run()
 if {has_died} == true:
-	Haha lol u died
+	You startle awake.
 the_dog: Keep up!
 the_fool: Where are we headed?
 the_dog: Does it matter?
