@@ -50,6 +50,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	if battle_won_2 == true:
 		player_data.health = remaining_life
 		if battle_won_1:
+			await play_victory_anim()
 			await SceneHandler.trigger_dialog(match_won)
 			await trigger_end(field, player_data, enemy_data)
 			return # end
@@ -76,6 +77,7 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	battle_won_3 = remaining_life > 0
 	
 	if battle_won_3:
+		await play_victory_anim()
 		await SceneHandler.trigger_dialog(match_won)
 		Settings.set_died_prev_run(false)
 		await trigger_end(field, player_data, enemy_data)
@@ -86,6 +88,13 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 		await trigger_end(field, player_data, enemy_data)
 	
 	finished.emit()
+
+
+func play_victory_anim():
+	var victory_load = load("res://systems/effects/victory_animation.tscn")
+	var victory_instance = victory_load.instantiate()
+	add_child(victory_instance)
+	await victory_instance.finished
 
 
 func trigger_end(field, player_data: PlayerData, enemy_data: EnemyData):

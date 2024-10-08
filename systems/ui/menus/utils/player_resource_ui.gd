@@ -29,3 +29,11 @@ func update_counter():
 		health_bar.max_value = player_data.health
 	health_bar.value = player_data.health
 	gold_label.text = str(player_data.currency)
+
+
+func show_ui():
+	show()
+
+
+func hide_ui():
+	hide()

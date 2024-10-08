@@ -33,6 +33,7 @@ func _ready():
 
 
 func trigger(player_data: PlayerData, enemy_data: EnemyData):
+	show_player_resource(false)
 	super(player_data, enemy_data)
 	$CanvasLayer.set_layer(UIBase.UICLayerIndex.GAME_ELEMENT)
 	SceneHandler.current_ui_window = self
@@ -128,9 +129,19 @@ func _on_confirm_button_pressed():
 	%AnimationPlayer.play("hide_deck")
 	await %AnimationPlayer.animation_finished
 	finished.emit()
+	show_player_resource(true)
 	SceneHandler.current_ui_window = null
 	queue_free()
 	
+
+
+func show_player_resource(value : bool):
+	for node in SceneHandler.ui_container.get_children(true):
+		if node is PlayerResourcesUI:
+			if value:
+				node.show_ui()
+			else:
+				node.hide_ui()
 
 
 # func calculate_alternative_reward():
@@ -164,6 +175,7 @@ func _on_skip_button_pressed():
 	
 	finished.emit()
 	SceneHandler.current_ui_window = null
+	show_player_resource(true)
 	queue_free()
 
 
