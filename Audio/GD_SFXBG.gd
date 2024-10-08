@@ -84,6 +84,11 @@ func _SFX_BG_SetLowPass(toState):
 
 
 func _SFX_HealthToHighPass(health, max_health):
+	var health_percantage = float(health) / float(max_health)
+	if health_percantage > 0.2 or health <= 0:
+		health_percantage = 1
+		health = max_health
+	
 	var highPassStrength = clamp(remap(health, max_health / 2, 0.0, 1.0, 10000.0), 1.0, 15000.0)
 	var heartVolume = clamp(remap(health, max_health / 2, 0.0, -12.0, 0.0), -80.0, 0.0)
 	var heartPitch = clamp(remap(health, max_health / 2, 0.0, 0.8, 1.2), 0.8, 1.2)
@@ -95,7 +100,8 @@ func _SFX_HealthToHighPass(health, max_health):
 	$Heart.set_pitch_scale(heartPitch)
 	$Heart.set_volume_db(heartVolume)
 	$Heart/HeartTimer.set_wait_time(heartSpeed)
-	if health <= 0 or float(health) / float(max_health) > 0.2:
+	if health_percantage == 1:
+		$Heart/HeartTimer.stop()
 		return
 	$Heart/HeartTimer.start()
 
