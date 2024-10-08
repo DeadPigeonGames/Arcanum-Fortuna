@@ -40,10 +40,10 @@ overrides = {
 "box_size": "Vector2(1417, 267)",
 "italics_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Italic.otf\"",
 "name_label_box_modulate": "Color(1, 1, 1, 1)",
-"name_label_box_offset": "Vector2(80, -90)",
+"name_label_box_offset": "Vector2(80, -40)",
 "name_label_box_panel": "\"res://addons/dialogic/ArcanumFortunaStyle/name_underlay_active.tres\"",
 "name_label_box_use_global_color": "false",
-"name_label_custom_font_size": "32.0",
+"name_label_custom_font_size": "50.0",
 "name_label_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf\"",
 "name_label_use_global_color": "false",
 "name_label_use_global_font": "false",
@@ -102,4 +102,4 @@ base_overrides = {
 "global_font_size": "32.0"
 }
 layers = Array[ExtResource("1_1f56j")]([SubResource("Resource_7q1cx"), SubResource("Resource_kgc6p"), SubResource("Resource_yb6ug"), SubResource("Resource_e35h0"), SubResource("Resource_jplp5"), SubResource("Resource_ha4x8"), SubResource("Resource_ehl6d"), SubResource("Resource_opn82")])
-metadata/_latest_layer = 5
+metadata/_latest_layer = -1
