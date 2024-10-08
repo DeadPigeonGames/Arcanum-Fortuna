@@ -455,7 +455,7 @@ title = "[b]Card Deletion"
 text = "Drag your previously placed cards here to
 get rid of them once and for all. 
 
-Doing this will grant you their karma value once."
+Doing this will grant you their [img=35]res://assets/ui/icons/karma_icon_small.png[/img] karma value once."
 hover_min_duration = 0.2
 
 [node name="EndTurnButton" type="TextureButton" parent="."]
@@ -486,7 +486,7 @@ script = ExtResource("6_o6asy")
 title = "[b]End Turn Button"
 text = "Once you press this the following will happen:
 1. Your cards attack from left to right.
-2. The combined karma value of your cards is added to your karma.
+2. The combined [img=35]res://assets/ui/icons/karma_icon_small.png[/img] karma value of your cards is added to your [img=35]res://assets/ui/icons/karma_icon_small.png[/img] karma.
 3. Enemy cards move down if possible.
 4. Enemy cards attack from left to rigtht.
 5. The next turn starts and you'll draw a card."

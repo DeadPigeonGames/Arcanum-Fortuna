@@ -40,8 +40,8 @@ var health : int :
 		%HealthBar.value = health
 		if !max_health or max_health <= 0:
 			return
-		set_healthicon_anim_speed()
 		SfxBg._SFX_HealthToHighPass(health, max_health)
+		set_healthicon_anim_speed()
 
 
 func init(data: PlayerData):

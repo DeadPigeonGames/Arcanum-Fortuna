@@ -101,8 +101,7 @@ mouse_filter = 1
 script = ExtResource("3_0vdgp")
 title = "[b]Your Deck"
 text = "Contains all cards you collected this run.
-You'll draw 4 cards on your first turn
-and 1 card at the start of every turn after that."
+You'll draw 4 cards on your first turn and 1 card at the start of every turn after that."
 
 [connection signal="mouse_entered" from="DeckTexture/CountTexture/ShowTooltip" to="DeckTexture/CountTexture/ShowTooltip" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="DeckTexture/CountTexture/ShowTooltip" to="DeckTexture/CountTexture/ShowTooltip" method="_on_mouse_exited"]
