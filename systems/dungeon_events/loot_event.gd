@@ -155,8 +155,8 @@ func get_reward_text(value):
 
 func _on_skip_button_pressed():
 	#CardsOverlay.toggle(prev_mode)
-	%ConfirmButton.hide()
-	%SkipButton.hide()
+	%ConfirmButton.disabled = true
+	%SkipButton.disabled = true
 	%SkipRewardLabel.text %= reward 
 	%SkipRewardLabel.show()
 	player_data_ref.currency += reward

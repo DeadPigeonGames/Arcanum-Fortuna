@@ -24,6 +24,9 @@ func _ready():
 	global_position -= get_rect().size / 2.0
 	data = startData.duplicate(true)
 	update_target(startNode)
+	# REMOVE AFTER DEMO!
+	if startNode.demo_dialogic_begin:
+		SceneHandler.trigger_dialog(startNode.demo_dialogic_begin)
 	#for node in setup_nodes:
 		#if node.has_method("setup_player_data"):
 			#node.setup_player_data(data)

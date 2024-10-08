@@ -77,6 +77,7 @@ directories/dtl_directory={
 "int_star": "res://addons/dialogic/Dialogues/introductory/int_star.dtl"
 }
 variables={
+"has_died": false,
 "player_name": ""
 }
 layout/style_list=["res://assets/ui/themes/DialogicFoolTheme.tres"]

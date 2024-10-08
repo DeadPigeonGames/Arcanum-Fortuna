@@ -77,9 +77,12 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	
 	if battle_won_3:
 		await SceneHandler.trigger_dialog(match_won)
+		Settings.set_died_prev_run(false)
 		await trigger_end(field, player_data, enemy_data)
 	else:
 		await SceneHandler.trigger_dialog(match_lose)
+		Settings.increase_death_count(1)
+		Settings.set_died_prev_run(true)
 		await trigger_end(field, player_data, enemy_data)
 	
 	finished.emit()

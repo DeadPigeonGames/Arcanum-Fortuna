@@ -68,6 +68,8 @@ static func trigger_dialog(dialog : DialogicTimeline):
 	ScreenFade.tint_screen(Color.BLACK, 0.8, 1.0)
 	var scene = Dialogic.start(dialog)
 	SceneHandler.set_current_dialogic(scene)
+	await SceneHandler.get_tree().process_frame
+	Dialogic.paused = false
 	await Dialogic.timeline_ended
 	ScreenFade.reset_tint(0.2)
 	await ScreenFade.tint_complete

@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://dnp5x28ymobnp" path="res://data/enemy/enemy_elite6.tres" id="7_yvquq"]
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="10_gxw8d"]
 [ext_resource type="PackedScene" uid="uid://cn0otoe0nvpis" path="res://systems/dungeon_events/battle_over_reward.tscn" id="11_4taow"]
-[ext_resource type="PackedScene" uid="uid://sqcbrvq8vlwu" path="res://systems/ui/game_over_screen.tscn" id="12_tdo76"]
+[ext_resource type="PackedScene" uid="uid://dvm3jgdr8h4bs" path="res://systems/ui/menus/end_screens/demo_end_screen.tscn" id="11_rmajj"]
 
 [node name="ChallangeBattleEvent" type="Node"]
 process_mode = 1
@@ -18,7 +18,7 @@ script = ExtResource("1_jn11o")
 potential_enemies = Array[ExtResource("2_o6dr1")]([ExtResource("3_rfie6"), ExtResource("3_qao00"), ExtResource("4_tsqw4"), ExtResource("5_mn0ua"), ExtResource("6_mx257"), ExtResource("7_yvquq")])
 battleField = ExtResource("10_gxw8d")
 winEvent = ExtResource("11_4taow")
-loseEvent = ExtResource("12_tdo76")
+loseEvent = ExtResource("11_rmajj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
