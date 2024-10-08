@@ -1,4 +1,5 @@
 @tool
+class_name VisualNovelTextBoxLayer
 extends DialogicLayoutLayer
 ## This layer's scene file contains following nodes:
 ## - a dialog_text node
