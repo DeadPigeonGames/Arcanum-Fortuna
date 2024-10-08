@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=6 format=3 uid="uid://dyw8cvxtrmkxn"]
+[gd_resource type="Resource" script_class="CardsKarmaSwitch" load_steps=9 format=3 uid="uid://dyw8cvxtrmkxn"]
 
+[ext_resource type="PackedScene" uid="uid://p7soawcmcth1" path="res://systems/card_combat/effects/chromatic_aberration.tscn" id="1_2ptty"]
 [ext_resource type="Texture2D" uid="uid://cd5umbahmjlju" path="res://assets/sprites/cards/sigils.png" id="1_vhsgc"]
 [ext_resource type="Script" path="res://systems/card_combat/keywords/switch/cards_karma_switch.gd" id="2_g5x56"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/combat_phase_trigger.gd" id="2_iwema"]
 [ext_resource type="Material" uid="uid://bi84ni64yadvs" path="res://shaders/gradient_shader.tres" id="3_nn38p"]
 [ext_resource type="Texture2D" uid="uid://d3gn7cjww2f6i" path="res://assets/ui/icons/keyword_slots_reversed.png" id="4_74sin"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="4_wjsyb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj8qu"]
 atlas = ExtResource("1_vhsgc")
@@ -15,14 +18,15 @@ required_card_count = 2
 required_karma_type = 1
 attack_difference = 1
 health_difference = 1
-keywords_to_gain = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
-keywords_to_remove = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords_to_gain = Array[ExtResource("4_wjsyb")]([])
+keywords_to_remove = Array[ExtResource("4_wjsyb")]([])
 tranform_delay = 1.0
 transformed_artwork_shader = ExtResource("3_nn38p")
 transformed_keyword_slot_atlas = ExtResource("4_74sin")
-rotation_duration = 0.8
-icon_rotation = 1.0
-combat_phase_triggers = Array[Resource("res://systems/card_combat/keywords/combat_phase_trigger.gd")]([])
+chromatic_scene = ExtResource("1_2ptty")
+rotation_time = 0.8
+icon_rotation_time = 1.0
+combat_phase_triggers = Array[ExtResource("2_iwema")]([])
 triggers = 4
 is_animated = true
 scale_speed = 0.6
