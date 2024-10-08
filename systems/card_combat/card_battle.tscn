@@ -105,7 +105,7 @@ distance = 350.0
 [sub_resource type="Resource" id="Resource_1ombf"]
 script = ExtResource("17_r3b0a")
 title = ""
-text = "A burnt card will [b]give you its [color=#682180]karma[/color] value[/b] one last time before making room for your next card!"
+text = "A burnt card will [b]give you its [img=35]res://assets/ui/icons/karma_icon_small.png[/img] [color=#682180]karma[/color] value[/b] one last time before making room for your next card!"
 highlighted_elements = Array[NodePath]([NodePath("CardDeletion")])
 arrows = Array[ExtResource("16_0alj3")]([])
 offset_type = 5
@@ -118,7 +118,7 @@ popups = Array[ExtResource("15_uww5a")]([SubResource("Resource_uyfm1"), SubResou
 [sub_resource type="Resource" id="Resource_y4a4t"]
 script = ExtResource("17_r3b0a")
 title = ""
-text = "Look, you've collected a stash of [color=#682180]karma[/color]!"
+text = "Look, you've collected a stash of [img=35]res://assets/ui/icons/karma_icon_small.png[/img] [color=#682180]karma[/color]!"
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer")])
 arrows = Array[ExtResource("16_0alj3")]([])
 offset_type = 0
@@ -133,7 +133,7 @@ element = NodePath("CardPlayer")
 [sub_resource type="Resource" id="Resource_ttbn2"]
 script = ExtResource("17_r3b0a")
 title = ""
-text = "Should you ever have more [color=#682180]karma[/color] stored than you need, consider using it to [b]draw additional cards[/b]."
+text = "Should you ever have more [img=35]res://assets/ui/icons/karma_icon_small.png[/img] [color=#682180]karma[/color] stored than you need, consider using it to [b]draw additional cards[/b]."
 highlighted_elements = Array[NodePath]([NodePath("CardPlayer")])
 arrows = Array[ExtResource("16_0alj3")]([SubResource("Resource_u2pnk")])
 offset_type = 0
