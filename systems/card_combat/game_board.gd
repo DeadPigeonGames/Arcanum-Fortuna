@@ -27,12 +27,15 @@ func _ready():
 		tile.self_modulate = tile_disabled_color
 	for tile in player_tiles.get_children():
 		tile.self_modulate = tile_disabled_color
+		await get_tree().process_frame
+		SceneHandler.combat.player.hand.hand_hovered.connect(
+			func (value : bool):
+				await get_tree().process_frame
+				hover_tile(tile)
+		)
 		tile.mouse_entered.connect(
 			func ():
-				if not accept_card:
-					return
-				tile.self_modulate = tile_hovered_color
-				hovered_tile = tile
+				hover_tile(tile)
 		)
 		tile.mouse_exited.connect(
 			func ():
@@ -40,6 +43,14 @@ func _ready():
 				if hovered_tile == tile:
 					hovered_tile = null
 		)
+
+
+func hover_tile(tile):
+	await get_tree().process_frame
+	if not accept_card:
+		return
+	tile.self_modulate = tile_hovered_color
+	hovered_tile = tile
 
 
 func get_friendly_tile_position(x):
