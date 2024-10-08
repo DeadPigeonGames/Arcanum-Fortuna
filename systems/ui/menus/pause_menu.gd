@@ -4,6 +4,12 @@ extends UIBase
 @export var options_scene: PackedScene
 var anim_player : AnimationPlayer
 
+func _ready() -> void:
+	anim_player = $PauseMenu/AnimationPlayer
+	Settings.apply_player_anim_speed(anim_player)
+	anim_player.play("open_pause_menu")
+	await anim_player.animation_finished
+
 
 func _input(event):
 	if anim_player.is_playing():
@@ -14,7 +20,6 @@ func _input(event):
 
 func setup():
 	anim_player = $PauseMenu/AnimationPlayer
-	Settings.apply_player_anim_speed(anim_player)
 	if SceneHandler.get_current_dialogic():
 		Dialogic.paused = true
 
