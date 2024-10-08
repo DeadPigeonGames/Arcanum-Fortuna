@@ -1,0 +1,9 @@
+join the_star rightmost
+the_star: I yield!
+join the_fool (default) leftmost
+the_star: You played brilliantly. This must be pride I feel. 
+the_star: Let the blaze of glory carry you into the hungry jaws of the city — just don’t let it swallow you whole. 
+update the_fool (rose1)
+the_star: You are ready. \
+Follow my light, I’ll guide you there.
+leave the_star
