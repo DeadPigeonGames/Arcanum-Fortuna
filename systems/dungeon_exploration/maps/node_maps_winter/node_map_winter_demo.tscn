@@ -198,19 +198,19 @@ startData = ExtResource("3_umopx")
 
 [node name="StartNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("4_m1nsi")]
 layout_mode = 1
-offset_left = -807.0
-offset_top = -128.0
-offset_right = -807.0
-offset_bottom = -128.0
+offset_left = -843.0
+offset_top = -261.0
+offset_right = -843.0
+offset_bottom = -261.0
 connectsTo = [NodePath("../RandomNode")]
 offset = 45.0
 
 [node name="RandomNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = -451.0
-offset_top = -151.0
-offset_right = -449.0
-offset_bottom = -151.0
+offset_left = -487.0
+offset_top = -284.0
+offset_right = -485.0
+offset_bottom = -284.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_i25gk")])
 connectsTo = [NodePath("../RandomEventNode"), NodePath("../RandomEventNode2")]
 demo_dialogic_begin = ExtResource("9_i22a3")
@@ -220,10 +220,10 @@ offset = 45.0
 
 [node name="RandomEventNode" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = -80.0
-offset_top = -324.0
-offset_right = -80.0
-offset_bottom = -324.0
+offset_left = -116.0
+offset_top = -457.0
+offset_right = -116.0
+offset_bottom = -457.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_drgec")])
 connectsTo = [NodePath("../RandomEventNode3")]
 demo_dialogic_begin = ExtResource("11_tm1no")
@@ -233,10 +233,10 @@ offset = 45.0
 
 [node name="RandomEventNode2" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = -207.0
-offset_top = -3.0
-offset_right = -207.0
-offset_bottom = -3.0
+offset_left = -243.0
+offset_top = -136.0
+offset_right = -243.0
+offset_bottom = -136.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_br2uv")])
 connectsTo = [NodePath("../RandomEventNode12")]
 demo_dialogic_begin = ExtResource("15_12pfo")
@@ -246,10 +246,10 @@ offset = 45.0
 
 [node name="RandomEventNode3" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 190.0
-offset_top = -289.38
-offset_right = 190.0
-offset_bottom = -289.38
+offset_left = 154.0
+offset_top = -422.38
+offset_right = 154.0
+offset_bottom = -422.38
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_c2svj")])
 connectsTo = [NodePath("../RandomEventNode4"), NodePath("../RandomEventNode5")]
 dashed_width = 12.0
@@ -257,10 +257,10 @@ offset = 45.0
 
 [node name="RandomEventNode12" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 116.075
-offset_top = 114.045
-offset_right = 116.075
-offset_bottom = 114.045
+offset_left = 80.075
+offset_top = -18.955
+offset_right = 80.075
+offset_bottom = -18.955
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_c4cr7")])
 connectsTo = [NodePath("../RandomEventNode6")]
 dashed_width = 12.0
@@ -268,10 +268,10 @@ offset = 45.0
 
 [node name="RandomEventNode4" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 438.0
-offset_top = -479.0
-offset_right = 438.0
-offset_bottom = -479.0
+offset_left = 402.0
+offset_top = -612.0
+offset_right = 402.0
+offset_bottom = -612.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_fhjay")])
 connectsTo = [NodePath("../RandomEventNode13")]
 demo_dialogic_begin = ExtResource("21_3o7lv")
@@ -281,10 +281,10 @@ offset = 45.0
 
 [node name="RandomEventNode5" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 566.0
-offset_top = -236.0
-offset_right = 566.0
-offset_bottom = -236.0
+offset_left = 530.0
+offset_top = -369.0
+offset_right = 530.0
+offset_bottom = -369.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_wv2us")])
 connectsTo = [NodePath("../RandomEventNode7"), NodePath("../RandomEventNode13")]
 demo_dialogic_begin = ExtResource("23_xydty")
@@ -294,10 +294,10 @@ offset = 45.0
 
 [node name="RandomEventNode6" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 415.0
-offset_top = 62.05
-offset_right = 415.0
-offset_bottom = 62.05
+offset_left = 379.0
+offset_top = -70.95
+offset_right = 379.0
+offset_bottom = -70.95
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_irt6a")])
 connectsTo = [NodePath("../RandomEventNode8"), NodePath("../RandomEventNode7")]
 dashed_width = 12.0
@@ -305,10 +305,10 @@ offset = 45.0
 
 [node name="RandomEventNode7" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 858.0
-offset_top = -99.645
-offset_right = 858.0
-offset_bottom = -99.645
+offset_left = 822.0
+offset_top = -232.645
+offset_right = 822.0
+offset_bottom = -232.645
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_ne4dc")])
 connectsTo = [NodePath("../RandomEventNode14")]
 demo_dialogic_begin = ExtResource("23_8tvv6")
@@ -318,10 +318,10 @@ offset = 45.0
 
 [node name="RandomEventNode13" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 782.44
-offset_top = -421.535
-offset_right = 782.44
-offset_bottom = -421.535
+offset_left = 746.44
+offset_top = -554.535
+offset_right = 746.44
+offset_bottom = -554.535
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_o5544")])
 connectsTo = [NodePath("../RandomEventNode10")]
 dashed_width = 12.0
@@ -329,10 +329,10 @@ offset = 45.0
 
 [node name="RandomEventNode8" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 733.155
-offset_top = 141.15
-offset_right = 733.155
-offset_bottom = 141.15
+offset_left = 697.155
+offset_top = 8.15002
+offset_right = 697.155
+offset_bottom = 8.15002
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_8q8wj")])
 connectsTo = [NodePath("../RandomEventNode9")]
 demo_dialogic_begin = ExtResource("27_l3ku2")
@@ -342,10 +342,10 @@ offset = 45.0
 
 [node name="RandomEventNode9" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 1064.0
-offset_top = 85.0
-offset_right = 1064.0
-offset_bottom = 85.0
+offset_left = 1028.0
+offset_top = -48.0
+offset_right = 1028.0
+offset_bottom = -48.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_6dcrm")])
 connectsTo = [NodePath("../RandomEventNode11")]
 demo_dialogic_begin = ExtResource("29_cobu1")
@@ -355,10 +355,10 @@ offset = 45.0
 
 [node name="RandomEventNode10" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 1184.0
-offset_top = -493.0
-offset_right = 1184.0
-offset_bottom = -493.0
+offset_left = 1148.0
+offset_top = -626.0
+offset_right = 1148.0
+offset_bottom = -626.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_aea7h")])
 connectsTo = [NodePath("../RandomEventNode11")]
 demo_dialogic_begin = ExtResource("23_8tvv6")
@@ -368,10 +368,10 @@ offset = 45.0
 
 [node name="RandomEventNode14" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 1092.84
-offset_top = -189.39
-offset_right = 1092.84
-offset_bottom = -189.39
+offset_left = 1056.84
+offset_top = -322.39
+offset_right = 1056.84
+offset_bottom = -322.39
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_grv1j")])
 connectsTo = [NodePath("../RandomEventNode11")]
 dashed_width = 12.0
@@ -379,10 +379,10 @@ offset = 45.0
 
 [node name="RandomEventNode11" parent="." node_paths=PackedStringArray("connectsTo") instance=ExtResource("5_635g1")]
 layout_mode = 1
-offset_left = 1480.0
-offset_top = -151.0
-offset_right = 1480.0
-offset_bottom = -151.0
+offset_left = 1444.0
+offset_top = -284.0
+offset_right = 1444.0
+offset_bottom = -284.0
 potential_events = Array[ExtResource("8_aegmn")]([SubResource("Resource_0iv1d")])
 connectsTo = [NodePath("../FinalNode")]
 dashed_width = 12.0
@@ -390,10 +390,10 @@ offset = 45.0
 
 [node name="FinalNode" parent="." instance=ExtResource("15_unaqv")]
 layout_mode = 1
-offset_left = 1736.0
-offset_top = -190.0
-offset_right = 1736.0
-offset_bottom = -190.0
+offset_left = 1700.0
+offset_top = -323.0
+offset_right = 1700.0
+offset_bottom = -323.0
 pivot_offset = Vector2(-519, 296)
 demo_enemy_data = ExtResource("31_73eos")
 demo_dialogic_begin = ExtResource("9_i22a3")
@@ -411,9 +411,9 @@ offset_bottom = -506.0
 tile_set = SubResource("TileSet_35j8v")
 format = 2
 layer_0/name = "layer 1"
-layer_0/tile_data = PackedInt32Array(655397, 1114114, 5, 2031717, 1114114, 5, 2490521, 1114114, 5, 721095, 1114114, 5, 2359534, 1114114, 5, 65813, 1114114, 5, 2294126, 1114114, 5, 1638813, 1703938, 6, 1442119, 1703938, 6, 1966359, 1703938, 6, 1966298, 1703938, 6, 131252, 1703938, 6, 262247, 1703938, 6, 2031636, 1703938, 6, 2555959, 2162690, 6, 1704099, 2162690, 6, 393467, 2162690, 6, 2228535, 2162690, 6, 1311096, 2162690, 6, 524715, 2162690, 6, 2359710, 2686978, 4, 1311066, 2686978, 4, 786721, 2686978, 4, 1835211, 2686978, 4, 1638540, 2686978, 4, 1441853, 2686978, 4, 655368, 3145730, 4, 1048663, 3145730, 4, 2424968, 3145730, 4, 262363, 3145730, 4, 1507594, 3145730, 4, 983376, 3145730, 4, 393623, 3145730, 4, 721282, 2162690, 11, 1835265, 2162690, 11, 393385, 2162690, 11, 2097155, 2162690, 11, 1638507, 2621442, 9, 2293777, 2621442, 9, 655549, 2621442, 9, 2162990, 2621442, 9, 721313, 2621442, 9, 1376686, 65538, 22, 1048877, 65538, 22, 1572989, 65538, 22, 589847, 1114114, 20, 1638586, 1114114, 20, 2294162, 2162690, 18, 721156, 2162690, 18, 786561, 2162690, 18, 852097, 2162690, 18, 393262, 3211266, 19, 1376427, 3211266, 19, 1507665, 3211266, 19, 1769471, 2162690, 6, 589817, 65538, 6, 1179638, 3145730, 4, 2097137, 65538, 22, 720876, 2162690, 18, 1703913, 2686978, 4, 1179881, 1703938, 39, 1311130, 131074, 40, 2621434, 131074, 40)
+layer_0/tile_data = PackedInt32Array(65813, 1114114, 5, 2294126, 1114114, 5, 1638813, 1703938, 6, 1442119, 1703938, 6, 1966359, 1703938, 6, 1966298, 1703938, 6, 131252, 1703938, 6, 262247, 1703938, 6, 2555959, 2162690, 6, 393467, 2162690, 6, 2228535, 2162690, 6, 1311096, 2162690, 6, 524715, 2162690, 6, 2359710, 2686978, 4, 1311066, 2686978, 4, 786721, 2686978, 4, 1835211, 2686978, 4, 1048663, 3145730, 4, 1507594, 3145730, 4, 983376, 3145730, 4, 393623, 3145730, 4, 721282, 2162690, 11, 1835265, 2162690, 11, 393385, 2162690, 11, 2097155, 2162690, 11, 2162990, 2621442, 9, 721313, 2621442, 9, 1376686, 65538, 22, 1048877, 65538, 22, 2294162, 2162690, 18, 721156, 2162690, 18, 1507665, 3211266, 19, 1769471, 2162690, 6, 1311130, 131074, 40, -131030, 3211266, 19, 2097169, 2621442, 9, 1507305, 2686978, 4, 1900529, 65538, 22, 393201, 2162690, 18, 262142, 65538, 6, -327671, 131074, 40, 1900569, 1703938, 6, 196627, 1114114, 20, 720898, 3145730, 4, 1114166, 2686978, 4, 852010, 1114114, 5, 1704044, 2621442, 9, 1900644, 1114114, 5, 131189, 2162690, 18, 196725, 2162690, 18, 65691, 65538, 22, 1704077, 2686978, 4, 1310849, 3145730, 4, 1245390, 1703938, 39, 590012, 2621442, 9, 655558, 1114114, 5, 196828, 3145730, 4, 1507500, 3211266, 19, 1769659, 1114114, 20, 1769632, 2162690, 6, 2162917, 1114114, 5, 203, 2162690, 6, 1310953, 2162690, 11)
 layer_1/name = "layer 2 (snow"
-layer_1/tile_data = PackedInt32Array(851990, 2, 11, 2293826, 2, 11, 1835133, 2, 11, 2293969, 2, 11, -65224, 2, 11, 2556286, 2, 11, 1573153, 1048578, 11, 393440, 1048578, 11, 524659, 1048578, 11, 589975, 1048578, 11, 2097244, 1048578, 11, 720963, 1048578, 11, 2424847, 1048578, 11, 2359326, 65538, 6, 1769515, 65538, 6, 1245265, 65538, 6, 2621544, 65538, 6, 786569, 65538, 6, 2424994, 65538, 6, 1310899, 65538, 6, 1310941, 65538, 6, 2097419, 65538, 6, 2294080, 65538, 6, 131408, 65538, 6, 1835406, 65538, 6, 1179652, 589826, 6, 1179755, 589826, 6, 2621582, 589826, 6, 171, 589826, 6, 327887, 589826, 6, 2097398, 589826, 6, 721170, 589826, 6, 721202, 589826, 6, 2228582, 589826, 6, 786832, 589826, 6, 1966506, 1048578, 11)
+layer_1/tile_data = PackedInt32Array(2293969, 2, 11, -65224, 2, 11, 2556286, 2, 11, 1573153, 1048578, 11, 524659, 1048578, 11, 786569, 65538, 6, 1310899, 65538, 6, 1310941, 65538, 6, 2097419, 65538, 6, 2294080, 65538, 6, 131408, 65538, 6, 1835406, 65538, 6, 171, 589826, 6, 2097398, 589826, 6, 721170, 589826, 6, 721202, 589826, 6, 2228582, 589826, 6, 786832, 589826, 6, 1966506, 1048578, 11, 2228239, 1048578, 11, 2097186, 65538, 6, 2293852, 1048578, 11, 458770, 2, 11, 1638465, 2, 11, 983118, 65538, 6, -131010, 1048578, 11, 327835, 2, 11, 327890, 589826, 6, 393443, 1048578, 11, 1179750, 589826, 6, 1310713, 589826, 6)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
