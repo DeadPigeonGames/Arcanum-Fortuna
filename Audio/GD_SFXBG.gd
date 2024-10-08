@@ -84,6 +84,9 @@ func _SFX_BG_SetLowPass(toState):
 
 
 func _SFX_HealthToHighPass(health, max_health):
+	if max_health == 0:
+		max_health = 100
+		health + 100
 	var health_percantage = float(health) / float(max_health)
 	if health_percantage > 0.2 or health <= 0:
 		health_percantage = 1
