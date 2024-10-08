@@ -266,7 +266,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("5_l02yx")
-title = "Your Karma"
+title = "[b]Your Karma"
 text = "Cards on your side of the boards will add their
 combined cost to your karma total each turn.
 Whenever your karma would go below zero the excess
@@ -344,7 +344,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("5_l02yx")
-title = "Your Health"
+title = "[b]Your Health"
 text = "Is lowered whenever an enemy card attacks an empty tile.
 If it drops to zero you'll die!"
 hover_min_duration = 0.2
@@ -399,7 +399,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("5_l02yx")
-title = "Bonus Draw "
+title = "[b]Bonus Draw "
 text = "Click here to exchange karma for an extra card."
 hover_min_duration = 0.2
 

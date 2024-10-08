@@ -15,13 +15,15 @@ func _input(event):
 func setup():
 	anim_player = $PauseMenu/AnimationPlayer
 	Settings.apply_player_anim_speed(anim_player)
-	Dialogic.paused = true
+	if SceneHandler.get_current_dialogic():
+		Dialogic.paused = true
 
 
 func close_pause_menu():
 	anim_player.play("close_pause_menu")
 	await anim_player.animation_finished
-	Dialogic.paused = false
+	if SceneHandler.get_current_dialogic():
+		Dialogic.paused = false
 	Pause.continue_game()
 	close()
 
@@ -43,8 +45,9 @@ func _on_continue_button_button_up():
 func _on_main_menu_button_button_up():
 	Pause.can_pause = false
 	Pause.continue_game()
-	Dialogic.end_timeline()
-	Dialogic.paused = false
+	if SceneHandler.get_current_dialogic():
+		Dialogic.end_timeline()
 	SceneHandler.set_current_dialogic(null)
 	SceneHandler.change_scene("res://systems/ui/menus/main_menu/main_menu.tscn")
+	await Settings.save_config()
 	close()

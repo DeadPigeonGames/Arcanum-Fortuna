@@ -170,6 +170,8 @@ func set_screen_index(index):
 func get_screen_index():
 	if settings_dict["Video"].has("screen_index") == false:
 		set_screen_index(DisplayServer.window_get_current_screen())
+		var window = get_window()
+		window.move_to_center()
 	return settings_dict["Video"]["screen_index"] as int
 
 
@@ -182,15 +184,15 @@ func get_audio_slider(bus_name):
 	return settings_dict["Audio"][bus_name] as float
 
 
-func set_anim_speed(value):
-	settings_dict["animation_time"] = value
-
-
 func get_anim_speed() -> float:
 	if settings_dict.has("animation_time"):
 		return settings_dict["animation_time"] as float
 	else:
 		return animation_time
+
+
+func set_anim_speed(value):
+	settings_dict["animation_time"] = value
 
 
 func get_trigger_tutorial(class_name_string : String) -> bool:
@@ -202,6 +204,30 @@ func get_trigger_tutorial(class_name_string : String) -> bool:
 func set_trigger_tutorial(class_name_string : String, value : bool):
 	if settings_dict.has(class_name_string):
 		settings_dict[class_name_string] = value
+	await save_config()
+
+
+func get_death_count() -> int:
+	return settings_dict["death_count"]
+
+
+func increase_death_count(amount : int):
+	if settings_dict.has("death_count"):
+		settings_dict["death_count"] += amount
+	else:
+		settings_dict["death_count"] = amount
+	await save_config()
+
+
+func has_died_prev_run() -> bool:
+	if settings_dict.has("death_prev_run"):
+		return settings_dict["death_prev_run"]
+	return false
+
+
+func set_died_prev_run(value : bool):
+	settings_dict["death_prev_run"] = value
+	await save_config()
 
 
 func apply_player_anim_speed(anim_player : AnimationPlayer):

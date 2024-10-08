@@ -6,16 +6,12 @@ const GFORMS_URL := "https://forms.gle/T33BMh7h9qJ87tvw7"
 
 
 func setup():
+	Pause.can_pause = false
 	return
 	if name == "WinScreen":
 		SfxOther._SFX_Win()
 	else:
 		SfxOther._SFX_Loss()
-	Pause.can_pause = false
-
-
-func _ready():
-	pass
 
 
 func _on_retry_button_button_up():

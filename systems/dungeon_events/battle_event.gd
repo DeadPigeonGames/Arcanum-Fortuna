@@ -30,6 +30,10 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 	
 	if won:
 		SteamService.try_unlock_achievement("Better than Noyan")
+		Settings.set_died_prev_run(false)
+	else:
+		Settings.increase_death_count(1)
+		Settings.set_died_prev_run(true)
 	
 	player_data.health = remainingLife
 	
@@ -39,11 +43,14 @@ func trigger(player_data: PlayerData, enemy_data: EnemyData):
 		var instance = event.instantiate()
 		if instance is RunEndScreen:
 			instance.queue_free()
+			ScreenFade.fade_out(0.7, true, true)
+			await ScreenFade.fade_out_complete
+			field.queue_free()
 			instance = SceneHandler.add_ui_element(loseEvent)
 			instance.init(UIBase.UICLayerIndex.HIGH_PRIORITY, self)
 			instance.setup()
-			field.queue_free()
-			finished.emit()
+			ScreenFade.fade_in(0.7, true, true)
+			await ScreenFade.fade_in_complete
 			queue_free()
 			return
 		if "seed" in instance:
