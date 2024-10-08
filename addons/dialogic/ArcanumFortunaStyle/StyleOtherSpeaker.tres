@@ -70,7 +70,7 @@ script = ExtResource("1_fu2yv")
 scene = ExtResource("7_1x4fv")
 overrides = {
 "boxes_fill_width": "false",
-"boxes_min_size": "Vector2(1248, 80)",
+"boxes_min_size": "Vector2(712, 80)",
 "boxes_stylebox_disabled": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_disabled.tres\"",
 "boxes_stylebox_focused": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_focus.tres\"",
 "boxes_stylebox_hovered": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_hover.tres\"",
