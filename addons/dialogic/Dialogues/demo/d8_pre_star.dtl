@@ -1,0 +1,48 @@
+At long last, you arrive at a yawning precipice, the soft glow of the city stretched out below, just out of reach. \
+The smattering of lights from within the buildings hide the stars, artificially outshining them.
+You suddenly feel dizzy, as though the horizon were flipped.
+It is easy enough to find an excuse for it; the exhaustion setting in, or the height at which you are standing making you woozy — so easy, in fact, that you nearly miss the star crashing down just past your peripheral vision.
+[wait_input hide_text="false"]
+- TAKE A LOOK AROUND
+	You try to turn your head, only to find it heavier than you can recall it ever feeling.\
+You strain with the effort to even lift it.
+	By contrast, the rest of your body feels light as a feather, and you glance at your feet to find them hovering high above where you just stood on solid ground.
+	What you fail to spot, however, is the familiar sight of white fur by your side. \
+A vast loneliness overcomes you all at once.
+	join the_fool (default) leftmost
+	the_fool: Am I dreaming?
+	A giggle.
+	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="-25.0"]
+	join the_star rightmost
+	the_star: I get that one a lot.
+- TRY TO STEADY YOURSELF
+	You close your eyes, taking in a deep breath — it only serves to amplify your vertigo, the world spinning around you. \
+You think you open them again, and yet you still feel the lingering weight of your eyelids.
+	Below you are clouds, above you the city winks its sleepless eye.\
+In your daze you call out to your companion, but only silence answers you.
+	join the_fool (default) leftmost
+	the_fool: Am I dreaming?
+	A giggle.
+	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="-25.0"]
+	join the_star rightmost
+	the_star: I get that one a lot.
+A figure floats before you, their uncanny eyes perfectly level with yours. 
+the_star: You must have come a long way, to find me. \
+I am, after all, not easily found.
+leave the_star
+You blink, and they vanish before you feel a playful tug on your hood.
+join the_star rightmost
+the_star: Love the hat, by the way. Where’s your dog?
+leave the_star
+the_fool: He’s not my dog. He’s more of a friend. Mind of his own.\
+Who are you?
+join the_star right
+the_star: Oh, you, me. We aren’t all that different. You’ll find out. 
+the_star: Say, how about a match of cards?
+the_star: Beware though, that this one will be different to the ones you’ve played so far.
+leave the_star
+the_star: I mean, besides all the risk of real bodily injury from a poor defense, or an imbalanced karma. \
+That’s all part of the fun, as you must know. 
+join the_star center
+the_star: What I’m saying is this\: I won’t give in so easily. 
+the_star: Because I know you won’t, either.
