@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://gm88hj83koee"]
 
 [ext_resource type="Script" path="res://systems/dungeon_events/final_battle_event.gd" id="2_divep"]
-[ext_resource type="Resource" uid="uid://dsyn6u3okj0np" path="res://data/enemy/7_boss_star2.tres" id="2_q738s"]
-[ext_resource type="Resource" uid="uid://dx6sp4jrqr6b4" path="res://data/enemy/7_boss_star3.tres" id="3_nrw27"]
-[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d1_post_magician.dtl" id="5_sl7fl"]
-[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d6b_pre_priestess.dtl" id="5_ywevw"]
-[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2a_post_moon.dtl" id="7_58vcd"]
-[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2a_pre_moon.dtl" id="8_rq453"]
-[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_post_sun.dtl" id="9_vq0ve"]
-[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d2b_pre_sun.dtl" id="10_e4xsh"]
+[ext_resource type="Resource" uid="uid://dglg8wed7b01o" path="res://data/enemy/7_boss_star2.tres" id="2_q738s"]
+[ext_resource type="Resource" uid="uid://bgnfygppug76" path="res://data/enemy/7_boss_star3.tres" id="3_nrw27"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_winfirst_star.dtl" id="4_ht81y"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_losefirst_star.dtl" id="5_k7ktp"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_winsecond_star.dtl" id="6_5mfb0"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_losesecond_star.dtl" id="7_f35v2"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_finalwin_star.dtl" id="8_6idij"]
+[ext_resource type="Resource" path="res://addons/dialogic/Dialogues/demo/d8_finalloss_star.dtl" id="9_23nd4"]
 [ext_resource type="PackedScene" uid="uid://dvm3jgdr8h4bs" path="res://systems/ui/menus/end_screens/demo_end_screen.tscn" id="11_yqdb4"]
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="12_eqf1x"]
 
@@ -16,12 +16,12 @@
 script = ExtResource("2_divep")
 best_battle_two = ExtResource("2_q738s")
 best_battle_three = ExtResource("3_nrw27")
-battle_1_win_dia = ExtResource("5_sl7fl")
-battle_1_lose_dia = ExtResource("5_ywevw")
-battle_2_win_dia = ExtResource("7_58vcd")
-battle_2_lose_dia = ExtResource("8_rq453")
-match_won = ExtResource("9_vq0ve")
-match_lose = ExtResource("10_e4xsh")
+battle_1_win_dia = ExtResource("4_ht81y")
+battle_1_lose_dia = ExtResource("5_k7ktp")
+battle_2_win_dia = ExtResource("6_5mfb0")
+battle_2_lose_dia = ExtResource("7_f35v2")
+match_won = ExtResource("8_6idij")
+match_lose = ExtResource("9_23nd4")
 battleField = ExtResource("12_eqf1x")
 winEvent = ExtResource("11_yqdb4")
 loseEvent = ExtResource("11_yqdb4")
