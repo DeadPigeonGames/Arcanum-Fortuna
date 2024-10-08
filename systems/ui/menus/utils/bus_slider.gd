@@ -24,6 +24,7 @@ func set_disabled(is_disabled: bool):
 	AudioServer.set_bus_mute(bus_idx, disabled)
 	get_parent().get_node("CheckBox").button_pressed = not is_disabled
 
+
 func _on_value_changed(value_changed):
 	if not value_changed:
 		return

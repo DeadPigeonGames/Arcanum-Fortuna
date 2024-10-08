@@ -25,13 +25,13 @@ func _ready():
 		tile.self_modulate = tile_disabled_color
 	for tile in $EnemyTiles.get_child(1).get_children():
 		tile.self_modulate = tile_disabled_color
+		await get_tree().process_frame
 	for tile in player_tiles.get_children():
 		tile.self_modulate = tile_disabled_color
-		await get_tree().process_frame
 		SceneHandler.combat.player.hand.hand_hovered.connect(
 			func (value : bool):
-				await get_tree().process_frame
-				hover_tile(tile)
+				if tile.get_global_rect().has_point(get_global_mouse_position()):
+					hover_tile(tile)
 		)
 		tile.mouse_entered.connect(
 			func ():

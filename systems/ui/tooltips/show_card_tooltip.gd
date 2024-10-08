@@ -3,6 +3,11 @@ extends ShowTooltip
 
 var card_data : CardData
 
+func _physics_process(delta: float) -> void:
+	await get_tree().process_frame
+	var rectangle = get_parent().get_global_rect()
+	is_hovered = rectangle.has_point(get_global_mouse_position())
+
 
 func init(data : CardData):
 	card_data = data
