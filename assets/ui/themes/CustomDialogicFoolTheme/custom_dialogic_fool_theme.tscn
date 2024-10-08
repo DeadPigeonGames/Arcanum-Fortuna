@@ -24,21 +24,6 @@ texture = ExtResource("10_byad5")
 script = ExtResource("1_ifsho")
 global_bg_color = Color(1, 1, 1, 0)
 
-[node name="VN_Textbox_Layer_DialogicTextAnchor_DialogTextAnimationParent_Sizer_DialogTextPanel_NameLabelHolder#TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(400, 80)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -624.0
-offset_top = -286.0
-offset_right = -224.0
-offset_bottom = -206.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("5_fv088")
-
 [node name="VN_Textbox_Layer_DialogicTextAnchor_DialogTextAnimationParent_Sizer#TextureRect" type="TextureRect" parent="."]
 visible = false
 anchors_preset = 7
@@ -80,6 +65,11 @@ apply_overrides_on_ready = true
 
 [node name="DialogTextPanel" parent="VN_Textbox_Layer/Anchor/AnimationParent/Sizer" index="0"]
 theme_override_styles/panel = SubResource("StyleBoxTexture_pqq5n")
+
+[node name="VN_Textbox_Layer_DialogicTextAnchor_DialogTextAnimationParent_Sizer_DialogTextPanel_NameLabelHolder#TextureRect" type="TextureRect" parent="VN_Textbox_Layer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/NameLabelPanel" index="1"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+texture = ExtResource("5_fv088")
 
 [node name="FullAdvanceInputLayer" parent="." instance=ExtResource("8_wfcga")]
 apply_overrides_on_ready = true

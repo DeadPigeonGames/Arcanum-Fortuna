@@ -1,0 +1,104 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=19 format=3 uid="uid://vj4vxt855y76"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_1rbx5"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_1n2yt"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_ap1ix"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_ymnim"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_3xyud"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_qscdl"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_or75c"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_rpq8w"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_rw047"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_gbfk8"]
+
+[sub_resource type="Resource" id="Resource_cnaho"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("2_1n2yt")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_e7jbh"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("3_ap1ix")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_bv7ka"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("4_ymnim")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_5f4d4"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("5_3xyud")
+overrides = {
+"autoadvance_progressbar": "false",
+"bold_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Bold.otf\"",
+"bold_italics_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-BoldItalic.otf\"",
+"box_color_custom": "Color(1, 1, 1, 1)",
+"box_color_use_global": "false",
+"box_margin_bottom": "32.0",
+"box_panel": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_underlay.tres\"",
+"box_size": "Vector2(1280, 206)",
+"italics_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Italic.otf\"",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_panel": "\"res://addons/dialogic/ArcanumFortunaStyle/name_underlay.tres\"",
+"name_label_box_use_global_color": "false",
+"name_label_custom_font_size": "32.0",
+"name_label_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf\"",
+"name_label_use_global_color": "false",
+"name_label_use_global_font": "false",
+"name_label_use_global_font_size": "false",
+"next_indicator_size": "Vector2(64, 64)",
+"next_indicator_texture": "\"res://assets/ui/underlays/arrow.png\"",
+"normal_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf\"",
+"text_alignment": "1",
+"text_size": "32.0",
+"text_use_global_color": "false",
+"text_use_global_font": "false",
+"text_use_global_size": "false",
+"typing_sounds_mode": "1"
+}
+
+[sub_resource type="Resource" id="Resource_mev00"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("6_qscdl")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_yh76h"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("7_or75c")
+overrides = {
+"boxes_fill_width": "false",
+"boxes_min_size": "Vector2(1248, 80)",
+"boxes_stylebox_disabled": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_disabled.tres\"",
+"boxes_stylebox_focused": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_focus.tres\"",
+"boxes_stylebox_hovered": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_hover.tres\"",
+"boxes_stylebox_normal": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_normal.tres\"",
+"boxes_stylebox_pressed": "\"res://addons/dialogic/ArcanumFortunaStyle/dialog_choice_button_pressed.tres\"",
+"boxes_v_separation": "14.0",
+"font_custom": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf\"",
+"font_size_custom": "32.0",
+"font_size_use_global": "false",
+"font_use_global": "false",
+"text_color_use_global": "false"
+}
+
+[sub_resource type="Resource" id="Resource_mvstd"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("8_rpq8w")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_46j4n"]
+script = ExtResource("1_1rbx5")
+scene = ExtResource("9_rw047")
+overrides = {}
+
+[resource]
+script = ExtResource("10_gbfk8")
+name = "arcanum_fortuna_style"
+base_overrides = {
+"canvas_layer": "100.0",
+"global_font": "\"res://assets/ui/fonts/test fonts/AurelisADFNo2Std-Regular.otf\"",
+"global_font_size": "32.0"
+}
+layers = Array[ExtResource("1_1rbx5")]([SubResource("Resource_cnaho"), SubResource("Resource_e7jbh"), SubResource("Resource_bv7ka"), SubResource("Resource_5f4d4"), SubResource("Resource_mev00"), SubResource("Resource_yh76h"), SubResource("Resource_mvstd"), SubResource("Resource_46j4n")])
+metadata/_latest_layer = -1
