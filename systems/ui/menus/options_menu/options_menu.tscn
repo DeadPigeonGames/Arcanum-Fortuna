@@ -133,7 +133,6 @@ texture = ExtResource("3_iqdc3")
 
 [node name="AudioOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -198,7 +197,6 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="CheckBox" type="CheckBox" parent="OptionsMenu/Options/AudioOptions/Options/MasterVolume/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
 theme = ExtResource("3_x54wv")
@@ -408,6 +406,7 @@ popup/item_1/id = 1
 
 [node name="VideoOptions" type="Control" parent="OptionsMenu/Options"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
