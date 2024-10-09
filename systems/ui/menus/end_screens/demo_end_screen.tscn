@@ -147,6 +147,7 @@ mouse_filter = 2
 script = ExtResource("12_gr68r")
 
 [node name="WishlistButton" type="TextureButton" parent="Links"]
+layout_mode = 0
 offset_left = 827.0
 offset_top = 681.0
 offset_right = 1335.0

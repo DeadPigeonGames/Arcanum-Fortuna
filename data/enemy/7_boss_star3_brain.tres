@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=17 format=3 uid="uid://dmopfxv0u8pde"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=17 format=3 uid="uid://c7rmv0ladr105"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_k2rja"]
 [ext_resource type="Resource" uid="uid://bitn4lw4darn4" path="res://data/cards/the_moon.tres" id="2_4rey4"]

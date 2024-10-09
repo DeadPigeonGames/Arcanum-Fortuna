@@ -202,8 +202,7 @@ func get_trigger_tutorial(class_name_string : String) -> bool:
 
 
 func set_trigger_tutorial(class_name_string : String, value : bool):
-	if settings_dict.has(class_name_string):
-		settings_dict[class_name_string] = value
+	settings_dict[class_name_string] = value
 	await save_config()
 
 

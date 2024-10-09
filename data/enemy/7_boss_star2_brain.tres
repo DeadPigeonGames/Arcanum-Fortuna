@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyBrain" load_steps=18 format=3 uid="uid://drj2x0bxuoy30"]
+[gd_resource type="Resource" script_class="EnemyBrain" load_steps=18 format=3 uid="uid://ci82q0qccrqdy"]
 
 [ext_resource type="Script" path="res://data/scripts/card_data.gd" id="1_5ck5c"]
 [ext_resource type="Resource" uid="uid://d388ib31p5qsn" path="res://data/cards/the_emperor.tres" id="2_qsqkb"]

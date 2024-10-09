@@ -15,5 +15,5 @@ cost = -4
 attack = 2
 health = 2
 keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([ExtResource("2_7vyyo"), ExtResource("3_rpu7v")])
-spawn_frequency = 10
+spawn_frequency = 00
 sound_effect = ExtResource("5_t8y6f")

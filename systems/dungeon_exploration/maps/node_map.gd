@@ -18,6 +18,7 @@ func _process(delta):
 	if OS.has_feature("no-cheat"):
 		return
 	if Input.is_action_just_pressed("debug_quit"):
+		return
 		var shop = SceneHandler.add_ui_element("res://systems/ui/menus/shop/shop.tscn") as Shop
 		shop.init(UIBase.UICLayerIndex.GAME_ELEMENT, self)
 		shop.setup()

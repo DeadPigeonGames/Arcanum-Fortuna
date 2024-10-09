@@ -93,6 +93,8 @@ func get_random_move_from_moves(moves: Array[Move]):
 	var weight_idx = 0.0
 	for move in moves:
 		weight_idx += move.get_chance_weight()
+		randomize()
+		weight_idx += randi_range(0, moves.size())
 		if hit < weight_idx:
 			return move
 	return moves.back()

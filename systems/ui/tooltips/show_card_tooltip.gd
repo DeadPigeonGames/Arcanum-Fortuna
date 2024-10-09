@@ -13,8 +13,9 @@ func _physics_process(delta: float) -> void:
 			value = true
 		if not tooltip_container:
 			value = true
-		if tooltip_container and tooltip_container.get_child_count() == 0:
-			value = true
+		if tooltip_container != null:
+			if tooltip_container.get_child_count() == 0:
+				value = true
 		if value:
 			await get_tree().process_frame
 			var rectangle = get_parent().get_global_rect()
