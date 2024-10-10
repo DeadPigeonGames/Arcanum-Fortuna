@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource("1_rnlue")
 name = "Queen of Herbs"
-description = "It doesn't do stuff."
+description = "Not unlike mother nature herself, she is revered and widely adored by her numerous followers. "
 artwork = ExtResource("1_6bgbb")
 cost = 3
 attack = 1

@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource("1_jk337")
 name = "Knight of Flags"
-description = "It doesn't do stuff."
+description = "With monk-like discipline, these soldiers should neither be underestimated in number, nor in a duel."
 artwork = ExtResource("1_4do24")
 cost = 3
 attack = 0

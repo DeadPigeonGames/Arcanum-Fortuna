@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource("1_86tmm")
 name = "Knight of Herbs"
-description = "It doesn't do stuff."
+description = "Once pacifists, these soldiers must have reached their breaking point to pick up a weapon, and should not be underestimated."
 artwork = ExtResource("1_rfcxd")
 cost = 2
 attack = 1
