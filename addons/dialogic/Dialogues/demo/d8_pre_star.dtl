@@ -14,7 +14,7 @@ A vast loneliness overcomes you all at once.
 	[style name="arcanum_fortuna_style_backup"]
 	the_fool: Am I dreaming?
 	A giggle.
-	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="-25.0" bus="Signature"]
+	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="0.0" bus="Signature"]
 	join the_star rightmost
 	the_star: I get that one a lot.
 - TRY TO STEADY YOURSELF
@@ -26,7 +26,7 @@ In your daze you call out to your companion, but only silence answers you.
 	[style name="arcanum_fortuna_style_backup"]
 	the_fool: Am I dreaming?
 	A giggle.
-	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="-25.0"]
+	[sound path="res://Audio/Signatures/SignatureStar.ogg" volume="0.0" bus="Signature"]
 	join the_star rightmost
 	[style name="StyleOtherSpeaker"]
 	the_star: I get that one a lot.
