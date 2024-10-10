@@ -2,7 +2,7 @@ class_name SettingsData
 extends Node
 
 ## 1.0 is 100 %, 0.5 is 150% speed and 2.0 is 50% speed.
-## For animation players, this will increase the 
+## For animation players, this will increase the playback time
 var animation_time := 1.0
 
 
@@ -230,5 +230,5 @@ func set_died_prev_run(value : bool):
 
 
 func apply_player_anim_speed(anim_player : AnimationPlayer):
-	var new_scale = anim_player.speed_scale * animation_time
-	anim_player.speed_scale += new_scale
+	var add_time := 1 - animation_time
+	anim_player.speed_scale += add_time

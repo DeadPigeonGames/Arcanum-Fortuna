@@ -783,7 +783,6 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_7r6k4")
 }
-autoplay = "victorious"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
 position = Vector2(1800, 1080)
