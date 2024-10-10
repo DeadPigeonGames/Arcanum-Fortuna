@@ -1,5 +1,5 @@
 [style name="StyleOtherSpeaker"]
-the_lovers: Shh, shh, someone’s approaching.  \\
+the_lovers: Shh, shh, someone’s approaching.  \
 —  So? Since when did that stop us?
 You hear incessant giggling up ahead.
 join the_dog rightmost
@@ -14,7 +14,7 @@ the_lovers: Ew, where in the world did you come from?\
 If they weren’t addressing you directly, you’d think the two elves in front of you hadn’t noticed you at all, so enraptured are they in each others gaze and touch.
 Every word they speak to you sounds accusatory to your ears.
 [style name="arcanum_fortuna_style_backup"]
-the_fool: Well, I met the Sun. The moon too, they seem to have-
+the_fool: Well, I met the Sun. The Moon too, they seem to have-
 [style name="StyleOtherSpeaker"]
 the_lovers: Are you thinking what I’m thinking? \
 — Always, darling.
