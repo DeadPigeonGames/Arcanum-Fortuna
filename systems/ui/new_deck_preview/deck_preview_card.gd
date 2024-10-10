@@ -10,7 +10,7 @@ func setup(card_data, amount, is_selectable):
 	select_card = %SelectCard
 	counter = %CopyCounter
 	counter.visible = amount != 1
-	label.text = str(amount)
+	label.text = str(amount, "x")
 	select_card.card_data = card_data
 	select_card.is_selectable = is_selectable
 
