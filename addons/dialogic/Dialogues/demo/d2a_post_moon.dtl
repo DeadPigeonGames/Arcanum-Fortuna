@@ -17,5 +17,6 @@ the_moon: Farewell.
 leave the_moon
 She departs with a final glow, and leaves you feeling suddenly tired and empty, swathed in dark.
 update the_fool (default)
-update the_dog (default) rightmost
+join the_dog (default) rightmost
 the_dog: Come on, we’ve lingered long enough.
+leave the_dog
