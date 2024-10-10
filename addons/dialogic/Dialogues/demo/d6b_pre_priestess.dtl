@@ -1,10 +1,11 @@
 [style name="StyleOtherSpeaker"]
 join the_dog rightmost
+The day turns to night again, and the nocturnal animals paint their scenery of sound that both puts you at ease and runs a chill up your spine in equal measure.
 the_dog: Damn birds. You’d think they’d be quieter at night. Instead, there’s this ruckus.
 join the_fool (default) leftmost
 [wait_input hide_text="false"]
 - SOUNDS LIKE SOMEONE’S SCARED.
-	the_dog: Scared!? Buddy, infuriated is more it. \\
+	the_dog: Scared!? Buddy, infuriated is more it. \
 If not at night, when can I expect myself some damn peace and quiet?
 	[style name="arcanum_fortuna_style_backup"]
 	the_fool: You’re not exactly quiet yourself, grouching around as you are.
@@ -17,7 +18,7 @@ If not at night, when can I expect myself some damn peace and quiet?
 	the_dog: I rather like my paws, buddy, please and thank you.
 	the_dog: Besides, where would you fly? And just think of how brittle you would be...
 - I DON’T SEE YOU TRYING TO SLEEP, WHY COMPLAIN?
-	the_dog: No need to get personal, buddy. \\
+	the_dog: No need to get personal, buddy. \
 I’m merely saying, birdsong would at least be preferable to this capricious screeching.
 leave the_dog
 leave the_fool
@@ -38,4 +39,3 @@ the_high_priestess: You, you seek aid and have found me for it. But I know you s
 - ASK HER ABOUT THE WAY FORWARD
 	the_high_priestess: And what of, what of your pain? Very well, you shall have your answers.
 the_high_priestess: But everything comes at a price, a price. A game, a game should suffice, and I will know you, you.
-The day turns to night again, and the nocturnal animals paint their scenery of sound that both puts you at ease and runs a chill up your spine in equal measure.
