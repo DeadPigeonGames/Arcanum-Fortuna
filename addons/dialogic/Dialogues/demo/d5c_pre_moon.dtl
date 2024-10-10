@@ -1,4 +1,5 @@
 [style name="StyleOtherSpeaker"]
+You only realize the length of your journey when night begins to fall, the moon’s soft shimmer replacing the blinding glow of the sun on the scenery of snow and ice.
 join the_dog rightmost
 join the_fool (default) leftmost
 the_dog: Odd. There’s few stars tonight.
@@ -20,4 +21,3 @@ the_moon: A dubitable one at best.\
 An uncertainty that will surely bring about eventual madness.
 [wait time="0.3"]
 the_moon: Say, I wonder if this indecision is present in your play as well as your journey?
-You only realize the length of your journey when night begins to fall, the moon’s soft shimmer replacing the blinding glow of the sun on the scenery of snow and ice.
