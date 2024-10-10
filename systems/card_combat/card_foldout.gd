@@ -120,8 +120,13 @@ func check_show_cards(count):
 		show_cards = false
 		return
 	
+	var global_mouse_pos = get_global_mouse_position()
+	
+	if not get_viewport_rect().has_point(global_mouse_pos):
+		show_cards = false
+		return
+	
 	if enabled and not is_card_dragged and count > 0:
-		var global_mouse_pos = get_global_mouse_position()
 		var result := false
 		for node in get_children():
 			var card_rect : Rect2 = node.get_global_rect()
