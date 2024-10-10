@@ -25,7 +25,7 @@ the_lovers: We might not share our love, but...\
 [wait_input hide_text="false"]
 - TWO AGAINST ONE, HOW IS THAT FAIR?
 	the_lovers: Are you not two as well? You and your… mongrel.\
-— But that is hardly on par with our quintessental bond, darling.
+— But that is hardly on par with our quintessential bond, darling.
 	the_lovers: You’re right, dearest. Of course you are. \
 — But all is fair in love and war, is it not?
 	update the_fool (default)
