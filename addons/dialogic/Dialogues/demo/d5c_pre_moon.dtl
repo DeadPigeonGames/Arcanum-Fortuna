@@ -5,7 +5,7 @@ join the_fool (default) leftmost
 the_dog: Odd. There’s few stars tonight.
 leave the_dog
 join the_moon rightmost
-[sound path="res://Audio/Signatures/SignatureMoon.ogg" volume="0.0"]
+[sound path="res://Audio/Signatures/SignatureMoon.ogg" volume="0.0" bus="Signature"]
 update the_fool (default_w_dog)
 the_moon: Is my light not enough?
 the_moon: Oh.

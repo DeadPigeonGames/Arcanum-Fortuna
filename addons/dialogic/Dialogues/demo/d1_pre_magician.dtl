@@ -24,6 +24,6 @@ A single white flower beckons you towards the edge, rising above equally undistu
 You carry on, the rose providing an odd, faintly familiar comfort.
 [wait_input hide_text="false"]
 Swift steps, that possess a confidence yours so distinctly lack, pull you from your thoughts.
-[sound path="res://Audio/Signatures/SignatureMagician.ogg" volume="0.0"]
+[sound path="res://Audio/Signatures/SignatureMagician.ogg" volume="0.0" bus="Signature"]
 join the_magician rightmost
 the_magician: Here you are, as predicted. No matter, I cannot let you roam unchallenged - come, then, show me what you are capable of.
