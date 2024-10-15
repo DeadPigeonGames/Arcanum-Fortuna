@@ -48,6 +48,8 @@ func check_hovered_tiles():
 
 
 func hover_tile(tile):
+	if tile.mouse_filter == MOUSE_FILTER_IGNORE:
+		return
 	await get_tree().process_frame
 	if not accept_card:
 		return

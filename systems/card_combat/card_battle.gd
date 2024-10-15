@@ -21,7 +21,6 @@ var player_data : PlayerData
 @export var show_current_phase_text := true
 @export var is_debug : bool
 @export var is_tutorial : bool #sorry....
-@export var tutorial_health := 7
 @export var debug_player_data : PlayerData
 @export var debug_enemy_data : DebugEnemyData
 
@@ -49,15 +48,10 @@ func _ready():
 	GlobalLog.set_context(GlobalLog.Context.COMBAT)
 	GlobalLog.add_entry(name + " loaded.")
 	lock_player_actions()
-	if is_debug:
+	if is_debug or is_tutorial:
 		await get_tree().process_frame # game_board needs to be ready first lol
 		init(debug_player_data, debug_enemy_data)
 		start_combat()
-	if is_tutorial:
-		await get_tree().process_frame # game_board needs to be ready first lol
-		init(debug_player_data.duplicate(), debug_enemy_data.duplicate())
-		start_combat()
-		enemy.set_health(tutorial_health)
 
 
 func _exit_tree():
