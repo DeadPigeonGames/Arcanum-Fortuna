@@ -28,9 +28,9 @@ var hp : int
 
 
 static func trigger_enemy_hp_dialog(combat : CardBattle, owner):
-	if combat.is_tutorial:
+	if combat.is_tutorial or combat.is_debug:
 		return
-	var enemy_data : EnemyData = combat.enemy.data
+	var enemy_data = combat.enemy.data
 	for dialog : EnemyDialog in enemy_data.get_dialog_data():
 		if dialog.get_trigger_type() == EnemyDialog.TriggerType.ENEMY_HP:
 			if combat.enemy.health <= dialog.hp:
@@ -58,7 +58,7 @@ static func trigger_card_place_dialog(combat : CardBattle, card : CardData, owne
 static func trigger_keycard_attack_dialog(combat : CardBattle, attacking_card, owner):
 	if combat.is_tutorial:
 		return
-	var enemy_data : EnemyData = combat.enemy.data
+	var enemy_data = combat.enemy.data
 	for dialog : EnemyDialog in enemy_data.get_dialog_data():
 		if dialog.get_trigger_type() == EnemyDialog.TriggerType.KEYCARD_ATTACK:
 			var attack_card_data
