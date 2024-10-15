@@ -119,20 +119,4 @@ func check_show_cards(count):
 	SceneHandler.get_current_dialogic():
 		show_cards = false
 		return
-	
-	var global_mouse_pos = get_global_mouse_position()
-	
-	if not get_viewport_rect().has_point(global_mouse_pos):
-		show_cards = false
-		return
-	
-	if enabled and not is_card_dragged and count > 0:
-		var result := false
-		for node in get_children():
-			var card_rect : Rect2 = node.get_global_rect()
-			var size = card_rect.size * 0.15
-			card_rect = card_rect.grow_individual(size.x, size.y, size.x, size.y)
-			result = card_rect.has_point(global_mouse_pos)
-			if result:
-				break
-		show_cards = result
+	show_cards = true

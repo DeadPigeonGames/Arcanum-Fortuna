@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bxifydx1hdpwf"]
+[gd_scene load_steps=50 format=3 uid="uid://bxifydx1hdpwf"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_lco5q"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/tutorial.gd" id="2_xmauc"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/conditions/tc_signal_emitted.gd" id="13_pw7qy"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_placement_phase.gd" id="13_y6t7h"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/actions/ta_change_tutorial_chat_visible.gd" id="14_akgfj"]
+[ext_resource type="Script" path="res://systems/card_combat/combat_phases/combat_phase.gd" id="14_m6j15"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/conditions/tcd_await_actions.gd" id="15_7wyih"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/actions/ta_friendly_cards_attack.gd" id="16_m80f0"]
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/actions/ta_handle_karma.gd" id="17_4i5j4"]
@@ -32,6 +33,7 @@
 [ext_resource type="Script" path="res://systems/tutorial/tutorial_old/actions/ta_change_process_mode.gd" id="23_s0rud"]
 [ext_resource type="PackedScene" uid="uid://d04yhti50qih4" path="res://assets/vfx/big_blob.tscn" id="24_46t30"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/friendly_karma_phase.gd" id="24_allw1"]
+[ext_resource type="Script" path="res://systems/card_combat/keywords/keyword.gd" id="24_u8dcg"]
 [ext_resource type="Script" path="res://systems/card_combat/combat_phases/enemy_attack_phase.gd" id="25_nrcpb"]
 [ext_resource type="PackedScene" uid="uid://b84sklippd45m" path="res://assets/vfx/karma_particle.tscn" id="26_clcvc"]
 [ext_resource type="Resource" uid="uid://bw4sry587x05m" path="res://data/cards/judgement.tres" id="26_s5xfr"]
@@ -64,7 +66,7 @@ artwork = ExtResource("19_ymsqq")
 cost = 0
 attack = 2
 health = 2
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords = Array[ExtResource("24_u8dcg")]([])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
@@ -106,7 +108,7 @@ artwork = ExtResource("10_x770v")
 cost = 0
 attack = 666
 health = 666
-keywords = Array[Resource("res://systems/card_combat/keywords/keyword.gd")]([])
+keywords = Array[ExtResource("24_u8dcg")]([])
 spawn_frequency = 100
 shop_cost = 5
 trade_override = 0
@@ -120,6 +122,17 @@ next_scene = "res://systems/ui/main_menu.tscn"
 debug_player_data = SubResource("Resource_wj3g8")
 debug_enemy_data = SubResource("Resource_6hp1s")
 
+[node name="HealthIcon" parent="CardPlayer/ResourceContainer/Health" index="1"]
+offset_left = 0.0
+offset_right = 155.0
+
+[node name="BonusDrawButton" parent="CardPlayer" index="3"]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 244.0
+offset_bottom = 54.0
+
 [node name="Panel" parent="GameBoard/PlayerTiles" index="0"]
 visible = false
 
@@ -131,13 +144,6 @@ visible = false
 
 [node name="Panel5" parent="GameBoard/PlayerTiles" index="4"]
 visible = false
-
-[node name="BonusDrawButton" parent="CardPlayer" index="3"]
-visible = false
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 244.0
-offset_bottom = 54.0
 
 [node name="SkipButton" type="Button" parent="." index="3"]
 layout_mode = 0
@@ -195,7 +201,7 @@ tutorial_box = NodePath("../../../CanvasLayer/TutorialBox")
 [node name="PlacementTurn" type="Node" parent="Steps/TutorialStep3" index="1" node_paths=PackedStringArray("card_battle")]
 script = ExtResource("22_o7xjc")
 card_battle = NodePath("../../..")
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_3wse5")])
+phases = Array[ExtResource("14_m6j15")]([SubResource("Resource_3wse5")])
 
 [node name="IfCombatStarted" type="Node" parent="Steps/TutorialStep3" index="2" node_paths=PackedStringArray("node_with_signal")]
 script = ExtResource("13_pw7qy")
@@ -338,7 +344,7 @@ script = ExtResource("15_7wyih")
 [node name="CompleteTurn" type="Node" parent="Steps/TutorialStep13/AwaitTurn" index="0" node_paths=PackedStringArray("card_battle")]
 script = ExtResource("22_o7xjc")
 card_battle = NodePath("../../../..")
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_67liv"), SubResource("Resource_43ql8"), SubResource("Resource_wlrrh")])
+phases = Array[ExtResource("14_m6j15")]([SubResource("Resource_67liv"), SubResource("Resource_43ql8"), SubResource("Resource_wlrrh")])
 
 [node name="TutorialStep14" type="Node" parent="Steps" index="13"]
 script = ExtResource("5_txu6s")
@@ -403,7 +409,7 @@ script = ExtResource("15_7wyih")
 [node name="PlayTurn" type="Node" parent="Steps/TutorialStep17/AwaitTurn" index="0" node_paths=PackedStringArray("card_battle")]
 script = ExtResource("22_o7xjc")
 card_battle = NodePath("../../../..")
-phases = Array[Resource("res://systems/card_combat/combat_phases/combat_phase.gd")]([SubResource("Resource_ih0bu"), SubResource("Resource_hfuxg"), SubResource("Resource_1upqg")])
+phases = Array[ExtResource("14_m6j15")]([SubResource("Resource_ih0bu"), SubResource("Resource_hfuxg"), SubResource("Resource_1upqg")])
 
 [node name="TutorialStep18" type="Node" parent="Steps" index="17"]
 script = ExtResource("5_txu6s")

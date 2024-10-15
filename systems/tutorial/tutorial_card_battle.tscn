@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://bookhsqnu44x5"]
+[gd_scene load_steps=92 format=3 uid="uid://bookhsqnu44x5"]
 
 [ext_resource type="PackedScene" uid="uid://cbqvu0uo5eaku" path="res://systems/card_combat/card_battle.tscn" id="1_l4q46"]
 [ext_resource type="Resource" uid="uid://c0p160e6m2l0t" path="res://data/cards/the_magician.tres" id="2_24vt3"]
@@ -423,9 +423,18 @@ arrows = Array[ExtResource("7_ey2by")]([])
 offset_type = 1
 distance = 100.0
 
+[sub_resource type="Resource" id="Resource_bdyuh"]
+script = ExtResource("10_kcyaw")
+title = ""
+text = ""
+highlighted_elements = Array[NodePath]([])
+arrows = Array[ExtResource("7_ey2by")]([])
+offset_type = 0
+distance = 0.0
+
 [sub_resource type="Resource" id="Resource_rio7r"]
 script = ExtResource("4_ohwqy")
-popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_5de0l")])
+popups = Array[ExtResource("6_s3sef")]([SubResource("Resource_5de0l"), SubResource("Resource_bdyuh")])
 
 [sub_resource type="Resource" id="Resource_fmibs"]
 script = ExtResource("5_68w08")
@@ -460,6 +469,21 @@ phases = Array[ExtResource("2_60m5e")]([SubResource("Resource_m5y5j"), SubResour
 is_tutorial = true
 debug_player_data = ExtResource("20_f584r")
 debug_enemy_data = SubResource("Resource_ixib7")
+
+[node name="Panel" parent="GameBoard/PlayerTiles" index="0"]
+mouse_filter = 2
+
+[node name="Panel2" parent="GameBoard/PlayerTiles" index="1"]
+mouse_filter = 2
+
+[node name="Panel3" parent="GameBoard/PlayerTiles" index="2"]
+mouse_filter = 2
+
+[node name="Panel4" parent="GameBoard/PlayerTiles" index="3"]
+mouse_filter = 2
+
+[node name="Panel5" parent="GameBoard/PlayerTiles" index="4"]
+mouse_filter = 2
 
 [editable path="CardPlayer"]
 [editable path="EnemyPlayer"]
