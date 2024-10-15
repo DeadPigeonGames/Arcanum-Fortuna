@@ -28,8 +28,23 @@ func _ready():
 		await get_tree().process_frame
 	for tile in player_tiles.get_children():
 		tile.self_modulate = tile_disabled_color
-		tile.mouse_entered.connect(func(): hover_tile(tile))
-		tile.mouse_exited.connect(func(): unhover_tile(tile))
+		tile.mouse_entered.connect(
+			func ():
+				check_hovered_tiles()
+		)
+		tile.mouse_exited.connect(
+			func ():
+				check_hovered_tiles()
+		)
+
+
+func check_hovered_tiles():
+	for tile in player_tiles.get_children():
+		if tile.get_global_rect().has_point(get_global_mouse_position()):
+			hover_tile(tile)
+		else:
+			unhovered_tile(tile)
+
 
 
 func hover_tile(tile):
@@ -40,7 +55,7 @@ func hover_tile(tile):
 	hovered_tile = tile
 
 
-func unhover_tile(tile):
+func unhovered_tile(tile):
 	tile.self_modulate = tile_interactible_color if accept_card else tile_disabled_color
 	if hovered_tile == tile:
 		hovered_tile = null

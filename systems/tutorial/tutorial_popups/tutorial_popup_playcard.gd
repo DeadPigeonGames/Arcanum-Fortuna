@@ -39,12 +39,12 @@ func highlight_elements(value : bool):
 		color.a = 0.15
 	target_card_slot.set_self_modulate(color)
 	
-	for tile : Control in player_tiles:
+	for tile : Node in player_tiles:
 		if value:
 			if tile != target_card_slot:
-				tile.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			else:
-				tile.mouse_filter = Control.MOUSE_FILTER_PASS
+				pass # Should disable tile here
+		else:
+				pass # Should enable all
 
 
 #endregion

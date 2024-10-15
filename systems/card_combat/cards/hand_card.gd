@@ -55,6 +55,10 @@ func _process(delta):
 		global_position = target_position # global_position.lerp(target_position, 0.5)
 		target_scale = base_scale
 	scale = scale.lerp(target_scale, 0.1)
+	
+	if is_picked_up:
+		SceneHandler.combat.game_board.check_hovered_tiles()
+	
 	move_shadow()
 
 
@@ -78,26 +82,18 @@ func _input(event: InputEvent):
 		emit_signal("drag_ended", self)
 
 
-func on_mouse_entered():
-	if SceneHandler.get_current_ui_window() or\
-	SceneHandler.get_current_dialogic() or not is_hoverable:
-		is_hovered = false
-		return
-	is_hovered = true
-
-
-func on_mouse_exited():
-	is_hovered = false
-
 func check_hand_is_hovered():
 	if SceneHandler.get_current_ui_window() or\
 	SceneHandler.get_current_dialogic():
 		is_hovered = false
 		return
 	
-	if not is_hoverable:
+	if is_hoverable:
+		var mouse_pos = get_global_mouse_position()
+		is_hovered = get_global_rect().has_point(mouse_pos)
+	else:
 		is_hovered = false
-		return
+	
 	if hand and not (get_parent() == hand) and hand.is_card_dragged:
 		is_hoverable = false
 
