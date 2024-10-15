@@ -16,7 +16,8 @@ func setup(data : CardData):
 	if data == null:
 		push_error("Cannot setup Card Tooltip! CardData is missing!")
 		return
-	%Name.text = data.name
+	if data.keywords.size() == 0:
+		return
 	var added_keywords = []
 	for keyword in data.keywords:
 		#if not keyword.get_script() in added_keywords:

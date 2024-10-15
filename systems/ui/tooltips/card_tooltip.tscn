@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7qbbf3idp0cf"]
+[gd_scene load_steps=4 format=3 uid="uid://c7qbbf3idp0cf"]
 
 [ext_resource type="Script" path="res://systems/ui/tooltips/card_tooltip.gd" id="1_j2xxw"]
 [ext_resource type="Texture2D" uid="uid://byjyf63eau3ba" path="res://assets/ui/underlays/nine_patch_rect_2.png" id="2_2bylk"]
 [ext_resource type="Texture2D" uid="uid://uf36g406dvlv" path="res://assets/ui/underlays/tooltip_underlay.png" id="3_12b81"]
-[ext_resource type="Theme" uid="uid://c2as6vbqpnrve" path="res://assets/ui/themes/tutorial_and_tooltips_theme.tres" id="4_w223y"]
 
 [node name="CardTooltip" type="Control"]
 layout_mode = 3
@@ -52,15 +51,6 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 20
-
-[node name="Name" type="RichTextLabel" parent="MarginContainer/MarginContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 2
-theme = ExtResource("4_w223y")
-bbcode_enabled = true
-text = "Name"
 
 [node name="Sigils" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
 unique_name_in_owner = true
